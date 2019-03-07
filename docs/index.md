@@ -4,7 +4,7 @@ title: "Awesome"
 subtitle: "\"全栈之路 技术体系汇总（不断收集整理中...）\""
 date: 2019-01-25
 author: DrugBean
-header-img: "img/post-bg-android.jpg
+header-img: "img/post-bg-android.jpg"
 catalog: true
 ---
 

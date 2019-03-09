@@ -11,7 +11,7 @@ github_repo: "https://github.com/drugbean/drugbean.github.io.git" # you code rep
 
 # Sidebar settings
 sidebar: true                               # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "不管这一天有多难过，记得认真洗脸冲澡..."
 sidebar-avatar: /img/about-BY-gentle.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

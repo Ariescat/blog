@@ -16,6 +16,8 @@ catalog: true
 * [游戏学院 - 腾讯大学](https://daxue.qq.com/game)
 * 安全
 	* [游戏安全实验室](https://gslab.qq.com/portal.php?mod=view&aid=94)
+* [GameRes游资网-游戏开发者门户](https://www.gameres.com/)
+* [TapTap - 发现好游戏](https://www.taptap.com/)
 
 ### Github优秀项目
 * [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
@@ -28,7 +30,7 @@ catalog: true
 - [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
 
 ### 附加博客 [➮](附加博客)
-- [年度内容盘点](附加博客#年度报告)
+- 年度内容盘点
 
 ### 学习平台
 - [W3Cschool 在线教程 - 学技术，从w3cschool开始!](http://www.w3cschool.cn/)
@@ -37,18 +39,33 @@ catalog: true
 - [PHP 教程 - 菜鸟教程](http://www.runoob.com/php/php-tutorial.html)
 
 ### Java [➮](Java)
-* 基础
-	* [代理](Java#代理)
-	* [ClassLoader](Java#ClassLoader)
-	* [语法糖](Java#语法糖)
-* IO
-	* [IO流](Java#IO流)
-* 并发
-	* [Reactor模式](Java#Reactor模式)
-	* [锁](Java#锁)
+* 代理
+	* JDK动态代理
+	* Cgliib 
+* Unsafe
+* 语法糖
 * 设计模式
-* JVM
-	* [内存模型](Java#内存模型)
+	* koloboke
+* 集合
+* IO
+	* IO流
+	* 同步、异步、阻塞和非阻塞
+	* Reactor模式
+* 并发
+	* synchronized
+	* volatile
+	* 线程池
+	* Atomic
+	* AQS
+	* 并发容器
+	* Monitor对象
+	* ForkJoin
+	* Actor模型
+* Jvm
+	* **内存模型**
+	* ClassLoader
+* Java8
+	* parallelStream
 
 ### 主流框架 [➮](主流框架)
 * 常用框架

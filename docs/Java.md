@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: docs
 title: Java
 date: 2019-02-01
 header-img: "img/post-bg-rwd.jpg"

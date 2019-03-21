@@ -114,6 +114,9 @@ Executors 返回线程池对象的弊端如下：
 - [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
 - [百度·自定义classloader实现JAVA热替换](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=自定义classloader实现JAVA热替换&tn=98010089_dg&ch=4)
 
+#### 热更
+- [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
+- [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
 
 
 ### Java8

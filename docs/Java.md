@@ -104,6 +104,8 @@ Executors 返回线程池对象的弊端如下：
 * [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
 
 
+### JMX
+
 
 ### JVM
 #### 内存模型

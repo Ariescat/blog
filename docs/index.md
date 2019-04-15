@@ -19,6 +19,9 @@ catalog: true
 * [GameRes游资网-游戏开发者门户](https://www.gameres.com/)
 * [TapTap - 发现好游戏](https://www.taptap.com/)
 
+### 职场
+* [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
+
 ### Github优秀项目
 * [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
 * [JCSprout](https://github.com/crossoverJie/JCSprout)
@@ -64,8 +67,11 @@ catalog: true
 * Jvm
 	* **内存模型**
 	* ClassLoader
+	* 热更
 * Java8
 	* parallelStream
+* 常遇的报错与坑
+	* ConcurrentModificationException
 
 ### 主流框架 [➮](主流框架)
 * 常用框架

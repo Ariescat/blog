@@ -131,3 +131,9 @@ Executors 返回线程池对象的弊端如下：
 
 ### 图形
 - [Polygon](https://segmentfault.com/a/1190000007736473)，区域超区校验
+
+
+
+### 常遇的报错与坑
+- [ConcurrentModificationException](https://www.2cto.com/kf/201403/286536.html)
+- [疫苗：JAVA HASHMAP的死循环](https://coolshell.cn/articles/9606.html)

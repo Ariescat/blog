@@ -4,7 +4,7 @@ title: "Awesome"
 subtitle: "\"全栈之路 技术体系汇总（不断收集整理中...）\""
 date: 2019-01-25
 author: DrugBean
-header-img: "img/post-bg-android.jpg"
+header-img: "img/post-bg-kuaidi.jpg"
 catalog: true
 ---
 
@@ -60,7 +60,7 @@ catalog: true
 	* Log
 		* [Java日志，需要知道的几件事(commons-logging,log4j,slf4j,logback) - CSDN博客](http://blog.csdn.net/kobejayandy/article/details/17335407)
 		* **Flume**构建日志采集系统
-	* [Java代码生成利器之rapid-generate应用一 - Rocky实验室 - CSDN博客](http://blog.csdn.net/likeaboy_fire/article/details/44024987)
+	* [Java代码生成利器之rapid-generate应用](http://blog.csdn.net/likeaboy_fire/article/details/44024987)
 * Spring
 	* [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
 	* [Spring Cache 介绍](https://www.cnblogs.com/rollenholt/p/4202631.html)
@@ -73,7 +73,7 @@ catalog: true
 		* [手把手教你从最基本的Java工程搭建SpringMVC+SpringDataJPA+Hibernate(含源码下载) - anxpp的博客 - CSDN博客](http://blog.csdn.net/anxpp/article/details/51415366)
 * 性能
 	* Disruptor
-		* [锁的缺点 - Disruptor 入门 - 极客学院Wiki](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html
+		* [锁的缺点 - Disruptor 入门](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html)
 * 中间件
 	* ActiveMQ 
 	* Akka
@@ -83,8 +83,8 @@ catalog: true
 		* [Elasticsearch基础教程 - CSDN博客](http://blog.csdn.net/cnweike/article/details/33736429)
 		* [玩转单元测试之DBUnit - WadeXu - 博客园](https://www.cnblogs.com/wade-xu/p/4547381.html)
 		* [基于注解的配置 - Spring-Data-Elasticsearch](https://es.yemengying.com/5/5.1/5.1.2.html)
-* RxJava [➮](/2019/01/29/事件驱动编程RxJava/)  
-	` "a library for composing asynchronous and event-based programs using observable sequences for the Java VM"`  
+* RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/): 
+	a library for composing asynchronous and event-based programs using observable sequences for the Java VM"  
 	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）。
 
 ### 构建工具

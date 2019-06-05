@@ -44,6 +44,9 @@ Cglib动态代理
 	> Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
 * **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
 * **红黑树** TreeMap、TreeSet
+#### HashMap
+* [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
+
 
 
 ### IO
@@ -107,6 +110,13 @@ Executors 返回线程池对象的弊端如下：
 * [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
 
 
+
+### 线程池
+#### ScheduledThreadPoolExecutor
+* [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
+
+
+
 ### JMX
 
 
@@ -137,8 +147,3 @@ Executors 返回线程池对象的弊端如下：
 ### 常遇的报错与坑
 - [ConcurrentModificationException](https://www.2cto.com/kf/201403/286536.html)
 - [疫苗：JAVA HASHMAP的死循环](https://coolshell.cn/articles/9606.html)
-
-
-
-### HashMap
-- [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)

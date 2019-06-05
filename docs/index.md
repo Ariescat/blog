@@ -83,9 +83,9 @@ catalog: true
 		* [Elasticsearch基础教程 - CSDN博客](http://blog.csdn.net/cnweike/article/details/33736429)
 		* [玩转单元测试之DBUnit - WadeXu - 博客园](https://www.cnblogs.com/wade-xu/p/4547381.html)
 		* [基于注解的配置 - Spring-Data-Elasticsearch](https://es.yemengying.com/5/5.1/5.1.2.html)
-* RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/): 
-	a library for composing asynchronous and event-based programs using observable sequences for the Java VM"  
-	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）。
+* RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/):  
+	" a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  
+	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
 
 ### 构建工具
 * Gradle

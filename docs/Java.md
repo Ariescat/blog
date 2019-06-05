@@ -137,3 +137,8 @@ Executors 返回线程池对象的弊端如下：
 ### 常遇的报错与坑
 - [ConcurrentModificationException](https://www.2cto.com/kf/201403/286536.html)
 - [疫苗：JAVA HASHMAP的死循环](https://coolshell.cn/articles/9606.html)
+
+
+
+### HashMap
+- [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)

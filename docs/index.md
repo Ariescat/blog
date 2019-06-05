@@ -10,38 +10,19 @@ catalog: true
 
 <h1>《全栈之路 技术图谱》</h1>
 
-### 整理记录 [➮](整理记录)
-
-### 游戏相关
-* [游戏学院 - 腾讯大学](https://daxue.qq.com/game)
-* 安全
-	* [游戏安全实验室](https://gslab.qq.com/portal.php?mod=view&aid=94)
-* [GameRes游资网-游戏开发者门户](https://www.gameres.com/)
-* [TapTap - 发现好游戏](https://www.taptap.com/)
-
-### 职场
-* [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
-
 ### Github优秀项目
 * [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
 * [JCSprout](https://github.com/crossoverJie/JCSprout)
 * [JavaGuide](https://github.com/Snailclimb/JavaGuide)
 
 ### 知识体系
-- [Github优秀java项目集合（中文版） - 涉及java所有的知识体系](https://blog.csdn.net/aa1215018028/article/details/80951389)
-- [伯乐在线](http://hao.jobbole.com/)
-- [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
+* [Github优秀java项目集合（中文版） - 涉及java所有的知识体系](https://blog.csdn.net/aa1215018028/article/details/80951389)
+* [伯乐在线](http://hao.jobbole.com/)
+* [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
 
-### 附加博客 [➮](附加博客)
-- 年度内容盘点
+### 整理记录 [➮详细](Record)
 
-### 学习平台
-- [W3Cschool 在线教程 - 学技术，从w3cschool开始!](http://www.w3cschool.cn/)
-- [慕课网手记](http://www.imooc.com/article)
-- [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
-- [PHP 教程 - 菜鸟教程](http://www.runoob.com/php/php-tutorial.html)
-
-### Java [➮](Java)
+### Java [➮详细](Java)
 * 代理
 	* JDK动态代理
 	* Cgliib 
@@ -73,85 +54,196 @@ catalog: true
 * 常遇的报错与坑
 	* ConcurrentModificationException
 
-### 主流框架 [➮](主流框架)
+### 主流框架
 * 常用框架
-	* [Cache](主流框架#Cache)
-	* [日志](主流框架#日志)
-	* [其他](主流框架#其他)
+	* Guava Cache
+	* Log
+		* [Java日志，需要知道的几件事(commons-logging,log4j,slf4j,logback) - CSDN博客](http://blog.csdn.net/kobejayandy/article/details/17335407)
+		* **Flume**构建日志采集系统
+	* [Java代码生成利器之rapid-generate应用一 - Rocky实验室 - CSDN博客](http://blog.csdn.net/likeaboy_fire/article/details/44024987)
 * Spring
-	* [Spring Data](主流框架#Spring-Data)
-	* [Spring Boot](主流框架#Spring-Boot)
-	* [框架整合](主流框架#框架整合)
+	* [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
+	* [Spring Cache 介绍](https://www.cnblogs.com/rollenholt/p/4202631.html)
+	* [Spring Webflux](https://www.jianshu.com/p/c029de45d23b)
+	* Spring Data
+		* [Spring Data JPA 简单查询--接口方法 - 如莲家园 - 博客园](https://www.cnblogs.com/rulian/p/6557471.html)
+	* Spring Boot
+	* 框架整合
+		* [企业大型互联网分布式架构{Java分布式架构 dubbo+springmvc+mybatis+ehcach+redis }-IT未来-ITPUB博客](http://m.blog.itpub.net/31452580/viewspace-2148363/)
+		* [手把手教你从最基本的Java工程搭建SpringMVC+SpringDataJPA+Hibernate(含源码下载) - anxpp的博客 - CSDN博客](http://blog.csdn.net/anxpp/article/details/51415366)
 * 性能
-	* [Disruptor](主流框架#Disruptor)
+	* Disruptor
+		* [锁的缺点 - Disruptor 入门 - 极客学院Wiki](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html
 * 中间件
-	* 消息队列
-		* ActiveMQ 
-		* [Akka](主流框架#Akka)
+	* ActiveMQ 
+	* Akka
+		*[akka设计模式系列-基础模式](https://yq.aliyun.com/articles/616951?spm=a2c4e.11153940.blogcont616952.14.28751adcybgYqt)
 * 搜索引擎
-	* [Elasticsearch](主流框架#Elasticsearch)
+	* Elasticsearch
+		* [Elasticsearch基础教程 - CSDN博客](http://blog.csdn.net/cnweike/article/details/33736429)
+		* [玩转单元测试之DBUnit - WadeXu - 博客园](https://www.cnblogs.com/wade-xu/p/4547381.html)
+		* [基于注解的配置 - Spring-Data-Elasticsearch](https://es.yemengying.com/5/5.1/5.1.2.html)
+* RxJava [➮](/2019/01/29/事件驱动编程RxJava/)  
+	` "a library for composing asynchronous and event-based programs using observable sequences for the Java VM"`  
+	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）。
 
-### 构建工具 [➮](构建工具)
-* [Gradle](构建工具#Gradle)
-* [Maven](构建工具#Maven)
+### 构建工具
+* Gradle
+	* [十分钟理解Gradle - Bonker - 博客园](https://www.cnblogs.com/Bonker/p/5619458.html)
+	* [大家都是怎样处理Gradle中的这个文件下载慢的问题的？ - 知乎](https://www.zhihu.com/question/37810416)
+* Maven
+	* [如何将 Java 项目转换成 Maven 项目 - 船长&amp;CAP - 博客园](https://www.cnblogs.com/liuning8023/p/4726822.html)
 
-### 托管平台
+### 版本管理
 * Git
 	* [git 简明指南](http://www.runoob.com/manual/git-guide/)
 
-### 脚本语言 [➮](脚本语言)
+### 脚本语言
 * [Groovy](脚本语言#Groovy)
+	* [30分钟groovy快速入门并掌握](https://www.cnblogs.com/amosli/p/3970810.html)
+	* [Groovy 语言快速入门](https://www.jianshu.com/p/e8dec95c4326)
+* Groovy与Java
+	* [实战 Groovy，在 Java 应用程序中加一些 Groovy 进来](https://www.ibm.com/developerworks/cn/java/j-pg05245/)
+	* [利用SPRING管理热加载的GROOVY对象](https://palexu.github.io/posts/spring-dynamic-load-groovy-bean?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+	* [spring + groovy 很强大](https://blog.csdn.net/qq362228416/article/details/8811136)
+	* [Spring动态部署Bean/Controller/Groovy Controller](https://jinnianshilongnian.iteye.com/blog/1999284)
+* Groovy与DSL
+	* [Gradle：新一代自动化构建工具](http://hao.jobbole.com/gradle/)
+	* [Groovy DSL 百度搜索](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=Groovy DSL&tn=98010089_dg&ch=4)
+	* [gradle dsl](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=gradle dsl&tn=98010089_dg&ch=5)
 
-### 分布式 [➮](分布式)
-* RPC
-	* [JavaRMI](分布式#JavaRMI)
-* [Zookeeper](分布式#Zookeeper)
-* [分布式事务](分布式#分布式事务)
-
-### 前端
-* 基础 [➮](前端#基础)
-* Vue [➮](前端#Vue)
-	* Vuex [➮](前端#Vuex)
-	* Weex [➮](前端#Weex)
-* 状态管理 [➮](前端#状态管理)
-* 其他 [➮](前端#其他)
-
-### Android [➮](Android)
-* [图表](Android#图表)
-* [Material Design](Android#Material Design)
-
-### 操作系统
-* Linux常用服务搭建
-	* [CentOS7简单使用](Linux#CentOS7)
-	* [Shadowsocks](Linux#Shadowsocks)
-	* [Nginx](Linux#Nginx)
-	* [Ngrok](Linux#Ngrok)
-
-### 网络 [➮](网络)
-* 协议
-	* [TCP/IP](网络#TCP/IP)
-* 零拷贝
-
-### 数据库 [➮](数据库)
-* [MySQL](数据库#MySQL)
+### 分布式
+* IO操作
+	* [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
+*RPC
+	* JavaRMI
+		* [深究Java中的RMI底层原理](https://blog.csdn.net/sinat_34596644/article/details/52599688)
+* Zookeeper
+	* [Zookeeper的功能以及工作原理](https://www.cnblogs.com/felixzh/p/5869212.html)
+	* [Zookeeper的Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)
+	* [zookeeper中的ZAB协议理解](https://blog.csdn.net/junchenbb0430/article/details/77583955)
+* 分布式事务
+	* [分布式事务与一致性算法Paxos & raft & zab](https://blog.csdn.net/followmyinclinations/article/details/52870418)
+	* atomikos:[4.0 atomikos JTA/XA全局事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/386)
+	* xaresource
+	* [分布式事务](https://javatar.iteye.com/blog/981787)
+	* [分布式事务系列（2.1）分布式事务的概念](https://yq.aliyun.com/articles/39047)
 
 ### 数据结构
-* 堆  
-	> 一个可以被看做一棵树的数组
+* 堆：一个可以被看做一棵树的数组
 * 二叉树
 	* **遍历**
 	* 完全二叉树
 	* 满二叉树 
 	* 平衡二叉树
-		* [红黑树](https://www.cnblogs.com/skywang12345/p/3245399.html)
-		* AVL
+		* AVL树
+		* 红黑树
+			* [查找（一）史上最简单清晰的红黑树讲解 - CSDN博客](http://blog.csdn.net/yang_yulei/article/details/26066409)
+			* [查找（二）简单清晰的B树、Trie树详解 - CSDN博客](http://blog.csdn.net/yang_yulei/article/details/26104921)
 		* Treap
 		* BST
 
-### 算法 [➮](算法)
-* [常见算法](算法#常见算法)
-* [练习平台](算法#练习平台)
+### 算法
+* 算法思想
+	* [算法洗脑系列（8篇）——第一篇 递推思想 - 一线码农 - 博客园](http://www.cnblogs.com/huangxincheng/archive/2011/12/29/2305525.html)
+* 常见算法
+	* KPM 算法
+		* [kpm算法 - u012361418的博客 - CSDN博客](http://blog.csdn.net/u012361418/article/details/46125439)
+		* [KMP算法及优化 - 疯狂的爱因斯坦 - SegmentFault](https://segmentfault.com/a/1190000007066358#articleHeader4)
+* 五大常用算法：贪婪算法，动态规划算法，分治算法，回溯算法以及分支限界算法	
 
-### 面经汇总 [➮](面经汇总)
-* [Java面经汇总](面经汇总#Java面经汇总)
-* [经历分享](面经汇总#经历分享)
+* 练习平台
+	* [赛码网](http://www.acmcoder.com/index)
+	* [IT题库_笔试练习_C++Java前端笔试面试题_牛客网](https://www.nowcoder.com/contestRoom)
+	* [leetcode在线编程_牛客网](https://www.nowcoder.com/ta/leetcode)
+	* [题库 - 力扣 (LeetCode)](https://leetcode-cn.com/problemset/all/)
+	* [“蓝桥杯”练习系统](http://lx.lanqiao.cn/problemsets.page)
+	* [杭电](http://acm.hdu.edu.cn/listproblem.php?vol=1)
+	* [练习场 - ACM在线评测系统](http://acm.nyist.net/JudgeOnline/problemset.php)
+	* [Welcome To PKU JudgeOnline](http://poj.org/)
+
+### 网络
+* 协议
+	* TCP/IP
+		* [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)
+* 零拷贝
+
+### 数据库
+* MySQL
+	* [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
+
+### 操作系统
+* Linux
+	* [CentOS7简单使用](Linux#CentOS7)
+* Linux常用服务搭建
+	* [Shadowsocks](Linux#Shadowsocks)
+	* [Nginx](Linux#Nginx)
+	* [Ngrok](Linux#Ngrok)
+
+### 前端
+* HTML/CSS/JS
+	* [HTML 教程](http://www.w3school.com.cn/html/index.asp)
+	* [ECMAScript 6入门](http://es6.ruanyifeng.com/#docs/let)
+	* [Bootstrap 教程 - 菜鸟教程](http://www.runoob.com/bootstrap/bootstrap-tutorial.html)
+* [Vue](https://cn.vuejs.org/)
+	* [Vuex](https://vuex.vuejs.org/zh/)
+	* [Weex](http://weex.apache.org/cn/)
+* React
+	* [React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
+* Flux 架构
+	* [Flux 架构入门教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
+* 状态管理
+	* [聊一聊主流前端框架的状态管理](https://www.cnblogs.com/axel10/archive/2018/03/15/8571757.html)
+	* [前端状态管理请三思](https://juejin.im/post/59fd94475188254115703461)
+* 其他
+	* [给2019前端的5个建议](https://juejin.im/post/5c617c576fb9a049e93d33a4)
+	* [浏览器原理系列10篇正式完结](https://juejin.im/post/5c6d3e026fb9a04a0d576f98)
+
+### Android [➮详细](Android)
+
+### 面经汇总
+* Java面经汇总
+	* [Java线程面试题 Top 50 - ImportNew](http://www.importnew.com/12773.html)
+	* [Java面试通关要点汇总集 - 掘金](https://juejin.im/post/5a94a8ca6fb9a0635c049e67?utm_source=gold_browser_extension#heading-1)
+	* [Java面试通关要点汇总集(基础篇之基本功，非原作者) - 掘金](https://juejin.im/post/5a9690fc5188257a865da3ee?utm_source=gold_browser_extension)
+	* [JavaEE面试题收集 - 掘金](https://juejin.im/post/58a6ad5461ff4b78fca442eb)
+	* [一个两年Java的面试总结 - 掘金](https://juejin.im/post/5a9f5ce86fb9a028de443ed9?utm_source=gold_browser_extension)
+* Android面经汇总
+	* [［干货］2017已来，最全面试总结——这些Android面试题你一定需要 - CSDN博客](https://blog.csdn.net/xhmj12/article/details/54730883)
+* 大厂面经
+	* [面试心得与总结—BAT、网易、蘑菇街 - ImportNew](http://www.importnew.com/22637.html)
+* 经历分享
+	* [2017年秋季校招面经 - CSDN博客](http://blog.csdn.net/huachao1001/article/details/52247268)
+	* [我的求职经历——遍览国内一流IT企业(转） - lonelycatcher - 博客园](http://www.cnblogs.com/lonelycatcher/archive/2012/03/10/2388889.html)
+* 其他推荐
+	* [剑指 offer 题解](https://github.com/CyC2018/Interview-Notebook/blob/master/notes/%E5%89%91%E6%8C%87%20offer%20%E9%A2%98%E8%A7%A3.md)
+	* [技术面试需要掌握的基础知识 - 后端 - 掘金](https://juejin.im/entry/5a98a78f518825558358a3d9?utm_source=gold_browser_extension)
+	* [Leetcode 题解](https://github.com/CyC2018/Interview-Notebook/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3.md)
+	* [微软经典面试100题系列（部分） - CSDN博客](http://blog.csdn.net/zhoudaxia/article/details/8884557)
+	* [直通BAT面试算法精讲课_C++Java前端经典笔试面试题精讲_牛客网](https://www.nowcoder.com/courses/1)
+	* [牛课堂系列算法讲座_牛客网](https://www.nowcoder.com/courses/6)
+	* [牛课堂算法精讲直播讲座（2016）_牛客网](https://www.nowcoder.com/live/11)
+
+### 职场
+* [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
+
+### 附加博客
+* 年度报告
+	* [阿里研究院：2016年校园快递行业发展报告](http://www.199it.com/archives/530127.html)
+	* [SegmentFault 年度内容盘点 - 2016](https://summary.segmentfault.com/2016/#/)
+* 其他
+	* [究竟怎样写代码才算是好代码 - CSDN博客](http://blog.csdn.net/u013970991/article/details/52609083)
+	* [成为Java顶尖程序员 ，看这11本书就够了 - CSDN博客](https://blog.csdn.net/u012410733/article/details/51869105)
+
+### 学习平台
+* [W3Cschool 在线教程 - 学技术，从w3cschool开始!](http://www.w3cschool.cn/)
+* [慕课网手记](http://www.imooc.com/article)
+* [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
+* [PHP 教程 - 菜鸟教程](http://www.runoob.com/php/php-tutorial.html)
+
+### 游戏相关
+* [游戏学院 - 腾讯大学](https://daxue.qq.com/game)
+* 安全
+	* [游戏安全实验室](https://gslab.qq.com/portal.php?mod=view&aid=94)
+* [GameRes游资网-游戏开发者门户](https://www.gameres.com/)
+* [TapTap - 发现好游戏](https://www.taptap.com/)

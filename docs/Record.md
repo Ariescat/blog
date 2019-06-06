@@ -6,12 +6,14 @@ header-img: "img/post-bg-rwd.jpg"
 catalog: true
 ---
 
+#### 2019-06-06
+局部变量表中的Slot
+
 #### 2019-06-05
 Apache commons  
 Google guava  
 Koloboke  
 ASM  
-
 HashMap:
 >最近它有两个主要的更新——一个在Java 7u40版本中对于空map的共享的底层存储，以及在Java 8中将底层hash bucket链接成为**哈希树**（改进更差情况下的性能）。
 

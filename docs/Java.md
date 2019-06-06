@@ -46,7 +46,7 @@ Cglib动态代理
 * **红黑树** TreeMap、TreeSet
 #### HashMap
 * [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
-
+* jdk1.7中的线程安全问题 **(resize死循环)**
 
 
 ### IO
@@ -132,6 +132,9 @@ Executors 返回线程池对象的弊端如下：
 #### 热更
 - [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
 - [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
+
+#### 局部变量表中的Slot
+
 
 
 ### Java8

@@ -77,38 +77,38 @@ catalog: true
 
 
 ### 其他
-	* Reactor模式
-		* [Reactor模式详解](https://www.cnblogs.com/winner-0715/p/8733787.html)
-		* [高性能IO之Reactor模式](https://www.cnblogs.com/doit8791/p/7461479.html)
+* Reactor模式
+	* [Reactor模式详解](https://www.cnblogs.com/winner-0715/p/8733787.html)
+	* [高性能IO之Reactor模式](https://www.cnblogs.com/doit8791/p/7461479.html)
 
-	* ForkJoin
-	* Actor模型
-		* [Java并发的四种风味](http://www.importnew.com/14506.html) 
-		* Akka
+* ForkJoin
+* Actor模型
+	* [Java并发的四种风味](http://www.importnew.com/14506.html) 
+	* Akka
 
 ### JMX
 
 ### JVM
-	* 热更
-		* [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
-		* [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
+* 热更
+	* [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
+	* [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
 
-	* 局部变量表中的Slot
-	* [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
-	* 内存模型
-		- [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
-		- [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
+* 局部变量表中的Slot
+* [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
+* 内存模型
+	- [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
+	- [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
 
-	* ClassLoader
-		- [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
-		- [百度·自定义classloader实现JAVA热替换](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=自定义classloader实现JAVA热替换&tn=98010089_dg&ch=4)
+* ClassLoader
+	- [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
+	- [百度·自定义classloader实现JAVA热替换](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=自定义classloader实现JAVA热替换&tn=98010089_dg&ch=4)
 
 ### Java8
-	* parallelStream
+* parallelStream
 
 
 ### 性能调优
-	* VisualVM 
+* VisualVM 
 		* [使用 VisualVM 进行性能分析及调优](https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/)
 
 

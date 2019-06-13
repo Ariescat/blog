@@ -15,9 +15,9 @@ catalog: true
 		> Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
 	* **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
 	* **红黑树** TreeMap、TreeSet
-	#### HashMap
-	* [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
-	* jdk1.7中的线程安全问题 **(resize死循环)**
+	* HashMap
+		* [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
+		* jdk1.7中的线程安全问题 **(resize死循环)**
 
 * 代理  
 	按照代理的创建时期，代理类可以分为两种。 
@@ -93,13 +93,13 @@ catalog: true
 	* [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
 	* [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
 * ClassLoader
-	- [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
-	- [百度·自定义classloader实现JAVA热替换](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=自定义classloader实现JAVA热替换&tn=98010089_dg&ch=4)
+	* [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
+	* [百度·自定义classloader实现JAVA热替换](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=自定义classloader实现JAVA热替换&tn=98010089_dg&ch=4)
 * 局部变量表中的Slot
 * [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
 * 内存模型
-	- [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
-	- [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
+	* [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
+	* [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
 
 
 ### Java8

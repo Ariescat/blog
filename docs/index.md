@@ -77,7 +77,7 @@ catalog: true
 * 中间件
 	* ActiveMQ 
 	* Akka
-		*[akka设计模式系列-基础模式](https://yq.aliyun.com/articles/616951?spm=a2c4e.11153940.blogcont616952.14.28751adcybgYqt)
+		* [akka设计模式系列-基础模式](https://yq.aliyun.com/articles/616951?spm=a2c4e.11153940.blogcont616952.14.28751adcybgYqt)
 * 搜索引擎
 	* Elasticsearch
 		* [Elasticsearch基础教程 - CSDN博客](http://blog.csdn.net/cnweike/article/details/33736429)
@@ -115,7 +115,7 @@ catalog: true
 ### 分布式
 * IO操作
 	* [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
-*RPC
+* RPC
 	* JavaRMI
 		* [深究Java中的RMI底层原理](https://blog.csdn.net/sinat_34596644/article/details/52599688)
 * Zookeeper

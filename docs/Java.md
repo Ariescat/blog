@@ -141,6 +141,11 @@ Executors 返回线程池对象的弊端如下：
 #### parallelStream
 
 
+### 性能调优
+#### VisualVM 
+- [使用 VisualVM 进行性能分析及调优](https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/)
+
+
 
 ### 图形
 - [Polygon](https://segmentfault.com/a/1190000007736473)，区域超区校验

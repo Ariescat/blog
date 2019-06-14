@@ -75,6 +75,10 @@ catalog: true
 			> 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
 	* [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
 
+* WeakReference 和 ReferenceQueue
+* JDK Unsafe类
+	* objectFieldOffset
+	* compareAndSwap...
 
 ### 其他
 * Reactor模式
@@ -110,16 +114,8 @@ catalog: true
 ### 性能调优
 * VisualVM
 	* [使用 VisualVM 进行性能分析及调优](https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/)
-
-
-### 引用
-* WeakReference 和 ReferenceQueue
-
-
-### JDK Unsafe类
-* objectFieldOffset
-* compareAndSwap...
-
+* [Arthas使用指南](https://segmentfault.com/a/1190000014618329?utm_source=tag-newest)  
+	Arthas 是基于 Greys 进行二次开发的全新在线诊断工具
 
 ### 语法糖
 * [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html)

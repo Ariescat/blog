@@ -67,16 +67,18 @@ catalog: true
 	* [Spring Webflux](https://www.jianshu.com/p/c029de45d23b)
 	* Spring Data
 		* [Spring Data JPA 简单查询--接口方法 - 如莲家园 - 博客园](https://www.cnblogs.com/rulian/p/6557471.html)
-	* Spring Boot
 	* 框架整合
 		* [企业大型互联网分布式架构{Java分布式架构 dubbo+springmvc+mybatis+ehcach+redis }-IT未来-ITPUB博客](http://m.blog.itpub.net/31452580/viewspace-2148363/)
 		* [手把手教你从最基本的Java工程搭建SpringMVC+SpringDataJPA+Hibernate(含源码下载) - anxpp的博客 - CSDN博客](http://blog.csdn.net/anxpp/article/details/51415366)
+	* Spring Boot
+	* SpringCloud
 * 性能
 	* Disruptor
 		* [锁的缺点 - Disruptor 入门](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html)
 * 中间件
 	* ActiveMQ 
 	* Akka
+		* **Actor模型**
 		* [akka设计模式系列-基础模式](https://yq.aliyun.com/articles/616951?spm=a2c4e.11153940.blogcont616952.14.28751adcybgYqt)
 * 搜索引擎
 	* Elasticsearch
@@ -86,6 +88,9 @@ catalog: true
 * RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/):  
 	" a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  
 	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
+
+### 编程思想
+* Reative编程（响应式编程）
 
 ### 构建工具
 * Gradle
@@ -171,6 +176,8 @@ catalog: true
 ### 数据库
 * MySQL
 	* [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
+* **事物传播**
+* **隔离级别**
 
 ### 操作系统
 * Linux
@@ -247,3 +254,9 @@ catalog: true
 	* [游戏安全实验室](https://gslab.qq.com/portal.php?mod=view&aid=94)
 * [GameRes游资网-游戏开发者门户](https://www.gameres.com/)
 * [TapTap - 发现好游戏](https://www.taptap.com/)
+
+### 相关书籍
+* Java并发编程
+* SpringBoot SpringCloud
+* Netty
+* 分布式、大数据、人工智能、区块链

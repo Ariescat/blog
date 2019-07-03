@@ -9,7 +9,6 @@ catalog: true
 ---
 
 <h1>《全栈之路 技术图谱》</h1>
-
 ### Github优秀项目
 * [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
 * [JCSprout](https://github.com/crossoverJie/JCSprout)
@@ -89,7 +88,13 @@ catalog: true
 	" a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  
 	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
 
+### 好用工具
+
+* everything
+* wox（window快速搜索文件启动程序软件）
+
 ### 编程思想
+
 * Reative编程（响应式编程）
 
 ### 构建工具
@@ -119,10 +124,14 @@ catalog: true
 
 ### 分布式
 * IO操作
+	
 	* [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
 * RPC
 	* JavaRMI
 		* [深究Java中的RMI底层原理](https://blog.csdn.net/sinat_34596644/article/details/52599688)
+	
+	* HSF
+	  ​		阿里巴巴集团内部使用的分布式服务框架 High Speed Framework
 * Zookeeper
 	* [Zookeeper的功能以及工作原理](https://www.cnblogs.com/felixzh/p/5869212.html)
 	* [Zookeeper的Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)

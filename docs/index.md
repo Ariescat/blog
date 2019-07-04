@@ -65,7 +65,13 @@ catalog: true
 	
 	* ASM
 	
-	  spring-core自带有asm，org.ow2.asm也是一个轻量级的jar
+		spring-core自带有asm，org.ow2.asm也是一个轻量级的jar
+	  
+	* Apache commons
+	
+	* Google guava
+	
+	* Koloboke
 	
 * Spring
 	* [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
@@ -98,12 +104,6 @@ catalog: true
 * RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/):  
 	" a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  
 	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
-	
-
-### 工具
-
-* everything
-* wox（window快速搜索文件启动程序软件）
 
 ### AI
 
@@ -256,7 +256,13 @@ catalog: true
 	* [牛课堂系列算法讲座_牛客网](https://www.nowcoder.com/courses/6)
 	* [牛课堂算法精讲直播讲座（2016）_牛客网](https://www.nowcoder.com/live/11)
 
+### 工具
+
+- everything
+- wox（window快速搜索文件启动程序软件）
+
 ### 职场
+
 * [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
 
 ### 附加博客

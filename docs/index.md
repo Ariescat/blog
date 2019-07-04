@@ -56,10 +56,17 @@ catalog: true
 ### 主流框架
 * 常用框架
 	* Guava Cache
+	
 	* Log
 		* [Java日志，需要知道的几件事(commons-logging,log4j,slf4j,logback) - CSDN博客](http://blog.csdn.net/kobejayandy/article/details/17335407)
 		* **Flume**构建日志采集系统
+		
 	* [Java代码生成利器之rapid-generate应用](http://blog.csdn.net/likeaboy_fire/article/details/44024987)
+	
+	* ASM
+	
+	  spring-core自带有asm，org.ow2.asm也是一个轻量级的jar
+	
 * Spring
 	* [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
 	* [Spring Cache 介绍](https://www.cnblogs.com/rollenholt/p/4202631.html)
@@ -71,27 +78,36 @@ catalog: true
 		* [手把手教你从最基本的Java工程搭建SpringMVC+SpringDataJPA+Hibernate(含源码下载) - anxpp的博客 - CSDN博客](http://blog.csdn.net/anxpp/article/details/51415366)
 	* Spring Boot
 	* SpringCloud
+	
 * 性能
 	* Disruptor
 		* [锁的缺点 - Disruptor 入门](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html)
+	
 * 中间件
 	* ActiveMQ 
 	* Akka
 		* **Actor模型**
 		* [akka设计模式系列-基础模式](https://yq.aliyun.com/articles/616951?spm=a2c4e.11153940.blogcont616952.14.28751adcybgYqt)
+	
 * 搜索引擎
 	* Elasticsearch
 		* [Elasticsearch基础教程 - CSDN博客](http://blog.csdn.net/cnweike/article/details/33736429)
 		* [玩转单元测试之DBUnit - WadeXu - 博客园](https://www.cnblogs.com/wade-xu/p/4547381.html)
 		* [基于注解的配置 - Spring-Data-Elasticsearch](https://es.yemengying.com/5/5.1/5.1.2.html)
+	
 * RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/):  
 	" a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  
 	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
+	
 
-### 好用工具
+### 工具
 
 * everything
 * wox（window快速搜索文件启动程序软件）
+
+### AI
+
+* 状态机 行为树
 
 ### 编程思想
 

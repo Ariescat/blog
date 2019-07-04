@@ -39,9 +39,14 @@ catalog: true
 		* [管道流(Piped Stream)](https://www.cnblogs.com/skywang12345/p/io_04.html)
 		* RandomAccessFile, java.io包中是一个特殊的类, 既可以读文件，也可以写文件。
 
+	* Path/Files
+	
+	  * [IO操作你还在用File吗，该拥抱Path和Files了](https://www.sohu.com/a/132459571_654433)
+	
+	* **Reactor模式**
+	
 	* IO操作
 	
-		* [IO操作你还在用File吗，该拥抱Path和Files了](https://www.sohu.com/a/132459571_654433)
 		* [网络IO中的同步、异步、阻塞和非阻塞](https://drugbean.club/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
 		* [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
 		> **同步、异步：**  
@@ -54,51 +59,73 @@ catalog: true
 		> * 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
 		
 	
-* 并发
-	* 线程状态
-		* [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
-		* [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
-	* synchronized
-	* volatile 
-	* 线程池  
-		* ScheduledThreadPoolExecutor
-			* [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
-		
-		《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
+* 语法糖
 
-		Executors 返回线程池对象的弊端如下：
-		> FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE,可能堆积大量的请求，从而导致OOM。  
-		> CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
-	* Atomic
-		* AQS
-		* CountDownLatch、CyclicBarrier和Semaphore
+  * [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html)
 
-	* 并发容器
-		* ConcurrentHashMap、CopyOnWriteArrayList、ConcurrentLinkedQueue ...
-		* SkipList（跳表）
-		* ConcurrentSkipListMap（使用跳表实现Map）  
-			
-			> 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
-	* ForkJoin
-	* [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
+### 设计模式
+
+- [设计模式 - 菜鸟教程](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
+
+### 并发
+
+* 线程状态
+	* [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
+	* [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
 	
+* synchronized
+
+* monitor对象
+
+* volatile 
+
+* 线程池  
+	* ScheduledThreadPoolExecutor
+		* [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
+	
+	《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
+
+	Executors 返回线程池对象的弊端如下：
+	> FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE,可能堆积大量的请求，从而导致OOM。  
+	> CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
+	
+* Atomic
+	* AQS
+	* CountDownLatch、CyclicBarrier和Semaphore
+
+* 并发容器
+	* ConcurrentHashMap、CopyOnWriteArrayList、ConcurrentLinkedQueue ...
+	* SkipList（跳表）
+	* ConcurrentSkipListMap（使用跳表实现Map）  
+		
+		> 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
+	
+* **ForkJoin**
+
+* [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
+
 * WeakReference 和 ReferenceQueue
+
 * JDK Unsafe类
-	* objectFieldOffset
-	* compareAndSwap...
+  * objectFieldOffset
+  * compareAndSwap...
 
 ### 其他
 * Reactor模式
 	* [Reactor模式详解](https://www.cnblogs.com/winner-0715/p/8733787.html)
 	* [高性能IO之Reactor模式](https://www.cnblogs.com/doit8791/p/7461479.html)
-
 * Actor模型
 	* [Java并发的四种风味](http://www.importnew.com/14506.html) 
 	* Akka
+* JMX
 
-### JMX
+### Java8
+
+- parallelStream
+- 元空间（Metaspace）
 
 ### JVM
+
 * ClassLoader
 	* [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
 * 热更
@@ -112,23 +139,11 @@ catalog: true
 	* [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
 
 
-### Java8
-* parallelStream
-* 元空间（Metaspace）
-
-
 ### 性能调优
 * VisualVM
 	* [使用 VisualVM 进行性能分析及调优](https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/)
 * [Arthas使用指南](https://segmentfault.com/a/1190000014618329?utm_source=tag-newest)  
 	Arthas 是基于 Greys 进行二次开发的全新在线诊断工具
-
-### 语法糖
-* [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html)
-
-
-### 设计模式
-* [设计模式 - 菜鸟教程](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
 
 
 ### 图形

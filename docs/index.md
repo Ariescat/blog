@@ -19,8 +19,6 @@ catalog: true
 * [伯乐在线](http://hao.jobbole.com/)
 * [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
 
-### 整理记录 [➮详细](Record)
-
 ### Java [➮详细](Java)
 * 代理
 	* JDK动态代理
@@ -71,12 +69,14 @@ catalog: true
 	
 	* Google guava
 	
-	* Koloboke
+	* **Koloboke** 集合框架
+	
+	* **joda** 对时间的操作
 	
 * Spring
 	* [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
 	* [Spring Cache 介绍](https://www.cnblogs.com/rollenholt/p/4202631.html)
-	* [Spring Webflux](https://www.jianshu.com/p/c029de45d23b)
+	* [Spring Webflux](https://www.jianshu.com/p/c029de45d23b) （与前端Flux架构名字相同）
 	* Spring Data
 		* [Spring Data JPA 简单查询--接口方法 - 如莲家园 - 博客园](https://www.cnblogs.com/rulian/p/6557471.html)
 	* 框架整合
@@ -105,13 +105,11 @@ catalog: true
 	" a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  
 	（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
 
-### AI
-
-* 状态机 行为树
-
 ### 编程思想
 
 * Reative编程（响应式编程）
+* **AI**
+  - 状态机 行为树
 
 ### 构建工具
 * Gradle
@@ -217,6 +215,7 @@ catalog: true
 	* [HTML 教程](http://www.w3school.com.cn/html/index.asp)
 	* [ECMAScript 6入门](http://es6.ruanyifeng.com/#docs/let)
 	* [Bootstrap 教程 - 菜鸟教程](http://www.runoob.com/bootstrap/bootstrap-tutorial.html)
+* 双向数据绑定与单向数据绑定
 * [Vue](https://cn.vuejs.org/)
 	* [Vuex](https://vuex.vuejs.org/zh/)
 	* [Weex](http://weex.apache.org/cn/)

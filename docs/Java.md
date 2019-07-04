@@ -7,18 +7,19 @@ catalog: true
 ---
 
 ### 基础
-* string
-	* StringJoiner（Java 8中提供的可变字符串类）
-
+* StringJoiner（Java 8中提供的可变字符串类）
+	
 * 集合
-	* 集合框架**Koloboke**  
+	* 集合框架**Koloboke**
+		
 		> Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
 	* **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
 	* **红黑树** TreeMap、TreeSet
 	* HashMap
+		
 		* [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
-		* jdk1.7中的线程安全问题 **(resize死循环)**
-
+	* jdk1.7中的线程安全问题 **(resize死循环)**
+	
 * 代理  
 	按照代理的创建时期，代理类可以分为两种。 
 	> 静态代理：由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。  
@@ -35,10 +36,12 @@ catalog: true
 		* RandomAccessFile, java.io包中是一个特殊的类, 既可以读文件，也可以写文件。
 
 	* IO操作
+	
 		* [IO操作你还在用File吗，该拥抱Path和Files了](https://www.sohu.com/a/132459571_654433)
-
-	* 同步、异步、阻塞和非阻塞
+		* [网络IO中的同步、异步、阻塞和非阻塞](https://drugbean.club/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
+		* [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
 		> **同步、异步：**  
+		>
 		> * 概念：消息的通知机制
 		> * 解释：涉及到IO通知机制；所谓同步，就是发起调用后，被调用者处理消息，必须等处理完才直接返回结果，**没处理完之前是不返回的，调用者主动等待结果**；所谓异步，就是发起调用后，被调用者直接返回，但是并没有返回结果，等处理完消息后，通过状态、通知或者回调函数来通知调用者，调用者被动接收结果。
 		
@@ -46,9 +49,7 @@ catalog: true
 		> * 概念：**程序等待调用结果时的状态**
 		> * 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
 		
-		* [网络IO中的同步、异步、阻塞和非阻塞](https://drugbean.club/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
-		* [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
-
+	
 * 并发
 	* 线程状态
 		* [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
@@ -72,9 +73,11 @@ catalog: true
 		* ConcurrentHashMap、CopyOnWriteArrayList、ConcurrentLinkedQueue ...
 		* SkipList（跳表）
 		* ConcurrentSkipListMap（使用跳表实现Map）  
+			
 			> 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
+	* ForkJoin
 	* [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
-
+	
 * WeakReference 和 ReferenceQueue
 * JDK Unsafe类
 	* objectFieldOffset
@@ -85,7 +88,6 @@ catalog: true
 	* [Reactor模式详解](https://www.cnblogs.com/winner-0715/p/8733787.html)
 	* [高性能IO之Reactor模式](https://www.cnblogs.com/doit8791/p/7461479.html)
 
-* ForkJoin
 * Actor模型
 	* [Java并发的四种风味](http://www.importnew.com/14506.html) 
 	* Akka
@@ -93,12 +95,12 @@ catalog: true
 ### JMX
 
 ### JVM
-* 热更
-	* [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
-	* [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
 * ClassLoader
+	* [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
+* 热更
 	* [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
-	* [百度·自定义classloader实现JAVA热替换](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=自定义classloader实现JAVA热替换&tn=98010089_dg&ch=4)
+	* [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
+  * [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
 * 局部变量表中的Slot
 * [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
 * 内存模型

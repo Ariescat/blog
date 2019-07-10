@@ -198,8 +198,25 @@ catalog: true
 
 ### 数据库
 * MySQL
+	
 	* [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
+	
+	* explain
+	
+	  explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
+	
+	* 联接子句 join
+	
+	* 索引
+	
+	  * 联合索引的最左前缀匹配原则
+	
+	    > mysql会一直向右匹配直到遇到范围查询(>、<、between、like)就停止匹配，比如a = 1 and b = 2 and c > 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。
+	
+	  * MYSQL如何挑选索引
+	
 * **事物传播**
+
 * **隔离级别**
 
 ### 操作系统

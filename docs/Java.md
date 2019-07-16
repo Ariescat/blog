@@ -114,10 +114,16 @@ catalog: true
 * Reactor模式
 	* [Reactor模式详解](https://www.cnblogs.com/winner-0715/p/8733787.html)
 	* [高性能IO之Reactor模式](https://www.cnblogs.com/doit8791/p/7461479.html)
+	
 * Actor模型
 	* [Java并发的四种风味](http://www.importnew.com/14506.html) 
 	* Akka
+	
 * JMX
+
+* jsvc
+
+  > 在linux上以服务的方式启动java程序，需要提前安装jsvc。linux是利用daemon(jsvc)构建java守护进程。
 
 ### Java8
 

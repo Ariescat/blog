@@ -85,6 +85,12 @@ catalog: true
 	* Spring Boot
 	* SpringCloud
 	
+* web
+
+  * JAX-RS（ Java API for RESTful Web Services ）
+
+    `Eureka`的`ApplicationResource`有用到
+
 * 性能
 	* Disruptor
 		* [锁的缺点 - Disruptor 入门](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html)

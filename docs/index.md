@@ -207,10 +207,6 @@ catalog: true
 	
 	* [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
 	
-	* explain
-	
-	  explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
-	
 	* 联接子句 union，join
 	
 	* **事物传播**
@@ -227,6 +223,10 @@ catalog: true
 	
 	  * MYSQL如何挑选索引
 	  
+	* explain
+	
+	  explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
+	
 	* redo/undo log，binlog
 	
 	  * [MySQL的日志系统](https://www.cnblogs.com/ivy-zheng/p/11094528.html)
@@ -234,6 +234,19 @@ catalog: true
 	* MySQL的 **Crash Safe**
 	
 	  * [Crash Safe和Binlog的关系](https://blog.csdn.net/shaochenshuo/article/details/73239949)
+	  
+	* 慢日志
+	
+	  可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。
+	
+	* 主从复制，分库分表
+	
+* NoSQL
+
+  * Redis
+  * MongoDB
+  * memcache
+  * Elasticsearch
 
 ### 操作系统
 * Linux

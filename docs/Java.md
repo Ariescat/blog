@@ -6,7 +6,16 @@ header-img: "img/post-bg-rwd.jpg"
 catalog: true
 ---
 
+### 思想是灵魂,实现是形式
+
+
+
 ### 基础
+
+* 语法糖
+  
+  * [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html)
+  
 * StringJoiner（Java 8中提供的可变字符串类）
 	
 * 集合
@@ -59,9 +68,6 @@ catalog: true
 		> * 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
 		
 	
-* 语法糖
-
-  * [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html)
 
 ### 设计模式
 
@@ -90,8 +96,21 @@ catalog: true
 	> CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
 	
 * Atomic
-	* AQS
-	* CountDownLatch、CyclicBarrier和Semaphore
+	* **AQS**（[AbstractQueuedSynchronizer](https://blog.51cto.com/14220760/2390586?source=dra)）
+	
+    > AQS框架借助于两个类：
+	  >
+	  > - Unsafe（提供CAS操作）
+	  >
+	  > - [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
+	  >
+    >   与Object类的wait/notify机制相比，park/unpark有两个优点：
+	  >
+	  >   - 以thread为操作对象更符合阻塞线程的直观定义
+	  >   - 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
+	
+    * CountDownLatch、CyclicBarrier和Semaphore
+	  * AbstarctFuture (一旦调用get就会阻塞)
 
 * 并发容器
 	* ConcurrentHashMap、CopyOnWriteArrayList、ConcurrentLinkedQueue ...
@@ -109,6 +128,14 @@ catalog: true
 * JDK Unsafe类
   * objectFieldOffset
   * compareAndSwap...
+  
+* **Future**
+
+  在并发编程中，我们经常用到非阻塞的模型，在之前的多线程的三种实现中，不管是继承thread类还是实现runnable接口，都无法保证获取到之前的执行结果。通过实现Callback接口，并用Future可以来接收多线程的执行结果。
+
+  Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。
+
+  * Guava——AbstractFuture
 
 ### 其他
 * Reactor模式

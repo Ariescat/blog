@@ -59,13 +59,13 @@ catalog: true
 		* [网络IO中的同步、异步、阻塞和非阻塞](https://drugbean.club/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
 		* [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
 		> **同步、异步：**  
-		>
-		> * 概念：消息的通知机制
-		> * 解释：涉及到IO通知机制；所谓同步，就是发起调用后，被调用者处理消息，必须等处理完才直接返回结果，**没处理完之前是不返回的，调用者主动等待结果**；所谓异步，就是发起调用后，被调用者直接返回，但是并没有返回结果，等处理完消息后，通过状态、通知或者回调函数来通知调用者，调用者被动接收结果。
-		
-		> **阻塞、非阻塞：**  
-		> * 概念：**程序等待调用结果时的状态**
-		> * 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
+		 >
+		 > * 概念：消息的通知机制
+		 > * 解释：涉及到IO通知机制；所谓同步，就是发起调用后，被调用者处理消息，必须等处理完才直接返回结果，**没处理完之前是不返回的，调用者主动等待结果**；所谓异步，就是发起调用后，被调用者直接返回，但是并没有返回结果，等处理完消息后，通过状态、通知或者回调函数来通知调用者，调用者被动接收结果。
+		 > 
+		>  **阻塞、非阻塞：**
+		 > * 概念：**程序等待调用结果时的状态**
+		 > * 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
 		
 	
 
@@ -92,7 +92,7 @@ catalog: true
 	《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
 
 	Executors 返回线程池对象的弊端如下：
-	> FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE,可能堆积大量的请求，从而导致OOM。  
+	> FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE ，可能堆积大量的请求，从而导致OOM。  
 	> CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
 	
 * Atomic
@@ -104,17 +104,23 @@ catalog: true
 	  >
 	  > - [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
 	  >
-    >   与Object类的wait/notify机制相比，park/unpark有两个优点：
+    > 与Object类的wait/notify机制相比，park/unpark有两个优点：
 	  >
 	  >   - 以thread为操作对象更符合阻塞线程的直观定义
 	  >   - 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
-	
-    * CountDownLatch、CyclicBarrier和Semaphore
-	  * AbstarctFuture (一旦调用get就会阻塞)
 
+    * CountDownLatch、CyclicBarrier和Semaphore
+    * AbstarctFuture (一旦调用get就会阻塞)
+	
 * 并发容器
-	* ConcurrentHashMap、CopyOnWriteArrayList、ConcurrentLinkedQueue ...
+	* CopyOnWriteArrayList、ConcurrentLinkedQueue ...
+	
+	* ConcurrentHashMap (JDK8)、ConcurrentHashMapV8 (netty提供)
+	
+		* computeIfAbsent
+	
 	* SkipList（跳表）
+	
 	* ConcurrentSkipListMap（使用跳表实现Map）  
 		
 		> 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。

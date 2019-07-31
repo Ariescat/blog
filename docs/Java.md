@@ -37,6 +37,8 @@ catalog: true
 	
 	* DelayQueue
 	
+	  ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种
+	
 * 代理
 	按照代理的创建时期，代理类可以分为两种。 
 	
@@ -91,12 +93,14 @@ catalog: true
 
 * volatile 
 
-* 线程池  
-	* ScheduledThreadPoolExecutor
-		* [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
+* [线程池](http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/Executor%20%E4%B9%8B%20%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8F%8A%E5%AE%9A%E6%97%B6%E5%99%A8.html)  
 	
-	《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
+	* 拒绝服务的方式
+	* ScheduledThreadPoolExecutor
+	  * [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
 
+	《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
+	
 	Executors 返回线程池对象的弊端如下：
 	> FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE ，可能堆积大量的请求，从而导致OOM。  
 	> CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。

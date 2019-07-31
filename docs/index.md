@@ -9,7 +9,6 @@ catalog: true
 ---
 
 <h1>《技术图谱》</h1>
-
 ### Github优秀项目
 * [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
 * [JCSprout](https://github.com/crossoverJie/JCSprout)
@@ -96,7 +95,7 @@ catalog: true
 
   * 定时任务与时间轮算法
 
-    * HashedWheelTimer
+    * [HashedWheelTimer](http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/%E5%AE%9A%E6%97%B6%E5%99%A8%EF%BC%88Timer%EF%BC%89%E7%9A%84%E5%AE%9E%E7%8E%B0.html)
 
 * web
 

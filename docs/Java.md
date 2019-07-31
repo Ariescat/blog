@@ -22,14 +22,20 @@ catalog: true
 	* 集合框架**Koloboke**
 		
 		> Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
+		
 	* **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
+	
 	* **红黑树** TreeMap、TreeSet
+	
 	* HashMap
 		
 		* [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
 		
 		> 最近它有两个主要的更新——一个在Java 7u40版本中对于空map的共享的底层存储，以及在Java 8中将底层hash bucket链接成为**哈希树**（改进更差情况下的性能）。
+		
 	* jdk1.7中的线程安全问题 **(resize死循环)**
+	
+	* DelayQueue
 	
 * 代理
 	按照代理的创建时期，代理类可以分为两种。 

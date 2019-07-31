@@ -8,7 +8,8 @@ header-img: "img/post-bg-kuaidi.jpg"
 catalog: true
 ---
 
-<h1>《全栈之路 技术图谱》</h1>
+<h1>《技术图谱》</h1>
+
 ### Github优秀项目
 * [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
 * [JCSprout](https://github.com/crossoverJie/JCSprout)
@@ -53,8 +54,6 @@ catalog: true
 
 ### 主流框架
 * 常用框架
-	* Guava Cache
-	
 	* Log
 		* [Java日志，需要知道的几件事(commons-logging,log4j,slf4j,logback) - CSDN博客](http://blog.csdn.net/kobejayandy/article/details/17335407)
 		* **Flume**构建日志采集系统
@@ -67,7 +66,9 @@ catalog: true
 	  
 	* Apache commons
 	
-	* Google guava
+	* [Google Guava](https://ifeve.com/google-guava/)
+	
+	  集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、**并发库** [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等
 	
 	* **Koloboke** 集合框架
 	
@@ -85,6 +86,18 @@ catalog: true
 	* Spring Boot
 	* SpringCloud
 	
+* [Netty](https://www.jianshu.com/p/1a6d1a25e6cc)
+
+  * Netty的线程模型
+
+    通过Reactor模型基于**多路复用器**接收并处理用户请求，内部实现了两个线程池，boss线程池和work线程池，其中boss线程池的线程负责处理请求的accept事件，当接收到accept事件的请求时，把对应的socket封装到一个NioSocketChannel中，并交给work线程池，其中work线程池负责请求的read和write事件
+
+  * NioEventLoop设计原理
+
+  * 定时任务与时间轮算法
+
+    * HashedWheelTimer
+
 * web
 
   * JAX-RS（ Java API for RESTful Web Services ）
@@ -248,7 +261,7 @@ catalog: true
   * memcache
   * Elasticsearch
 
-### 操作系统
+### Linux [➮详细](Linux)
 * Linux
 	* [CentOS7简单使用](Linux#CentOS7)
 * Linux常用服务搭建

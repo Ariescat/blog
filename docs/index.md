@@ -66,7 +66,11 @@ catalog: true
 	* Apache commons
 	
 	  * IO
+	
 	    * FileAlterationObserver
+	
+	      （梦爷曾发现这里每隔10秒会涨10M内存）
+	
 	    * FileAlterationMonitor
 	
 	* [Google Guava](https://ifeve.com/google-guava/)
@@ -75,7 +79,7 @@ catalog: true
 	
 	* **Koloboke** 集合框架
 	
-	  可以**避免开销很大的装箱/拆箱操作，节省了原始类型装箱消耗的内存**。
+	  可以[**避免开销很大的装箱/拆箱操作，节省了原始类型装箱消耗的内存**](https://blog.csdn.net/qinyongye/article/details/81282961)。
 	
 	* **joda** 对时间的操作
 	

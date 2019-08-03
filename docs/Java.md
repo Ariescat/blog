@@ -107,20 +107,19 @@ catalog: true
 	
 * Atomic
 	* **AQS**（[AbstractQueuedSynchronizer](https://blog.51cto.com/14220760/2390586?source=dra)）
-	
-    > AQS框架借助于两个类：
+    
+	  > * AQS框架借助于两个类：
 	  >
-	  > - Unsafe（提供CAS操作）
+	  > 1. Unsafe（提供CAS操作）
+	  > 2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
 	  >
-	  > - [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
+	  > * 与Object类的wait/notify机制相比，park/unpark有两个优点：
 	  >
-    > 与Object类的wait/notify机制相比，park/unpark有两个优点：
-	  >
-	  >   - 以thread为操作对象更符合阻塞线程的直观定义
-	  >   - 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
-
-    * CountDownLatch、CyclicBarrier和Semaphore
-    * AbstractFuture (一旦调用get就会阻塞)
+      > 1. 以thread为操作对象更符合阻塞线程的直观定义
+	  > 2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
+	  
+	  * CountDownLatch、CyclicBarrier和Semaphore
+	  * AbstractFuture (一旦调用get就会阻塞)
 	
 * 并发容器
 	* CopyOnWriteArrayList、ConcurrentLinkedQueue ...

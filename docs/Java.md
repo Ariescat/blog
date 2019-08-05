@@ -179,6 +179,10 @@ catalog: true
 
 - 元空间（Metaspace）
 
+- Supplier接口和Consumer接口 （JDK8以下可用guava替代）
+
+  梦爷的FileLoader优化用到了Supplier
+
 ### Java 9
 
 * Reactive Streams

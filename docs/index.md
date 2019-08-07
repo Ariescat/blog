@@ -253,6 +253,12 @@ catalog: true
 	
 	  * [MySQL的日志系统](https://www.cnblogs.com/ivy-zheng/p/11094528.html)
 	
+	* 备份与恢复
+	
+	  * 冷备份，热备份
+	  * cp，mysqldump，lvm2快照，xtrabackup
+	  * [mysql误删数据快速恢复](https://www.cnblogs.com/-mrl/p/9959365.html)
+	  
 	* MySQL的 **Crash Safe**
 	
 	  * [Crash Safe和Binlog的关系](https://blog.csdn.net/shaochenshuo/article/details/73239949)

@@ -363,7 +363,14 @@ catalog: true
 * [TapTap - 发现好游戏](https://www.taptap.com/)
 
 ### 相关书籍
-* Java并发编程
-* SpringBoot SpringCloud
-* Netty
+
+* Java
+  * 《Java并发编程》《Effective Java》
+* Spring
+  * 《Spring 源码深度解析 第二版》《Spring实战》
+  * 《Spring Boot编程思想（核心篇）》![](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3621582485,3050859261&fm=58&bpow=800&bpoh=940)《Spring Boot实战》
+  * 《Spring 微服务实战》
+* Netty、Tomcat
+* MySQL
+  * 《高性能MySQL》
 * 分布式、大数据、人工智能、区块链

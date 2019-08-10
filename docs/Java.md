@@ -75,7 +75,6 @@ catalog: true
 		 > * 概念：**程序等待调用结果时的状态**
 		 > * 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
 		
-	
 	* 为什么要用 `close()` 关掉流？
 	
 	  有些资源 `GC` 回收不掉？
@@ -155,7 +154,12 @@ catalog: true
 
   * Guava——AbstractFuture
 
+### QA
+
+* static 会被GC回收吗？static的在内存中的存放位置？
+
 ### 其他
+
 * Reactor模式
 	* [Reactor模式详解](https://www.cnblogs.com/winner-0715/p/8733787.html)
 	* [高性能IO之Reactor模式](https://www.cnblogs.com/doit8791/p/7461479.html)

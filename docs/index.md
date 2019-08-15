@@ -83,6 +83,8 @@ catalog: true
 	
 	* **joda** 对时间的操作
 	
+	* Quartz
+	
 * Spring
 	* [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
 	* [Spring Cache 介绍](https://www.cnblogs.com/rollenholt/p/4202631.html)
@@ -106,6 +108,19 @@ catalog: true
   * 定时任务与时间轮算法
 
     * [HashedWheelTimer](http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/%E5%AE%9A%E6%97%B6%E5%99%A8%EF%BC%88Timer%EF%BC%89%E7%9A%84%E5%AE%9E%E7%8E%B0.html)
+    
+      > hashWheel定时器和Quartz的区别：
+      > 1）Quartz将定时任务分为任务和触发器，而hashWheel只有任务的概念
+      >
+      > 2）Quartz通过一个TreeSet对所有的触发器进行管理，而hashWheel通过一个hash轮来对所有的任务进行管理
+      >
+      > 3）Quartz能够非常方便的删除定时任务，而netty的hashWheel暂时没有删除任务的接口（除非自己实现一个hashWheel定时器）
+      >
+      > 4）Quartz有一个专门的调度线程对任务进行管理，任务执行有另外专门的线程池，而hashWheel用一个线程实现对任务的管理和任务的执行。
+      >
+      > 5）Quartz能够通过序列化，将定时任务保存在数据库，而hashWheel不能
+      >
+      > 总的来说，Quartz的功能相对强大，而hashWheel相对要轻量级一点。
 
 * web
 

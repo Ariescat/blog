@@ -9,16 +9,6 @@ catalog: true
 ---
 
 <h1>《技术图谱》</h1>
-### Github优秀项目
-* [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
-* [JCSprout](https://github.com/crossoverJie/JCSprout)
-* [JavaGuide](https://github.com/Snailclimb/JavaGuide)
-
-### 知识体系
-* [Github优秀java项目集合（中文版） - 涉及java所有的知识体系](https://blog.csdn.net/aa1215018028/article/details/80951389)
-* [伯乐在线](http://hao.jobbole.com/)
-* [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
-
 ### Java [➮详细](Java)
 * 代理
 	* JDK动态代理
@@ -324,7 +314,13 @@ catalog: true
 
 ### Android [➮详细](Android)
 
+### 工具
+
+- everything
+- wox（window快速搜索文件启动程序软件）
+
 ### 面经汇总
+
 * Java面经汇总
 	* [Java线程面试题 Top 50 - ImportNew](http://www.importnew.com/12773.html)
 	* [Java面试通关要点汇总集 - 掘金](https://juejin.im/post/5a94a8ca6fb9a0635c049e67?utm_source=gold_browser_extension#heading-1)
@@ -347,10 +343,18 @@ catalog: true
 	* [牛课堂系列算法讲座_牛客网](https://www.nowcoder.com/courses/6)
 	* [牛课堂算法精讲直播讲座（2016）_牛客网](https://www.nowcoder.com/live/11)
 
-### 工具
+### Github优秀项目
 
-- everything
-- wox（window快速搜索文件启动程序软件）
+- [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
+- [JCSprout](https://github.com/crossoverJie/JCSprout)
+- [JavaGuide](https://github.com/Snailclimb/JavaGuide)
+
+### 知识体系
+
+- [Github优秀java项目集合（中文版） - 涉及java所有的知识体系](https://blog.csdn.net/aa1215018028/article/details/80951389)
+- [伯乐在线](http://hao.jobbole.com/)
+- [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
+- [超强总结！Github上那些Java面试、学习相关仓库](https://mp.weixin.qq.com/s?__biz=Mzg3MjA4MTExMw==&mid=2247486161&idx=1&sn=b7bd2bffc50f5f64368d6e40c973619a&chksm=cef5f967f9827071badcdcf1ae8c162ad2176e44978ce3d8d138a94ae843e9232c1fb6d4ec36&scene=21#wechat_redirect)
 
 ### 职场
 

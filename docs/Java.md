@@ -208,6 +208,11 @@ catalog: true
 * 内存模型
 	* [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
 	* [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
+* HotSpot虚拟机
+  * 解释执行
+    * 逐条将字节码翻译成机器码并执行
+  * 即时编译（Just-in-time ，JIT）
+    * 将一个方法中包含的所有字节码编译成机器码后再执行。
 
 
 ### 性能调优

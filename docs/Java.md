@@ -16,7 +16,10 @@ catalog: true
   
   * [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html)
   
-* StringJoiner（Java 8中提供的可变字符串类）
+* string
+	
+	* [Java中的String有没有长度限制？](https://www.hollischuang.com/archives/3916)
+	* StringJoiner（Java 8中提供的可变字符串类）
 	
 * 集合
 	* 集合框架**Koloboke**
@@ -95,7 +98,9 @@ catalog: true
 
 * volatile 
 
-  [既生synchronized，何生volatile？！](https://yq.aliyun.com/articles/715256)
+  [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
+
+  [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
 
 * [线程池](http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/Executor%20%E4%B9%8B%20%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8F%8A%E5%AE%9A%E6%97%B6%E5%99%A8.html)  
 	
@@ -158,18 +163,24 @@ catalog: true
 
 ### QA
 
-* static 会被GC回收吗？static的在内存中的存放位置？
-
 * 计算机内存模型 与 Java内存模型
 
-* synchronized或其他锁的产生的阻塞，其和wait的区别？
+* GC
 
-* 当一个线程的时间片耗尽之后，其synchronized的代码会发生原子性问题吗？
+  * static 会被GC回收吗？static的在内存中的存放位置？
+  * 永久代不够会触发Full GC吗
 
-  线程1在执行`monitorenter`指令的时候，会对Monitor进行加锁，加锁后其他线程无法获得锁，除非线程1主动解锁。即使在执行过程中，由于某种原因，比如CPU时间片用完，线程1放弃了CPU，但是，他并没有进行解锁。而由于`synchronized`的锁是可重入的，下一个时间片还是只能被他自己获取到，还是会继续执行代码。直到所有代码执行完。这就保证了原子性。
+* 锁
 
-* JDK1.6后对锁进行的优化，轻量级锁，偏向锁，锁消除，适应性自旋锁，锁粗化 (自旋锁在1.4就有，只不过默认的是关闭的，jdk1.6是默认开启的)
-* 永久代不够会触发Full GC吗
+  * synchronized或其他锁的产生的阻塞，其和wait的区别？
+
+  * 当一个线程的时间片耗尽之后，其synchronized的代码会发生原子性问题吗？
+
+    线程1在执行`monitorenter`指令的时候，会对Monitor进行加锁，加锁后其他线程无法获得锁，除非线程1主动解锁。即使在执行过程中，由于某种原因，比如CPU时间片用完，线程1放弃了CPU，但是，他并没有进行解锁。而由于`synchronized`的锁是可重入的，下一个时间片还是只能被他自己获取到，还是会继续执行代码。直到所有代码执行完。这就保证了原子性。
+
+  * JDK1.6后对锁进行的优化，轻量级锁，偏向锁，锁消除，适应性自旋锁，锁粗化 (自旋锁在1.4就有，只不过默认的是关闭的，jdk1.6是默认开启的)
+
+* [[国内Java面试总是问StringBuffer，StringBuilder区别是啥？档次为什么这么低？](https://www.hollischuang.com/archives/3912)](https://www.hollischuang.com/archives/3912)
 
 ### 其他
 

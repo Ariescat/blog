@@ -36,8 +36,9 @@ catalog: true
 		
 		> 最近它有两个主要的更新——一个在Java 7u40版本中对于空map的共享的底层存储，以及在Java 8中将底层hash bucket链接成为**哈希树**（改进更差情况下的性能）。
 		
-	* jdk1.7中的线程安全问题 **(resize死循环)**
-	
+		* jdk1.7中的线程安全问题 **(resize死循环)**
+		* jdk8中是如何解决jdk7中的HashMap死循环的
+		
 	* DelayQueue
 	
 	  ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种

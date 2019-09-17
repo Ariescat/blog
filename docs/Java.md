@@ -224,10 +224,6 @@ catalog: true
 
 * ClassLoader
 	* [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
-* 热更
-	* [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
-	* [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
-  * [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
 * 局部变量表中的Slot
 * [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
 * 内存模型
@@ -238,6 +234,28 @@ catalog: true
     * 逐条将字节码翻译成机器码并执行
   * 即时编译（Just-in-time ，JIT）
     * 将一个方法中包含的所有字节码编译成机器码后再执行。
+
+### 热更新
+
+- java.lang.instrument
+
+  类重新定义，这是Instrumentation提供的基础功能之一，这个类很早就出了，redefineClasses这个方法可以更新方法级别的代码，但是不会触发一个类的初始化方法。
+
+  * [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
+
+  * [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
+
+  - [JVM源码分析之javaagent原理完全解读](https://www.imooc.com/article/42736)
+
+- 自定义类加载器
+
+  - [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
+
+- [Arthas的使用](https://www.cnblogs.com/orange911/p/10583245.html)
+
+- groovy
+
+  使用groovy类加载器重载java代码 重载的java文件可以直接使用源文件，无需编译为class
 
 ### 性能调优
 

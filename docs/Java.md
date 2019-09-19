@@ -269,8 +269,22 @@ catalog: true
 * [Arthas使用指南](https://segmentfault.com/a/1190000014618329?utm_source=tag-newest)  
 	Arthas 是基于 Greys 进行二次开发的全新在线诊断工具
 
+### Swing/Awt
 
-### 图形
+* EventQueue 与 AWTEvent
+
+  > from https://github.com/jzyong/game-server.git 
+  >
+  > game-tool/src/main/java/com/jzy/game/tool/db/DBTool.java
+  >
+  > `java.awt.EventQueue.invokeLater`
+
+  `EventQueue`里有一条`dispatchThread`线程，在`postEventPrivate`里检测为null则进行初始化，然后一直调用`pumpEvents`取出优先级最高的`AWTEvent`进行分发：
+
+  `eq.dispatchEvent(event);`
+
+  如`java.awt.Component#dispatchEventImpl`里会触发各种监听
+
 * [Polygon](https://segmentfault.com/a/1190000007736473)，区域超区校验
 
 

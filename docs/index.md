@@ -154,6 +154,7 @@ catalog: true
 ### 版本管理
 * Git
 	* [git 简明指南](http://www.runoob.com/manual/git-guide/)
+	* [团队中的 Git 实践](https://blog.csdn.net/M2l0ZgSsVc7r69eFdTj/article/details/100773494)
 
 ### 脚本语言
 * [Groovy](脚本语言#Groovy)

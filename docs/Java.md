@@ -287,7 +287,11 @@ catalog: true
 
 * [Polygon](https://segmentfault.com/a/1190000007736473)，区域超区校验
 
+### 代码格式
+
+* [Java 函数优雅之道](https://blog.csdn.net/yunqiinsight/article/details/99826098)
 
 ### 常遇的报错与坑
+
 * [ConcurrentModificationException](https://www.2cto.com/kf/201403/286536.html)
 * [疫苗：JAVA HASHMAP的死循环](https://coolshell.cn/articles/9606.html)

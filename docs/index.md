@@ -191,7 +191,9 @@ catalog: true
 	* [分布式事务](https://javatar.iteye.com/blog/981787)
 	* [分布式事务系列（2.1）分布式事务的概念](https://yq.aliyun.com/articles/39047)
 
+
 ### 数据结构
+
 * 堆：一个可以被看做一棵树的数组
 * 二叉树
 	* **遍历**
@@ -304,7 +306,14 @@ catalog: true
 	* [Nginx](Linux#Nginx)
 	* [Ngrok](Linux#Ngrok)
 
+### 其他技术
+
+* docker
+* ServiceMesh(服务网格)
+* 中台服务
+
 ### 前端
+
 * HTML/CSS/JS
 	* [HTML 教程](http://www.w3school.com.cn/html/index.asp)
 	* [ECMAScript 6入门](http://es6.ruanyifeng.com/#docs/let)

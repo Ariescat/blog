@@ -224,7 +224,18 @@ catalog: true
 	* [练习场 - ACM在线评测系统](http://acm.nyist.net/JudgeOnline/problemset.php)
 	* [Welcome To PKU JudgeOnline](http://poj.org/)
 
+### 编码解码
+
+* 字符编码
+
+  UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案
+
+* 字符集
+
+  ASCII、Unicode
+
 ### 网络
+
 * 协议
 	* TCP/IP
 		* [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)

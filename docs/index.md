@@ -77,14 +77,33 @@ catalog: true
 	
 * Spring
 	* [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
+	
+	  * AOP原理，ProxyFactory
+	
+	  * AOP中Pointcut，Advice 和 Advisor 三个概念 还有Advised
+	
+	    > Advised->在Spring中创建了AOP代理之后，就能够使用org.springframework.aop.framework.Advised接口对它们进行管理。 任何AOP代理都能够被转型为这个接口，不论它实现了哪些其它接口
+	    >
+	    > Advisor->类似使用Aspect的@Aspect注解的类
+	    >
+	    > Advice->@Before、@After、@AfterReturning、@AfterThrowing、@Around
+	    >
+	    > Pointcut->@Pointcut
+	
 	* [Spring Cache 介绍](https://www.cnblogs.com/rollenholt/p/4202631.html)
+	
 	* [Spring Webflux](https://www.jianshu.com/p/c029de45d23b) （与前端Flux架构名字相同）
+	
 	* Spring Data
+		
 		* [Spring Data JPA 简单查询--接口方法 - 如莲家园 - 博客园](https://www.cnblogs.com/rulian/p/6557471.html)
+		
 	* 框架整合
 		* [企业大型互联网分布式架构{Java分布式架构 dubbo+springmvc+mybatis+ehcach+redis }-IT未来-ITPUB博客](http://m.blog.itpub.net/31452580/viewspace-2148363/)
 		* [手把手教你从最基本的Java工程搭建SpringMVC+SpringDataJPA+Hibernate(含源码下载) - anxpp的博客 - CSDN博客](http://blog.csdn.net/anxpp/article/details/51415366)
+		
 	* Spring Boot
+	
 	* SpringCloud
 	
 * [Netty](https://www.jianshu.com/p/1a6d1a25e6cc)
@@ -175,9 +194,9 @@ catalog: true
 	
 	* [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
 * RPC
+	* 协议：thrift 等等
 	* JavaRMI
-		* [深究Java中的RMI底层原理](https://blog.csdn.net/sinat_34596644/article/details/52599688)
-	
+	  * [深究Java中的RMI底层原理](https://blog.csdn.net/sinat_34596644/article/details/52599688)
 	* HSF
 	  ​		阿里巴巴集团内部使用的分布式服务框架 High Speed Framework
 * Zookeeper

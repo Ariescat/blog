@@ -83,6 +83,10 @@ catalog: true
 	
 	  有些资源 `GC` 回收不掉？
 
+* class
+  
+  * Class的 getSuperclass与getGenericSuperclass
+
 ### 设计模式
 
 - [设计模式 - 菜鸟教程](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
@@ -234,6 +238,9 @@ catalog: true
     * 逐条将字节码翻译成机器码并执行
   * 即时编译（Just-in-time ，JIT）
     * 将一个方法中包含的所有字节码编译成机器码后再执行。
+* 逃逸分析
+  * [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
+  * [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
 
 ### 热更新
 

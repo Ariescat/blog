@@ -42,6 +42,8 @@ catalog: true
 	* DelayQueue
 	
 	  ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种
+	  
+	* WeakHashMap
 	
 * 代理
 	按照代理的创建时期，代理类可以分为两种。 
@@ -86,6 +88,43 @@ catalog: true
 * class
   
   * Class的 getSuperclass与getGenericSuperclass
+
+### 创建和销毁对象
+
+- 单例 与 序列化
+
+  一般来说，一个类实现了 Serializable接口，我们就可以把它往内存地写再从内存里读出而"组装"成一个跟原来一模一样的对象。不过当序列化遇到单例时，这里边就有了个问题：从内存读出而组装的对象破坏了单例的规则。单例是要求一个JVM中只有一个类对象的，而现在通过反序列化，一个新的对象克隆了出来。
+
+  解决方案：加上readResolve()方法
+
+  ```java
+  private Object readResolve() throws ObjectStreamException {
+         // instead of the object we're on,
+         // return the class variable INSTANCE
+        return INSTANCE;
+  }
+  ```
+
+* [WeakReference](https://www.jianshu.com/p/964fbc30151a)
+
+  看ThreadLocal源码的时候，其中嵌套类ThreadLocalMap中的Entry继承了WeakReference，为了能搞清楚ThreadLocal，只能先了解下了WeakReference：
+
+  > WeakReference如字面意思，弱引用， 当**一个对象**仅仅被 WeakReference（弱引用）指向, 而没有任何其他strong reference（强引用）指向的时候, 如果这时GC运行, 那么**这个对象**就会被回收，不论当前的内存空间是否足够，这个对象都会被回收。
+  >
+  > 注意：回收的是WeakReference引用的对象！若存在ReferenceQueue队列，WeakReference本身会入队，但此时get()==null
+  * [WeakHashMap](https://blog.csdn.net/u012420654/article/details/51793909)
+
+  * SoftReference 若清楚了上面的原理，[SoftReference](https://www.jianshu.com/p/8c634f10ed1a)只是**生命周期**变成**内存将要被耗尽的时候**。
+
+  * guava cache：
+
+    ```java
+    CacheBuilder.newBuilder().softValues().build()
+    ```
+
+    当然 softValues()可以替换成weakKeys() / weakValues() ...
+
+    实现原理可具体看 com.google.common.cache.LocalCache.Strength
 
 ### 设计模式
 

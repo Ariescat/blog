@@ -4,15 +4,19 @@ title: Android
 date: 2019-02-01
 header-img: "img/post-bg-rwd.jpg"
 catalog: true
+
 ---
 
 ### 图表
+
 - [hellocharts](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1107/1930.html)
 
 ### Gradle
+
 - [Gradle Distributions](https://services.gradle.org/distributions)
 
 ### Material Design
+
 - [Material Design中文版](http://design.1sters.com/)
 - [Material Design： NavigationView FlaotingActionBar SnackBar的使用，navigationview_Android教程](http://www.bkjia.com/Androidjc/1015788.html)
 - [Navigation Drawer](https://developer.android.com/training/implementing-navigation/nav-drawer.html)
@@ -20,6 +24,7 @@ catalog: true
 - [Design Support Library完全使用实例 - OPEN 开发经验库](http://www.open-open.com/lib/view/open1433385856119.html#articleHeader0)
 
 ### 其他
+
 - [AndroidDevTools](http://www.androiddevtools.cn/)
 - [App Code](http://appxcode.com/index.php?con=index&act=index)
 - [eoe Android开发者社区_Android开发论坛_Android开发_安卓开发论坛_安卓论坛 - Powered by Discuz!](http://www.eoeandroid.com/portal.php)

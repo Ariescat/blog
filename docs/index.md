@@ -228,11 +228,21 @@ catalog: true
 
 ### 算法
 * 算法思想
+	
 	* [算法洗脑系列（8篇）——第一篇 递推思想 - 一线码农 - 博客园](http://www.cnblogs.com/huangxincheng/archive/2011/12/29/2305525.html)
+	
 * 常见算法
+	
+	* 排序
+		
+		希尔排序
+		
+		堆排序
+		
 	* KPM 算法
-		* [kpm算法 - u012361418的博客 - CSDN博客](http://blog.csdn.net/u012361418/article/details/46125439)
-		* [KMP算法及优化 - 疯狂的爱因斯坦 - SegmentFault](https://segmentfault.com/a/1190000007066358#articleHeader4)
+	  * [kpm算法 - u012361418的博客 - CSDN博客](http://blog.csdn.net/u012361418/article/details/46125439)
+	  * [KMP算法及优化 - 疯狂的爱因斯坦 - SegmentFault](https://segmentfault.com/a/1190000007066358#articleHeader4)
+	
 * 五大常用算法：贪婪算法，动态规划算法，分治算法，回溯算法以及分支限界算法	
 
 * 练习平台
@@ -330,6 +340,7 @@ catalog: true
 * docker
 * ServiceMesh(服务网格)
 * 中台服务
+* 分布式、大数据、人工智能、区块链
 
 ### 前端
 
@@ -432,4 +443,3 @@ catalog: true
 * Netty、Tomcat
 * MySQL
   * 《高性能MySQL》
-* 分布式、大数据、人工智能、区块链

@@ -10,7 +10,6 @@ catalog: true
 ---
 
 <h1>《技术图谱》</h1>
-
 ### Java [➮详细](Java)
 
 - 代理
@@ -72,6 +71,10 @@ catalog: true
   - [Google Guava](https://ifeve.com/google-guava/)
 
     集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、**并发库** [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等
+
+  - **Caffeine** 来自未来的缓存
+
+    Caffeine是基于JAVA 1.8 Version的高性能缓存库。Caffeine提供的内存缓存使用参考Google guava的API。Caffeine是基于Google Guava Cache设计经验上改进的成果。
 
   - **Koloboke** 集合框架
 
@@ -165,8 +168,8 @@ catalog: true
     - [基于注解的配置 - Spring-Data-Elasticsearch](https://es.yemengying.com/5/5.1/5.1.2.html)
 
 - RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/):  
-  " a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  
-  （一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
+  
+  " a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  （一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
 
 ### 编程思想
 

@@ -227,6 +227,13 @@ catalog: true
   - [分布式事务](https://javatar.iteye.com/blog/981787)
   - [分布式事务系列（2.1）分布式事务的概念](https://yq.aliyun.com/articles/39047)
 
+### 其他技术
+
+- docker
+- ServiceMesh(服务网格)
+- 中台服务
+- 分布式、大数据、人工智能、区块链
+
 ### 数据结构
 
 - 堆：一个可以被看做一棵树的数组
@@ -347,6 +354,43 @@ catalog: true
   - memcache
   - Elasticsearch
 
+### C/C++
+
+> 在学习skynet源码的时候，需要看C和lua，因此这里记一下C相关的用法
+
+- [动态申请二维数组](https://blog.csdn.net/qq_41822235/article/details/81142107)
+
+  - 利用一个**二级指针**来实现
+
+    ```c
+    //5行2列的数组
+    int **p = (int **)malloc(sizeof(int *) * 5);
+    for (int i = 0; i < 5; ++i) {
+        p[i] = (int *)malloc(sizeof(int) * 2);
+    }
+    //输出数组每个元素地址
+  printf("%p\n", &p[i][j]);
+    ```
+  
+  - 利用**数组指针**来实现
+  
+    ```c
+    //申请一个5行2列的整型数组
+    int(*p)[2] = (int(*)[2])malloc(sizeof(int) * 5 * 2);
+    //输出数组每个元素地址
+    printf("%p\n", &p[i][j]);
+    ```
+  
+  - 利用**一维数组**来模拟二维数组
+  
+    ```c
+    int *p = (int *)malloc(sizeof(int) * 5 * 2);
+    //输出数组每个元素地址
+    printf("%p\n", &p[i*2+j]);
+    ```
+  
+    > `malloc`返回的其实是`void *`，所以其需要强转，`void *`的用处还有`memcpy`，`memset`等
+
 ### Linux [➮详细](Linux)
 
 - Linux
@@ -355,13 +399,6 @@ catalog: true
   - [Shadowsocks](Linux#Shadowsocks)
   - [Nginx](Linux#Nginx)
   - [Ngrok](Linux#Ngrok)
-
-### 其他技术
-
-- docker
-- ServiceMesh(服务网格)
-- 中台服务
-- 分布式、大数据、人工智能、区块链
 
 ### 前端
 

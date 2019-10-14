@@ -57,9 +57,8 @@ catalog: true
 
   > JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。
 
-  - [java动态代理（JDK和cglib）](http://www.cnblogs.com/jqyp/archive/2010/08/20/1805041.html)
-  - [Cglib及其基本使用](https://www.cnblogs.com/xrq730/p/6661692.html)
-
+  [Cglib 与 JDK动态代理](https://my.oschina.net/xiaolyuh/blog/3108376)
+  
 - IO
 
   - IO流
@@ -356,3 +355,4 @@ catalog: true
 
 - [ConcurrentModificationException](https://www.2cto.com/kf/201403/286536.html)
 - [疫苗：JAVA HASHMAP的死循环](https://coolshell.cn/articles/9606.html)
+

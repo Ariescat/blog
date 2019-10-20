@@ -7,9 +7,40 @@ author: DrugBean
 header-img: "img/post-bg-kuaidi.jpg"
 catalog: true
 
+
+
 ---
 
 <h1>《技术图谱》</h1>
+
+### Github项目
+
+- awesome
+  - [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
+  - [JCSprout](https://github.com/crossoverJie/JCSprout)
+  - [JavaGuide](https://github.com/Snailclimb/JavaGuide)
+- 开源项目
+  - 天堂2 l2jserver2 [https://github.com/Rogiel/l2jserver2](https://github.com/Rogiel/l2jserver2)
+  - 魔兽世界server TrinityCore [https://github.com/TrinityCore/TrinityCore](https://github.com/TrinityCore/TrinityCore)
+  - tinyHeart [https://github.com/luckykun/tinyHeart](https://github.com/luckykun/tinyHeart)
+- Java高并发
+  - [seckill](https://github.com/liyifeng1994/seckill)
+
+### 知识体系
+
+- [Github优秀java项目集合（中文版） - 涉及java所有的知识体系](https://blog.csdn.net/aa1215018028/article/details/80951389)
+- [伯乐在线](http://hao.jobbole.com/)
+- [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
+- [超强总结！Github上那些Java面试、学习相关仓库](https://mp.weixin.qq.com/s?__biz=Mzg3MjA4MTExMw==&mid=2247486161&idx=1&sn=b7bd2bffc50f5f64368d6e40c973619a&chksm=cef5f967f9827071badcdcf1ae8c162ad2176e44978ce3d8d138a94ae843e9232c1fb6d4ec36&scene=21#wechat_redirect)
+
+### 学习
+
+- [慕课网手记](http://www.imooc.com/article)
+- [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
+- [PHP 教程 - 菜鸟教程](http://www.runoob.com/php/php-tutorial.html)
+- unity3d
+  - 愤怒的小鸟 [https://www.bilibili.com/video/av35565116/](https://www.bilibili.com/video/av35565116/)
+
 ### Java [➮详细](Java)
 
 - 代理
@@ -168,7 +199,7 @@ catalog: true
     - [基于注解的配置 - Spring-Data-Elasticsearch](https://es.yemengying.com/5/5.1/5.1.2.html)
 
 - RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/):  
-  
+
   " a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  （一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
 
 ### 编程思想
@@ -176,6 +207,34 @@ catalog: true
 - Reative编程（响应式编程）
 - **AI**
   - 状态机 行为树
+
+### 分布式技术
+
+- IO操作
+  - [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
+- RPC
+  - 协议：thrift 等等
+  - JavaRMI
+    - [深究Java中的RMI底层原理](https://blog.csdn.net/sinat_34596644/article/details/52599688)
+  - HSF
+    阿里巴巴集团内部使用的分布式服务框架 High Speed Framework
+- Zookeeper
+  - [Zookeeper的功能以及工作原理](https://www.cnblogs.com/felixzh/p/5869212.html)
+  - [Zookeeper的Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)
+  - [zookeeper中的ZAB协议理解](https://blog.csdn.net/junchenbb0430/article/details/77583955)
+- 分布式事务
+  - [分布式事务与一致性算法Paxos & raft & zab](https://blog.csdn.net/followmyinclinations/article/details/52870418)
+  - atomikos:[4.0 atomikos JTA/XA全局事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/386)
+  - xaresource
+  - [分布式事务](https://javatar.iteye.com/blog/981787)
+  - [分布式事务系列（2.1）分布式事务的概念](https://yq.aliyun.com/articles/39047)
+
+### 其他技术
+
+- docker
+- ServiceMesh(服务网格)
+- 中台服务
+- 分布式、大数据、人工智能、区块链
 
 ### 构建工具
 
@@ -205,34 +264,6 @@ catalog: true
   - [Gradle：新一代自动化构建工具](http://hao.jobbole.com/gradle/)
   - [Groovy DSL 百度搜索](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=Groovy DSL&tn=98010089_dg&ch=4)
   - [gradle dsl](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=gradle dsl&tn=98010089_dg&ch=5)
-
-### 分布式
-
-- IO操作
-  - [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
-- RPC
-  - 协议：thrift 等等
-  - JavaRMI
-    - [深究Java中的RMI底层原理](https://blog.csdn.net/sinat_34596644/article/details/52599688)
-  - HSF
-    阿里巴巴集团内部使用的分布式服务框架 High Speed Framework
-- Zookeeper
-  - [Zookeeper的功能以及工作原理](https://www.cnblogs.com/felixzh/p/5869212.html)
-  - [Zookeeper的Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)
-  - [zookeeper中的ZAB协议理解](https://blog.csdn.net/junchenbb0430/article/details/77583955)
-- 分布式事务
-  - [分布式事务与一致性算法Paxos & raft & zab](https://blog.csdn.net/followmyinclinations/article/details/52870418)
-  - atomikos:[4.0 atomikos JTA/XA全局事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/386)
-  - xaresource
-  - [分布式事务](https://javatar.iteye.com/blog/981787)
-  - [分布式事务系列（2.1）分布式事务的概念](https://yq.aliyun.com/articles/39047)
-
-### 其他技术
-
-- docker
-- ServiceMesh(服务网格)
-- 中台服务
-- 分布式、大数据、人工智能、区块链
 
 ### 数据结构
 
@@ -369,26 +400,26 @@ catalog: true
         p[i] = (int *)malloc(sizeof(int) * 2);
     }
     //输出数组每个元素地址
-  printf("%p\n", &p[i][j]);
+    printf("%p\n", &p[i][j]);
     ```
-  
+
   - 利用**数组指针**来实现
-  
+
     ```c
     //申请一个5行2列的整型数组
     int(*p)[2] = (int(*)[2])malloc(sizeof(int) * 5 * 2);
     //输出数组每个元素地址
     printf("%p\n", &p[i][j]);
     ```
-  
+
   - 利用**一维数组**来模拟二维数组
-  
+
     ```c
     int *p = (int *)malloc(sizeof(int) * 5 * 2);
     //输出数组每个元素地址
     printf("%p\n", &p[i*2+j]);
     ```
-  
+
     > `malloc`返回的其实是`void *`，所以其需要强转，`void *`的用处还有`memcpy`，`memset`等
 
 ### Linux [➮详细](Linux)
@@ -399,6 +430,8 @@ catalog: true
   - [Shadowsocks](Linux#Shadowsocks)
   - [Nginx](Linux#Nginx)
   - [Ngrok](Linux#Ngrok)
+
+### Android [➮详细](Android)
 
 ### 前端
 
@@ -421,12 +454,14 @@ catalog: true
   - [给2019前端的5个建议](https://juejin.im/post/5c617c576fb9a049e93d33a4)
   - [浏览器原理系列10篇正式完结](https://juejin.im/post/5c6d3e026fb9a04a0d576f98)
 
-### Android [➮详细](Android)
-
 ### 工具
 
 - everything
 - wox（window快速搜索文件启动程序软件）
+
+### 职场
+
+- [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
 
 ### 面经汇总
 
@@ -452,24 +487,7 @@ catalog: true
   - [牛课堂系列算法讲座_牛客网](https://www.nowcoder.com/courses/6)
   - [牛课堂算法精讲直播讲座（2016）_牛客网](https://www.nowcoder.com/live/11)
 
-### Github优秀项目
-
-- [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
-- [JCSprout](https://github.com/crossoverJie/JCSprout)
-- [JavaGuide](https://github.com/Snailclimb/JavaGuide)
-
-### 知识体系
-
-- [Github优秀java项目集合（中文版） - 涉及java所有的知识体系](https://blog.csdn.net/aa1215018028/article/details/80951389)
-- [伯乐在线](http://hao.jobbole.com/)
-- [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
-- [超强总结！Github上那些Java面试、学习相关仓库](https://mp.weixin.qq.com/s?__biz=Mzg3MjA4MTExMw==&mid=2247486161&idx=1&sn=b7bd2bffc50f5f64368d6e40c973619a&chksm=cef5f967f9827071badcdcf1ae8c162ad2176e44978ce3d8d138a94ae843e9232c1fb6d4ec36&scene=21#wechat_redirect)
-
-### 职场
-
-- [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
-
-### 附加博客
+### 博客
 
 - 年度报告
   - [阿里研究院：2016年校园快递行业发展报告](http://www.199it.com/archives/530127.html)
@@ -477,13 +495,6 @@ catalog: true
 - 其他
   - [究竟怎样写代码才算是好代码 - CSDN博客](http://blog.csdn.net/u013970991/article/details/52609083)
   - [成为Java顶尖程序员 ，看这11本书就够了 - CSDN博客](https://blog.csdn.net/u012410733/article/details/51869105)
-
-### 学习平台
-
-- [W3Cschool 在线教程 - 学技术，从w3cschool开始!](http://www.w3cschool.cn/)
-- [慕课网手记](http://www.imooc.com/article)
-- [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
-- [PHP 教程 - 菜鸟教程](http://www.runoob.com/php/php-tutorial.html)
 
 ### 游戏相关
 

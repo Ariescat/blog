@@ -94,6 +94,8 @@ catalog: true
 - class
 
   - Class的 getSuperclass与getGenericSuperclass
+  
+- Class.forName和ClassLoader的区别
 
 ### 创建和销毁对象
 

@@ -3,7 +3,7 @@ layout: docs
 title: "Awesome"
 subtitle: "\"全栈之路 技术体系汇总（不断收集整理中...）\""
 date: 2019-01-25
-author: DrugBean
+author: Ariescat
 header-img: "img/post-bg-kuaidi.jpg"
 catalog: true
 
@@ -329,7 +329,7 @@ catalog: true
     - [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)
   - http
     - [彻底掌握网络通信](https://blog.csdn.net/yi_master/article/details/82863949) (httpclien，asynchttpclient，HttpURLConnection，OkHttp3)
-    - 一次经典的错误：https://github.com/drugbean/lqz-test/blob/master/base-test/src/main/http/http.log
+    - 一次经典的错误：https://github.com/Ariescat/lqz-test/blob/master/base-test/src/main/http/http.log
 - 零拷贝
 
 ### 数据库

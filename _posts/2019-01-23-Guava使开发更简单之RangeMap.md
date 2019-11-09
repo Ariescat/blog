@@ -3,7 +3,7 @@ layout:     post
 title:      Guava使开发更简单之RangeMap
 subtitle:   "\"在范围内取值，RangeMap简直不要太方便~~\""
 date:       2019-01-23
-author:     DrugBean
+author:     Ariescat
 header-img: img/post-bg-debug.png
 catalog: true
 tags:
@@ -69,4 +69,4 @@ null
 ## 后记
 以上是Guava之RangeMap学习小结的内容。
 
-—— DrugBean 记于 2019.01.23
+—— Ariescat 记于 2019.01.23

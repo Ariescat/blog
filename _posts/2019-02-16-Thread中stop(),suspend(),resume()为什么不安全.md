@@ -3,7 +3,7 @@ layout:     post
 title:      Thread中stop(),suspend(),resume()为什么不安全
 subtitle:   "\"都说这些api不安全，可知道为什么不安全吗\""
 date:       2019-02-16
-author:     DrugBean
+author:     Ariescat
 header-img: img/post-bg-coffee2.jpg
 catalog: true
 tags:

@@ -3,7 +3,7 @@ layout:     post
 title:      List#subList和Spring#split的使用陷阱
 subtitle:   "\"使用不当会引起内存泄漏！！\""
 date:       2019-02-15
-author:     DrugBean
+author:     Ariescat
 header-img: img/home-bg-o.jpg
 catalog: true
 tags:

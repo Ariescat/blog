@@ -1,13 +1,13 @@
 # Site settings
-title: DrugBean Blog
-SEOTitle: 毒豆芽的博客 | DrugBean Blog
+title: Ariescat Blog
+SEOTitle: 我是一只白羊座的猫 | Ariescat Blog
 header-img: img/post-bg-desk.jpg
 email: 1275563227@qq.com
 description: "Every failure is leading towards success."
-keyword: "Blog, 毒豆芽的博客, Java, 游戏"
+keyword: "Blog, 我是一只白羊座的猫, Java, 游戏"
 url: "https://drugbean.club/"               # your host, for absolute URL
 baseurl: ""                                 # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/drugbean/drugbean.github.io.git" # you code repository like
+github_repo: "https://github.com/Ariescat/ariescat.github.io.git" # you code repository like
 
 # Sidebar settings
 sidebar: true                               # whether or not using Sidebar.
@@ -18,13 +18,13 @@ sidebar-avatar: /img/about-BY-gentle.jpg    # use absolute URL, seeing it's used
 
 # SNS settings
 RSS: false
-#weibo_username:     drugbean
+#weibo_username:     ariescat
 jianshu_username:   39035eb3096b
 csdn_username:      PingXiaoGai
-#zhihu_username:     drugbean
-github_username:    drugbean
-#facebook_username:  drugbean
-#twitter_username:   drugbean
+#zhihu_username:     ariescat
+github_username:    Ariescat
+#facebook_username:  ariescat
+#twitter_username:   ariescat
 
 
 
@@ -64,9 +64,9 @@ gitalk:
   enable: true                  #是否开启Gitalk评论
   clientID: 1b762e3fb7d766fefa60                            #生成的clientID
   clientSecret: c011a01671ccb88ba8640c4e488014b12ca41cbf    #生成的clientSecret
-  repo: drugbean.github.io      #仓库名称
-  owner: drugbean               #github用户名
-  admin: drugbean
+  repo: ariescat.github.io      #仓库名称
+  owner: ariescat               #github用户名
+  admin: ariescat
   distractionFreeMode: true     #是否启用类似FB的阴影遮罩
 
 

@@ -3,13 +3,13 @@
 
 ## 前言
 
-DrugBean 的 Blog 就这么开通了。
+Ariescat 的 Blog 就这么开通了。
 
 本来打算在年前完成 Blog 的搭建，不曾料想踩了很多坑。。。
 
 [跳过废话，直接看技术实现 ](#build) 
 
-2019 年，DrugBean Blog 总算是搭建好了。
+2019 年，Ariescat Blog 总算是搭建好了。
 
 最开始写博客是在[CSDN](https://blog.csdn.net/PingXiaoGai)这个平台上，CSDN确实不错，支持markdown在线编辑。
 
@@ -44,7 +44,7 @@ DrugBean 的 Blog 就这么开通了。
 在Jekyll的搭建上，主题我直接 Downlosd 了 [Hux的博客主题](https://huangxuan.me/) 的进行修改，简单粗暴，不过遇到了很多坑😂，好在这些坑最后都填完了。。。
 
 比如CNAME文件，绑定自己的域名的时候，这煞笔邮件又发过来了，说
-> Your CNAME file was ignored because this repository is automatically hosted from drugbean.github.io already. 
+> Your CNAME file was ignored because this repository is automatically hosted from Ariescat.github.io already. 
 
 Jekyll的[安装](https://segmentfault.com/a/1190000010195733)。本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了，~~后来手动改成了我大淘宝的镜像源才成功~~，淘宝的源已经[停止维护](https://ruby.taobao.org/)，换成了OSChina的源 `https://gems.ruby-china.com/`。
 
@@ -67,6 +67,6 @@ Jekyll的[安装](https://segmentfault.com/a/1190000010195733)。本地调试环
 
 * qiubaiying 提供的的 [Blog 主题](https://github.com/qiubaiying/qiubaiying.github.io)
 
-—— DrugBean 后记于 2019.1
+—— Ariescat.github.io 后记于 2019.1
 
 

@@ -3,7 +3,7 @@ layout:     post
 title:      Java安全管理器SecurityManager
 subtitle:   "\"在运行阶段检查需要保护的资源的访问权限及其它规定的操作权限，保护系统免受恶意操作攻击\""
 date:       2019-01-28
-author:     DrugBean
+author:     Ariescat
 header-img: img/post-bg-kuaidi.jpg
 catalog: true
 tags:
@@ -65,4 +65,4 @@ javax.sound.sampled.AudioPermission --音频系统资源的访问权限
 
 - [Java安全管理器——SecurityManager](https://blog.csdn.net/hjh200507609/article/details/50330773)
 
-—— DrugBean 记于 2019.01.28
+—— Ariescat 记于 2019.01.28

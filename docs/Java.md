@@ -97,6 +97,16 @@ catalog: true
   
 - Class.forName和ClassLoader的区别
 
+  都可用来对类进行加载。
+
+  不同：
+
+  1）class.forName()除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块，还会执行给静态变量赋值的静态方法
+
+  2）classLoader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容,只有在newInstance才会去执行static块。
+  
+- 使用Class.getResource和ClassLoader.getResource方法获取文件路径
+
 ### 创建和销毁对象
 
 - 单例 与 序列化

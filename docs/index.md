@@ -12,7 +12,6 @@ catalog: true
 ---
 
 <h1>《技术图谱》</h1>
-
 ### Github项目
 
 - awesome
@@ -430,6 +429,8 @@ catalog: true
   - [Shadowsocks](Linux#Shadowsocks)
   - [Nginx](Linux#Nginx)
   - [Ngrok](Linux#Ngrok)
+- Windows
+  - hiberfil.sys和pagefile.sys占用系统空间，其分别是休眠空间和虚拟内存。
 
 ### Android [➮详细](Android)
 

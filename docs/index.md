@@ -421,7 +421,7 @@ catalog: true
 
     > `malloc`返回的其实是`void *`，所以其需要强转，`void *`的用处还有`memcpy`，`memset`等
 
-### Linux [➮详细](Linux)
+### 操作系统 [➮详细](Linux)
 
 - Linux
   - [CentOS7简单使用](Linux#CentOS7)
@@ -431,6 +431,7 @@ catalog: true
   - [Ngrok](Linux#Ngrok)
 - Windows
   - hiberfil.sys和pagefile.sys占用系统空间，其分别是休眠空间和虚拟内存。
+- 虚拟内存和swap分区
 
 ### Android [➮详细](Android)
 

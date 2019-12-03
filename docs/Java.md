@@ -308,6 +308,11 @@ catalog: true
   - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
   - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
 
+* GC 日志解读
+  * [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
+  * [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
+  * [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
+
 ### 热更新
 
 - java.lang.instrument

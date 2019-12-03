@@ -204,8 +204,10 @@ catalog: true
 ### 编程思想
 
 - Reative编程（响应式编程）
-- **AI**
-  - 状态机 行为树
+- 领域驱动设计
+  - [领域驱动设计在互联网业务开发中的实践](https://tech.meituan.com/2017/12/22/ddd-in-practice.html)
+
+  - [美团DDD实践 示例项目](https://github.com/1987539447/draw-lottery)
 
 ### 分布式技术
 
@@ -230,6 +232,8 @@ catalog: true
 
 ### 其他技术
 
+- **AI**
+  - 状态机 行为树
 - docker
 - ServiceMesh(服务网格)
 - 中台服务
@@ -242,6 +246,8 @@ catalog: true
   - [大家都是怎样处理Gradle中的这个文件下载慢的问题的？ - 知乎](https://www.zhihu.com/question/37810416)
 - Maven
   - [如何将 Java 项目转换成 Maven 项目 - 船长&amp;CAP - 博客园](https://www.cnblogs.com/liuning8023/p/4726822.html)
+
+* Jenkins
 
 ### 版本管理
 
@@ -380,6 +386,8 @@ catalog: true
 - NoSQL
 
   - Redis
+    - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
+    - 《redis设计与实现(第二版)》
   - MongoDB
   - memcache
   - Elasticsearch

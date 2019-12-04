@@ -292,6 +292,8 @@ catalog: true
 
 ### JVM
 
+> JVM很难，网上错误的观点很多
+
 - ClassLoader
   - [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
 - 局部变量表中的Slot
@@ -308,10 +310,22 @@ catalog: true
   - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
   - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
 
-* GC 日志解读
+* GC性能优化，日志解读
   * [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
+  
   * [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
+  
+    * CMS之promotion failed & concurrent mode failure
+  
+      > 疑问?
+      >
+      > 然后CMS的并发周期就会被一次Full GC代替，退回到Serial Old收集器进行回收，这是一次长Stop The World
+  
+      [关于CMS垃圾回收失败是不是进行FULL GC问题的记录](https://www.jianshu.com/p/843782af87b1)
+  
   * [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
+  
+  * Full GC日志解读
 
 ### 热更新
 

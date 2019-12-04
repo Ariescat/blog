@@ -304,7 +304,11 @@ catalog: true
     - [kpm算法 - u012361418的博客 - CSDN博客](http://blog.csdn.net/u012361418/article/details/46125439)
     - [KMP算法及优化 - 疯狂的爱因斯坦 - SegmentFault](https://segmentfault.com/a/1190000007066358#articleHeader4)
 
-- 五大常用算法：贪婪算法，动态规划算法，分治算法，回溯算法以及分支限界算法	
+- 五大常用算法：贪婪算法，动态规划算法，分治算法，回溯算法以及分支限界算法
+
+- 启发式算法
+
+  - 遗传算法（GA）
 
 - 练习平台
 

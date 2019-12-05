@@ -311,6 +311,17 @@ catalog: true
   - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
 
 * GC性能优化，日志解读
+  
+  * 可能导致FullGC的原因有以下几种。
+  
+    > 1. 老年代空间不足。
+    > 2. 永生代或者元数据空间不足。
+    > 3. 程序执行了System.gc() //建议jvm执行fullgc，并不一定会执行。
+    > 4. CMS GC时出现promotion failed和concurrent mode failure
+    > 5. YoungGC时晋升老年代的内存平均值大于老年代剩余空间（执行minor gc的时候进行的一系列检查）
+    > 6. 有连续的大对象需要分配
+    > 7. 执行了jmap -histo:live pid命令 //这个会立即触发fullgc
+  
   * [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
   
   * [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
@@ -324,6 +335,8 @@ catalog: true
       [关于CMS垃圾回收失败是不是进行FULL GC问题的记录](https://www.jianshu.com/p/843782af87b1)
   
   * [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
+  
+  * CMS收集器和G1收集器 他们的优缺点对比
   
   * Full GC日志解读
 

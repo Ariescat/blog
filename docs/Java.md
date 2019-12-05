@@ -5,96 +5,97 @@ date: 2019-02-01
 header-img: "img/post-bg-rwd.jpg"
 catalog: true
 
+
 ---
 
-### 思想是灵魂,实现是形式
+
+
+> **思想是灵魂,实现是形式**
 
 
 
-### 基础
+### String
 
-- 语法糖
+- [Java中的String有没有长度限制？](https://www.hollischuang.com/archives/3916)
+  - 数组呢？
+- StringJoiner（Java 8中提供的可变字符串类）
 
-  - [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html)
+### 集合
 
-- string
+- 集合框架**Koloboke**
 
-  - [Java中的String有没有长度限制？](https://www.hollischuang.com/archives/3916)
-  - StringJoiner（Java 8中提供的可变字符串类）
+  > Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
 
-- 集合
+- **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
 
-  - 集合框架**Koloboke**
+- **红黑树** TreeMap、TreeSet
 
-    > Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
+- HashMap
 
-  - **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
+  - [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
 
-  - **红黑树** TreeMap、TreeSet
+  > 最近它有两个主要的更新——一个在Java 7u40版本中对于空map的共享的底层存储，以及在Java 8中将底层hash bucket链接成为**哈希树**（改进更差情况下的性能）。
 
-  - HashMap
+  - jdk1.7中的线程安全问题 **(resize死循环)**
+  - jdk8中是如何解决jdk7中的HashMap死循环的
 
-    - [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
+- DelayQueue
 
-    > 最近它有两个主要的更新——一个在Java 7u40版本中对于空map的共享的底层存储，以及在Java 8中将底层hash bucket链接成为**哈希树**（改进更差情况下的性能）。
+  ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种
 
-    - jdk1.7中的线程安全问题 **(resize死循环)**
-    - jdk8中是如何解决jdk7中的HashMap死循环的
+- WeakHashMap
 
-  - DelayQueue
+### 代理
 
-    ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种
+按照代理的创建时期，代理类可以分为两种。 
 
-  - WeakHashMap
+> 静态代理：由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
+> 动态代理：在程序运行时，运用反射机制动态创建而成。
 
-- 代理
-  按照代理的创建时期，代理类可以分为两种。 
+Cglib动态代理 
 
-  > 静态代理：由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
-  > 动态代理：在程序运行时，运用反射机制动态创建而成。
+> JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。
 
-  Cglib动态代理 
+[Cglib 与 JDK动态代理](https://my.oschina.net/xiaolyuh/blog/3108376)
 
-  > JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。
+### IO
 
-  [Cglib 与 JDK动态代理](https://my.oschina.net/xiaolyuh/blog/3108376)
-  
-- IO
+- IO流
 
-  - IO流
+  - [管道流(Piped Stream)](https://www.cnblogs.com/skywang12345/p/io_04.html)
+  - RandomAccessFile, java.io包中是一个特殊的类, 既可以读文件，也可以写文件。
 
-    - [管道流(Piped Stream)](https://www.cnblogs.com/skywang12345/p/io_04.html)
-    - RandomAccessFile, java.io包中是一个特殊的类, 既可以读文件，也可以写文件。
+- Path/Files
 
-  - Path/Files
+  - [IO操作你还在用File吗，该拥抱Path和Files了](https://www.sohu.com/a/132459571_654433)
 
-    - [IO操作你还在用File吗，该拥抱Path和Files了](https://www.sohu.com/a/132459571_654433)
+- **Reactor模式**
 
-  - **Reactor模式**
+- IO操作
 
-  - IO操作
+  - [网络IO中的同步、异步、阻塞和非阻塞](https://drugbean.club/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
+  - [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
 
-    - [网络IO中的同步、异步、阻塞和非阻塞](https://drugbean.club/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
-    - [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
+  > **同步、异步：**  
+  >
+  > - 概念：消息的通知机制
+  > - 解释：涉及到IO通知机制；所谓同步，就是发起调用后，被调用者处理消息，必须等处理完才直接返回结果，**没处理完之前是不返回的，调用者主动等待结果**；所谓异步，就是发起调用后，被调用者直接返回，但是并没有返回结果，等处理完消息后，通过状态、通知或者回调函数来通知调用者，调用者被动接收结果。
+  >
+  > **阻塞、非阻塞：**
+  >
+  > - 概念：**程序等待调用结果时的状态**
+  > - 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
 
-    > **同步、异步：**  
-    >
-    > - 概念：消息的通知机制
-    > - 解释：涉及到IO通知机制；所谓同步，就是发起调用后，被调用者处理消息，必须等处理完才直接返回结果，**没处理完之前是不返回的，调用者主动等待结果**；所谓异步，就是发起调用后，被调用者直接返回，但是并没有返回结果，等处理完消息后，通过状态、通知或者回调函数来通知调用者，调用者被动接收结果。
-    >
-    > **阻塞、非阻塞：**
-    >
-    > - 概念：**程序等待调用结果时的状态**
-    > - 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
+- 为什么要用 `close()` 关掉流？
 
-  - 为什么要用 `close()` 关掉流？
+  有些资源 `GC` 回收不掉？
 
-    有些资源 `GC` 回收不掉？
+### Class加载
 
-- class
+- Class
 
   - Class的 getSuperclass与getGenericSuperclass
-  
+
 - Class.forName和ClassLoader的区别
 
   都可用来对类进行加载。
@@ -104,7 +105,7 @@ catalog: true
   1）class.forName()除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块，还会执行给静态变量赋值的静态方法
 
   2）classLoader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容,只有在newInstance才会去执行static块。
-  
+
 - 使用Class.getResource和ClassLoader.getResource方法获取文件路径
 
 ### 创建和销毁对象
@@ -145,10 +146,6 @@ catalog: true
 
     实现原理可具体看 com.google.common.cache.LocalCache.Strength
 
-### 设计模式
-
-- [设计模式 - 菜鸟教程](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
-
 ### 并发
 
 - 线程状态
@@ -182,20 +179,23 @@ catalog: true
 
 - Atomic
 
-  - **AQS**（[AbstractQueuedSynchronizer](https://blog.51cto.com/14220760/2390586?source=dra)）
+- **AQS**（AbstractQueuedSynchronizer）
 
-    > - AQS框架借助于两个类：
-    >
-    > 1. Unsafe（提供CAS操作）
-    > 2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
-    >
-    > - 与Object类的wait/notify机制相比，park/unpark有两个优点：
-    >
-    > 1. 以thread为操作对象更符合阻塞线程的直观定义
-    > 2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
+  - https://blog.51cto.com/14220760/2390586?source=dra
+  - https://www.jianshu.com/p/da9d051dcc3d
 
-    - CountDownLatch、CyclicBarrier和Semaphore
-    - AbstractFuture (一旦调用get就会阻塞)
+  > - AQS框架借助于两个类：
+  >
+  > 1. Unsafe（提供CAS操作）
+  > 2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
+  >
+  > - 与Object类的wait/notify机制相比，park/unpark有两个优点：
+  >
+  > 1. 以thread为操作对象更符合阻塞线程的直观定义
+  > 2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
+
+  - CountDownLatch、CyclicBarrier和Semaphore
+  - AbstractFuture (一旦调用get就会阻塞)
 
 - 并发容器
 
@@ -230,7 +230,7 @@ catalog: true
 
   - Guava——AbstractFuture
 
-### QA
+### QA（疑问?）
 
 - 计算机内存模型 与 Java内存模型
 
@@ -275,20 +275,20 @@ catalog: true
 
   > 在linux上以服务的方式启动java程序，需要提前安装jsvc。linux是利用daemon(jsvc)构建java守护进程。
 
-### Java 8
+### 新特性
 
-- parallelStream
+- Java 8
 
-- 元空间（Metaspace）
-
-- Supplier接口和Consumer接口 （JDK8以下可用guava替代）
+  - parallelStream
+  - 元空间（Metaspace）
+  - Supplier接口和Consumer接口 （JDK8以下可用guava替代）
 
   梦爷的FileLoader优化用到了Supplier
 
-### Java 9
+- Java 9
 
-- Reactive Streams
-- Flow API
+  - Reactive Streams
+  - Flow API
 
 ### JVM
 
@@ -310,35 +310,35 @@ catalog: true
   - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
   - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
 
-* GC性能优化，日志解读
-  
-  * 可能导致FullGC的原因有以下几种。
-  
-    > 1. 老年代空间不足。
-    > 2. 永生代或者元数据空间不足。
-    > 3. 程序执行了System.gc() //建议jvm执行fullgc，并不一定会执行。
-    > 4. CMS GC时出现promotion failed和concurrent mode failure
-    > 5. YoungGC时晋升老年代的内存平均值大于老年代剩余空间（执行minor gc的时候进行的一系列检查）
-    > 6. 有连续的大对象需要分配
-    > 7. 执行了jmap -histo:live pid命令 //这个会立即触发fullgc
-  
-  * [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
-  
-  * [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
-  
-    * CMS之promotion failed & concurrent mode failure
-  
-      > 疑问?
-      >
-      > 然后CMS的并发周期就会被一次Full GC代替，退回到Serial Old收集器进行回收，这是一次长Stop The World
-  
-      [关于CMS垃圾回收失败是不是进行FULL GC问题的记录](https://www.jianshu.com/p/843782af87b1)
-  
-  * [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
-  
-  * CMS收集器和G1收集器 他们的优缺点对比
-  
-  * Full GC日志解读
+### GC性能优化，日志解读
+
+- 可能导致FullGC的原因有以下几种。
+
+  > 1. 老年代空间不足。
+  > 2. 永生代或者元数据空间不足。
+  > 3. 程序执行了System.gc() //建议jvm执行fullgc，并不一定会执行。
+  > 4. CMS GC时出现promotion failed和concurrent mode failure
+  > 5. YoungGC时晋升老年代的内存平均值大于老年代剩余空间（执行minor gc的时候进行的一系列检查）
+  > 6. 有连续的大对象需要分配
+  > 7. 执行了jmap -histo:live pid命令 //这个会立即触发fullgc
+
+- [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
+
+- [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
+
+  - CMS之promotion failed & concurrent mode failure
+
+    > 疑问?
+    >
+    > 然后CMS的并发周期就会被一次Full GC代替，退回到Serial Old收集器进行回收，这是一次长Stop The World
+
+    [关于CMS垃圾回收失败是不是进行FULL GC问题的记录](https://www.jianshu.com/p/843782af87b1)
+
+- [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
+
+- CMS收集器和G1收集器 他们的优缺点对比
+
+- Full GC日志解读
 
 ### 热更新
 
@@ -348,7 +348,6 @@ catalog: true
 
   - [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
   - [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
-
   - [JVM源码分析之javaagent原理完全解读](https://www.imooc.com/article/42736)
 
 - 自定义类加载器
@@ -391,6 +390,15 @@ catalog: true
   如`java.awt.Component#dispatchEventImpl`里会触发各种监听
 
 - [Polygon](https://segmentfault.com/a/1190000007736473)，区域超区校验
+
+### 语法糖
+
+- [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html)
+
+### 设计模式
+
+- [设计模式 - 菜鸟教程](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
+- 门面模式
 
 ### 代码格式
 

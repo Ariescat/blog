@@ -284,6 +284,7 @@ catalog: true
       - [查找（二）简单清晰的B树、Trie树详解 - CSDN博客](http://blog.csdn.net/yang_yulei/article/details/26104921)
     - Treap
     - BST
+- 跳表
 
 ### 算法
 

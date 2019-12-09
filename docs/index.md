@@ -18,12 +18,33 @@ catalog: true
   - [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
   - [JCSprout](https://github.com/crossoverJie/JCSprout)
   - [JavaGuide](https://github.com/Snailclimb/JavaGuide)
-- 开源项目
-  - 天堂2 l2jserver2 [https://github.com/Rogiel/l2jserver2](https://github.com/Rogiel/l2jserver2)
-  - 魔兽世界server TrinityCore [https://github.com/TrinityCore/TrinityCore](https://github.com/TrinityCore/TrinityCore)
+  
+- 游戏开源项目
+  
+  - ARPG
+    
+    - 永恒之塔开源服务器架构 https://github.com/Aion-server/Aion-unique
+    
+    - 天堂2 l2jserver2 
+    
+      https://github.com/oonym/l2InterludeServer
+    
+      https://github.com/Rogiel/l2jserver2
+    
+    - 魔兽世界server TrinityCore https://github.com/TrinityCore/TrinityCore
+    
   - tinyHeart [https://github.com/luckykun/tinyHeart](https://github.com/luckykun/tinyHeart)
+  
 - Java高并发
+  
   - [seckill](https://github.com/liyifeng1994/seckill)
+  
+- 其他源码
+
+  - tomcat
+  - dubbo
+  - spring
+  - zookeeper
 
 ### 知识体系
 
@@ -221,8 +242,8 @@ catalog: true
     阿里巴巴集团内部使用的分布式服务框架 High Speed Framework
 - Zookeeper
   - [Zookeeper的功能以及工作原理](https://www.cnblogs.com/felixzh/p/5869212.html)
-  - [Zookeeper的Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)
-  - [zookeeper中的ZAB协议理解](https://blog.csdn.net/junchenbb0430/article/details/77583955)
+  - [Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)
+  - [ZAB协议理解](https://blog.csdn.net/junchenbb0430/article/details/77583955)
 - 分布式事务
   - [分布式事务与一致性算法Paxos & raft & zab](https://blog.csdn.net/followmyinclinations/article/details/52870418)
   - atomikos:[4.0 atomikos JTA/XA全局事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/386)

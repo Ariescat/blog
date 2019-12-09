@@ -146,6 +146,8 @@ Cglib动态代理
 
     实现原理可具体看 com.google.common.cache.LocalCache.Strength
 
+### Method.invoke()的实现原理
+
 ### 并发
 
 - 线程状态

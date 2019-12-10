@@ -4,14 +4,10 @@ title: Java
 date: 2019-02-01
 header-img: "img/post-bg-rwd.jpg"
 catalog: true
-
-
 ---
 
 
-
 > **思想是灵魂,实现是形式**
-
 
 
 ### String
@@ -89,64 +85,6 @@ Cglib动态代理
 - 为什么要用 `close()` 关掉流？
 
   有些资源 `GC` 回收不掉？
-
-### Class加载
-
-- Class
-
-  - Class的 getSuperclass与getGenericSuperclass
-
-- Class.forName和ClassLoader的区别
-
-  都可用来对类进行加载。
-
-  不同：
-
-  1）class.forName()除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块，还会执行给静态变量赋值的静态方法
-
-  2）classLoader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容,只有在newInstance才会去执行static块。
-
-- 使用Class.getResource和ClassLoader.getResource方法获取文件路径
-
-### 创建和销毁对象
-
-- 单例 与 序列化
-
-  一般来说，一个类实现了 Serializable接口，我们就可以把它往内存地写再从内存里读出而"组装"成一个跟原来一模一样的对象。不过当序列化遇到单例时，这里边就有了个问题：从内存读出而组装的对象破坏了单例的规则。单例是要求一个JVM中只有一个类对象的，而现在通过反序列化，一个新的对象克隆了出来。
-
-  解决方案：加上readResolve()方法
-
-  ```java
-  private Object readResolve() throws ObjectStreamException {
-         // instead of the object we're on,
-         // return the class variable INSTANCE
-        return INSTANCE;
-  }
-  ```
-
-- [WeakReference](https://www.jianshu.com/p/964fbc30151a)
-
-  看ThreadLocal源码的时候，其中嵌套类ThreadLocalMap中的Entry继承了WeakReference，为了能搞清楚ThreadLocal，只能先了解下了WeakReference：
-
-  > WeakReference如字面意思，弱引用， 当**一个对象**仅仅被 WeakReference（弱引用）指向, 而没有任何其他strong reference（强引用）指向的时候, 如果这时GC运行, 那么**这个对象**就会被回收，不论当前的内存空间是否足够，这个对象都会被回收。
-  >
-  > 注意：回收的是WeakReference引用的对象！若存在ReferenceQueue队列，WeakReference本身会入队，但此时get()==null
-
-  - [WeakHashMap](https://blog.csdn.net/u012420654/article/details/51793909)
-
-  - SoftReference 若清楚了上面的原理，[SoftReference](https://www.jianshu.com/p/8c634f10ed1a)只是**生命周期**变成**内存将要被耗尽的时候**。
-
-  - guava cache：
-
-    ```java
-    CacheBuilder.newBuilder().softValues().build()
-    ```
-
-    当然 softValues()可以替换成weakKeys() / weakValues() ...
-
-    实现原理可具体看 com.google.common.cache.LocalCache.Strength
-
-### Method.invoke()的实现原理
 
 ### 并发
 
@@ -232,6 +170,137 @@ Cglib动态代理
 
   - Guava——AbstractFuture
 
+- **ThreadLocal value内存泄露**
+
+### JVM
+
+> JVM很难，网上错误的观点很多
+
+- ClassLoader
+  - [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
+- 局部变量表中的Slot
+- [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
+- 内存模型
+  - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
+  - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
+- HotSpot虚拟机
+  - 解释执行
+    - 逐条将字节码翻译成机器码并执行
+  - 即时编译（Just-in-time ，JIT）
+    - 将一个方法中包含的所有字节码编译成机器码后再执行。
+- 逃逸分析
+  - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
+  - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
+
+### 反射
+
+- Class
+
+  - Class的 getSuperclass与getGenericSuperclass
+
+- Class.forName和ClassLoader的区别
+
+  都可用来对类进行加载。
+
+  不同：
+
+  1）class.forName()除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块，还会执行给静态变量赋值的静态方法
+
+  2）classLoader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容,只有在newInstance才会去执行static块。
+
+- 使用Class.getResource和ClassLoader.getResource方法获取文件路径
+
+- **Method**.invoke()的实现原理
+
+### 创建和销毁对象
+
+- 单例 与 序列化
+
+  一般来说，一个类实现了 Serializable接口，我们就可以把它往内存地写再从内存里读出而"组装"成一个跟原来一模一样的对象。不过当序列化遇到单例时，这里边就有了个问题：从内存读出而组装的对象破坏了单例的规则。单例是要求一个JVM中只有一个类对象的，而现在通过反序列化，一个新的对象克隆了出来。
+
+  解决方案：加上readResolve()方法
+
+  ```java
+  private Object readResolve() throws ObjectStreamException {
+         // instead of the object we're on,
+         // return the class variable INSTANCE
+        return INSTANCE;
+  }
+  ```
+
+### 对象引用
+
+- [WeakReference](https://www.jianshu.com/p/964fbc30151a)
+
+  看ThreadLocal源码的时候，其中嵌套类ThreadLocalMap中的Entry继承了WeakReference，为了能搞清楚ThreadLocal，只能先了解下了WeakReference：
+
+  > WeakReference如字面意思，弱引用， 当**一个对象**仅仅被 WeakReference（弱引用）指向, 而没有任何其他strong reference（强引用）指向的时候, 如果这时GC运行, 那么**这个对象**就会被回收，不论当前的内存空间是否足够，这个对象都会被回收。
+  >
+  > 注意：回收的是WeakReference引用的对象！若存在ReferenceQueue队列，WeakReference本身会入队，但此时get()==null
+
+  - [WeakHashMap](https://blog.csdn.net/u012420654/article/details/51793909)
+
+  - SoftReference 若清楚了上面的原理，[SoftReference](https://www.jianshu.com/p/8c634f10ed1a)只是**生命周期**变成**内存将要被耗尽的时候**。
+
+    > - from [关于SoftReference被回收的时机](https://blog.csdn.net/S7188290/article/details/86436479)
+    >
+    > 下面，我们来总结一下:
+    > 1.当发生GC时，虚拟机可能会回收SoftReference对象所指向的软引用，是否被回收取决于该软引用是否是新创建或近期使用过。
+    > 2.在虚拟机抛出OutOfMemoryError之前，所有软引用对象都会被回收。
+    > 3.只要一个软引用对象由一个强引用指向，那么即使是OutOfMemoryError时，也不会被回收。
+    >
+    > - from [JVM - 优化案例（SoftRefLRUPolicyMSPerMB）](https://blog.csdn.net/qiang_zi_/article/details/100700784)
+    >
+    > 那么SoftReference对象到底在GC的时候要不要回收是通过什么公式来判断的呢？
+    >
+    > 是如下的一个公式：
+    >
+    > clock - timestamp <= freespace * SoftRefLRUPolicyMSPerMB
+    >
+    > 这个公式的意思就是说，“clock - timestamp”代表了一个软引用对象他有多久没被访问过了，freespace代表JVM中的空闲内存空间，SoftRefLRUPolicyMSPerMB代表每一MB空闲内存空间可以允许SoftReference对象存活多久。
+
+  - guava cache：
+
+    ```java
+    CacheBuilder.newBuilder().softValues().build()
+    ```
+
+    当然 softValues()可以替换成weakKeys() / weakValues() ...
+
+    实现原理可具体看 com.google.common.cache.LocalCache.Strength
+
+  - LRU缓存实现(Java)
+
+### GC性能优化，日志解读
+
+- 可能导致FullGC的原因有以下几种。
+
+  > 1. 老年代空间不足。
+  > 2. 永生代或者元数据空间不足。
+  > 3. 程序执行了System.gc() //建议jvm执行fullgc，并不一定会执行。
+  > 4. CMS GC时出现promotion failed和concurrent mode failure
+  > 5. YoungGC时晋升老年代的内存平均值大于老年代剩余空间（执行minor gc的时候进行的一系列检查）
+  > 6. 有连续的大对象需要分配
+  > 7. 执行了jmap -histo:live pid命令 //这个会立即触发fullgc
+
+- [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
+
+- [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
+
+  - CMS之promotion failed & concurrent mode failure
+
+    > 疑问?
+    >
+    > 然后CMS的并发周期就会被一次Full GC代替，退回到Serial Old收集器进行回收，这是一次长Stop The World
+
+    [关于CMS垃圾回收失败是不是进行FULL GC问题的记录](https://www.jianshu.com/p/843782af87b1)
+
+- [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
+
+- CMS收集器和G1收集器 他们的优缺点对比
+
+- Full GC日志解读
+
 ### QA（疑问?）
 
 - 计算机内存模型 与 Java内存模型
@@ -252,6 +321,12 @@ Cglib动态代理
   - JDK1.6后对锁进行的优化，轻量级锁，偏向锁，锁消除，适应性自旋锁，锁粗化 (自旋锁在1.4就有，只不过默认的是关闭的，jdk1.6是默认开启的)
 
 - [国内Java面试总是问StringBuffer，StringBuilder区别是啥？档次为什么这么低？](https://www.hollischuang.com/archives/3912)
+
+- 反射缺点？
+
+  1.由于是本地方法调用，让JVM无法优化(还有JIT？)
+
+  2.反射方法调用还有验证过程和参数问题，参数需要装箱拆箱、需要组装成Object[]形式、异常的包装等等问题
 
 ### 其他
 
@@ -291,56 +366,6 @@ Cglib动态代理
 
   - Reactive Streams
   - Flow API
-
-### JVM
-
-> JVM很难，网上错误的观点很多
-
-- ClassLoader
-  - [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
-- 局部变量表中的Slot
-- [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
-- 内存模型
-  - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
-  - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
-- HotSpot虚拟机
-  - 解释执行
-    - 逐条将字节码翻译成机器码并执行
-  - 即时编译（Just-in-time ，JIT）
-    - 将一个方法中包含的所有字节码编译成机器码后再执行。
-- 逃逸分析
-  - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
-  - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
-
-### GC性能优化，日志解读
-
-- 可能导致FullGC的原因有以下几种。
-
-  > 1. 老年代空间不足。
-  > 2. 永生代或者元数据空间不足。
-  > 3. 程序执行了System.gc() //建议jvm执行fullgc，并不一定会执行。
-  > 4. CMS GC时出现promotion failed和concurrent mode failure
-  > 5. YoungGC时晋升老年代的内存平均值大于老年代剩余空间（执行minor gc的时候进行的一系列检查）
-  > 6. 有连续的大对象需要分配
-  > 7. 执行了jmap -histo:live pid命令 //这个会立即触发fullgc
-
-- [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
-
-- [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
-
-  - CMS之promotion failed & concurrent mode failure
-
-    > 疑问?
-    >
-    > 然后CMS的并发周期就会被一次Full GC代替，退回到Serial Old收集器进行回收，这是一次长Stop The World
-
-    [关于CMS垃圾回收失败是不是进行FULL GC问题的记录](https://www.jianshu.com/p/843782af87b1)
-
-- [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
-
-- CMS收集器和G1收集器 他们的优缺点对比
-
-- Full GC日志解读
 
 ### 热更新
 

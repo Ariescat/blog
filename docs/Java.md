@@ -89,7 +89,7 @@ Cglib动态代理
 - 线程
 
   - 线程状态
-    - 其实可以直接查看源码`{@seejava.lang.Thread.State}`，里面的注释内容讲解得很清楚了
+    - 其实可以直接查看源码`{@see java.lang.Thread.State}`，里面的注释内容讲解得很清楚了
     - [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
     - [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
   - 线程中断

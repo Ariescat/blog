@@ -6,9 +6,7 @@ header-img: "img/post-bg-rwd.jpg"
 catalog: true
 ---
 
-
 > **思想是灵魂,实现是形式**
-
 
 ### String
 
@@ -86,28 +84,39 @@ Cglib动态代理
 
   有些资源 `GC` 回收不掉？
 
-### 并发
+### 线程&并发
 
-- 线程状态
+- 线程
 
-  - [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
-  - [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
+  - 线程状态
+    - 其实可以直接查看源码`{@seejava.lang.Thread.State}`，里面的注释内容讲解得很清楚了
+    - [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
+    - [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
+  - 线程中断
+    - ？何时抛出 `{@see java.lang.InterruptedException}`
 
-- synchronized
+- 锁
 
-- monitor对象
+  - synchronized
 
-- volatile 
+  - monitor对象
 
-  [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
+  - volatile 
 
-  [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
+    [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
+
+    [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
 
 - [线程池](http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/Executor%20%E4%B9%8B%20%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8F%8A%E5%AE%9A%E6%97%B6%E5%99%A8.html)  
 
-  - 三种队列
+  - **三种队列**
+
+    > ？`SynchronousQueue`误区：很多人把其认为其没有容量，不存储元素，这是错的。
+
   - 拒绝服务的方式
+
   - ThreadPoolExecutor和ScheduledThreadPoolExecutor原理
+
     - [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
 
   《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
@@ -117,25 +126,35 @@ Cglib动态代理
   > FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE ，可能堆积大量的请求，从而导致OOM。  
   > CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
 
-- Atomic
+  - 线程池运行状态**【这里有空要详细看看】**
 
-- **AQS**（AbstractQueuedSynchronizer）
+    ![](https://img-blog.csdnimg.cn/20191216171812869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIwNzA1Ng==,size_16,color_FFFFFF,t_70)
 
-  - https://blog.51cto.com/14220760/2390586?source=dra
-  - https://www.jianshu.com/p/da9d051dcc3d
+  - `shutdown()`, `shutdownNow()`和`awaitTermination()`
 
-  > - AQS框架借助于两个类：
-  >
-  > 1. Unsafe（提供CAS操作）
-  > 2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
-  >
-  > - 与Object类的wait/notify机制相比，park/unpark有两个优点：
-  >
-  > 1. 以thread为操作对象更符合阻塞线程的直观定义
-  > 2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
+- 乐观锁
 
-  - CountDownLatch、CyclicBarrier和Semaphore
-  - AbstractFuture (一旦调用get就会阻塞)
+  - Atomic
+
+  - **AQS**（AbstractQueuedSynchronizer）
+
+    - https://blog.51cto.com/14220760/2390586?source=dra
+    - https://www.jianshu.com/p/da9d051dcc3d
+
+    > - AQS框架借助于两个类：
+    >
+    > 1. Unsafe（提供CAS操作）
+    > 2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
+    >
+    > - 与Object类的wait/notify机制相比，park/unpark有两个优点：
+    >
+    > 1. 以thread为操作对象更符合阻塞线程的直观定义
+    > 2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
+
+    - CountDownLatch、CyclicBarrier和Semaphore
+    - AbstractFuture (一旦调用get就会阻塞)
+
+  - [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
 
 - 并发容器
 
@@ -152,8 +171,6 @@ Cglib动态代理
     > 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
 
 - **ForkJoin**
-
-- [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
 
 - WeakReference 和 ReferenceQueue
 

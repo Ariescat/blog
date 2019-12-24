@@ -18,6 +18,9 @@ catalog: true
   - [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
   - [JCSprout](https://github.com/crossoverJie/JCSprout)
   - [JavaGuide](https://github.com/Snailclimb/JavaGuide)
+  - 《吊打面试官》系列
+    - [https://github.com/AobingJava/JavaFamily](https://github.com/AobingJava/JavaFamily)
+    - [https://me.csdn.net/qq_35190492](https://me.csdn.net/qq_35190492)
   
 - 游戏开源项目
   
@@ -122,6 +125,10 @@ catalog: true
   - [Google Guava](https://ifeve.com/google-guava/)
 
     集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、**并发库** [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等
+
+    > eg:
+    >
+    > ​	BloomFilter布隆过滤器
 
   - **Caffeine** 来自未来的缓存
 
@@ -343,7 +350,7 @@ catalog: true
   - [练习场 - ACM在线评测系统](http://acm.nyist.net/JudgeOnline/problemset.php)
   - [Welcome To PKU JudgeOnline](http://poj.org/)
 
-### 编码解码
+### 字符编解码
 
 - 字符编码
 
@@ -363,7 +370,7 @@ catalog: true
     - 一次经典的错误：https://github.com/Ariescat/lqz-test/blob/master/base-test/src/main/http/http.log
 - 零拷贝
 
-### 数据库
+### 数据库/Redis
 
 - MySQL
 
@@ -412,10 +419,25 @@ catalog: true
 - NoSQL
 
   - Redis
-    - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
-    - 《redis设计与实现(第二版)》
+    
+    - 源码
+      
+      - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
+      
+    - [《吊打面试官》系列-缓存雪崩、击穿、穿透](https://blog.csdn.net/qq_35190492/article/details/102889333)
+    
+      防止缓存穿透：增加校验，缓存，**布隆过滤器（Bloom Filter）**
+    
+    - 书籍
+    
+      - 《redis设计与实现(第二版)》
+    
+  - Memcache
+  
+    - Redis之与Memcached的比较
+  
   - MongoDB
-  - memcache
+  
   - Elasticsearch
 
 ### C/C++
@@ -494,7 +516,10 @@ catalog: true
 
 - everything
 - wox（window快速搜索文件启动程序软件）
-- [https://msdn.itellyou.cn/](https://msdn.itellyou.cn/)
+- 系统镜像
+  - [https://msdn.itellyou.cn/](https://msdn.itellyou.cn/)
+- HTTP接口测试工具
+  - Postman
 
 ### 职场
 

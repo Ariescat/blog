@@ -14,6 +14,12 @@ catalog: true
   - 数组呢？
 - StringJoiner（Java 8中提供的可变字符串类）
 
+### Java Util
+
+* BitSet
+
+  JDK中的BitSet集合对是布隆过滤器中经常使用的数据结构**Bitmap**的相对简单的实现。BitSet采用了**Bitmap的算法思想**。
+
 ### 集合
 
 - 集合框架**Koloboke**
@@ -136,6 +142,10 @@ Cglib动态代理
 
   - Atomic
 
+    - **LongAdder** 与 **Striped64**
+
+      > LongAdder 区别于 AtomicLong ，在高并发中有更好的性能体现
+
   - **AQS**（AbstractQueuedSynchronizer）
 
     - https://blog.51cto.com/14220760/2390586?source=dra
@@ -161,6 +171,8 @@ Cglib动态代理
   - CopyOnWriteArrayList、ConcurrentLinkedQueue ...
 
   - ConcurrentHashMap (JDK8)、ConcurrentHashMapV8 (netty提供)
+
+    > java8中的ConcurrentHashMap实现已经抛弃了java7中分段锁的设计，而采用更为轻量级的CAS来协调并发，效率更佳。
 
     - computeIfAbsent
 

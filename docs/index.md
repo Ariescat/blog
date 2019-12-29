@@ -160,7 +160,9 @@ catalog: true
 
   - [Spring Cache 介绍](https://www.cnblogs.com/rollenholt/p/4202631.html)
 
-  - [Spring Webflux](https://www.jianshu.com/p/c029de45d23b) （与前端Flux架构名字相同）
+  - [Spring Webflux](https://www.jianshu.com/p/c029de45d23b) （reactive web框架，与前端Flux架构名字相同）
+
+     命令式编程 VS **响应式编程**
 
   - Spring Data
 
@@ -232,6 +234,11 @@ catalog: true
 ### 编程思想
 
 - Reative编程（响应式编程）
+
+  Reactive响应式(反应式)编程 是一种新的编程风格，其特点是异步或并发、事件驱动、推送PUSH机制以及观察者模式的衍生。
+
+  JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
+
 - 领域驱动设计
   - [领域驱动设计在互联网业务开发中的实践](https://tech.meituan.com/2017/12/22/ddd-in-practice.html)
 
@@ -240,17 +247,24 @@ catalog: true
 ### 分布式技术
 
 - IO操作
+  
   - [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
+  
 - RPC
+
+  RPC涉及：通讯，序列化，超时，重发（重复），消息顺序，负载 等等。（个人理解）
+
   - 协议：thrift 等等
   - JavaRMI
     - [深究Java中的RMI底层原理](https://blog.csdn.net/sinat_34596644/article/details/52599688)
   - HSF
     阿里巴巴集团内部使用的分布式服务框架 High Speed Framework
+
 - Zookeeper
   - [Zookeeper的功能以及工作原理](https://www.cnblogs.com/felixzh/p/5869212.html)
   - [Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)
   - [ZAB协议理解](https://blog.csdn.net/junchenbb0430/article/details/77583955)
+  
 - 分布式事务
   - [分布式事务与一致性算法Paxos & raft & zab](https://blog.csdn.net/followmyinclinations/article/details/52870418)
   - atomikos:[4.0 atomikos JTA/XA全局事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/386)
@@ -378,7 +392,7 @@ catalog: true
 
   - 联接子句 union，join
 
-  - **事物传播**
+  - **事务传播**
 
   - **隔离级别**
 

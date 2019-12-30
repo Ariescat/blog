@@ -379,6 +379,8 @@ catalog: true
 - 协议
   - TCP/IP
     - [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)
+    - 拥塞算法：**慢开始 、 拥塞避免 、快重传 和 快恢复**
+    - 两者的区别：流量控制是为了预防拥塞。如：在马路上行车，交警跟红绿灯是流量控制，当发生拥塞时，如何进行疏散，是拥塞控制。流量控制指点对点通信量的控制。而拥塞控制是全局性的，涉及到所有的主机和降低网络性能的因素。
   - http
     - [彻底掌握网络通信](https://blog.csdn.net/yi_master/article/details/82863949) (httpclien，asynchttpclient，HttpURLConnection，OkHttp3)
     - 一次经典的错误：https://github.com/Ariescat/lqz-test/blob/master/base-test/src/main/http/http.log
@@ -394,6 +396,10 @@ catalog: true
     https客户端无法判断自己收到的服务器的公钥是否是正确的，是否在服务器发送给客户端的过程中被第三方篡改了，所以还需要证明公开密钥正确性的数字证书。
   
   * ssh
+  
+- 网络攻击
+
+  - DDoS攻击
 
 ### 数据库/Redis
 

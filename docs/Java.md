@@ -330,6 +330,12 @@ Cglib动态代理
 
 - Full GC日志解读
 
+### 字节码
+
+* Class类的文件结构
+
+  方法表，属性表...
+
 ### QA（疑问?）
 
 - 计算机内存模型 与 Java内存模型
@@ -386,10 +392,25 @@ Cglib动态代理
 - Java 8
 
   - parallelStream
+
   - 元空间（Metaspace）
+
   - Supplier接口和Consumer接口 （JDK8以下可用guava替代）
 
-  梦爷的FileLoader优化用到了Supplier
+    梦爷的FileLoader优化用到了Supplier
+
+  * **Lambda的实现原理**
+
+  * **::（双冒号）的实现原理**
+
+    ```java
+    List<String> al = Arrays.asList("a", "b", "c", "d");
+    al.forEach(AcceptMethod::printValur);
+    
+    //下面的方法和上面等价的
+    Consumer<String> methodParam = AcceptMethod::printValur; //方法参数
+    al.forEach(x -> methodParam.accept(x));//方法执行accept
+    ```
 
 - Java 9
 

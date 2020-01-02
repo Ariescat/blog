@@ -389,6 +389,25 @@ Cglib动态代理
 
 ### 新特性
 
+* Java 7
+
+  * [JDK7动态方法调用](https://blog.csdn.net/xtayfjpk/article/details/42043977)
+
+    * java.lang.invoke包
+
+      主要包含了`CallSite、MethodHandle、MethodType`等类
+
+      > 反射获取的信息比MethodHandle要多。
+      > 反射是模拟java代码层面的调用，MethodHandle是模拟字节码层面的调用。
+
+      > `MethodHandle`和反射相比好处是：
+      >
+      > * 调用 invoke() 已经被JVM优化，类似直接调用一样。
+      > * 性能好得多，类似标准的方法调用。
+      > * 当我们创建MethodHandle 对象时，实现方法检测，而不是调用invoke() 时。
+
+    * 新增了invokedynamic指令
+
 - Java 8
 
   - parallelStream

@@ -272,30 +272,42 @@ catalog: true
   - [分布式事务](https://javatar.iteye.com/blog/981787)
   - [分布式事务系列（2.1）分布式事务的概念](https://yq.aliyun.com/articles/39047)
 
-### 其他技术
+### 其他
 
 - **AI**
+  
   - 状态机 行为树
+  
 - docker
+
 - ServiceMesh(服务网格)
+
 - 中台服务
+
 - 分布式、大数据、人工智能、区块链
 
-### 构建工具
+- 动态语言与动态类型语言
 
-- Gradle
-  - [十分钟理解Gradle - Bonker - 博客园](https://www.cnblogs.com/Bonker/p/5619458.html)
-  - [大家都是怎样处理Gradle中的这个文件下载慢的问题的？ - 知乎](https://www.zhihu.com/question/37810416)
-- Maven
-  - [如何将 Java 项目转换成 Maven 项目 - 船长&amp;CAP - 博客园](https://www.cnblogs.com/liuning8023/p/4726822.html)
+  动态语言：(Dynamic programming Language -动态语言或动态编程语言)，动态语言是指程序在运行时可以改变其结构，新的函数可以被引进，已有的函数可以被删除等在结构上的变化。
 
-* Jenkins
+  动态类型语言：动态类型语言是指在运行期间才去做数据类型检查的语言，说的是数据类型，动态语言说的是运行是改变结构，说的是代码结构。
 
 ### 版本管理
 
 - Git
   - [git 简明指南](http://www.runoob.com/manual/git-guide/)
   - [团队中的 Git 实践](https://blog.csdn.net/M2l0ZgSsVc7r69eFdTj/article/details/100773494)
+
+### 构建工具
+
+- Gradle
+  - [十分钟理解Gradle - Bonker - 博客园](https://www.cnblogs.com/Bonker/p/5619458.html)
+  - [大家都是怎样处理Gradle中的这个文件下载慢的问题的？ - 知乎](https://www.zhihu.com/question/37810416)
+  - 慕课实战：Gradle3.0自动化项目构建技术精讲+实战
+- Maven
+  - [如何将 Java 项目转换成 Maven 项目 - 船长&amp;CAP - 博客园](https://www.cnblogs.com/liuning8023/p/4726822.html)
+
+* Jenkins
 
 ### 脚本语言
 

@@ -438,6 +438,10 @@ Cglib动态代理
 
 ### 热更新
 
+* 自定义类加载器
+  * [探秘 Java 热部署](https://www.jianshu.com/p/731bc8293365)
+  * [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
+
 - java.lang.instrument
 
   类重新定义，这是Instrumentation提供的基础功能之一，这个类很早就出了，redefineClasses这个方法可以更新方法级别的代码，但是不会触发一个类的初始化方法。
@@ -445,16 +449,19 @@ Cglib动态代理
   - [游戏服务器之Java热更新](https://www.cnblogs.com/wgslucky/p/9127681.html)
   - [动态加载class文件](https://zheng12tian.iteye.com/blog/1495037)
   - [JVM源码分析之javaagent原理完全解读](https://www.imooc.com/article/42736)
+  - [探秘 Java 热部署二（Java agent premain）](https://www.jianshu.com/p/0bbd79661080)
+  - [探秘 Java 热部署三（Java agent agentmain）](https://www.jianshu.com/p/6096bfe19e41)
 
-- 自定义类加载器
+- 第三方工具
 
-  - [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
+  - [**Arthas**的使用](https://www.cnblogs.com/orange911/p/10583245.html)
+  - [Github · **HotswapAgent**](https://github.com/HotswapProjects/HotswapAgent)
 
-- [Arthas的使用](https://www.cnblogs.com/orange911/p/10583245.html)
+- 脚本语言
 
-- groovy
-
-  使用groovy类加载器重载java代码 重载的java文件可以直接使用源文件，无需编译为class
+  - groovy
+  
+    使用groovy类加载器重载java代码 重载的java文件可以直接使用源文件，无需编译为class
 
 ### 性能调优
 

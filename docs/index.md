@@ -106,12 +106,6 @@ catalog: true
     - [Java日志，需要知道的几件事(commons-logging,log4j,slf4j,logback) - CSDN博客](http://blog.csdn.net/kobejayandy/article/details/17335407)
     - **Flume**构建日志采集系统
 
-  - [Java代码生成利器之rapid-generate应用](http://blog.csdn.net/likeaboy_fire/article/details/44024987)
-
-  - ASM
-
-    spring-core自带有asm，org.ow2.asm也是一个轻量级的jar
-
   - Apache commons
 
     - IO
@@ -130,17 +124,32 @@ catalog: true
     >
     > ​	BloomFilter布隆过滤器
 
-  - **Caffeine** 来自未来的缓存
+  - 缓存
 
-    Caffeine是基于JAVA 1.8 Version的高性能缓存库。Caffeine提供的内存缓存使用参考Google guava的API。Caffeine是基于Google Guava Cache设计经验上改进的成果。
+    - Guava的缓存
 
-  - **Koloboke** 集合框架
+    - **Caffeine** 来自未来的缓存
 
-    可以[**避免开销很大的装箱/拆箱操作，节省了原始类型装箱消耗的内存**](https://blog.csdn.net/qinyongye/article/details/81282961)。
+      Caffeine是基于JAVA 1.8 Version的高性能缓存库。Caffeine提供的内存缓存使用参考Google guava的API。Caffeine是基于Google Guava Cache设计经验上改进的成果。
 
-  - **joda** 对时间的操作
+  - 集合框架
 
-  - Quartz
+    - **Koloboke** 
+
+      可以[**避免开销很大的装箱/拆箱操作，节省了原始类型装箱消耗的内存**](https://blog.csdn.net/qinyongye/article/details/81282961)。
+
+    - Eclipse Collections
+
+  - 时间
+
+    - **joda** 对时间的操作
+    - Quartz 定时任务
+
+  - ASM
+
+    spring-core自带有asm，org.ow2.asm也是一个轻量级的jar
+
+  - [Java代码生成利器之rapid-generate应用](http://blog.csdn.net/likeaboy_fire/article/details/44024987)
 
 - Spring
 

@@ -37,7 +37,47 @@ catalog: true
   > 最近它有两个主要的更新——一个在Java 7u40版本中对于空map的共享的底层存储，以及在Java 8中将底层hash bucket链接成为**哈希树**（改进更差情况下的性能）。
 
   - jdk1.7中的线程安全问题 **(resize死循环)**
+
   - jdk8中是如何解决jdk7中的HashMap死循环的
+
+  - jdk8 ConcurrentHashMap 
+
+    - 死循环：
+
+       [ConcurrentHashMap BUG 死锁](https://blog.csdn.net/zhanglong_4444/article/details/93638844)
+
+    - 死锁：
+
+      ```java
+      ConcurrentHashMap<Integer, Integer> map = new ConcurrentHashMap<>();
+      map.put(1, 1);
+      map.put(2, 2);
+      Thread t1 = new Thread(() -> {
+          LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(2));
+          map.computeIfAbsent(4, key -> {
+              map.clear();
+              System.out.println("4");
+              return key;
+          });
+      });
+      Thread t2 = new Thread(() -> {
+          LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(2));
+          map.computeIfAbsent(3, key -> {
+              map.clear();
+              System.out.println("3");
+              return key;
+          });
+      });
+      t1.start();
+      t2.start();
+      t1.join();
+      t2.join();
+      System.out.println("finish");
+      ```
+
+      ConcurrentHashMap 1194行会死锁
+
+      ![deadlock](imgs/1579494015304.png)
 
 - DelayQueue
 

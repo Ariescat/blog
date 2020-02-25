@@ -15,12 +15,13 @@ catalog: true
 ### Github项目
 
 - awesome
-  - [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
-  - [JCSprout](https://github.com/crossoverJie/JCSprout)
-  - [JavaGuide](https://github.com/Snailclimb/JavaGuide)
+  - [xingshaocheng/architect-awesome](https://github.com/xingshaocheng/architect-awesome)
+  - [crossoverJie/JCSprout](https://github.com/crossoverJie/JCSprout)
+  - [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)
   - 《吊打面试官》系列
     - [https://github.com/AobingJava/JavaFamily](https://github.com/AobingJava/JavaFamily)
     - [https://me.csdn.net/qq_35190492](https://me.csdn.net/qq_35190492)
+  - [hadyang/interview](https://github.com/hadyang/interview)
   
 - 游戏开源项目
   
@@ -56,7 +57,7 @@ catalog: true
 - [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
 - [超强总结！Github上那些Java面试、学习相关仓库](https://mp.weixin.qq.com/s?__biz=Mzg3MjA4MTExMw==&mid=2247486161&idx=1&sn=b7bd2bffc50f5f64368d6e40c973619a&chksm=cef5f967f9827071badcdcf1ae8c162ad2176e44978ce3d8d138a94ae843e9232c1fb6d4ec36&scene=21#wechat_redirect)
 
-### 学习
+### 学习网站
 
 - [慕课网手记](http://www.imooc.com/article)
 - [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)

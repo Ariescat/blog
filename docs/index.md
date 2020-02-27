@@ -449,15 +449,19 @@ catalog: true
 
 - MySQL
 
-  - [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
+  - SQL
 
-  - 联接子句 union，join
+    - 联接子句 union，join
 
   - **事务传播**
 
   - **隔离级别**
 
     - MySQL中的锁（表锁、行锁，共享锁，排它锁，间隙锁）
+
+  - 存储引擎
+
+    - InnoDB
 
   - 索引
 
@@ -467,13 +471,19 @@ catalog: true
 
     - MYSQL如何挑选索引
 
-  - explain
-
-    explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
-
-  - redo/undo log，binlog
+  - 日志
 
     - [MySQL的日志系统](https://www.cnblogs.com/ivy-zheng/p/11094528.html)
+
+    - redo/undo log，binlog
+
+    - 慢日志
+
+      可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。
+
+    - MySQL的 **Crash Safe**
+
+      - [Crash Safe和Binlog的关系](https://blog.csdn.net/shaochenshuo/article/details/73239949)
 
   - 备份与恢复
 
@@ -481,15 +491,19 @@ catalog: true
     - cp，mysqldump，lvm2快照，xtrabackup
     - [mysql误删数据快速恢复](https://www.cnblogs.com/-mrl/p/9959365.html)
 
-  - MySQL的 **Crash Safe**
+  - 高级
 
-    - [Crash Safe和Binlog的关系](https://blog.csdn.net/shaochenshuo/article/details/73239949)
+    - explain
 
-  - 慢日志
+      explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
 
-    可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。
+  - 分布式
 
-  - 主从复制，分库分表
+    - 主从复制，分库分表
+
+  - 编码
+
+    - [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
 
 - NoSQL
 

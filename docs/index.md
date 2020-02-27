@@ -358,16 +358,30 @@ catalog: true
 
 - 常见算法
 
-  - 排序
+  - 排序（希尔排序，堆排序）
 
-    希尔排序
+  - 查找算法
 
-    堆排序
+  - 跳跃表
 
   - KPM 算法
 
+    - [阮一峰 字符串匹配的KMP算法](http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
+    
+    - [CSDN KMP算法—终于全部弄懂了](https://blog.csdn.net/dark_cy/article/details/88698736)
+    
+      ​	该博客分析了`k = next[k]`的问题
+    
     - [kpm算法 - u012361418的博客 - CSDN博客](http://blog.csdn.net/u012361418/article/details/46125439)
+    
     - [KMP算法及优化 - 疯狂的爱因斯坦 - SegmentFault](https://segmentfault.com/a/1190000007066358#articleHeader4)
+    
+      ​	该博客讲解了KPM的优化问题
+    
+  - 树
+
+    - 最小生成树算法
+    - 最短路径算法
 
 - 五大常用算法：贪婪算法，动态规划算法，分治算法，回溯算法以及分支限界算法
 
@@ -399,13 +413,21 @@ catalog: true
 ### 网络
 
 - 协议
+  
+  - 底层网络协议
+    
+    ​	ARP，ICMP，路由选择，DHCP，NAT
+    
   - TCP/IP
     - [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)
     - 拥塞算法：**慢开始 、 拥塞避免 、快重传 和 快恢复**
     - 两者的区别：流量控制是为了预防拥塞。如：在马路上行车，交警跟红绿灯是流量控制，当发生拥塞时，如何进行疏散，是拥塞控制。流量控制指点对点通信量的控制。而拥塞控制是全局性的，涉及到所有的主机和降低网络性能的因素。
-  - http
+  
+  - http/https
     - [彻底掌握网络通信](https://blog.csdn.net/yi_master/article/details/82863949) (httpclien，asynchttpclient，HttpURLConnection，OkHttp3)
     - 一次经典的错误：https://github.com/Ariescat/lqz-test/blob/master/base-test/src/main/http/http.log
+  
+  - websocket
   
 - 零拷贝
 

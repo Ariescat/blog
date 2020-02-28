@@ -368,7 +368,7 @@ catalog: true
 
     - [阮一峰 字符串匹配的KMP算法](http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
     
-      ​	但是他这里的next数组貌似有点问题？
+      ​	补充：这篇博客的数值并不是next数组，而是"部分匹配值"，就是"前缀"和"后缀"的最长的共有元素的长度
     
     - [CSDN KMP算法—终于全部弄懂了](https://blog.csdn.net/dark_cy/article/details/88698736)
     

@@ -368,6 +368,8 @@ catalog: true
 
     - [阮一峰 字符串匹配的KMP算法](http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
     
+      ​	但是他这里的next数组貌似有点问题？
+    
     - [CSDN KMP算法—终于全部弄懂了](https://blog.csdn.net/dark_cy/article/details/88698736)
     
       ​	该博客分析了`k = next[k]`的问题

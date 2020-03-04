@@ -172,7 +172,7 @@ tags:
 
 
 
-#### 最后总结spring的getBean()流程
+### 最后总结spring的getBean()流程
 
 `getBean(type)` > `doGetBean()` > 
 

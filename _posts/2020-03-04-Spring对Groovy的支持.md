@@ -162,7 +162,7 @@ bd.setBeanClassName("org.springframework.scripting.groovy.GroovyScriptFactory");
 
   这里我也测试了一些基础的`java`与`groovy`的结合使用：
 
-  ​	[test-metis](https://github.com/Ariescat/test-metis) -> `GroovyClassLoaderApp.java` 
+  ​	[study-metis](https://github.com/Ariescat/study-metis) -> `GroovyClassLoaderApp.java` 
 
   
 

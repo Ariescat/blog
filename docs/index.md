@@ -7,14 +7,13 @@ author: Ariescat
 header-img: "img/post-bg-kuaidi.jpg"
 catalog: true
 
-
-
 ---
 
 <h1>《技术图谱》</h1>
 ### Github项目
 
 - awesome
+
   - [xingshaocheng/architect-awesome](https://github.com/xingshaocheng/architect-awesome)
   - [crossoverJie/JCSprout](https://github.com/crossoverJie/JCSprout)
   - [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)
@@ -22,27 +21,27 @@ catalog: true
     - [https://github.com/AobingJava/JavaFamily](https://github.com/AobingJava/JavaFamily)
     - [https://me.csdn.net/qq_35190492](https://me.csdn.net/qq_35190492)
   - [hadyang/interview](https://github.com/hadyang/interview)
-  
+
 - 游戏开源项目
-  
+
   - ARPG
-    
+
     - 永恒之塔开源服务器架构 [https://github.com/Aion-server/Aion-unique](https://github.com/Aion-server/Aion-unique)
-    
+
     - 天堂2 l2jserver2 
-    
+
       [https://github.com/oonym/l2InterludeServer](https://github.com/oonym/l2InterludeServer)
-    
+
       [https://github.com/Rogiel/l2jserver2](https://github.com/Rogiel/l2jserver2)
-    
+
     - 魔兽世界server TrinityCore [https://github.com/TrinityCore/TrinityCore](https://github.com/TrinityCore/TrinityCore)
-    
+
   - tinyHeart [https://github.com/luckykun/tinyHeart](https://github.com/luckykun/tinyHeart)
-  
+
 - Java高并发
-  
+
   - [seckill](https://github.com/liyifeng1994/seckill)
-  
+
 - 其他源码
 
   - tomcat
@@ -109,7 +108,6 @@ catalog: true
   - Apache commons
 
     - IO
-
       - FileAlterationMonitor和FileAlterationObserver（梦爷曾发现这里每隔10秒会涨10M内存，待研究）
 
   - [Google Guava](https://ifeve.com/google-guava/)
@@ -167,7 +165,7 @@ catalog: true
 
   - [Spring Webflux](https://www.jianshu.com/p/c029de45d23b) （reactive web框架，与前端Flux架构名字相同）
 
-     命令式编程 VS **响应式编程**
+    命令式编程 VS **响应式编程**
 
   - Spring Data
 
@@ -245,9 +243,11 @@ catalog: true
   JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 - 领域驱动设计
+
   - [领域驱动设计在互联网业务开发中的实践](https://tech.meituan.com/2017/12/22/ddd-in-practice.html)
-- [美团DDD实践 示例项目](https://github.com/1987539447/draw-lottery)
-  
+
+  - [美团DDD实践 示例项目](https://github.com/1987539447/draw-lottery)
+
 - 动态语言与动态类型语言
 
   动态语言：(Dynamic programming Language -动态语言或动态编程语言)，动态语言是指程序在运行时可以改变其结构，新的函数可以被引进，已有的函数可以被删除等在结构上的变化。
@@ -257,9 +257,9 @@ catalog: true
 ### 分布式技术
 
 - IO操作
-  
+
   - [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
-  
+
 - RPC
 
   RPC涉及：通讯，序列化，超时，重发（重复），消息顺序，负载 等等。（个人理解）
@@ -271,11 +271,13 @@ catalog: true
     阿里巴巴集团内部使用的分布式服务框架 High Speed Framework
 
 - Zookeeper
+
   - [Zookeeper的功能以及工作原理](https://www.cnblogs.com/felixzh/p/5869212.html)
   - [Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)
   - [ZAB协议理解](https://blog.csdn.net/junchenbb0430/article/details/77583955)
-  
+
 - 分布式事务
+
   - [分布式事务与一致性算法Paxos & raft & zab](https://blog.csdn.net/followmyinclinations/article/details/52870418)
   - atomikos:[4.0 atomikos JTA/XA全局事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/386)
   - xaresource
@@ -285,15 +287,16 @@ catalog: true
 ### 其他前沿技术
 
 - docker
-
 - ServiceMesh(服务网格)
-
 - 中台服务
-
 - 分布式、大数据、人工智能、区块链
 
-
 ### 游戏技术
+
+- **AI**（状态机 行为树）
+- 游戏框架
+  - skynet
+  - Pinus
 
 ### 版本管理
 
@@ -303,7 +306,7 @@ catalog: true
 
 ### 构建工具
 
-* Maven
+- Maven
   [如何将 Java 项目转换成 Maven 项目 - 船长&amp;CAP - 博客园](https://www.cnblogs.com/liuning8023/p/4726822.html)
 
 - Gradle
@@ -311,7 +314,7 @@ catalog: true
   - [大家都是怎样处理Gradle中的这个文件下载慢的问题的？ - 知乎](https://www.zhihu.com/question/37810416)
   - 慕课实战：Gradle3.0自动化项目构建技术精讲+实战
 
-* Jenkins
+- Jenkins
 
 ### 脚本语言
 
@@ -362,19 +365,19 @@ catalog: true
   - KPM 算法
 
     - [阮一峰 字符串匹配的KMP算法](http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
-    
+
       ​	补充：这篇博客的数值并不是next数组，而是"部分匹配值"，就是"前缀"和"后缀"的最长的共有元素的长度
-    
+
     - [CSDN KMP算法—终于全部弄懂了](https://blog.csdn.net/dark_cy/article/details/88698736)
-    
+
       ​	该博客分析了`k = next[k]`的问题
-    
+
     - [kpm算法 - u012361418的博客 - CSDN博客](http://blog.csdn.net/u012361418/article/details/46125439)
-    
+
     - [KMP算法及优化 - 疯狂的爱因斯坦 - SegmentFault](https://segmentfault.com/a/1190000007066358#articleHeader4)
-    
+
       ​	该博客讲解了KPM的优化问题
-    
+
   - 树
 
     - 最小生成树算法
@@ -402,7 +405,7 @@ catalog: true
 - 字符集
 
   ASCII、Unicode
-  
+
 - 字符编码
 
   UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案
@@ -410,34 +413,36 @@ catalog: true
 ### 网络
 
 - 协议
-  
+
   - 底层网络协议
-    
+
     ​	ARP，ICMP，路由选择，DHCP，NAT
-    
+
   - TCP/IP
+
     - [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)
     - 拥塞算法：**慢开始 、 拥塞避免 、快重传 和 快恢复**
     - 两者的区别：流量控制是为了预防拥塞。如：在马路上行车，交警跟红绿灯是流量控制，当发生拥塞时，如何进行疏散，是拥塞控制。流量控制指点对点通信量的控制。而拥塞控制是全局性的，涉及到所有的主机和降低网络性能的因素。
-  
+
   - http/https
+
     - [彻底掌握网络通信](https://blog.csdn.net/yi_master/article/details/82863949) (httpclien，asynchttpclient，HttpURLConnection，OkHttp3)
     - 一次经典的错误：https://github.com/Ariescat/lqz-test/blob/master/base-test/src/main/http/http.log
-  
+
   - websocket
-  
+
 - **零拷贝**
 
 - 非对称加密
 
   在非对称加密中使用的主要算法有：RSA、Elgamal、ESA、背包算法、Rabin、D-H、ECC（椭圆曲线加密算法）等。
-  
-  * https
-  
+
+  - https
+
     https客户端无法判断自己收到的服务器的公钥是否是正确的，是否在服务器发送给客户端的过程中被第三方篡改了，所以还需要证明公开密钥正确性的数字证书。
-  
-  * ssh
-  
+
+  - ssh
+
 - 网络攻击
 
   - DDoS攻击
@@ -505,25 +510,25 @@ catalog: true
 - NoSQL
 
   - Redis
-    
+
     - 源码
-      
+
       - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
-      
+
     - [《吊打面试官》系列-缓存雪崩、击穿、穿透](https://blog.csdn.net/qq_35190492/article/details/102889333)
-    
+
       防止缓存穿透：增加校验，缓存，**布隆过滤器（Bloom Filter）**，hyperloglog
-    
+
     - 书籍
-    
+
       - 《redis设计与实现(第二版)》
-    
+
   - Memcache
-  
+
     - Redis之与Memcached的比较
-  
+
   - MongoDB
-  
+
   - Elasticsearch
 
 ### C/C++

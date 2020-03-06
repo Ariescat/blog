@@ -16,14 +16,6 @@ catalog: true
 
 ### 集合
 
-- 集合框架**Koloboke**
-
-  > Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
-
-- **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
-
-- **红黑树** TreeMap、TreeSet
-
 - HashMap
 
   - [详细梳理JAVA7和JAVA8 HashMap的hash实现](https://blog.csdn.net/u013453787/article/details/84702992)
@@ -34,50 +26,60 @@ catalog: true
 
   - jdk8中是如何解决jdk7中的HashMap死循环的
 
-  - jdk8 ConcurrentHashMap 
+- jdk8 ConcurrentHashMap 
 
-    - 死循环：
+  - 死循环：
 
-       [ConcurrentHashMap BUG 死锁](https://blog.csdn.net/zhanglong_4444/article/details/93638844)
+     [ConcurrentHashMap BUG 死锁](https://blog.csdn.net/zhanglong_4444/article/details/93638844)
 
-    - 死锁：
+  - 死锁（该问题由fly提出并收录）：
 
-      ```java
-      ConcurrentHashMap<Integer, Integer> map = new ConcurrentHashMap<>();
-      map.put(1, 1);
-      map.put(2, 2);
-      Thread t1 = new Thread(() -> {
-          LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(2));
-          map.computeIfAbsent(4, key -> {
-              map.clear();
-              System.out.println("4");
-              return key;
-          });
-      });
-      Thread t2 = new Thread(() -> {
-          LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(2));
-          map.computeIfAbsent(3, key -> {
-              map.clear();
-              System.out.println("3");
-              return key;
-          });
-      });
-      t1.start();
-      t2.start();
-      t1.join();
-      t2.join();
-      System.out.println("finish");
-      ```
+    ```java
+    ConcurrentHashMap<Integer, Integer> map = new ConcurrentHashMap<>();
+    map.put(1, 1);
+    map.put(2, 2);
+    Thread t1 = new Thread(() -> {
+        LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(2));
+        map.computeIfAbsent(4, key -> {
+            map.clear();
+            System.out.println("4");
+            return key;
+        });
+    });
+    Thread t2 = new Thread(() -> {
+        LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(2));
+        map.computeIfAbsent(3, key -> {
+            map.clear();
+            System.out.println("3");
+            return key;
+        });
+    });
+    t1.start();
+    t2.start();
+    t1.join();
+    t2.join();
+    System.out.println("finish");
+    ```
 
-      ConcurrentHashMap 1194行会死锁
+    ConcurrentHashMap 1194行会死锁
 
-      ![deadlock](imgs/1579494015304.png)
+    ![deadlock](imgs/1579494015304.png)
+  
+- **红黑树** TreeMap、TreeSet
 
-- DelayQueue
+- 其他
 
-  ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种
+  - WeakHashMap
 
-- WeakHashMap
+  - **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
+
+  - DelayQueue
+
+    ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种
+
+- 第三方原始类型集合库**Koloboke**，避免大量的装箱拆箱，同类型的还有HPPC，Eclipse Collections等
+
+  > Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
 
 ### 代理
 
@@ -103,9 +105,7 @@ Cglib动态代理
 
   - [IO操作你还在用File吗，该拥抱Path和Files了](https://www.sohu.com/a/132459571_654433)
 
-- **Reactor模式**
-
-- IO操作
+- IO概念
 
   - [网络IO中的同步、异步、阻塞和非阻塞](https://drugbean.club/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
   - [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
@@ -119,6 +119,12 @@ Cglib动态代理
   >
   > - 概念：**程序等待调用结果时的状态**
   > - 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
+
+- JDK NIO
+
+  - Selector,Buffer
+  
+- **Reactor模式**
 
 - 为什么要用 `close()` 关掉流？
 
@@ -134,18 +140,6 @@ Cglib动态代理
     - [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
   - 线程中断
     - ？何时抛出 `{@see java.lang.InterruptedException}`
-
-- 锁
-
-  - synchronized
-
-  - monitor对象
-
-  - volatile 
-
-    [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
-
-    [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
 
 - [线程池](http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/Executor%20%E4%B9%8B%20%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8F%8A%E5%AE%9A%E6%97%B6%E5%99%A8.html)  
 
@@ -171,6 +165,16 @@ Cglib动态代理
     ![](https://img-blog.csdnimg.cn/20191216171812869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIwNzA1Ng==,size_16,color_FFFFFF,t_70)
 
   - `shutdown()`, `shutdownNow()`和`awaitTermination()`
+
+- 锁
+
+  - synchronized
+- monitor对象
+  - [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
+
+- volatile 
+
+  [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
 
 - 乐观锁
 
@@ -200,6 +204,10 @@ Cglib动态代理
 
   - [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
 
+- ThreadLocal
+
+  ThreadLocal有一个**value内存泄露**的隐患
+
 - 并发容器
 
   - CopyOnWriteArrayList、ConcurrentLinkedQueue ...
@@ -216,14 +224,16 @@ Cglib动态代理
 
     > 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
 
-- **ForkJoin**
+- WeakReference 和 **ReferenceQueue**
 
-- WeakReference 和 ReferenceQueue
+  这里重点看ReferenceQueue，引用相关请看下面的**对象引用**小节
 
-- JDK Unsafe类
+- JDK Unsafe类（上面AQS提到，单独提出来）
 
   - objectFieldOffset
   - compareAndSwap...
+
+- **ForkJoin**
 
 - **Future**
 
@@ -233,13 +243,11 @@ Cglib动态代理
 
   - Guava——AbstractFuture
 
-- **ThreadLocal value内存泄露**
-
 ### Java Util
 
 - BitSet
 
-  JDK中的BitSet集合对是布隆过滤器中经常使用的数据结构**Bitmap**的相对简单的实现。BitSet采用了**Bitmap的算法思想**。
+  JDK中的BitSet集合对是**布隆过滤器**中经常使用的数据结构**Bitmap**的相对简单的实现。BitSet采用了**Bitmap的算法思想**。
 
 ### Swing/Awt
 
@@ -275,9 +283,9 @@ Cglib动态代理
 
   2）classLoader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容,只有在newInstance才会去执行static块。
 
-- 使用Class.getResource和ClassLoader.getResource方法获取文件路径
-
 - **Method**.invoke()的实现原理
+
+- 使用Class.getResource和ClassLoader.getResource方法获取文件路径
 
 ### 创建和销毁对象
 

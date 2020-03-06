@@ -67,55 +67,50 @@ catalog: true
 
 ### Java [➮详细](Java)
 
+- String
+- 集合
 - 代理
   - JDK动态代理
   - Cgliib 
-- Unsafe
-- 语法糖
-- 设计模式
-  - koloboke
-- 集合
 - IO
   - IO流
   - 同步、异步、阻塞和非阻塞
   - Reactor模式
-- 并发
-  - synchronized
-  - volatile
+- 线程&并发
   - 线程池
-  - Atomic
-  - AQS
+  - synchronized，Monitor对象，volatile
+  - Atomic，AQS，Unsafe
   - 并发容器
-  - Monitor对象
   - ForkJoin
   - Actor模型
+- 新特性
+  - Java8：parallelStream
 - Jvm
   - **内存模型**
   - ClassLoader
-  - 热更
-- Java8
-  - parallelStream
+- 热更新
 - 常遇的报错与坑
   - ConcurrentModificationException
 
-### 主流框架
+### 常见框架
 
-- 常用框架
+- 基础框架
 
   - Log
 
-    - [Java日志，需要知道的几件事(commons-logging,log4j,slf4j,logback) - CSDN博客](http://blog.csdn.net/kobejayandy/article/details/17335407)
-    - **Flume**构建日志采集系统
+    - 区分commons-logging，slf4j，log4j，logback
+
+      了解jcl-over-slf4j，jul-to-slf4j这些jar的作用
+
+      了解log4j和log4j2的区别，**lmax disruptor**应用场景
+
+    - **Flume** 日志采集系统，一般用于日志聚合
 
   - Apache commons
 
     - IO
 
-      - FileAlterationObserver
-
-        （梦爷曾发现这里每隔10秒会涨10M内存）
-
-      - FileAlterationMonitor
+      - FileAlterationMonitor和FileAlterationObserver（梦爷曾发现这里每隔10秒会涨10M内存，待研究）
 
   - [Google Guava](https://ifeve.com/google-guava/)
 
@@ -251,8 +246,13 @@ catalog: true
 
 - 领域驱动设计
   - [领域驱动设计在互联网业务开发中的实践](https://tech.meituan.com/2017/12/22/ddd-in-practice.html)
+- [美团DDD实践 示例项目](https://github.com/1987539447/draw-lottery)
+  
+- 动态语言与动态类型语言
 
-  - [美团DDD实践 示例项目](https://github.com/1987539447/draw-lottery)
+  动态语言：(Dynamic programming Language -动态语言或动态编程语言)，动态语言是指程序在运行时可以改变其结构，新的函数可以被引进，已有的函数可以被删除等在结构上的变化。
+
+  动态类型语言：动态类型语言是指在运行期间才去做数据类型检查的语言，说的是数据类型，动态语言说的是运行是改变结构，说的是代码结构。
 
 ### 分布式技术
 
@@ -282,12 +282,8 @@ catalog: true
   - [分布式事务](https://javatar.iteye.com/blog/981787)
   - [分布式事务系列（2.1）分布式事务的概念](https://yq.aliyun.com/articles/39047)
 
-### 其他
+### 其他前沿技术
 
-- **AI**
-  
-  - 状态机 行为树
-  
 - docker
 
 - ServiceMesh(服务网格)
@@ -296,11 +292,8 @@ catalog: true
 
 - 分布式、大数据、人工智能、区块链
 
-- 动态语言与动态类型语言
 
-  动态语言：(Dynamic programming Language -动态语言或动态编程语言)，动态语言是指程序在运行时可以改变其结构，新的函数可以被引进，已有的函数可以被删除等在结构上的变化。
-
-  动态类型语言：动态类型语言是指在运行期间才去做数据类型检查的语言，说的是数据类型，动态语言说的是运行是改变结构，说的是代码结构。
+### 游戏技术
 
 ### 版本管理
 
@@ -310,12 +303,13 @@ catalog: true
 
 ### 构建工具
 
+* Maven
+  [如何将 Java 项目转换成 Maven 项目 - 船长&amp;CAP - 博客园](https://www.cnblogs.com/liuning8023/p/4726822.html)
+
 - Gradle
   - [十分钟理解Gradle - Bonker - 博客园](https://www.cnblogs.com/Bonker/p/5619458.html)
   - [大家都是怎样处理Gradle中的这个文件下载慢的问题的？ - 知乎](https://www.zhihu.com/question/37810416)
   - 慕课实战：Gradle3.0自动化项目构建技术精讲+实战
-- Maven
-  - [如何将 Java 项目转换成 Maven 项目 - 船长&amp;CAP - 博客园](https://www.cnblogs.com/liuning8023/p/4726822.html)
 
 * Jenkins
 
@@ -324,15 +318,15 @@ catalog: true
 - [Groovy](脚本语言#Groovy)
   - [30分钟groovy快速入门并掌握](https://www.cnblogs.com/amosli/p/3970810.html)
   - [Groovy 语言快速入门](https://www.jianshu.com/p/e8dec95c4326)
-- Groovy与Java
-  - [实战 Groovy，在 Java 应用程序中加一些 Groovy 进来](https://www.ibm.com/developerworks/cn/java/j-pg05245/)
-  - [利用SPRING管理热加载的GROOVY对象](https://palexu.github.io/posts/spring-dynamic-load-groovy-bean?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-  - [spring + groovy 很强大](https://blog.csdn.net/qq362228416/article/details/8811136)
-  - [Spring动态部署Bean/Controller/Groovy Controller](https://jinnianshilongnian.iteye.com/blog/1999284)
-- Groovy与DSL
-  - [Gradle：新一代自动化构建工具](http://hao.jobbole.com/gradle/)
-  - [Groovy DSL 百度搜索](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=Groovy DSL&tn=98010089_dg&ch=4)
-  - [gradle dsl](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=gradle dsl&tn=98010089_dg&ch=5)
+  - Groovy 与 **Java**
+    - [实战 Groovy，在 Java 应用程序中加一些 Groovy 进来](https://www.ibm.com/developerworks/cn/java/j-pg05245/)
+    - [利用SPRING管理热加载的GROOVY对象](https://palexu.github.io/posts/spring-dynamic-load-groovy-bean?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+    - [spring + groovy 很强大](https://blog.csdn.net/qq362228416/article/details/8811136)
+    - [Spring动态部署Bean/Controller/Groovy Controller](https://jinnianshilongnian.iteye.com/blog/1999284)
+  - Groovy as DSL 与 **Gradle**
+    - [Gradle：新一代自动化构建工具](http://hao.jobbole.com/gradle/)
+    - [Groovy DSL 百度搜索](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=Groovy DSL&tn=98010089_dg&ch=4)
+    - [gradle dsl](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=gradle dsl&tn=98010089_dg&ch=5)
 
 ### 数据结构
 
@@ -349,6 +343,7 @@ catalog: true
     - Treap
     - BST
 - 跳表
+- 布隆过滤器，位图，hyperloglog
 
 ### 算法
 
@@ -404,13 +399,13 @@ catalog: true
 
 ### 字符编解码
 
-- 字符编码
-
-  UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案
-
 - 字符集
 
   ASCII、Unicode
+  
+- 字符编码
+
+  UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案
 
 ### 网络
 
@@ -431,7 +426,7 @@ catalog: true
   
   - websocket
   
-- 零拷贝
+- **零拷贝**
 
 - 非对称加密
 
@@ -517,7 +512,7 @@ catalog: true
       
     - [《吊打面试官》系列-缓存雪崩、击穿、穿透](https://blog.csdn.net/qq_35190492/article/details/102889333)
     
-      防止缓存穿透：增加校验，缓存，**布隆过滤器（Bloom Filter）**
+      防止缓存穿透：增加校验，缓存，**布隆过滤器（Bloom Filter）**，hyperloglog
     
     - 书籍
     
@@ -652,9 +647,6 @@ catalog: true
 
 ### 游戏相关
 
-- 一些游戏框架
-  - skynet
-  - Pinus
 - [游戏学院 - 腾讯大学](https://daxue.qq.com/game)
 - 安全
   - [游戏安全实验室](https://gslab.qq.com/portal.php?mod=view&aid=94)

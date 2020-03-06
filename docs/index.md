@@ -151,6 +151,8 @@ catalog: true
 
   - [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
 
+  - Spring AOP
+
     - AOP原理，ProxyFactory
 
     - AOP中Pointcut，Advice 和 Advisor 三个概念 还有Advised
@@ -178,7 +180,7 @@ catalog: true
     - [企业大型互联网分布式架构{Java分布式架构 dubbo+springmvc+mybatis+ehcach+redis }-IT未来-ITPUB博客](http://m.blog.itpub.net/31452580/viewspace-2148363/)
     - [手把手教你从最基本的Java工程搭建SpringMVC+SpringDataJPA+Hibernate(含源码下载) - anxpp的博客 - CSDN博客](http://blog.csdn.net/anxpp/article/details/51415366)
 
-  - Spring Boot
+  - SpringBoot
 
   - SpringCloud
 

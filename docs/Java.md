@@ -4,6 +4,7 @@ title: Java
 date: 2019-02-01
 header-img: "img/post-bg-rwd.jpg"
 catalog: true
+
 ---
 
 > **思想是灵魂,实现是形式**
@@ -23,14 +24,13 @@ catalog: true
   > 最近它有两个主要的更新——一个在Java 7u40版本中对于空map的共享的底层存储，以及在Java 8中将底层hash bucket链接成为**哈希树**（改进更差情况下的性能）。
 
   - jdk1.7中的线程安全问题 **(resize死循环)**
-
   - jdk8中是如何解决jdk7中的HashMap死循环的
 
 - jdk8 ConcurrentHashMap 
 
   - 死循环：
 
-     [ConcurrentHashMap BUG 死锁](https://blog.csdn.net/zhanglong_4444/article/details/93638844)
+    [ConcurrentHashMap BUG 死锁](https://blog.csdn.net/zhanglong_4444/article/details/93638844)
 
   - 死锁（该问题由fly提出并收录）：
 
@@ -64,7 +64,7 @@ catalog: true
     ConcurrentHashMap 1194行会死锁
 
     ![deadlock](imgs/1579494015304.png)
-  
+
 - **红黑树** TreeMap、TreeSet
 
 - 其他
@@ -123,7 +123,7 @@ Cglib动态代理
 - JDK NIO
 
   - Selector,Buffer
-  
+
 - **Reactor模式**
 
 - 为什么要用 `close()` 关掉流？
@@ -169,7 +169,9 @@ Cglib动态代理
 - 锁
 
   - synchronized
+
 - monitor对象
+
   - [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
 
 - volatile 
@@ -444,11 +446,11 @@ Cglib动态代理
 
 ### 新特性
 
-* Java 7
+- Java 7
 
-  * [JDK7动态方法调用](https://blog.csdn.net/xtayfjpk/article/details/42043977)
+  - [JDK7动态方法调用](https://blog.csdn.net/xtayfjpk/article/details/42043977)
 
-    * java.lang.invoke包
+    - java.lang.invoke包
 
       主要包含了`CallSite、MethodHandle、MethodType`等类
 
@@ -457,11 +459,11 @@ Cglib动态代理
 
       > `MethodHandle`和反射相比好处是：
       >
-      > * 调用 invoke() 已经被JVM优化，类似直接调用一样。
-      > * 性能好得多，类似标准的方法调用。
-      > * 当我们创建MethodHandle 对象时，实现方法检测，而不是调用invoke() 时。
+      > - 调用 invoke() 已经被JVM优化，类似直接调用一样。
+      > - 性能好得多，类似标准的方法调用。
+      > - 当我们创建MethodHandle 对象时，实现方法检测，而不是调用invoke() 时。
 
-    * 新增了invokedynamic指令
+    - 新增了invokedynamic指令
 
 - Java 8
 
@@ -473,9 +475,9 @@ Cglib动态代理
 
     梦爷的FileLoader优化用到了Supplier
 
-  * **Lambda的实现原理**
+  - **Lambda的实现原理**
 
-  * **::（双冒号）的实现原理**
+  - **::（双冒号）的实现原理**
 
     ```java
     List<String> al = Arrays.asList("a", "b", "c", "d");
@@ -499,9 +501,9 @@ Cglib动态代理
 
 ### 热更新
 
-* 自定义类加载器
-  * [探秘 Java 热部署](https://www.jianshu.com/p/731bc8293365)
-  * [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
+- 自定义类加载器
+  - [探秘 Java 热部署](https://www.jianshu.com/p/731bc8293365)
+  - [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
 
 - java.lang.instrument
 
@@ -521,7 +523,7 @@ Cglib动态代理
 - 脚本语言
 
   - groovy
-  
+
     使用groovy类加载器重载java代码 重载的java文件可以直接使用源文件，无需编译为class
 
 ### 其他
@@ -571,4 +573,3 @@ Cglib动态代理
 
 - [ConcurrentModificationException](https://www.2cto.com/kf/201403/286536.html)
 - [疫苗：JAVA HASHMAP的死循环](https://coolshell.cn/articles/9606.html)
-

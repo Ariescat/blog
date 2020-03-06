@@ -14,12 +14,6 @@ catalog: true
   - 数组呢？
 - StringJoiner（Java 8中提供的可变字符串类）
 
-### Java Util
-
-* BitSet
-
-  JDK中的BitSet集合对是布隆过滤器中经常使用的数据结构**Bitmap**的相对简单的实现。BitSet采用了**Bitmap的算法思想**。
-
 ### 集合
 
 - 集合框架**Koloboke**
@@ -130,7 +124,7 @@ Cglib动态代理
 
   有些资源 `GC` 回收不掉？
 
-### 线程&并发
+### **线程**&并发
 
 - 线程
 
@@ -241,25 +235,29 @@ Cglib动态代理
 
 - **ThreadLocal value内存泄露**
 
-### JVM
+### Java Util
 
-> JVM很难，网上错误的观点很多
+- BitSet
 
-- ClassLoader
-  - [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
-- 局部变量表中的Slot
-- [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
-- 内存模型
-  - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
-  - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
-- HotSpot虚拟机
-  - 解释执行
-    - 逐条将字节码翻译成机器码并执行
-  - 即时编译（Just-in-time ，JIT）
-    - 将一个方法中包含的所有字节码编译成机器码后再执行。
-- 逃逸分析
-  - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
-  - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
+  JDK中的BitSet集合对是布隆过滤器中经常使用的数据结构**Bitmap**的相对简单的实现。BitSet采用了**Bitmap的算法思想**。
+
+### Swing/Awt
+
+- EventQueue 与 AWTEvent
+
+  > from https://github.com/jzyong/game-server.git 
+  >
+  > game-tool/src/main/java/com/jzy/game/tool/db/DBTool.java
+  >
+  > `java.awt.EventQueue.invokeLater`
+
+  `EventQueue`里有一条`dispatchThread`线程，在`postEventPrivate`里检测为null则进行初始化，然后一直调用`pumpEvents`取出优先级最高的`AWTEvent`进行分发：
+
+  `eq.dispatchEvent(event);`
+
+  如`java.awt.Component#dispatchEventImpl`里会触发各种监听
+
+- [Polygon](https://segmentfault.com/a/1190000007736473)，区域超区校验
 
 ### 反射
 
@@ -340,6 +338,26 @@ Cglib动态代理
 
   - LRU缓存实现(Java)
 
+### JVM
+
+> JVM很难，网上错误的观点很多
+
+- ClassLoader
+  - [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
+- 局部变量表中的Slot
+- [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
+- 内存模型
+  - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
+  - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
+- HotSpot虚拟机
+  - 解释执行
+    - 逐条将字节码翻译成机器码并执行
+  - 即时编译（Just-in-time ，JIT）
+    - 将一个方法中包含的所有字节码编译成机器码后再执行。
+- 逃逸分析
+  - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
+  - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
+
 ### GC性能优化，日志解读
 
 - 可能导致FullGC的原因有以下几种。
@@ -370,11 +388,18 @@ Cglib动态代理
 
 - Full GC日志解读
 
-### 字节码
+### 性能调优工具
 
-* Class类的文件结构
+- jps、jmap、jstack、jstat
 
-  方法表，属性表...
+  jstat -gcutil
+
+- VisualVM
+
+  - [使用 VisualVM 进行性能分析及调优](https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/)
+
+- [Arthas使用指南](https://segmentfault.com/a/1190000014618329?utm_source=tag-newest)  
+  Arthas 是基于 Greys 进行二次开发的全新在线诊断工具
 
 ### QA（疑问?）
 
@@ -403,29 +428,11 @@ Cglib动态代理
 
   2.反射方法调用还有验证过程和参数问题，参数需要装箱拆箱、需要组装成Object[]形式、异常的包装等等问题
 
-### 其他
 
-- Reactor模式
 
-  - [Reactor模式详解](https://www.cnblogs.com/winner-0715/p/8733787.html)
-  - [高性能IO之Reactor模式](https://www.cnblogs.com/doit8791/p/7461479.html)
+### ---------分割符---------
 
-- Actor模型
 
-  - [Java并发的四种风味](http://www.importnew.com/14506.html) 
-  - Akka
-
-- 协程
-
-  > 协程，英文Coroutines，是一种比线程更加轻量级的存在。正如一个进程可以拥有多个线程一样，一个线程也可以拥有多个协程。最重要的是，**协程不是被操作系统内核所管理，而完全是由程序所控制**（也就是在用户态执行）。
-  >
-  > Java语言并没有对协程的原生支持，但是某些开源框架模拟出了协程的功能，有兴趣的小伙伴可以看一看Kilim框架的源码
-
-- JMX
-
-- jsvc
-
-  > 在linux上以服务的方式启动java程序，需要提前安装jsvc。linux是利用daemon(jsvc)构建java守护进程。
 
 ### 新特性
 
@@ -476,6 +483,12 @@ Cglib动态代理
   - Reactive Streams
   - Flow API
 
+### 字节码
+
+- Class类的文件结构
+
+  方法表，属性表...
+
 ### 热更新
 
 * 自定义类加载器
@@ -503,36 +516,35 @@ Cglib动态代理
   
     使用groovy类加载器重载java代码 重载的java文件可以直接使用源文件，无需编译为class
 
-### 性能调优
+### 其他
 
-- jps、jmap、jstack、jstat
+- Reactor模式
 
-  jstat -gcutil
+  - [Reactor模式详解](https://www.cnblogs.com/winner-0715/p/8733787.html)
+  - [高性能IO之Reactor模式](https://www.cnblogs.com/doit8791/p/7461479.html)
 
-- VisualVM
+- Actor模型
 
-  - [使用 VisualVM 进行性能分析及调优](https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/)
+  - [Java并发的四种风味](http://www.importnew.com/14506.html) 
+  - Akka
 
-- [Arthas使用指南](https://segmentfault.com/a/1190000014618329?utm_source=tag-newest)  
-  Arthas 是基于 Greys 进行二次开发的全新在线诊断工具
+- 协程
 
-### Swing/Awt
-
-- EventQueue 与 AWTEvent
-
-  > from https://github.com/jzyong/game-server.git 
+  > 协程，英文Coroutines，是一种比线程更加轻量级的存在。正如一个进程可以拥有多个线程一样，一个线程也可以拥有多个协程。最重要的是，**协程不是被操作系统内核所管理，而完全是由程序所控制**（也就是在用户态执行）。
   >
-  > game-tool/src/main/java/com/jzy/game/tool/db/DBTool.java
-  >
-  > `java.awt.EventQueue.invokeLater`
+  > Java语言并没有对协程的原生支持，但是某些开源框架模拟出了协程的功能，有兴趣的小伙伴可以看一看Kilim框架的源码
 
-  `EventQueue`里有一条`dispatchThread`线程，在`postEventPrivate`里检测为null则进行初始化，然后一直调用`pumpEvents`取出优先级最高的`AWTEvent`进行分发：
+- JMX
 
-  `eq.dispatchEvent(event);`
+- jsvc
 
-  如`java.awt.Component#dispatchEventImpl`里会触发各种监听
+  > 在linux上以服务的方式启动java程序，需要提前安装jsvc。linux是利用daemon(jsvc)构建java守护进程。
 
-- [Polygon](https://segmentfault.com/a/1190000007736473)，区域超区校验
+
+
+### ---------分割符---------
+
+
 
 ### 语法糖
 

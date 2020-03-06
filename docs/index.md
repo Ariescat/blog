@@ -122,6 +122,8 @@ catalog: true
 
     - Guava的缓存
 
+      Guava Cache说简单点就是一个支持**LRU**的ConcurrentHashMap
+
     - **Caffeine** 来自未来的缓存
 
       Caffeine是基于JAVA 1.8 Version的高性能缓存库。Caffeine提供的内存缓存使用参考Google guava的API。Caffeine是基于Google Guava Cache设计经验上改进的成果。
@@ -534,6 +536,8 @@ catalog: true
 
   - Redis
 
+    Redis是一种基于键值对(Key-Value)的NoSQL数据库，Redis的Value可以由String，hash，list，set，zset，**Bitmaps**，**HyperLogLog**等多种数据结构和算法组成。Redis还提供了键过期，发布订阅，事务，Lua脚本，哨兵，Cluster等功能。
+
     - 源码
 
       - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
@@ -551,7 +555,7 @@ catalog: true
     - Redis之与Memcached的比较
 
   - MongoDB
-
+  
   - Elasticsearch
 
 ### C/C++

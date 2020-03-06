@@ -455,6 +455,10 @@ catalog: true
 
     Linux零拷贝机制对比：无论是传统IO方式，还是引入零拷贝之后，2次DMA copy 是都少不了的。因为两次DMA都是依赖硬件完成的。
 
+  * Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
+
+    HeapByteBuffer，DirectByteBuffer，MappedByteBuffer
+
   * Netty中的零拷贝
 
     Netty中的Zero-copy与上面我们所提到到OS层面上的Zero-copy不太一样, Netty的Zero-copy完全是在用户态(Java层面)的，它的Zero-copy的更多的是偏向于优化数据操作这样的概念。
@@ -587,14 +591,16 @@ catalog: true
 
     > `malloc`返回的其实是`void *`，所以其需要强转，`void *`的用处还有`memcpy`，`memset`等
 
+* 内存对齐
+
 ### 操作系统 [➮详细](Linux)
 
 - Linux
   - [CentOS7简单使用](Linux#CentOS7)
-- Linux常用服务搭建
-  - [Shadowsocks](Linux#Shadowsocks)
-  - [Nginx](Linux#Nginx)
-  - [Ngrok](Linux#Ngrok)
+  - Linux常用服务搭建
+    - [Shadowsocks](Linux#Shadowsocks)
+    - [Nginx](Linux#Nginx)
+    - [Ngrok](Linux#Ngrok)
 - Windows
   - hiberfil.sys和pagefile.sys占用系统空间，其分别是休眠空间和虚拟内存。
 - 虚拟内存和swap分区

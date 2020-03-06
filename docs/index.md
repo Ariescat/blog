@@ -410,7 +410,7 @@ catalog: true
 
   UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案
 
-### 网络
+### 网络/IO
 
 - 协议
 
@@ -431,8 +431,6 @@ catalog: true
 
   - websocket
 
-- **零拷贝**
-
 - 非对称加密
 
   在非对称加密中使用的主要算法有：RSA、Elgamal、ESA、背包算法、Rabin、D-H、ECC（椭圆曲线加密算法）等。
@@ -446,6 +444,27 @@ catalog: true
 - 网络攻击
 
   - DDoS攻击
+
+- **零拷贝**
+
+   [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)，这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
+
+  * Linux支持的(常见)零拷贝
+
+    mmap内存映射，sendfile（linux 2.1支持），Sendfile With DMA Scatter/Gather Copy（可以看作是sendfile的增强版，批量sendfile），splice（linux 2.6.17 支持）。
+
+    Linux零拷贝机制对比：无论是传统IO方式，还是引入零拷贝之后，2次DMA copy 是都少不了的。因为两次DMA都是依赖硬件完成的。
+
+  * Netty中的零拷贝
+
+    Netty中的Zero-copy与上面我们所提到到OS层面上的Zero-copy不太一样, Netty的Zero-copy完全是在用户态(Java层面)的，它的Zero-copy的更多的是偏向于优化数据操作这样的概念。
+
+    - Netty提供了CompositeByteBuf类，它可以将多个ByteBuf合并为一个逻辑上的ByteBuf，避免了各个ByteBuf之间的拷贝。
+    - 通过wrap操作，我们可以将byte[]数组、ByteBuf、 ByteBuffer 等包装成一个 Netty ByteBuf对象，进而避免了拷贝操作。
+    - ByteBuf支持slice 操作，因此可以将ByteBuf分解为多个共享同一个存储区域的ByteBuf，避免了内存的拷贝。
+    - 通过FileRegion包装的FileChannel.tranferTo实现文件传输，可以直接将文件缓冲区的数据发送到目标Channel，避免了传统通过循环write方式导致的内存拷贝问题。
+
+    **前三个都是 广义零拷贝，都是减少不必要数据copy；偏向于应用层数据优化的操作。**
 
 ### 数据库/Redis
 

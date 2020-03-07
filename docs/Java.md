@@ -467,6 +467,8 @@ Cglib动态代理
 
 - Java 8
 
+  - 时间Instant
+
   - parallelStream
 
   - 元空间（Metaspace）
@@ -492,6 +494,10 @@ Cglib动态代理
 
   - Reactive Streams
   - Flow API
+  
+- Java 11
+
+  - 直接运行源代码
 
 ### 字节码
 

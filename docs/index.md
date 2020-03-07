@@ -10,19 +10,55 @@ catalog: true
 ---
 
 <h1>《技术图谱》</h1>
-### Github项目
+### Github干货
+
+- [521xueweihan / HelloGitHub](https://github.com/521xueweihan/HelloGitHub)  分享 GitHub 上有趣、入门级的开源项目 
 
 - awesome
 
-  - [xingshaocheng/architect-awesome](https://github.com/xingshaocheng/architect-awesome)
-  - [crossoverJie/JCSprout](https://github.com/crossoverJie/JCSprout)
-  - [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)
-  - 《吊打面试官》系列
-    - [https://github.com/AobingJava/JavaFamily](https://github.com/AobingJava/JavaFamily)
-    - [https://me.csdn.net/qq_35190492](https://me.csdn.net/qq_35190492)
-  - [hadyang/interview](https://github.com/hadyang/interview)
+  - [hadyang / interview](https://github.com/hadyang/interview)
 
-- 游戏开源项目
+    Java 笔试、面试 知识整理
+
+  - [Snailclimb / JavaGuide](https://github.com/Snailclimb/JavaGuide)
+
+    【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。 
+
+  - [jobbole / awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
+
+    Java资源大全中文版，包括开发库、开发工具、网站、博客、微信、微博等，由伯乐在线持续更新。
+
+    同时他还有 [jobbole / awesome-python-cn](https://github.com/jobbole/awesome-python-cn)，[jobbole / awesome-cpp-cn](https://github.com/jobbole/awesome-cpp-cn)
+
+  * [AobingJava / JavaFamily](https://github.com/AobingJava/JavaFamily)
+
+    【互联网一线大厂面试+学习指南】进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，作者风格幽默，看起来津津有味，把学习当做一种乐趣，何乐而不为，后端同学必看 
+
+    附其CSDN博客（《吊打面试官》系列）：[https://me.csdn.net/qq_35190492](https://me.csdn.net/qq_35190492)
+
+  - [xingshaocheng / architect-awesome](https://github.com/xingshaocheng/architect-awesome)  
+
+    后端架构师技术图谱
+
+  - [crossoverJie / JCSprout](https://github.com/crossoverJie/JCSprout) 
+
+    Java Core Sprout : basic, concurrent, algorithm 
+
+  - [javagrowing / JGrowing](https://github.com/javagrowing/JGrowing)
+
+    Java成长路线，但学到不仅仅是Java。 
+
+- Java高并发
+
+  - [seckill](https://github.com/liyifeng1994/seckill)
+
+- Android
+
+  - [henrymorgen / android-advanced-decode](https://github.com/henrymorgen/android-advanced-decode)  《Android进阶解密》源码 
+
+- 游戏相关
+
+  - [hstcscolor / awesome-gameserver-cn](https://github.com/hstcscolor/awesome-gameserver-cn)  中文游戏服务器资源大全 
 
   - ARPG
 
@@ -38,16 +74,16 @@ catalog: true
 
   - tinyHeart [https://github.com/luckykun/tinyHeart](https://github.com/luckykun/tinyHeart)
 
-- Java高并发
-
-  - [seckill](https://github.com/liyifeng1994/seckill)
-
-- 其他源码
+- 常见框架源码
 
   - tomcat
   - dubbo
   - spring
   - zookeeper
+
+- 源码解读
+
+  - [huangz1990 / redis-3.0-annotated](https://github.com/huangz1990/redis-3.0-annotated)  带有详细注释的 Redis 3.0 代码 
 
 ### 知识体系
 
@@ -451,7 +487,7 @@ catalog: true
 
 - **零拷贝**
 
-   [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)，这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
+  [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)，这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
 
   * Linux支持的(常见)零拷贝
 
@@ -557,7 +593,7 @@ catalog: true
     - Redis之与Memcached的比较
 
   - MongoDB
-  
+
   - Elasticsearch
 
 ### C/C++

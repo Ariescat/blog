@@ -98,6 +98,7 @@ Cglib动态代理
 
 - IO流
 
+  - InputStream/Reader，OutputStream/Writer 有空可以看看里面的实现
   - [管道流(Piped Stream)](https://www.cnblogs.com/skywang12345/p/io_04.html)
   - RandomAccessFile, java.io包中是一个特殊的类, 既可以读文件，也可以写文件。
 
@@ -244,6 +245,10 @@ Cglib动态代理
   Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。
 
   - Guava——AbstractFuture
+  
+- 什么是上下文切换？
+
+- 并发与并行的区别？
 
 ### Java Util
 
@@ -498,6 +503,10 @@ Cglib动态代理
 - Java 11
 
   - 直接运行源代码
+  
+- QA？
+
+  * [JDK 1.8 下的 java.lang.Class 对象和 static 成员变量在堆还是方法区？](https://blog.csdn.net/xu_jl1997/article/details/89433916)
 
 ### 字节码
 

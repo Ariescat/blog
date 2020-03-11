@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Awesome"
-subtitle: "\"全栈之路 技术体系汇总（不断收集整理中...）\""
+subtitle: "\"技术体系探索总结（不断收集整理中...）\""
 date: 2019-01-25
 author: Ariescat
 header-img: "img/post-bg-kuaidi.jpg"
@@ -9,7 +9,7 @@ catalog: true
 
 ---
 
-<h1>《技术图谱》</h1>
+<h1>《技术总结》</h1>
 ### Github干货
 
 - [521xueweihan / HelloGitHub](https://github.com/521xueweihan/HelloGitHub)  分享 GitHub 上有趣、入门级的开源项目 

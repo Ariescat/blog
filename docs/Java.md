@@ -280,6 +280,26 @@ Cglib动态代理
 
   - Class的 getSuperclass与getGenericSuperclass
 
+  - 判断当前类是什么类
+
+    ```java
+    boolean isLocalClass();		//判断是不是局部类，也就是方法里面的类 
+    boolean isMemberClass();	//判断是不是成员内部类，也就是一个类里面定义的类
+    boolean isAnonymousClass();	//判断当前类是不是匿名类，匿名类一般用于实例化接口
+    boolean isAnnotation() ;	//判断当前Class对象是否是注释类型
+    ```
+
+  - 返回字符串(String)的方法
+
+    ```java
+    String getCanonicalName() 	//返回 Java Language Specification 中所定义的底层类的规范化名称。 
+    String getName() 			//以 String 的形式返回此 Class 对象所表示的实体（类、接口、数组类、基本类型或 void）名称（全限定名：包名.类名）。
+    String getSimpleName() 		//返回源代码中给出的底层类的简称。 
+    String toString() 			//将对象转换为字符串。
+    ```
+
+    
+
 - Class.forName和ClassLoader的区别
 
   都可用来对类进行加载。
@@ -352,6 +372,12 @@ Cglib动态代理
     实现原理可具体看 com.google.common.cache.LocalCache.Strength
 
   - LRU缓存实现(Java)
+
+### 对象序列化
+
+* Gson
+
+  [关于Gson的几个坑](https://ariescat.github.io/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/)
 
 ### JVM
 

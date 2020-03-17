@@ -12,8 +12,14 @@ catalog: true
 ### String
 
 - [Java中的String有没有长度限制？](https://www.hollischuang.com/archives/3916)
+  
   - 数组呢？
+  
 - StringJoiner（Java 8中提供的可变字符串类）
+
+- char
+
+  JAVA的char内部编码为`UTF-16`，而与`Charset.defaultCharset()`无关
 
 ### 集合
 
@@ -110,6 +116,7 @@ Cglib动态代理
 
   - [网络IO中的同步、异步、阻塞和非阻塞](https://drugbean.club/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
   - [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
+  - 《Netty Zookeeper Redis 高并发实战》[2.2节](https://weread.qq.com/web/reader/1e732510718f63a11e7dee2k6f4322302126f4922f45dec)
 
   > **同步、异步：**  
   >

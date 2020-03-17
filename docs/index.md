@@ -244,6 +244,12 @@ catalog: true
       > 5）Quartz能够通过序列化，将定时任务保存在数据库，而hashWheel不能
       >
       > 总的来说，Quartz的功能相对强大，而hashWheel相对要轻量级一点。
+    
+  - 附：
+
+    个人认为netty对用户来说是异步，但是实际底层IO是IO多路复用模型，本质上还是一种同步非阻塞（是的，个人认为IO多路复用模型还是同步非阻塞，[真正的IO操作都将阻塞应用线程](https://weread.qq.com/web/reader/1e732510718f63a11e7dee2k98f3284021498f137082c2e)）。
+
+    另看 [Java/IO](https://ariescat.github.io/docs/Java/)，这里也收录了一些理解
 
 - web
 
@@ -444,11 +450,57 @@ catalog: true
 
 - 字符集
 
-  ASCII、Unicode
+  1. ASCII
+
+  2. Unicode
+
+     目前Unicode字符分为17组编排，0x0000至0x10FFFF,每组称为平面（Plane）,每个面拥有65536个码位，共1114112个。
 
 - 字符编码
 
   UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案
+
+* 附：
+
+  1. Java的`char`内部编码为`UTF-16`，而与`Charset.defaultCharset()`无关。
+
+     看 [Unicode 编码理解](https://blog.csdn.net/wdeng2011/article/details/80155795) 可知`UTF-16`编码完全可以满足Unicode 的17组编排（平面），因为有平面0的0xD800-0xDFFF代理区。
+
+     [关于java中char占几个字节，汉字占几个字节](https://www.cnblogs.com/nevermorewang/p/7808092.html)，这里指出Java中的`char`是占用两个字节，只不过有些字符需要两个char来表示，同时这篇博客也给了一个官方Oracle链接里面明确的说明了*值在16位范围之外且在0x10000到0x10FFFF范围内的字符称为补充字符，并定义为**一对char值***。
+
+     测试代码：
+
+     ```java
+     public static void main(String[] args) {
+     
+         char[] c = new char[]{'一'};
+         System.err.println(Integer.toHexString(c[0]));
+         String s = new String(c);
+         // String#length事实上调用了char[].length
+         System.err.println(s + " " + s.length());
+     
+         String str = "一";
+         System.err.println(str + " " + str.length());
+     
+         // Unicode编码 汉字扩展B '𠀀' 字
+         c = new char[]{'\uD840', '\uDC00'};
+         s = new String(c);
+         System.err.println(s + " " + s.length());
+     
+         str = "\uD840\uDC00";
+         System.err.println(str + " " + str.length());
+     
+         // 输出：由输出可见这个字用了两个char来存
+         // 一 1
+         // 一 1
+         // 𠀀 2
+         // 𠀀 2
+     }
+     ```
+
+  2. [UniCode编码表](https://www.cnblogs.com/csguo/p/7401874.html)
+
+     [汉字unicode编码范围](https://blog.csdn.net/gywtzh0889/article/details/71083459/)
 
 ### 网络/IO
 

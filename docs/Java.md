@@ -104,10 +104,53 @@ Cglib动态代理
 
 - IO流
 
-  - InputStream/Reader，OutputStream/Writer 有空可以看看里面的实现
-  - [管道流(Piped Stream)](https://www.cnblogs.com/skywang12345/p/io_04.html)
-  - RandomAccessFile, java.io包中是一个特殊的类, 既可以读文件，也可以写文件。
+  1. 对文件进行操作：FileInputStream（字节输入流），FileOutputStream（字节输出流），FileReader（字符输入流），FileWriter（字符输出流）
 
+     2020年3月17日追加：
+
+     1. `FileReader`，可以理解成他把`FileInputStream`和`Decoder`封装了起来，本质上还是用FileInputStream读了一层字节流byte[] (这里的read是一个`native`方法)，然后通过Decoder把他转成了char[]。
+     2. `BufferedReader`，他默认开辟了一份`defaultCharBufferSize = 8192`长度的cb[]数组（缓冲区），读之前会把这个数组`fill()`满，之后都是操作这个数组，操作完了就再次更新数组，提高数据访问的效率。
+  
+     测试代码：`study-metis: com.metis.io.iostream.Test`
+  
+  2. 对管道进行操作：PipedInputStream（字节输入流），PipedOutStream（字节输出流），PipedReader（字符输入流），PipedWriter（字符输出流）
+  
+     PipedInputStream的一个实例要和PipedOutputStream的一个实例共同使用，共同完成管道的读取写入操作，主要用于**线程操作**。**有空看看这里的实现 > **[简介,源码分析和示例](https://www.cnblogs.com/skywang12345/p/io_04.html)
+  
+  3. 字节/字符数组：ByteArrayInputStream，ByteArrayOutputStream，CharArrayReader，CharArrayWriter
+  
+     在内存中开辟了一个字节或字符数组。
+  
+  4. Buffered缓冲流：BufferedInputStream，BufferedOutputStream，BufferedReader，BufferedWriter
+  
+     带缓冲区的处理流，缓冲区的作用的主要目的是：避免每次和硬盘打交道，提高数据访问的效率。
+  
+  5. 转化流：
+  
+     InputStreamReader：在读入数据的时候将字节转换成字符。
+  
+     OutputStreamWriter：在写出数据的时候将字符转换成字节。
+  
+  6. 数据流：DataInputStream，DataOutputStream
+  
+     因为平时若是我们输出一个8个字节的long类型或4个字节的float类型，那怎么办呢？可以一个字节一个字节输出，也可以把转换成字符串输出，但是这样转换费时间，若是直接输出该多好啊，因此这个数据流就解决了我们输出数据类型的困难。数据流可以直接输出float类型或long类型，提高了数据读写的效率。
+  
+  7. 打印流：printStream，printWriter
+  
+      一般是打印到控制台，可以进行控制打印的地方和格式，其中的  print方法不会抛出异常，可以通过checkError方法来查看异常。
+  
+  8. 对象流：ObjectInputStream，ObjectOutputStream
+  
+     把封装的对象直接输出，而不是一个个在转换成字符串再输出。
+  
+  9. `RandomAccessFile` 随机访问文件
+  
+     java.io包中是一个特殊的类, 既可以读文件，也可以写文件。**有空也要看看这里的实现**
+  
+  10. ZipInputStream、ZipOutputStream
+  
+      读取zip文档 getNextEntry、putNextEntry 得到或创建ZipEntry对象。
+  
 - Path/Files
 
   - [IO操作你还在用File吗，该拥抱Path和Files了](https://www.sohu.com/a/132459571_654433)

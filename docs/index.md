@@ -249,7 +249,7 @@ catalog: true
 
     个人认为netty对用户来说是异步，但是实际底层IO是IO多路复用模型，本质上还是一种同步非阻塞（是的，个人认为IO多路复用模型还是同步非阻塞，[真正的IO操作都将阻塞应用线程](https://weread.qq.com/web/reader/1e732510718f63a11e7dee2k98f3284021498f137082c2e)）。
 
-    另看 [网络/IO#IO概念](#IO概念)，这里也收录了一些理解
+    另看 [IO#IO概念](#IO)，这里也收录了一些理解
 
 - web
 
@@ -502,7 +502,7 @@ catalog: true
 
      [汉字unicode编码范围](https://blog.csdn.net/gywtzh0889/article/details/71083459/)
 
-### 网络/IO
+### 网络
 
 - 协议
 
@@ -536,6 +536,8 @@ catalog: true
 - 网络攻击
 
   - DDoS攻击
+
+### IO
 
 - IO概念
 

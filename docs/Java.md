@@ -157,7 +157,7 @@ Cglib动态代理
 
 - JDK NIO
 
-  - Selector,Buffer
+  - Channel，Buffer，Selector
 
 - 为什么要用 `close()` 关掉流？
 
@@ -282,11 +282,17 @@ Cglib动态代理
 
 - 并发与并行的区别？
 
-### Java Util
+### Java Util包
 
 - BitSet
 
   JDK中的BitSet集合对是**布隆过滤器**中经常使用的数据结构**Bitmap**的相对简单的实现。BitSet采用了**Bitmap的算法思想**。
+  
+- ServiceLoader
+
+  Java中SPI全称为（Service Provider Interface，服务提供者接口）
+
+  该类通过在资源目录META-INF/services中放置**提供者配置文件**来标识**服务提供者**。
 
 ### Swing/Awt
 
@@ -416,20 +422,30 @@ Cglib动态代理
 > JVM很难，网上错误的观点很多
 
 - ClassLoader
+  
   - [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
+  
 - 局部变量表中的Slot
+
 - [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
+
 - 内存模型
   - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
   - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
-- HotSpot虚拟机
+  
+- HotSpot虚拟机 JIT
   - 解释执行
     - 逐条将字节码翻译成机器码并执行
   - 即时编译（Just-in-time ，JIT）
     - 将一个方法中包含的所有字节码编译成机器码后再执行。
+  
 - 逃逸分析
   - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
   - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
+  
+- 堆是线程共享的内存区域？
+
+  不完全正确。因为HotSpot中，TLAB是堆内存的一部分，他在**读取上**确实是**线程共享**的，但是在**内存分配上**，是**线程独享**的。[链接](https://mp.weixin.qq.com/s/Jj5Z1DZKpAgrj9wpYUZ_JQ)
 
 ### GC性能优化，日志解读
 
@@ -530,7 +546,11 @@ Cglib动态代理
 
 - Java 8
 
-  - 时间Instant
+  - 时间：`Instant`和 LocalDate，LocalTime，`LocalDateTime`
+
+    如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：*simple beautiful strong immutable thread-safe*。
+
+    附：测试代码请看 `com.metis.time.Test`
 
   - parallelStream
 

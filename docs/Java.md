@@ -550,7 +550,7 @@ Cglib动态代理
 
     如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：*simple beautiful strong immutable thread-safe*。
 
-    附：测试代码请看 `com.metis.time.Test`
+    附：测试代码请看 `study-metis: com.metis.time.Test`
 
   - parallelStream
 

@@ -421,33 +421,46 @@ Cglib动态代理
 
 > JVM很难，网上错误的观点很多
 
-- ClassLoader
+- 内存管理
   
-  - [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
+  - 堆是线程共享的内存区域？
+    
+    不完全正确。因为HotSpot中，TLAB是堆内存的一部分，他在**读取上**确实是**线程共享**的，但是在**内存分配上**，是**线程独享**的。[链接](https://mp.weixin.qq.com/s/Jj5Z1DZKpAgrj9wpYUZ_JQ)
   
-- 局部变量表中的Slot
+- 类加载
+  
+  - ClassLoader [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
+  
+- 字节码执行
 
-- [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
+  - 局部变量表中的Slot
 
-- 内存模型
-  - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
-  - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
-  
-- HotSpot虚拟机 JIT
-  - 解释执行
-    - 逐条将字节码翻译成机器码并执行
-  - 即时编译（Just-in-time ，JIT）
-    - 将一个方法中包含的所有字节码编译成机器码后再执行。
-  
-- 逃逸分析
-  - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
-  - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
-  
-- 堆是线程共享的内存区域？
+    > 为什么JVM局部变量表的一个slot至少要能容纳一个int类型的变量？
+    >
+    > 为什么Java虚拟机JVM要把byte和short的运算都转为int ？
 
-  不完全正确。因为HotSpot中，TLAB是堆内存的一部分，他在**读取上**确实是**线程共享**的，但是在**内存分配上**，是**线程独享**的。[链接](https://mp.weixin.qq.com/s/Jj5Z1DZKpAgrj9wpYUZ_JQ)
+- 内存模型，线程，线程安全
+
+  - 内存模型
+    - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
+    - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
+  - [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
+  - **happen-before**原则
+
+- 编译与优化
+  
+  - HotSpot虚拟机 JIT
+    - 解释执行
+      - 逐条将字节码翻译成机器码并执行
+    - 即时编译（Just-in-time ，JIT）
+      - 将一个方法中包含的所有字节码编译成机器码后再执行。
+  - 逃逸分析
+    - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
+    - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
 
 ### GC性能优化，日志解读
+
+- GC算法有哪些？[GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
 
 - 可能导致FullGC的原因有以下几种。
 
@@ -459,23 +472,33 @@ Cglib动态代理
   > 6. 有连续的大对象需要分配
   > 7. 执行了jmap -histo:live pid命令 //这个会立即触发fullgc
 
-- [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
+- 垃圾回收器有哪些？
 
-- [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
+  - 他们什么阶段会**stop the world**？
 
-  - CMS之promotion failed & concurrent mode failure
+    看《深入理解Java虚拟机》3.5节 经典垃圾收集器，这里每种收集器的执行图讲解了哪个阶段会STW
 
-    > 疑问?
-    >
-    > 然后CMS的并发周期就会被一次Full GC代替，退回到Serial Old收集器进行回收，这是一次长Stop The World
+  - JVM默认启用的收集器是哪些？
 
-    [关于CMS垃圾回收失败是不是进行FULL GC问题的记录](https://www.jianshu.com/p/843782af87b1)
+    看《深入理解Java虚拟机》3.7.4节 垃圾收集器参数总结，这个讲解了client和server模式下的默认值，以及开启其他收集器的参数
+
+  - [CMS垃圾回收器详解](https://blog.csdn.net/zqz_zqz/article/details/70568819)
+
+    - CMS之promotion failed & concurrent mode failure
+
+      > 疑问?
+      >
+      > 然后CMS的并发周期就会被一次Full GC代替，退回到Serial Old收集器进行回收，这是一次长Stop The World
+
+      [关于CMS垃圾回收失败是不是进行FULL GC问题的记录](https://www.jianshu.com/p/843782af87b1)
+
+  - CMS收集器和G1收集器 他们的优缺点对比
+
+- GC日志
+
+  - Full GC日志解读
 
 - [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
-
-- CMS收集器和G1收集器 他们的优缺点对比
-
-- Full GC日志解读
 
 ### 性能调优工具
 

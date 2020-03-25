@@ -282,6 +282,8 @@ Cglib动态代理
 
 - 并发与并行的区别？
 
+- Thread.sleep、Object.wait、LockSupport.park 区别
+
 ### Java Util包
 
 - BitSet

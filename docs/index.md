@@ -382,8 +382,13 @@ catalog: true
 - 堆：一个可以被看做一棵树的数组
 - 二叉树
   - **遍历**
+  
+    递归遍历，**非递归遍历**
+  
   - 完全二叉树
+  
   - 满二叉树 
+  
   - 平衡二叉树
     - AVL树
     - 红黑树
@@ -391,6 +396,8 @@ catalog: true
       - [查找（二）简单清晰的B树、Trie树详解 - CSDN博客](http://blog.csdn.net/yang_yulei/article/details/26104921)
     - Treap
     - BST
+    
+  - B树、B-树、B+树、B*树 区别？
 - 跳表
 - 布隆过滤器，位图，hyperloglog
 - 倒排索引
@@ -400,6 +407,10 @@ catalog: true
 - 常见算法
 
   - 排序
+
+    ![图片1](https://img-blog.csdnimg.cn/20191021115816423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hndWlzdQ==,size_16,color_FFFFFF,t_70)
+
+    图片引用自：[CSDN-八大排序算法](https://blog.csdn.net/hguisu/article/details/7776068)
 
     - 希尔排序，堆排序
 
@@ -459,7 +470,35 @@ catalog: true
 
 - 五大常用算法：贪婪算法，动态规划算法，分治算法，回溯算法以及分支限界算法
 
-  - 分治法的经典问题——大整数相乘
+  - [常见动态规划问题总结](https://blog.csdn.net/mc695192383/article/details/70146579)
+
+    [最长公共子序列与最长公共子串(DP)](https://blog.csdn.net/u012102306/article/details/53184446)
+
+    1. **最长递增子序列**
+
+       **解法1：最长公共子序列法**
+
+       **解法2：动态规划法（时间复杂度O(N^2))**
+
+       ​	dp[i]表示以标识为i的元素为递增序列结尾元素的最长递增子序列的长度
+
+       **解法3：O(NlgN）算法**
+
+       ​	b[i]只是存储的对应长度为i的LIS的最小末尾
+
+    2. **最长公共子序列**
+
+       用dp[i][j]来表示A串中的前i个字符与B串中的前j个字符的最长公共子序列长度
+
+    3. **最长公共子串**
+
+       这个问题与上面的问题类似，区别点在于这里是子串，是连续的，令dp[i][j]表示A串中的以第i - 1个字符与B串中的以第j - 1个字符结尾的最长公共子串的长度
+
+    4. **最小编辑代价问题**
+
+       首先令dp[i][j]表示将A串中的前i个字符转换成B串中的前j个字符所需要的代价
+
+  - [分治法的经典问题——大整数相乘](https://www.cnblogs.com/little-kwy/archive/2017/09/30/7613642.html)
 
 - 启发式算法
 

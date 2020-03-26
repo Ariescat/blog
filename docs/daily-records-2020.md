@@ -30,8 +30,6 @@
   - 09 ~~Spring @Order和Ordered接口 [浅谈Spring @Order注解的使用](https://www.cnblogs.com/muxi0407/p/11611098.html)~~
   - 16 ~~阵法~~，~~gradle~~
   - 17 ~~Java char的编码~~，~~JavaIO流种类及具体实现~~
-  
-  - 21 netty池化缓存区原理？jemalloc？
 
 #### todo
 
@@ -40,7 +38,9 @@
 - 2020.03
   - 02 netty ReferenceCounted
   - 09 **有个大疑问？为什么平台无关性要靠.class，.java不也可以平台无关性吗？**
+  - 21 netty池化缓存区原理？jemalloc？
   - 24 powermock
+  - 26 Fork Join；index的有道云笔记知识回顾
 
 * 其他
 

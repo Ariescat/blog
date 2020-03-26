@@ -544,48 +544,85 @@ catalog: true
 - 字符编码
 
   UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案
+  
+  - 附：
+  
+    1. Java的`char`内部编码为`UTF-16`，而与`Charset.defaultCharset()`无关。
+  
+       看 [Unicode 编码理解](https://blog.csdn.net/wdeng2011/article/details/80155795) 可知`UTF-16`编码完全可以满足Unicode 的17组编排（平面），因为有平面0的0xD800-0xDFFF代理区。
+  
+       [关于java中char占几个字节，汉字占几个字节](https://www.cnblogs.com/nevermorewang/p/7808092.html)，这里指出Java中的`char`是占用两个字节，只不过有些字符需要两个char来表示，同时这篇博客也给了一个官方Oracle链接里面明确的说明了*值在16位范围之外且在0x10000到0x10FFFF范围内的字符称为补充字符，并定义为**一对char值***。
+  
+       测试代码：
+  
+       ```java
+       public static void main(String[] args) {
+       
+           char[] c = new char[]{'一'};
+           System.err.println(Integer.toHexString(c[0]));
+           String s = new String(c);
+           // String#length事实上调用了char[].length
+           System.err.println(s + " " + s.length());
+       
+           String str = "一";
+           System.err.println(str + " " + str.length());
+       
+           // Unicode编码 汉字扩展B '𠀀' 字
+           c = new char[]{'\uD840', '\uDC00'};
+           s = new String(c);
+           System.err.println(s + " " + s.length());
+       
+           str = "\uD840\uDC00";
+           System.err.println(str + " " + str.length());
+       
+           // 输出：由输出可见这个字用了两个char来存
+           // 一 1
+           // 一 1
+           // 𠀀 2
+           // 𠀀 2
+       }
+       ```
+  
+    2. [UniCode编码表](https://www.cnblogs.com/csguo/p/7401874.html)
+  
+    3. [汉字unicode编码范围](https://blog.csdn.net/gywtzh0889/article/details/71083459/)
+  
+  * 参考博客：
+  
+    1. 吴秦（Tyler）[字符集和字符编码（Charset & Encoding）](https://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html)
+  
+    2. 廖雪峰 [字符串和编码](https://www.liaoxuefeng.com/wiki/1016959663602400/1017075323632896)
+  
+       该文有简单有效的解释了：
+  
+       在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。
+       用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件：
+  
+       ![](https://www.liaoxuefeng.com/files/attachments/923923787018816/0)
+  
+       浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器：
+  
+       ![](https://www.liaoxuefeng.com/files/attachments/923923759189600/0)
+  
+       所以你看到很多网页的源码上会有类似`<meta charset="UTF-8" />`的信息，表示该网页正是用的UTF-8编码。
+  
+- Base64编码：
 
-* 附：
+  Base64编码本质上是一种将二进制数据转成文本数据的方案。对于非二进制数据，是先将其转换成二进制形式，然后每连续6比特（2的6次方=64）计算其十进制值，根据该值在上面的索引表中找到对应的字符，最终得到一个文本字符串。
 
-  1. Java的`char`内部编码为`UTF-16`，而与`Charset.defaultCharset()`无关。
+* 常见问题处理之Emoji
 
-     看 [Unicode 编码理解](https://blog.csdn.net/wdeng2011/article/details/80155795) 可知`UTF-16`编码完全可以满足Unicode 的17组编排（平面），因为有平面0的0xD800-0xDFFF代理区。
+  所谓Emoji就是一种在Unicode位于\u1F601–\u1F64F区段的字符。这个显然超过了目前常用的UTF-8字符集的编码范围\u0000–\uFFFF。Emoji表情随着IOS的普及和微信的支持越来越常见。
 
-     [关于java中char占几个字节，汉字占几个字节](https://www.cnblogs.com/nevermorewang/p/7808092.html)，这里指出Java中的`char`是占用两个字节，只不过有些字符需要两个char来表示，同时这篇博客也给了一个官方Oracle链接里面明确的说明了*值在16位范围之外且在0x10000到0x10FFFF范围内的字符称为补充字符，并定义为**一对char值***。
+  ![](https://img-blog.csdnimg.cn/20181119221259676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3podXNvbmd6aXll,size_16,color_FFFFFF,t_70)
 
-     测试代码：
+  那么Emoji字符表情会对我们平时的开发运维带来什么影响呢？最常见的问题就在于将他存入MySQL数据库的时候。一般来说MySQL数据库的默认字符集都会配置成UTF-8（三字节），而utf8mb4在5.5以后才被支持，也很少会有DBA主动将系统默认字符集改成utf8mb4。那么问题就来了，当我们把一个需要4字节UTF-8编码才能表示的字符存入数据库的时候就会报错：ERROR 1366: Incorrect string value: '\xF0\x9D\x8C\x86' for column 。 如果认真阅读了上面的解释，那么这个报错也就不难看懂了。我们试图将一串Bytes插入到一列中，而这串Bytes的第一个字节是\xF0意味着这是一个四字节的UTF-8编码。但是当MySQL表和列字符集配置为UTF-8的时候是无法存储这样的字符的，所以报了错。
 
-     ```java
-     public static void main(String[] args) {
-     
-         char[] c = new char[]{'一'};
-         System.err.println(Integer.toHexString(c[0]));
-         String s = new String(c);
-         // String#length事实上调用了char[].length
-         System.err.println(s + " " + s.length());
-     
-         String str = "一";
-         System.err.println(str + " " + str.length());
-     
-         // Unicode编码 汉字扩展B '𠀀' 字
-         c = new char[]{'\uD840', '\uDC00'};
-         s = new String(c);
-         System.err.println(s + " " + s.length());
-     
-         str = "\uD840\uDC00";
-         System.err.println(str + " " + str.length());
-     
-         // 输出：由输出可见这个字用了两个char来存
-         // 一 1
-         // 一 1
-         // 𠀀 2
-         // 𠀀 2
-     }
-     ```
+  那么遇到这种情况我们如何解决呢？有两种方式：升级MySQL到5.6或更高版本，并且将表字符集切换至utf8mb4。第二种方法就是在把内容存入到数据库之前做一次过滤，将Emoji字符替换成一段特殊的文字编码，然后再存入数据库中。之后从数据库获取或者前端展示时再将这段特殊文字编码转换成Emoji显示。第二种方法我们假设用-*-1F601-*-来替代4字节的Emoji，那么具体实现python代码可以参见[Stackoverflow上的回答](http://stackoverflow.com/questions/3220031/how-to-filter-or-replace-unicode-characters-that-would-take-more-than-3-bytes)
 
-  2. [UniCode编码表](https://www.cnblogs.com/csguo/p/7401874.html)
+* 补码
 
-     [汉字unicode编码范围](https://blog.csdn.net/gywtzh0889/article/details/71083459/)
+  补码(为什么按位取反再加一)：告诉你一个其实很简单的问题 [原文](https://blog.csdn.net/wenxinwukui234/article/details/42119265)
 
 ### 网络
 

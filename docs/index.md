@@ -330,6 +330,18 @@ catalog: true
   - [分布式事务](https://javatar.iteye.com/blog/981787)
   - [分布式事务系列（2.1）分布式事务的概念](https://yq.aliyun.com/articles/39047)
 
+### 高可用技术
+
+* 服务器端如何处理超大量合法请求？
+
+  服务器架构层面，做负载均衡，将请求分发给其它服务器处理。
+
+  软件服务架构层面，做请求队列，将1w个请求放入队列，业务处理完的请求再返回。
+
+  代码层面，优化业务处理，把单机请求做到支持1w并发。
+
+* 反向代理为何叫反向代理？[原文](https://www.zhihu.com/question/24723688/answer/128105528)
+
 ### 其他前沿技术
 
 - docker
@@ -577,17 +589,25 @@ catalog: true
 
 ### 网络
 
+* [OSI七层模型与TCP/IP四层（参考）模型](https://www.jianshu.com/p/c793a279f698)
+
 - 协议
 
   - 底层网络协议
 
-    ​	ARP，ICMP，路由选择，DHCP，NAT
+    ​	ARP，ICMP（网际控制信息协议），路由选择，DHCP，NAT
 
   - TCP/IP
 
     - [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)
+
     - 拥塞算法：**慢开始 、 拥塞避免 、快重传 和 快恢复**
-    - 两者的区别：**流量控制**是为了预防拥塞。如：在马路上行车，交警跟红绿灯是流量控制，当发生拥塞时，如何进行疏散，是拥塞控制。流量控制指点对点通信量的控制。而**拥塞控制**是全局性的，涉及到所有的主机和降低网络性能的因素。
+
+      两者的区别：**流量控制**是为了预防拥塞。如：在马路上行车，交警跟红绿灯是流量控制，当发生拥塞时，如何进行疏散，是拥塞控制。流量控制指点对点通信量的控制。而**拥塞控制**是全局性的，涉及到所有的主机和降低网络性能的因素。
+
+    - TCP和UDP的区别
+
+      TCP/IP协议是一个**协议簇**。里面包括很多协议的。UDP只是其中的一个。之所以命名为TCP/IP协议，因为TCP,IP协议是两个很重要的协议，就用他两命名了。[原文](https://www.cnblogs.com/bizhu/archive/2012/05/12/2497493.html)
 
   - http/https
 
@@ -609,6 +629,16 @@ catalog: true
 - 网络攻击
 
   - DDoS攻击
+  
+- ping 的实现：
+
+  1. 首先查本地arp cache信息，看是否有对方的mac地址和IP地址映射条目记录
+
+  2. 如果没有，则发起一个arp请求广播包，等待对方告知具体的mac地址
+
+  3. 收到arp响应包之后，获得某个IP对应的具体mac地址，有了物理地址之后才可以开始通信了,同时对ip-mac地址做一个本地cache
+
+  4. 发出icmp echo request包，收到icmp echo reply包
 
 ### IO
 
@@ -784,8 +814,10 @@ catalog: true
 
 ### 操作系统 [➮详细](Linux)
 
+- [进程和线程](https://blog.csdn.net/weixin_43517199/article/details/89508381)
 - Linux
   - [CentOS7简单使用](Linux#CentOS7)
+  - 进程间通信：[管道](https://www.cnblogs.com/zengyiwen/p/5755170.html)
   - Linux常用服务搭建
     - [Shadowsocks](Linux#Shadowsocks)
     - [Nginx](Linux#Nginx)

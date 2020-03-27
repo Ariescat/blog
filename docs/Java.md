@@ -34,7 +34,16 @@ catalog: true
   扩展：
 
   1. 此外，Java中的常量池有**字符串常量池**、**class常量池**和**运行时常量池**。[原文](https://blog.csdn.net/zm13007310400/article/details/77534349)
+  
   2. 常量池会被回收吗？
+  
+  3. intern方法
+  
+     * [字符串常量池与intern](https://juejin.im/post/5c160420518825235a05301e)
+  
+       在jdk6中，常量池的位置在永久代（方法区）中，此时常量池中存储的是**对象**。在jdk7中，常量池的位置在堆中，此时，常量池存储的就是**引用**了。
+  
+     * [深入解析String#intern](https://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html)
 
 ### 集合
 

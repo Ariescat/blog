@@ -105,6 +105,31 @@ catalog: true
 
     ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种
 
+- 著名BUG
+
+  - c.toArray might (incorrectly) not return Object[] (see 6260652) [原文](https://blog.csdn.net/qq_33589510/article/details/104767849)
+  
+    `java.util.ArrayList` 元素类型为`Object[] elementData`，`toArray()`方法实质返回`Object[]`
+  
+    `java.util.Arrays.ArrayList` 元素类型为`E[] a`，`toArray()`方法实质返回`E[]`
+  
+    因此，虽然`List`的`toArray`接口表面都返回Object[]，但他们的实质返回值还是有差的。所以我们不能将其他类型的对象，放进`java.util.Arrays.ArrayList#toArray()`返回的数组中。
+  
+    ```java
+    List<String> list = Arrays.asList("abc");
+    // class java.util.Arrays$ArrayList
+    System.out.println(list.getClass());
+    
+    Object[] objArray = list.toArray();
+    // class [Ljava.lang.String;
+    System.out.println(objArray.getClass());
+    
+    // cause ArrayStoreException
+    objArray[0] = new Object();
+    ```
+  
+    
+  
 - 第三方原始类型集合库**Koloboke**，避免大量的装箱拆箱，同类型的还有HPPC，Eclipse Collections等
 
   > Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。

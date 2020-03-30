@@ -185,6 +185,8 @@ catalog: true
 
 - Spring
 
+  > 最好能抽空看看源码，最起码bean的生命周期，如何解决循环依赖，父子容器，还有boot的启动流程，事务实现原理，动态代理原理等，你知道越多越好。
+
   - [Spring源码浅析](https://blog.csdn.net/linuu/column/info/lovespring)
 
   - Spring AOP
@@ -728,6 +730,8 @@ catalog: true
 
 - MySQL
 
+  > 事务，锁，索引，b+树，主从这些你必须会
+
   - SQL
 
     - 联接子句 union，join
@@ -917,6 +921,7 @@ catalog: true
   - 2020年收录：
     - [强烈推荐！15 个 Github 顶级 Java 教程类开源项目推荐！](https://blog.csdn.net/qq_34337272/article/details/104423823)
     - [Java基础知识面试题（2020最新版）](https://blog.csdn.net/ThinkWon/article/details/104390612)
+    - [【阿里P6面经】二本，curd两年，疯狂复习，拿下阿里offer](https://blog.csdn.net/qq_35190492/article/details/105186878)
 - Android面经汇总
   - [［干货］2017已来，最全面试总结——这些Android面试题你一定需要 - CSDN博客](https://blog.csdn.net/xhmj12/article/details/54730883)
 - 大厂面经

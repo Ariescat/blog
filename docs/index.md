@@ -732,6 +732,11 @@ catalog: true
 
     - 联接子句 union，join
 
+  - 数据类型
+
+    - MySQL中的int(M)，int(M)里的M表示最大显示宽度，当加上zerofill才会表现出效果来。
+    - unsigned
+
   - **事务传播**
 
   - **隔离级别**

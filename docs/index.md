@@ -9,123 +9,11 @@ catalog: true
 
 ---
 
-<h1>《技术总结》</h1>
-### Github干货
-
-- [521xueweihan / HelloGitHub](https://github.com/521xueweihan/HelloGitHub)  分享 GitHub 上有趣、入门级的开源项目 
-
-- awesome
-
-  - [hadyang / interview](https://github.com/hadyang/interview)
-
-    Java 笔试、面试 知识整理
-
-  - [Snailclimb / JavaGuide](https://github.com/Snailclimb/JavaGuide)
-
-    【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。 
-
-  - [jobbole / awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
-
-    Java资源大全中文版，包括开发库、开发工具、网站、博客、微信、微博等，由伯乐在线持续更新。
-
-    同时他还有 [jobbole / awesome-python-cn](https://github.com/jobbole/awesome-python-cn)，[jobbole / awesome-cpp-cn](https://github.com/jobbole/awesome-cpp-cn)
-
-  * [AobingJava / JavaFamily](https://github.com/AobingJava/JavaFamily)
-
-    【互联网一线大厂面试+学习指南】进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，作者风格幽默，看起来津津有味，把学习当做一种乐趣，何乐而不为，后端同学必看 
-
-    附其CSDN博客（《吊打面试官》系列）：[https://me.csdn.net/qq_35190492](https://me.csdn.net/qq_35190492)
-
-  - [xingshaocheng / architect-awesome](https://github.com/xingshaocheng/architect-awesome)  
-
-    后端架构师技术图谱
-
-  - [crossoverJie / JCSprout](https://github.com/crossoverJie/JCSprout) 
-
-    Java Core Sprout : basic, concurrent, algorithm 
-
-  - [javagrowing / JGrowing](https://github.com/javagrowing/JGrowing)
-
-    Java成长路线，但学到不仅仅是Java。 
-
-- Java高并发
-
-  - [seckill](https://github.com/liyifeng1994/seckill)
-
-- Android
-
-  - [henrymorgen / android-advanced-decode](https://github.com/henrymorgen/android-advanced-decode)  《Android进阶解密》源码 
-
-- 游戏相关
-
-  - [hstcscolor / awesome-gameserver-cn](https://github.com/hstcscolor/awesome-gameserver-cn)  中文游戏服务器资源大全 
-
-  - ARPG
-
-    - 永恒之塔开源服务器架构 [https://github.com/Aion-server/Aion-unique](https://github.com/Aion-server/Aion-unique)
-
-    - 天堂2 l2jserver2 
-
-      [https://github.com/oonym/l2InterludeServer](https://github.com/oonym/l2InterludeServer)
-
-      [https://github.com/Rogiel/l2jserver2](https://github.com/Rogiel/l2jserver2)
-
-    - 魔兽世界server TrinityCore [https://github.com/TrinityCore/TrinityCore](https://github.com/TrinityCore/TrinityCore)
-
-  - tinyHeart [https://github.com/luckykun/tinyHeart](https://github.com/luckykun/tinyHeart)
-
-- 常见框架源码
-
-  - tomcat
-  - dubbo
-  - spring
-  - zookeeper
-
-- 源码解读
-
-  - [huangz1990 / redis-3.0-annotated](https://github.com/huangz1990/redis-3.0-annotated)  带有详细注释的 Redis 3.0 代码 
-
-### 知识体系
-
-- [Github优秀java项目集合（中文版） - 涉及java所有的知识体系](https://blog.csdn.net/aa1215018028/article/details/80951389)
-- [伯乐在线](http://hao.jobbole.com/)
-- [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
-- [超强总结！Github上那些Java面试、学习相关仓库](https://mp.weixin.qq.com/s?__biz=Mzg3MjA4MTExMw==&mid=2247486161&idx=1&sn=b7bd2bffc50f5f64368d6e40c973619a&chksm=cef5f967f9827071badcdcf1ae8c162ad2176e44978ce3d8d138a94ae843e9232c1fb6d4ec36&scene=21#wechat_redirect)
-
-### 学习网站
-
-- [慕课网手记](http://www.imooc.com/article)
-- [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
-- [PHP 教程 - 菜鸟教程](http://www.runoob.com/php/php-tutorial.html)
-- unity3d
-  - 愤怒的小鸟 [https://www.bilibili.com/video/av35565116/](https://www.bilibili.com/video/av35565116/)
+# 《技术总结》
 
 ### Java [➮详细](Java)
 
-- String
-- 集合
-- 代理
-  - JDK动态代理
-  - Cgliib 
-- IO
-  - IO流
-  - 同步、异步、阻塞和非阻塞
-  - Reactor模式
-- 线程&并发
-  - 线程池
-  - synchronized，Monitor对象，volatile
-  - Atomic，AQS，Unsafe
-  - 并发容器
-  - ForkJoin
-  - Actor模型
-- 新特性
-  - Java8：parallelStream
-- Jvm
-  - **内存模型**
-  - ClassLoader
-- 热更新
-- 常遇的报错与坑
-  - ConcurrentModificationException
+​	点上面链接 ↑ 进独立章节
 
 ### 常见框架
 
@@ -135,9 +23,9 @@ catalog: true
 
     - 区分commons-logging，slf4j，log4j，logback
 
-      了解jcl-over-slf4j，jul-to-slf4j这些jar的作用
+      1. 了解jcl-over-slf4j，jul-to-slf4j这些jar的作用
 
-      了解log4j和log4j2的区别，**lmax disruptor**应用场景
+      2. 了解log4j和log4j2的区别，**lmax disruptor**应用场景
 
     - **Flume** 日志采集系统，一般用于日志聚合
 
@@ -150,9 +38,7 @@ catalog: true
 
     集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、**并发库** [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等
 
-    > eg:
-    >
-    > ​	BloomFilter布隆过滤器
+    这里有一个`BloomFilter`布隆过滤器的实现
 
   - 缓存
 
@@ -246,7 +132,7 @@ catalog: true
       > 5）Quartz能够通过序列化，将定时任务保存在数据库，而hashWheel不能
       >
       > 总的来说，Quartz的功能相对强大，而hashWheel相对要轻量级一点。
-    
+
   - 附：
 
     个人认为netty对用户来说是异步，但是实际底层IO是IO多路复用模型，本质上还是一种同步非阻塞（是的，个人认为IO多路复用模型还是**同步**非阻塞，并且[**真正的IO操作**都将**阻塞**应用线程](https://weread.qq.com/web/reader/1e732510718f63a11e7dee2k98f3284021498f137082c2e)），他只是多了一个Selector（需要底层操作系统支持），如此一个线程就可以控制大量的通信（相比传统IO，不管他是不是非阻塞）。
@@ -293,7 +179,6 @@ catalog: true
 - 领域驱动设计
 
   - [领域驱动设计在互联网业务开发中的实践](https://tech.meituan.com/2017/12/22/ddd-in-practice.html)
-
   - [美团DDD实践 示例项目](https://github.com/1987539447/draw-lottery)
 
 - 动态语言与动态类型语言
@@ -334,7 +219,7 @@ catalog: true
 
 ### 高可用技术
 
-* 服务器端如何处理超大量合法请求？
+- 服务器端如何处理超大量合法请求？
 
   服务器架构层面，做负载均衡，将请求分发给其它服务器处理。
 
@@ -342,9 +227,9 @@ catalog: true
 
   代码层面，优化业务处理，把单机请求做到支持1w并发。
 
-* 反向代理为何叫反向代理？[原文](https://www.zhihu.com/question/24723688/answer/128105528)
+- 反向代理为何叫反向代理？[原文](https://www.zhihu.com/question/24723688/answer/128105528)
 
-### 其他前沿技术
+### 前沿技术
 
 - docker
 - ServiceMesh(服务网格)
@@ -358,23 +243,18 @@ catalog: true
   - skynet
   - Pinus
 
-### 版本管理
+### 工具
 
-- Git
-  - [git 简明指南](http://www.runoob.com/manual/git-guide/)
-  - [团队中的 Git 实践](https://blog.csdn.net/M2l0ZgSsVc7r69eFdTj/article/details/100773494)
-
-### 构建工具
-
-- Maven
-  [如何将 Java 项目转换成 Maven 项目 - 船长&amp;CAP - 博客园](https://www.cnblogs.com/liuning8023/p/4726822.html)
-
-- Gradle
-  - [十分钟理解Gradle - Bonker - 博客园](https://www.cnblogs.com/Bonker/p/5619458.html)
-  - [大家都是怎样处理Gradle中的这个文件下载慢的问题的？ - 知乎](https://www.zhihu.com/question/37810416)
-  - 慕课实战：Gradle3.0自动化项目构建技术精讲+实战
-
+- 构建工具
+  - Maven
+  - Gradle
+    - [十分钟理解Gradle - Bonker - 博客园](https://www.cnblogs.com/Bonker/p/5619458.html)
+    - 慕课实战：Gradle3.0自动化项目构建技术精讲+实战
+- 版本管理工具
+  - Git
 - Jenkins
+- Docker
+- 正则表达式
 
 ### 脚本语言
 
@@ -393,27 +273,39 @@ catalog: true
 
 ### 数据结构
 
+- 链表，栈，队列
+
+- 数组，矩阵
+
+- 图
+
 - 堆：一个可以被看做一棵树的数组
+
 - 二叉树
+
   - **遍历**
-  
+
     递归遍历，**非递归遍历**
-  
+
   - 完全二叉树
-  
+
   - 满二叉树 
-  
+
   - 平衡二叉树
+
     - AVL树
     - 红黑树
       - [查找（一）史上最简单清晰的红黑树讲解 - CSDN博客](http://blog.csdn.net/yang_yulei/article/details/26066409)
       - [查找（二）简单清晰的B树、Trie树详解 - CSDN博客](http://blog.csdn.net/yang_yulei/article/details/26104921)
     - Treap
     - BST
-    
+
   - B树、B-树、B+树、B*树 区别？
-- 跳表
+
+- 跳跃表
+
 - 布隆过滤器，位图，hyperloglog
+
 - 倒排索引
 
 ### 算法
@@ -422,11 +314,17 @@ catalog: true
 
   - 排序
 
-    ![常见算法·图1](https://img-blog.csdnimg.cn/20191021115816423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hndWlzdQ==,size_16,color_FFFFFF,t_70)
+    - 八大排序算法比较：
 
-    图片引用自：[CSDN-八大排序算法](https://blog.csdn.net/hguisu/article/details/7776068)
+    ![常见算法·图1](https://upload-images.jianshu.io/upload_images/1156494-62f859c2ac6f95ff.png)
 
-    - 希尔排序，堆排序
+    - 希尔排序
+
+      时间复杂度？
+
+    - 堆排序
+
+      如何建堆 和调整堆？
 
     - 快排
 
@@ -458,7 +356,7 @@ catalog: true
 
   - 查找算法
 
-  - 跳跃表
+    二分查找，索引，倒排索引
 
   - KPM 算法
 
@@ -478,8 +376,8 @@ catalog: true
 
   - 树
 
-    - 最小生成树算法
-    
+    - 最小生成树算法：Kruskal算法，Prim算法
+
   - 最短路径算法
 
 - 五大常用算法：贪婪算法，动态规划算法，分治算法，回溯算法以及分支限界算法
@@ -520,18 +418,15 @@ catalog: true
 
 - 算法思想
 
-  - [算法洗脑系列（8篇）——第一篇 递推思想 - 一线码农 - 博客园](http://www.cnblogs.com/huangxincheng/archive/2011/12/29/2305525.html)
+  - 双指针，贪心，动态规划
+  - 递推
+    - [算法洗脑系列（8篇）——第一篇 递推思想 - 一线码农 - 博客园](http://www.cnblogs.com/huangxincheng/archive/2011/12/29/2305525.html)
 
 - 练习平台
 
-  - [赛码网](http://www.acmcoder.com/index)
-  - [IT题库_笔试练习_C++Java前端笔试面试题_牛客网](https://www.nowcoder.com/contestRoom)
-  - [leetcode在线编程_牛客网](https://www.nowcoder.com/ta/leetcode)
-  - [题库 - 力扣 (LeetCode)](https://leetcode-cn.com/problemset/all/)
-  - [“蓝桥杯”练习系统](http://lx.lanqiao.cn/problemsets.page)
-  - [杭电](http://acm.hdu.edu.cn/listproblem.php?vol=1)
-  - [练习场 - ACM在线评测系统](http://acm.nyist.net/JudgeOnline/problemset.php)
-  - [Welcome To PKU JudgeOnline](http://poj.org/)
+  - [剑指Offer](https://github.com/CyC2018/CS-Notes/blob/master/notes/%E5%89%91%E6%8C%87%20Offer%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md)
+  - [LeetCode](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md)
+  - [牛客笔试面试题库](https://www.nowcoder.com/contestRoom?from=cyc_github)
 
 ### 字符编解码
 
@@ -546,17 +441,17 @@ catalog: true
 - 字符编码
 
   UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案
-  
+
   - 附：
-  
+
     1. Java的`char`内部编码为`UTF-16`，而与`Charset.defaultCharset()`无关。
-  
+
        看 [Unicode 编码理解](https://blog.csdn.net/wdeng2011/article/details/80155795) 可知`UTF-16`编码完全可以满足Unicode 的17组编排（平面），因为有平面0的0xD800-0xDFFF代理区。
-  
+
        [关于java中char占几个字节，汉字占几个字节](https://www.cnblogs.com/nevermorewang/p/7808092.html)，这里指出Java中的`char`是占用两个字节，只不过有些字符需要两个char来表示，同时这篇博客也给了一个官方Oracle链接里面明确的说明了*值在16位范围之外且在0x10000到0x10FFFF范围内的字符称为补充字符，并定义为**一对char值***。
-  
+
        测试代码：
-  
+
        ```java
        public static void main(String[] args) {
        
@@ -584,35 +479,35 @@ catalog: true
            // 𠀀 2
        }
        ```
-  
+
     2. [UniCode编码表](https://www.cnblogs.com/csguo/p/7401874.html)
-  
+
     3. [汉字unicode编码范围](https://blog.csdn.net/gywtzh0889/article/details/71083459/)
-  
-  * 参考博客：
-  
+
+  - 参考博客：
+
     1. 吴秦（Tyler）[字符集和字符编码（Charset & Encoding）](https://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html)
-  
+
     2. 廖雪峰 [字符串和编码](https://www.liaoxuefeng.com/wiki/1016959663602400/1017075323632896)
-  
+
        该文有简单有效的解释了：
-  
+
        在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。
        用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件：
-  
+
        ![字符编码·图1](https://www.liaoxuefeng.com/files/attachments/923923787018816/0)
-  
+
        浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器：
-  
+
        ![字符编码·图2](https://www.liaoxuefeng.com/files/attachments/923923759189600/0)
-  
+
        所以你看到很多网页的源码上会有类似`<meta charset="UTF-8" />`的信息，表示该网页正是用的UTF-8编码。
-  
+
 - Base64编码：
 
   Base64编码本质上是一种将二进制数据转成文本数据的方案。对于非二进制数据，是先将其转换成二进制形式，然后每连续6比特（2的6次方=64）计算其十进制值，根据该值在上面的索引表中找到对应的字符，最终得到一个文本字符串。
 
-* 常见问题处理之Emoji
+- 常见问题处理之Emoji
 
   所谓Emoji就是一种在Unicode位于\u1F601–\u1F64F区段的字符。这个显然超过了目前常用的UTF-8字符集的编码范围\u0000–\uFFFF。Emoji表情随着IOS的普及和微信的支持越来越常见。
 
@@ -622,13 +517,13 @@ catalog: true
 
   那么遇到这种情况我们如何解决呢？有两种方式：升级MySQL到5.6或更高版本，并且将表字符集切换至utf8mb4。第二种方法就是在把内容存入到数据库之前做一次过滤，将Emoji字符替换成一段特殊的文字编码，然后再存入数据库中。之后从数据库获取或者前端展示时再将这段特殊文字编码转换成Emoji显示。第二种方法我们假设用-*-1F601-*-来替代4字节的Emoji，那么具体实现python代码可以参见[Stackoverflow上的回答](http://stackoverflow.com/questions/3220031/how-to-filter-or-replace-unicode-characters-that-would-take-more-than-3-bytes)
 
-* 补码
+- 补码
 
   补码(为什么按位取反再加一)：告诉你一个其实很简单的问题 [原文](https://blog.csdn.net/wenxinwukui234/article/details/42119265)
 
 ### 网络
 
-* [OSI七层模型与TCP/IP四层（参考）模型](https://www.jianshu.com/p/c793a279f698)
+- [OSI七层模型与TCP/IP四层（参考）模型](https://www.jianshu.com/p/c793a279f698)
 
 - 协议
 
@@ -668,15 +563,12 @@ catalog: true
 - 网络攻击
 
   - DDoS攻击
-  
+
 - ping 的实现：
 
   1. 首先查本地arp cache信息，看是否有对方的mac地址和IP地址映射条目记录
-
   2. 如果没有，则发起一个arp请求广播包，等待对方告知具体的mac地址
-
   3. 收到arp响应包之后，获得某个IP对应的具体mac地址，有了物理地址之后才可以开始通信了,同时对ip-mac地址做一个本地cache
-
   4. 发出icmp echo request包，收到icmp echo reply包
 
 ### IO
@@ -690,32 +582,32 @@ catalog: true
   - 《Netty Zookeeper Redis 高并发实战》[2.2节](https://weread.qq.com/web/reader/1e732510718f63a11e7dee2k6f4322302126f4922f45dec)
 
   - > **同步、异步：**  
-  	>
+    >
     > - 概念：消息的通知机制
-  	> - 解释：涉及到IO通知机制；所谓同步，就是发起调用后，被调用者处理消息，必须等处理完才直接返回结果，**没处理完之前是不返回的，调用者主动等待结果**；所谓异步，就是发起调用后，被调用者直接返回，但是并没有返回结果，等处理完消息后，通过状态、通知或者回调函数来通知调用者，调用者被动接收结果。
+    > - 解释：涉及到IO通知机制；所谓同步，就是发起调用后，被调用者处理消息，必须等处理完才直接返回结果，**没处理完之前是不返回的，调用者主动等待结果**；所谓异步，就是发起调用后，被调用者直接返回，但是并没有返回结果，等处理完消息后，通过状态、通知或者回调函数来通知调用者，调用者被动接收结果。
     >
-  	> **阻塞、非阻塞：**
+    > **阻塞、非阻塞：**
     >
-  	> - 概念：**程序等待调用结果时的状态**
+    > - 概念：**程序等待调用结果时的状态**
     > - 解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。
 
   - **Reactor模式**
-  
+
 - **零拷贝**
 
   [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)，这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
 
-  * Linux支持的(常见)零拷贝
+  - Linux支持的(常见)零拷贝
 
     mmap内存映射，sendfile（linux 2.1支持），Sendfile With DMA Scatter/Gather Copy（可以看作是sendfile的增强版，批量sendfile），splice（linux 2.6.17 支持）。
 
     Linux零拷贝机制对比：无论是传统IO方式，还是引入零拷贝之后，2次DMA copy 是都少不了的。因为两次DMA都是依赖硬件完成的。
 
-  * Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
+  - Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
 
     HeapByteBuffer，DirectByteBuffer，MappedByteBuffer
 
-  * Netty中的零拷贝
+  - Netty中的零拷贝
 
     Netty中的Zero-copy与上面我们所提到到OS层面上的Zero-copy不太一样, Netty的Zero-copy完全是在用户态(Java层面)的，它的Zero-copy的更多的是偏向于优化数据操作这样的概念。
 
@@ -726,7 +618,7 @@ catalog: true
 
     **前三个都是 广义零拷贝，都是减少不必要数据copy；偏向于应用层数据优化的操作。**
 
-### 数据库/Redis
+### MySQL/Redis
 
 - MySQL
 
@@ -741,7 +633,16 @@ catalog: true
     - MySQL中的int(M)，int(M)里的M表示最大显示宽度，当加上zerofill才会表现出效果来。
     - unsigned
 
-  - **事务传播**
+  - **事务**
+
+    - 事务特性
+      1. 原子性，一致性，隔离性，持久性 的含义
+    - 隔离级别
+      1. 未提交读（read-uncommitted）
+      2. 已提交读（read-committed）
+      3. 可重复读（repetable-read）
+      4. 可串行化（serializable）
+    - 事务传播
 
   - **隔离级别**
 
@@ -857,88 +758,161 @@ catalog: true
 
     > `malloc`返回的其实是`void *`，所以其需要强转，`void *`的用处还有`memcpy`，`memset`等
 
-* 内存对齐
+- 内存对齐 是什么？
 
-### 操作系统 [➮详细](Linux)
+### 操作系统
 
-- [进程和线程](https://blog.csdn.net/weixin_43517199/article/details/89508381)
+- 进程管理
+  - [进程和线程](https://blog.csdn.net/weixin_43517199/article/details/89508381)
+- 死锁
+- 内存管理
+- 设备管理
 - Linux
   - [CentOS7简单使用](Linux#CentOS7)
   - 进程间通信：[管道](https://www.cnblogs.com/zengyiwen/p/5755170.html)
-  - Linux常用服务搭建
-    - [Shadowsocks](Linux#Shadowsocks)
-    - [Nginx](Linux#Nginx)
-    - [Ngrok](Linux#Ngrok)
 - Windows
   - hiberfil.sys和pagefile.sys占用系统空间，其分别是休眠空间和虚拟内存。
-- 虚拟内存和swap分区
-
-### Android [➮详细](Android)
+- 其他
+  - 虚拟内存和swap分区
 
 ### 前端
 
 - HTML/CSS/JS
-  - [HTML 教程](http://www.w3school.com.cn/html/index.asp)
-  - [ECMAScript 6入门](http://es6.ruanyifeng.com/#docs/let)
-  - [Bootstrap 教程 - 菜鸟教程](http://www.runoob.com/bootstrap/bootstrap-tutorial.html)
-- 双向数据绑定与单向数据绑定
+
+- ECMAScript
+
+- Bootstrap 教程 - 菜鸟教程
+
 - [Vue](https://cn.vuejs.org/)
-  - [Vuex](https://vuex.vuejs.org/zh/)
-  - [Weex](http://weex.apache.org/cn/)
+
+  - 双向数据绑定与单向数据绑定
+
+  - [Vuex](https://vuex.vuejs.org/zh/)，[Weex](http://weex.apache.org/cn/)
+
 - React
+
   - [React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
+
 - Flux 架构
+
   - [Flux 架构入门教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
+
 - 状态管理
+
   - [聊一聊主流前端框架的状态管理](https://www.cnblogs.com/axel10/archive/2018/03/15/8571757.html)
   - [前端状态管理请三思](https://juejin.im/post/59fd94475188254115703461)
+
 - 其他
+
   - [给2019前端的5个建议](https://juejin.im/post/5c617c576fb9a049e93d33a4)
   - [浏览器原理系列10篇正式完结](https://juejin.im/post/5c6d3e026fb9a04a0d576f98)
 
-### 工具集
+### Github干货
 
-- everything
-- wox（window快速搜索文件启动程序软件）
-- 系统镜像
-  - [https://msdn.itellyou.cn/](https://msdn.itellyou.cn/)
-- HTTP接口测试工具
-  - Postman
-- PanDownload
+- [521xueweihan / HelloGitHub](https://github.com/521xueweihan/HelloGitHub)  分享 GitHub 上有趣、入门级的开源项目 
 
-### 职场
+- awesome
 
-- [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
+  - [hadyang / interview](https://github.com/hadyang/interview)
+
+    Java 笔试、面试 知识整理
+
+  - [Snailclimb / JavaGuide](https://github.com/Snailclimb/JavaGuide)
+
+    【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。 
+
+  - [jobbole / awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
+
+    Java资源大全中文版，包括开发库、开发工具、网站、博客、微信、微博等，由伯乐在线持续更新。
+
+    同时他还有 [jobbole / awesome-python-cn](https://github.com/jobbole/awesome-python-cn)，[jobbole / awesome-cpp-cn](https://github.com/jobbole/awesome-cpp-cn)
+
+  - [AobingJava / JavaFamily](https://github.com/AobingJava/JavaFamily)
+
+    【互联网一线大厂面试+学习指南】进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，作者风格幽默，看起来津津有味，把学习当做一种乐趣，何乐而不为，后端同学必看 
+
+    附其CSDN博客（《吊打面试官》系列）：[https://me.csdn.net/qq_35190492](https://me.csdn.net/qq_35190492)
+
+  - [xingshaocheng / architect-awesome](https://github.com/xingshaocheng/architect-awesome)  
+
+    后端架构师技术图谱
+
+  - [crossoverJie / JCSprout](https://github.com/crossoverJie/JCSprout) 
+
+    Java Core Sprout : basic, concurrent, algorithm 
+
+  - [javagrowing / JGrowing](https://github.com/javagrowing/JGrowing)
+
+    Java成长路线，但学到不仅仅是Java。 
+
+- Java高并发
+
+  - [seckill](https://github.com/liyifeng1994/seckill)
+
+- Android
+
+  - [henrymorgen / android-advanced-decode](https://github.com/henrymorgen/android-advanced-decode)  《Android进阶解密》源码 
+
+- 游戏相关
+
+  - [hstcscolor / awesome-gameserver-cn](https://github.com/hstcscolor/awesome-gameserver-cn)  中文游戏服务器资源大全 
+
+  - ARPG
+
+    - 永恒之塔开源服务器架构 [https://github.com/Aion-server/Aion-unique](https://github.com/Aion-server/Aion-unique)
+
+    - 天堂2 l2jserver2 
+
+      [https://github.com/oonym/l2InterludeServer](https://github.com/oonym/l2InterludeServer)
+
+      [https://github.com/Rogiel/l2jserver2](https://github.com/Rogiel/l2jserver2)
+
+    - 魔兽世界server TrinityCore [https://github.com/TrinityCore/TrinityCore](https://github.com/TrinityCore/TrinityCore)
+
+  - tinyHeart [https://github.com/luckykun/tinyHeart](https://github.com/luckykun/tinyHeart)
+
+- 常见框架源码
+
+  - tomcat
+  - dubbo
+  - spring
+  - zookeeper
+
+- 源码解读
+
+  - [huangz1990 / redis-3.0-annotated](https://github.com/huangz1990/redis-3.0-annotated)  带有详细注释的 Redis 3.0 代码 
+
+### 知识体系
+
+- [Github优秀java项目集合（中文版） - 涉及java所有的知识体系](https://blog.csdn.net/aa1215018028/article/details/80951389)
+- [伯乐在线](http://hao.jobbole.com/)
+- [《成神之路系列文章》](http://www.hollischuang.com/archives/1001)
+- [超强总结！Github上那些Java面试、学习相关仓库](https://mp.weixin.qq.com/s?__biz=Mzg3MjA4MTExMw==&mid=2247486161&idx=1&sn=b7bd2bffc50f5f64368d6e40c973619a&chksm=cef5f967f9827071badcdcf1ae8c162ad2176e44978ce3d8d138a94ae843e9232c1fb6d4ec36&scene=21#wechat_redirect)
 
 ### 面经汇总
 
 - Java面经汇总
-  - [Java线程面试题 Top 50 - ImportNew](http://www.importnew.com/12773.html)
-  - [Java面试通关要点汇总集 - 掘金](https://juejin.im/post/5a94a8ca6fb9a0635c049e67?utm_source=gold_browser_extension#heading-1)
-  - [Java面试通关要点汇总集(基础篇之基本功，非原作者) - 掘金](https://juejin.im/post/5a9690fc5188257a865da3ee?utm_source=gold_browser_extension)
-  - [JavaEE面试题收集 - 掘金](https://juejin.im/post/58a6ad5461ff4b78fca442eb)
-  - [一个两年Java的面试总结 - 掘金](https://juejin.im/post/5a9f5ce86fb9a028de443ed9?utm_source=gold_browser_extension)
+  - ImportNew
+    1. [Java线程面试题 Top 50 - ImportNew](http://www.importnew.com/12773.html)
+  - 掘金
+    1. [Java面试通关要点汇总集 - 掘金](https://juejin.im/post/5a94a8ca6fb9a0635c049e67?utm_source=gold_browser_extension#heading-1)
+    2. [Java面试通关要点汇总集(基础篇之基本功，非原作者) - 掘金](https://juejin.im/post/5a9690fc5188257a865da3ee?utm_source=gold_browser_extension)
+    3. [JavaEE面试题收集 - 掘金](https://juejin.im/post/58a6ad5461ff4b78fca442eb)
+    4. [一个两年Java的面试总结 - 掘金](https://juejin.im/post/5a9f5ce86fb9a028de443ed9?utm_source=gold_browser_extension)
   - 2020年收录：
     - [强烈推荐！15 个 Github 顶级 Java 教程类开源项目推荐！](https://blog.csdn.net/qq_34337272/article/details/104423823)
     - [Java基础知识面试题（2020最新版）](https://blog.csdn.net/ThinkWon/article/details/104390612)
     - [【阿里P6面经】二本，curd两年，疯狂复习，拿下阿里offer](https://blog.csdn.net/qq_35190492/article/details/105186878)
-- Android面经汇总
-  - [［干货］2017已来，最全面试总结——这些Android面试题你一定需要 - CSDN博客](https://blog.csdn.net/xhmj12/article/details/54730883)
 - 大厂面经
   - [面试心得与总结—BAT、网易、蘑菇街 - ImportNew](http://www.importnew.com/22637.html)
 - 经历分享
   - [2017年秋季校招面经 - CSDN博客](http://blog.csdn.net/huachao1001/article/details/52247268)
   - [我的求职经历——遍览国内一流IT企业(转） - lonelycatcher - 博客园](http://www.cnblogs.com/lonelycatcher/archive/2012/03/10/2388889.html)
-- 其他推荐
-  - [剑指 offer 题解](https://github.com/CyC2018/Interview-Notebook/blob/master/notes/%E5%89%91%E6%8C%87%20offer%20%E9%A2%98%E8%A7%A3.md)
-  - [技术面试需要掌握的基础知识 - 后端 - 掘金](https://juejin.im/entry/5a98a78f518825558358a3d9?utm_source=gold_browser_extension)
-  - [Leetcode 题解](https://github.com/CyC2018/Interview-Notebook/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3.md)
-  - [微软经典面试100题系列（部分） - CSDN博客](http://blog.csdn.net/zhoudaxia/article/details/8884557)
-  - [直通BAT面试算法精讲课_C++Java前端经典笔试面试题精讲_牛客网](https://www.nowcoder.com/courses/1)
-  - [牛课堂系列算法讲座_牛客网](https://www.nowcoder.com/courses/6)
-  - [牛课堂算法精讲直播讲座（2016）_牛客网](https://www.nowcoder.com/live/11)
 
 ### 博客
+
+- 职场
+  - [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
 
 - 年度报告
   - [阿里研究院：2016年校园快递行业发展报告](http://www.199it.com/archives/530127.html)
@@ -947,13 +921,34 @@ catalog: true
   - [究竟怎样写代码才算是好代码 - CSDN博客](http://blog.csdn.net/u013970991/article/details/52609083)
   - [成为Java顶尖程序员 ，看这11本书就够了 - CSDN博客](https://blog.csdn.net/u012410733/article/details/51869105)
 
+### 学习网站
+
+- [慕课网手记](http://www.imooc.com/article)
+- unity3d
+  - 愤怒的小鸟 [https://www.bilibili.com/video/av35565116/](https://www.bilibili.com/video/av35565116/)
+
+### 其他
+
+- 软件集
+  - everything
+  - wox（window快速搜索文件启动程序软件）
+  - 系统镜像
+    - [https://msdn.itellyou.cn/](https://msdn.itellyou.cn/)
+  - HTTP接口测试工具
+    - Postman
+  - PanDownload
+- Android [➮详细](Android)
+- Linux常用服务搭建
+  - [Shadowsocks](Linux#Shadowsocks)
+  - [Nginx](Linux#Nginx)
+  - [Ngrok](Linux#Ngrok)
+
 ### 游戏相关
 
 - [游戏学院 - 腾讯大学](https://daxue.qq.com/game)
 - 安全
   - [游戏安全实验室](https://gslab.qq.com/portal.php?mod=view&aid=94)
 - [GameRes游资网-游戏开发者门户](https://www.gameres.com/)
-- [TapTap - 发现好游戏](https://www.taptap.com/)
 
 ### 相关书籍
 
@@ -964,5 +959,4 @@ catalog: true
   - 《Spring Boot编程思想（核心篇）》![书籍·图1](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3621582485,3050859261&fm=58&bpow=800&bpoh=940)《Spring Boot实战》
   - 《Spring 微服务实战》
 - Netty、Tomcat
-- MySQL
-  - 《高性能MySQL》
+- MySQL 《高性能MySQL》

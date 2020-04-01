@@ -22,11 +22,8 @@ catalog: true
   - Log
 
     - 区分commons-logging，slf4j，log4j，logback
-
       1. 了解jcl-over-slf4j，jul-to-slf4j这些jar的作用
-
       2. 了解log4j和log4j2的区别，**lmax disruptor**应用场景
-
     - **Flume** 日志采集系统，一般用于日志聚合
 
   - Apache commons
@@ -624,6 +621,14 @@ catalog: true
 
   - SQL
 
+    - select
+
+      > select: 即最常用的查询，是不加任何锁的
+      >
+      > select ... lock in share mode: 会加共享锁(Shared Locks)
+      >
+      > select ... for update: 会加排它锁
+
     - 联接子句 union，join
 
   - 数据类型
@@ -634,75 +639,124 @@ catalog: true
   - **事务**
 
     - 事务特性，ACID的含义
-      
+
       1. 原子性
-      
+
          a. 事务是一个原子操作单元
-      
+
          b. 要么都做，要么都不做，没有第三种情况
-      
+
+         c. 原子性仅能够保证单个事务的一致性!
+
       2. 一致性
-      
+
          a. 事务操作前和操作后都必须满足业务规则约束
-      
+
          b. 比如资源数量一致：A向B转账，转账前和转账后AB两个账户的总金额必须是一致的
-      
+
+         c. **一致性是最基本的属性**，其它的三个属性都为了保证一致性而存在的。为了保证**并发情况下**的一致性，引入了**隔离性**，即保证每一个事务能够看到的数据总是一致的，就好象其它并发事务并不存在一样。
+
       3. 隔离性
-      
+
          a. 多个并发事务同时对数据进行读写的能力
-      
+
          b. 隔离性可以防止事务并发执行时由于交叉执行导致数据不一致的问题
-      
+
       4. 持久性
-      
+
          a. 对数据的修改是永久的
-      
+
          b. 即使出现系统故障也不会丢失
-      
+
     - 并发问题：
-      
+
       1. 脏读
-      
+
          一个事务正在对一条记录做修改，在这个事务提交之前，别的事务读取到了这个事务修改之后的数据，也就是说，一个事务读取到了其他事务还没有提交的数据，就叫做脏读。
-      
+
       2. 不可重复读
-      
+
          一个事务读某条数据读两遍，读到的是不一样的数据，也就是说，一个事务在进行中读取到了其他事务对旧数据的修改结果，（比如说 我开一个事务 修改某条数据 先查后改 执行修改动作的时候发现这条数据已经被别的事务删掉了）
-      
+
       3. 幻读
-      
+
          一个事务中，读取到了其他事务新增的数据，仿佛出现了幻象。（幻读与不可重复读类似，不可重复读是读到了其他事务update/delete的结果，幻读是读到了其他事务insert的结果）
-      
-      隔离级别
+
+      隔离级别：
+
       1. 读未提交（read-uncommitted）
-      
+
          在一个事务中，可以读取到其他事务未提交的数据变化，这种读取其他会话还没提交的事务，叫做脏读现象，在生产环境中切勿使用。
-      
+
       2. 读已提交（read-committed）
-      
+
          Sql Server,Oracle默认
-      
+
          在一个事务中，可以读取到其他事务已经提交的数据变化，这种读取也就叫做不可重复读，因为两次同样的查询可能会得到不一样的结果。
-      
+
       3. 可重复读（repetable-read）
-      
+
          MySQL默认
-      
-         在一个事务中，直到事务结束前，都可以反复读取到事务刚开始时看到的数据，并一直不会发生变化，避免了脏读、不可重复读现象，但是它还是无法解决幻读问题。
-      
+
+         在一个事务中，直到事务结束前，都可以反复读取到事务刚开始时看到的数据，并一直不会发生变化，避免了脏读、不可重复读现象，但是在SQL标准中它还是无法解决幻读问题。
+
       4. 可串行化（serializable）
-      
+
          这是最高的隔离级别，它强制事务串行执行，避免了前面说的幻读现象，简单来说，它会在读取的每一行数据上都加锁，所以可能会导致大量的超时和锁争用问题。
 
+      几个概念：
+
+      1. 锁：Shared Locks(共享锁/S锁)、Exclusive Locks(排它锁/X锁)、Record Locks(行锁)、Gap Locks(间隙锁)、Next-Key Locks(间隙锁)
+
+         > Record Locks是加在索引行(对！是索引行！不是数据行！)，Gap Locks和Next-Key Locks都属于索引锁
+
+      2. 快照读（普通读）：snapshot read，通过MVCC机制读取历史数据的方式
+
+         > select * from table ....
+
+      3. 当前读：current read ，读取数据库最新版本数据的方式 
+
+         > insert、update、delete、select for update、select lock in share mode
+
+      隔离性底层实现原理：
+
+      - MVCC(多版本并发控制)和锁
+
+      - 读已提交和可重复读区别主要在于**MVCC版本的生成时机**
+
+        RC是是**每次**`select`时，RR是**第一次**`select`时生成版本
+
+      - 可串行化级别下，会自动将所有普通`select`转化为`select ... lock in share mode`执行，即针对同一数据的所有读写都变成互斥的了，可靠性大大提高，并发性大大降低。
+
+      注意：
+
+      1. 间隙锁锁住的是索引的间隙，可以理解为范围，如（2，5]，(5，7]
+
+      2. 我们通过`update`、`delete`等语句加上的锁都是行级别的锁。只有`LOCK TABLE … READ`和`LOCK TABLE … WRITE`才能申请表级别的锁。
+
+      3. RR级别下隐藏着一个操作，就是在事务A提交前，事务B已经进行过一次查询，否则，事务B会读取最新的数据。[原文](https://blog.csdn.net/thekenofdis/article/details/80736401)
+
+      4. mysql innodb引擎默认是RR（repetable-read）的隔离级别，官方说法在mysql中通过MVCC快照读和next-key(当前读)两种模式解决了幻读问题。
+
+         这里要思考一下！按上面的博文说法：MVCC的快照只对**读操作**有效，对**写操作**无效，RR可以防止大部分的幻读，但像读-写-读的情况，使用不加锁的select依然会幻读。
+
+      5. 其实幻读很多时候是我们完全可以接受的
+
       总结：
-      
-      | 隔离级别 | 读数据一致性                           | 脏读 | 不可重复读 | 幻读 |
-      | -------- | -------------------------------------- | ---- | ---------- | ---- |
-      | 读未提交 | 最低级别，只保证不读取物理上损坏的数据 | 有   | 有         | 有   |
-      | 读已提交 | 语句级                                 | 无   | 有         | 有   |
-      | 可重复读 | 事务级                                 | 无   | 无         | 有   |
-      | 可串行化 | 最高级别，事务级                       | 无   | 无         | 无   |
-      
+
+      | 隔离级别 | 读数据一致性                           | 脏读 | 不可重复读 | 幻读   |
+      | -------- | -------------------------------------- | ---- | ---------- | ------ |
+      | 读未提交 | 最低级别，只保证不读取物理上损坏的数据 | 有   | 有         | 有     |
+      | 读已提交 | 语句级                                 | 无   | 有         | 有     |
+      | 可重复读 | 事务级                                 | 无   | 无         | 可能有 |
+      | 可串行化 | 最高级别，事务级                       | 无   | 无         | 无     |
+
+      参考链接：
+
+      [深入理解mysql的事务隔离级别和底层实现原理](https://blog.csdn.net/suifeng629/article/details/99412343)
+
+      [Mysql的select加锁分析](https://www.cnblogs.com/wintersoft/p/10787474.html)
+
     - 事务传播（其实这个是`Spring`的概念，Spring它对JDBC的隔离级别作出了补充和扩展，其提供了7种事务传播行为）
 
       1. **PROPAGATION_REQUIRED：默认事务类型，如果没有，就新建一个事务；如果有，就加入当前事务。适合绝大多数情况。**
@@ -719,50 +773,50 @@ catalog: true
 
     - InnoDB
 
-  - 索引
+- 索引
 
-    - 索引结构 B+树？
+  - 索引结构 B+树？
 
-    - 联合索引的最左前缀匹配原则
+  - 联合索引的最左前缀匹配原则
 
-      > mysql会一直向右匹配直到遇到范围查询(>、<、between、like)就停止匹配，比如a = 1 and b = 2 and c > 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。
+    > mysql会一直向右匹配直到遇到范围查询(>、<、between、like)就停止匹配，比如a = 1 and b = 2 and c > 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。
 
-    - MYSQL如何挑选索引
+  - MYSQL如何挑选索引
 
-  - 日志
+- 日志
 
-    - [MySQL的日志系统](https://www.cnblogs.com/ivy-zheng/p/11094528.html)
+  - [MySQL的日志系统](https://www.cnblogs.com/ivy-zheng/p/11094528.html)
 
-    - redo/undo log，binlog
+  - redo/undo log，binlog
 
-    - 慢日志
+  - 慢日志
 
-      可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。
+    可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。
 
-    - MySQL的 **Crash Safe**
+  - MySQL的 **Crash Safe**
 
-      - [Crash Safe和Binlog的关系](https://blog.csdn.net/shaochenshuo/article/details/73239949)
+    - [Crash Safe和Binlog的关系](https://blog.csdn.net/shaochenshuo/article/details/73239949)
 
-  - 备份与恢复
+- 备份与恢复
 
-    - 冷备份，热备份
+  - 冷备份，热备份
     - cp，mysqldump，lvm2快照，xtrabackup
-    - [mysql误删数据快速恢复](https://www.cnblogs.com/-mrl/p/9959365.html)
+  - [mysql误删数据快速恢复](https://www.cnblogs.com/-mrl/p/9959365.html)
 
-  - 高级
+- 高级
 
-    - explain
+  - explain
 
-      explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
+    explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
 
-  - 分布式
+- 分布式
 
-    - **主从**复制，分库分表
+  - **主从**复制，分库分表
 
-  - 编码
+- 编码
 
-    - utf8_general_ci、utf8_unicode_ci和utf8_bin的区别
-    - [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
+  - utf8_general_ci、utf8_unicode_ci和utf8_bin的区别
+  - [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
 
 - NoSQL
 
@@ -847,32 +901,19 @@ catalog: true
 ### 前端
 
 - HTML/CSS/JS
-
 - ECMAScript
-
 - Bootstrap 教程 - 菜鸟教程
-
 - [Vue](https://cn.vuejs.org/)
-
   - 双向数据绑定与单向数据绑定
-
   - [Vuex](https://vuex.vuejs.org/zh/)，[Weex](http://weex.apache.org/cn/)
-
 - React
-
   - [React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
-
 - Flux 架构
-
   - [Flux 架构入门教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
-
 - 状态管理
-
   - [聊一聊主流前端框架的状态管理](https://www.cnblogs.com/axel10/archive/2018/03/15/8571757.html)
   - [前端状态管理请三思](https://juejin.im/post/59fd94475188254115703461)
-
 - 其他
-
   - [给2019前端的5个建议](https://juejin.im/post/5c617c576fb9a049e93d33a4)
   - [浏览器原理系列10篇正式完结](https://juejin.im/post/5c6d3e026fb9a04a0d576f98)
 
@@ -982,7 +1023,6 @@ catalog: true
 
 - 职场
   - [如何入职心仪的游戏公司？ 游戏策划从入门到入行](https://www.gameres.com/840718.html)
-
 - 年度报告
   - [阿里研究院：2016年校园快递行业发展报告](http://www.199it.com/archives/530127.html)
   - [SegmentFault 年度内容盘点 - 2016](https://summary.segmentfault.com/2016/#/)

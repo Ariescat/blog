@@ -718,7 +718,7 @@ catalog: true
 
          > insert、update、delete、select for update、select lock in share mode
 
-      隔离性底层实现原理：
+      **隔离性**底层实现原理：
 
       - MVCC(多版本并发控制)和锁
 
@@ -736,9 +736,33 @@ catalog: true
 
       3. RR级别下隐藏着一个操作，就是在事务A提交前，事务B已经进行过一次查询，否则，事务B会读取最新的数据。[原文](https://blog.csdn.net/thekenofdis/article/details/80736401)
 
-      4. mysql innodb引擎默认是RR（repetable-read）的隔离级别，官方说法在mysql中通过MVCC快照读和next-key(当前读)两种模式解决了幻读问题。
+      4. 为什么很多文章都产生误传，说是可重复读可以解决幻读问题！原因出自官网的一句话(地址是:`https://dev.mysql.com/doc/refman/5.7/en/innodb-locking.html#innodb-record-locks`)，原文内容如下
 
-         这里要思考一下！按上面的博文说法：MVCC的快照只对**读操作**有效，对**写操作**无效，RR可以防止大部分的幻读，但像读-写-读的情况，使用不加锁的select依然会幻读。
+         > By default, InnoDB operates in REPEATABLE READ transaction isolation level. In this case, InnoDB uses next-key locks for searches and index scans, which prevents phantom rows (see Section 14.7.4, “Phantom Rows”).
+
+         按照原本这句话的意思，应该是
+
+         **InnoDB默认用了REPEATABLE READ。在这种情况下，使用next-key locks解决幻读问题！**
+
+         结果估计，某个国内翻译人员翻着翻着变成了
+
+         **InnoDB默认用了REPEATABLE READ。在这种情况下，可以解决幻读问题！**
+
+         然后大家继续你抄我，我抄你，结果你懂的！
+
+         显然，漏了"使用了next-key locks！"这个条件后，意思完全改变，我们在该隔离级别下执行语句
+
+         ```sql
+         select *  from tx_tb where pId >= 1;
+         ```
+
+         是快照读，是不加任何锁的，根本不能解决幻读问题，除非你用
+
+         ```sql
+         select *  from tx_tb where pId >= 1 lock in share mode;
+         ```
+
+         这样，你就用上了next-key locks，解决了幻读问题！
 
       5. 其实幻读很多时候是我们完全可以接受的
 
@@ -753,9 +777,9 @@ catalog: true
 
       参考链接：
 
-      [深入理解mysql的事务隔离级别和底层实现原理](https://blog.csdn.net/suifeng629/article/details/99412343)
+      1. [深入理解mysql的事务隔离级别和底层实现原理](https://blog.csdn.net/suifeng629/article/details/99412343)
 
-      [Mysql的select加锁分析](https://www.cnblogs.com/wintersoft/p/10787474.html)
+      2. [Mysql中select的正确姿势](https://www.cnblogs.com/rjzheng/p/9902911.html)，[新说Mysql事务隔离级别](https://www.cnblogs.com/rjzheng/p/9955395.html)，他的“[数据库系列](https://www.cnblogs.com/rjzheng/category/1281020.html)”都挺不错的
 
     - 事务传播（其实这个是`Spring`的概念，Spring它对JDBC的隔离级别作出了补充和扩展，其提供了7种事务传播行为）
 
@@ -774,6 +798,8 @@ catalog: true
     - InnoDB
 
 - 索引
+
+  - 聚簇索引和非聚簇索引
 
   - 索引结构 B+树？
 

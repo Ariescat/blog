@@ -347,6 +347,18 @@ Cglib动态代理
 
   该类通过在资源目录META-INF/services中放置**提供者配置文件**来标识**服务提供者**。
 
+### Java lang包
+
+* Math
+
+  1. log
+
+     在java中求log2N，首先要弄明白一个初中学到的公式`log2N=logeN/loge2`，logeN代表以e为底的N的对数，loge2代表以e为底的2的对数
+
+     在java.lang.math类中的log(double a)代表以e为底的a的对数，因此log2N在Java中的表示为`log((double)N)/log((double)2)`
+
+  2. pow
+
 ### Swing/Awt
 
 - EventQueue 与 AWTEvent

@@ -206,6 +206,10 @@ catalog: true
   - [Leader选举-选举过程介绍比较清晰](https://blog.csdn.net/gaoshan12345678910/article/details/67638657)
   - [ZAB协议理解](https://blog.csdn.net/junchenbb0430/article/details/77583955)
 
+- 分布式锁
+
+  分布式锁一般有三种实现方式：1. 数据库乐观锁；2. 基于Redis的分布式锁；3. 基于ZooKeeper的分布式锁
+  
 - 分布式事务
 
   - [分布式事务与一致性算法Paxos & raft & zab](https://blog.csdn.net/followmyinclinations/article/details/52870418)

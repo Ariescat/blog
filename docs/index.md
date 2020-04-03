@@ -548,7 +548,13 @@ catalog: true
 
   - TCP/IP
 
-    - [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)
+    - [跟着动画来学习TCP三次握手和四次挥手](https://juejin.im/post/5b29d2c4e51d4558b80b1d8c)
+
+      1. 三次挥手是确保双方都能收和发的最少确认次数
+      2. 四次挥手中间的两步并不总是会合成一步走，因为服务端处于“半关闭状态”，可能还有剩下的消息没发完，客户端此时能收不能发
+      3. 四次挥手的time_wait状态，2MSL(MSL为报文最大生存时间，一般2分钟，可更改)，作用是重传最后一个ack报文
+
+      [TCP的三次握手与四次挥手（详解+动图）](https://blog.csdn.net/qzcsu/article/details/72861891)
 
     - 拥塞算法：**慢开始 、 拥塞避免 、快重传 和 快恢复**
 

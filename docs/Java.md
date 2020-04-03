@@ -101,6 +101,8 @@ catalog: true
 
   - WeakHashMap
 
+  - CopyOnWriteArrayList （附：Redis写快照的时候，用到了Linux底层的Copy-On-Write技术）
+
   - **跳表** [ConcurrentSkipListMap](https://blog.csdn.net/sunxianghuang/article/details/52221913)
 
   - DelayQueue

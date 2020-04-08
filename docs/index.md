@@ -215,7 +215,7 @@ catalog: true
 - 分布式锁
 
   分布式锁一般有三种实现方式：1. 数据库乐观锁；2. 基于Redis的分布式锁；3. 基于ZooKeeper的分布式锁
-  
+
 - 分布式事务
 
   - [分布式事务与一致性算法Paxos & raft & zab](https://blog.csdn.net/followmyinclinations/article/details/52870418)
@@ -311,8 +311,8 @@ catalog: true
 
     1. B-tree树即B树，是一种多路搜索树
     2. B树的两个明显特点
-       * 树内的每个节点都存储数据
-       * 叶子节点之间无指针相邻
+       - 树内的每个节点都存储数据
+       - 叶子节点之间无指针相邻
     3. B+树的两个明显特点
        - 数据只出现在叶子节点
        - 所有叶子节点增加了一个链指针
@@ -647,7 +647,7 @@ catalog: true
 
     **前三个都是 广义零拷贝，都是减少不必要数据copy；偏向于应用层数据优化的操作。**
 
-* IO 操作的真正耗时
+- IO 操作的真正耗时
 
   我们开始以为 write 操作是要等到对方收到消息才会返回，但实际上不是这样的。write操作只负责将数据写到本地操作系统内核的发送缓冲然后就返回了。剩下的事交给操作系统内核异步将数据送到目标机器。但是如果发送缓冲满了，那么就需要等待缓冲空出空闲空间来，这个就是写操作 IO 操作的真正耗时。 
 
@@ -655,7 +655,7 @@ catalog: true
 
   这里可以配合《Netty、Redis、Zookeeper高并发实战》2.2节四种主要的IO模型来看一下。
 
-### MySQL/Redis
+### MySQL
 
 - MySQL
 
@@ -818,7 +818,6 @@ catalog: true
       参考链接：
 
       1. [深入理解mysql的事务隔离级别和底层实现原理](https://blog.csdn.net/suifeng629/article/details/99412343)
-
       2. [Mysql中select的正确姿势](https://www.cnblogs.com/rjzheng/p/9902911.html)，[新说Mysql事务隔离级别](https://www.cnblogs.com/rjzheng/p/9955395.html)，他的“[数据库系列](https://www.cnblogs.com/rjzheng/category/1281020.html)”都挺不错的
 
     - 事务传播（其实这个是`Spring`的概念，Spring它对JDBC的隔离级别作出了补充和扩展，其提供了7种事务传播行为）
@@ -874,7 +873,7 @@ catalog: true
   - explain
 
     explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
-    
+
   - 如何快速的删除一张大（TB级别）表？
 
     1. 区分drop，truncate，delete
@@ -889,69 +888,64 @@ catalog: true
   - utf8_general_ci、utf8_unicode_ci和utf8_bin的区别
   - [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
 
-- NoSQL
+### Redis / NoSQL
 
-  - Redis
+> 1. Redis是一种基于键值对(Key-Value)的NoSQL数据库，Redis的Value的基础数据结构有string、list、hash、set、zset；
+> 2. 有**Bitmaps**，**HyperLogLog**等多种高级数据结构和算法
+> 3. Redis还提供了键过期，发布订阅，事务，Lua脚本，哨兵，Cluster等功能。
 
-    > 1. Redis是一种基于键值对(Key-Value)的NoSQL数据库，Redis的Value的基础数据结构有string、list、hash、set、zset；
-    > 2. 有**Bitmaps**，**HyperLogLog**等多种高级数据结构和算法
-    > 3. Redis还提供了键过期，发布订阅，事务，Lua脚本，哨兵，Cluster等功能。
+- 主要应用：
 
-    - 主要应用：
+  分布式锁、延时队列、位图、HyperLogLog、布隆过滤器、简单限流（zset）、漏斗限流、GeoHash（地理位置）
 
-      分布式锁、延时队列、位图、HyperLogLog、布隆过滤器、简单限流（zset）、漏斗限流、GeoHash（地理位置）
+- 需要了解的一些原理：
 
-    - 需要了解的一些原理：
+  1. Redis的线程模型：单线程，IO多路复用
 
-      1. Redis的线程模型：单线程，IO多路复用
+  2. 客户端与服务器的通信协议
 
-      2. 客户端与服务器的通信协议
+  3. 持久化：使用操作系统的多进程 COW(Copy On Write) 机制来实现快照持久化
 
-      3. 持久化：使用操作系统的多进程 COW(Copy On Write) 机制来实现快照持久化
+  4. 管道，事务
 
-      4. 管道，事务
+     注意redis事务**不保证原子性**，**不支持回滚**。他总结来说：**就是一次性、顺序性、排他性的执行一个队列中的一系列命令**。其他客户端提交的命令请求不会插入到事务执行命令序列中。
 
-         注意redis事务**不保证原子性**，**不支持回滚**。他总结来说：**就是一次性、顺序性、排他性的执行一个队列中的一系列命令**。其他客户端提交的命令请求不会插入到事务执行命令序列中。
+     思考一下，为什么这样设计？
 
-         思考一下，为什么这样设计？
-  
-      5. `encoding` 记录了对象所保存的值的编码
-  
-         下图展示了 redisObject 、Redis 所有数据类型、以及 Redis 所有编码方式（底层实现）三者之间的关系：
-  
-         ![redis1](imgs\redis1.png)
-  
-    - 集群
-  
-      Sentinel，Codis，Cluster
-  
-    - 一些拓展
-  
-      Stream数据结构，Info指令，分布式锁Redlock算法，过期清除策略
-  
-    - 一些面试题：
-  
-      1. [《吊打面试官》系列-缓存雪崩、击穿、穿透](https://blog.csdn.net/qq_35190492/article/details/102889333)
-  
-         防止缓存穿透：增加校验，缓存，**布隆过滤器（Bloom Filter）**，hyperloglog
-  
-    - 源码
-  
-      - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
-      - jemalloc，Redis 默认使用 jemalloc(facebook) 库来管理内存
-  
-    - 书籍
-  
-      - 《redis设计与实现(第二版)》，《Redis 深度历险:核心原理与应用实践》
-  
+  5. `encoding` 记录了对象所保存的值的编码
+
+     下图展示了 redisObject 、Redis 所有数据类型、以及 Redis 所有编码方式（底层实现）三者之间的关系：
+
+     ![redis1](imgs\redis1.png)
+
+- 集群
+
+  Sentinel，Codis，Cluster
+
+- 一些拓展
+
+  Stream数据结构，Info指令，分布式锁Redlock算法，过期清除策略
+
+- 一些面试题：
+
+  1. [《吊打面试官》系列-缓存雪崩、击穿、穿透](https://blog.csdn.net/qq_35190492/article/details/102889333)
+
+     防止缓存穿透：增加校验，缓存，**布隆过滤器（Bloom Filter）**，hyperloglog
+
+- 源码
+
+  - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
+  - jemalloc，Redis 默认使用 jemalloc(facebook) 库来管理内存
+
+- 书籍
+
+  - 《redis设计与实现(第二版)》，《Redis 深度历险:核心原理与应用实践》
+
+- Orther NoSQL
   - Memcache
-  
     - Redis之与Memcached的比较
-  
   - MongoDB
-  
     1. [为什么Mongodb索引用B树，而Mysql用B+树?](https://www.cnblogs.com/rjzheng/p/12316685.html)
-  
   - Elasticsearch
 
 ### C/C++

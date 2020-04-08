@@ -186,9 +186,15 @@ catalog: true
 
 ### 分布式技术
 
-- IO操作
+- 理论基石CAP原理
 
-  - [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
+  **C** - **C**onsistent ，一致性
+
+  **A** - **A**vailability ，可用性
+
+  **P** - **P**artition tolerance ，分区容忍性
+
+  一句话概括 CAP 原理就是——**网络分区发生时，一致性和可用性两难全**
 
 - RPC
 
@@ -594,7 +600,9 @@ catalog: true
 
 ### IO
 
-- IO概念
+- IO操作
+
+  - [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
 
   - [网络IO中的同步、异步、阻塞和非阻塞](https://ariescat.github.io/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
 
@@ -907,7 +915,19 @@ catalog: true
 
          思考一下，为什么这样设计？
   
+      5. `encoding` 记录了对象所保存的值的编码
+  
+         下图展示了 redisObject 、Redis 所有数据类型、以及 Redis 所有编码方式（底层实现）三者之间的关系：
+  
+         ![redis1](imgs\redis1.png)
+  
     - 集群
+  
+      Sentinel，Codis，Cluster
+  
+    - 一些拓展
+  
+      Stream数据结构，Info指令，分布式锁Redlock算法，过期清除策略
   
     - 一些面试题：
   
@@ -918,7 +938,8 @@ catalog: true
     - 源码
   
       - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
-    
+      - jemalloc，Redis 默认使用 jemalloc(facebook) 库来管理内存
+  
     - 书籍
   
       - 《redis设计与实现(第二版)》，《Redis 深度历险:核心原理与应用实践》
@@ -978,6 +999,7 @@ catalog: true
   - [进程和线程](https://blog.csdn.net/weixin_43517199/article/details/89508381)
 - 死锁
 - 内存管理
+  1. 分页管理
 - 设备管理
 - Linux
   - [CentOS7简单使用](Linux#CentOS7)

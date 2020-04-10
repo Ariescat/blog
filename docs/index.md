@@ -196,6 +196,10 @@ catalog: true
 
   一句话概括 CAP 原理就是——**网络分区发生时，一致性和可用性两难全**
 
+- 一些需要了解的
+
+  1. 一致性Hash
+
 - RPC
 
   RPC涉及：通讯，序列化，超时，重发（重复），消息顺序，负载 等等。（个人理解）
@@ -446,7 +450,6 @@ catalog: true
     这里引出几个问题：
 
     1. NP问题：就是可以（多知项式时间内）短时间内验证一个答案正确性的问题。
-
     2. NP完全问题：第一个条件，可以这么说，就是道你如果能解决A问题，则通过A问题可以解决B问题，那么回A问题比B问题复杂，当所有的问题都可以通过A问题的解决而解决的话，那么A问题就可以称为NP完全问题，第二个条件，就是答A问题属于NP问题。
 
 - 算法思想
@@ -948,9 +951,26 @@ catalog: true
 
   Sentinel，Codis，Cluster
 
-- 一些拓展
+- 拓展
 
-  Stream数据结构，Info指令，分布式锁Redlock算法，过期清除策略
+  Stream数据结构，Info指令，分布式锁Redlock算法，过期清除策略，RedLock
+
+  1. redis分布式锁
+     1. 单实例中实现分布式锁：setnx（注意删除时最好使用Lua脚本删除，逻辑是先获取key，如果存在并且值是自己设置的就删除此key，否则就跳过）
+     2. 多节点redis实现的分布式锁：RedLock
+
+- Java的Redis客户端：Jedis，Redisson
+
+  1. Redisson 不仅封装了 redis ，还封装了对更多数据结构的支持，以及锁等功能，相比于Jedis 更加大。
+
+     Redisson的加锁/释放锁都是用Lua脚本，相比于setnx就能实现，为何多此一举？仔细看Lua脚本就会发现考虑得非常全面，其中包括锁的**重入性**。
+
+  2. 但Jedis相比于Redisson 更原生一些，更灵活。
+
+- 源码
+
+  - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
+  - jemalloc，Redis 默认使用 jemalloc(facebook) 库来管理内存
 
 - 一些面试题：
 
@@ -958,16 +978,12 @@ catalog: true
 
      防止缓存穿透：增加校验，缓存，**布隆过滤器（Bloom Filter）**，hyperloglog
 
-- 源码
-
-  - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)
-  - jemalloc，Redis 默认使用 jemalloc(facebook) 库来管理内存
-
 - 书籍
 
   - 《redis设计与实现(第二版)》，《Redis 深度历险:核心原理与应用实践》
 
 - Orther NoSQL
+
   - Memcache
     - Redis之与Memcached的比较
   - MongoDB

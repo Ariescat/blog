@@ -12,15 +12,15 @@ catalog: true
 ### String
 
 - [Java中的String有没有长度限制？](https://www.hollischuang.com/archives/3916)
-  
+
   - 数组呢？
-  
+
 - StringJoiner（Java 8中提供的可变字符串类）
 
 - char
 
   JAVA的char内部编码为`UTF-16`，而与`Charset.defaultCharset()`无关
-  
+
 - String s = new String("a") 到底产生几个对象？
 
   对于通过new产生一个字符串（"a"）时，会先去常量池中查找是否已经有了”a”对象，如果没有则在常量池中创建一个此字符串对象，然后堆中再创建一个常量池中此"a"对象的拷贝对象。
@@ -34,13 +34,13 @@ catalog: true
   扩展：
 
   1. intern方法 
-  
-     * [深入解析String#intern](https://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html)
-  
+
+     - [深入解析String#intern](https://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html)
+
        关键点是 jdk7 中常量池不在 Perm 区域了，这块做了调整。常量池中不需要再存储一份对象了，可以直接存储堆中的引用 
-  
+
   2. 此外，Java中的常量池有**字符串常量池**、**class常量池**和**运行时常量池**。[原文]( http://tangxman.github.io/2015/07/27/the-difference-of-java-string-pool/ )
-  
+
   3. 常量池会被回收吗？
 
 ### 集合
@@ -112,13 +112,13 @@ catalog: true
 - 著名BUG
 
   - c.toArray might (incorrectly) not return Object[] (see 6260652) [原文](https://blog.csdn.net/qq_33589510/article/details/104767849)
-  
+
     `java.util.ArrayList` 元素类型为`Object[] elementData`，`toArray()`方法实质返回`Object[]`
-  
+
     `java.util.Arrays.ArrayList` 元素类型为`E[] a`，`toArray()`方法实质返回`E[]`
-  
+
     因此，虽然`List`的`toArray`接口表面都返回Object[]，但他们的实质返回值还是有差的。所以我们不能将其他类型的对象，放进`java.util.Arrays.ArrayList#toArray()`返回的数组中。
-  
+
     ```java
     List<String> list = Arrays.asList("abc");
     // class java.util.Arrays$ArrayList
@@ -131,25 +131,25 @@ catalog: true
     // cause ArrayStoreException
     objArray[0] = new Object();
     ```
-  
+
     
-  
+
 - 第三方原始类型集合库**Koloboke**，避免大量的装箱拆箱，同类型的还有HPPC，Eclipse Collections等
 
   > Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
 
 ### 代理
 
-按照代理的创建时期，代理类可以分为两种。 
+1. 按照代理的创建时期，代理类可以分为两种。 
 
-> 静态代理：由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
-> 动态代理：在程序运行时，运用反射机制动态创建而成。
+   > 静态代理：由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
+   > 动态代理：在程序运行时，运用反射机制动态创建而成。
 
-Cglib动态代理 
+2. Cglib动态代理 
 
-> JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。
+   > JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。
 
-[Cglib 与 JDK动态代理](https://my.oschina.net/xiaolyuh/blog/3108376)
+3. [Cglib 与 JDK动态代理](https://my.oschina.net/xiaolyuh/blog/3108376)
 
 ### IO
 
@@ -161,47 +161,47 @@ Cglib动态代理
 
      1. `FileReader`，可以理解成他把`FileInputStream`和`Decoder`封装了起来，本质上还是用FileInputStream读了一层字节流byte[] (这里的read是一个`native`方法)，然后通过Decoder把他转成了char[]。
      2. `BufferedReader`，他默认开辟了一份`defaultCharBufferSize = 8192`长度的cb[]数组（缓冲区），读之前会把这个数组`fill()`满，之后都是操作这个数组，操作完了就再次更新数组，提高数据访问的效率。
-  
+
      测试代码：`study-metis: com.metis.io.iostream.Test`
-  
+
   2. 对管道进行操作：PipedInputStream（字节输入流），PipedOutStream（字节输出流），PipedReader（字符输入流），PipedWriter（字符输出流）
-  
+
      PipedInputStream的一个实例要和PipedOutputStream的一个实例共同使用，共同完成管道的读取写入操作，主要用于**线程操作**。**有空看看这里的实现 > **[简介,源码分析和示例](https://www.cnblogs.com/skywang12345/p/io_04.html)
-  
+
   3. 字节/字符数组：ByteArrayInputStream，ByteArrayOutputStream，CharArrayReader，CharArrayWriter
-  
+
      在内存中开辟了一个字节或字符数组。
-  
+
   4. Buffered缓冲流：BufferedInputStream，BufferedOutputStream，BufferedReader，BufferedWriter
-  
+
      带缓冲区的处理流，缓冲区的作用的主要目的是：避免每次和硬盘打交道，提高数据访问的效率。
-  
+
   5. 转化流：
-  
+
      InputStreamReader：在读入数据的时候将字节转换成字符。
-  
+
      OutputStreamWriter：在写出数据的时候将字符转换成字节。
-  
+
   6. 数据流：DataInputStream，DataOutputStream
-  
+
      因为平时若是我们输出一个8个字节的long类型或4个字节的float类型，那怎么办呢？可以一个字节一个字节输出，也可以把转换成字符串输出，但是这样转换费时间，若是直接输出该多好啊，因此这个数据流就解决了我们输出数据类型的困难。数据流可以直接输出float类型或long类型，提高了数据读写的效率。
-  
+
   7. 打印流：printStream，printWriter
-  
-      一般是打印到控制台，可以进行控制打印的地方和格式，其中的  print方法不会抛出异常，可以通过checkError方法来查看异常。
-  
+
+     一般是打印到控制台，可以进行控制打印的地方和格式，其中的  print方法不会抛出异常，可以通过checkError方法来查看异常。
+
   8. 对象流：ObjectInputStream，ObjectOutputStream
-  
+
      把封装的对象直接输出，而不是一个个在转换成字符串再输出。
-  
+
   9. `RandomAccessFile` 随机访问文件
-  
+
      java.io包中是一个特殊的类, 既可以读文件，也可以写文件。**有空也要看看这里的实现**
-  
+
   10. ZipInputStream、ZipOutputStream
-  
+
       读取zip文档 getNextEntry、putNextEntry 得到或创建ZipEntry对象。
-  
+
 - Path/Files
 
   - [IO操作你还在用File吗，该拥抱Path和Files了](https://www.sohu.com/a/132459571_654433)
@@ -214,7 +214,7 @@ Cglib动态代理
 
   有些资源 `GC` 回收不掉？
 
-### **线程**&并发
+### 线程
 
 > JUC包，毫无疑问的，得去学，哪怕平时编程根本不去用，但是得会，至少得知道有这个东西，至少得知道aba，cas，aqs，unsafe，volatile，sync，常见的各种lock，死锁，线程池参数和如何合理的去设置，必须明白自旋，阻塞，死锁和它如何去定位，oom如何定位问题，cpu过高如何定位等基本的操作。你可以没有生产调试经验，但不代表你可以不会top，jps，jstack，jmap这些可能会问的东西。
 
@@ -229,36 +229,98 @@ Cglib动态代理
 
 - [线程池](http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/Executor%20%E4%B9%8B%20%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8F%8A%E5%AE%9A%E6%97%B6%E5%99%A8.html)  
 
-  - **三种队列**
+  - 关于Executors 
 
-    > ？`SynchronousQueue`误区：很多人把其认为其没有容量，不存储元素，这是错的。
+    《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
 
-  - 拒绝服务的方式
+    Executors 返回线程池对象的弊端如下：
 
-  - ThreadPoolExecutor和ScheduledThreadPoolExecutor原理
+    1. FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE ，可能堆积大量的请求，从而导致OOM。
+    2. CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
 
-    - [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
+  - 三种队列
 
-  《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
+    | 队列                | 简单解释                                                     |
+    | ------------------- | ------------------------------------------------------------ |
+    | SynchrousQueue      | 不会保存提交任务，超出直接corePoolSize个任务，直接创建新的线程来执行任务，直到(corePoolSize＋新建线程) > maximumPoolSize。 |
+    | LinkedBlockingQueue | 基于链表的先进先出，无界队列。超出直接corePoolSize个任务，则加入到该队列中，直到资源耗尽，**所以maximumPoolSize不起作用**。 |
+    | ArrayBlockingQueue  | 基于数组的先进先出，创建时必须指定大小，超出直接corePoolSize个任务，则加入到该队列中，只能加该queue设置的大小，其余的任务则创建线程，直到(corePoolSize＋新建线程) > maximumPoolSize。 |
 
-  Executors 返回线程池对象的弊端如下：
+    上表收录自：[线程池的三种缓存队列](https://blog.csdn.net/nihaomabmt/article/details/81667481)
 
-  > FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE ，可能堆积大量的请求，从而导致OOM。  
-  > CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
+    解释看起来文邹邹的，要不直接上代码：
+  
+    ```java
+    int c = ctl.get();
+    if (workerCountOf(c) < corePoolSize) {
+        if (addWorker(command, true))
+            return;
+        c = ctl.get();
+    }
+    if (isRunning(c) && workQueue.offer(command)) {
+        int recheck = ctl.get();
+        if (! isRunning(recheck) && remove(command))
+            reject(command);
+        else if (workerCountOf(recheck) == 0)
+            addWorker(null, false);
+    }
+    else if (!addWorker(command, false))
+      reject(command);
+    ```
 
+    注意几点
+
+    1. ？`SynchronousQueue`误区：很多人把其认为其没有容量，不存储元素，这是错的。
+
+       好好了解这个结构，并看看其核心算法`transfer`。后来实在看不懂...，先记住这句话吧：生产者线程对其的插入操作put必须等待消费者的移除操作take，反过来也一样。你不能调用peek()方法来看队列中是否有数据元素，因为数据元素只有当你试着取走的时候才可能存在，不取走而只想偷窥一下是不行的，当然遍历这个队列的操作也是不允许的。
+     
+       参考链接：
+     
+       1. https://www.jianshu.com/p/d5e2e3513ba3
+       2. https://www.cnblogs.com/duanxz/p/3252267.html
+  
+  - 四种拒绝策略
+  
+    1. AbortPolicy // 默认，队列满了丢任务抛出异常
+    2. DiscardPolicy // 队列满了丢任务不异常
+    3. DiscardOldestPolicy // 将最早进入队列的任务删，之后再尝试加入队列
+    4. CallerRunsPolicy // 如果添加到线程池失败，那么主线程会自己去执行该任务
+  
+- ThreadPoolExecutor和ScheduledThreadPoolExecutor原理
+  
+  - [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
+  
   - 线程池运行状态**【这里有空要详细看看】**
-
+  
     ![thread-state](https://img-blog.csdnimg.cn/20191216171812869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIwNzA1Ng==,size_16,color_FFFFFF,t_70)
-
+  
   - `shutdown()`, `shutdownNow()`和`awaitTermination()`
+  
+    注意，一旦线程池有任务开始跑，就算任务都跑完了，也会等待`keepAliveTime`时候后才会停止。一般测试小demo的时候发现程序一直得不到结束，原因基本是这个。
+  
+  ```java
+    public static void main(String[] args) throws InterruptedException {
+  	ExecutorService executor = Executors.newCachedThreadPool();
+    	executor.execute(() -> System.err.println("executor"));
+  	// TimeUnit.SECONDS.sleep(5L);
+    	// executor.shutdown();
+    	System.err.println("finish"); // 两个打印都输出后，程序还要等待 60s 才会结束！！
+    }
+  ```
+  
+    源码分析：
+  
+    `java.util.concurrent.ThreadPoolExecutor#runWorker`这里会一直调用`task = getTask()`，`getTask`里会调用`workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS)`，因此没任务后它也会阻塞`keepAliveTime`时间。
+  
+    分析一下`shutdown()`，它里面调用了`interruptIdleWorkers()`，它会打断上述的`wait keepAliveTime`的状态，抛出中断异常，而`getTask()`会捕获这个异常，从而**打破阻塞状态**。
+
+### 并发问题
 
 - 锁
 
   - synchronized
-
-- monitor对象
-
-  - [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
+    - monitor对象
+    - [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
 
 - volatile 
 
@@ -330,7 +392,7 @@ Cglib动态代理
   Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。
 
   - Guava——AbstractFuture
-  
+
 - 什么是上下文切换？
 
 - 并发与并行的区别？
@@ -342,7 +404,7 @@ Cglib动态代理
 - BitSet
 
   JDK中的BitSet集合对是**布隆过滤器**中经常使用的数据结构**Bitmap**的相对简单的实现。BitSet采用了**Bitmap的算法思想**。
-  
+
 - ServiceLoader
 
   Java中SPI全称为（Service Provider Interface，服务提供者接口）
@@ -351,7 +413,7 @@ Cglib动态代理
 
 ### Java lang包
 
-* Math
+- Math
 
   1. log
 
@@ -480,7 +542,7 @@ Cglib动态代理
 
 ### 对象序列化
 
-* Gson
+- Gson
 
   [关于Gson的几个坑](https://ariescat.github.io/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/)
 
@@ -491,15 +553,15 @@ Cglib动态代理
 > 垃圾回收算法，垃圾收集器，jvm内存模型，每个区域用途，各种oom的种类，jvm调优经验，没有你也要做过，自己去设置启动参数，知道常见参数的含义，类加载过程，双亲委派，什么时候young gc，full gc，各种情况进入老年代的方式，你知道的越多越好，因为吹起来就越自信，举个例子，逃逸分析是什么？markword里面有什么？
 
 - 内存管理
-  
+
   - 堆是线程共享的内存区域？
-    
+
     不完全正确。因为HotSpot中，TLAB是堆内存的一部分，他在**读取上**确实是**线程共享**的，但是在**内存分配上**，是**线程独享**的。[链接](https://mp.weixin.qq.com/s/Jj5Z1DZKpAgrj9wpYUZ_JQ)
-  
+
 - 类加载
-  
+
   - ClassLoader [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
-  
+
 - 字节码执行
 
   - 局部变量表中的Slot
@@ -517,7 +579,7 @@ Cglib动态代理
   - **happen-before**原则
 
 - 编译与优化
-  
+
   - HotSpot虚拟机 JIT
     - 解释执行
       - 逐条将字节码翻译成机器码并执行
@@ -669,14 +731,14 @@ Cglib动态代理
 
   - Reactive Streams
   - Flow API
-  
+
 - Java 11
 
   - 直接运行源代码
-  
+
 - QA？
 
-  * [JDK 1.8 下的 java.lang.Class 对象和 static 成员变量在堆还是方法区？](https://blog.csdn.net/xu_jl1997/article/details/89433916)
+  - [JDK 1.8 下的 java.lang.Class 对象和 static 成员变量在堆还是方法区？](https://blog.csdn.net/xu_jl1997/article/details/89433916)
 
 ### 字节码
 
@@ -687,6 +749,7 @@ Cglib动态代理
 ### 热更新
 
 - 自定义类加载器
+
   - [探秘 Java 热部署](https://www.jianshu.com/p/731bc8293365)
   - [CSDN·自定义classloader实现JAVA热替换](https://blog.csdn.net/puhaiyang/article/details/78165465)
 

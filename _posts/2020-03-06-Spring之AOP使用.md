@@ -36,7 +36,7 @@ tags:
 
   
 
-以下相关代码请挪步：[study-metis / spring.aop](https://github.com/Ariescat/study-metis/tree/master/framework/spring/src/main/java/spring/aop)。这里给出来4种实现方式：代码构造，spring xml配置（aspect和advisor两种），以及注解的实现。
+以下相关代码请挪步：[study-metis/spring.aop](https://github.com/Ariescat/study-metis/tree/master/spring/src/main/java/com/metis/spring/aop)。这里给出来4种实现方式：代码构造，spring xml配置（aspect和advisor两种），以及注解的实现。
 
 至于他们的底层都是怎么实现的另开章节分享，这里只展示使用。（其实基本离不开那两种代理方式）
 

@@ -93,7 +93,7 @@ catalog: true
 
     ConcurrentHashMap 1194行会死锁
 
-    ![deadlock](imgs/1579494015304.png)
+    ![deadlock](imgs/map1.png)
 
 - **红黑树** TreeMap、TreeSet
 
@@ -348,39 +348,28 @@ catalog: true
 - **AQS**（AbstractQueuedSynchronizer）
 
   - AQS框架借助于两个类：
-
     1. Unsafe（提供CAS操作）
     2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
-
   - 与Object类的wait/notify机制相比，park/unpark有两个优点：
-
     1. 以thread为操作对象更符合阻塞线程的直观定义
     2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
-
   - 应用：
-
     1. CountDownLatch、CyclicBarrier和Semaphore
     2. AbstractFuture (一旦调用get就会阻塞)
-
   - JDK Unsafe类（可以了解一下）
-
     - objectFieldOffset
     - compareAndSwap...
-
-  - Thread.sleep、Object.wait、Condition.await、LockSupport.park 区别，他们会释放锁吗？
-
-    [面试 LockSupport.park()会释放锁资源吗？](http://www.imooc.com/article/294581)
-
   - 参考链接
-
     - https://blog.51cto.com/14220760/2390586?source=dra
     - https://www.jianshu.com/p/da9d051dcc3d
 
 - 并发容器
 
-  - CopyOnWriteArrayList、ConcurrentLinkedQueue ...
+  - LinkedBlockingQueue，ConcurrentLinkedQueue等，要看看源码如何实现（offer，take方法）！
 
-  - ConcurrentHashMap (JDK8)、ConcurrentHashMapV8 (netty提供)
+  - CopyOnWriteArrayList
+
+  - ConcurrentHashMap (JDK8)，ConcurrentHashMapV8 (netty提供)
 
     > java8中的ConcurrentHashMap实现已经抛弃了java7中分段锁的设计，而采用更为轻量级的CAS来协调并发，效率更佳。
 
@@ -392,23 +381,35 @@ catalog: true
 
     > 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
 
-- ThreadLocal
+- 其他
 
-  ThreadLocal有一个**value内存泄露**的隐患
+  1. ThreadLocal
 
-- WeakReference 和 **ReferenceQueue**
+     ThreadLocal有一个**value内存泄露**的隐患
 
-  这里重点看ReferenceQueue，引用相关请看下面的**对象引用**小节
+  2. WeakReference 和 **ReferenceQueue**
 
-- **ForkJoin**
+     这里重点看ReferenceQueue，引用相关请看下面的**对象引用**小节
 
-- **Future**
+  3. Callable和**Future**（since1.5）
 
-  在并发编程中，我们经常用到非阻塞的模型，在之前的多线程的三种实现中，不管是继承thread类还是实现runnable接口，都无法保证获取到之前的执行结果。通过实现Callback接口，并用Future可以来接收多线程的执行结果。
+     在并发编程中，我们经常用到非阻塞的模型，在之前的多线程的三种实现中，不管是继承thread类还是实现runnable接口，都无法保证获取到之前的执行结果。通过实现Callback接口，并用Future可以来接收多线程的执行结果。
 
-  Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。
+     Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。
 
-  - Guava——AbstractFuture
+     - Guava——AbstractFuture
+
+  4. **ForkJoin**
+
+- 弄懂几个方法：
+
+  ![thread](imgs/thread1.png)
+
+  1. synchronized、LockSupport.park（如ReentrantLock）区别
+
+  2. Thread.sleep、Object.wait、Condition.await区别，他们会释放锁吗？
+
+     [面试 LockSupport.park()会释放锁资源吗？](http://www.imooc.com/article/294581)
 
 - QA？
 

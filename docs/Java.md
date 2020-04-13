@@ -221,7 +221,7 @@ catalog: true
 - 线程
 
   - 线程状态
-    - 其实可以直接查看源码`{@see java.lang.Thread.State}`，里面的注释内容讲解得很清楚了
+    - 其实可以直接查看源码`java.lang.Thread.State`，里面的注释内容讲解得很清楚了
     - [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
     - [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
   - 线程中断
@@ -249,7 +249,7 @@ catalog: true
     上表收录自：[线程池的三种缓存队列](https://blog.csdn.net/nihaomabmt/article/details/81667481)
 
     解释看起来文邹邹的，要不直接上代码：
-  
+
     ```java
     int c = ctl.get();
     if (workerCountOf(c) < corePoolSize) {
@@ -273,31 +273,31 @@ catalog: true
     1. ？`SynchronousQueue`误区：很多人把其认为其没有容量，不存储元素，这是错的。
 
        好好了解这个结构，并看看其核心算法`transfer`。后来实在看不懂...，先记住这句话吧：生产者线程对其的插入操作put必须等待消费者的移除操作take，反过来也一样。你不能调用peek()方法来看队列中是否有数据元素，因为数据元素只有当你试着取走的时候才可能存在，不取走而只想偷窥一下是不行的，当然遍历这个队列的操作也是不允许的。
-     
+
        参考链接：
-     
+
        1. https://www.jianshu.com/p/d5e2e3513ba3
        2. https://www.cnblogs.com/duanxz/p/3252267.html
-  
+
   - 四种拒绝策略
-  
+
     1. AbortPolicy // 默认，队列满了丢任务抛出异常
     2. DiscardPolicy // 队列满了丢任务不异常
     3. DiscardOldestPolicy // 将最早进入队列的任务删，之后再尝试加入队列
     4. CallerRunsPolicy // 如果添加到线程池失败，那么主线程会自己去执行该任务
-  
+
 - ThreadPoolExecutor和ScheduledThreadPoolExecutor原理
-  
+
   - [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
-  
+
   - 线程池运行状态**【这里有空要详细看看】**
-  
+
     ![thread-state](https://img-blog.csdnimg.cn/20191216171812869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIwNzA1Ng==,size_16,color_FFFFFF,t_70)
-  
+
   - `shutdown()`, `shutdownNow()`和`awaitTermination()`
-  
+
     注意，一旦线程池有任务开始跑，就算任务都跑完了，也会等待`keepAliveTime`时候后才会停止。一般测试小demo的时候发现程序一直得不到结束，原因基本是这个。
-  
+
   ```java
     public static void main(String[] args) throws InterruptedException {
   	ExecutorService executor = Executors.newCachedThreadPool();
@@ -307,56 +307,74 @@ catalog: true
     	System.err.println("finish"); // 两个打印都输出后，程序还要等待 60s 才会结束！！
     }
   ```
-  
+
     源码分析：
-  
+
     `java.util.concurrent.ThreadPoolExecutor#runWorker`这里会一直调用`task = getTask()`，`getTask`里会调用`workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS)`，因此没任务后它也会阻塞`keepAliveTime`时间。
-  
+
     分析一下`shutdown()`，它里面调用了`interruptIdleWorkers()`，它会打断上述的`wait keepAliveTime`的状态，抛出中断异常，而`getTask()`会捕获这个异常，从而**打破阻塞状态**。
 
-### 并发问题
+### 线程安全问题
+
+- 几个问题
+
+  - Bounded-Buffer问题：
+
+    生产者消费者问题（Producer-consumer problem），也称有限缓冲问题（Bounded-buffer problem），是一个多线程同步问题的经典案例。[原文](https://www.jianshu.com/p/696c24f3f7b8)
 
 - 锁
 
   - synchronized
+
     - monitor对象
     - [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
 
-- volatile 
+  - volatile 
 
-  [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
+    [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
 
-- 乐观锁
+  - 乐观锁
 
-  - Atomic
+    - Atomic
 
-    - **LongAdder** 与 **Striped64**
+    - 了解一下**LongAdder** 与 **Striped64**
 
-      > LongAdder 区别于 AtomicLong ，在高并发中有更好的性能体现
+      LongAdder 区别于 AtomicLong ，在高并发中有更好的性能体现
 
-  - **AQS**（AbstractQueuedSynchronizer）
+  - 参考链接
+
+    - [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
+
+- **AQS**（AbstractQueuedSynchronizer）
+
+  - AQS框架借助于两个类：
+
+    1. Unsafe（提供CAS操作）
+    2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
+
+  - 与Object类的wait/notify机制相比，park/unpark有两个优点：
+
+    1. 以thread为操作对象更符合阻塞线程的直观定义
+    2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
+
+  - 应用：
+
+    1. CountDownLatch、CyclicBarrier和Semaphore
+    2. AbstractFuture (一旦调用get就会阻塞)
+
+  - JDK Unsafe类（可以了解一下）
+
+    - objectFieldOffset
+    - compareAndSwap...
+
+  - Thread.sleep、Object.wait、Condition.await、LockSupport.park 区别，他们会释放锁吗？
+
+    [面试 LockSupport.park()会释放锁资源吗？](http://www.imooc.com/article/294581)
+
+  - 参考链接
 
     - https://blog.51cto.com/14220760/2390586?source=dra
     - https://www.jianshu.com/p/da9d051dcc3d
-
-    > - AQS框架借助于两个类：
-    >
-    > 1. Unsafe（提供CAS操作）
-    > 2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
-    >
-    > - 与Object类的wait/notify机制相比，park/unpark有两个优点：
-    >
-    > 1. 以thread为操作对象更符合阻塞线程的直观定义
-    > 2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
-
-    - CountDownLatch、CyclicBarrier和Semaphore
-    - AbstractFuture (一旦调用get就会阻塞)
-
-  - [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
-
-- ThreadLocal
-
-  ThreadLocal有一个**value内存泄露**的隐患
 
 - 并发容器
 
@@ -374,14 +392,13 @@ catalog: true
 
     > 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
 
+- ThreadLocal
+
+  ThreadLocal有一个**value内存泄露**的隐患
+
 - WeakReference 和 **ReferenceQueue**
 
   这里重点看ReferenceQueue，引用相关请看下面的**对象引用**小节
-
-- JDK Unsafe类（上面AQS提到，单独提出来）
-
-  - objectFieldOffset
-  - compareAndSwap...
 
 - **ForkJoin**
 
@@ -393,11 +410,10 @@ catalog: true
 
   - Guava——AbstractFuture
 
-- 什么是上下文切换？
+- QA？
 
-- 并发与并行的区别？
-
-- Thread.sleep、Object.wait、LockSupport.park 区别
+  1. 什么是上下文切换？
+  2. 并发与并行的区别？
 
 ### Java Util包
 

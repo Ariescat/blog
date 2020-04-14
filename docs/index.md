@@ -154,7 +154,10 @@ catalog: true
       3. 优化数据结构（填充缓存行），**解决伪共享问题**
       4. 合理位运算（如2次方幂求模），**合理使用Unsafe**
     - 参考博客
-      1. [解读Disruptor系列](https://www.jianshu.com/c/1822021a3281)，这个系列挺好的
+      1. [解读Disruptor系列](https://www.jianshu.com/c/1822021a3281)，这个系列挺好的，他每篇文章后面都有份参考资料，也可以认真看看
+    
+    * 扩展
+      1. AtomicXXX.lazySet 这个方法的作用（Sequence#set相当于AtomicLong#lazySet）
 
 - 中间件
 

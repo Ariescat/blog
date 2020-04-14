@@ -145,7 +145,16 @@ catalog: true
 - 性能
 
   - Disruptor
-    - [锁的缺点 - Disruptor 入门](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html)
+    - 背景
+      1. [锁的缺点 - Disruptor 入门](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html)
+      2. 并发中的伪共享问题
+    - 设计上的优势
+      1. 内部数据存储使用环形缓冲（Ring Buffer），这样分配支持了**CPU缓存位置预测**，**GC的压力更小**
+      2. **尽量使用无锁设计，合理使用CAS**
+      3. 优化数据结构（填充缓存行），**解决伪共享问题**
+      4. 合理位运算（如2次方幂求模），**合理使用Unsafe**
+    - 参考博客
+      1. [解读Disruptor系列](https://www.jianshu.com/c/1822021a3281)，这个系列挺好的
 
 - 中间件
 

@@ -321,6 +321,14 @@ catalog: true
   - Bounded-Buffer问题：
 
     生产者消费者问题（Producer-consumer problem），也称有限缓冲问题（Bounded-buffer problem），是一个多线程同步问题的经典案例。[原文](https://www.jianshu.com/p/696c24f3f7b8)
+    
+  - 并发中的伪共享问题（false sharing）：
+
+    CPU缓存是以缓存行（cache line）为单位存储的。缓存行通常是 64 字节，并且它有效地引用主内存中的一块地址。并发的修改在一个缓存行中的多个独立变量，看起来是并发执行的，但实际在CPU处理的时候，是串行执行的，并发的性能大打折扣。
+
+    Java中通过填充缓存行，sun.misc.Contended注解来解决伪共享问题。LMAX Disruptor `Sequence`采用了填充缓存行。
+
+    并不是所有的场景都需要解决伪共享问题，因为CPU缓存是有限的，填充会牺牲掉一部分缓存。
 
 - 锁
 
@@ -717,7 +725,7 @@ catalog: true
 
 - Java 8
 
-  - 时间：`Instant`和 LocalDate，LocalTime，`LocalDateTime`
+  - 时间类：`Instant`和 LocalDate，LocalTime，`LocalDateTime`
 
     如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：*simple beautiful strong immutable thread-safe*。
 
@@ -731,7 +739,13 @@ catalog: true
 
     梦爷的FileLoader优化用到了Supplier
 
-  - **Lambda的实现原理**
+  - **Lambda**
+
+    1. 实现原理
+
+    2. Java中的lambda每次执行都会创建一个新对象吗？
+
+       测试代码：`study-metis/com.metis.jdk8.lambda.LambdaTest2`，[参考链接](https://cloud.tencent.com/developer/article/1572212)
 
   - **::（双冒号）的实现原理**
 

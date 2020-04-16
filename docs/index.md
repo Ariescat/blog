@@ -147,17 +147,32 @@ catalog: true
   - Disruptor
     - 背景
       1. [锁的缺点 - Disruptor 入门](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html)
+      
       2. 并发中的伪共享问题
+      
+      3. 代码的并发执行大约是两件事：互斥和变化的可见性。
+      
+         互斥是关于管理某些资源的竞争更新。
+      
+         变化的可见性是关于控制何时使这些更改对其他线程可见。
+      
     - 设计上的优势
       1. 内部数据存储使用环形缓冲（Ring Buffer），这样分配支持了**CPU缓存位置预测**，**GC的压力更小**
       2. **尽量使用无锁设计，合理使用CAS**
       3. 优化数据结构（填充缓存行），**解决伪共享问题**
       4. 合理位运算（如2次方幂求模），**合理使用Unsafe**
+      
+    - 策略
+      
+      `WaitStrategy`可以选择`YieldingWaitStrategy`（无锁）
+      
     - 参考博客
-      1. [解读Disruptor系列](https://www.jianshu.com/c/1822021a3281)，这个系列挺好的，他每篇文章后面都有份参考资料，也可以认真看看
+      
+      1. [解读Disruptor系列](https://www.jianshu.com/u/4c940e688e05)，这个系列挺好的，他每篇文章后面都有份参考资料，也可以认真看看
     
-    * 扩展
+    - 扩展
       1. AtomicXXX.lazySet 这个方法的作用（Sequence#set相当于AtomicLong#lazySet）
+      2. Unsafe类的作用？为什么要用这个类？除了JDK，在Netty、Spring、Kafka、Storm等非常多的流行开源项目中都使用了Unsafe
 
 - 中间件
 

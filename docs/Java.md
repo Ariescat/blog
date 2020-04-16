@@ -55,6 +55,7 @@ catalog: true
 
   - jdk1.7中的线程安全问题 **(resize死循环)**
   - jdk8中是如何解决jdk7中的HashMap死循环的
+  - IdentityHashMap：和HashMap最大的不同，就是使用==而不是equals比较key
 
 - jdk8 ConcurrentHashMap 
 
@@ -339,7 +340,47 @@ catalog: true
 
   - volatile 
 
-    [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
+    > **Java内存模型**中：
+    >
+    > 1. `volatile`变量在写操作之后会插入一个store屏障，在读操作之前会插入一个load屏障。
+    > 2. 一个类的`final`字段会在初始化后插入一个store屏障，来确保`final`字段在**构造函数初始化完成**并可被使用时可见。
+
+    - 几个概念
+
+      1. 可见性
+
+      2. 重排序（编译器重排，处理器重排）
+
+      3. Java内存模型定义了8种操作来完成主内存和工作内存的变量访问
+
+         lock，unlock，read，load，use，assign，stroe，write
+
+      4. MESI协议，这个当成扩展了解一下
+
+      5. **内存屏障**是什么？如何工作的？如何实现？在哪个层面上实现？
+
+         x86架构：
+
+         **Store Barrier**，Store屏障，是x86的"sfence"指令，相当于StoreStore Barriers，强制所有在sfence指令之前的store指令，都在该sfence指令执行之前被执行，发送缓存失效信号，并把store buffer中的数据刷出到CPU的L1 Cache中；所有在sfence指令之后的store指令，都在该sfence指令执行之后被执行。即，禁止对sfence指令前后store指令的重排序跨越sfence指令，使**所有Store Barrier之前发生的内存更新都是可见的**。
+
+         **Load Barrier**，Load屏障，是x86上的"ifence"指令，相当于LoadLoad Barriers，强制所有在lfence指令之后的load指令，都在该lfence指令执行之后被执行，并且一直等到load buffer被该CPU读完才能执行之后的load指令（发现缓存失效后发起的刷入）。即，禁止对lfence指令前后load指令的重排序跨越lfence指令，配合Store Barrier，使**所有Store Barrier之前发生的内存更新，对Load Barrier之后的load操作都是可见的**。
+
+         **Full Barrier**，Full屏障，是x86上的”mfence“指令，相当于StoreLoad Barriers，强制所有在mfence指令之前的store/load指令，都在该mfence指令执行之前被执行；所有在mfence指令之后的store/load指令，都在该mfence指令执行之后被执行。即，禁止对mfence指令前后store/load指令的重排序跨越mfence指令，使**所有Full Barrier之前发生的操作，对所有Full Barrier之后的操作都是可见的。**
+
+         参考：
+
+         1. http://ifeve.com/memory-barriers-or-fences/
+         2. https://www.jianshu.com/p/64240319ed60/ 该博客讲得不错，认真品味每一个字
+
+    - 参考文章：
+
+      1. [volatile关键字的作用、原理](https://monkeysayhi.github.io/2016/11/29/volatile关键字的作用、原理/)
+
+         注意DCL（Double Check Lock，双重检查锁）和被部分初始化的对象
+
+      2. [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
+
+         非原子操作！！！
 
   - 乐观锁
 
@@ -743,7 +784,9 @@ catalog: true
 
     1. 实现原理
 
-    2. Java中的lambda每次执行都会创建一个新对象吗？
+    2. 非捕获式(non-*capturing* lambda)和捕获式(*capturing* lambda)
+
+    3. Java中的lambda每次执行都会创建一个新对象吗？
 
        测试代码：`study-metis/com.metis.jdk8.lambda.LambdaTest2`，[参考链接](https://cloud.tencent.com/developer/article/1572212)
 

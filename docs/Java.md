@@ -169,6 +169,8 @@ catalog: true
 
      PipedInputStream的一个实例要和PipedOutputStream的一个实例共同使用，共同完成管道的读取写入操作，主要用于**线程操作**。**有空看看这里的实现 > **[简介,源码分析和示例](https://www.cnblogs.com/skywang12345/p/io_04.html)
 
+     在一个线程里使用PipedInputStream和PipedOutputStream(会造成死锁？)
+
   3. 字节/字符数组：ByteArrayInputStream，ByteArrayOutputStream，CharArrayReader，CharArrayWriter
 
      在内存中开辟了一个字节或字符数组。

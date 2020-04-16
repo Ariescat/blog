@@ -1066,7 +1066,7 @@ catalog: true
 - 设备管理
 - Linux
   - [CentOS7简单使用](Linux#CentOS7)
-  - 进程间通信：[管道](https://www.cnblogs.com/zengyiwen/p/5755170.html)
+  - 进程间通信：[管道](https://www.cnblogs.com/zengyiwen/p/5755170.html)，消息队列，共享内存
 - Windows
   - hiberfil.sys和pagefile.sys占用系统空间，其分别是休眠空间和虚拟内存。
 - 其他

@@ -33,7 +33,7 @@
   
 - 2020.04
 
-  - lmax disruptor
+  - ~~10 lmax disruptor~~
 
 #### todo
 

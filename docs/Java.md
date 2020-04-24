@@ -478,6 +478,33 @@ catalog: true
   Java中SPI全称为（Service Provider Interface，服务提供者接口）
 
   该类通过在资源目录META-INF/services中放置**提供者配置文件**来标识**服务提供者**。
+  
+  应用场景：
+  
+  1. JDBC驱动加载
+  
+     `java.sql.DriverManager#loadInitialDrivers`这里调用了`ServiceLoader.load(Driver.class);`
+  
+     因此只要pom引入了`mysql-connector-java`这个包，就会加载`jar`包下`META-INF/services/java.sql.Driver`文件中的`com.mysql.jdbc.Driver`类，而`com.mysql.jdbc.Driver`在静态代码块里往`DriverManager`注册了自己的驱动。所以以后就不用写下面的a段代码啦。
+  
+     ```java
+     //a.导入驱动，加载具体的驱动类
+     Class.forName("com.mysql.jdbc.Driver");
+     //b.与数据库建立连接
+     connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+     ```
+  
+  2. netty/Java的NIO采用SelectorProvider创建：`io.netty.channel.nio.NioEventLoop#provider`
+  
+     而`java.nio.channels.spi.SelectorProvider#provider`采用了SPI
+  
+  3. Dubbo的扩展点加载
+  
+     Dubbo的SPI扩展是自己实现的，在启动加载的时候会依次从以下目录中读取配置文件：
+  
+     META-INF/dubbo/internal/、META-INF/dubbo/、META-INF/services/
+  
+     ——《高可用可伸缩微服务架构：基于Dubbo、Spring Cloud和Service Mesh》3.2.3节 Dubbo Extension机制
 
 ### Java lang包
 

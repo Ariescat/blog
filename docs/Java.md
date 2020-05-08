@@ -635,6 +635,18 @@ catalog: true
     实现原理可具体看 com.google.common.cache.LocalCache.Strength
 
   - LRU缓存实现(Java)
+  
+- 原子变量
+
+  - XXXAtomic 原子类
+
+  - AtomicXXXFieldUpdater 原子更新器
+
+    在Java5中，JDK就开始提供原子类了，当然也包括原子的更新器——即后缀为FieldUpdater的类
+
+    已经有了原子类，为啥还额外提供一套原子更新器呢？ 
+
+    > 简单的说有两个原因，以int变量为例，基于AtomicIntegerFieldUpdater实现的原子计数器，比单纯的直接用AtomicInteger包装int变量的花销要小，因为前者只需要一个全局的静态变量AtomicIntegerFieldUpdater即可包装volatile修饰的非静态共享变量，然后配合CAS就能实现原子更新，而这样做，使得后续同一个类的每个对象中只需要共享这个静态的原子更新器即可为对象计数器实现原子更新，而**原子类**是为同一个类的**每个对象**中都创建了一个**计数器** + **AtomicInteger对象**，这种开销显然就比较大了。
 
 ### 对象序列化
 

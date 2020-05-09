@@ -4,7 +4,7 @@ title:      Spring之properties解析
 subtitle:   "\"来瞅瞅Spring怎么解析properties的吧\""
 date:       2020-05-07
 author:     Ariescat
-header-img: img/header7.jpg
+header-img: img/bg7.jpg
 tags:
     - Java
     - Spring

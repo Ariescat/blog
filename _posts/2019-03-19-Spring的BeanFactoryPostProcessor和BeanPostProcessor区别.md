@@ -3,7 +3,7 @@ layout:     post
 title:      Spring的BeanFactoryPostProcessor和BeanPostProcessor区别
 date:       2019-03-19
 author:     Ariescat
-header-img: img/post-bg-ioses.jpg
+header-img: img/bg4.jpg
 catalog: true
 tags:
     - Spring

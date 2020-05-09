@@ -4,7 +4,7 @@ title:      Spring对Groovy的支持
 subtitle:   "\"spring是怎么实现对Groovy的注入支持的？\""
 date:       2020-03-04
 author:     Ariescat
-header-img: img/post-bg-2015.jpg
+header-img: img/bg14.jpg
 catalog: true
 tags:
     - Spring
@@ -13,14 +13,23 @@ tags:
 
 > “🙉🙉🙉 ”
 
+
+
+### 前言
+
+使用 Groovy 的原因很简单，因为 Groovy 脚本支持热加载功能。下面来看看 Groovy 如何增加基于 Spring 的应用程序的灵活性。
+
+
+
 ### spring对groovy的支持
 
 - 自定义`GroovyFactory`，扫描`groovy`脚本注册`BeanDefinition`，注意看这里：
 
   ```java
-bd.setBeanClassName("org.springframework.scripting.groovy.GroovyScriptFactory");
+  bd.setBeanClassName(
+      "org.springframework.scripting.groovy.GroovyScriptFactory");
   ```
-  
+
   也就是最终产生能执行的class是在这个工厂里编译出来的
 
 - `org.springframework.scripting.support.ScriptFactoryPostProcessor`，`spring`对`groovy`的支持的核心基本上在这里
@@ -193,3 +202,10 @@ RootBeanDefinition mbd = getMergedLocalBeanDefinition(beanName); // 这里mbd的
 此时`beanFactory`为`scriptBeanFactory`，`beanName`为`scriptedObject.XXX.java`，`bdm`的`Scope`为`PROTOTYPE` >
 
 最终执行进`GroovyScriptFactory`的工厂方法`getScriptedObject()` > `parseClass()` > `newInstance`
+
+
+
+### 参考
+
+-  [Groovy 使 Spring 更出色，第 1 部分](https://www.ibm.com/developerworks/cn/java/j-groovierspring1.html) 
+-  [Groovy 使 Spring 更出色，第 2 部分](https://www.ibm.com/developerworks/cn/java/j-groovierspring2.html) 

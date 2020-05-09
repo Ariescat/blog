@@ -4,7 +4,7 @@ title: "Awesome"
 subtitle: "\"技术体系探索总结（不断收集整理中...）\""
 date: 2019-01-25
 author: Ariescat
-header-img: "img/post-bg-debug.png"
+header-img: "img/bg11.jpg"
 catalog: true
 
 ---

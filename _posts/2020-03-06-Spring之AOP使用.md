@@ -4,6 +4,7 @@ title:      Spring之AOP使用
 date:       2020-03-06
 author:     Ariescat
 header-img: img/post-bg-universe.jpg
+catalog:    true
 tags:
     - Java
     - Spring

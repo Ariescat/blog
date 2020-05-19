@@ -150,7 +150,46 @@ catalog: true
 
    > JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。
 
-3. [Cglib 与 JDK动态代理](https://my.oschina.net/xiaolyuh/blog/3108376)
+
+3. 代码实现：[Cglib 与 JDK动态代理](https://my.oschina.net/xiaolyuh/blog/3108376)
+
+4. 一些疑惑？
+
+   - 为什么cglib为什么生成两个fastclass，`methodProxy.invokeSuper(“代理对象”, args)`和`methodProxy.invoke(“原对象”, args)`虽然底层分别调用两个不同的fastclass，但结果是一样的。
+
+     ```java
+     // 自定义Cglib代理拦截
+     public class LQZMethodInterceptor implements MethodInterceptor {
+     
+         /**
+          * @param o           cglib生成的代理对象
+          * @param method      被代理对象方法
+          * @param objects     方法入参
+          * @param methodProxy 代理方法
+          */
+         public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+             System.err.println("intercept");
+             // invokeSuper，o为cglib生成的代理对象
+             return methodProxy.invokeSuper(o, objects);
+         }
+     }
+     ```
+
+     ```java
+     // org.springframework.aop.framework.CglibAopProxy.CglibMethodInvocation#invokeJoinpoint
+     @Override
+     protected Object invokeJoinpoint() throws Throwable {
+     		if (this.protectedMethod) {
+     			return super.invokeJoinpoint();
+     		}
+     		else {
+                 // // invoke，target为原对象
+     			return this.methodProxy.invoke(this.target, this.arguments);
+     		}
+     }
+     ```
+
+     可扩展看看`Spring`的`JdkDynamicAopProxy`，其实本质上Spring对代理的处理都差不多
 
 ### IO
 
@@ -711,6 +750,8 @@ catalog: true
   > 6. 有连续的大对象需要分配
   > 7. 执行了jmap -histo:live pid命令 //这个会立即触发fullgc
 
+  出现Full GC一般是不正常
+
 - 垃圾回收器有哪些？
 
   - 他们什么阶段会**stop the world**？
@@ -738,6 +779,37 @@ catalog: true
   - Full GC日志解读
 
 - [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
+
+- 其他
+
+  1. [假笨说-从一起GC血案谈到反射原理](https://mp.weixin.qq.com/s/5H6UHcP6kvR2X5hTj_SBjA)
+
+     获取Method：
+
+     - reflectionData，这个属性主要是SoftReference的
+     - 我们每次通过调用`getDeclaredMethod`方法返回的Method对象其实都是一个**新的对象**，所以不宜多调哦，如果调用频繁最好缓存起来。不过这个新的方法对象都有个root属性指向`reflectionData`里缓存的某个方法，同时其`methodAccessor`也是用的缓存里的那个Method的`methodAccessor`。
+
+     Method调用：
+
+     - 其实`Method.invoke`方法就是调用`methodAccessor`的`invoke`方法
+
+     MethodAccessor的实现：
+
+     - 所有的方法反射都是先走`NativeMethodAccessorImpl`，默认调了**15**次之后，才生成一个`GeneratedMethodAccessorXXX`类
+
+     - 而`GeneratedMethodAccessorXXX`的类加载器会`new` 一个`DelegatingClassLoader(var4)`，之所以搞一个新的类加载器，是为了性能考虑，在某些情况下可以卸载这些生成的类，因为**类的卸载是只有在类加载器可以被回收的情况下才会被回收的**
+
+     并发导致垃圾类创建：
+
+     - 假如有1000个线程都进入到创建`GeneratedMethodAccessorXXX`的逻辑里，那意味着多创建了999个无用的类，这些类会一直占着内存，**直到能回收Perm的GC发生才会回收**
+
+     其他JVM相关文章:
+
+     - 该文章最后有其他JVM相关文章，感觉是干货
+
+  2. [反射代理类加载器的潜在内存使用问题](https://www.jianshu.com/p/20b7ab284c0a)
+
+     大量的类加载器`sun/reflect/DelegatingClassLoader`，用来加载`sun/reflect/GeneratedMethodAccessor`类，可能导致潜在的占用大量本机内存空间问题，应用服务器进程占用的内存会显著增大。
 
 ### 性能调优工具
 

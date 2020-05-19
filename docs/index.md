@@ -86,6 +86,10 @@ catalog: true
       >
       > Pointcut->@Pointcut
 
+  - Spring tx
+
+    `<tx:annotation-driven/>`的理解
+
   - [Spring Cache 介绍](https://www.cnblogs.com/rollenholt/p/4202631.html)
 
   - [Spring Webflux](https://www.jianshu.com/p/c029de45d23b) （reactive web框架，与前端Flux架构名字相同）
@@ -191,6 +195,22 @@ catalog: true
 - RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/):  
 
   " a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  （一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
+  
+- ORM
+
+  - hibernate
+
+    查询：HQL查询，QBC查询，SQL查询
+
+    级联查询：一对一，一对多（多对一），多对多；懒加载，1+n问题
+
+    其他：
+
+    1. session.get(): 非懒加载方法
+
+       session.load(): 默认就是是懒加载
+
+    2. 抓取策略（fetch）和 懒加载（lazy）
 
 ### 编程思想
 

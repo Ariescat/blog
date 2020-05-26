@@ -238,7 +238,11 @@ catalog: true
 
   9. `RandomAccessFile` 随机访问文件
 
-     java.io包中是一个特殊的类, 既可以读文件，也可以写文件。**有空也要看看这里的实现**
+     java.io包中是一个特殊的类, 既可以读文件，也可以写文件。
+
+     **有空也要看看这里的实现**，log4j2的Appender里就有这个：`RandomAccessFileAppender`、`RollingRandomAccessFileAppender`
+
+     RandomAccessFile的绝大多数功能，但不是全部，已经被JDK 1.4的nio的内存映射文件**(memory-mapped files)**给取代了，你该考虑一下是不是用"内存映射文件"来代替RandomAccessFile了。
 
   10. ZipInputStream、ZipOutputStream
 

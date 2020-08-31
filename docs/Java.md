@@ -561,6 +561,12 @@ catalog: true
 
   2. pow
 
+### Javax
+
+* Java 注解处理器 (Annotation Processor)
+
+  javax.annotation.processing.AbstractProcessor 编译时执行
+
 ### Swing/Awt
 
 - EventQueue 与 AWTEvent

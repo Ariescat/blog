@@ -609,6 +609,8 @@ catalog: true
 - 补码
 
   补码(为什么按位取反再加一)：告诉你一个其实很简单的问题 [原文](https://blog.csdn.net/wenxinwukui234/article/details/42119265)
+  
+  其核心思想就是：**一个正数对应的负数（也就是俩相反数），这两个数的二进制编码加起来必须等于0才对**
 
 ### 网络
 
@@ -839,6 +841,8 @@ catalog: true
       3. 当前读：current read ，读取数据库最新版本数据的方式 
 
          > insert、update、delete、select for update、select lock in share mode
+
+      4. 意向锁：表级别锁
 
       **隔离性**底层实现原理：
 

@@ -703,6 +703,18 @@ catalog: true
 
   [关于Gson的几个坑](https://ariescat.github.io/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/)
 
+### 对象拷贝
+
+* [BeanUtils对象属性copy的性能对比以及源码分析](https://www.cnblogs.com/kancy/p/12089126.html)
+
+  | 拷贝方式               | 对象数量: 1 | 对象数量: 1000 | 对象数量: 100000 | 对象数量: 1000000 |
+  | :--------------------- | :---------- | :------------- | :--------------- | :---------------- |
+  | `Hard Code`            | 0 ms        | 1 ms           | 18 ms            | 43 ms             |
+  | `cglib.BeanCopier`     | 111 ms      | 117 ms         | 107 ms           | 110 ms            |
+  | `spring.BeanUtils`     | 116 ms      | 137 ms         | 246 ms           | 895 ms            |
+  | `apache.PropertyUtils` | 167 ms      | 212 ms         | 601 ms           | 7869 ms           |
+  | `apache.BeanUtils`     | 167 ms      | 275 ms         | 1732 ms          | 12380 ms          |
+
 ### JVM
 
 > JVM很难，网上错误的观点很多

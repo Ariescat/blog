@@ -4,7 +4,7 @@ title: Java
 date: 2019-02-01
 header-img: "img/post-bg-rwd.jpg"
 catalog: true
-
+typora-root-url: ..
 ---
 
 > **思想是灵魂,实现是形式**
@@ -94,7 +94,7 @@ catalog: true
 
     ConcurrentHashMap 1194行会死锁
 
-    ![deadlock](imgs/map1.png)
+    ![deadlock](/docs/imgs/map1.png)
 
 - **红黑树** TreeMap、TreeSet
 
@@ -497,7 +497,7 @@ catalog: true
 
 - 弄懂几个方法：
 
-  ![thread](imgs/thread1.png)
+  ![thread](/docs/imgs/thread1.png)
 
   1. synchronized、LockSupport.park（如ReentrantLock）区别
 

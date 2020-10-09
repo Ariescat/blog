@@ -1004,7 +1004,7 @@ catalog: true
 
      下图展示了 redisObject 、Redis 所有数据类型、以及 Redis 所有编码方式（底层实现）三者之间的关系：
 
-     ![redis1](imgs\redis1.png)
+     ![redis1](imgs/redis1.png)
 
 - 集群
 

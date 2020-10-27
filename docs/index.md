@@ -37,6 +37,8 @@ catalog: true
 
     这里有一个`BloomFilter`布隆过滤器的实现
 
+    `EventBus`实现
+
   - 缓存
 
     - Guava的缓存

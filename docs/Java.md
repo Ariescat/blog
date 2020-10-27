@@ -43,6 +43,22 @@ typora-root-url: ..
 
   3. 常量池会被回收吗？
 
+### 枚举
+
+* [枚举详解之EnumSet、EnumMap用法](https://www.cnblogs.com/treeshu/p/11013511.html)
+
+  `RegularEnumSet`里面有这样一行代码：
+
+  ```java
+  elements = -1L >>> -universe.length;
+  ```
+
+  无符号右移一个**负数**！是一个**负移位量**！
+
+  换个例子看一下：`-1 >>> -5` 其实等同 `-1 >>> 27`；`-1L >>> -5` 等同 `-1L >>> 59`
+
+  如果移位量超过位数：`-1 >>> 32` 其实等同 `-1 >>> 0`；`-1 >>> 33` 等同 `-1 >>> 1`
+
 ### 集合
 
 > Java集合比如说HashMap和ConcurrentHashMap我觉得，最好在平时能去耐心读一下源码，搜一搜相关的博客，最好能知道每个参数为什么设置成这么大？有什么好处？为什么？
@@ -97,6 +113,10 @@ typora-root-url: ..
     ![deadlock](/docs/imgs/map1.png)
 
 - **红黑树** TreeMap、TreeSet
+
+- Queue 接口的几个方法
+
+  add/offer, remove/poll, element/peek
 
 - 其他
 
@@ -202,7 +222,7 @@ typora-root-url: ..
      1. `FileReader`，可以理解成他把`FileInputStream`和`Decoder`封装了起来，本质上还是用FileInputStream读了一层字节流byte[] (这里的read是一个`native`方法)，然后通过Decoder把他转成了char[]。
      2. `BufferedReader`，他默认开辟了一份`defaultCharBufferSize = 8192`长度的cb[]数组（缓冲区），读之前会把这个数组`fill()`满，之后都是操作这个数组，操作完了就再次更新数组，提高数据访问的效率。
 
-     测试代码：`study-metis: com.metis.io.iostream.Test`
+     测试代码：`study-metis: com.ariescat.metis.base.io.iostream.Test`
 
   2. 对管道进行操作：PipedInputStream（字节输入流），PipedOutStream（字节输出流），PipedReader（字符输入流），PipedWriter（字符输出流）
 
@@ -548,6 +568,10 @@ typora-root-url: ..
      META-INF/dubbo/internal/、META-INF/dubbo/、META-INF/services/
 
      ——《高可用可伸缩微服务架构：基于Dubbo、Spring Cloud和Service Mesh》3.2.3节 Dubbo Extension机制
+  
+- Observable
+
+  操作Vector型变量obs的四个方法都加有同步关键字，Vector类型为线程安全的，而上述四个方法为什么还要加同步关键字呢？
 
 ### Java lang包
 
@@ -906,7 +930,7 @@ typora-root-url: ..
 
     如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：*simple beautiful strong immutable thread-safe*。
 
-    附：测试代码请看 `study-metis: com.metis.time.Test`
+    附：测试代码请看 `study-metis: com.ariescat.metis.base.time.Test`
 
   - parallelStream
 
@@ -924,7 +948,7 @@ typora-root-url: ..
 
     3. Java中的lambda每次执行都会创建一个新对象吗？
 
-       测试代码：`study-metis/com.metis.jdk8.lambda.LambdaTest2`，[参考链接](https://cloud.tencent.com/developer/article/1572212)
+       测试代码：`study-metis: com.ariescat.metis.base.jdk8.lambda.LambdaTest2`，[参考链接](https://cloud.tencent.com/developer/article/1572212)
 
   - **::（双冒号）的实现原理**
 

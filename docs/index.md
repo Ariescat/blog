@@ -33,11 +33,31 @@ catalog: true
 
   - [Google Guava](https://ifeve.com/google-guava/)
 
-    集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、**并发库** [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等
+    Google Guava 是 Google 公司内部 Java 开发工具库的开源版本。Google 内部的很多 Java 项目都在使用它。它提供了一些 JDK 没有提供的功能，以及对 JDK 已有功能的增强功能。
 
-    这里有一个`BloomFilter`布隆过滤器的实现
+    > 其中就包括：
+    >
+    > 集合（Collections）
+    >
+    > 缓存（Caching）
+    >
+    > **原生类型支持**（Primitives Support）
+    >
+    > **并发库**（Concurrency Libraries）
+    >
+    > 通用注解（Common Annotation）
+    >
+    > 字符串处理（Strings Processing）
+    >
+    > 数学计算（Math）
+    >
+    > I/O事件
+    >
+    > **总线（EventBus）**等等。
 
-    `EventBus`实现
+    > 其他：
+    >
+    > `BloomFilter`布隆过滤器的实现
 
   - 缓存
 

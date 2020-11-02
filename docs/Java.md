@@ -43,6 +43,20 @@ typora-root-url: ..
 
   3. 常量池会被回收吗？
 
+### 基本类型
+
+* 强转
+
+  `long`转`int`注意：最高位为1强转会为负数！
+
+  如：正数2147483648（long类型）强转int会变成负数，`（int）0x80000000 => -2147483648(Integer.MIN_VALUE)`
+
+* 无符号类型
+
+  * java中无符号类型的解决方案
+  * Java8包装类 新增 无符号运算方法
+  * byte转换int时与0xff进行与运算的原因
+
 ### 枚举
 
 * [枚举详解之EnumSet、EnumMap用法](https://www.cnblogs.com/treeshu/p/11013511.html)
@@ -58,6 +72,20 @@ typora-root-url: ..
   换个例子看一下：`-1 >>> -5` 其实等同 `-1 >>> 27`；`-1L >>> -5` 等同 `-1L >>> 59`
 
   如果移位量超过位数：`-1 >>> 32` 其实等同 `-1 >>> 0`；`-1 >>> 33` 等同 `-1 >>> 1`
+
+### 位运算
+
+* `^`“异或运算”的特殊作用：
+
+  （1）使特定位翻转找一个数，对应X要翻转的各位，该数的对应位为1，其余位为零，此数与X对应位异或即可。
+
+  例：X=10101110，使X低4位翻转，用X ^ 0000 1111 = 1010 0001即可得到。
+
+  （2）与0相异或，保留原值 ，X ^ 0000 0000 = 1010 1110。
+
+* `~`取反:
+
+  注意最高位也会取反
 
 ### 集合
 
@@ -932,35 +960,45 @@ typora-root-url: ..
 
     附：测试代码请看 `study-metis: com.ariescat.metis.base.time.Test`
 
-  - parallelStream
+  - stream
 
-  - 元空间（Metaspace）
+    - parallelStream
 
-  - Supplier接口和Consumer接口 （JDK8以下可用guava替代）
+  - 函数式编程
 
-    梦爷的FileLoader优化用到了Supplier
+    - Optional类
 
-  - **Lambda**
+    - Supplier接口和Consumer接口 （JDK8以下可用guava替代）
 
-    1. 实现原理
+      梦爷的FileLoader优化用到了Supplier
 
-    2. 非捕获式(non-*capturing* lambda)和捕获式(*capturing* lambda)
+  - 语法糖
 
-    3. Java中的lambda每次执行都会创建一个新对象吗？
+    - **Lambda**
 
-       测试代码：`study-metis: com.ariescat.metis.base.jdk8.lambda.LambdaTest2`，[参考链接](https://cloud.tencent.com/developer/article/1572212)
+      1. 实现原理
 
-  - **::（双冒号）的实现原理**
+      2. 非捕获式(non-*capturing* lambda)和捕获式(*capturing* lambda)
 
-    ```java
-    List<String> al = Arrays.asList("a", "b", "c", "d");
-    al.forEach(AcceptMethod::printValur);
-    
-    //下面的方法和上面等价的
-    Consumer<String> methodParam = AcceptMethod::printValur; //方法参数
-    al.forEach(x -> methodParam.accept(x));//方法执行accept
-    
-    ```
+      3. Java中的lambda每次执行都会创建一个新对象吗？
+
+         测试代码：`study-metis: com.ariescat.metis.base.jdk8.lambda.LambdaTest2`，[参考链接](https://cloud.tencent.com/developer/article/1572212)
+
+    - **::（双冒号）的实现原理**
+
+      ```java
+      List<String> al = Arrays.asList("a", "b", "c", "d");
+      al.forEach(AcceptMethod::printValur);
+      
+      //下面的方法和上面等价的
+      Consumer<String> methodParam = AcceptMethod::printValur; //方法参数
+      al.forEach(x -> methodParam.accept(x));//方法执行accept
+      
+      ```
+
+  - JVM
+
+    - 元空间（Metaspace）
 
 - Java 9
 
@@ -1010,6 +1048,8 @@ typora-root-url: ..
     使用groovy类加载器重载java代码 重载的java文件可以直接使用源文件，无需编译为class
 
 ### 其他
+
+* 图形界面 AWT和Swing
 
 - Reactor模式
 

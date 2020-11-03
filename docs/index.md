@@ -31,7 +31,9 @@ catalog: true
     - IO
       - FileAlterationMonitor和FileAlterationObserver（梦爷曾发现这里每隔10秒会涨10M内存，待研究）
 
-  - [Google Guava](https://ifeve.com/google-guava/)
+  - Google Guava 
+
+    源码分析：[https://ifeve.com/google-guava](https://ifeve.com/google-guava/)
 
     Google Guava 是 Google 公司内部 Java 开发工具库的开源版本。Google 内部的很多 Java 项目都在使用它。它提供了一些 JDK 没有提供的功能，以及对 JDK 已有功能的增强功能。
 

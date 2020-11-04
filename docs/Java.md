@@ -187,6 +187,10 @@ typora-root-url: ..
 
   > Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。
 
+### 异常
+
+* Error和Exception的区别
+
 ### 代理
 
 1. 按照代理的创建时期，代理类可以分为两种。 
@@ -600,6 +604,18 @@ typora-root-url: ..
 - Observable
 
   操作Vector型变量obs的四个方法都加有同步关键字，Vector类型为线程安全的，而上述四个方法为什么还要加同步关键字呢？
+  
+- Arrays
+
+  * 几个类：
+
+    TimSort，ComparableTimSort，DualPivotQuicksort
+
+  * 几个方法：
+
+    binarySort 折半插入排序
+
+    mergeSort
 
 ### Java lang包
 

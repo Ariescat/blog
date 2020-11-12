@@ -452,7 +452,9 @@ typora-root-url: ..
 
          lock，unlock，read，load，use，assign，stroe，write
 
-      4. MESI协议，这个当成扩展了解一下
+      4. MESI协议，Store Buffere（存储缓存），Invalidate Queue（失效队列）
+
+         搜索关键词（CPU和volatile ）
 
       5. **内存屏障**是什么？如何工作的？如何实现？在哪个层面上实现？
 

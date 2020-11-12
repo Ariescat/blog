@@ -1323,11 +1323,14 @@ catalog: true
   - HTTP接口测试工具
     - Postman
   - PanDownload
+  
 - Android [➮详细](Android)
-- Linux常用服务搭建
-  - [Shadowsocks](Linux#Shadowsocks)
-  - [Nginx](Linux#Nginx)
-  - [Ngrok](Linux#Ngrok)
+
+  点上面链接 ↑ 进独立章节
+
+- Linux常用服务搭建 [➮详细](Linux)
+  
+  点上面链接进独立章节 ↑ ，Shadowsocks，Ngrok，Nginx...
 
 ### 游戏相关
 
@@ -1338,11 +1341,19 @@ catalog: true
 
 ### 相关书籍
 
+- [读书笔记➮](读书笔记)
+  
+  点上面链接 ↑ 进独立章节
+  
 - Java
+  
   - 《Java并发编程》《Effective Java》
+  
 - Spring
   - 《Spring 源码深度解析 第二版》《Spring实战》
   - 《Spring Boot编程思想（核心篇）》![书籍·图1](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3621582485,3050859261&fm=58&bpow=800&bpoh=940)《Spring Boot实战》
   - 《Spring 微服务实战》
+  
 - Netty、Tomcat
+
 - MySQL 《高性能MySQL》

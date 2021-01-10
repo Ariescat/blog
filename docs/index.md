@@ -799,10 +799,11 @@ catalog: true
       - 排他锁【X锁】
     又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。
       
+    
     这保证了其他事务在T释放A上的锁之前不能再读取和修改A。
-      
+    
     排他锁用法：for update，比如，select name from table where id=1 for update；
-      
+    
   - 粒度：表级锁，行级锁，页面锁，间隙锁
     
     行级锁在MySQL中是索引记录锁，若无索引，往往会导致整个表被锁住。
@@ -985,7 +986,7 @@ catalog: true
       6. PROPAGATION_NEVER：如果没有，就以非事务方式执行；如果有，就抛出异常。
       7. PROPAGATION_MANDATORY：如果没有，就抛出异常；如果有，就使用当前事务。
 
-  - MySQL中的锁（表锁、行锁，共享锁，排它锁，间隙锁）
+  - MySQL中的锁（表锁、行锁，共享锁，排它锁，间隙锁，**意向锁**）
 
   - 存储引擎
 

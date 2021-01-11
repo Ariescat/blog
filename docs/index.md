@@ -734,19 +734,31 @@ catalog: true
 
 - **零拷贝**
 
-  [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)，这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
+  * 传统的文件传输，DMA技术
 
-  - Linux支持的(常见)零拷贝
+  * Linux支持的(常见)零拷贝
 
     mmap内存映射，sendfile（linux 2.1支持），Sendfile With DMA Scatter/Gather Copy（可以看作是sendfile的增强版，批量sendfile），splice（linux 2.6.17 支持）。
 
     Linux零拷贝机制对比：无论是传统IO方式，还是引入零拷贝之后，2次DMA copy 是都少不了的。因为两次DMA都是依赖硬件完成的。
 
-  - Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
+  * PageCache，磁盘高速缓存
+
+    主要是两个优点：缓存最近被访问的数据，预读功能
+
+    但是，在传输大文件（GB 级别的文件）的时候，PageCache 会不起作用，那就白白浪费 DRM 多做的一次数据拷贝，造成性能的降低，即使使用了 PageCache 的零拷贝也会损失性能
+
+  * 直接I/O
+
+  * 大文件传输
+
+    「异步 I/O + 直接 I/O」来替代零拷贝技术
+
+  * Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
 
     HeapByteBuffer，DirectByteBuffer，MappedByteBuffer
 
-  - Netty中的零拷贝
+  * Netty中的零拷贝
 
     Netty中的Zero-copy与上面我们所提到到OS层面上的Zero-copy不太一样, Netty的Zero-copy完全是在用户态(Java层面)的，它的Zero-copy的更多的是偏向于优化数据操作这样的概念。
 
@@ -756,6 +768,14 @@ catalog: true
     - 通过FileRegion包装的FileChannel.tranferTo实现文件传输，可以直接将文件缓冲区的数据发送到目标Channel，避免了传统通过循环write方式导致的内存拷贝问题。
 
     **前三个都是 广义零拷贝，都是减少不必要数据copy；偏向于应用层数据优化的操作。**
+
+  * 参考：
+
+    * [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)
+
+      这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
+
+    * [零拷贝 敖丙](https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&mid=2453146714&idx=2&sn=fa45883a655b280c949d0e1c33f4d844&scene=21#wechat_redirect)
 
 - IO 操作的真正耗时
 

@@ -88,6 +88,8 @@ catalog: true
 
     spring-core自带有asm，org.ow2.asm也是一个轻量级的jar
 
+    还有byte buddy库，javassist库
+
   - [Java代码生成利器之rapid-generate应用](http://blog.csdn.net/likeaboy_fire/article/details/44024987)
 
 - Spring

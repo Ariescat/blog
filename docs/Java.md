@@ -446,7 +446,9 @@ typora-root-url: ..
 
       1. 可见性
 
-      2. 重排序（编译器重排，处理器重排）
+      2. 重排序（编译器重排，处理器重排），happen-before原则
+
+         [深入理解happens-before规则](https://www.jianshu.com/p/9464bf340234)
 
       3. Java内存模型定义了8种操作来完成主内存和工作内存的变量访问
 
@@ -460,7 +462,7 @@ typora-root-url: ..
 
          x86架构：
 
-         **Store Barrier**，Store屏障，是x86的"sfence"指令，相当于StoreStore Barriers，强制所有在sfence指令之前的store指令，都在该sfence指令执行之前被执行，发送缓存失效信号，并把store buffer中的数据刷出到CPU的L1 Cache中；所有在sfence指令之后的store指令，都在该sfence指令执行之后被执行。即，禁止对sfence指令前后store指令的重排序跨越sfence指令，使**所有Store Barrier之前发生的内存更新都是可见的**。
+         **Store Barrier**，Store屏障，是x86的"sfence"指令，相当于StoreStore Barriers，强制所有在sfence指令之前的store指令，都在该sfence指令执行之前被执行，发送缓存失效信号，并把**store buffer**中的数据刷出到CPU的L1 Cache中；所有在sfence指令之后的store指令，都在该sfence指令执行之后被执行。即，禁止对sfence指令前后store指令的重排序跨越sfence指令，使**所有Store Barrier之前发生的内存更新都是可见的**。
 
          **Load Barrier**，Load屏障，是x86上的"ifence"指令，相当于LoadLoad Barriers，强制所有在lfence指令之后的load指令，都在该lfence指令执行之后被执行，并且一直等到load buffer被该CPU读完才能执行之后的load指令（发现缓存失效后发起的刷入）。即，禁止对lfence指令前后load指令的重排序跨越lfence指令，配合Store Barrier，使**所有Store Barrier之前发生的内存更新，对Load Barrier之后的load操作都是可见的**。
 
@@ -470,6 +472,12 @@ typora-root-url: ..
 
          1. http://ifeve.com/memory-barriers-or-fences/
          2. https://www.jianshu.com/p/64240319ed60/ 该博客讲得不错，认真品味每一个字
+
+    - 特点：
+
+      1. 通过使用**Lock前缀**的指令禁止**变量在线程工作内存中缓存**来保证volatile变量的**内存可见性**
+      2. 通过**插入内存屏障**禁止**会影响变量内存可见性**的**指令重排序**
+      3. 对任意单个volatile变量的读/写具有原子性，但类似于volatile++这种复合操作不具有原子性
 
     - 参考文章：
 

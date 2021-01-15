@@ -177,32 +177,36 @@ catalog: true
 - 性能
 
   - Disruptor
+
     - 背景
+
       1. [锁的缺点 - Disruptor 入门](http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html)
-      
+
       2. 并发中的伪共享问题
-      
+
       3. 代码的并发执行大约是两件事：互斥和变化的可见性。
-      
+
          互斥是关于管理某些资源的竞争更新。
-      
+
          变化的可见性是关于控制何时使这些更改对其他线程可见。
-      
+
     - 设计上的优势
+
       1. 内部数据存储使用环形缓冲（Ring Buffer），这样分配支持了**CPU缓存位置预测**，**GC的压力更小**
       2. **尽量使用无锁设计，合理使用CAS**
       3. 优化数据结构（填充缓存行），**解决伪共享问题**
       4. 合理位运算（如2次方幂求模），**合理使用Unsafe**
-      
+
     - 策略
-      
+
       `WaitStrategy`可以选择`YieldingWaitStrategy`（无锁）
-      
+
     - 参考博客
-      
+
       1. [解读Disruptor系列](https://www.jianshu.com/u/4c940e688e05)，这个系列挺好的，他每篇文章后面都有份参考资料，也可以认真看看
-    
+
     - 扩展
+
       1. AtomicXXX.lazySet 这个方法的作用（Sequence#set相当于AtomicLong#lazySet）
       2. Unsafe类的作用？为什么要用这个类？除了JDK，在Netty、Spring、Kafka、Storm等非常多的流行开源项目中都使用了Unsafe
 
@@ -223,7 +227,7 @@ catalog: true
 - RxJava [➮详细](/2019/01/29/事件驱动编程RxJava/):  
 
   " a library for composing asynchronous and event-based programs using observable sequences for the Java VM "  （一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）
-  
+
 - ORM
 
   - hibernate
@@ -327,13 +331,6 @@ catalog: true
 - ServiceMesh(服务网格)
 - 中台服务
 - 分布式、大数据、人工智能、区块链
-
-### 游戏技术
-
-- **AI**（状态机 行为树）
-- 游戏框架
-  - skynet
-  - Pinus
 
 ### 工具
 
@@ -637,7 +634,7 @@ catalog: true
 - 补码
 
   补码(为什么按位取反再加一)：告诉你一个其实很简单的问题 [原文](https://blog.csdn.net/wenxinwukui234/article/details/42119265)
-  
+
   其核心思想就是：**一个正数对应的负数（也就是俩相反数），这两个数的二进制编码加起来必须等于0才对**
 
 ### 网络
@@ -736,31 +733,31 @@ catalog: true
 
 - **零拷贝**
 
-  * 传统的文件传输，DMA技术
+  - 传统的文件传输，DMA技术
 
-  * Linux支持的(常见)零拷贝
+  - Linux支持的(常见)零拷贝
 
     mmap内存映射，sendfile（linux 2.1支持），Sendfile With DMA Scatter/Gather Copy（可以看作是sendfile的增强版，批量sendfile），splice（linux 2.6.17 支持）。
 
     Linux零拷贝机制对比：无论是传统IO方式，还是引入零拷贝之后，2次DMA copy 是都少不了的。因为两次DMA都是依赖硬件完成的。
 
-  * PageCache，磁盘高速缓存
+  - PageCache，磁盘高速缓存
 
     主要是两个优点：缓存最近被访问的数据，预读功能
 
     但是，在传输大文件（GB 级别的文件）的时候，PageCache 会不起作用，那就白白浪费 DRM 多做的一次数据拷贝，造成性能的降低，即使使用了 PageCache 的零拷贝也会损失性能
 
-  * 直接I/O
+  - 直接I/O
 
-  * 大文件传输
+  - 大文件传输
 
     「异步 I/O + 直接 I/O」来替代零拷贝技术
 
-  * Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
+  - Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
 
     HeapByteBuffer，DirectByteBuffer，MappedByteBuffer
 
-  * Netty中的零拷贝
+  - Netty中的零拷贝
 
     Netty中的Zero-copy与上面我们所提到到OS层面上的Zero-copy不太一样, Netty的Zero-copy完全是在用户态(Java层面)的，它的Zero-copy的更多的是偏向于优化数据操作这样的概念。
 
@@ -771,13 +768,13 @@ catalog: true
 
     **前三个都是 广义零拷贝，都是减少不必要数据copy；偏向于应用层数据优化的操作。**
 
-  * 参考：
+  - 参考：
 
-    * [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)
+    - [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)
 
       这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
 
-    * [零拷贝 敖丙](https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&mid=2453146714&idx=2&sn=fa45883a655b280c949d0e1c33f4d844&scene=21#wechat_redirect)
+    - [零拷贝 敖丙](https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&mid=2453146714&idx=2&sn=fa45883a655b280c949d0e1c33f4d844&scene=21#wechat_redirect)
 
 - IO 操作的真正耗时
 
@@ -794,9 +791,9 @@ catalog: true
   - 数据类型
 
     - MySQL中的int(M)，int(M)里的M表示最大显示宽度，当加上zerofill才会表现出效果来。
-    
+
   - unsigned
-    
+
   - SQL
 
     - select
@@ -820,42 +817,42 @@ catalog: true
         这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。
 
         用法：select…lock in share mode
-    
+
       - 排他锁【X锁】
         又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。
-      
+
         这保证了其他事务在T释放A上的锁之前不能再读取和修改A。
-      
+
         用法：for update，比如，select name from table where id=1 for update；
-    
+
   - 粒度：表级锁，行级锁，页面锁，间隙锁
-    
+
     意向锁
-    
+
     行级锁在MySQL中是索引记录锁，若无索引，往往会导致整个表被锁住。
-    
+
     间隙锁（gap lock）
-    
+
     > MySQL默认事务隔离级别是可重复读，这个隔离级别为了避免幻读现象，引入了这个间隙锁，对索引项之间的间隙上锁。
-      >
+    >
     > SELECT * FROM t_url_mapping WHERE id>3 LOCK IN SHARE MODE;（SELECT 语句默认不上锁，需显示加锁，该语句加的就是间隙锁）
-    
+
     临键锁（Next-key锁，Next-key lock）
-    
+
   - 加锁方法
-    
+
     默认情况下，表锁和行锁都是自动获得的， 不需要额外的命令；对于 UPDATE、 DELETE 和 INSERT 语句， InnoDB会自动给涉及数据集加排他锁（X)。
-    
+
     但是在有的情况下， 用户需要明确地进行锁表或者进行事务的控制， 以便确保整个事务的完整性，这样就需要使用事务控制和锁定语句来完成。显示的：LOCK IN SHARE MODE（S）、FOR UPDATE（X）
-    
+
   - 注意死锁
-    
+
     1. 当前事务获得S锁，但是如果当前事务需要对该记录进行更新操作，则很有可能造成死锁。
-    
+
        更新操作必须等待先执行的事务commit后才能执行，如果同时并发太大的时候很容易造成死锁。（搜索`mysql in share mode 死锁`）
-    
+
   - 参考链接：[MySQL锁总结](https://zhuanlan.zhihu.com/p/29150809/)
-    
+
   - **事务**
 
     - 事务特性，ACID的含义
@@ -1334,30 +1331,54 @@ catalog: true
   - [究竟怎样写代码才算是好代码 - CSDN博客](http://blog.csdn.net/u013970991/article/details/52609083)
   - [成为Java顶尖程序员 ，看这11本书就够了 - CSDN博客](https://blog.csdn.net/u012410733/article/details/51869105)
 
-### 学习网站
+### 常用社区
 
 - [慕课网手记](http://www.imooc.com/article)
-- unity3d
-  - 愤怒的小鸟 [https://www.bilibili.com/video/av35565116/](https://www.bilibili.com/video/av35565116/)
 
-### 其他
+### 必备软件
 
-- 软件集
-  - everything
-  - wox（window快速搜索文件启动程序软件）
-  - 系统镜像
-    - [https://msdn.itellyou.cn/](https://msdn.itellyou.cn/)
-  - HTTP接口测试工具
-    - Postman
-  - PanDownload
-  
-- Android [➮详细](Android)
+- everything
+- wox（window快速搜索文件启动程序软件）
+- 系统镜像
+  - [https://msdn.itellyou.cn/](https://msdn.itellyou.cn/)
+- HTTP接口测试工具
+  - Postman
+- PanDownload
 
-  点上面链接 ↑ 进独立章节
+### Linux常用服务搭建
 
-- Linux常用服务搭建 [➮详细](Linux)
-  
-  点上面链接进独立章节 ↑ ，Shadowsocks，Ngrok，Nginx...
+（Shadowsocks，Ngrok，Nginx...）
+
+
+
+### Android
+
+- [Gradle Distributions](https://services.gradle.org/distributions)
+- 图表
+  - hellocharts
+- 学习网站
+  - [开发者指南  |  Android 开发者  |  Android Developers](https://developer.android.com/guide)
+    - [使用 NavigationUI 更新界面组件](https://developer.android.com/guide/navigation/navigation-ui#add_a_navigation_drawer)
+      - 抽屉式导航栏
+  - [AndroidDevTools - Android开发工具 Android SDK下载 Android Studio下载 Gradle下载 SDK Tools下载](https://www.androiddevtools.cn/)
+  - [android-open-source-project-analysis](https://github.com/sucese/android-open-source-project-analysis)
+- Material Design
+  - NavigationView FlaotingActionBar SnackBar
+  - Design Support Library
+  - RecyclerView
+  - SwipeRefreshLayout
+  - 控件点击水波纹
+
+### Unity3d
+
+- 愤怒的小鸟 [https://www.bilibili.com/video/av35565116/](https://www.bilibili.com/video/av35565116/)
+
+### 游戏技术
+
+- **AI**（状态机 行为树）
+- 游戏框架
+  - skynet
+  - Pinus
 
 ### 游戏相关
 
@@ -1369,18 +1390,19 @@ catalog: true
 ### 相关书籍
 
 - [读书笔记➮](读书笔记)
-  
+
   点上面链接 ↑ 进独立章节
-  
+
 - Java
-  
+
   - 《Java并发编程》《Effective Java》
-  
+
 - Spring
+
   - 《Spring 源码深度解析 第二版》《Spring实战》
   - 《Spring Boot编程思想（核心篇）》![书籍·图1](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3621582485,3050859261&fm=58&bpow=800&bpoh=940)《Spring Boot实战》
   - 《Spring 微服务实战》
-  
+
 - Netty、Tomcat
 
 - MySQL 《高性能MySQL》

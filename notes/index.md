@@ -1,3 +1,16 @@
+---
+layout: docs
+title: "ReadingNote"
+subtitle: "\"读书笔记（不断收集整理中...）\""
+date: 2021-01-15
+author: Ariescat
+header-img: "img/bg12.jpg"
+catalog: true
+
+---
+
+
+
 #  Effective Java
 
 ### 第四章 类和接口

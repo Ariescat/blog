@@ -112,7 +112,7 @@ Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺
 
 1）程序次序规则（Program Order Rule） `在一个线程内`，按照程序代码顺序，书写在前面的操作Happens-Before书写在后面的操作
 
-线程中上一个动作及之前的所有写操作在该线程执行下一个动作时对该线程可见**（也就是说，同一个线程中前面的所有写操作对后面的操作可见）**，在同一个线程内，即使发生了指令重排序，书写在前面的代码也是先行发生于书写在后面的代码的
+线程中上一个动作及之前的所有写操作在该线程执行下一个动作时对该线程可见**（也就是说，同一个线程中前面的所有写操作对后面的操作可见）**，在同一个线程内，即使发生了指令重排序，书写在前面的代码也是先行发生于书写在后面的代码的。
 
 2）线程锁定规则（Monitor Lock Rule） An unlock on a monitor happens-before every subsequent lock on that monitor.
 
@@ -122,11 +122,11 @@ Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺
 
 如果线程1写入了volatile变量v（这里和后续的“变量”都指的是对象的字段、类字段和数组元素），接着线程2读取了v，那么，线程1写入v及之前的写操作都对线程2可见（线程1和线程2可以是同一个线程）。
 
-4）线程启动规则（Thread Start Rule） Thread对象的start()方法Happens-Before此线程的每一个动作。
+4）线程启动规则（Thread Start Rule） Thread对象的`start()`方法Happens-Before此线程的每一个动作。
 
 5）线程终止规则（Thread Termination Rule） 线程中的所有操作都Happens-Before对此线程的终止检测。
 
-6）线程中断规则（Thread Interruption Rule） 对线程interrupt()方法的调用Happens-Before被中断线程的代码检测到中断事件的发生，可以通过Thread.interrupt()方法检测到是否有中断发生。
+6）线程中断规则（Thread Interruption Rule） 对线程`interrupt()`方法的调用Happens-Before被中断线程的代码检测到中断事件的发生，可以通过`Thread.interrupted`方法检测到是否有中断发生。
 
 7）对象终结规则（Finalizer Rule） 一个对象的初始化完成（构造函数执行结束）Happens-Before它的finalize()方法的开始。
 

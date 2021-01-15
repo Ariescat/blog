@@ -794,6 +794,7 @@ catalog: true
   - 数据类型
 
     - MySQL中的int(M)，int(M)里的M表示最大显示宽度，当加上zerofill才会表现出效果来。
+    
   - unsigned
     
   - SQL
@@ -818,15 +819,18 @@ catalog: true
 
         这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。
 
+        用法：select…lock in share mode
+    
       - 排他锁【X锁】
-    又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。
+        又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。
       
-    
-    这保证了其他事务在T释放A上的锁之前不能再读取和修改A。
-    
-    排他锁用法：for update，比如，select name from table where id=1 for update；
+        这保证了其他事务在T释放A上的锁之前不能再读取和修改A。
+      
+        用法：for update，比如，select name from table where id=1 for update；
     
   - 粒度：表级锁，行级锁，页面锁，间隙锁
+    
+    意向锁
     
     行级锁在MySQL中是索引记录锁，若无索引，往往会导致整个表被锁住。
     

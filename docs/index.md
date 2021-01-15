@@ -67,6 +67,8 @@ catalog: true
 
       Guava Cache说简单点就是一个支持**LRU**的ConcurrentHashMap
 
+      1. [简析guava cache线程安全设计哲学 - 简书 (jianshu.com)](https://www.jianshu.com/p/699869cb5421)
+
     - **Caffeine** 来自未来的缓存
 
       Caffeine是基于JAVA 1.8 Version的高性能缓存库。Caffeine提供的内存缓存使用参考Google guava的API。Caffeine是基于Google Guava Cache设计经验上改进的成果。

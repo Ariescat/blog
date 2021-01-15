@@ -4,8 +4,9 @@ title:      happen-before原则
 subtitle:   "\"你们真的了解过happen-before原则吗?\""
 date:       2021-01-14
 author:     Ariescat
-header-img: img/bg8.jpg
+header-img: img/pixabay/castelmezzano-1979546_1280.jpg
 catalog:    true
+keyword:    Java,volatile,happen-before
 tags:
     - Java
 ---
@@ -106,6 +107,8 @@ public class PlayerCache {
 
 ### happens before
 
+（先行发生原则）
+
 概念：如果存在hb(a,b)，那么**操作a及a之前在内存上面所做的操作**（如赋值操作等）都对操作b可见，即操作a影响了操作b  
 Ps：hb(a,b) presents “a happens before b”  
 Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺序
@@ -124,7 +127,7 @@ Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺
 
 4）线程启动规则（Thread Start Rule） Thread对象的`start()`方法Happens-Before此线程的每一个动作。
 
-5）线程终止规则（Thread Termination Rule） 线程中的所有操作都Happens-Before对此线程的终止检测。
+5）线程终止规则（Thread Termination Rule） 线程中的所有操作都Happens-Before对此线程的终止检测，我们可以通过 Thread.join() 方法结束、Thread.isAlive() 的返回值等手段检测到线程已经终止运行。
 
 6）线程中断规则（Thread Interruption Rule） 对线程`interrupt()`方法的调用Happens-Before被中断线程的代码检测到中断事件的发生，可以通过`Thread.interrupted`方法检测到是否有中断发生。
 
@@ -136,6 +139,8 @@ Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺
 
 参考：
 
-1.[深入理解happen-before原则 · Get The Real Thing (luyu05.github.io)](https://luyu05.github.io/2018/07/06/DCL/)
+1. [深入理解happen-before原则 · Get The Real Thing (luyu05.github.io)](https://luyu05.github.io/2018/07/06/DCL/)
 
-2.[简析guava cache线程安全设计哲学 - 简书 (jianshu.com)](https://www.jianshu.com/p/699869cb5421)
+2. [先行发生原则 · 程序员的自我修养 (someoneiscoding.com)](https://someoneiscoding.com/2019/03/13/Java_happens_before/)
+
+3. [简析guava cache线程安全设计哲学 - 简书 (jianshu.com)](https://www.jianshu.com/p/699869cb5421)

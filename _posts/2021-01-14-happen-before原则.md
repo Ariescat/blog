@@ -106,13 +106,13 @@ public class PlayerCache {
 
 ### happens before
 
-概念：如果存在hb(a,b)，那么**操作a及a之前在内存上面所做的操作**（如赋值操作等）都对操作b可见，即操作a影响了操作b
-Ps：hb(a,b) presents “a happens before b”
+概念：如果存在hb(a,b)，那么**操作a及a之前在内存上面所做的操作**（如赋值操作等）都对操作b可见，即操作a影响了操作b  
+Ps：hb(a,b) presents “a happens before b”  
 Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺序
 
 1）程序次序规则（Program Order Rule） `在一个线程内`，按照程序代码顺序，书写在前面的操作Happens-Before书写在后面的操作
 
-线程中上一个动作及之前的所有写操作在该线程执行下一个动作时对该线程可见（也就是说，同一个线程中前面的所有写操作对后面的操作可见），在同一个线程内，即使发生了指令重排序，书写在前面的代码也是先行发生于书写在后面的代码的
+线程中上一个动作及之前的所有写操作在该线程执行下一个动作时对该线程可见**（也就是说，同一个线程中前面的所有写操作对后面的操作可见）**，在同一个线程内，即使发生了指令重排序，书写在前面的代码也是先行发生于书写在后面的代码的
 
 2）线程锁定规则（Monitor Lock Rule） An unlock on a monitor happens-before every subsequent lock on that monitor.
 
@@ -131,3 +131,11 @@ Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺
 7）对象终结规则（Finalizer Rule） 一个对象的初始化完成（构造函数执行结束）Happens-Before它的finalize()方法的开始。
 
 8）传递性（Transitivity） 偏序关系的传递性：如果已知hb(a,b)和hb(b,c)，那么我们可以推导出hb(a,c)，即操作a Happens-Before 操作c。
+
+
+
+参考：
+
+1.[深入理解happen-before原则 | Get The Real Thing (luyu05.github.io)](https://luyu05.github.io/2018/07/06/DCL/)
+
+2.[简析guava cache线程安全设计哲学 - 简书 (jianshu.com)](https://www.jianshu.com/p/699869cb5421)

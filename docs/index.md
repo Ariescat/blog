@@ -1361,7 +1361,7 @@ catalog: true
   - [Centos6.8 Jetty 安装配置 - 那个汪 - 博客园](https://www.cnblogs.com/wzalex/p/6912500.html)
 
 - Shadowsocks
-  - [记一次搭建SS服务器，完整的过程。，搭建ss_Linux教程 | 帮客之家](http://www.bkjia.com/Linuxjc/1202867.html)
+  - [记一次搭建SS服务器，完整的过程。，搭建ss_Linux教程 · 帮客之家](http://www.bkjia.com/Linuxjc/1202867.html)
   - [Centos 7下搭建SS - CSDN博客](http://blog.csdn.net/u013309540/article/details/74330305)
   - [Shadowsocks - Clients](https://shadowsocks.org/en/download/clients.html)
   - [锐速ServerSpeeder无限带宽破解版一键安装包(2017.6.23更新 )-蜗牛789](https://www.wn789.com/4678.html)
@@ -1380,7 +1380,7 @@ catalog: true
 - 图表
   - hellocharts
 - 学习网站
-  - [开发者指南  |  Android 开发者  |  Android Developers](https://developer.android.com/guide)
+  - [开发者指南 · Android 开发者 · Android Developers](https://developer.android.com/guide)
     - [使用 NavigationUI 更新界面组件](https://developer.android.com/guide/navigation/navigation-ui#add_a_navigation_drawer)
       - 抽屉式导航栏
   - [AndroidDevTools - Android开发工具 Android SDK下载 Android Studio下载 Gradle下载 SDK Tools下载](https://www.androiddevtools.cn/)

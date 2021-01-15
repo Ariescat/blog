@@ -136,6 +136,6 @@ Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺
 
 参考：
 
-1.[深入理解happen-before原则 | Get The Real Thing (luyu05.github.io)](https://luyu05.github.io/2018/07/06/DCL/)
+1.[深入理解happen-before原则 · Get The Real Thing (luyu05.github.io)](https://luyu05.github.io/2018/07/06/DCL/)
 
 2.[简析guava cache线程安全设计哲学 - 简书 (jianshu.com)](https://www.jianshu.com/p/699869cb5421)

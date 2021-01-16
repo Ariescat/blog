@@ -22,7 +22,7 @@
   text-decoration: none;
 }
 .sidebar-container a {
-  color: #bfbfbf !important;
+  color: #707070 !important;
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
@@ -92,8 +92,8 @@
   max-width: 180px;
   display: inline-block;
   vertical-align: middle;
-  height: 30px;
-  line-height: 30px;
+  height: 27px;
+  line-height: 27px;
   overflow: hidden;
   text-decoration: none;
   white-space: nowrap;
@@ -103,14 +103,17 @@
 .side-catalog .catalog-body .h2_nav,
 .side-catalog .catalog-body .h3_nav {
   margin-left: 0;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
 }
-.side-catalog .catalog-body .h4_nav,
+.side-catalog .catalog-body .h4_nav {
+  margin-left: 12px;
+  font-size: 14px;
+}
 .side-catalog .catalog-body .h5_nav,
 .side-catalog .catalog-body .h6_nav {
-  margin-left: 10px;
-  font-size: 12px;
+  margin-left: 28px;
+  font-size: 13px;
 }
 .side-catalog .catalog-body .h4_nav a,
 .side-catalog .catalog-body .h5_nav a,

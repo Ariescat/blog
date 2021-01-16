@@ -966,7 +966,7 @@ balabala...
 
 
 
-### Java死亡区
+### Java猝死区
 
 #### JVM
 
@@ -1570,18 +1570,19 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
   动态类型语言：动态类型语言是指在运行期间才去做数据类型检查的语言，说的是数据类型，动态语言说的是运行是改变结构，说的是代码结构。
 
-- [Groovy](脚本语言#Groovy)
-  - [30分钟groovy快速入门并掌握](https://www.cnblogs.com/amosli/p/3970810.html)
-  - [Groovy 语言快速入门](https://www.jianshu.com/p/e8dec95c4326)
-  - Groovy 与 **Java**
-    - [实战 Groovy，在 Java 应用程序中加一些 Groovy 进来](https://www.ibm.com/developerworks/cn/java/j-pg05245/)
-    - [利用SPRING管理热加载的GROOVY对象](https://palexu.github.io/posts/spring-dynamic-load-groovy-bean?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-    - [spring + groovy 很强大](https://blog.csdn.net/qq362228416/article/details/8811136)
-    - [Spring动态部署Bean/Controller/Groovy Controller](https://jinnianshilongnian.iteye.com/blog/1999284)
-  - Groovy as DSL 与 **Gradle**
-    - [Gradle：新一代自动化构建工具](http://hao.jobbole.com/gradle/)
-    - [Groovy DSL 百度搜索](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=Groovy DSL&tn=98010089_dg&ch=4)
-    - [gradle dsl](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=gradle dsl&tn=98010089_dg&ch=5)
+#### Groovy
+
+- [30分钟groovy快速入门并掌握](https://www.cnblogs.com/amosli/p/3970810.html)
+- [Groovy 语言快速入门](https://www.jianshu.com/p/e8dec95c4326)
+- Groovy 与 **Java**
+  - [实战 Groovy，在 Java 应用程序中加一些 Groovy 进来](https://www.ibm.com/developerworks/cn/java/j-pg05245/)
+  - [利用SPRING管理热加载的GROOVY对象](https://palexu.github.io/posts/spring-dynamic-load-groovy-bean?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+  - [spring + groovy 很强大](https://blog.csdn.net/qq362228416/article/details/8811136)
+  - [Spring动态部署Bean/Controller/Groovy Controller](https://jinnianshilongnian.iteye.com/blog/1999284)
+- Groovy as DSL 与 **Gradle**
+  - [Gradle：新一代自动化构建工具](http://hao.jobbole.com/gradle/)
+  - [Groovy DSL 百度搜索](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=Groovy DSL&tn=98010089_dg&ch=4)
+  - [gradle dsl](https://www.baidu.com/s?ie=utf8&oe=utf8&wd=gradle dsl&tn=98010089_dg&ch=5)
 
 
 
@@ -1960,50 +1961,50 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
   - **Reactor模式**
 
-- **零拷贝**
+#### 零拷贝
 
-  - 传统的文件传输，DMA技术
+- 传统的文件传输，DMA技术
 
-  - Linux支持的(常见)零拷贝
+- Linux支持的(常见)零拷贝
 
-    mmap内存映射，sendfile（linux 2.1支持），Sendfile With DMA Scatter/Gather Copy（可以看作是sendfile的增强版，批量sendfile），splice（linux 2.6.17 支持）。
+  mmap内存映射，sendfile（linux 2.1支持），Sendfile With DMA Scatter/Gather Copy（可以看作是sendfile的增强版，批量sendfile），splice（linux 2.6.17 支持）。
 
-    Linux零拷贝机制对比：无论是传统IO方式，还是引入零拷贝之后，2次DMA copy 是都少不了的。因为两次DMA都是依赖硬件完成的。
+  Linux零拷贝机制对比：无论是传统IO方式，还是引入零拷贝之后，2次DMA copy 是都少不了的。因为两次DMA都是依赖硬件完成的。
 
-  - PageCache，磁盘高速缓存
+- PageCache，磁盘高速缓存
 
-    主要是两个优点：缓存最近被访问的数据，预读功能
+  主要是两个优点：缓存最近被访问的数据，预读功能
 
-    但是，在传输大文件（GB 级别的文件）的时候，PageCache 会不起作用，那就白白浪费 DRM 多做的一次数据拷贝，造成性能的降低，即使使用了 PageCache 的零拷贝也会损失性能
+  但是，在传输大文件（GB 级别的文件）的时候，PageCache 会不起作用，那就白白浪费 DRM 多做的一次数据拷贝，造成性能的降低，即使使用了 PageCache 的零拷贝也会损失性能
 
-  - 直接I/O
+- 直接I/O
 
-  - 大文件传输
+- 大文件传输
 
-    「异步 I/O + 直接 I/O」来替代零拷贝技术
+  「异步 I/O + 直接 I/O」来替代零拷贝技术
 
-  - Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
+- Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
 
-    HeapByteBuffer，DirectByteBuffer，MappedByteBuffer
+  HeapByteBuffer，DirectByteBuffer，MappedByteBuffer
 
-  - Netty中的零拷贝
+- Netty中的零拷贝
 
-    Netty中的Zero-copy与上面我们所提到到OS层面上的Zero-copy不太一样, Netty的Zero-copy完全是在用户态(Java层面)的，它的Zero-copy的更多的是偏向于优化数据操作这样的概念。
+  Netty中的Zero-copy与上面我们所提到到OS层面上的Zero-copy不太一样, Netty的Zero-copy完全是在用户态(Java层面)的，它的Zero-copy的更多的是偏向于优化数据操作这样的概念。
 
-    - Netty提供了CompositeByteBuf类，它可以将多个ByteBuf合并为一个逻辑上的ByteBuf，避免了各个ByteBuf之间的拷贝。
-    - 通过wrap操作，我们可以将byte[]数组、ByteBuf、 ByteBuffer 等包装成一个 Netty ByteBuf对象，进而避免了拷贝操作。
-    - ByteBuf支持slice 操作，因此可以将ByteBuf分解为多个共享同一个存储区域的ByteBuf，避免了内存的拷贝。
-    - 通过FileRegion包装的FileChannel.tranferTo实现文件传输，可以直接将文件缓冲区的数据发送到目标Channel，避免了传统通过循环write方式导致的内存拷贝问题。
+  - Netty提供了CompositeByteBuf类，它可以将多个ByteBuf合并为一个逻辑上的ByteBuf，避免了各个ByteBuf之间的拷贝。
+  - 通过wrap操作，我们可以将byte[]数组、ByteBuf、 ByteBuffer 等包装成一个 Netty ByteBuf对象，进而避免了拷贝操作。
+  - ByteBuf支持slice 操作，因此可以将ByteBuf分解为多个共享同一个存储区域的ByteBuf，避免了内存的拷贝。
+  - 通过FileRegion包装的FileChannel.tranferTo实现文件传输，可以直接将文件缓冲区的数据发送到目标Channel，避免了传统通过循环write方式导致的内存拷贝问题。
 
-    **前三个都是 广义零拷贝，都是减少不必要数据copy；偏向于应用层数据优化的操作。**
+  **前三个都是 广义零拷贝，都是减少不必要数据copy；偏向于应用层数据优化的操作。**
 
-  - 参考：
+- 参考：
 
-    - [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)
+  - [Java中的零拷贝](https://www.jianshu.com/p/2fd2f03b4cc3)
 
-      这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
+    这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。
 
-    - [零拷贝 敖丙](https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&mid=2453146714&idx=2&sn=fa45883a655b280c949d0e1c33f4d844&scene=21#wechat_redirect)
+  - [零拷贝 敖丙](https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&mid=2453146714&idx=2&sn=fa45883a655b280c949d0e1c33f4d844&scene=21#wechat_redirect)
 
 - IO 操作的真正耗时
 
@@ -2013,292 +2014,292 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
   这里可以配合《Netty、Redis、Zookeeper高并发实战》2.2节四种主要的IO模型来看一下。
 
+
+
 ### MySQL
 
-- MySQL
+#### 数据类型
 
-  - 数据类型
-
-    - MySQL中的int(M)，int(M)里的M表示最大显示宽度，当加上zerofill才会表现出效果来。
-
-  - unsigned
-
-  - SQL
-
-    - select
-
-      > select: 即最常用的查询，是不加任何锁的
-      >
-      > select ... lock in share mode: 会加共享锁(Shared Locks)
-      >
-      > select ... for update: 会加排它锁
-
-    - 联接子句 union，join
-
-  - 锁
-
-    - 机制
-
-      - 共享锁【S锁】
-
-        又称读锁，若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。
-
-        这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。
-
-        用法：select…lock in share mode
-
-      - 排他锁【X锁】
-        又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。
-
-        这保证了其他事务在T释放A上的锁之前不能再读取和修改A。
-
-        用法：for update，比如，select name from table where id=1 for update；
-
-  - 粒度：表级锁，行级锁，页面锁，间隙锁
-
-    意向锁
-
-    行级锁在MySQL中是索引记录锁，若无索引，往往会导致整个表被锁住。
-
-    间隙锁（gap lock）
-
-    > MySQL默认事务隔离级别是可重复读，这个隔离级别为了避免幻读现象，引入了这个间隙锁，对索引项之间的间隙上锁。
-    >
-    > SELECT * FROM t_url_mapping WHERE id>3 LOCK IN SHARE MODE;（SELECT 语句默认不上锁，需显示加锁，该语句加的就是间隙锁）
-
-    临键锁（Next-key锁，Next-key lock）
-
-  - 加锁方法
-
-    默认情况下，表锁和行锁都是自动获得的， 不需要额外的命令；对于 UPDATE、 DELETE 和 INSERT 语句， InnoDB会自动给涉及数据集加排他锁（X)。
-
-    但是在有的情况下， 用户需要明确地进行锁表或者进行事务的控制， 以便确保整个事务的完整性，这样就需要使用事务控制和锁定语句来完成。显示的：LOCK IN SHARE MODE（S）、FOR UPDATE（X）
-
-  - 注意死锁
-
-    1. 当前事务获得S锁，但是如果当前事务需要对该记录进行更新操作，则很有可能造成死锁。
-
-       更新操作必须等待先执行的事务commit后才能执行，如果同时并发太大的时候很容易造成死锁。（搜索`mysql in share mode 死锁`）
-
-  - 参考链接：[MySQL锁总结](https://zhuanlan.zhihu.com/p/29150809/)
-
-  - **事务**
-
-    - 事务特性，ACID的含义
-
-      1. 原子性
-
-         a. 事务是一个原子操作单元
-
-         b. 要么都做，要么都不做，没有第三种情况
-
-         c. 原子性仅能够保证单个事务的一致性!
-
-      2. 一致性
-
-         a. 事务操作前和操作后都必须满足业务规则约束
-
-         b. 比如资源数量一致：A向B转账，转账前和转账后AB两个账户的总金额必须是一致的
-
-         c. **一致性是最基本的属性**，其它的三个属性都为了保证一致性而存在的。为了保证**并发情况下**的一致性，引入了**隔离性**，即保证每一个事务能够看到的数据总是一致的，就好象其它并发事务并不存在一样。
-
-      3. 隔离性
-
-         a. 多个并发事务同时对数据进行读写的能力
-
-         b. 隔离性可以防止事务并发执行时由于交叉执行导致数据不一致的问题
-
-      4. 持久性
-
-         a. 对数据的修改是永久的
-
-         b. 即使出现系统故障也不会丢失
-
-    - 并发问题：
-
-      1. 脏读
-
-         一个事务正在对一条记录做修改，在这个事务提交之前，别的事务读取到了这个事务修改之后的数据，也就是说，一个事务读取到了其他事务还没有提交的数据，就叫做脏读。
-
-      2. 不可重复读（第一类不可重复读）
-
-         一个事务读某条数据读两遍，读到的是不一样的数据，也就是说，一个事务在进行中读取到了其他事务对旧数据的修改结果。（比如说 我开一个事务 修改某条数据 先查后改 执行修改动作的时候发现这条数据已经被别的事务删掉了）
-
-      3. 幻读（第二类不可重复读）
-
-         一个事务中，读取到了其他事务新增的数据，仿佛出现了幻象。（幻读与不可重复读类似，不可重复读是读到了其他事务update/delete的结果，幻读是读到了其他事务insert的结果）
-
-      隔离级别：
-
-      1. 读未提交（read-uncommitted）
-
-         在一个事务中，可以读取到其他事务未提交的数据变化，这种读取其他会话还没提交的事务，叫做脏读现象，在生产环境中切勿使用。
-
-      2. 读已提交（read-committed）
-
-         Sql Server,Oracle默认
-
-         在一个事务中，可以读取到其他事务已经提交的数据变化，这种读取也就叫做不可重复读，因为两次同样的查询可能会得到不一样的结果。
-
-      3. 可重复读（repetable-read）
-
-         MySQL默认
-
-         在一个事务中，直到事务结束前，都可以反复读取到事务刚开始时看到的数据，并一直不会发生变化，避免了脏读、不可重复读现象，但是**在SQL标准中**它还是无法解决幻读问题。
-
-      4. 可串行化（serializable）
-
-         这是最高的隔离级别，它强制事务串行执行，避免了前面说的幻读现象，简单来说，它会在读取的每一行数据上都加锁，所以可能会导致大量的超时和锁争用问题。
-
-      几个概念：
-
-      1. 锁：Shared Locks(共享锁/S锁)、Exclusive Locks(排它锁/X锁)、Record Locks(行锁)、Gap Locks(间隙锁)、Next-Key Locks(间隙锁)
-
-         > Record Locks是加在索引行(对！是索引行！不是数据行！)，Gap Locks和Next-Key Locks都属于索引锁
-
-      2. 快照读（普通读）：snapshot read，通过MVCC机制读取历史数据的方式
-
-         > select * from table ....
-
-      3. 当前读：current read ，读取数据库最新版本数据的方式 
-
-         > insert、update、delete、select for update、select lock in share mode
-
-      4. 意向锁：表级别锁
-
-      **隔离性**底层实现原理：
-
-      - MVCC(多版本并发控制)和锁
-
-      - 读已提交和可重复读区别主要在于**MVCC版本的生成时机**
-
-        RC是是**每次**`select`时，RR是**第一次**`select`时生成版本
-
-      - 可串行化级别下，会自动将所有普通`select`转化为`select ... lock in share mode`执行，即针对同一数据的所有读写都变成互斥的了，可靠性大大提高，并发性大大降低。
-
-      注意：
-
-      1. 间隙锁锁住的是索引的间隙，可以理解为范围，如（2，5]，(5，7]
-
-      2. 我们通过`update`、`delete`等语句加上的锁都是行级别的锁。只有`LOCK TABLE … READ`和`LOCK TABLE … WRITE`才能申请表级别的锁。
-
-      3. RR级别下隐藏着一个操作，就是在事务A提交前，事务B已经进行过一次查询，否则，事务B会读取最新的数据。[原文](https://blog.csdn.net/thekenofdis/article/details/80736401)
-
-      4. 为什么很多文章都产生误传，说是可重复读可以解决幻读问题！原因出自官网的一句话(地址是:`https://dev.mysql.com/doc/refman/5.7/en/innodb-locking.html#innodb-record-locks`)，原文内容如下
-
-         > By default, InnoDB operates in REPEATABLE READ transaction isolation level. In this case, InnoDB uses next-key locks for searches and index scans, which prevents phantom rows (see Section 14.7.4, “Phantom Rows”).
-
-         按照原本这句话的意思，应该是
-
-         **InnoDB默认用了REPEATABLE READ。在这种情况下，使用next-key locks解决幻读问题！**
-
-         结果估计，某个国内翻译人员翻着翻着变成了
-
-         **InnoDB默认用了REPEATABLE READ。在这种情况下，可以解决幻读问题！**
-
-         然后大家继续你抄我，我抄你，结果你懂的！
-
-         显然，漏了"使用了next-key locks！"这个条件后，意思完全改变，我们在该隔离级别下执行语句
-
-         ```sql
-         select *  from tx_tb where pId >= 1;
-         ```
-
-         是快照读，是不加任何锁的，根本不能解决幻读问题，除非你用
-
-         ```sql
-         select *  from tx_tb where pId >= 1 lock in share mode;
-         ```
-
-         这样，你就用上了next-key locks，解决了幻读问题！
-
-      5. 其实幻读很多时候是我们完全可以接受的
-
-      总结：
-
-      | 隔离级别 | 读数据一致性                           | 脏读 | 不可重复读 | 幻读   |
-      | -------- | -------------------------------------- | ---- | ---------- | ------ |
-      | 读未提交 | 最低级别，只保证不读取物理上损坏的数据 | 有   | 有         | 有     |
-      | 读已提交 | 语句级                                 | 无   | 有         | 有     |
-      | 可重复读 | 事务级                                 | 无   | 无         | 可能有 |
-      | 可串行化 | 最高级别，事务级                       | 无   | 无         | 无     |
-
-      参考链接：
-
-      1. [深入理解mysql的事务隔离级别和底层实现原理](https://blog.csdn.net/suifeng629/article/details/99412343)
-      2. [Mysql中select的正确姿势](https://www.cnblogs.com/rjzheng/p/9902911.html)，[新说Mysql事务隔离级别](https://www.cnblogs.com/rjzheng/p/9955395.html)，他的“[数据库系列](https://www.cnblogs.com/rjzheng/category/1281020.html)”都挺不错的
-
-    - 事务传播（其实这个是`Spring`的概念，Spring它对JDBC的隔离级别作出了补充和扩展，其提供了7种事务传播行为）
-
-      1. **PROPAGATION_REQUIRED：默认事务类型，如果没有，就新建一个事务；如果有，就加入当前事务。适合绝大多数情况。**
-      2. PROPAGATION_REQUIRES_NEW：如果没有，就新建一个事务；如果有，就将当前事务挂起。
-      3. PROPAGATION_NESTED：如果没有，就新建一个事务；如果有，就在当前事务中嵌套其他事务。
-      4. PROPAGATION_SUPPORTS：如果没有，就以非事务方式执行；如果有，就使用当前事务。
-      5. PROPAGATION_NOT_SUPPORTED：如果没有，就以非事务方式执行；如果有，就将当前事务挂起。即无论如何不支持事务。
-      6. PROPAGATION_NEVER：如果没有，就以非事务方式执行；如果有，就抛出异常。
-      7. PROPAGATION_MANDATORY：如果没有，就抛出异常；如果有，就使用当前事务。
-
-  - MySQL中的锁（表锁、行锁，共享锁，排它锁，间隙锁，**意向锁**）
-
-  - 存储引擎
-
-    - MyISAM，InnoDB
-
-- 索引
-
-  - 聚簇索引和非聚簇索引
-
-  - 索引结构 B+树？
-
-  - 联合索引的最左前缀匹配原则
-
-    > mysql会一直向右匹配直到遇到范围查询(>、<、between、like)就停止匹配，比如a = 1 and b = 2 and c > 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。
-
-  - MYSQL如何挑选索引
-
-  - 参考链接
-
-    [MySQL索引总结](https://zhuanlan.zhihu.com/p/29118331)
-
-- 日志
-
-  - [MySQL的日志系统](https://www.cnblogs.com/ivy-zheng/p/11094528.html)
-
-  - redo/undo log，binlog
-
-  - 慢日志
-
-    可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。
-
-  - MySQL的 **Crash Safe**
-
-    - [Crash Safe和Binlog的关系](https://blog.csdn.net/shaochenshuo/article/details/73239949)
-
-- 备份与恢复
-
-  - 冷备份，热备份
-    - cp，mysqldump，lvm2快照，xtrabackup
-  - [mysql误删数据快速恢复](https://www.cnblogs.com/-mrl/p/9959365.html)
-
-- 高级
-
-  - explain
-
-    explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
-
-  - 如何快速的删除一张大（TB级别）表？
-
-    1. 区分drop，truncate，delete
-    2. 利用linux中**硬链接**
-
-- 分布式
-
-  - **主从**复制，分库分表
-
+- MySQL中的int(M)，int(M)里的M表示最大显示宽度，当加上zerofill才会表现出效果来。
+- unsigned
 - 编码
 
   - utf8_general_ci、utf8_unicode_ci和utf8_bin的区别
   - [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
+
+#### SQL语句
+
+- select
+
+  > select: 即最常用的查询，是不加任何锁的
+  >
+  > select ... lock in share mode: 会加共享锁(Shared Locks)
+  >
+  > select ... for update: 会加排它锁
+
+- 联接子句 union，join
+
+#### 锁
+
+- MySQL中的锁（表锁、行锁，共享锁，排它锁，间隙锁，**意向锁**）
+
+- 机制
+
+  - 共享锁【S锁】
+
+    又称读锁，若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。
+
+    这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。
+
+    用法：select…lock in share mode
+
+  - 排他锁【X锁】
+    又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。
+
+    这保证了其他事务在T释放A上的锁之前不能再读取和修改A。
+
+    用法：for update，比如，select name from table where id=1 for update；
+
+- 粒度：表级锁，行级锁，页面锁，间隙锁
+
+  意向锁
+
+  行级锁在MySQL中是索引记录锁，若无索引，往往会导致整个表被锁住。
+
+  间隙锁（gap lock）
+
+  > MySQL默认事务隔离级别是可重复读，这个隔离级别为了避免幻读现象，引入了这个间隙锁，对索引项之间的间隙上锁。
+  >
+  > SELECT * FROM t_url_mapping WHERE id>3 LOCK IN SHARE MODE;（SELECT 语句默认不上锁，需显示加锁，该语句加的就是间隙锁）
+
+  临键锁（Next-key锁，Next-key lock）
+
+- 加锁方法
+
+  默认情况下，表锁和行锁都是自动获得的， 不需要额外的命令；对于 UPDATE、 DELETE 和 INSERT 语句， InnoDB会自动给涉及数据集加排他锁（X)。
+
+  但是在有的情况下， 用户需要明确地进行锁表或者进行事务的控制， 以便确保整个事务的完整性，这样就需要使用事务控制和锁定语句来完成。显示的：LOCK IN SHARE MODE（S）、FOR UPDATE（X）
+
+- 注意死锁
+
+  1. 当前事务获得S锁，但是如果当前事务需要对该记录进行更新操作，则很有可能造成死锁。
+
+     更新操作必须等待先执行的事务commit后才能执行，如果同时并发太大的时候很容易造成死锁。（搜索`mysql in share mode 死锁`）
+
+- 参考链接：[MySQL锁总结](https://zhuanlan.zhihu.com/p/29150809/)
+
+#### 事务
+
+- 事务特性，ACID的含义
+
+  1. 原子性
+
+     a. 事务是一个原子操作单元
+
+     b. 要么都做，要么都不做，没有第三种情况
+
+     c. 原子性仅能够保证单个事务的一致性!
+
+  2. 一致性
+
+     a. 事务操作前和操作后都必须满足业务规则约束
+
+     b. 比如资源数量一致：A向B转账，转账前和转账后AB两个账户的总金额必须是一致的
+
+     c. **一致性是最基本的属性**，其它的三个属性都为了保证一致性而存在的。为了保证**并发情况下**的一致性，引入了**隔离性**，即保证每一个事务能够看到的数据总是一致的，就好象其它并发事务并不存在一样。
+
+  3. 隔离性
+
+     a. 多个并发事务同时对数据进行读写的能力
+
+     b. 隔离性可以防止事务并发执行时由于交叉执行导致数据不一致的问题
+
+  4. 持久性
+
+     a. 对数据的修改是永久的
+
+     b. 即使出现系统故障也不会丢失
+
+- 并发问题：
+
+  1. 脏读
+
+     一个事务正在对一条记录做修改，在这个事务提交之前，别的事务读取到了这个事务修改之后的数据，也就是说，一个事务读取到了其他事务还没有提交的数据，就叫做脏读。
+
+  2. 不可重复读（第一类不可重复读）
+
+     一个事务读某条数据读两遍，读到的是不一样的数据，也就是说，一个事务在进行中读取到了其他事务对旧数据的修改结果。（比如说 我开一个事务 修改某条数据 先查后改 执行修改动作的时候发现这条数据已经被别的事务删掉了）
+
+  3. 幻读（第二类不可重复读）
+
+     一个事务中，读取到了其他事务新增的数据，仿佛出现了幻象。（幻读与不可重复读类似，不可重复读是读到了其他事务update/delete的结果，幻读是读到了其他事务insert的结果）
+
+  隔离级别：
+
+  1. 读未提交（read-uncommitted）
+
+     在一个事务中，可以读取到其他事务未提交的数据变化，这种读取其他会话还没提交的事务，叫做脏读现象，在生产环境中切勿使用。
+
+  2. 读已提交（read-committed）
+
+     Sql Server,Oracle默认
+
+     在一个事务中，可以读取到其他事务已经提交的数据变化，这种读取也就叫做不可重复读，因为两次同样的查询可能会得到不一样的结果。
+
+  3. 可重复读（repetable-read）
+
+     MySQL默认
+
+     在一个事务中，直到事务结束前，都可以反复读取到事务刚开始时看到的数据，并一直不会发生变化，避免了脏读、不可重复读现象，但是**在SQL标准中**它还是无法解决幻读问题。
+
+  4. 可串行化（serializable）
+
+     这是最高的隔离级别，它强制事务串行执行，避免了前面说的幻读现象，简单来说，它会在读取的每一行数据上都加锁，所以可能会导致大量的超时和锁争用问题。
+
+  几个概念：
+
+  1. 锁：Shared Locks(共享锁/S锁)、Exclusive Locks(排它锁/X锁)、Record Locks(行锁)、Gap Locks(间隙锁)、Next-Key Locks(间隙锁)
+
+     > Record Locks是加在索引行(对！是索引行！不是数据行！)，Gap Locks和Next-Key Locks都属于索引锁
+
+  2. 快照读（普通读）：snapshot read，通过MVCC机制读取历史数据的方式
+
+     > select * from table ....
+
+  3. 当前读：current read ，读取数据库最新版本数据的方式 
+
+     > insert、update、delete、select for update、select lock in share mode
+
+  4. 意向锁：表级别锁
+
+  **隔离性**底层实现原理：
+
+  - MVCC(多版本并发控制)和锁
+
+  - 读已提交和可重复读区别主要在于**MVCC版本的生成时机**
+
+    RC是是**每次**`select`时，RR是**第一次**`select`时生成版本
+
+  - 可串行化级别下，会自动将所有普通`select`转化为`select ... lock in share mode`执行，即针对同一数据的所有读写都变成互斥的了，可靠性大大提高，并发性大大降低。
+
+  注意：
+
+  1. 间隙锁锁住的是索引的间隙，可以理解为范围，如（2，5]，(5，7]
+
+  2. 我们通过`update`、`delete`等语句加上的锁都是行级别的锁。只有`LOCK TABLE … READ`和`LOCK TABLE … WRITE`才能申请表级别的锁。
+
+  3. RR级别下隐藏着一个操作，就是在事务A提交前，事务B已经进行过一次查询，否则，事务B会读取最新的数据。[原文](https://blog.csdn.net/thekenofdis/article/details/80736401)
+
+  4. 为什么很多文章都产生误传，说是可重复读可以解决幻读问题！原因出自官网的一句话(地址是:`https://dev.mysql.com/doc/refman/5.7/en/innodb-locking.html#innodb-record-locks`)，原文内容如下
+
+     > By default, InnoDB operates in REPEATABLE READ transaction isolation level. In this case, InnoDB uses next-key locks for searches and index scans, which prevents phantom rows (see Section 14.7.4, “Phantom Rows”).
+
+     按照原本这句话的意思，应该是
+
+     **InnoDB默认用了REPEATABLE READ。在这种情况下，使用next-key locks解决幻读问题！**
+
+     结果估计，某个国内翻译人员翻着翻着变成了
+
+     **InnoDB默认用了REPEATABLE READ。在这种情况下，可以解决幻读问题！**
+
+     然后大家继续你抄我，我抄你，结果你懂的！
+
+     显然，漏了"使用了next-key locks！"这个条件后，意思完全改变，我们在该隔离级别下执行语句
+
+     ```sql
+     select *  from tx_tb where pId >= 1;
+     ```
+
+     是快照读，是不加任何锁的，根本不能解决幻读问题，除非你用
+
+     ```sql
+     select *  from tx_tb where pId >= 1 lock in share mode;
+     ```
+
+     这样，你就用上了next-key locks，解决了幻读问题！
+
+  5. 其实幻读很多时候是我们完全可以接受的
+
+  总结：
+
+  | 隔离级别 | 读数据一致性                           | 脏读 | 不可重复读 | 幻读   |
+  | -------- | -------------------------------------- | ---- | ---------- | ------ |
+  | 读未提交 | 最低级别，只保证不读取物理上损坏的数据 | 有   | 有         | 有     |
+  | 读已提交 | 语句级                                 | 无   | 有         | 有     |
+  | 可重复读 | 事务级                                 | 无   | 无         | 可能有 |
+  | 可串行化 | 最高级别，事务级                       | 无   | 无         | 无     |
+
+  参考链接：
+
+  1. [深入理解mysql的事务隔离级别和底层实现原理](https://blog.csdn.net/suifeng629/article/details/99412343)
+  2. [Mysql中select的正确姿势](https://www.cnblogs.com/rjzheng/p/9902911.html)，[新说Mysql事务隔离级别](https://www.cnblogs.com/rjzheng/p/9955395.html)，他的“[数据库系列](https://www.cnblogs.com/rjzheng/category/1281020.html)”都挺不错的
+
+- 事务传播（其实这个是`Spring`的概念，Spring它对JDBC的隔离级别作出了补充和扩展，其提供了7种事务传播行为）
+
+  1. **PROPAGATION_REQUIRED：默认事务类型，如果没有，就新建一个事务；如果有，就加入当前事务。适合绝大多数情况。**
+  2. PROPAGATION_REQUIRES_NEW：如果没有，就新建一个事务；如果有，就将当前事务挂起。
+  3. PROPAGATION_NESTED：如果没有，就新建一个事务；如果有，就在当前事务中嵌套其他事务。
+  4. PROPAGATION_SUPPORTS：如果没有，就以非事务方式执行；如果有，就使用当前事务。
+  5. PROPAGATION_NOT_SUPPORTED：如果没有，就以非事务方式执行；如果有，就将当前事务挂起。即无论如何不支持事务。
+  6. PROPAGATION_NEVER：如果没有，就以非事务方式执行；如果有，就抛出异常。
+  7. PROPAGATION_MANDATORY：如果没有，就抛出异常；如果有，就使用当前事务。
+
+#### 存储引擎
+
+- MyISAM，InnoDB
+
+#### 索引
+
+- 聚簇索引和非聚簇索引
+
+- 索引结构 B+树？
+
+- 联合索引的最左前缀匹配原则
+
+  > mysql会一直向右匹配直到遇到范围查询(>、<、between、like)就停止匹配，比如a = 1 and b = 2 and c > 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。
+
+- MYSQL如何挑选索引
+
+- 参考链接
+
+  [MySQL索引总结](https://zhuanlan.zhihu.com/p/29118331)
+
+#### 日志
+
+- [MySQL的日志系统](https://www.cnblogs.com/ivy-zheng/p/11094528.html)
+
+- redo/undo log，binlog
+
+- 慢日志
+
+  可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。
+
+- MySQL的 **Crash Safe**
+
+  - [Crash Safe和Binlog的关系](https://blog.csdn.net/shaochenshuo/article/details/73239949)
+
+#### 备份与恢复
+
+- 冷备份，热备份
+  - cp，mysqldump，lvm2快照，xtrabackup
+- [mysql误删数据快速恢复](https://www.cnblogs.com/-mrl/p/9959365.html)
+
+#### 高级
+
+- explain
+
+  explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
+
+- 如何快速的删除一张大（TB级别）表？
+
+  1. 区分drop，truncate，delete
+  2. 利用linux中**硬链接**
+
+#### 分布式
+
+- **主从**复制，分库分表
+
+
 
 ### Redis / NoSQL
 
@@ -2363,7 +2364,8 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 - 书籍
 
-  - 《redis设计与实现(第二版)》，《Redis 深度历险:核心原理与应用实践》
+  - 《redis设计与实现(第二版)》
+  - 《Redis 深度历险:核心原理与应用实践》
 
 - Orther NoSQL
 
@@ -2377,15 +2379,16 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 ### 操作系统
 
-- 进程管理
-  - [进程和线程](https://blog.csdn.net/weixin_43517199/article/details/89508381)
-- 死锁
-- 内存管理
-  1. 分页管理
-- 设备管理
-- Linux
-  - [CentOS7简单使用](Linux#CentOS7)
-  - 进程间通信：[管道](https://www.cnblogs.com/zengyiwen/p/5755170.html)，消息队列，共享内存
+* 进程管理
+  * [进程和线程](https://blog.csdn.net/weixin_43517199/article/details/89508381)
+  * 进程间通信：[管道](https://www.cnblogs.com/zengyiwen/p/5755170.html)，消息队列，共享内存
+  * 死锁
+
+* 内存管理
+  * 分页管理
+
+* 设备管理
+
 - Windows
   - hiberfil.sys和pagefile.sys占用系统空间，其分别是休眠空间和虚拟内存。
 - 其他
@@ -2616,20 +2619,24 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 ### 相关书籍
 
-- [读书笔记➮](读书笔记)
-
-  点上面链接 ↑ 进独立章节
-
 - Java
 
-  - 《Java并发编程》《Effective Java》
-
+  - 《深入理解Java虚拟机（第3版）| 周志明》
+  - 《Java并发编程实战》
+  - 《Effective Java》
+- Redis
+  - 《Redis 深度历险：核心原理与应用实践|钱文品》
+  - 《Redis设计与实现》
 - Spring
-
   - 《Spring 源码深度解析 第二版》《Spring实战》
-  - 《Spring Boot编程思想（核心篇）》![书籍·图1](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3621582485,3050859261&fm=58&bpow=800&bpoh=940)《Spring Boot实战》
+  - 《Spring Boot编程思想（核心篇）》![书籍·图1](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3621582485,3050859261&fm=58&bpow=800&bpoh=940)
+  - 《Spring Boot实战》
   - 《Spring 微服务实战》
+- Netty
+  - 《Netty权威指南》
+- Tomcat
+  - 《Tomcat架构解析 | 刘光瑞》
+- 《漫画算法：小灰的算法之旅》
+- 《架构探险分布式服务框架 |  李业兵》
+- 《高性能MySQL》
 
-- Netty、Tomcat
-
-- MySQL 《高性能MySQL》

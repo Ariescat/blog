@@ -150,7 +150,7 @@ catalog: true
 
     ConcurrentHashMap 1194行会死锁
 
-    ![deadlock](D:\GitHubProjects\ariescat.github.io\docs\imgs\map1.png)
+    ![deadlock](/docs/imgs/map1.png)
 
 - **红黑树** TreeMap、TreeSet
 
@@ -621,7 +621,7 @@ catalog: true
 
 - 弄懂几个方法：
 
-  ![thread](D:\GitHubProjects\ariescat.github.io\docs\imgs\thread1.png)
+  ![thread](/docs/imgs/thread1.png)
 
   1. synchronized、LockSupport.park（如ReentrantLock）区别
 

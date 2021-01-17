@@ -56,18 +56,24 @@ kramdown:
 
 
 # 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
 
 # Gitalk
 gitalk:
-  enable: true                  #是否开启Gitalk评论
+  enable: false                  #是否开启Gitalk评论
   clientID: 1b762e3fb7d766fefa60                            #生成的clientID
   clientSecret: c011a01671ccb88ba8640c4e488014b12ca41cbf    #生成的clientSecret
   repo: ariescat.github.io      #仓库名称
   owner: ariescat               #github用户名
   admin: ariescat
   distractionFreeMode: true     #是否启用类似FB的阴影遮罩
+
+# Valine
+valine:
+  enable: true                  #是否开启Valine评论
+  appId: 8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz                              #生成的appId
+  appKey: QXoMCzb8TFMV0DBzDNXkcvxa                                      #生成的appKey
+  placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊! （昵称填写qq可以显示qq头像和昵称哦~）'   # 评论框占位提示符
+  enableQQ: true                #是否启用昵称框自动获取QQ昵称和QQ头像
 
 
 # 统计

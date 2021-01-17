@@ -1010,7 +1010,7 @@ img::-moz-selection {
 }
 /* Hux customize Style for Duoshuo */
 .comment {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .comment #ds-thread #ds-reset a.ds-like-thread-button {
   border: 1px solid #ddd;

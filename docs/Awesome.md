@@ -150,7 +150,7 @@ catalog: true
 
     ConcurrentHashMap 1194行会死锁
 
-    ![deadlock](http://ariescat.gitee.io/virgo/blog/map1.png)
+    ![deadlock](http://raw.ariescat.top/2846aa7e4ff9721959e7.png/map1.png)
 
 - **红黑树** TreeMap、TreeSet
 
@@ -621,7 +621,7 @@ catalog: true
 
 - 弄懂几个方法：
 
-  ![thread](http://ariescat.gitee.io/virgo/blog/thread1.png)
+  ![thread](http://raw.ariescat.top/b1983110211164f830ad.png/thread1.png)
 
   1. synchronized、LockSupport.park（如ReentrantLock）区别
 
@@ -1645,7 +1645,7 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
     - 八大排序算法比较：
 
-    ![常见算法·图1](http://ariescat.gitee.io/virgo/blog/sort1.png)
+    ![常见算法·图1](http://raw.ariescat.top/76c4e5eecd63edda31a5.png/sort1.png)
 
     - 希尔排序
 
@@ -1835,11 +1835,11 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
        在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。
        用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件：
 
-       ![字符编码·图1](http://ariescat.gitee.io/virgo/blog/Unicode1.png)
+       ![字符编码·图1](http://raw.ariescat.top/2c223ca5480dc9ef68e2.png/Unicode1.png)
 
        浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器：
 
-       ![字符编码·图2](http://ariescat.gitee.io/virgo/blog/Unicode2.png)
+       ![字符编码·图2](http://raw.ariescat.top/aec24bcece923968169b.png/Unicode2.png)
 
        所以你看到很多网页的源码上会有类似`<meta charset="UTF-8" />`的信息，表示该网页正是用的UTF-8编码。
 
@@ -2329,7 +2329,7 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
      下图展示了 redisObject 、Redis 所有数据类型、以及 Redis 所有编码方式（底层实现）三者之间的关系：
 
-     ![redis1](http://ariescat.gitee.io/virgo/blog/redis1.png)
+     ![redis1](http://raw.ariescat.top/7fa2e001467262c143b7.png/redis1.png)
 
 - 集群
 

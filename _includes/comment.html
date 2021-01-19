@@ -1,5 +1,27 @@
-<!-- Gitalk 评论 start  -->
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread"></div>
+</div>
+<!-- disqus 评论框 end -->
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{page.id}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
+
 {% if site.gitalk.enable %}
+<!-- Gitalk 评论 start  -->
 <!-- Gitalk link  -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
@@ -17,11 +39,11 @@
     });
     gitalk.render('gitalk-container');
 </script>
-{% endif %}
 <!-- Gitalk end -->
+{% endif %}
 
-<!-- Valine评论start  -->
 {% if site.valine.enable %}
+<!-- Valine评论start  -->
 <!-- 引入Valine评论插件 https://valine.js.org/ -->
 <script src='/js/valine.min.js'></script>
 <div class="comment"></div>
@@ -199,5 +221,5 @@
         }
     })
 </script>
-{% endif %}
 <!-- Valine end -->
+{% endif %}

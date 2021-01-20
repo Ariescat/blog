@@ -100,8 +100,8 @@ chrome-tab-theme-color: "#000000"
 service-worker: true
 
 
-# Friends
-friends: [
+# Links
+links: [
     {
         title: "简书",
         href: "https://www.jianshu.com/"
@@ -114,4 +114,9 @@ friends: [
         title: "掘金",
         href: "https://juejin.im/"
     }
+]
+
+# Friends
+friends: [{title: "变态鹅",      href: "https://blog.conoha.vip/"},
+          {title: "樱花庄的白猫", href: "https://2heng.xin/"}
 ]

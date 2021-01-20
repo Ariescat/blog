@@ -21,12 +21,12 @@ layout: default
 <div class="container">
 	<div class="row">
         {% if site.sidebar == false %}
-<!-- NO SIDEBAR -->
-    <!-- PostList Container -->
+        <!-- NO SIDEBAR -->
+            <!-- PostList Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
                 {{ content }}
             </div>
-    <!-- Sidebar Container -->
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -49,21 +49,21 @@ layout: default
                 </section>
                 {% endif %}
 
-                <!-- Friends Blog -->
-                {% if site.friends %}
+                <!-- Links -->
+                {% if site.links %}
                 <hr>
-                <h5>FRIENDS</h5>
+                <h5>Links</h5>
                 <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                    {% for link in site.links %}
+                    <li><a href="{{link.href}}">{{link.title}}</a></li>
                     {% endfor %}
                 </ul>
                 {% endif %}
             </div>
-        {% else %}
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
+        {% else %}
+        <!-- USE SIDEBAR -->
+            <!-- PostList Container -->
     		<div class="
                 col-lg-8 col-lg-offset-1
                 col-md-8 col-md-offset-1
@@ -73,7 +73,7 @@ layout: default
             ">
     			{{ content }}
     		</div>
-    <!-- Sidebar Container -->
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-3 col-lg-offset-0
                 col-md-3 col-md-offset-0
@@ -199,13 +199,26 @@ layout: default
                         {% endif %}
                     </div>
                 </section>
+
                 <!-- Friends Blog -->
-                {% if site.friends %}
+                {% if site.links %}
                 <hr>
-                <h5>FRIENDS</h5>
+                <h5>Ariescat的小伙伴们</h5>
+                <h6>欢迎交换友链 ( •̀ .̫ •́ )✧</h6>
                 <ul class="list-inline">
                     {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                    <li><a href="{{friend.href}}">{{friend.title}}</a></li></br>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <!-- Links -->
+                {% if site.links %}
+                <hr>
+                <h5>LINKS</h5>
+                <ul class="list-inline">
+                    {% for link in site.links %}
+                    <li><a href="{{link.href}}">{{link.title}}</a></li>
                     {% endfor %}
                 </ul>
                 {% endif %}

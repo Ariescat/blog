@@ -1,10 +1,10 @@
 ---
 layout: docs
-title: "ReadingNote"
+title: "Reading"
 subtitle: "\"读书笔记（不断收集整理中...）\""
 date: 2021-01-15
 author: Ariescat
-header-img: "img/bg7.jpg"
+header-img: "img/header/reading.jpg"
 catalog: true
 
 ---

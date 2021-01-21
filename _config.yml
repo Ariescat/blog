@@ -117,6 +117,12 @@ links: [
 ]
 
 # Friends
-friends: [{title: "变态鹅",      href: "https://blog.conoha.vip/"},
-          {title: "樱花庄的白猫", href: "https://2heng.xin/"}
+friends: [{title: "变态鹅",
+           href: "https://blog.conoha.vip/"},
+          {title: "樱花庄的白猫",
+           href: "https://2heng.xin/"},
+          {title: "wujiazhen2",
+           href: "https://wujiazhen2.github.io/"},
+          {title: "彭小强的博客",
+           href: "http://tryingpfq.club/"}
 ]

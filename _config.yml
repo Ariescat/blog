@@ -77,6 +77,11 @@ valine:
   recordIP: true                #是否记录评论者IP
 
 
+# Aplayer
+aplayer:
+  enable: true
+
+
 # 统计
 
 # Analytics settings

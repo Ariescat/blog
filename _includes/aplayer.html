@@ -1,4 +1,4 @@
-
+{% if site.aplayer.enable %}
 <!-- aplayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
@@ -8,16 +8,7 @@
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
         fixed: true,
-        audio: [{
-            name: '紅蓮華',
-            artist: 'LiSA',
-            url: 'https://sharefs.yun.kugou.com/202101231555/34300f393c76bde20efc778e1ccf93e5/G158/M01/0F/00/fpQEAF0Z-pmAbnCuADpEqn7HLyg788.mp3',
-            cover: 'http://imge.kugou.com/stdmusic/150/20200319/20200319161427235185.jpg',
-        }, {
-            name: '光るなら',
-            artist: 'Goose house',
-            url: 'http://m10.music.126.net/20210123161203/1eb574eea5112d901f2956e0d0aa9a21/ymusic/9e0a/6075/ec14/a0338148b6233f2b8a48286db4125b50.mp3',
-            cover: 'http://p1.music.126.net/HD3_u-G87OLIgXjGlHE9gA==/2537672839932536.jpg?param=300x300',
-        }]
+        audio: MyConfig.APlayer.audioSrc
     });
 </script>
+{% endif %}

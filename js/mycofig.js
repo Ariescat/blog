@@ -1,4 +1,4 @@
-const MyConfig = {
+const myConfig = {
     L2Dwidget: {
         model: {
             // 小帅哥： https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json

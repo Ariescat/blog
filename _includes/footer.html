@@ -119,9 +119,6 @@
 <!-- jQuery -->
 <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
 
-<!-- pjax -->
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
@@ -291,7 +288,7 @@
     // 可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。
     L2Dwidget.init({
         "model": {
-            "jsonPath": MyConfig.L2Dwidget.model.jsonPath,
+            "jsonPath": myConfig.L2Dwidget.model.jsonPath,
             "scale": 1
         },
         "display": {
@@ -328,6 +325,9 @@
     })();
 </script>
 
+<!-- pjax -->
+<!--
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script>
-    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 8000});
-</script>
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 3000});
+</script>-->

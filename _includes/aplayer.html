@@ -2,14 +2,14 @@
 <!-- aplayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
-<div class="visible-lg">
+<div class="visible-md-lg">
     <div id="aplayer"></div>
 </div>
 <script type="text/javascript">
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
         fixed: true,
-        audio: MyConfig.APlayer.audioSrc
+        audio: myConfig.APlayer.audioSrc
     });
 </script>
 {% endif %}

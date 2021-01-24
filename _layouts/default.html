@@ -59,10 +59,15 @@
     });
 </script>
 
-<!-- pjax -->
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script>
     $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
+    $(document).on('pjax:start', function () {
+        NProgress.start();
+        NProgress.inc();
+    });
+    $(document).on('pjax:end', function () {
+        NProgress.done();
+    });
 </script>
 
 </html>

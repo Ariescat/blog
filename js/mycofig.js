@@ -12,13 +12,18 @@ const myConfig = {
         audioSrc: [{
             name: '紅蓮華',
             artist: 'LiSA',
-            url: 'https://sharefs.yun.kugou.com/202101231555/34300f393c76bde20efc778e1ccf93e5/G158/M01/0F/00/fpQEAF0Z-pmAbnCuADpEqn7HLyg788.mp3',
+            url: 'https://sharefs.yun.kugou.com/202101241207/4d1074ae129ea771fc2d54527a5b6621/G158/M01/0F/00/fpQEAF0Z-pmAbnCuADpEqn7HLyg788.mp3',
             cover: 'http://imge.kugou.com/stdmusic/150/20200319/20200319161427235185.jpg',
+        }, {
+            name: '鸟之诗',
+            artist: 'MayPiano',
+            url: 'https://sharefs.yun.kugou.com/202101241203/644fecf29912039a3b5140352d5c6767/G240/M01/11/19/kIcBAF-o6KCAJOyUABibmmYrJXo032.mp3',
+            cover: 'http://imge.kugou.com/stdmusic/150/20160908/20160908065023530024.jpg',
         }, {
             name: '光るなら',
             artist: 'Goose house',
-            url: 'http://m10.music.126.net/20210123161203/1eb574eea5112d901f2956e0d0aa9a21/ymusic/9e0a/6075/ec14/a0338148b6233f2b8a48286db4125b50.mp3',
-            cover: 'http://p1.music.126.net/HD3_u-G87OLIgXjGlHE9gA==/2537672839932536.jpg?param=300x300',
+            url: 'https://sharefs.yun.kugou.com/202101241208/33d73544188dc773f33631598d6495d1/KGTX/CLTX001/cf5839267a726c77939f6b8e3121b4bd.mp3',
+            cover: 'http://imge.kugou.com/stdmusic/150/20200726/20200726074050850640.jpg',
         }]
     },
     Valine: {

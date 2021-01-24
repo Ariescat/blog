@@ -45,11 +45,12 @@
 {% if site.valine.enable %}
 <!-- Valine评论start  -->
 <!-- 引入Valine评论插件 https://valine.js.org/ -->
-<script src='/js/valine.min.js'></script>
+<!-- 已改为head页面引入，pjax的跳转若之前的页面没引入过valine.js，会处理不了下面的new Valine -->
+<!--<script src='/js/valine.min.js'></script>-->
 <div id="vcomments" style="margin-top: 30px;"></div>
 <script>
     let pathname = window.location.pathname;
-    const valine = new Valine({
+    let valine = new Valine({
         el: '#vcomments',
         appId: '{{site.valine.appId}}',
         appKey: '{{site.valine.appKey}}',
@@ -62,9 +63,6 @@
     });
     $(document).on('ready pjax:beforeReplace', function (event) {
         valine.setPath(pathname);
-    });
-    $(document).on('ready pjax:end', function (event) {
-        // valine.init();
     });
 </script>
 <!-- Valine end -->

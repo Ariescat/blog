@@ -101,6 +101,11 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
 
+    {% if site.valine.enable %}
+        <!-- 引入Valine评论插件 https://valine.js.org/ -->
+        <script src='/js/valine.min.js'></script>
+    {% endif %}
+
     <!-- ga & ba script hoook -->
     <script></script>
 

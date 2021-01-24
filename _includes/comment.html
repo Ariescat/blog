@@ -100,6 +100,19 @@
         box-sizing: border-box;
         background: url("/img/comment_bg.png") 100% 100% no-repeat;
     }
+    /*设置评论头像旋转*/
+    .v .vcards .vcard:hover .vimg {
+        -webkit-animation: vimg-transform .8s linear;
+        animation: vimg-transform .8s linear;
+    }
+    @-webkit-keyframes vimg-transform {
+        0%      {-webkit-transform:rotate(0deg);}
+        100%    {-webkit-transform:rotate(360deg);}
+    }
+    @keyframes vimg-transform {
+        0%      {transform:rotate(0deg);}
+        100%    {transform:rotate(360deg);}
+    }
 </style>
 <!-- Valine end -->
 {% endif %}

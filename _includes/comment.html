@@ -64,6 +64,35 @@
     $(document).on('ready pjax:beforeReplace', function (event) {
         valine.setPath(pathname);
     });
+    // // https://github.com/mashirozx/Sakura/blob/master/js/sakura-app.js  --> getqqinfo
+    // // https://github.com/LaicZhang/blogPic/blob/eb3b7dcbe1/wp-content/themes/begin/js/qq-info.php  --> $nameurl $logourl
+    // let nick = $('input').filter("[name='nick']");
+    // nick.on('blur', function () {
+    //     let qq = nick.val(),
+    //         $reg = /^[1-9]\d{4,9}$/;
+    //     if ($reg.test(qq)) {
+    //         console.log("qq: " + qq)
+    //         $.ajax({
+    //             type: 'get',
+    //             // url: 'https://r.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=' + qq,
+    //             url: 'https://api.2heng.xin/qqinfo/?type=getqqnickname&qq=' + qq,
+    //             dataType: 'text',
+    //             success: function (data) {
+    //                 console.log("getQQInfo: " + data)
+    //                 if (data.length > 0) {
+    //                     data = data.substring(17, data.length - 1)
+    //                     let jsonstr = $.parseJSON(data)
+    //                     let nickstr = jsonstr[qq][6]
+    //                     nick.val(nickstr)
+    //                     // window.localStorage.setItem(valine.QQCacheKey, nickstr);
+    //                 }
+    //             },
+    //             error: function (xhr, textStatus, errorThrown) {
+    //                 console.error("getQQInfo error, readyState:" + xhr.readyState + ",statusText:" + xhr.statusText + ",textStatus:" + textStatus)
+    //             }
+    //         });
+    //     }
+    // });
 </script>
 <!-- Valine end -->
 {% endif %}

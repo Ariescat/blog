@@ -116,14 +116,6 @@
     </div>
 </footer>
 
-<!-- jQuery -->
-<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
@@ -185,7 +177,7 @@
     }
 </script>
 
-<!--fastClick.js -->
+<!-- fastClick.js -->
 <script>
     async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
@@ -279,35 +271,6 @@
 </script>
 {% endif %}
 
-<!-- 鼠标点击特效 -->
-<!--<script src="{{ "/js/snow-effect.js" | prepend: site.baseurl }}"></script>-->
-
-<!--看板娘-->
-<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-<script>
-    // 可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。
-    L2Dwidget.init({
-        "model": {
-            "jsonPath": myConfig.L2Dwidget.model.jsonPath,
-            "scale": 1
-        },
-        "display": {
-            "position": "left",
-            "width": 100,
-            "height": 200,
-            "hOffset": 5,
-            "vOffset": -15
-        },
-        "mobile": {
-            "show": false,
-            "scale": 1
-        },
-        "react": {
-            "opacityDefault": 1.0,
-            "opacityOnHover": 0.2
-        }
-    });
-</script>
 
 <!--Baidu 收录 自动推送代码-->
 <script>
@@ -324,10 +287,3 @@
         s.parentNode.insertBefore(bp, s);
     })();
 </script>
-
-<!-- pjax -->
-<!--
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-<script>
-    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 3000});
-</script>-->

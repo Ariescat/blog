@@ -77,6 +77,12 @@ valine:
   recordIP: true                #是否记录评论者IP
 
 
+# Twikoo
+twikoo:
+  enable: false
+  envId:                        # CloudBase的环境id
+
+
 # Aplayer
 aplayer:
   enable: true

@@ -70,9 +70,9 @@ gitalk:
 # Valine
 valine:
   enable: true                  #是否开启Valine评论
-  appId: 8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz                                #生成的appId
-  appKey: QXoMCzb8TFMV0DBzDNXkcvxa                                        #生成的appKey
-  placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊！ （昵称填写QQ可以显示QQ头像和昵称哦~）'    #评论框占位提示符
+  appId: 8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz                  #生成的appId
+  appKey: QXoMCzb8TFMV0DBzDNXkcvxa                          #生成的appKey
+  placeholder: '来啊，快活啊 ฅʕ•̫͡•ʔฅ  |  支持QQ头像和昵称哦~'    #评论框占位提示符
   enableQQ: true                #是否启用昵称框自动获取QQ昵称和QQ头像
   recordIP: true                #是否记录评论者IP
 

@@ -287,3 +287,16 @@
         s.parentNode.insertBefore(bp, s);
     })();
 </script>
+
+<!-- fancybox支持 -->
+<script>
+    $(document).ready(function () {
+        $('#pageContent #content img').each(function (index, value) {
+            let $a = document.createElement('a')
+            $a.setAttribute('data-fancybox', 'gallery')
+            $a.setAttribute('href', value.src)
+            $a.setAttribute('data-caption', value.alt)
+            $(this).wrap($a)
+        });
+    });
+</script>

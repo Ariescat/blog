@@ -11,8 +11,10 @@
 <body ontouchstart="">
     <!-- 鼠标特效 -->
     <!--<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>-->
+
     <div id="pageContent">
         {% include nav.html %}
+        {% include search.html %}
 
         <div id="content">{{ content }}</div>
 
@@ -60,7 +62,9 @@
 </script>
 
 <script>
+    // pjax无刷新ajax加载
     $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
+    // NProgress
     $(document).on('pjax:start', function () {
         NProgress.start();
         NProgress.inc();

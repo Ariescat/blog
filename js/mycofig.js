@@ -12,17 +12,17 @@ const myConfig = {
         audioSrc: [{
             name: '紅蓮華',
             artist: 'LiSA',
-            url: 'http://m10.music.126.net/20210126195211/c09c3cd5ce64539ad644aff7a283f3c6/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3083852460/b4ae/36d6/00d6/6563082a2542bfb01183a17b85b16a21.mp3',
+            url: 'http://raw.ariescat.top/5febdbbdaa72676cd345.mp3/%E7%B4%85%E8%93%AE%E8%8F%AF.mp3',
             cover: 'http://imge.kugou.com/stdmusic/150/20200319/20200319161427235185.jpg',
         }, {
-            name: '鸟之诗',
+            name: '鳥の詩',
             artist: 'MayPiano',
-            url: 'http://m10.music.126.net/20210126195632/f468abe53cb599235fd6d14f148109b3/ymusic/57d3/dd8d/7048/f51c14092ec26047289d0023d0ac5872.mp3',
+            url: 'http://raw.ariescat.top/df518bc86b33b749f557.mp3/%E9%B3%A5%E3%81%AE%E8%A9%A9.mp3',
             cover: 'http://imge.kugou.com/stdmusic/150/20160908/20160908065023530024.jpg',
         }, {
             name: '光るなら',
             artist: 'Goose house',
-            url: 'http://m10.music.126.net/20210126195555/35f6d1b824f7f8341e2454b0aac1961e/ymusic/9e0a/6075/ec14/a0338148b6233f2b8a48286db4125b50.mp3',
+            url: 'http://raw.ariescat.top/1fda43fe5657a211b3f1.mp3/%E5%85%89%E3%82%8B%E3%81%AA%E3%82%89.mp3',
             cover: 'http://imge.kugou.com/stdmusic/150/20200726/20200726074050850640.jpg',
         }]
     },

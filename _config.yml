@@ -131,23 +131,34 @@ links: [
 friends: [
 {
   sitename: "变态鹅",
-  href: "https://blog.conoha.vip/"
+  desc: "喜欢萌妹の (的) 变态鹅",
+  href: "https://blog.conoha.vip/",
+  img: "https://fdn.geekzu.org/avatar/e6518256a7b49e678393e34186aa7e13?s=64&r=X&d=",
 },{
   sitename: "Mashiro",
   desc: "樱花庄的白猫",
   href: "https://2heng.xin/",
-  img: "https://view.moezx.cc/images/2018/03/27/avatar.jpg"
+  img: "https://view.moezx.cc/images/2018/03/27/avatar.jpg",
 },{
   sitename: "I Am I",
+  desc: "永远相信美好的事情即将发生",
   href: "https://5ime.cn/about/",
+  img: "https://cdn.jsdelivr.net/gh/5ime/img/avatar.jpg",
 },{
   sitename: "木木木木木",
   href: "https://immmmm.com/",
+  img: "https://gravatar.loli.net/avatar/ba83fa02fc4b2ba621514941307e21be",
+},{
+  sitename: "黑石博客",
+  desc: "人生在勤，不索何获。",
+  href: "https://www.heson10.com",
+  img: "https://cdn.jsdelivr.net/gh/heson525/pic@master/pic/avatar03.png",
 },{
   sitename: "wujiazhen2",
   href: "https://wujiazhen2.github.io/",
 },{
   sitename: "彭小强的博客",
+  desc: "无人孤岛，一书一世界",
   href: "http://tryingpfq.club/",
-},
-]
+  img: "http://tryingpfq.club/img/about-BY-gentle.jpg",
+}]

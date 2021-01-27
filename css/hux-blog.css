@@ -1311,7 +1311,7 @@ span.sitename {
 }
 .links ul li:before {
   content: "";
-  background-color: #C0D9D9;
+  background-color: #DCDCDC;
   -webkit-transform: skew(45deg, 0);
   transform: skew(45deg, 0);
   width: 0;

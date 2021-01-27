@@ -1,25 +1,43 @@
 ---
 title: Friends
-layout: default
+layout: page
 description: "友人帐"
-header-img: "img/wall/14.jpg"
+header-img: "img/header/friends.jpg"
 ---
 
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<div class="site-heading">
-					<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-					<span class="subheading">{{ page.description }}</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
+<p><strong>欢迎交换友链 ꉂ(ˊᗜˋ)</strong></p>
 
-<!-- Main Content -->
-<div class="container">
-	开发中呐...
-</div>
+<h5>关于 友链</h5>
+<p>请留言告诉我你的：</br>
+    1、名字</br>
+    2、一句话介绍（熟人我会亲自帮写的）</br>
+    3、主页地址</br>
+    4、你那帅气的头像</p>
+<p>For Example：</br>
+    ★ Name: Ariescat Blog</br>
+    ★ Bio: 一只白羊座的傻猫，现在是一只废猫了</br>
+    ★ URL: http://ariescat.top</br>
+    ★ Avatar: http://ariescat.top/img/about-BY-gentle.jpg</p>
+
+<hr>
+<h5>吐血 整理</h5>
+<ul class="list-inline">
+    <li>
+        <a href="/docs/Awesome/">Awesome</a>
+    </li>
+    <li>
+        <a href="/docs/Reading/">Reading</a>
+    </li>
+</ul>
+
+<!-- Friends Blog -->
+{% if site.links %}
+<hr>
+<h5>小伙伴 们</h5>
+<ul class="list-inline">
+    {% for friend in site.friends %}
+    <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+    </br>
+    {% endfor %}
+</ul>
+{% endif %}

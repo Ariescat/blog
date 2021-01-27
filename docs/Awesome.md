@@ -1,12 +1,12 @@
 ---
-layout: docs
+layout: post
 title: "Awesome"
 subtitle: "\"技术体系探索总结（不断收集整理中...）\""
 date: 2019-01-25
+date-type: "continue"
 author: Ariescat
 header-img: "img/header/awesome.jpg"
 catalog: true
-
 ---
 
 # 《技术总结》

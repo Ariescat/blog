@@ -1,12 +1,12 @@
 ---
-layout: docs
+layout: post
 title: "Reading"
 subtitle: "\"读书笔记（不断收集整理中...）\""
 date: 2021-01-15
+date-type: "continue"
 author: Ariescat
 header-img: "img/header/reading.jpg"
 catalog: true
-
 ---
 
 

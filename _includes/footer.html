@@ -228,6 +228,8 @@
 {% if page.catalog %}
 <script type="text/javascript">
     function generateCatalog (selector) {
+        // 先清理，不然pjax的返回，前进会造成重复追加
+        $(selector).empty();
         var P = $('div.post-container'),a,n,t,l,i,c;
         a = P.find('h1,h2,h3,h4,h5,h6');
         a.each(function () {

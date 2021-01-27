@@ -7,6 +7,44 @@ header-img: "img/header/friends.jpg"
 
 <p><strong>欢迎交换友链 ꉂ(ˊᗜˋ)</strong></p>
 
+<h5>吐血 整理</h5>
+<div class="links">
+    <ul class="link-items">
+        <li class="link-item">
+            <a href="/docs/Awesome/" title="Awesome" rel="friend">
+                <img class="lazyload" src="/img/apple-touch-icon.png">
+                <span class="sitename">Awesome</span>
+                <div class="linkdes">Java程序员秃头区</div>
+            </a>
+        </li>
+        <li class="link-item">
+            <a href="/docs/Reading/" title="Reading" rel="friend">
+                <img class="lazyload" src="/img/apple-touch-icon.png">
+                <span class="sitename">Reading</span>
+                <div class="linkdes">读书笔记</div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- Friends Blog -->
+{% if site.links %}
+<h5>小伙伴 们</h5>
+<div class="links">
+    <ul class="link-items">
+        {% for friend in site.friends %}
+        <li class="link-item">
+            <a href="{{friend.href}}" title="{{friend.sitename}}" target="_blank" rel="friend">
+                <img class="lazyload" src="{% if friend.img %}{{friend.img}}{% else %}/img/apple-touch-icon.png{% endif %}">
+                <span class="sitename">{{friend.sitename}}</span>
+                <div class="linkdes">{% if friend.desc %}{{friend.desc}}{% else %}"这家伙好懒╮(╯▽╰)╭" {% endif %}</div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
 <h5>关于 友链</h5>
 <p>请留言告诉我你的：</br>
     1、名字</br>
@@ -19,25 +57,4 @@ header-img: "img/header/friends.jpg"
     ★ URL: http://ariescat.top</br>
     ★ Avatar: http://ariescat.top/img/about-BY-gentle.jpg</p>
 
-<hr>
-<h5>吐血 整理</h5>
-<ul class="list-inline">
-    <li>
-        <a href="/docs/Awesome/">Awesome</a>
-    </li>
-    <li>
-        <a href="/docs/Reading/">Reading</a>
-    </li>
-</ul>
-
-<!-- Friends Blog -->
-{% if site.links %}
-<hr>
-<h5>小伙伴 们</h5>
-<ul class="list-inline">
-    {% for friend in site.friends %}
-    <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-    </br>
-    {% endfor %}
-</ul>
-{% endif %}
+{% include comment.html %}

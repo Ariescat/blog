@@ -1093,7 +1093,7 @@ img::-moz-selection {
   color: #ddd;
 }
 
-/* search-page */
+/* search-page start */
 .search-page {
   position: fixed;
   top: 0;
@@ -1231,3 +1231,117 @@ img::-moz-selection {
 .no-scroll {
   overflow-y: hidden;
 }
+/* search-page end */
+
+/* friends link start */
+.links {
+  margin: 0 0 30px;
+}
+
+.links ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: inline-block
+}
+
+.links ul li {
+  width: 32%;
+  float: left;
+  border: 1px solid #ECECEC;
+  padding: 10px;
+  margin: 4px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-radius: 10px;
+}
+
+.links ul li img {
+  float: right;
+  /*box-shadow: inset 0 0 2px #949494;*/
+  opacity: 1;
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -o-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  margin-top: 5px;
+  width: 65px;
+  height: 65px;
+  padding: 5px;
+  border-radius: 100%
+}
+
+.links ul li:hover img {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg)
+}
+
+.link-item a:hover {
+  /* 覆盖已有样式 */
+  text-decoration: none
+}
+
+span.sitename {
+  color: #0085a1;
+  padding-bottom: 10px;
+  display: block;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.linkdes {
+  color: #949494;
+  font-size: 13px;
+  padding: 10px 0;
+  border-top: 1px dashed #ddd;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 25px;
+  -webkit-transition: all .5s;
+  transition: all .5s
+}
+
+.links ul li:before {
+  content: "";
+  background-color: #C0D9D9;
+  -webkit-transform: skew(45deg, 0);
+  transform: skew(45deg, 0);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -60px;
+  z-index: -1;
+  -webkit-transition: all .5s;
+  transition: all .5s
+}
+
+.links ul li:hover {
+  color: #27323A;
+  border: 1px solid #0085a1
+}
+
+.links ul li:hover:before {
+  width: 180%
+}
+
+.links ul li:hover .linkdes {
+  border-top: 1px dashed #fff
+}
+/* friends link end */

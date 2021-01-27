@@ -113,31 +113,41 @@ service-worker: true
 
 # Links
 links: [
-    {
-        title: "简书",
-        href: "https://www.jianshu.com/"
-    },
-    {
-        title: "知乎",
-        href: "https://www.zhihu.com/"
-    },
-    {
-        title: "掘金",
-        href: "https://juejin.im/"
-    }
+{
+  title: "简书",
+  href: "https://www.jianshu.com/"
+},
+{
+  title: "知乎",
+  href: "https://www.zhihu.com/"
+},
+{
+  title: "掘金",
+  href: "https://juejin.im/"
+}
 ]
 
 # Friends
-friends: [{title: "变态鹅",
-           href: "https://blog.conoha.vip/"},
-          {title: "樱花庄的白猫",
-           href: "https://2heng.xin/"},
-          {title: "I Am I Networks",
-           href: "https://5ime.cn/about"},
-          {title: "木木木木木",
-           href: "https://immmmm.com/"},
-          {title: "wujiazhen2",
-           href: "https://wujiazhen2.github.io/"},
-          {title: "彭小强的博客",
-           href: "http://tryingpfq.club/"},
+friends: [
+{
+  sitename: "变态鹅",
+  href: "https://blog.conoha.vip/"
+},{
+  sitename: "Mashiro",
+  desc: "樱花庄的白猫",
+  href: "https://2heng.xin/",
+  img: "https://view.moezx.cc/images/2018/03/27/avatar.jpg"
+},{
+  sitename: "I Am I",
+  href: "https://5ime.cn/about/",
+},{
+  sitename: "木木木木木",
+  href: "https://immmmm.com/",
+},{
+  sitename: "wujiazhen2",
+  href: "https://wujiazhen2.github.io/",
+},{
+  sitename: "彭小强的博客",
+  href: "http://tryingpfq.club/",
+},
 ]

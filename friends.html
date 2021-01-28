@@ -12,14 +12,14 @@ header-img: "img/header/friends.jpg"
     <ul class="link-items">
         <li class="link-item">
             <a href="/docs/Awesome/" title="Awesome" rel="friend">
-                <img class="lazyload" src="/img/bilibili/22_1.jpg">
+                <img class="lazy" data-original="/img/bilibili/22_1.jpg">
                 <span class="sitename">Awesome</span>
                 <div class="linkdes">Java程序员秃头区</div>
             </a>
         </li>
         <li class="link-item">
             <a href="/docs/Reading/" title="Reading" rel="friend">
-                <img class="lazyload" src="/img/bilibili/33_3.jpg">
+                <img class="lazy" data-original="/img/bilibili/33_3.jpg">
                 <span class="sitename">Reading</span>
                 <div class="linkdes">读书笔记</div>
             </a>
@@ -35,7 +35,7 @@ header-img: "img/header/friends.jpg"
         {% for friend in site.friends %}
         <li class="link-item">
             <a href="{{friend.href}}" title="{{friend.sitename}}" target="_blank" rel="friend">
-                <img class="lazyload" src="{% if friend.img %}{{friend.img}}{% else %}/img/bilibili/22_2.jpg{% endif %}">
+                <img class="lazy" data-original="{% if friend.img %}{{friend.img}}{% else %}/img/bilibili/22_2.jpg{% endif %}">
                 <span class="sitename">{{friend.sitename}}</span>
                 <div class="linkdes">{% if friend.desc %}{{friend.desc}}{% else %}"这家伙好懒╮(╯▽╰)╭" {% endif %}</div>
             </a>

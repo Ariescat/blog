@@ -1,0 +1,77 @@
+# Friends
+[{
+   title:  "吐血 整理",
+   desc:   "在下的一些整理和记录，见笑了",
+   value: [
+   {
+     sitename: "Awesome",
+     desc:     "Java程序员秃头区",
+     link:     "/docs/Awesome/",
+     avatar:   "/img/bilibili/22_1.jpg",
+   },{
+     sitename: "Reading",
+     desc:     "读书笔记",
+     link:     "/docs/Reading/",
+     avatar:   "/img/bilibili/33_3.jpg",
+   }]
+ },
+ {
+   title:  "牛逼的 大佬 们",
+   desc:   "大佬让我膜拜",
+   value: [
+   {
+     sitename: "变态鹅",
+     desc:     "喜欢萌妹の (的) 变态鹅",
+     link:     "https://blog.conoha.vip/",
+     avatar:   "https://fdn.geekzu.org/avatar/e6518256a7b49e678393e34186aa7e13?s=64&r=X&d=",
+   },{
+     sitename: "Mashiro",
+     desc:     "樱花庄的白猫",
+     link:     "https://2heng.xin/",
+     avatar:   "https://s3-hk.2heng.xin/view/2018/03/27/avatar.th.jpg",
+   },{
+     sitename: "蝉时雨",
+     desc:     "蝉鸣如雨，花宵道中",
+     link:     "https://chanshiyu.com/",
+     avatar:   "https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/avatar.jpg",
+   },{
+     sitename: "I Am I",
+     desc:     "永远相信美好的事情即将发生",
+     link:     "https://5ime.cn/about/",
+     avatar:   "https://cdn.jsdelivr.net/gh/5ime/img/avatar.jpg",
+   },{
+     sitename: "木木木木木",
+     link:     "https://immmmm.com/",
+     avatar:   "https://gravatar.loli.net/avatar/ba83fa02fc4b2ba621514941307e21be",
+   },{
+     sitename: "大大的小蜗牛",
+     desc:     "A blog about Charles ‘eallion’ Chin",
+     link:     "https://eallion.com//",
+   },{
+     sitename: "黑石博客",
+     desc:     "人生在勤，不索何获。",
+     link:     "https://www.heson10.com/",
+     avatar:   "https://cdn.jsdelivr.net/gh/heson525/pic@master/pic/avatar03.png",
+   },{
+     sitename: "卓越科技的Blog",
+     desc:     "Remarkable life,for science and technology.",
+     link:     "https://zykj.js.org/",
+     avatar:   "https://cdn.jsdelivr.net/gh/zykjofficial/zykjofficial.github.io@master/img/avatar.png",
+   }]
+ },
+ {
+   title:  "小伙伴 们",
+   desc:   "一起共事成长的小伙伴们",
+   value: [
+   {
+     sitename: "wujiazhen2",
+     link:     "https://wujiazhen2.github.io/",
+   },
+   {
+     sitename: "彭小强的博客",
+     desc:     "无人孤岛，一书一世界",
+     link:     "http://tryingpfq.club/",
+     avatar:   "http://tryingpfq.club/img/about-BY-gentle.jpg",
+   }]
+ }
+]

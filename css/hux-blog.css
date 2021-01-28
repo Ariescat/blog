@@ -1235,7 +1235,7 @@ img::-moz-selection {
 
 /* friends link start */
 .links {
-  margin: 0 0 30px;
+  margin: 5px 0 30px;
 }
 .links ul {
   margin: 0;

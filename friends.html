@@ -7,43 +7,27 @@ header-img: "img/header/friends.jpg"
 
 <p><strong>欢迎交换友链 ꉂ(ˊᗜˋ)</strong></p>
 
-<h5>吐血 整理</h5>
-<div class="links">
-    <ul class="link-items">
-        <li class="link-item">
-            <a href="/docs/Awesome/" title="Awesome" rel="friend">
-                <img class="lazy" data-original="/img/bilibili/22_1.jpg">
-                <span class="sitename">Awesome</span>
-                <div class="linkdes">Java程序员秃头区</div>
-            </a>
-        </li>
-        <li class="link-item">
-            <a href="/docs/Reading/" title="Reading" rel="friend">
-                <img class="lazy" data-original="/img/bilibili/33_3.jpg">
-                <span class="sitename">Reading</span>
-                <div class="linkdes">读书笔记</div>
-            </a>
-        </li>
-    </ul>
-</div>
+<p>以下排名不分先后</p>
 
-<!-- Friends Blog -->
-{% if site.links %}
-<h5>小伙伴 们</h5>
+{% for v in site.friends %}
+<h5>{{ v.title }}</h5>
+<span style="font-size: 14px">{{ v.desc }}</span>
 <div class="links">
     <ul class="link-items">
-        {% for friend in site.friends %}
+        {% for friend in v.value %}
         <li class="link-item">
-            <a href="{{friend.href}}" title="{{friend.sitename}}" target="_blank" rel="friend">
-                <img class="lazy" data-original="{% if friend.img %}{{friend.img}}{% else %}/img/bilibili/22_2.jpg{% endif %}">
-                <span class="sitename">{{friend.sitename}}</span>
-                <div class="linkdes">{% if friend.desc %}{{friend.desc}}{% else %}"这家伙好懒╮(╯▽╰)╭" {% endif %}</div>
+            <a href="{{ friend.link }}" title="{{ friend.sitename }}" target="_blank" rel="friend">
+                <img class="lazy"
+                     data-original="{% if friend.avatar %}{{ friend.avatar }}{% else %}/img/bilibili/22_2.jpg{% endif %}">
+                <span class="sitename">{{ friend.sitename }}</span>
+                <div class="linkdes">{% if friend.desc %}{{ friend.desc }}{% else %}"这家伙好懒╮(╯▽╰)╭" {% endif %}</div>
             </a>
         </li>
         {% endfor %}
     </ul>
 </div>
-{% endif %}
+{% endfor %}
+
 
 <h5>关于 友链</h5>
 <p>请留言告诉我你的：</br>

@@ -43,9 +43,8 @@
 {% endif %}
 
 {% if site.valine.enable %}
-<!-- Valine评论start  -->
-<!-- 引入Valine评论插件 https://valine.js.org/ -->
-<!-- 已改为head页面引入，pjax的跳转若之前的页面没引入过valine.js，会处理不了下面的new Valine -->
+<!-- Valine评论start 引入Valine评论插件 https://valine.js.org/ -->
+<!-- 兼容pjax，已改为head页面引入，pjax的跳转若之前的页面没引入过valine.js，会处理不了下面的new Valine -->
 <!--<script src='/js/valine.min.js'></script>-->
 <div id="vcomments" style="margin-top: 30px;"></div>
 <script>

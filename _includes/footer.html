@@ -228,7 +228,7 @@
 {% if page.catalog %}
 <script type="text/javascript">
     function generateCatalog (selector) {
-        // 先清理，不然pjax的返回，前进会造成重复追加
+        // 兼容pjax，先清理，不然pjax的返回，前进会造成重复追加
         $(selector).empty();
         var P = $('div.post-container'),a,n,t,l,i,c;
         a = P.find('h1,h2,h3,h4,h5,h6');
@@ -299,6 +299,40 @@
             $a.setAttribute('href', value.src)
             $a.setAttribute('data-caption', value.alt)
             $(this).wrap($a)
+        });
+    });
+</script>
+
+
+<!-- search -->
+<script>
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        // 兼容pjax 刷新时清空上一次的值
+        $searchInput.val('')
+        $('#search-results').empty()
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure
+                });
+                $searchInput.focus();
+            }
         });
     });
 </script>

@@ -57,8 +57,8 @@
         path: pathname,
         recordIP: '{{site.valine.recordIP}}',
         enableQQ: '{{site.valine.enableQQ}}',
-        emojiCDN: myConfig.Valine.emojiCDN,
-        emojiMaps: myConfig.Valine.emojiMaps
+        emojiCDN: __Ariescat_Config__.Valine.emojiCDN,
+        emojiMaps: __Ariescat_Config__.Valine.emojiMaps
     });
     $(document).on('ready pjax:beforeReplace', function (event) {
         valine.setPath(pathname);

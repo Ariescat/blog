@@ -1,4 +1,4 @@
-const myConfig = {
+const __Ariescat_Config__ = {
     L2Dwidget: {
         // 小帅哥： https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json
         // 萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json

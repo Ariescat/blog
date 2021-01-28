@@ -176,7 +176,7 @@
             $('#tag_cloud a').tagcloud();
         });
         async('{{ "/js/archive.js" | prepend: site.baseurl }}', function () {
-
+            // 重新加载archive.js，计算归档和页签
         });
     }
 </script>

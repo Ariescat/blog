@@ -22,4 +22,9 @@ permalink: /404.html
 
 <script>
 	document.body.classList.add('page-fullscreen');
+
+	/* 兼容pjax */
+	$('.container-fluid a').on('pjax:clicked', function () {
+		document.body.classList.remove('page-fullscreen')
+	});
 </script>

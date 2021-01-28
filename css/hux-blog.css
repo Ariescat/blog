@@ -1354,3 +1354,43 @@ span.sitename {
   }
 }
 /* friends link end */
+
+/* 背景图 and 滚动条样式 start */
+body::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .15;
+  position: fixed;
+  background: center/cover no-repeat;
+  background-image: url(/img/bg-leimu.jpg);
+}
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : 9px;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius   : 10px;
+  background-color: skyblue;
+  background-image: -webkit-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0.2) 75%,
+          transparent 75%,
+          transparent
+  );
+}
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background   : #ededed;
+  border-radius: 10px;
+}
+/* 背景图 and 滚动条样式 end */

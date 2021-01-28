@@ -159,6 +159,11 @@ friends: [
     link:     "https://2heng.xin/",
     avatar:   "https://s3-hk.2heng.xin/view/2018/03/27/avatar.th.jpg",
   },{
+    sitename: "蝉时雨",
+    desc:     "蝉鸣如雨，花宵道中",
+    link:     "https://chanshiyu.com/",
+    avatar:   "https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/avatar.jpg",
+  },{
     sitename: "I Am I",
     desc:     "永远相信美好的事情即将发生",
     link:     "https://5ime.cn/about/",
@@ -167,6 +172,10 @@ friends: [
     sitename: "木木木木木",
     link:     "https://immmmm.com/",
     avatar:   "https://gravatar.loli.net/avatar/ba83fa02fc4b2ba621514941307e21be",
+  },{
+    sitename: "大大的小蜗牛",
+    desc:     "A blog about Charles ‘eallion’ Chin",
+    link:     "https://eallion.com//",
   },{
     sitename: "黑石博客",
     desc:     "人生在勤，不索何获。",
@@ -177,10 +186,6 @@ friends: [
     desc:     "Remarkable life,for science and technology.",
     link:     "https://zykj.js.org/",
     avatar:   "https://cdn.jsdelivr.net/gh/zykjofficial/zykjofficial.github.io@master/img/avatar.png",
-  },{
-    sitename: "大大的小蜗牛",
-    desc:     "A blog about Charles ‘eallion’ Chin",
-    link:     "https://eallion.com//",
   }]
 },{
   title:  "小伙伴 们",

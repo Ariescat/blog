@@ -7,7 +7,7 @@ const __Ariescat_Config__ = {
         // 初音：https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json
         // 上边的不同链接显示的是不同的小人
         // from https://github.com/xiazeyu/live2d-widget-models
-        jsonPath: "/live2d/haruto/haruto.model.json"
+        jsonPath: "/live2d/koharu/koharu.model.json"
     },
     APlayer: {
         audioSrc: [{

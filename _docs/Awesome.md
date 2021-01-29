@@ -455,22 +455,23 @@ catalog: true
   - `shutdown()`, `shutdownNow()`和`awaitTermination()`
 
     注意，一旦线程池有任务开始跑，就算任务都跑完了，也会等待`keepAliveTime`时候后才会停止。一般测试小demo的时候发现程序一直得不到结束，原因基本是这个。
-
-  ```java
+  
+    ```java
     public static void main(String[] args) throws InterruptedException {
-  	ExecutorService executor = Executors.newCachedThreadPool();
-    	executor.execute(() -> System.err.println("executor"));
-  	// TimeUnit.SECONDS.sleep(5L);
-    	// executor.shutdown();
-    	System.err.println("finish"); // 两个打印都输出后，程序还要等待 60s 才会结束！！
+        ExecutorService executor = Executors.newCachedThreadPool();
+        executor.execute(() -> System.err.println("executor"));
+        // TimeUnit.SECONDS.sleep(5L);
+        // executor.shutdown();
+        System.err.println("finish"); // 两个打印都输出后，程序还要等待 60s 才会结束！！
     }
-  ```
-
+    ```
+  
     源码分析：
-
+  
     `java.util.concurrent.ThreadPoolExecutor#runWorker`这里会一直调用`task = getTask()`，`getTask`里会调用`workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS)`，因此没任务后它也会阻塞`keepAliveTime`时间。
-
+  
     分析一下`shutdown()`，它里面调用了`interruptIdleWorkers()`，它会打断上述的`wait keepAliveTime`的状态，抛出中断异常，而`getTask()`会捕获这个异常，从而**打破阻塞状态**。
+  
 
 #### 线程安全问题
 
@@ -696,9 +697,8 @@ catalog: true
     //下面的方法和上面等价的
     Consumer<String> methodParam = AcceptMethod::printValur; //方法参数
     al.forEach(x -> methodParam.accept(x));//方法执行accept
-    
     ```
-
+  
 - JVM
 
   - 元空间（Metaspace）
@@ -877,7 +877,6 @@ balabala...
 
     ```java
     CacheBuilder.newBuilder().softValues().build()
-    
     ```
 
     当然 softValues()可以替换成weakKeys() / weakValues() ...

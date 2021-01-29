@@ -6,7 +6,7 @@ date:       2021-01-19
 author:     Ariescat
 header-img: img/pixabay/lmountains-1761292_1280.jpg
 catalog:    true
-keyword:    Valine
+keyword:    aplayer, pajx
 tags:
     - Blog
     - 生活
@@ -84,10 +84,10 @@ pajx又是啥？别急，听在下说说新的麻烦：
 <body>
     ...
     <div id="pageContent">
-        {% include content.html %}
+        <!--include content.html-->
     </div>
     <div id="aplayerContent">
-        {% include aplayer.html %}
+        <!--include aplayer.html-->
     </div>
     ...
 </body>

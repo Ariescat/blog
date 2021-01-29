@@ -14,7 +14,7 @@ tags:
 
 
 
-原文来自个人小站：[aplayer加持pajx，音乐无间断](https://ariescat.top/2021/01/19/aplayer%E5%8A%A0%E6%8C%81pajx-%E9%9F%B3%E4%B9%90%E6%97%A0%E9%97%B4%E6%96%AD/)，转载请备注
+原文来自个人小站：[aplayer加持pajx，音乐无间断](https://ariescat.top/2021/01/25/aplayer%E5%8A%A0%E6%8C%81pajx-%E9%9F%B3%E4%B9%90%E6%97%A0%E9%97%B4%E6%96%AD/)，转载请备注
 
 
 
@@ -30,11 +30,11 @@ tags:
 
 ### APlayer播放器
 
-[官方](https://aplayer.js.org/) 对它的介绍：
+官方对它的介绍：
 
-🍭 <u>Wow, such a beautiful HTML5 music player</u>
+🍭 [Wow, such a beautiful HTML5 music player](https://aplayer.js.org/)
 
-确实挺好看的，支持各种样式，本破小站只要有个简单的左下角的 “吸底模式” 就好，代码引用也简单，保姆式文档上就贴了：
+确实挺好看的，支持各种样式，本破小站只要有个简单的左下角 “吸底模式” 就好，代码引用也简单，保姆式文档上就贴了：
 
 首先，div容器，样式和核心jio本（文档有给出 jsdelivr 的 CDN 链接）
 
@@ -59,7 +59,7 @@ const ap = new APlayer({
 });
 ```
 
-好了，加上MP3的外链，愉快的听歌吧~🎵🎶（别说你获取不到MP3外链，那就赶紧去拜托谷哥度娘去吧）
+好了，加上MP3的外链，愉快的听歌吧~~🎵🎶（别说你获取不到MP3外链，那就赶紧去拜托谷哥度娘吧）
 
 ![aplayer2](https://raw.ariescat.top/cf1bb121ff8bb4033fa1.png/aplayer2.png)
 
@@ -154,9 +154,9 @@ $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'}
    ```js
    let valine = new Valine({
    	el: '#vcomments',
-   	appId: '{{site.valine.appId}}',
-   	appKey: '{{site.valine.appKey}}',
-   	path: window.location.pathname, // 这里！！必要显式的指定为window.location.pathname
+   	appId: 'your appId',
+   	appKey: 'your appKey',
+   	path: window.location.pathname, // 这里!!!必要显式的指定为window.location.pathname
    });
    ```
 

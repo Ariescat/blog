@@ -89,30 +89,45 @@ Pjax 又是啥？别急，听在下说说新的麻烦：
 
 转念细想，其实按上面的教程，是在每个 html 页面上都加上了 APlayer 的加载代码，页面刷新的时候，上个页面自然的就被替换成了新的页面，APlayer 就相当于重新加载了一次。所以，讲道理，这段代码应该只用加载一次，并且不能随着网页跳转而改变，就像被我埋没多年的 QQ 空间那样（每次翻看太多黑历史了，但音乐播放器是优秀的）。
 
-网上有人说可以用框架做，就是一个框架中嵌入 APlayer，另一个用于页面跳转；也有人说用 Pjax，它可以做到无刷新 ajax 加载。考虑再三（也就几秒钟），肯定抛弃前者这种过时的方法，积极拥抱 jQuery-Pjax。
+网上有人说可以用框架做，就是一个框架中嵌入 APlayer，另一个用于页面跳转；也有人说用 Pjax，它可以做到无刷新 ajax 加载。考虑再三（也就几秒钟），肯定抛弃前者这种过时的方法，积极拥抱 [jQuery-Pjax](http://bsify.admui.com/jquery-pjax/) 。
 
-[jQuery-Pjax](http://bsify.admui.com/jquery-pjax/) ，是一个 jQuery 插件，它的主要技术其实是 `ajax` 和 `pushState` ，工作原理*<u>是通过 ajax 从服务器端获取 HTML ，在页面中用获取到的 HTML 替换指定容器元素中的内容。然后使用 pushState 技术更新浏览器地址栏中的当前地址</u>*。
+> pjax = pushState + ajax 的缩写，它通过 ajax 和 pushState 技术提供了极速的（无刷新 ajax 加载）浏览体验，并且保持了真实的地址、网页标题，浏览器的后退（前进）按钮也可以正常使用。pjax 的工作原理是通过 ajax 从服务器端获取 HTML，在页面中用获取到的 HTML 替换指定容器元素中的内容。然后使用 pushState 技术更新浏览器地址栏中的当前地址。
+>
+> 以下两点原因决定了 pjax 会有更快的浏览体验：
+>
+> - 不存在页面资源（js/css）的重复加载和应用；
+> - 如果服务器端配置了 pjax，它可以只渲染页面局部内容，从而避免服务器渲染完整布局的额外开销。
 
-下面直接贴上我的用法吧：
+下面介绍下常用操作：
 
-```html
-<body>
-    ...
-    <div id="pageContent">
-        <!--include content.html-->
-    </div>
-    <div id="aplayerContent">
-        <!--include aplayer.html-->
-    </div>
-    ...
-</body>
-```
+1. 引入 jQuery-Pjax 脚本
 
-`#pageContent` 里面是本破小站的主要容器，而 `#aplayerContent` 里面就是 Aplayer 的核心内容了，接下来就是 `pjax` 的使用方法：
+   ```html
+   <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+   ```
 
-```javascript
-$(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
-```
+2. 在 HTML 中准备替换的内容用 div 包裹起来，id自定义，类似如下
+
+   ```html
+   <body>
+       ...
+       <div id="pageContent">
+           <!--include content.html-->
+       </div>
+       <div id="aplayerContent">
+           <!--include aplayer.html-->
+       </div>
+       ...
+   </body>
+   ```
+
+   `#pageContent` 里面是本破小站的主要容器，而 `#aplayerContent` 里面就是 Aplayer 的核心内容了
+
+3. 接管网站所有 a 标签跳转，注意我们这里不需要后台的话，记得一定要添加 fragment 指定为 pjax 容器。
+
+   ```js
+   $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
+   ```
 
 通过这种方式可以让页面中所有的链接都实现了 Pjax 加载，并指定 `#pageContent` 作为容器元素。如此，页内不管怎么跳转都只是刷新了 `#pageContent` 容器，而不会影响到 Aplayer 的音乐播放啦。
 

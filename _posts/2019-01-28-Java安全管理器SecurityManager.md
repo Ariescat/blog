@@ -1,10 +1,11 @@
 ---
 layout:     post
 title:      Java安全管理器SecurityManager
-subtitle:   "\"在运行阶段检查需要保护的资源的访问权限及其它规定的操作权限，保护系统免受恶意操作攻击\""
+subtitle:   "\"程序实施安全策略的类\""
 date:       2019-01-28
 author:     Ariescat
-header-img: img/post-bg-kuaidi.jpg
+header-img: img/cover/166761.jpg
+header-mask: 0.2
 catalog: true
 tags:
     - Java
@@ -13,9 +14,9 @@ tags:
 ## 前言
 大家在阅读源码（特别是类库）的时候，是不是会发现这样的代码，然后在想这个是做什么的：
 ```java
-SecurityManager security = System.getSecurityManager();
-if (security != null) {
-	security.checkRead(path);
+SecurityManager sm = System.getSecurityManager();
+if (sm != null) {
+    security.checkRead(path);
 }
 ```
 ## Java安全

@@ -4,7 +4,8 @@ title:      Thread中stop(),suspend(),resume()为什么不安全
 subtitle:   "\"都说这些api不安全，可知道为什么不安全吗\""
 date:       2019-02-16
 author:     Ariescat
-header-img: img/header-coffee2.jpg
+header-img: img/cover/166743.jpg
+header-mask: 0.1
 catalog: true
 tags:
     - Java

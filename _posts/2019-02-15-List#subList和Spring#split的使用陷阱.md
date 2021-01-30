@@ -4,7 +4,8 @@ title:      List#subList和Spring#split的使用陷阱
 subtitle:   "\"使用不当会引起内存泄漏！！\""
 date:       2019-02-15
 author:     Ariescat
-header-img: img/home-bg-o.jpg
+header-img: img/pixabay/sunset-4499023_1280.jpg
+header-mask: 0.4
 catalog: true
 tags:
     - Java

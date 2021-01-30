@@ -4,7 +4,7 @@ title:      happen-before原则
 subtitle:   "\"你们真的了解过happen-before原则吗?\""
 date:       2021-01-14
 author:     Ariescat
-header-img: img/cover/166803.jpg
+header-img: img/cover/166763.jpg
 header-mask: 0.3
 catalog:    true
 keyword:    Java,volatile,happen-before

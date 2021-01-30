@@ -19,17 +19,15 @@ layout: default
 	}
 
 	{% if page.header-mask %}
-	header.intro-header .header-mask{
+	/* header遮罩 */
+	.header-shade {
 		width: 100%;
-		height: 100%;
-		position: absolute;
-		background: rgba(0,0,0, {{ page.header-mask }});
+		background: rgba(0, 0, 0, {{ page.header-mask }});
 	}
 	{% endif %}
 </style>
 <header class="intro-header" >
-	<div class="header-mask"></div>
-	<div class="container">
+	<div class="container header-shade">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<div class="post-heading">

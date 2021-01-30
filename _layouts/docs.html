@@ -26,35 +26,37 @@ layout: default
 	}
 	{% endif %}
 </style>
-<header class="intro-header" >
-	<div class="container header-shade">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<div class="post-heading">
-					<div class="tags">
-						{% for tag in page.tags %}
-						<a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
-						{% endfor %}
-					</div>
-					<h1>{{ page.title }}</h1>
-					{% comment %}
-						always create a h2 for keeping the margin , Hux
-					{% endcomment %}
-					{% comment %} if page.subtitle {% endcomment %}
-					<h2 class="subheading">{{ page.subtitle }}</h2>
-					{% comment %} endif {% endcomment %}
-					<span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} from {{ page.date | date: "%B %-d, %Y" }}</span>
-				</div>
-			</div>
-		</div>
-	</div>
+<header class="intro-header">
+    <div class="header-shade">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <div class="tags">
+                            {% for tag in page.tags %}
+                            <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                        <h1>{{ page.title }}</h1>
+                        {% comment %}
+                        always create a h2 for keeping the margin , Hux
+                        {% endcomment %}
+                        {% comment %} if page.subtitle {% endcomment %}
+                        <h2 class="subheading">{{ page.subtitle }}</h2>
+                        {% comment %} endif {% endcomment %}
+                        <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} from {{ page.date | date: "%B %-d, %Y" }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
 <!-- Post Content -->
 <article>
 	<div class="container">
 		<div class="row">
-		
+
 			<!-- Side Catalog Container -->
 			{% if page.catalog %}
 			<div class="
@@ -71,7 +73,7 @@ layout: default
 				</div>
 			</div>
 			{% endif %}
-		
+
 			<!-- Post Container -->
 			<div class="
 				col-lg-8 col-lg-offset-2

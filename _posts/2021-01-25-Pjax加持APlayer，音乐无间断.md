@@ -1,20 +1,19 @@
 ---
 layout:     post
-title:      aplayer加持pajx，音乐无间断
+title:      Pjax加持APlayer，音乐无间断
 subtitle:   "\"一开始我真的只是单纯的想加个音乐播放器...\""
 date:       2021-01-25
 author:     Ariescat
 header-img: img/pixabay/mountains-1761292_1280.jpg
 catalog:    true
-keyword:    aplayer, pajx, 音乐播放器
+keyword:    aplayer, pjax, 音乐播放器
 tags:
     - Blog
     - 生活
 ---
 
 
-
-原文来自个人小站：[aplayer加持pajx，音乐无间断](https://ariescat.top/2021/01/25/aplayer%E5%8A%A0%E6%8C%81pajx-%E9%9F%B3%E4%B9%90%E6%97%A0%E9%97%B4%E6%96%AD/)，转载请备注
+原文来自个人小站：[aplayer加持pajx，音乐无间断](https://ariescat.top/2021/01/25/Pjax%E5%8A%A0%E6%8C%81APlayer-%E9%9F%B3%E4%B9%90%E6%97%A0%E9%97%B4%E6%96%AD/)，转载请备注
 
 
 

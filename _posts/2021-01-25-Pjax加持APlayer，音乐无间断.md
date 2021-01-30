@@ -13,7 +13,7 @@ tags:
 ---
 
 
-原文来自个人小站：[aplayer加持pajx，音乐无间断](https://ariescat.top/2021/01/25/Pjax%E5%8A%A0%E6%8C%81APlayer-%E9%9F%B3%E4%B9%90%E6%97%A0%E9%97%B4%E6%96%AD/)，转载请备注
+原文来自个人小站：[Pjax加持APlayer，音乐无间断](https://ariescat.top/2021/01/25/Pjax%E5%8A%A0%E6%8C%81APlayer-%E9%9F%B3%E4%B9%90%E6%97%A0%E9%97%B4%E6%96%AD/)，转载请备注
 
 
 

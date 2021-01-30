@@ -7,12 +7,12 @@
      sitename: "Awesome",
      desc:     "Java程序员秃头区",
      link:     "/docs/Awesome/",
-     avatar:   "/img/bilibili/22_1.jpg",
+     avatar:   "/img/bilibili/22.jpeg",
    },{
      sitename: "Reading",
      desc:     "读书笔记",
      link:     "/docs/Reading/",
-     avatar:   "/img/bilibili/33_3.jpg",
+     avatar:   "/img/bilibili/33.jpeg",
    }]
  },
  {

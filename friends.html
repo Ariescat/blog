@@ -30,7 +30,7 @@ header-img: "img/header/friends.jpg"
         <li class="link-item">
             <a href="{{ friend.link }}" title="{{ friend.sitename }}" target="_blank" rel="friend">
                 <img class="lazy"
-                     data-original="{% if friend.avatar %}{{ friend.avatar }}{% else %}/img/bilibili/22_2.jpg{% endif %}">
+                     data-original="{% if friend.avatar %}{{ friend.avatar }}{% else %}/img/bilibili/default.png{% endif %}">
                 <span class="sitename">{{ friend.sitename }}</span>
                 <div class="linkdes">{% if friend.desc %}{{ friend.desc }}{% else %}"这家伙好懒╮(╯▽╰)╭" {% endif %}</div>
             </a>

@@ -4,7 +4,8 @@ title:      Pjax加持APlayer，音乐无间断
 subtitle:   "\"一开始我真的只是单纯的想加个音乐播放器...\""
 date:       2021-01-25
 author:     Ariescat
-header-img: img/pixabay/mountains-1761292_1280.jpg
+header-img: img/cover/158773.png
+header-mask: 0.35
 catalog:    true
 keyword:    aplayer, pjax, 音乐播放器
 tags:

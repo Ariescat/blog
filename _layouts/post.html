@@ -6,8 +6,6 @@ layout: default
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
-<!-- Code highlight -->
-<script>hljs.initHighlightingOnLoad();</script>
 
 <!-- Post Header -->
 <style type="text/css">
@@ -188,3 +186,32 @@ layout: default
     }
 </style>
 {% endif %}
+
+<!-- Code highlight -->
+<link rel="stylesheet" href="/css/darcula.css">
+<style>
+	.highlight {
+		border-style: none;
+		background: none;
+	}
+	.highlight pre {
+		line-height: 1.5;
+	}
+	.highlight pre code {
+		font-size: 14px;
+	}
+	.hljs {
+		border-radius: 8px;
+	}
+</style>
+<script src="/js/highlight.pack.js"></script>
+<script>
+	/* initHighlightingOnLoad 是页面加载事变 pjax触发不到 */
+	hljs.initHighlightingOnLoad()
+	/* fix: https://blog.csdn.net/qq_39574546/article/details/83380819 */
+	$(document).on('pjax:complete', function () {
+		async("/js/highlight.pack.js", function () {
+			hljs.initHighlighting()
+		})
+	});
+</script>

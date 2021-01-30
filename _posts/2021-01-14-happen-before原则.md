@@ -19,7 +19,7 @@ tags:
 
 某个游戏服里需要通过一个`String`类型的账号，构建一个`Player`数据类，但由于`Player`的构建比较复杂，耗时较长，所有通常需要缓存起来，其代码如下：
 
-```Java
+```java
 public class PlayerCache {
     private final static Map<String, Player> playerCache = new HashMap<>();
 

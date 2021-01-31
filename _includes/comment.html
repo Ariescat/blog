@@ -137,3 +137,48 @@
     }
 </style>
 {% endif %}
+
+
+{% if site.waline.enable %}
+<script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" style="margin-top: 30px;"></div>
+<span id="leancloud_visitors_id" class="leancloud_visitors">
+    <em class="post-meta-item-text">当前阅读量 </em>
+    <i class="leancloud-visitors-count"></i>
+</span>
+<script>
+    $('#leancloud_visitors_id').attr('id', location.pathname)
+    new Waline({
+        el: '#waline',
+        path: location.pathname,
+        serverURL: '{{site.waline.serverURL}}',
+        placeholder: '{{site.waline.placeholder}}',
+        avatar: 'monsterid',
+        visitor: true, // 阅读量统计
+        emojiCDN: __Ariescat_Config__.Valine.emojiCDN,
+        emojiMaps: __Ariescat_Config__.Valine.emojiMaps
+    });
+</script>
+<style>
+    /* valine 评论框增加背景图片 */
+    #waline textarea {
+        box-sizing: border-box;
+        background: url("/img/comment_bg.png") 100% 100% no-repeat;
+    }
+    /*设置评论头像旋转*/
+    .v .vcards .vcard .vimg:hover {
+        -webkit-animation: vimg-transform .8s linear;
+        animation: vimg-transform .8s linear;
+    }
+    @-webkit-keyframes vimg-transform {
+        0%      {-webkit-transform:rotate(0deg);}
+        50%     {-webkit-transform:rotate(180deg);}
+        100%    {-webkit-transform:rotate(360deg);}
+    }
+    @keyframes vimg-transform {
+        0%      {transform:rotate(0deg);}
+        50%     {transform:rotate(180deg);}
+        100%    {transform:rotate(360deg);}
+    }
+</style>
+{% endif %}

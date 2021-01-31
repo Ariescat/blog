@@ -45,6 +45,8 @@ LeanCloud
 支持qq头像，昵称
 
 
+### Waline
+
 
 ### APlayer
 
@@ -105,8 +107,8 @@ LeanCloud
 
 
 
-### 腾讯云vps和gitee节点备份
-
+### 部署平台变更
+Github Page -> netlify -> 腾讯云vps -> gitee -> vercel
 
 
 ### 看提交记录继续总结

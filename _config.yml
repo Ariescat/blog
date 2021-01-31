@@ -79,11 +79,16 @@ valine:
   enableQQ: true                #是否启用昵称框自动获取QQ昵称和QQ头像
   recordIP: true                #是否记录评论者IP
 
-
 # Twikoo
 twikoo:
   enable: false
   envId: blog-5gkhnwtme934ae46  # CloudBase的环境id
+
+# Waline
+waline:
+  enable: false
+  serverURL: https://blog-waline-one.vercel.app/
+  placeholder: '你是我一生只会遇见一次的惊喜 ...'
 
 
 # Aplayer

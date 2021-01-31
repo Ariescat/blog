@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Spring的BeanFactoryPostProcessor和BeanPostProcessor区别
+title:      (转载)Spring的BeanFactoryPostProcessor和BeanPostProcessor区别
 subtitle:   "\"别傻傻分不清啦\""
 date:       2019-03-19
 author:     Ariescat
@@ -10,6 +10,12 @@ catalog: true
 tags:
     - Spring
 ---
+
+
+
+转载自：[Spring的BeanFactoryPostProcessor和BeanPostProcessor区别](https://blog.csdn.net/zhanyu1/article/details/83114684)
+
+
 
 BeanFactoryPostProcessor：BeanFactory后置处理器，是对BeanDefinition对象进行修改。（BeanDefinition：存储bean标签的信息，用来生成bean实例）  
 BeanPostProcessor：Bean后置处理器，是对生成的Bean对象进行修改。
@@ -27,7 +33,7 @@ public interface BeanFactoryPostProcessor {
 BeanFactoryPostProcessor接口是针对bean容器的，它的实现类**可以在当前BeanFactory初始化（spring容器加载bean定义文件）后，bean实例化之前修改bean的定义属性**，达到影响之后实例化bean的效果。
 也就是说，Spring允许BeanFactoryPostProcessor在容器实例化任何其它bean之前读取配置元数据，并可以根据需要进行修改，例如可以把bean的scope从singleton改为prototype，也可以把property的值给修改掉。可以同时配置多个BeanFactoryPostProcessor，并通过设置’order’属性来控制各个BeanFactoryPostProcessor的执行次序。
 spring中内置了一些BeanFactoryPostProcessor接口实现类，如下所示：
-![](https://img-blog.csdn.net/20181017173536721?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW55dTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://ariescat.gitee.io/blog-pic/img/post/BeanFactoryPostProcessor.png)
 
 ### 二、BeanPostProcessor
 该方法的源码如下：
@@ -53,7 +59,7 @@ BeanPostProcessor能在spring容器**实例化bean之后，在执行bean的初�
 
 BeanPostProcessor是BeanFactoryPostProcessor**之后**执行的。
 spring中内置了一些BeanPostProcessor接口实现类，如下所示：
-![](https://img-blog.csdn.net/20181017174738376?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW55dTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://ariescat.gitee.io/blog-pic/img/post/BeanPostProcessor.png)
 
 如果自定义了多个的BeanPostProcessor的实现类，通过实现Ordered接口，设置order属性，可以按照顺序执行实现类的方法。
 

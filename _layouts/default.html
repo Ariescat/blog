@@ -64,7 +64,7 @@
 
 <script>
     // pjax无刷新ajax加载
-    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
     // NProgress
     $(document).on('pjax:start', function () {
         NProgress.start();

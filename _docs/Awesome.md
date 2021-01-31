@@ -1162,7 +1162,7 @@ Google Guava 是 Google 公司内部 Java 开发工具库的开源版本。Googl
 
 ##### Json
 
-* [关于Gson的几个坑](https://ariescat.github.io/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/)
+* [关于Gson的几个坑](https://ariescat.top/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/)
 
 
 
@@ -1940,7 +1940,7 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
   - [IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别](https://www.cnblogs.com/aspirant/p/6877350.html)
 
-  - [网络IO中的同步、异步、阻塞和非阻塞](https://ariescat.github.io/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
+  - [网络IO中的同步、异步、阻塞和非阻塞](https://ariescat.top/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/)
 
   - [迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章](https://juejin.im/post/5cff70c0f265da1ba56b14fd)
 

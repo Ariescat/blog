@@ -66,6 +66,6 @@ Jekyll的[安装](https://segmentfault.com/a/1190000010195733)。本地调试环
 
 * qiubaiying 提供的的 [Blog 主题](https://github.com/qiubaiying/qiubaiying.github.io)
 
-—— Ariescat.github.io 后记于 2019.1
+—— Ariescat 后记于 2019.1
 
 

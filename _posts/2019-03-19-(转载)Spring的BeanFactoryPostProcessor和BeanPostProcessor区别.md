@@ -33,7 +33,7 @@ public interface BeanFactoryPostProcessor {
 BeanFactoryPostProcessor接口是针对bean容器的，它的实现类**可以在当前BeanFactory初始化（spring容器加载bean定义文件）后，bean实例化之前修改bean的定义属性**，达到影响之后实例化bean的效果。
 也就是说，Spring允许BeanFactoryPostProcessor在容器实例化任何其它bean之前读取配置元数据，并可以根据需要进行修改，例如可以把bean的scope从singleton改为prototype，也可以把property的值给修改掉。可以同时配置多个BeanFactoryPostProcessor，并通过设置’order’属性来控制各个BeanFactoryPostProcessor的执行次序。
 spring中内置了一些BeanFactoryPostProcessor接口实现类，如下所示：
-![](https://ariescat.gitee.io/blog-pic/img/post/BeanFactoryPostProcessor.png)
+![](/img/post/BeanFactoryPostProcessor.png)
 
 ### 二、BeanPostProcessor
 该方法的源码如下：
@@ -59,7 +59,7 @@ BeanPostProcessor能在spring容器**实例化bean之后，在执行bean的初�
 
 BeanPostProcessor是BeanFactoryPostProcessor**之后**执行的。
 spring中内置了一些BeanPostProcessor接口实现类，如下所示：
-![](https://ariescat.gitee.io/blog-pic/img/post/BeanPostProcessor.png)
+![](/img/post/BeanPostProcessor.png)
 
 如果自定义了多个的BeanPostProcessor的实现类，通过实现Ordered接口，设置order属性，可以按照顺序执行实现类的方法。
 

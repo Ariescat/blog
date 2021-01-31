@@ -24,7 +24,7 @@ tags:
 
 首条记录上就出现了 APlayer 的官方网站，这么简单嘛？！只要有文档，一切都好说嘛。跟着导航找找找，是你了！吸附底边的播放样式：
 
-![aplayer1](https://ariescat.gitee.io/blog-pic/img/post/aplayer1.png)
+![aplayer1](/img/post/aplayer1.png)
 
 *APlayer 可以通过吸底模式固定在页面底部*。  
 
@@ -61,7 +61,7 @@ const ap = new APlayer({
 
 好了，加上MP3的外链，愉快的听歌吧~~🎵🎶（别说你获取不到MP3外链，那就赶紧去拜托谷哥度娘吧）
 
-![aplayer2](https://ariescat.gitee.io/blog-pic/img/post/aplayer2.png)
+![aplayer2](/img/post/aplayer2.png)
 
 <br/>
 

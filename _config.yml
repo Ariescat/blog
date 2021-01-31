@@ -5,8 +5,9 @@ header-img: img/cover/166801.jpg
 email: 1275563227@qq.com
 description: "Every failure is leading towards success."
 keyword: "一只白羊座的傻猫, Blog, Java, Ariescat"
-url: "http://ariescat.top/"                 # your host, for absolute URL
+url: "https://ariescat.top/"                 # your host, for absolute URL
 baseurl: ""                                 # for example, '/blog' if your blog hosted on 'host/blog'
+picurl: "https://ariescat.gitee.io/blog-pic"
 github_repo: "https://github.com/Ariescat/ariescat.github.io/"
 
 # Sidebar settings
@@ -118,13 +119,10 @@ links: [
 {
   title: "简书",
   href: "https://www.jianshu.com/"
-},
-{
+},{
   title: "知乎",
   href: "https://www.zhihu.com/"
-},
-{
+},{
   title: "掘金",
   href: "https://juejin.im/"
-}
-]
+}]

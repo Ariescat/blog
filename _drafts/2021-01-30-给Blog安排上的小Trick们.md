@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      一月Blog的小戏法总结
+title:      给Blog安排上的小Trick们
 subtitle:   "\"荒废了半年的Blog我又折腾了起来\""
 date:       2021-01-30
 author:     Ariescat
@@ -22,11 +22,11 @@ tags:
 
 
 
+一月中又开始折腾了
+
 按时间线整理下：
 
 
-
-### 腾讯云vps和gitee节点备份
 
 
 
@@ -52,23 +52,15 @@ LeanCloud
 
 ### Pjax
 
+伪SPA页面
+
 
 
 ### 相册fancybox
 
 
 
-### 友链
-
-
-
 ### 图片懒加载
-
-
-
-### 搜索
-
-重复问题
 
 
 
@@ -81,7 +73,21 @@ LeanCloud
 
 
 
+### 友链
+
+
+
+### 搜索
+
+重复问题
+
+
+
 ### Code highlight
+
+
+
+### header蒙版
 
 
 
@@ -99,9 +105,18 @@ LeanCloud
 
 
 
+### 腾讯云vps和gitee节点备份
+
+
+
+### 看提交记录继续总结
+
+
+
 ### TODO
 
-- bibi区（说说）
-
+- 首页增加置顶文章
+- bibi（说说）区，目前的技术方向是Artitalk
 - 豆瓣api引入
 - Mastodon
+- Gitee图床和文件存储

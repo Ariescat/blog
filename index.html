@@ -5,46 +5,71 @@ header-mask: 0.2
 ---
 
 <style>
-    hr {
-        margin: 10px 0 10px;
+    .tops-title {
+        margin-top: 20px;
+        color: #808080
     }
-    .tops {
-        margin-bottom: 30px;
-    }
-    .tops ul {
-        margin: 0;
+
+    .tops-content ul {
+        margin: 10px 0 30px;
         list-style: none;
         padding: 0;
         width: 100%;
-        display: inline-block
+        display: inline-block;
     }
-    .tops ul li {
+
+    .tops-content ul li {
         width: 48%;
         height: 150px;
-        float: left;
         border: 1px solid #ECECEC;
         border-radius: 10px;
         margin: 4px;
+        float: left;
         position: relative;
         overflow: hidden;
-        -webkit-transition: all .3s;
-        transition: all .3s;
     }
+
     @media (max-width: 630px) {
-        .tops ul li {
+        .tops-content ul li {
             width: 100% !important;
             margin: 4px 0 4px;
         }
     }
-    .tops .tops-li {
-        background: no-repeat center center;
-        background-color: #808080;
-        background-attachment: scroll;
-        background-size: cover;
-    }
-    .tops .tops-li-font {
+
+    .tops-content .tops-item-img {
         width: 100%;
         height: 100%;
+        -webkit-transition: all .35s ease-in-out;
+        -moz-transition: all .35s ease-in-out;
+        transition: all .35s ease-in-out;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1)
+    }
+
+    .tops-content .tops-item-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .tops-content .tops-item-img:hover img {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2)
+    }
+
+    .tops-content .tops-item-title {
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*bottom: 0;*/
+        /*left: 0;*/
+        /*right: 0;*/
         color: white;
         background: rgba(0, 0, 0, 0.4);
         display: flex;
@@ -52,18 +77,35 @@ header-mask: 0.2
         justify-content: center;
         align-items: center;
     }
+
+    .tops-content .tops-item-title:hover {
+
+    }
+
+    .pager-num {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 15px;
+    }
 </style>
 
-<h5><span class="fa fa-heart"></span> <span class="sr-only"></span> Hot</h5>
-<hr>
-<div class="tops">
+<div class="tops-title visible-md visible-lg">
+    <hr>
+    <h5><span class="fa fa-heart"></span> HOT</h5>
+</div>
+<div class="tops-content visible-md visible-lg">
     <ul>
         {% for post in site.posts %}
         {% if post.hot %}
         <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape }}" rel="friend">
-            <li class="tops-li" style="background-image: url('/{{ post.header-img }}')">
-                <div class="tops-li-font">
-                    <span>{{ post.title | escape }}</span>
+            <li class="tops-item">
+                <div class="tops-item-img">
+                    <img src="/{{ post.header-img }}" class="not-fancybox">
+                </div>
+                <div class="tops-item-title">
+                    <span><strong>{{ post.title | escape }}</strong></span>
                     <span>{{ post.subtitle | escape }}</span>
                 </div>
             </li>
@@ -73,10 +115,10 @@ header-mask: 0.2
     </ul>
 </div>
 
-<h5>
-    <span class="fa fa-envira"></span>&nbsp;当前页 : {{ paginator.page }}&nbsp;&nbsp;&nbsp;&nbsp;总页数 : {{ paginator.total_pages }}
-</h5>
-<hr>
+<div class="tops-title">
+    <hr class="hidden-sm hidden-xs">
+    <h5><span class="fa fa-envira"></span> DISCOVERY</h5>
+</div>
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
@@ -93,11 +135,19 @@ header-mask: 0.2
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        Posted by
+        {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}
+        on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>
 {% endfor %}
+
+<div class="pager-num">
+    <span>
+        <strong>&nbsp;当前页 {{ paginator.page }}&nbsp;&nbsp;/&nbsp;&nbsp;总页数 {{ paginator.total_pages }}</strong>
+    </span>
+</div>
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}

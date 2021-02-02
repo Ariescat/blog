@@ -287,6 +287,9 @@
 <script>
     $(document).ready(function () {
         $('#pageContent #content img').each(function (index, value) {
+            if (value.classList.contains('not-fancybox')) {
+                return;
+            }
             let $a = document.createElement('a')
             $a.setAttribute('data-fancybox', 'gallery')
             /* 兼容img lazyload */

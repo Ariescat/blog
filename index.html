@@ -4,6 +4,79 @@ description: "不管这一天有多难过，记得认真洗脸冲澡"
 header-mask: 0.2
 ---
 
+<style>
+    hr {
+        margin: 10px 0 10px;
+    }
+    .tops {
+        margin-bottom: 30px;
+    }
+    .tops ul {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        display: inline-block
+    }
+    .tops ul li {
+        width: 48%;
+        height: 150px;
+        float: left;
+        border: 1px solid #ECECEC;
+        border-radius: 10px;
+        margin: 4px;
+        position: relative;
+        overflow: hidden;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+    @media (max-width: 630px) {
+        .tops ul li {
+            width: 100% !important;
+            margin: 4px 0 4px;
+        }
+    }
+    .tops .tops-li {
+        background: no-repeat center center;
+        background-color: #808080;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+    .tops .tops-li-font {
+        width: 100%;
+        height: 100%;
+        color: white;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<h5><span class="fa fa-heart"></span> <span class="sr-only"></span> Hot</h5>
+<hr>
+<div class="tops">
+    <ul>
+        {% for post in site.posts %}
+        {% if post.hot %}
+        <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape }}" rel="friend">
+            <li class="tops-li" style="background-image: url('/{{ post.header-img }}')">
+                <div class="tops-li-font">
+                    <span>{{ post.title | escape }}</span>
+                    <span>{{ post.subtitle | escape }}</span>
+                </div>
+            </li>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<h5>
+    <span class="fa fa-envira"></span>&nbsp;当前页 : {{ paginator.page }}&nbsp;&nbsp;&nbsp;&nbsp;总页数 : {{ paginator.total_pages }}
+</h5>
+<hr>
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">

@@ -6,6 +6,7 @@ date:       2021-01-25
 author:     Ariescat
 header-img: img/cover/158773.png
 header-mask: 0.35
+hot:        true
 catalog:    true
 keyword:    aplayer, pjax, 音乐播放器
 tags:

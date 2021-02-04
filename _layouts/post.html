@@ -39,14 +39,6 @@ layout: default
         position: relative;
         background-image: url('{{ site.picurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
-
-    {% if page.header-mask %}
-	/* header遮罩 */
-	.header-shade {
-		width: 100%;
-		background: rgba(0, 0, 0, {{ page.header-mask }});
-	}
-    {% endif %}
 </style>
 <header class="intro-header" >
 	<div class="header-shade">

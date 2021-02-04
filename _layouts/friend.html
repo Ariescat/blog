@@ -6,16 +6,6 @@ layout: default
 <!-- 1. 修改header样式 -->
 <!-- 暂时没用 友链用着post.html -->
 
-{% if page.header-mask %}
-<style>
-    /* header遮罩 */
-    .header-shade {
-        width: 100%;
-    background: rgba(0, 0, 0, {{ page.header-mask }});
-    }
-</style>
-{% endif %}
-
 <!-- Page Header -->
 <header class="intro-header"
         style="background-image: url('{{ site.picurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">

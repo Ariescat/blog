@@ -7,6 +7,16 @@
 
 {% include head.html %}
 
+{% if page.header-mask %}
+<style>
+    /* header遮罩 */
+    .header-shade {
+        width: 100%;
+        background: rgba(0, 0, 0, {{ page.header-mask }});
+    }
+</style>
+{% endif %}
+
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
     <!-- 鼠标特效 -->

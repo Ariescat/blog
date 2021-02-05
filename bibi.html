@@ -29,7 +29,7 @@ header-mask: 0.35
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <!-- 存放说说的容器 -->
             <div id="artitalk_main"></div>
-
+            <hr>
             {% include comment.html %}
         </div>
     </div>
@@ -38,6 +38,28 @@ header-mask: 0.35
 <style>
     #artitalk_main .cbp_tmlabel img {
         max-width: 100%;
+    }
+    /* https://cungudafa.blog.csdn.net/article/details/106224223 */
+    #artitalk_main .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+        background: linear-gradient(-45deg, #AEC5EB 15%, #3A405A 85%);
+        color: white;
+    }
+    #artitalk_main .cbp_tmtimeline > li .cbp_tmlabel {
+        background: linear-gradient(-45deg, #F9DEC9 15%, #AEC5EB 85%);
+        color: white;
+    }
+    #artitalk_main .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+        border-right-color: #3A405A
+    }
+    #artitalk_main .cbp_tmtimeline > li .cbp_tmlabel:after {
+        border-right-color: #AEC5EB
+    }
+    #operare_artitalk, #artitalk_main .at_button {
+        background: #AEC5EB;
+        color: white;
+    }
+    #operare_artitalk, #artitalk_main .at_button:hover {
+        background: #3A405A;
     }
 </style>
 {% if site.artitalk.enable %}

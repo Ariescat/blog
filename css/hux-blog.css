@@ -1282,8 +1282,8 @@ img::-moz-selection {
 .links ul li {
   width: 32%;
   float: left;
-  border: 1px solid #ECECEC;
-  padding: 10px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
   margin: 4px;
   position: relative;
   overflow: hidden;
@@ -1336,7 +1336,7 @@ span.sitename {
   color: #949494;
   font-size: 13px;
   padding: 10px 0;
-  border-top: 1px dashed #ddd;
+  border-top: 1px dashed #ccc;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

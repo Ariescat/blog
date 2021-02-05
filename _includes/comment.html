@@ -72,10 +72,14 @@
 
     .v[data-class=v] .vwrap,
     .v[data-class=v] .vbtn {
-        border-color: #bfbfbf;
+        border-color: #ccc;
     }
-    .v[data-class=v] .vcards > .vcard {
-        border-bottom: 1px dashed #bfbfbf;
+    /*.v[data-class=v] .vcards > .vcard:last-child .vh*/
+    .v[data-class=v] .vcards > .vcard > .vh {
+        border-bottom: 1px solid #e4e4e4;
+    }
+    .v[data-class="v"] .vcards .vcard .vquote {
+        border-left: none;
     }
 
     /*设置评论头像旋转*/

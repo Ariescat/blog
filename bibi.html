@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "BiBi"
-description: "哔哔赖赖"
-header-img: "img/cover/148047.png"
+description: "总要哔哔点啥"
+header-img: "img/cover/128190.jpg"
 header-mask: 0.4
 ---
 
@@ -33,12 +33,18 @@ header-mask: 0.4
     </div>
 </div>
 
+<style>
+    #artitalk_main .cbp_tmlabel img {
+        max-width: 100%;
+    }
+</style>
 <!-- 引用 artitalk -->
-<script type="text/javascript" src="https://unpkg.com/artitalk"></script>
 <script>
-    new Artitalk({
-        appId: 'BN5LLU8iftYxesbiYKyzDQHD-gzGzoHsz',
-        appKey: 'nG7eILlWmUssd4dWW4OzFzKN',
-        serverURL: 'https://bn5llu8i.lc-cn-n1-shared.com',
-    })
+    async('https://unpkg.com/artitalk', function () {
+        new Artitalk({
+            appId: 'BN5LLU8iftYxesbiYKyzDQHD-gzGzoHsz',
+            appKey: 'nG7eILlWmUssd4dWW4OzFzKN',
+            serverURL: 'https://bn5llu8i.lc-cn-n1-shared.com',
+        })
+    });
 </script>

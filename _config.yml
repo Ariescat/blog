@@ -75,7 +75,7 @@ valine:
   enable: true                  #是否开启Valine评论
   appId: 8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz                  #生成的appId
   appKey: QXoMCzb8TFMV0DBzDNXkcvxa                          #生成的appKey
-  placeholder: '来啊，快活啊 | ᴥ•́ )✧  |  支持QQ头像和昵称噢~'    #评论框占位提示符
+  placeholder: '你是我一生只会遇见一次的惊喜 | ᴥ•́ )✧'    #评论框占位提示符
   enableQQ: true                #是否启用昵称框自动获取QQ昵称和QQ头像
   recordIP: true                #是否记录评论者IP
 

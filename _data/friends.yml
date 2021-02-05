@@ -16,6 +16,17 @@
    }]
  },
  {
+   title:  "神奇 的网站",
+   desc:   "神奇的世界",
+   value: [
+   {
+     sitename: "pixiv",
+     desc:     "插图、漫画和小说",
+     link:     "https://www.pixiv.net/",
+     avatar:   "https://s.pximg.net/common/images/apple-touch-icon.png?20200601",
+   }]
+ },
+ {
    title:  "牛逼的 大佬 们",
    desc:   "大佬让我膜拜",
    value: [

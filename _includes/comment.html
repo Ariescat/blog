@@ -43,9 +43,7 @@
 {% endif %}
 
 {% if site.valine.enable %}
-<!-- Valine评论start 引入Valine评论插件 https://valine.js.org/ -->
-<!-- 兼容pjax，已改为head页面引入，pjax的跳转若之前的页面没引入过valine.js，会处理不了下面的new Valine -->
-<!--<script src='/js/valine.min.js'></script>-->
+<!-- 引入Valine评论插件 https://valine.js.org/ -->
 <div id="vcomments" style="margin-top: 30px;"></div>
 <script>
     let pathname = window.location.pathname;
@@ -64,35 +62,6 @@
     $(document).on('ready pjax:beforeReplace', function (event) {
         valine.setPath(pathname);
     });
-    // // https://github.com/mashirozx/Sakura/blob/master/js/sakura-app.js  --> getqqinfo
-    // // https://github.com/LaicZhang/blogPic/blob/eb3b7dcbe1/wp-content/themes/begin/js/qq-info.php  --> $nameurl $logourl
-    // let nick = $('input').filter("[name='nick']");
-    // nick.on('blur', function () {
-    //     let qq = nick.val(),
-    //         $reg = /^[1-9]\d{4,9}$/;
-    //     if ($reg.test(qq)) {
-    //         console.log("qq: " + qq)
-    //         $.ajax({
-    //             type: 'get',
-    //             // url: 'https://r.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=' + qq,
-    //             url: 'https://api.2heng.xin/qqinfo/?type=getqqnickname&qq=' + qq,
-    //             dataType: 'text',
-    //             success: function (data) {
-    //                 console.log("getQQInfo: " + data)
-    //                 if (data.length > 0) {
-    //                     data = data.substring(17, data.length - 1)
-    //                     let jsonstr = $.parseJSON(data)
-    //                     let nickstr = jsonstr[qq][6]
-    //                     nick.val(nickstr)
-    //                     // window.localStorage.setItem(valine.QQCacheKey, nickstr);
-    //                 }
-    //             },
-    //             error: function (xhr, textStatus, errorThrown) {
-    //                 console.error("getQQInfo error, readyState:" + xhr.readyState + ",statusText:" + xhr.statusText + ",textStatus:" + textStatus)
-    //             }
-    //         });
-    //     }
-    // });
 </script>
 <style>
     /* valine 评论框增加背景图片 */
@@ -100,6 +69,15 @@
         box-sizing: border-box;
         background: url("/img/comment_bg.png") 100% 100% no-repeat;
     }
+
+    .v[data-class=v] .vwrap,
+    .v[data-class=v] .vbtn {
+        border-color: #bfbfbf;
+    }
+    .v[data-class=v] .vcards > .vcard {
+        border-bottom: 1px dashed #bfbfbf;
+    }
+
     /*设置评论头像旋转*/
     .v .vcards .vcard .vimg:hover {
         -webkit-animation: vimg-transform .8s linear;
@@ -116,12 +94,10 @@
         100%    {transform:rotate(360deg);}
     }
 </style>
-<!-- Valine end -->
 {% endif %}
 
 
 {% if site.twikoo.enable %}
-<!-- twikoo评论start -->
 <div id="tcomment"></div>
 <script src="https://cdn.jsdelivr.net/npm/twikoo@1.1.3-beta/dist/twikoo.all.min.js"></script>
 <script>

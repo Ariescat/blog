@@ -40,12 +40,13 @@ header-mask: 0.35
         max-width: 100%;
     }
 </style>
-<!-- 引用 artitalk -->
+{% if site.artitalk.enable %}
 <script>
     new Artitalk({
-        appId: '8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz',
-        appKey: 'QXoMCzb8TFMV0DBzDNXkcvxa',
-        serverURL: 'https://api.comment.ariescat.top',
+        appId: '{{site.valine.appId}}',
+        appKey: '{{site.valine.appKey}}',
+        serverURL: '{{site.valine.serverURL}}',
         atComment: 0
     })
 </script>
+{% endif %}

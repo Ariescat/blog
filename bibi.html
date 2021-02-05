@@ -2,8 +2,8 @@
 layout: default
 title: "BiBi"
 description: "总要哔哔点啥"
-header-img: "img/cover/128190.jpg"
-header-mask: 0.4
+header-img: "img/cover/145579.jpg"
+header-mask: 0.35
 ---
 
 <!-- Page Header -->
@@ -29,6 +29,8 @@ header-mask: 0.4
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <!-- 存放说说的容器 -->
             <div id="artitalk_main"></div>
+
+            {% include comment.html %}
         </div>
     </div>
 </div>
@@ -40,12 +42,10 @@ header-mask: 0.4
 </style>
 <!-- 引用 artitalk -->
 <script>
-    async('https://unpkg.com/artitalk', function () {
-        new Artitalk({
-            appId: 'BN5LLU8iftYxesbiYKyzDQHD-gzGzoHsz',
-            appKey: 'nG7eILlWmUssd4dWW4OzFzKN',
-            serverURL: 'https://bn5llu8i.lc-cn-n1-shared.com',
-            atComment: 0
-        })
-    });
+    new Artitalk({
+        appId: '8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz',
+        appKey: 'QXoMCzb8TFMV0DBzDNXkcvxa',
+        serverURL: 'https://api.comment.ariescat.top',
+        atComment: 0
+    })
 </script>

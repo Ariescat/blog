@@ -4,6 +4,29 @@ description: "不管这一天有多难过，记得认真洗脸冲澡"
 header-mask: 0.2
 ---
 
+<style>
+    .post-preview {
+        opacity: 0;
+    }
+    .post-list-show {
+        animation: post-list-show .5s;
+        -webkit-animation: post-list-show .5s;
+        opacity: 1
+    }
+    @keyframes post-list-show {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(80px);
+            transform: translateY(80px)
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            transform: translateY(0)
+        }
+    }
+</style>
+
 <div class="tops-title visible-md visible-lg">
     <hr>
     <h5><span class="fa fa-heart"></span> HOT</h5>
@@ -33,7 +56,7 @@ header-mask: 0.2
     <h5><span class="fa fa-envira"></span> DISCOVERY</h5>
 </div>
 {% for post in paginator.posts %}
-<div class="post-preview">
+<div class="post-preview post-list-thumb{% if forloop.first %} post-list-show{% endif %}">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
             {{ post.title }}
@@ -77,3 +100,44 @@ header-mask: 0.2
     {% endif %}
 </ul>
 {% endif %}
+
+<script>
+    function post_list_show_animation() {
+        if ($(".post-preview").hasClass("post-list-thumb")) {
+            var options = {
+                root: null,
+                threshold: [0.66]
+            }
+            var io = new IntersectionObserver(callback, options);
+            var articles = document.querySelectorAll('.post-list-thumb');
+
+            function callback(entries) {
+                entries.forEach((article) => {
+                    if (!window.IntersectionObserver) {
+                        console.log('!' + article)
+                        article.target.style.willChange = 'auto';
+                        if( article.target.classList.contains("post-list-show") === false){
+                            article.target.classList.add("post-list-show");
+                        }
+                    } else {
+                        console.log('~' + article)
+                        if (article.target.classList.contains("post-list-show")) {
+                            article.target.style.willChange = 'auto';
+                            io.unobserve(article.target)
+                        } else {
+                            if (article.isIntersecting) {
+                                article.target.classList.add("post-list-show");
+                                article.target.style.willChange = 'auto';
+                                io.unobserve(article.target)
+                            }
+                        }
+                    }
+                })
+            }
+            articles.forEach((article) => {
+                io.observe(article)
+            })
+        }
+    }
+    post_list_show_animation();
+</script>

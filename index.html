@@ -13,6 +13,15 @@ header-mask: 0.2
         -webkit-animation: post-list-show .5s;
         opacity: 1
     }
+    @media (max-width: 860px) {
+        .post-preview {
+            opacity: 1;
+        }
+        .post-list-show {
+            animation: none;
+            -webkit-animation: none;
+        }
+    }
     @keyframes post-list-show {
         0% {
             opacity: 0;
@@ -114,13 +123,11 @@ header-mask: 0.2
             function callback(entries) {
                 entries.forEach((article) => {
                     if (!window.IntersectionObserver) {
-                        console.log('!' + article)
                         article.target.style.willChange = 'auto';
                         if( article.target.classList.contains("post-list-show") === false){
                             article.target.classList.add("post-list-show");
                         }
                     } else {
-                        console.log('~' + article)
                         if (article.target.classList.contains("post-list-show")) {
                             article.target.style.willChange = 'auto';
                             io.unobserve(article.target)

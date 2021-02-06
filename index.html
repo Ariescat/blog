@@ -25,8 +25,8 @@ header-mask: 0.2
     @keyframes post-list-show {
         0% {
             opacity: 0;
-            -webkit-transform: translateY(80px);
-            transform: translateY(80px)
+            -webkit-transform: translateY(50px);
+            transform: translateY(50px)
         }
         100% {
             opacity: 1;
@@ -84,8 +84,8 @@ header-mask: 0.2
         {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}
         on {{ post.date | date: "%B %-d, %Y" }}
     </p>
+    <hr>
 </div>
-<hr>
 {% endfor %}
 
 <div class="pager-num">
@@ -115,7 +115,7 @@ header-mask: 0.2
         if ($(".post-preview").hasClass("post-list-thumb")) {
             var options = {
                 root: null,
-                threshold: [0.66]
+                threshold: [0.25]
             }
             var io = new IntersectionObserver(callback, options);
             var articles = document.querySelectorAll('.post-list-thumb');

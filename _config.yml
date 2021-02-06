@@ -13,7 +13,7 @@ github_repo: "blog"
 # Sidebar settings
 sidebar: true                               # whether or not using Sidebar.
 sidebar-about-description: "不管这一天有多难过，记得认真洗脸冲澡..."
-sidebar-avatar: /img/about-BY-gentle.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 

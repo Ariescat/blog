@@ -201,16 +201,12 @@
 {% if site.ba_track_id %}
 <!-- Baidu 统计 -->
 <script>
-    // dynamic User by Ariescat
-    var _baId = '{{ site.ba_track_id }}';
-
-    // Originial
     var _hmt = _hmt || [];
     (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?" + _baId;
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?{{ site.ba_track_id }}";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
     })();
 </script>
 {% endif %}

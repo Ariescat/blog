@@ -105,7 +105,7 @@ artitalk:
 
 # Analytics settings
 # Baidu Analytics
-# ba_track_id: ce850ecbd046e90ec9fce2f9d52bcac5
+ba_track_id: 15a0182bcc909fead8c8f48acb3222d4
 
 # Google Analytics
 # ga_track_id: 'UA-90855596-1'    # Format: UA-xxxxxx-xx

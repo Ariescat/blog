@@ -36,8 +36,30 @@ header-mask: 0.35
 </div>
 
 <style>
+    #artitalk_main {
+        margin-top: 10px;
+    }
     #artitalk_main .cbp_tmlabel img {
         max-width: 100%;
+    }
+    #artitalk_main .cbp_tmtimeline > li .cbp_tmlabel p {
+        margin: 10px 0;
+    }
+    #artitalk_main .cbp_tmtimeline > li .cbp_tmlabel {
+        margin: 0 0 40px 65px;
+    }
+    @media (max-width: 860px) {
+        #artitalk_main .cbp_tmtimeline > li .cbp_tmlabel {
+            transform: none;
+        }
+    }
+    @media (max-width: 630px) {
+        #artitalk_main .shuoshuo_author_img {
+            display: none;
+        }
+        #artitalk_main .cbp_tmtimeline > li .cbp_tmlabel {
+            margin: 0 0 25px 0;
+        }
     }
     /* https://cungudafa.blog.csdn.net/article/details/106224223 */
     #artitalk_main .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {

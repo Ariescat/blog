@@ -1,0 +1,68 @@
+<!--春节挂件-->
+<style>
+    /*春节主题 挂件吊线*/
+    .caishenxianleft {
+        position: absolute;
+        top: 0;
+        left: 16% !important;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenxian {
+        position: absolute;
+        top: 0;
+        right: 20%;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenpic {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        top: 12px;
+        right: -22px;
+        z-index: 9;
+        /* transform-origin: 50% -100px; */
+        animation: swing 3.5s infinite ease-in-out;
+        /* -webkit-transform-origin: 50% -100px; */
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .fudao {
+        width: 38px;
+        height: 38px;
+        top: 18px !important;
+        left: -19px !important;
+    }
+</style>
+
+<div class="caishendeng">
+    <div class="caishenxian">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+<div class="caishendeng">
+    <div class="caishenxianleft">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+
+<script>
+    if ($(window).width() > 630 || (new Date().getMonth()) > 1) {
+        $('.caishendeng').css('display', 'none');
+    } else {
+        $('.caishendeng').css('display', 'block');
+    }
+</script>

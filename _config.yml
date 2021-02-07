@@ -22,10 +22,10 @@ RSS: false
 github_username:    Ariescat
 jianshu_username:   39035eb3096b
 csdn_username:      PingXiaoGai
-#weibo_username:     ariescat
-#zhihu_username:     ariescat
-#facebook_username:  ariescat
-#twitter_username:   ariescat
+#weibo_username:
+#zhihu_username:
+#facebook_username:
+#twitter_username:
 
 
 
@@ -126,14 +126,10 @@ service-worker: true
 
 
 # Links
-links: [
-{
-  title: "简书",
-  href: "https://www.jianshu.com/"
-},{
-  title: "知乎",
-  href: "https://www.zhihu.com/"
-},{
-  title: "掘金",
-  href: "https://juejin.im/"
-}]
+links:
+  - title: "简书"
+    href: "https://www.jianshu.com/"
+  - title: "知乎"
+    href: "https://www.zhihu.com/"
+  - title: "掘金"
+    href: "https://juejin.im/"

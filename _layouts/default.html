@@ -30,6 +30,7 @@
         {% include footer.html %}
     </div>
 
+    {% include spring.html %}
     {% include search.html %}
 
     <div id="aplayerContent">
@@ -85,4 +86,12 @@
     });
 </script>
 
+<!-- 樱花特效 -->
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+        document.write('<script type="text/javascript" async src="/js/sakura.js"><\/script>');
+    }
+</script>
 </html>

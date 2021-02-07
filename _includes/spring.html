@@ -1,34 +1,21 @@
 <!--春节挂件-->
 <style>
-    @media only screen and (min-width: 1124px) {
-        .nav-menu {
-            padding-right: 96px;
-        }
-    }
     @media only screen and (max-width: 760px) {
         .deng-box, .deng-box1 {
             width: 40%;
-        }
-        .right {
-            float: left!important;
-        }
-    }
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        .right {
-            float: left!important;
         }
     }
     .deng-box {
         position: fixed;
         top: -40px;
-        left: 130px;
+        left: 7.5%;
         z-index: 999;
     }
     .deng-box1 {
         position: fixed;
         top: -30px;
-        left: 180px;
-        z-index: 998;
+        left: 10%;
+        z-index: 999;
     }
     .deng-box1 .deng {
         position: relative;
@@ -136,13 +123,13 @@
         background: #ffa500;
         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
     }
-    @font-face {
+    /*@font-face {
         font-family: "华文行楷";
         src: url('/fonts/华文行楷.ttf');
-    }
+    }*/
     .deng-t {
-        font-family: 华文行楷;
-        font-size: 26px;
+        /*font-family: 华文行楷;*/
+        font-size: 24px;
         color: #dc8f03;
         font-weight: bold;
         line-height: 44px;
@@ -207,3 +194,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    if ($(window).width() < 630 || (new Date().getMonth()) > 1) {
+        $('#chunjie').css('display', 'none');
+    } else {
+        $('#chunjie').css('display', 'block');
+    }
+</script>

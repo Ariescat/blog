@@ -30,14 +30,6 @@
       link:     "https://lab.ariescat.top/lmbtfy/"
       avatar:   "https://lab.ariescat.top/lmbtfy/img/baidu.jfif"
 
-- title:  "神奇 的网站"
-  desc:   "神奇的世界"
-  value:
-    - sitename: "pixiv"
-      desc:     "插图、漫画和小说"
-      link:     "https://www.pixiv.net/"
-      avatar:   "https://s.pximg.net/common/images/apple-touch-icon.png?20200601"
-
 - title:  "牛逼的 大佬 们"
   desc:   "大佬让我膜拜"
   value:
@@ -63,11 +55,12 @@
 
     - sitename: "木木木木木"
       link:     "https://immmmm.com/"
-      avatar:   "https://gravatar.loli.net/avatar/ba83fa02fc4b2ba621514941307e21be"
+      avatar:   "https://immmmm.com/favicon.ico"
 
     - sitename: "大大的小蜗牛"
       desc:     "A blog about Charles ‘eallion’ Chin"
-      link:     "https://eallion.com//"
+      link:     "https://eallion.com/"
+      avatar:   "https://sdn.geekzu.org/avatar/171e4c30959e8c077a6c58b958624b31?d=mp"
 
     - sitename: "黑石博客"
       desc:     "人生在勤，不索何获。"
@@ -83,9 +76,37 @@
   desc:   "一起共事成长的小伙伴们"
   value:
     - sitename: "wujiazhen2"
+      desc:     "竟然是校友呢"
       link:     "https://wujiazhen2.github.io/"
+      avatar:   "https://wujiazhen2.github.io/images/apple-touch-icon-next.png?v=5.1.4"
 
     - sitename: "彭小强的博客"
       desc:     "无人孤岛，一书一世界"
       link:     "http://tryingpfq.club/"
       avatar:   "http://tryingpfq.club/img/about-BY-gentle.jpg"
+
+- title:  "神奇 的网站"
+  desc:   "神奇的世界"
+  value:
+    - sitename: "pixiv"
+      desc:     "插图、漫画和小说"
+      link:     "https://www.pixiv.net/"
+      avatar:   "https://s.pximg.net/common/images/apple-touch-icon.png?20200601"
+
+- title:  "特别 的链接"
+  desc:   "半分的热爱与半分的信念"
+  value:
+    - sitename: "阮一峰"
+      desc:     "网络日志"
+      link:     "http://www.ruanyifeng.com/blog/"
+      avatar:   "http://www.ruanyifeng.com/blog/images/person2_s.jpg"
+
+    - sitename: "廖雪峰"
+      desc:     "教程"
+      link:     "https://www.liaoxuefeng.com/"
+      avatar:   "https://tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg"
+
+    - sitename: "美团技术团队"
+      desc:     "一行代码，亿万生活。"
+      link:     "https://tech.meituan.com/"
+      avatar:   "https://7.dusays.com/2021/02/10/53b3d93c28aaf.png"

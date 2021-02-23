@@ -1125,6 +1125,16 @@ balabala...
 
 
 
+### Web
+
+#### 分布式 session 一致性
+
+1. session复制，对web服务器(例如Tomcat)进行搭建集群
+2. session绑定，使用nginx `ip-hash策略`，无论客户端发送多少次请求都被同一个服务器处理
+3. 基于redis存储，spring为我们封装好了spring-session，直接引入依赖即可
+
+
+
 ### 必会框架
 
 #### 工具库
@@ -2300,8 +2310,8 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 ### Redis / NoSQL
 
-> 1. Redis是一种基于键值对(Key-Value)的NoSQL数据库，Redis的Value的基础数据结构有string、list、hash、set、zset；
-> 2. 有**Bitmaps**，**HyperLogLog**等多种高级数据结构和算法
+> 1. Redis是一种基于键值对(Key-Value)的NoSQL数据库，Redis的 **Value** 的基础数据结构有string、list、hash、set、zset；
+> 2. 有 **Bitmaps**，**HyperLogLog** 等多种高级数据结构和算法
 > 3. Redis还提供了键过期，发布订阅，事务，Lua脚本，哨兵，Cluster等功能。
 
 - 主要应用：
@@ -2314,7 +2324,11 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
   2. 客户端与服务器的通信协议
 
-  3. 持久化：使用操作系统的多进程 COW(Copy On Write) 机制来实现快照持久化
+  3. 持久化：
+
+     使用操作系统的多进程 COW(Copy On Write) 机制来实现快照持久化
+
+     bgsave 做全量持久化到 RDB 二进制文件中，aof 做增量持久化，存储的是文本协议数据
 
   4. 管道，事务
 
@@ -2328,17 +2342,24 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
      ![redis1](/img/awesome/redis1.png)
 
-- 集群
-
-  Sentinel，Codis，Cluster
-
 - 拓展
 
-  Stream数据结构，Info指令，分布式锁Redlock算法，过期清除策略，RedLock
+  Stream数据结构，Info指令，分布式锁Redlock算法，RedLock，过期清除策略
 
-  1. redis分布式锁
+  1. 选择hash还是string 存储数据？
+     
+  2. redis分布式锁
+
      1. 单实例中实现分布式锁：setnx（注意删除时最好使用Lua脚本删除，逻辑是先获取key，如果存在并且值是自己设置的就删除此key，否则就跳过）
      2. 多节点redis实现的分布式锁：RedLock
+
+  3. Redis 内存不够时的淘汰策略
+
+     LRU 算法和 LFU 算法，redis 对 LRU 的改进
+
+  4. 缓存穿透解决方案？
+
+     布隆过滤器
 
 - Java的Redis客户端：Jedis，Redisson
 
@@ -2348,6 +2369,10 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
   2. 但Jedis相比于Redisson 更原生一些，更灵活。
 
+- 集群
+
+  Sentinel，Codis，Cluster
+  
 - 源码
 
   - [带有详细注释的 Redis 3.0 代码](https://github.com/huangz1990/redis-3.0-annotated)

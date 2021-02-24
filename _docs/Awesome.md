@@ -658,11 +658,11 @@ catalog: true
 
 #### Java 8
 
-- 时间类：`Instant`和 LocalDate，LocalTime，`LocalDateTime`
+- 时间类：`Instant`和`LocalDate`，`LocalTime`，`LocalDateTime`
 
   如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：*simple beautiful strong immutable thread-safe*。
 
-  附：测试代码请看 `study-metis: com.ariescat.metis.base.time.Test`
+  附：测试代码请看 `metis: com.ariescat.metis.base.time.LocalDateTimeTest`
 
 - stream
 
@@ -675,6 +675,13 @@ catalog: true
   - Supplier接口和Consumer接口 （JDK8以下可用guava替代）
 
     梦爷的FileLoader优化用到了Supplier
+    
+  - CompletableFuture 强大的函数式**异步编程**辅助类
+
+    可以比较一下 Google Guava，其也提供了通用的扩展 Future：[ListenableFuture](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/ListenableFuture.html)、[SettableFuture](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/SettableFuture.html) 以及辅助类 [Futures](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/Futures.html) 等，方便异步编程。
+
+    1. [Java CompletableFuture 详解 · 鸟窝 (colobu.com)](https://colobu.com/2016/02/29/Java-CompletableFuture/)
+    2. [[译\]20个使用 Java CompletableFuture的例子 · 鸟窝 (colobu.com)](https://colobu.com/2018/03/12/20-Examples-of-Using-Java's-CompletableFuture/)
 
 - 语法糖
 

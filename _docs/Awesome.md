@@ -15,7 +15,7 @@ catalog: true
 
 
 
-### Java
+### Java基础
 
 #### String
 
@@ -55,21 +55,21 @@ catalog: true
 
 #### 基本类型
 
-* 强转
+- 强转
 
   `long`转`int`注意：最高位为1强转会为负数！
 
   如：正数2147483648（long类型）强转int会变成负数，`（int）0x80000000 => -2147483648(Integer.MIN_VALUE)`
 
-* 无符号类型
+- 无符号类型
 
-  * java中无符号类型的解决方案
-  * Java8包装类 新增 无符号运算方法
-  * byte转换int时与0xff进行与运算的原因
+  - java中无符号类型的解决方案
+  - Java8包装类 新增 无符号运算方法
+  - byte转换int时与0xff进行与运算的原因
 
 #### 枚举
 
-* [枚举详解之EnumSet、EnumMap用法](https://www.cnblogs.com/treeshu/p/11013511.html)
+- [枚举详解之EnumSet、EnumMap用法](https://www.cnblogs.com/treeshu/p/11013511.html)
 
   `RegularEnumSet`里面有这样一行代码：
 
@@ -83,9 +83,17 @@ catalog: true
 
   如果移位量超过位数：`-1 >>> 32` 其实等同 `-1 >>> 0`；`-1 >>> 33` 等同 `-1 >>> 1`
 
+#### 日期与时间
+
+Date和Calendar，LocalDateTime（Java8），ZonedDateTime（时区），Instant
+
+#### 泛型
+
+擦拭，extends通配符，super通配符
+
 #### 位运算
 
-* `^`“异或运算”的特殊作用：
+- `^`“异或运算”的特殊作用：
 
   （1）使特定位翻转找一个数，对应X要翻转的各位，该数的对应位为1，其余位为零，此数与X对应位异或即可。
 
@@ -93,7 +101,7 @@ catalog: true
 
   （2）与0相异或，保留原值 ，X ^ 0000 0000 = 1010 1110。
 
-* `~`取反:
+- `~`取反:
 
   注意最高位也会取反
 
@@ -201,7 +209,7 @@ catalog: true
 
 #### 异常
 
-* Error和Exception的区别
+- Error和Exception的区别
 
 #### IO
 
@@ -318,11 +326,11 @@ catalog: true
 
 - Arrays
 
-  * 几个类：
+  - 几个类：
 
     TimSort，ComparableTimSort，DualPivotQuicksort
 
-  * 几个方法：
+  - 几个方法：
 
     binarySort 折半插入排序
 
@@ -342,7 +350,7 @@ catalog: true
 
 #### Javax
 
-* Java 注解处理器 (Annotation Processor)
+- Java 注解处理器 (Annotation Processor)
 
   javax.annotation.processing.AbstractProcessor 编译时执行
 
@@ -366,114 +374,36 @@ catalog: true
 
 
 
-### Java线程
+### Java多线程
 
 #### 概述
 
-> JUC包，毫无疑问的，得去学，哪怕平时编程根本不去用，但是得会，至少得知道有这个东西，至少得知道aba，cas，aqs，unsafe，volatile，sync，常见的各种lock，死锁，线程池参数和如何合理的去设置，必须明白自旋，阻塞，死锁和它如何去定位，oom如何定位问题，cpu过高如何定位等基本的操作。你可以没有生产调试经验，但不代表你可以不会top，jps，jstack，jmap这些可能会问的东西。
+JUC包，毫无疑问的，得去学，哪怕平时编程根本不去用，但是得会，至少得知道有这个东西，至少得知道aba，cas，aqs，unsafe，volatile，sync，常见的各种lock，死锁，线程池参数和如何合理的去设置，必须明白自旋，阻塞，死锁和它如何去定位，oom如何定位问题，cpu过高如何定位等基本的操作。你可以没有生产调试经验，但不代表你可以不会top，jps，jstack，jmap这些可能会问的东西。
 
-- 线程
+#### 线程创建
 
-  - 线程状态
-    - 其实可以直接查看源码`java.lang.Thread.State`，里面的注释内容讲解得很清楚了
-    - [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
-    - [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
-  - 线程中断
-    - ？何时抛出 `{@see java.lang.InterruptedException}`
+链接：[Java并发的四种风味](https://blog.csdn.net/yonlist/article/details/84736424)
 
-- 线程创建
+#### 线程状态
 
-  [Java并发的四种风味](https://blog.csdn.net/yonlist/article/details/84736424)
+- `java.lang.Thread.State`，里面的注释内容讲解得很清楚了
 
-- [线程池](http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/Executor%20%E4%B9%8B%20%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8F%8A%E5%AE%9A%E6%97%B6%E5%99%A8.html)  
+  链接：
 
-  - 关于Executors 
+  1. [Java线程的6种状态及切换(透彻讲解)](https://blog.csdn.net/pange1991/article/details/53860651)
+  2. [Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的](https://www.cnblogs.com/GooPolaris/p/8079490.html)
 
-    《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
+#### 中断线程
 
-    Executors 返回线程池对象的弊端如下：
+？何时抛出 `{@see java.lang.InterruptedException}`
 
-    1. FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE ，可能堆积大量的请求，从而导致OOM。
-    2. CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
+#### 守护线程
 
-  - 三种队列
+守护线程是指为其他线程服务的线程。在JVM中，所有非守护线程都执行完毕后，无论有没有守护线程，虚拟机都会自动退出。
 
-    | 队列                | 简单解释                                                     |
-    | ------------------- | ------------------------------------------------------------ |
-    | SynchrousQueue      | 不会保存提交任务，超出直接corePoolSize个任务，直接创建新的线程来执行任务，直到(corePoolSize＋新建线程) > maximumPoolSize。 |
-    | LinkedBlockingQueue | 基于链表的先进先出，无界队列。超出直接corePoolSize个任务，则加入到该队列中，直到资源耗尽，**所以maximumPoolSize不起作用**。 |
-    | ArrayBlockingQueue  | 基于数组的先进先出，创建时必须指定大小，超出直接corePoolSize个任务，则加入到该队列中，只能加该queue设置的大小，其余的任务则创建线程，直到(corePoolSize＋新建线程) > maximumPoolSize。 |
+因此，JVM退出时，不必关心守护线程是否已结束。
 
-    上表收录自：[线程池的三种缓存队列](https://blog.csdn.net/nihaomabmt/article/details/81667481)
-
-    解释看起来文邹邹的，要不直接上代码：
-
-    ```java
-    int c = ctl.get();
-    if (workerCountOf(c) < corePoolSize) {
-        if (addWorker(command, true))
-            return;
-        c = ctl.get();
-    }
-    if (isRunning(c) && workQueue.offer(command)) {
-        int recheck = ctl.get();
-        if (! isRunning(recheck) && remove(command))
-            reject(command);
-        else if (workerCountOf(recheck) == 0)
-            addWorker(null, false);
-    }
-    else if (!addWorker(command, false))
-      reject(command);
-    ```
-
-    注意几点
-
-    1. ？`SynchronousQueue`误区：很多人把其认为其没有容量，不存储元素，这是错的。
-
-       好好了解这个结构，并看看其核心算法`transfer`。后来实在看不懂...，先记住这句话吧：生产者线程对其的插入操作put必须等待消费者的移除操作take，反过来也一样。你不能调用peek()方法来看队列中是否有数据元素，因为数据元素只有当你试着取走的时候才可能存在，不取走而只想偷窥一下是不行的，当然遍历这个队列的操作也是不允许的。
-
-       参考链接：
-
-       1. https://www.jianshu.com/p/d5e2e3513ba3
-       2. https://www.cnblogs.com/duanxz/p/3252267.html
-
-  - 四种拒绝策略
-
-    1. AbortPolicy // 默认，队列满了丢任务抛出异常
-    2. DiscardPolicy // 队列满了丢任务不异常
-    3. DiscardOldestPolicy // 将最早进入队列的任务删，之后再尝试加入队列
-    4. CallerRunsPolicy // 如果添加到线程池失败，那么主线程会自己去执行该任务
-
-- ThreadPoolExecutor和ScheduledThreadPoolExecutor原理
-
-  - [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
-
-  - 线程池运行状态**【这里有空要详细看看】**
-
-    ![thread-state](https://img-blog.csdnimg.cn/20191216171812869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIwNzA1Ng==,size_16,color_FFFFFF,t_70)
-
-  - `shutdown()`, `shutdownNow()`和`awaitTermination()`
-
-    注意，一旦线程池有任务开始跑，就算任务都跑完了，也会等待`keepAliveTime`时候后才会停止。一般测试小demo的时候发现程序一直得不到结束，原因基本是这个。
-  
-    ```java
-    public static void main(String[] args) throws InterruptedException {
-        ExecutorService executor = Executors.newCachedThreadPool();
-        executor.execute(() -> System.err.println("executor"));
-        // TimeUnit.SECONDS.sleep(5L);
-        // executor.shutdown();
-        System.err.println("finish"); // 两个打印都输出后，程序还要等待 60s 才会结束！！
-    }
-    ```
-  
-    源码分析：
-  
-    `java.util.concurrent.ThreadPoolExecutor#runWorker`这里会一直调用`task = getTask()`，`getTask`里会调用`workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS)`，因此没任务后它也会阻塞`keepAliveTime`时间。
-  
-    分析一下`shutdown()`，它里面调用了`interruptIdleWorkers()`，它会打断上述的`wait keepAliveTime`的状态，抛出中断异常，而`getTask()`会捕获这个异常，从而**打破阻塞状态**。
-  
-
-#### 线程安全问题
+#### 线程同步与安全
 
 - 几个问题
 
@@ -489,134 +419,138 @@ catalog: true
 
     并不是所有的场景都需要解决伪共享问题，因为CPU缓存是有限的，填充会牺牲掉一部分缓存。
 
-- 锁
+锁：
 
-  - synchronized
+###### synchronized
 
-    - monitor对象
-    - [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
+- monitor对象
+- [彻底搞懂synchronized(从偏向锁到重量级锁)](https://blog.csdn.net/qq_38462278/article/details/81976428)
 
-  - volatile 
+###### volatile 
 
-    > **Java内存模型**中：
-    >
-    > 1. `volatile`变量在写操作之后会插入一个store屏障，在读操作之前会插入一个load屏障。
-    > 2. 一个类的`final`字段会在初始化后插入一个store屏障，来确保`final`字段在**构造函数初始化完成**并可被使用时可见。
+> **Java内存模型**中：
+>
+> 1. `volatile`变量在写操作之后会插入一个store屏障，在读操作之前会插入一个load屏障。
+> 2. 一个类的`final`字段会在初始化后插入一个store屏障，来确保`final`字段在**构造函数初始化完成**并可被使用时可见。
 
-    - 几个概念
+- 几个概念
 
-      1. 可见性
+  1. 可见性
 
-      2. 重排序（编译器重排，处理器重排），happen-before原则
+  2. 重排序（编译器重排，处理器重排），happen-before原则
 
-         [深入理解happens-before规则](https://www.jianshu.com/p/9464bf340234)
+     [深入理解happens-before规则](https://www.jianshu.com/p/9464bf340234)
 
-      3. Java内存模型定义了8种操作来完成主内存和工作内存的变量访问
+  3. Java内存模型定义了8种操作来完成主内存和工作内存的变量访问
 
-         lock，unlock，read，load，use，assign，stroe，write
+     lock，unlock，read，load，use，assign，stroe，write
 
-      4. MESI协议，Store Buffere（存储缓存），Invalidate Queue（失效队列）
+  4. MESI协议，Store Buffere（存储缓存），Invalidate Queue（失效队列）
 
-         搜索关键词（CPU和volatile ）
+     搜索关键词（CPU和volatile ）
 
-      5. **内存屏障**是什么？如何工作的？如何实现？在哪个层面上实现？
+  5. **内存屏障**是什么？如何工作的？如何实现？在哪个层面上实现？
 
-         x86架构：
+     x86架构：
 
-         **Store Barrier**，Store屏障，是x86的"sfence"指令，相当于StoreStore Barriers，强制所有在sfence指令之前的store指令，都在该sfence指令执行之前被执行，发送缓存失效信号，并把**store buffer**中的数据刷出到CPU的L1 Cache中；所有在sfence指令之后的store指令，都在该sfence指令执行之后被执行。即，禁止对sfence指令前后store指令的重排序跨越sfence指令，使**所有Store Barrier之前发生的内存更新都是可见的**。
+     **Store Barrier**，Store屏障，是x86的"sfence"指令，相当于StoreStore Barriers，强制所有在sfence指令之前的store指令，都在该sfence指令执行之前被执行，发送缓存失效信号，并把**store buffer**中的数据刷出到CPU的L1 Cache中；所有在sfence指令之后的store指令，都在该sfence指令执行之后被执行。即，禁止对sfence指令前后store指令的重排序跨越sfence指令，使**所有Store Barrier之前发生的内存更新都是可见的**。
 
-         **Load Barrier**，Load屏障，是x86上的"ifence"指令，相当于LoadLoad Barriers，强制所有在lfence指令之后的load指令，都在该lfence指令执行之后被执行，并且一直等到load buffer被该CPU读完才能执行之后的load指令（发现缓存失效后发起的刷入）。即，禁止对lfence指令前后load指令的重排序跨越lfence指令，配合Store Barrier，使**所有Store Barrier之前发生的内存更新，对Load Barrier之后的load操作都是可见的**。
+     **Load Barrier**，Load屏障，是x86上的"ifence"指令，相当于LoadLoad Barriers，强制所有在lfence指令之后的load指令，都在该lfence指令执行之后被执行，并且一直等到load buffer被该CPU读完才能执行之后的load指令（发现缓存失效后发起的刷入）。即，禁止对lfence指令前后load指令的重排序跨越lfence指令，配合Store Barrier，使**所有Store Barrier之前发生的内存更新，对Load Barrier之后的load操作都是可见的**。
 
-         **Full Barrier**，Full屏障，是x86上的”mfence“指令，相当于StoreLoad Barriers，强制所有在mfence指令之前的store/load指令，都在该mfence指令执行之前被执行；所有在mfence指令之后的store/load指令，都在该mfence指令执行之后被执行。即，禁止对mfence指令前后store/load指令的重排序跨越mfence指令，使**所有Full Barrier之前发生的操作，对所有Full Barrier之后的操作都是可见的。**
+     **Full Barrier**，Full屏障，是x86上的”mfence“指令，相当于StoreLoad Barriers，强制所有在mfence指令之前的store/load指令，都在该mfence指令执行之前被执行；所有在mfence指令之后的store/load指令，都在该mfence指令执行之后被执行。即，禁止对mfence指令前后store/load指令的重排序跨越mfence指令，使**所有Full Barrier之前发生的操作，对所有Full Barrier之后的操作都是可见的。**
 
-         参考：
+     参考：
 
-         1. http://ifeve.com/memory-barriers-or-fences/
-         2. https://www.jianshu.com/p/64240319ed60/ 该博客讲得不错，认真品味每一个字
+     1. http://ifeve.com/memory-barriers-or-fences/
+     2. https://www.jianshu.com/p/64240319ed60/ 该博客讲得不错，认真品味每一个字
 
-    - 特点：
+- 特点：
 
-      1. 通过使用**Lock前缀**的指令禁止**变量在线程工作内存中缓存**来保证volatile变量的**内存可见性**
-      2. 通过**插入内存屏障**禁止**会影响变量内存可见性**的**指令重排序**
-      3. 对任意单个volatile变量的读/写具有原子性，但类似于volatile++这种复合操作不具有原子性
+  1. 通过使用**Lock前缀**的指令禁止**变量在线程工作内存中缓存**来保证volatile变量的**内存可见性**
+  2. 通过**插入内存屏障**禁止**会影响变量内存可见性**的**指令重排序**
+  3. 对任意单个volatile变量的读/写具有原子性，但类似于volatile++这种复合操作不具有原子性
 
-    - 参考文章：
+- 参考文章：
 
-      1. [volatile关键字的作用、原理](https://monkeysayhi.github.io/2016/11/29/volatile关键字的作用、原理/)
+  1. [volatile关键字的作用、原理](https://monkeysayhi.github.io/2016/11/29/volatile关键字的作用、原理/)
 
-         注意DCL（Double Check Lock，双重检查锁）和被部分初始化的对象
+     注意DCL（Double Check Lock，双重检查锁）和被部分初始化的对象
 
-      2. [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
+  2. [既生synchronized，何生volatile？！](https://www.hollischuang.com/archives/3928)
 
-         非原子操作！！！
+     非原子操作！！！
 
-  - 乐观锁
+###### 乐观锁
 
-    - Atomic
+- Atomic
 
-    - 了解一下**LongAdder** 与 **Striped64**
+- 了解一下**LongAdder** 与 **Striped64**
 
-      LongAdder 区别于 AtomicLong ，在高并发中有更好的性能体现
+  LongAdder 区别于 AtomicLong ，在高并发中有更好的性能体现
 
-  - 参考链接
+- [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
 
-    - [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](http://www.cnblogs.com/qjjazry/p/6581568.html)
+###### ReentrantLock，ReadWriteLock，StampedLock
 
-- **AQS**（AbstractQueuedSynchronizer）
+应用场景的选择
 
-  - AQS框架借助于两个类：
-    1. Unsafe（提供CAS操作）
-    2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
-  - 与Object类的wait/notify机制相比，park/unpark有两个优点：
-    1. 以thread为操作对象更符合阻塞线程的直观定义
-    2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
-  - 应用：
-    1. CountDownLatch、CyclicBarrier和Semaphore
-    2. AbstractFuture (一旦调用get就会阻塞)
-  - JDK Unsafe类（可以了解一下）
-    - objectFieldOffset
-    - compareAndSwap...
-  - 参考链接
-    - https://blog.51cto.com/14220760/2390586?source=dra
-    - https://www.jianshu.com/p/da9d051dcc3d
+###### AQS（AbstractQueuedSynchronizer）
 
-- 并发容器
+- AQS框架借助于两个类：
+  1. Unsafe（提供CAS操作）
+  2. [LockSupport](https://www.jianshu.com/p/e3afe8ab8364)（提供park/unpark操作）
+- 与Object类的wait/notify机制相比，park/unpark有两个优点：
+  1. 以thread为操作对象更符合阻塞线程的直观定义
+  2. 操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。
+- 应用：
+  1. CountDownLatch、CyclicBarrier和Semaphore
+  2. AbstractFuture (一旦调用get就会阻塞)
+- JDK Unsafe类（可以了解一下）
+  - objectFieldOffset
+  - compareAndSwap...
+- 参考链接
+  - https://blog.51cto.com/14220760/2390586?source=dra
+  - https://www.jianshu.com/p/da9d051dcc3d
 
-  - LinkedBlockingQueue，ConcurrentLinkedQueue等，要看看源码如何实现（offer，take方法）！
+###### 并发容器
 
-  - CopyOnWriteArrayList
+- LinkedBlockingQueue，ConcurrentLinkedQueue等，要看看源码如何实现（offer，take方法）！
 
-  - ConcurrentHashMap (JDK8)，ConcurrentHashMapV8 (netty提供)
+- CopyOnWriteArrayList
 
-    > java8中的ConcurrentHashMap实现已经抛弃了java7中分段锁的设计，而采用更为轻量级的CAS来协调并发，效率更佳。
+- ConcurrentHashMap (JDK8)，ConcurrentHashMapV8 (netty提供)
 
-    - computeIfAbsent
+  > java8中的ConcurrentHashMap实现已经抛弃了java7中分段锁的设计，而采用更为轻量级的CAS来协调并发，效率更佳。
 
-  - SkipList（跳表）
+  - computeIfAbsent
 
-  - ConcurrentSkipListMap（使用跳表实现Map）  
+- SkipList（跳表）
 
-    > 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
+- ConcurrentSkipListMap（使用跳表实现Map）  
 
-- 其他
+  > 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。
 
-  1. ThreadLocal
+###### 其他
 
-     ThreadLocal有一个**value内存泄露**的隐患
+1. ThreadLocal
 
-  2. WeakReference 和 **ReferenceQueue**
+   ThreadLocal有一个**value内存泄露**的隐患
 
-     这里重点看ReferenceQueue，引用相关请看下面的**对象引用**小节
+2. WeakReference 和 **ReferenceQueue**
 
-  3. Callable和**Future**（since1.5）
+   这里重点看ReferenceQueue，引用相关请看下面的**对象引用**小节
 
-     在并发编程中，我们经常用到非阻塞的模型，在之前的多线程的三种实现中，不管是继承thread类还是实现runnable接口，都无法保证获取到之前的执行结果。通过实现Callback接口，并用Future可以来接收多线程的执行结果。
+3. Callable和**Future**（since1.5）
 
-     Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。
+   在并发编程中，我们经常用到非阻塞的模型，在之前的多线程的三种实现中，不管是继承thread类还是实现runnable接口，都无法保证获取到之前的执行结果。通过实现Callback接口，并用Future可以来接收多线程的执行结果。
 
-     - Guava——AbstractFuture
+   Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。
 
-  4. **ForkJoin**
+   - Guava——AbstractFuture
+
+4. **ForkJoin**
+
+5. CompletableFuture
 
 - 弄懂几个方法：
 
@@ -624,7 +558,13 @@ catalog: true
 
   1. synchronized、LockSupport.park（如ReentrantLock）区别
 
-  2. Thread.sleep、Object.wait、Condition.await区别，他们会释放锁吗？
+  2. wait 和 notify
+
+  3. Condition
+
+     `ReentrantLock`和`Condition`提供的await()、signal()、signalAll()
+
+  4. Thread.sleep、Object.wait、Condition.await区别，他们会释放锁吗？
 
      [面试 LockSupport.park()会释放锁资源吗？](http://www.imooc.com/article/294581)
 
@@ -632,6 +572,97 @@ catalog: true
 
   1. 什么是上下文切换？
   2. 并发与并行的区别？
+
+#### 线程池
+
+介绍：[Executor 之 线程池及定时器 (novoland.github.io)](http://novoland.github.io/并发/2014/07/26/Executor 之 线程池及定时器.html)
+
+另外：
+
+《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
+
+Executors 返回线程池对象的弊端如下：
+
+1. FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE ，可能堆积大量的请求，从而导致OOM。
+2. CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
+
+###### 三种队列
+
+| 队列                | 简单解释                                                     |
+| ------------------- | ------------------------------------------------------------ |
+| SynchrousQueue      | 不会保存提交任务，超出直接corePoolSize个任务，直接创建新的线程来执行任务，直到(corePoolSize＋新建线程) > maximumPoolSize。 |
+| LinkedBlockingQueue | 基于链表的先进先出，无界队列。超出直接corePoolSize个任务，则加入到该队列中，直到资源耗尽，**所以maximumPoolSize不起作用**。 |
+| ArrayBlockingQueue  | 基于数组的先进先出，创建时必须指定大小，超出直接corePoolSize个任务，则加入到该队列中，只能加该queue设置的大小，其余的任务则创建线程，直到(corePoolSize＋新建线程) > maximumPoolSize。 |
+
+上表收录自：[线程池的三种缓存队列](https://blog.csdn.net/nihaomabmt/article/details/81667481)
+
+解释看起来文邹邹的，要不直接上代码：
+
+```java
+int c = ctl.get();
+if (workerCountOf(c) < corePoolSize) {
+    if (addWorker(command, true))
+        return;
+    c = ctl.get();
+}
+if (isRunning(c) && workQueue.offer(command)) {
+    int recheck = ctl.get();
+    if (! isRunning(recheck) && remove(command))
+        reject(command);
+    else if (workerCountOf(recheck) == 0)
+        addWorker(null, false);
+}
+else if (!addWorker(command, false))
+  reject(command);
+```
+
+注意几点
+
+1. ？`SynchronousQueue`误区：很多人把其认为其没有容量，不存储元素，这是错的。
+
+   好好了解这个结构，并看看其核心算法`transfer`。后来实在看不懂...，先记住这句话吧：生产者线程对其的插入操作put必须等待消费者的移除操作take，反过来也一样。你不能调用peek()方法来看队列中是否有数据元素，因为数据元素只有当你试着取走的时候才可能存在，不取走而只想偷窥一下是不行的，当然遍历这个队列的操作也是不允许的。
+
+   链接：
+
+   1. https://www.jianshu.com/p/d5e2e3513ba3
+   2. https://www.cnblogs.com/duanxz/p/3252267.html
+
+###### 四种拒绝策略
+
+1. AbortPolicy // 默认，队列满了丢任务抛出异常
+2. DiscardPolicy // 队列满了丢任务不异常
+3. DiscardOldestPolicy // 将最早进入队列的任务删，之后再尝试加入队列
+4. CallerRunsPolicy // 如果添加到线程池失败，那么主线程会自己去执行该任务
+
+###### ThreadPoolExecutor和ScheduledThreadPoolExecutor原理
+
+- [ScheduledThreadPoolExecutor原理](https://blog.csdn.net/luanmousheng/article/details/77816412)
+
+###### 线程池运行状态
+
+这里有空要详细看看
+
+![thread-state](https://img-blog.csdnimg.cn/20191216171812869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIwNzA1Ng==,size_16,color_FFFFFF,t_70)
+
+- `shutdown()`, `shutdownNow()`和`awaitTermination()`
+
+  注意，一旦线程池有任务开始跑，就算任务都跑完了，也会等待`keepAliveTime`时候后才会停止。一般测试小demo的时候发现程序一直得不到结束，原因基本是这个。
+
+  ```java
+  public static void main(String[] args) throws InterruptedException {
+      ExecutorService executor = Executors.newCachedThreadPool();
+      executor.execute(() -> System.err.println("executor"));
+      // TimeUnit.SECONDS.sleep(5L);
+      // executor.shutdown();
+      System.err.println("finish"); // 两个打印都输出后，程序还要等待 60s 才会结束！！
+  }
+  ```
+
+  源码分析：
+
+  `java.util.concurrent.ThreadPoolExecutor#runWorker`这里会一直调用`task = getTask()`，`getTask`里会调用`workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS)`，因此没任务后它也会阻塞`keepAliveTime`时间。
+
+  分析一下`shutdown()`，它里面调用了`interruptIdleWorkers()`，它会打断上述的`wait keepAliveTime`的状态，抛出中断异常，而`getTask()`会捕获这个异常，从而**打破阻塞状态**。
 
 
 
@@ -656,13 +687,15 @@ catalog: true
 
   - 新增了invokedynamic指令
 
+- ForkJoin
+
 #### Java 8
 
-- 时间类：`Instant`和 LocalDate，LocalTime，`LocalDateTime`
+- 时间类：`Instant`和`LocalDate`，`LocalTime`，`LocalDateTime`
 
   如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：*simple beautiful strong immutable thread-safe*。
 
-  附：测试代码请看 `study-metis: com.ariescat.metis.base.time.Test`
+  附：测试代码请看 `metis: com.ariescat.metis.base.time.LocalDateTimeTest`
 
 - stream
 
@@ -670,11 +703,21 @@ catalog: true
 
 - 函数式编程
 
+  - [Java 函数优雅之道](https://blog.csdn.net/yunqiinsight/article/details/99826098)
+
   - Optional类
 
   - Supplier接口和Consumer接口 （JDK8以下可用guava替代）
 
-    梦爷的FileLoader优化用到了Supplier
+    Alyx的FileLoader优化用到了Supplier
+
+  - CompletableFuture 强大的函数式**异步编程**辅助类
+
+    可以比较一下 Google Guava，其也提供了通用的扩展 Future：[ListenableFuture](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/ListenableFuture.html)、[SettableFuture](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/SettableFuture.html) 以及辅助类 [Futures](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/Futures.html) 等，方便异步编程。
+
+    1. windforce AbstractChatChannel
+    2. [Java CompletableFuture 详解 · 鸟窝 (colobu.com)](https://colobu.com/2016/02/29/Java-CompletableFuture/)
+    3. [[译\]20个使用 Java CompletableFuture的例子 · 鸟窝 (colobu.com)](https://colobu.com/2018/03/12/20-Examples-of-Using-Java's-CompletableFuture/)
 
 - 语法糖
 
@@ -698,7 +741,7 @@ catalog: true
     Consumer<String> methodParam = AcceptMethod::printValur; //方法参数
     al.forEach(x -> methodParam.accept(x));//方法执行accept
     ```
-  
+
 - JVM
 
   - 元空间（Metaspace）
@@ -724,15 +767,11 @@ catalog: true
 
 有认真了解过Java的语法糖吗？
 
-* [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html) 
+- [Java中的10颗语法糖](https://www.cnblogs.com/duanxz/p/3916028.html) 
 
 #### 设计模式
 
-balabala...
-
-#### 函数式编程
-
-* [Java 函数优雅之道](https://blog.csdn.net/yunqiinsight/article/details/99826098)
+《设计模式之美》值得一看
 
 #### 反射
 
@@ -784,7 +823,6 @@ balabala...
 2. Cglib动态代理 
 
    > JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。
-
 
 3. 代码实现：[Cglib 与 JDK动态代理](https://my.oschina.net/xiaolyuh/blog/3108376)
 
@@ -905,7 +943,7 @@ balabala...
 
 #### 对象拷贝
 
-* [BeanUtils对象属性copy的性能对比以及源码分析](https://www.cnblogs.com/kancy/p/12089126.html)
+- [BeanUtils对象属性copy的性能对比以及源码分析](https://www.cnblogs.com/kancy/p/12089126.html)
 
   | 拷贝方式               | 对象数量: 1 | 对象数量: 1000 | 对象数量: 100000 | 对象数量: 1000000 |
   | :--------------------- | :---------- | :------------- | :--------------- | :---------------- |
@@ -1068,7 +1106,6 @@ balabala...
      MethodAccessor的实现：
 
      - 所有的方法反射都是先走`NativeMethodAccessorImpl`，默认调了**15**次之后，才生成一个`GeneratedMethodAccessorXXX`类
-
      - 而`GeneratedMethodAccessorXXX`的类加载器会`new` 一个`DelegatingClassLoader(var4)`，之所以搞一个新的类加载器，是为了性能考虑，在某些情况下可以卸载这些生成的类，因为**类的卸载是只有在类加载器可以被回收的情况下才会被回收的**
 
      并发导致垃圾类创建：
@@ -1125,6 +1162,16 @@ balabala...
 
 
 
+### Web
+
+#### 分布式 session 一致性
+
+1. session复制，对web服务器(例如Tomcat)进行搭建集群
+2. session绑定，使用nginx `ip-hash策略`，无论客户端发送多少次请求都被同一个服务器处理
+3. 基于redis存储，spring为我们封装好了spring-session，直接引入依赖即可
+
+
+
 ### 必会框架
 
 #### 工具库
@@ -1132,8 +1179,7 @@ balabala...
 ##### Apache commons
 
 - Commons IO
-  - `FileAlterationMonitor`和`FileAlterationObserver`（梦爷曾发现这里每隔10秒会涨10M内存，待研究）
-
+  - `FileAlterationMonitor`和`FileAlterationObserver`（Alyx曾发现这里每隔10秒会涨10M内存，待研究）
 - Commons Lang3等
 
 
@@ -1152,17 +1198,16 @@ Google Guava 是 Google 公司内部 Java 开发工具库的开源版本。Googl
   7. 数学计算（Math）
   8. I/O事件
   9. **总线（EventBus）**
-
 - 一些有用的小工具：
   1. `BloomFilter`布隆过滤器的实现
 
-* 源码分析：[https://ifeve.com/google-guava](https://ifeve.com/google-guava/)
+- 源码分析：[https://ifeve.com/google-guava](https://ifeve.com/google-guava/)
 
 
 
 ##### Json
 
-* [关于Gson的几个坑](https://ariescat.top/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/)
+- [关于Gson的几个坑](https://ariescat.top/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/)
 
 
 
@@ -1488,16 +1533,15 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 
 
-
 ### 前沿技术
 
 #### Docker
 
 #### 微服务化
 
-##### 	ServiceMesh(服务网格)
+##### ServiceMesh(服务网格)
 
-##### 	中台
+##### 中台
 
 ##### 大数据
 
@@ -1561,7 +1605,7 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 ### 脚本语言
 
-* 动态语言与动态类型语言
+- 动态语言与动态类型语言
 
   动态语言：(Dynamic programming Language -动态语言或动态编程语言)，动态语言是指程序在运行时可以改变其结构，新的函数可以被引进，已有的函数可以被删除等在结构上的变化。
 
@@ -1930,7 +1974,7 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
   3. 收到arp响应包之后，获得某个IP对应的具体mac地址，有了物理地址之后才可以开始通信了,同时对ip-mac地址做一个本地cache
   4. 发出icmp echo request包，收到icmp echo reply包
 
-* 反向代理为何叫反向代理？[原文](https://www.zhihu.com/question/24723688/answer/128105528)
+- 反向代理为何叫反向代理？[原文](https://www.zhihu.com/question/24723688/answer/128105528)
 
 
 
@@ -2020,7 +2064,6 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 - MySQL中的int(M)，int(M)里的M表示最大显示宽度，当加上zerofill才会表现出效果来。
 - unsigned
 - 编码
-
   - utf8_general_ci、utf8_unicode_ci和utf8_bin的区别
   - [彻底解决mysql中文乱码 - CSDN博客](https://blog.csdn.net/u012410733/article/details/61619656)
 
@@ -2300,8 +2343,8 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 ### Redis / NoSQL
 
-> 1. Redis是一种基于键值对(Key-Value)的NoSQL数据库，Redis的Value的基础数据结构有string、list、hash、set、zset；
-> 2. 有**Bitmaps**，**HyperLogLog**等多种高级数据结构和算法
+> 1. Redis是一种基于键值对(Key-Value)的NoSQL数据库，Redis的 **Value** 的基础数据结构有string、list、hash、set、zset；
+> 2. 有 **Bitmaps**，**HyperLogLog** 等多种高级数据结构和算法
 > 3. Redis还提供了键过期，发布订阅，事务，Lua脚本，哨兵，Cluster等功能。
 
 - 主要应用：
@@ -2314,7 +2357,11 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
   2. 客户端与服务器的通信协议
 
-  3. 持久化：使用操作系统的多进程 COW(Copy On Write) 机制来实现快照持久化
+  3. 持久化：
+
+     使用操作系统的多进程 COW(Copy On Write) 机制来实现快照持久化
+
+     bgsave 做全量持久化到 RDB 二进制文件中，aof 做增量持久化，存储的是文本协议数据
 
   4. 管道，事务
 
@@ -2328,17 +2375,24 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
      ![redis1](/img/awesome/redis1.png)
 
-- 集群
-
-  Sentinel，Codis，Cluster
-
 - 拓展
 
-  Stream数据结构，Info指令，分布式锁Redlock算法，过期清除策略，RedLock
+  Stream数据结构，Info指令，分布式锁Redlock算法，RedLock，过期清除策略
 
-  1. redis分布式锁
+  1. 选择hash还是string 存储数据？
+
+  2. redis分布式锁
+
      1. 单实例中实现分布式锁：setnx（注意删除时最好使用Lua脚本删除，逻辑是先获取key，如果存在并且值是自己设置的就删除此key，否则就跳过）
      2. 多节点redis实现的分布式锁：RedLock
+
+  3. Redis 内存不够时的淘汰策略
+
+     LRU 算法和 LFU 算法，redis 对 LRU 的改进
+
+  4. 缓存穿透解决方案？
+
+     布隆过滤器
 
 - Java的Redis客户端：Jedis，Redisson
 
@@ -2347,6 +2401,10 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
      Redisson的加锁/释放锁都是用Lua脚本，相比于setnx就能实现，为何多此一举？仔细看Lua脚本就会发现考虑得非常全面，其中包括锁的**重入性**。
 
   2. 但Jedis相比于Redisson 更原生一些，更灵活。
+
+- 集群
+
+  Sentinel，Codis，Cluster
 
 - 源码
 
@@ -2376,15 +2434,13 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
 ### 操作系统
 
-* 进程管理
-  * [进程和线程](https://blog.csdn.net/weixin_43517199/article/details/89508381)
-  * 进程间通信：[管道](https://www.cnblogs.com/zengyiwen/p/5755170.html)，消息队列，共享内存
-  * 死锁
-
-* 内存管理
-  * 分页管理
-
-* 设备管理
+- 进程管理
+  - [进程和线程](https://blog.csdn.net/weixin_43517199/article/details/89508381)
+  - 进程间通信：[管道](https://www.cnblogs.com/zengyiwen/p/5755170.html)，消息队列，共享内存
+  - 死锁
+- 内存管理
+  - 分页管理
+- 设备管理
 
 - Windows
   - hiberfil.sys和pagefile.sys占用系统空间，其分别是休眠空间和虚拟内存。
@@ -2530,22 +2586,17 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
   - [Linux如何查看端口状态_百度经验](https://jingyan.baidu.com/article/59703552c2fd838fc1074046.html)
   - [Linux Yum 命令使用举例_Linux教程_Linux公社-Linux系统门户网站](http://www.linuxidc.com/Linux/2011-09/42108.htm)
   - [CentOS7使用firewalld打开关闭防火墙与端口 - 莫小安 - 博客园](https://www.cnblogs.com/moxiaoan/p/5683743.html)
-
 - MySql
   - [CentOS下的Mysql的安装和使用 - suxiaoman - 博客园](https://www.cnblogs.com/suxiaoman/p/7693066.html)
-
 - Jetty
   - [Centos6.8 Jetty 安装配置 - 那个汪 - 博客园](https://www.cnblogs.com/wzalex/p/6912500.html)
-
 - Shadowsocks
   - [记一次搭建SS服务器，完整的过程。，搭建ss_Linux教程 · 帮客之家](http://www.bkjia.com/Linuxjc/1202867.html)
   - [Centos 7下搭建SS - CSDN博客](http://blog.csdn.net/u013309540/article/details/74330305)
   - [Shadowsocks - Clients](https://shadowsocks.org/en/download/clients.html)
   - [锐速ServerSpeeder无限带宽破解版一键安装包(2017.6.23更新 )-蜗牛789](https://www.wn789.com/4678.html)
-
 - Nginx
   - [Nginx的一些基本功能 - CSDN博客](http://blog.csdn.net/zhongguozhichuang/article/details/52816887)
-
 - Ngrok
   - [CentOS7.3编译安装go1.8.1 - Aliang Log](https://www.aliang.org/golang/go1-8-1.html)
   - [CentOS下部署Ngrok服务器 - YE_NICKNAME - CSDN博客](http://blog.csdn.net/y534560449/article/details/53513046)
@@ -2617,7 +2668,6 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 ### 相关书籍
 
 - Java
-
   - 《深入理解Java虚拟机（第3版）（周志明）》
   - 《Java并发编程实战》
   - 《Effective Java》
@@ -2636,4 +2686,3 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 - 《漫画算法：小灰的算法之旅》
 - 《架构探险分布式服务框架 （李业兵）》
 - 《高性能MySQL》
-

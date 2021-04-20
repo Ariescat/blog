@@ -596,7 +596,7 @@ Executors 返回线程池对象的弊端如下：
 
 上表收录自：[线程池的三种缓存队列](https://blog.csdn.net/nihaomabmt/article/details/81667481)
 
-解释看起来文邹邹的，要不直接上代码：
+解释看起来文邹邹的，要不直接上代码：execute：
 
 ```java
 int c = ctl.get();
@@ -1045,6 +1045,29 @@ else if (!addWorker(command, false))
   - 逃逸分析
     - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
     - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
+
+#### System#exit
+
+1. 注册的关闭勾子会在以下几种时机被调用到
+
+- 程序正常退出
+  - 最后一个非守护线程执行完毕退出时
+  - System.exit方法被调用时
+- 程序响应外部事件
+  - 程序响应用户输入事件，例如在控制台按ctrl+c(^+c)
+  - 程序响应系统事件，如用户注销、系统关机等
+
+2. 这种方法永远不会正常返回。
+
+   意味着该方法不会返回；一旦一个线程进入那里，就不会再回来了。
+
+链接：
+
+- [Java System#exit 无法退出程序的问题探索](https://blog.csdn.net/qq271859852/article/details/106596524)
+
+- [java System.exit(0) 结束不了其他线程?](https://bbs.csdn.net/topics/392009252)
+
+  最后一楼说了：将A线程变为while(true) 一直执行，就会发现A线程也会中止。两个线程各自执行，之前都循环十次，A线程可能在B线程调用System.exit(0)之前就执行完了
 
 #### GC性能优化，日志解读
 

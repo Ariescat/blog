@@ -238,9 +238,11 @@ Instant：
 
   2. 对管道进行操作：PipedInputStream（字节输入流），PipedOutStream（字节输出流），PipedReader（字符输入流），PipedWriter（字符输出流）
 
-     PipedInputStream的一个实例要和PipedOutputStream的一个实例共同使用，共同完成管道的读取写入操作，主要用于**线程操作**。**有空看看这里的实现 > **[简介,源码分析和示例](https://www.cnblogs.com/skywang12345/p/io_04.html)
+     PipedInputStream的一个实例要和PipedOutputStream的一个实例共同使用，共同完成管道的读取写入操作，主要用于**线程操作**。
 
-     在一个线程里使用PipedInputStream和PipedOutputStream(会造成死锁？)
+     有空看看这里的实现 [简介,源码分析和示例](https://www.cnblogs.com/skywang12345/p/io_04.html)
+
+     在一个线程里使用PipedInputStream和PipedOutputStream会造成死锁：这意味着，如果你用同一个线程既读又写（read()和write()方法是阻塞的方法），那么就会造成这个线程的死锁。
 
   3. 字节/字符数组：ByteArrayInputStream，ByteArrayOutputStream，CharArrayReader，CharArrayWriter
 
@@ -2040,6 +2042,10 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 #### 零拷贝
 
 - 传统的文件传输，DMA技术
+
+  DMA 是一种**允许外围设备（硬件子系统）直接访问系统主内存的机制**。也就是说，基于 DMA 访问方式，系统主内存于硬盘或网卡之间的数据传输可以绕开 CPU 的调度。
+
+  参考：[DMA 技术是什么，在哪里用？看完绝对有收获 - 简书 (jianshu.com)](https://www.jianshu.com/p/3a26e8c9f402)
 
 - Linux支持的(常见)零拷贝
 

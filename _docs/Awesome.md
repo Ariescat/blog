@@ -87,6 +87,18 @@ catalog: true
 
 Date和Calendar，LocalDateTime（Java8），ZonedDateTime（时区），Instant
 
+LocalDate/LocalTime 类：
+
+Java 8新增了`LocalDate`和`LocalTime`接口，为什么要搞一套全新的处理日期和时间的API？因为旧的`java.util.Date`实在是太难用了。
+
+`java.util.Date`月份从`0`开始，一月是`0`，十二月是`11`，变态吧！`java.time.LocalDate`月份和星期都改成了`enum`，就不可能再用错了。
+
+`java.util.Date`和`SimpleDateFormatter`都不是线程安全的，而`LocalDate`和`LocalTime`和最基本的`String`一样，是不变类型，不但线程安全，而且不能修改。
+
+Instant：
+
+`Instant`获取的是**UTC**的时间，而`Date`是根据当前服务器所处的环境的默认时区来获取的当前时间。
+
 #### 泛型
 
 擦拭，extends通配符，super通配符

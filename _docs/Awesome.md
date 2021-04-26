@@ -544,7 +544,11 @@ JUC包，毫无疑问的，得去学，哪怕平时编程根本不去用，但�
 
 应用场景的选择
 
+[阿里面试官：说一下公平锁和非公平锁的区别？_敖丙-CSDN博客](https://blog.csdn.net/qq_35190492/article/details/104943579)
+
 ###### AQS（AbstractQueuedSynchronizer）
+
+它维护了一个**volatile** int **state**（代表共享资源）和一个FIFO线程等待队列（多线程争用资源被阻塞时会进入此队列）。这里volatile是核心关键词
 
 - AQS框架借助于两个类：
   1. Unsafe（提供CAS操作）

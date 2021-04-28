@@ -83,6 +83,15 @@ catalog: true
 
   如果移位量超过位数：`-1 >>> 32` 其实等同 `-1 >>> 0`；`-1 >>> 33` 等同 `-1 >>> 1`
 
+#### 数组
+
+- 二维数组按行和按列遍历效率？
+
+  1. CPU高速缓存
+  2. 内存分页调度
+
+  参考：[二维数组按行和按列遍历效率_醒来明月的博客-CSDN博客_二维数组访问效率](https://blog.csdn.net/lbwo001/article/details/78817439?utm_source=blogxgwz0)
+
 #### 日期与时间
 
 Date和Calendar，LocalDateTime（Java8），ZonedDateTime（时区），Instant
@@ -943,6 +952,44 @@ else if (!addWorker(command, false))
         return INSTANCE;
   }
   ```
+
+- 对象实例化顺序
+
+  1，父类的静态成员变量和静态代码块加载
+  2，子类的静态成员变量和静态代码块加载
+  3，父类成员变量和方法块加载
+  4，父类的构造函数加载
+  5，子类成员变量和方法块加载
+  6，子类的构造函数加载
+
+  参考：
+
+  - [Java 类的实例化顺序](https://www.cnblogs.com/yanghe123/p/10936025.html)
+  - [java类实例化顺序+经典的面试题](https://blog.csdn.net/qq_36382679/article/details/105811529)
+
+  测试：
+
+  com.ariescat.metis.base.jdk.TestSameField
+
+- java中父类与子类有相同属性调谁？
+
+  **继承**中：
+  属性：不可被重写，只会被隐藏
+  方法：会被重写，不会隐藏
+
+  **多态**中，成员变量：
+  无论编译和运行，都参考左边(**引用型变量所属的类**)。
+
+  也就是说
+  Fu f = new Zi();
+  System.out.println(f.age);
+  打印的还是父类的值。
+
+  参考：
+
+  - [java中父类与子类有相同属性调谁？取决于左边](https://blog.csdn.net/qq_40093255/article/details/108400976)
+
+  - [父类和子类同时存在相同属性BeanUtils的copyProperties复制](https://blog.csdn.net/u012786993/article/details/82923064/)
 
 #### 对象引用
 

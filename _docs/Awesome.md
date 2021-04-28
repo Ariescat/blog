@@ -759,31 +759,47 @@ Java语言并没有对协程的原生支持，但是某些开源框架模拟出�
 
 《设计模式之美》值得一看
 
-#### 反射
+#### Class与反射
 
 - Class
 
+  - 关键字 instanceof **VS** Class.isInstance（参数）
+
+    ```java
+    System.err.println(son instanceof Parent);
+    System.err.println(Parent.class.isInstance(son));
+    ```
+
   - Class的 getSuperclass与getGenericSuperclass
+
+    **getGenericSuperclass会包含该超类的泛型。**
 
   - 判断当前类是什么类
 
     ```java
-    boolean isLocalClass();		//判断是不是局部类，也就是方法里面的类 
-    boolean isMemberClass();	//判断是不是成员内部类，也就是一个类里面定义的类
-    boolean isAnonymousClass();	//判断当前类是不是匿名类，匿名类一般用于实例化接口
-    boolean isAnnotation() ;	//判断当前Class对象是否是注释类型
+    boolean isLocalClass();			//判断是不是局部类，也就是方法里面的类，其实现：isLocalOrAnonymousClass() && !isAnonymousClass();
+    boolean isLocalOrAnonymousClass();
+    boolean isMemberClass();		//判断是不是成员内部类，也就是一个类里面定义的类
+    boolean isAnonymousClass();	//判断当前类是不是匿名类，一般为实例化的接口或实例化的抽象类
+    boolean isAnnotation();// 判断Class对象是否是注解类型
+    boolean isPrimitive(); // 判断Class是否为原始类型（int，double等）
+    boolean isSynthetic(); // 判断是否由Java编译器生成（除了像默认构造函数这一类的）的方法或者类，Method也有这个方法
     ```
+
+    参考：
+
+    [Java 中冷门的 synthetic 关键字原理解读 - 老白讲互联网 - 博客园 (cnblogs.com)](https://www.cnblogs.com/bethunebtj/p/7761596.html)
 
   - 返回字符串(String)的方法
 
     ```java
-    String getCanonicalName() 	//返回 Java Language Specification 中所定义的底层类的规范化名称。 
-    String getName() 			//以 String 的形式返回此 Class 对象所表示的实体（类、接口、数组类、基本类型或 void）名称（全限定名：包名.类名）。
-    String getSimpleName() 		//返回源代码中给出的底层类的简称。 
-    String toString() 			//将对象转换为字符串。
+    String getCanonicalName() //返回 Java Language Specification 中所定义的底层类的规范化名称。 
+    String getName() //以 String 的形式返回此 Class 对象所表示的实体（类、接口、数组类、基本类型或 void）名称（全限定名：包名.类名）。
+    String getSimpleName() //返回源代码中给出的底层类的简称。 
+    String toString() //将对象转换为字符串。
     ```
 
-    
+
 
 - Class.forName和ClassLoader的区别
 
@@ -791,13 +807,51 @@ Java语言并没有对协程的原生支持，但是某些开源框架模拟出�
 
   不同：
 
-  1）class.forName()除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块，还会执行给静态变量赋值的静态方法
+  1）Class.forName()除了将类的.class文件加载到jvm中之外，**还会对类进行解释，执行类中的static块，还会执行给静态变量赋值的静态方法**
 
   2）classLoader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容,只有在newInstance才会去执行static块。
 
+
+
 - **Method**.invoke()的实现原理
 
+  1. [假笨说-从一起GC血案谈到反射原理](https://mp.weixin.qq.com/s/5H6UHcP6kvR2X5hTj_SBjA)
+
+     获取Method：
+
+     - reflectionData，这个属性主要是SoftReference的
+     - 我们每次通过调用`getDeclaredMethod`方法返回的Method对象其实都是一个**新的对象**，所以不宜多调哦，如果调用频繁最好缓存起来。不过这个新的方法对象都有个root属性指向`reflectionData`里缓存的某个方法，同时其`methodAccessor`也是用的缓存里的那个Method的`methodAccessor`。
+
+     Method调用：
+
+     - 其实`Method.invoke`方法就是调用`methodAccessor`的`invoke`方法
+
+     MethodAccessor的实现：
+
+     - 所有的方法反射都是先走`NativeMethodAccessorImpl`，默认调了**15**次之后，才生成一个`GeneratedMethodAccessorXXX`类
+     - 而`GeneratedMethodAccessorXXX`的类加载器会`new` 一个`DelegatingClassLoader(var4)`，之所以搞一个新的类加载器，是为了性能考虑，在某些情况下可以卸载这些生成的类，因为**类的卸载是只有在类加载器可以被回收的情况下才会被回收的**
+
+     并发导致垃圾类创建：
+
+     - 假如有1000个线程都进入到创建`GeneratedMethodAccessorXXX`的逻辑里，那意味着多创建了999个无用的类，这些类会一直占着内存，**直到能回收Perm的GC发生才会回收**
+
+     其他JVM相关文章:
+
+     - 该文章最后有其他JVM相关文章，感觉是干货
+
+  2. [反射代理类加载器的潜在内存使用问题](https://www.jianshu.com/p/20b7ab284c0a)！！
+
+     大量的类加载器`sun/reflect/DelegatingClassLoader`，用来加载`sun/reflect/GeneratedMethodAccessor`类，可能导致潜在的占用大量本机内存空间问题，应用服务器进程占用的内存会显著增大。
+
+
+
 - 使用Class.getResource和ClassLoader.getResource方法获取文件路径
+
+  对于**class.getResource(path)**方法，其中的参数path有两种形式，一种是以“/”开头的，另一种是不以"/"开头
+
+  **Class.getClassLoader().getResource(String path)**，该方法中的参数path不能以“/“开头，path表示的是从classpath下获取资源的
+
+  
 
 #### 代理
 
@@ -1172,36 +1226,6 @@ JMX是Java Management Extensions，它是一个Java平台的管理和监控接�
   - Full GC日志解读
 
 - [GC性能优化](https://blog.csdn.net/renfufei/column/info/14851)
-
-- 其他
-
-  1. [假笨说-从一起GC血案谈到反射原理](https://mp.weixin.qq.com/s/5H6UHcP6kvR2X5hTj_SBjA)
-
-     获取Method：
-
-     - reflectionData，这个属性主要是SoftReference的
-     - 我们每次通过调用`getDeclaredMethod`方法返回的Method对象其实都是一个**新的对象**，所以不宜多调哦，如果调用频繁最好缓存起来。不过这个新的方法对象都有个root属性指向`reflectionData`里缓存的某个方法，同时其`methodAccessor`也是用的缓存里的那个Method的`methodAccessor`。
-
-     Method调用：
-
-     - 其实`Method.invoke`方法就是调用`methodAccessor`的`invoke`方法
-
-     MethodAccessor的实现：
-
-     - 所有的方法反射都是先走`NativeMethodAccessorImpl`，默认调了**15**次之后，才生成一个`GeneratedMethodAccessorXXX`类
-     - 而`GeneratedMethodAccessorXXX`的类加载器会`new` 一个`DelegatingClassLoader(var4)`，之所以搞一个新的类加载器，是为了性能考虑，在某些情况下可以卸载这些生成的类，因为**类的卸载是只有在类加载器可以被回收的情况下才会被回收的**
-
-     并发导致垃圾类创建：
-
-     - 假如有1000个线程都进入到创建`GeneratedMethodAccessorXXX`的逻辑里，那意味着多创建了999个无用的类，这些类会一直占着内存，**直到能回收Perm的GC发生才会回收**
-
-     其他JVM相关文章:
-
-     - 该文章最后有其他JVM相关文章，感觉是干货
-
-  2. [反射代理类加载器的潜在内存使用问题](https://www.jianshu.com/p/20b7ab284c0a)
-
-     大量的类加载器`sun/reflect/DelegatingClassLoader`，用来加载`sun/reflect/GeneratedMethodAccessor`类，可能导致潜在的占用大量本机内存空间问题，应用服务器进程占用的内存会显著增大。
 
 #### 性能调优工具
 

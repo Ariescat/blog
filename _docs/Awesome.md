@@ -739,98 +739,11 @@ else if (!addWorker(command, false))
 
 
 
-### Java新特性
+#### 协程
 
-#### Java 7
+协程，英文Coroutines，是一种比线程更加轻量级的存在。正如一个进程可以拥有多个线程一样，一个线程也可以拥有多个协程。最重要的是，**协程不是被操作系统内核所管理，而完全是由程序所控制**（也就是在用户态执行）。
 
-- [JDK7动态方法调用](https://blog.csdn.net/xtayfjpk/article/details/42043977)
-
-  - java.lang.invoke包
-
-    主要包含了`CallSite、MethodHandle、MethodType`等类
-
-    > 反射获取的信息比MethodHandle要多。
-    > 反射是模拟java代码层面的调用，MethodHandle是模拟字节码层面的调用。
-
-    > `MethodHandle`和反射相比好处是：
-    >
-    > - 调用 invoke() 已经被JVM优化，类似直接调用一样。
-    > - 性能好得多，类似标准的方法调用。
-    > - 当我们创建MethodHandle 对象时，实现方法检测，而不是调用invoke() 时。
-
-  - 新增了invokedynamic指令
-
-- ForkJoin
-
-#### Java 8
-
-- 时间类：`Instant`和`LocalDate`，`LocalTime`，`LocalDateTime`
-
-  如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：*simple beautiful strong immutable thread-safe*。
-
-  附：测试代码请看 `metis: com.ariescat.metis.base.time.LocalDateTimeTest`
-
-- stream
-
-  - parallelStream
-
-- 函数式编程
-
-  - [Java 函数优雅之道](https://blog.csdn.net/yunqiinsight/article/details/99826098)
-
-  - Optional类
-
-  - Supplier接口和Consumer接口 （JDK8以下可用guava替代）
-
-    Alyx的FileLoader优化用到了Supplier
-
-  - CompletableFuture 强大的函数式**异步编程**辅助类
-
-    可以比较一下 Google Guava，其也提供了通用的扩展 Future：[ListenableFuture](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/ListenableFuture.html)、[SettableFuture](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/SettableFuture.html) 以及辅助类 [Futures](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/Futures.html) 等，方便异步编程。
-
-    1. windforce AbstractChatChannel
-    2. [Java CompletableFuture 详解 · 鸟窝 (colobu.com)](https://colobu.com/2016/02/29/Java-CompletableFuture/)
-    3. [[译\]20个使用 Java CompletableFuture的例子 · 鸟窝 (colobu.com)](https://colobu.com/2018/03/12/20-Examples-of-Using-Java's-CompletableFuture/)
-
-- 语法糖
-
-  - **Lambda**
-
-    1. 实现原理
-
-    2. 非捕获式(non-*capturing* lambda)和捕获式(*capturing* lambda)
-
-    3. Java中的lambda每次执行都会创建一个新对象吗？
-
-       测试代码：`study-metis: com.ariescat.metis.base.jdk8.lambda.LambdaTest2`，[参考链接](https://cloud.tencent.com/developer/article/1572212)
-
-  - **::（双冒号）的实现原理**
-
-    ```java
-    List<String> al = Arrays.asList("a", "b", "c", "d");
-    al.forEach(AcceptMethod::printValur);
-    
-    //下面的方法和上面等价的
-    Consumer<String> methodParam = AcceptMethod::printValur; //方法参数
-    al.forEach(x -> methodParam.accept(x));//方法执行accept
-    ```
-
-- JVM
-
-  - 元空间（Metaspace）
-
-#### Java 9
-
-- Reactive Streams
-- Flow API
-
-#### Java 11
-
-- 直接运行源代码
-
-#### QA（疑问）
-
-- [JDK 1.8 下的 java.lang.Class 对象和 static 成员变量在堆还是方法区？](https://blog.csdn.net/xu_jl1997/article/details/89433916)
+Java语言并没有对协程的原生支持，但是某些开源框架模拟出了协程的功能，有兴趣的小伙伴可以看一看Kilim框架的源码
 
 
 
@@ -937,59 +850,67 @@ else if (!addWorker(command, false))
 
      可扩展看看`Spring`的`JdkDynamicAopProxy`，其实本质上Spring对代理的处理都差不多
 
+
+
 #### 创建和销毁对象
 
-- 单例 与 序列化
+##### 单例 与 序列化
 
-  一般来说，一个类实现了 Serializable接口，我们就可以把它往内存地写再从内存里读出而"组装"成一个跟原来一模一样的对象。不过当序列化遇到单例时，这里边就有了个问题：从内存读出而组装的对象破坏了单例的规则。单例是要求一个JVM中只有一个类对象的，而现在通过反序列化，一个新的对象克隆了出来。
+一般来说，一个类实现了 Serializable接口，我们就可以把它往内存地写再从内存里读出而"组装"成一个跟原来一模一样的对象。不过当序列化遇到单例时，这里边就有了个问题：从内存读出而组装的对象破坏了单例的规则。单例是要求一个JVM中只有一个类对象的，而现在通过反序列化，一个新的对象克隆了出来。
 
-  解决方案：加上readResolve()方法
+解决方案：加上readResolve()方法
 
-  ```java
-  private Object readResolve() throws ObjectStreamException {
-         // instead of the object we're on,
-         // return the class variable INSTANCE
-        return INSTANCE;
-  }
-  ```
+```java
+private Object readResolve() throws ObjectStreamException {
+       // instead of the object we're on,
+       // return the class variable INSTANCE
+      return INSTANCE;
+}
+```
 
-- 对象实例化顺序
 
-  1，父类的静态成员变量和静态代码块加载
-  2，子类的静态成员变量和静态代码块加载
-  3，父类成员变量和方法块加载
-  4，父类的构造函数加载
-  5，子类成员变量和方法块加载
-  6，子类的构造函数加载
 
-  参考：
+##### 对象实例化顺序
 
-  - [Java 类的实例化顺序](https://www.cnblogs.com/yanghe123/p/10936025.html)
-  - [java类实例化顺序+经典的面试题](https://blog.csdn.net/qq_36382679/article/details/105811529)
+1，父类的静态成员变量和静态代码块加载
+2，子类的静态成员变量和静态代码块加载
+3，父类成员变量和方法块加载
+4，父类的构造函数加载
+5，子类成员变量和方法块加载
+6，子类的构造函数加载
 
-  测试：
+参考：
 
-  com.ariescat.metis.base.jdk.TestSameField
+- [Java 类的实例化顺序](https://www.cnblogs.com/yanghe123/p/10936025.html)
+- [java类实例化顺序+经典的面试题](https://blog.csdn.net/qq_36382679/article/details/105811529)
 
-- java中父类与子类有相同属性调谁？
+测试：
 
-  **继承**中：
-  属性：不可被重写，只会被隐藏
-  方法：会被重写，不会隐藏
+com.ariescat.metis.base.jdk.TestSameField
 
-  **多态**中，成员变量：
-  无论编译和运行，都参考左边(**引用型变量所属的类**)。
 
-  也就是说
-  Fu f = new Zi();
-  System.out.println(f.age);
-  打印的还是父类的值。
 
-  参考：
+##### java中父类与子类有相同属性调谁？
 
-  - [java中父类与子类有相同属性调谁？取决于左边](https://blog.csdn.net/qq_40093255/article/details/108400976)
+**继承**中：
+属性：不可被重写，只会被隐藏
+方法：会被重写，不会隐藏
 
-  - [父类和子类同时存在相同属性BeanUtils的copyProperties复制](https://blog.csdn.net/u012786993/article/details/82923064/)
+**多态**中，成员变量：
+无论编译和运行，都参考左边(**引用型变量所属的类**)。
+
+也就是说
+Fu f = new Zi();
+System.out.println(f.age);
+打印的还是父类的值。
+
+参考：
+
+- [java中父类与子类有相同属性调谁？取决于左边](https://blog.csdn.net/qq_40093255/article/details/108400976)
+
+- [父类和子类同时存在相同属性BeanUtils的copyProperties复制](https://blog.csdn.net/u012786993/article/details/82923064/)
+
+
 
 #### 对象引用
 
@@ -1050,6 +971,8 @@ else if (!addWorker(command, false))
 
 #### 对象序列化
 
+ObjectInputStream、ObjectOutputStream
+
 
 
 #### 对象拷贝
@@ -1064,11 +987,7 @@ else if (!addWorker(command, false))
   | `apache.PropertyUtils` | 167 ms      | 212 ms         | 601 ms           | 7869 ms           |
   | `apache.BeanUtils`     | 167 ms      | 275 ms         | 1732 ms          | 12380 ms          |
 
-#### 字节码
 
-- Class类的文件结构
-
-  方法表，属性表...
 
 #### 热更新
 
@@ -1098,13 +1017,13 @@ else if (!addWorker(command, false))
 
     使用groovy类加载器重载java代码 重载的java文件可以直接使用源文件，无需编译为class
 
-- 协程
+#### JMX
 
-  > 协程，英文Coroutines，是一种比线程更加轻量级的存在。正如一个进程可以拥有多个线程一样，一个线程也可以拥有多个协程。最重要的是，**协程不是被操作系统内核所管理，而完全是由程序所控制**（也就是在用户态执行）。
-  >
-  > Java语言并没有对协程的原生支持，但是某些开源框架模拟出了协程的功能，有兴趣的小伙伴可以看一看Kilim框架的源码
+JMX是Java Management Extensions，它是一个Java平台的管理和监控接口。
 
-- JMX
+了解不深==
+
+#### 启动
 
 - jsvc
 
@@ -1120,42 +1039,68 @@ else if (!addWorker(command, false))
 >
 > 垃圾回收算法，垃圾收集器，jvm内存模型，每个区域用途，各种oom的种类，jvm调优经验，没有你也要做过，自己去设置启动参数，知道常见参数的含义，类加载过程，双亲委派，什么时候young gc，full gc，各种情况进入老年代的方式，你知道的越多越好，因为吹起来就越自信，举个例子，逃逸分析是什么？markword里面有什么？
 
-- 内存管理
+##### 内存管理
 
-  - 堆是线程共享的内存区域？
+- 堆是线程共享的内存区域？
 
-    不完全正确。因为HotSpot中，TLAB是堆内存的一部分，他在**读取上**确实是**线程共享**的，但是在**内存分配上**，是**线程独享**的。[链接](https://mp.weixin.qq.com/s/Jj5Z1DZKpAgrj9wpYUZ_JQ)
+  不完全正确。因为HotSpot中，TLAB是堆内存的一部分，他在**读取上**确实是**线程共享**的，但是在**内存分配上**，是**线程独享**的。[链接](https://mp.weixin.qq.com/s/Jj5Z1DZKpAgrj9wpYUZ_JQ)
 
-- 类加载
 
-  - ClassLoader [ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
 
-- 字节码执行
+##### 内存模型，线程，线程安全
 
-  - 局部变量表中的Slot
+- 内存模型
+  - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
+  - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
+- [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
+- **happen-before**原则
 
-    > 为什么JVM局部变量表的一个slot至少要能容纳一个int类型的变量？
-    >
-    > 为什么Java虚拟机JVM要把byte和short的运算都转为int ？
 
-- 内存模型，线程，线程安全
 
-  - 内存模型
-    - [《深入理解 Java 内存模型》读书笔记 - 掘金](https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension)
-    - [全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客](http://blog.csdn.net/javazejian/article/details/72772461)
-  - [Monitor对象](https://blog.csdn.net/super_x_man/article/details/81741073)
-  - **happen-before**原则
+##### 类加载 ClassLoader
 
-- 编译与优化
+[ClassLoader那事儿](https://www.cnblogs.com/nedhome/p/9053132.html)
 
-  - HotSpot虚拟机 JIT
-    - 解释执行
-      - 逐条将字节码翻译成机器码并执行
-    - 即时编译（Just-in-time ，JIT）
-      - 将一个方法中包含的所有字节码编译成机器码后再执行。
-  - 逃逸分析
-    - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
-    - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
+问题：
+
+1. Q：同一个Class的**static字段**，被不同的ClassLoader加载，会有产生几份？
+
+   A：会是两份，也就是JVM里有两份内存（某次面试时问到的，但自己没试过）
+
+
+
+##### 字节码
+
+- 局部变量表中的Slot
+
+  为什么JVM局部变量表的一个slot至少要能容纳一个int类型的变量？
+
+  为什么Java虚拟机JVM要把byte和short的运算都转为int ？
+
+- Class类的文件结构
+
+  方法表，属性表...
+
+
+
+##### 编译与优化
+
+- HotSpot虚拟机 JIT
+
+  - 解释执行
+
+    逐条将字节码翻译成机器码并执行
+
+  - 即时编译（Just-in-time ，JIT）
+
+    将一个方法中包含的所有字节码编译成机器码后再执行。
+
+- 逃逸分析
+
+  - [JVM优化之逃逸分析与分配消除](https://my.oschina.net/u/4215320/blog/3108015)
+  - [面试问我 Java 逃逸分析，瞬间被秒杀了。。](https://my.oschina.net/javaroad/blog/3062052)
+
+
 
 #### System#exit
 
@@ -1180,9 +1125,13 @@ else if (!addWorker(command, false))
 
   最后一楼说了：将A线程变为while(true) 一直执行，就会发现A线程也会中止。两个线程各自执行，之前都循环十次，A线程可能在B线程调用System.exit(0)之前就执行完了
 
+
+
 #### GC性能优化，日志解读
 
-- GC算法有哪些？[GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
+- GC算法
+
+  [GC 算法(实现篇) - GC参考手册](https://blog.csdn.net/renfufei/article/details/54885190)
 
 - 可能导致FullGC的原因有以下几种。
 
@@ -1293,6 +1242,101 @@ else if (!addWorker(command, false))
   1.由于是本地方法调用，让JVM无法优化(还有JIT？)
 
   2.反射方法调用还有验证过程和参数问题，参数需要装箱拆箱、需要组装成Object[]形式、异常的包装等等问题
+
+
+
+### Java新特性
+
+#### Java 7
+
+- [JDK7动态方法调用](https://blog.csdn.net/xtayfjpk/article/details/42043977)
+
+  - java.lang.invoke包
+
+    主要包含了`CallSite、MethodHandle、MethodType`等类
+
+    > 反射获取的信息比MethodHandle要多。
+    > 反射是模拟java代码层面的调用，MethodHandle是模拟字节码层面的调用。
+
+    > `MethodHandle`和反射相比好处是：
+    >
+    > - 调用 invoke() 已经被JVM优化，类似直接调用一样。
+    > - 性能好得多，类似标准的方法调用。
+    > - 当我们创建MethodHandle 对象时，实现方法检测，而不是调用invoke() 时。
+
+  - 新增了invokedynamic指令
+
+- ForkJoin
+
+#### Java 8
+
+- 时间类：`Instant`和`LocalDate`，`LocalTime`，`LocalDateTime`
+
+  如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：*simple beautiful strong immutable thread-safe*。
+
+  附：测试代码请看 `metis: com.ariescat.metis.base.time.LocalDateTimeTest`
+
+- stream
+
+  - parallelStream
+
+- 函数式编程
+
+  - [Java 函数优雅之道](https://blog.csdn.net/yunqiinsight/article/details/99826098)
+
+  - Optional类
+
+  - Supplier接口和Consumer接口 （JDK8以下可用guava替代）
+
+    Alyx的FileLoader优化用到了Supplier
+
+  - CompletableFuture 强大的函数式**异步编程**辅助类
+
+    可以比较一下 Google Guava，其也提供了通用的扩展 Future：[ListenableFuture](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/ListenableFuture.html)、[SettableFuture](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/SettableFuture.html) 以及辅助类 [Futures](http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/Futures.html) 等，方便异步编程。
+
+    1. windforce AbstractChatChannel
+    2. [Java CompletableFuture 详解 · 鸟窝 (colobu.com)](https://colobu.com/2016/02/29/Java-CompletableFuture/)
+    3. [[译\]20个使用 Java CompletableFuture的例子 · 鸟窝 (colobu.com)](https://colobu.com/2018/03/12/20-Examples-of-Using-Java's-CompletableFuture/)
+
+- 语法糖
+
+  - **Lambda**
+
+    1. 实现原理
+
+    2. 非捕获式(non-*capturing* lambda)和捕获式(*capturing* lambda)
+
+    3. Java中的lambda每次执行都会创建一个新对象吗？
+
+       测试代码：`study-metis: com.ariescat.metis.base.jdk8.lambda.LambdaTest2`，[参考链接](https://cloud.tencent.com/developer/article/1572212)
+
+  - **::（双冒号）的实现原理**
+
+    ```java
+    List<String> al = Arrays.asList("a", "b", "c", "d");
+    al.forEach(AcceptMethod::printValur);
+    
+    //下面的方法和上面等价的
+    Consumer<String> methodParam = AcceptMethod::printValur; //方法参数
+    al.forEach(x -> methodParam.accept(x));//方法执行accept
+    ```
+
+- JVM
+
+  - 元空间（Metaspace）
+
+#### Java 9
+
+- Reactive Streams
+- Flow API
+
+#### Java 11
+
+- 直接运行源代码
+
+#### QA（疑问）
+
+- [JDK 1.8 下的 java.lang.Class 对象和 static 成员变量在堆还是方法区？](https://blog.csdn.net/xu_jl1997/article/details/89433916)
 
 
 
@@ -2519,11 +2563,13 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
   ```
 
 - 缺点
+
   - 创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加
   - 索引需要占用物理空间，除了数据表占用数据空间之外，每一个索引还要占一定的物理空间，如果建立聚簇索引，那么需要的空间就会更大
   - 当对表中的数据进行增加、删除和修改的时候，索引也需要维护，降低数据维护的速度
 
 - 索引失效
+
   - 如果条件中有or，即使其中有条件带索引也不会使用 (这就是问什么尽量少使用or的原因)
   - 对于多列索引，不是使用的第一部分，则不会使用索引
   - like查询是以%开头
@@ -2616,7 +2662,7 @@ JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux
 
   1. 区分drop，truncate，delete
   2. 利用linux中**硬链接**
-  
+
 - 慢日志
 
   可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。

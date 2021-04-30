@@ -777,10 +777,10 @@ Java语言并没有对协程的原生支持，但是某些开源框架模拟出�
   - 判断当前类是什么类
 
     ```java
-    boolean isLocalClass();			//判断是不是局部类，也就是方法里面的类，其实现：isLocalOrAnonymousClass() && !isAnonymousClass();
+    boolean isLocalClass(); //判断是不是局部类，也就是方法里面的类，其实现：isLocalOrAnonymousClass() && !isAnonymousClass();
     boolean isLocalOrAnonymousClass();
-    boolean isMemberClass();		//判断是不是成员内部类，也就是一个类里面定义的类
-    boolean isAnonymousClass();	//判断当前类是不是匿名类，一般为实例化的接口或实例化的抽象类
+    boolean isMemberClass(); //判断是不是成员内部类，也就是一个类里面定义的类
+    boolean isAnonymousClass(); //判断当前类是不是匿名类，一般为实例化的接口或实例化的抽象类
     boolean isAnnotation();// 判断Class对象是否是注解类型
     boolean isPrimitive(); // 判断Class是否为原始类型（int，double等）
     boolean isSynthetic(); // 判断是否由Java编译器生成（除了像默认构造函数这一类的）的方法或者类，Method也有这个方法
@@ -926,11 +926,11 @@ private Object readResolve() throws ObjectStreamException {
 
 ##### 对象实例化顺序
 
-1，父类的静态成员变量和静态代码块加载
-2，子类的静态成员变量和静态代码块加载
-3，父类成员变量和方法块加载
-4，父类的构造函数加载
-5，子类成员变量和方法块加载
+1，父类的静态成员变量和静态代码块加载  
+2，子类的静态成员变量和静态代码块加载  
+3，父类成员变量和方法块加载  
+4，父类的构造函数加载  
+5，子类成员变量和方法块加载  
 6，子类的构造函数加载
 
 参考：
@@ -938,24 +938,26 @@ private Object readResolve() throws ObjectStreamException {
 - [Java 类的实例化顺序](https://www.cnblogs.com/yanghe123/p/10936025.html)
 - [java类实例化顺序+经典的面试题](https://blog.csdn.net/qq_36382679/article/details/105811529)
 
-测试：
-
-com.ariescat.metis.base.jdk.TestSameField
+测试：com.ariescat.metis.base.jdk.TestSameField
 
 
 
 ##### java中父类与子类有相同属性调谁？
 
-**继承**中：
-属性：不可被重写，只会被隐藏
+**继承**中：  
+属性：不可被重写，只会被隐藏  
 方法：会被重写，不会隐藏
 
-**多态**中，成员变量：
+**多态**中，成员变量：  
 无论编译和运行，都参考左边(**引用型变量所属的类**)。
 
 也就是说
+
+```java
 Fu f = new Zi();
 System.out.println(f.age);
+```
+
 打印的还是父类的值。
 
 参考：

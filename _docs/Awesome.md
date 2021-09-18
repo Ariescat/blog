@@ -13,7 +13,7 @@ catalog: true
 
 <br>
 
-已启用！！ 最新版本已移至：[Introduce · Awesome (ariescat.top)](https://awesome.ariescat.top/)
+已启用！！ 最新版本已迁移至：[Introduce · Awesome (ariescat.top)](https://awesome.ariescat.top/)
 
 <br>
 

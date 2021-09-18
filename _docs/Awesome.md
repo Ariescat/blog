@@ -9,6 +9,18 @@ header-img: "img/cover/167391.jpg"
 catalog: true
 ---
 
+
+
+<br>
+
+已启用！！ 最新版本已移至：[Introduce · Awesome (ariescat.top)](https://awesome.ariescat.top/)
+
+<br>
+
+<br>
+
+
+
 # 《技术总结》
 
 > **思想是灵魂,实现是形式**

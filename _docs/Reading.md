@@ -11,6 +11,16 @@ catalog: true
 
 
 
+<br>
+
+已启用！！ 最新版本已移至：[Effective Java · Awesome (ariescat.top)](https://awesome.ariescat.top/Reading/Effective Java.html)
+
+<br>
+
+<br>
+
+
+
 #  Effective Java
 
 ### 第四章 类和接口

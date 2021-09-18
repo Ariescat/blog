@@ -29,12 +29,11 @@ jobs:
 
       - name: Run npm install github-gh
         run: |
-          npm uninstall -g node-sass
-          npm install -g node-sass@4.14.1
-          npm install -g gh-pages@3.2.3
+          echo '{"scripts": {"gh-pages-dev": "gh-pages"},"devDependencies": {"gh-pages": "^3.2.3"}}' > package.json
+          npm install
 
       - name: Run Echo github-gh
-        run: echo `gh-pages -V`
+        run: echo `npm run gh-pages-dev -- -V`
 
       - name: Setup Ruby, JRuby and TruffleRuby
         # You may pin to the exact commit or the version.
@@ -55,4 +54,4 @@ jobs:
       - name: Run deploy-coding-master
         # 用户名密码中一定要转义 @符号 转码后变成了%40  See:https://blog.csdn.net/u012447791/article/details/118225605
         # eg. https://username:password@127.0.0.1/res/res.git
-        run: gh-pages "'-d' '_site' '-b' 'master' '-r' '${{secrets.CODING_URL}}' '-u' 'github-actions-bot <${{secrets.EMAIL}}>' '-m' 'github-actions-bot Updates'"
+        run: npm run gh-pages-dev -- -d _site -b master -r "${{secrets.CODING_URL}}" -u "github-actions-bot <${{secrets.EMAIL}}>" -m "github-actions-bot Updates"

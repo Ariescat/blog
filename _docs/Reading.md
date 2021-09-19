@@ -13,7 +13,7 @@ catalog: true
 
 <br>
 
-已启用！！ 最新版本已迁移至：[Effective Java · Awesome (ariescat.top)](https://awesome.ariescat.top/Reading/Effective Java.html)
+已弃用！！ 最新版本已迁移至：[Effective Java · Awesome (ariescat.top)](https://awesome.ariescat.top/Reading/Effective Java.html)
 
 <br>
 

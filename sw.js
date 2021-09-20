@@ -8,12 +8,7 @@
 
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
-const HOSTNAME_WHITELIST = [
-  self.location.hostname,
-  "ariescat.top/",
-  "yanshuo.io",
-  "cdnjs.cloudflare.com"
-]
+const HOSTNAME_WHITELIST = [self.location.hostname, "ariescat.top"]
 
 
 // The Util Function to hack URLs of intercepted requests

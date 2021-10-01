@@ -10,9 +10,6 @@ const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
 const HOSTNAME_WHITELIST = [
   "cdn.jsdelivr.net",
-  "i0.hdslb.com",
-  "music.163.com",
-  "p1.music.126.net",
   "cdnjs.cloudflare.com"
 ];
 const LOCATION_HOSTNAME = self.location.hostname;
@@ -104,7 +101,7 @@ self.addEventListener('install', e => {
  *  waitUntil(): activating ====> activated
  */
 self.addEventListener('activate',  event => {
-  console.log('service worker activated.')
+  console.log('Service Worker Activated.')
   event.waitUntil(self.clients.claim());
 });
 

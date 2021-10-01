@@ -496,6 +496,8 @@ function onPjaxPopstate(event) {
     } else {
       locationReplace(location.href)
     }
+  } else {
+    pjax($.extend($.pjax.state, {url: location.href, id: uniqueId()}))
   }
   initialPop = false
 }

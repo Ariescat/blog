@@ -1,4 +1,5 @@
 // js中使用的全局参数，没法使用jekyll中的site.data数据，而且也不想直接暴露这些到页面上
+// 压缩工具：http://www.esjson.com/jsformat.html
 (function () {
     __Ariescat_Config__ = {
         L2Dwidget: {

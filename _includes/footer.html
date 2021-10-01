@@ -7,7 +7,7 @@
                     {% if site.RSS %}
                     <li>
                         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-                            <span class="fa-stack fa-lg">
+                        <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
                             </span>
@@ -223,7 +223,7 @@
             l = $('<li class="'+n+'_nav"></li>').append(c);
             $(selector).append(l);
         });
-        return true;    
+        return true;
     }
 
     generateCatalog(".catalog-body");
@@ -264,8 +264,7 @@
         var curProtocol = window.location.protocol.split(':')[0];
         if (curProtocol === 'https'){
             bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else{
+        }else{
             bp.src = 'http://push.zhanzhang.baidu.com/push.js';
         }
         var s = document.getElementsByTagName("script")[0];
@@ -310,6 +309,8 @@
         // 兼容pjax 刷新时清空上一次的值
         $searchInput.val('')
         $('#search-results').empty()
+        $searchPage.removeClass('search-active')
+        $body.removeClass('no-scroll')
 
         $searchOpen.on('click', function (e) {
             e.preventDefault();

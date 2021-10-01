@@ -6,6 +6,13 @@ header-img: "img/cover/167382.jpg"
 header-mask: 0.3
 ---
 
+<style>
+    .post-container h5 {
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+</style>
+
 <!-- Language Selector -->
 <!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
@@ -61,9 +68,9 @@ header-mask: 0.3
 
     <h5>主要的 Timeline</h5>
     <ul>
-        <li>2021-09：<a href="/2021/09/30/网站托管的二三事">网站托管 的二三事</a></li>
-        <li>2021-01：<a href="/2021/01/30/给小破站安排上的小戏法/">给 小破站 安排上的小戏法</a></li>
-        <li>2019-01：<a href="/2019/01/19/Hello-2019/">Hello 2019</a></li>
+        <li>2021-09-30：<a href="/2021/09/30/网站托管的二三事">网站托管 的二三事</a></li>
+        <li>2021-01-30：<a href="/2021/01/30/给小破站安排上的小戏法/">给 小破站 安排上的小戏法</a></li>
+        <li>2019-01-19：<a href="/2019/01/19/Hello-2019/">Hello 2019</a></li>
     </ul>
 
     <h5><strong> 版权声明 </strong></h5>
@@ -82,6 +89,8 @@ header-mask: 0.3
         <li><a href="http://huangxuan.me/">Hux</a> , <a href="http://qiubaiying.vip/">柏荧</a></li>
     </ul>
 </div>
+
+<br>
 
 {% include comment.html %}
 
@@ -151,6 +160,7 @@ header-mask: 0.3
         }
         return time;
     }
+
     function setTime() {
         // 博客创建时间秒数，时间格式中，月比较特殊，是从0开始的，所以想要显示5月，得写4才行，如下
         var create_time = Math.round(new Date(Date.UTC(2019, 0, 19, 0, 0, 0)).getTime() / 1000);
@@ -168,5 +178,6 @@ header-mask: 0.3
             clearInterval(timer);
         }
     }
+
     var timer = setInterval(setTime, 1000);
 </script>

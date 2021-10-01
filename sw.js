@@ -12,6 +12,7 @@ const HOSTNAME_WHITELIST = [
   "cdn.jsdelivr.net",
   "i0.hdslb.com",
   "music.163.com",
+  "p1.music.126.net",
   "cdnjs.cloudflare.com"
 ];
 const LOCATION_HOSTNAME = self.location.hostname;

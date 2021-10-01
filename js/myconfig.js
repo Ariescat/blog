@@ -1,3 +1,4 @@
+// js中使用的全局参数，没法使用jekyll中的site.data数据，而且也不想直接暴露这些到页面上
 (function () {
     __Ariescat_Config__ = {
         L2Dwidget: {

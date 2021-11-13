@@ -135,13 +135,23 @@ layout: default
                                 </a>
                             </li>
                             {% endif %}
+                            {% if site.gitbook_url %}
+                            <li>
+                                <a target="_blank" href="{{ site.gitbook_url }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
                             <!-- add jianshu add target = "_blank" to <a> by BY -->
                             {% if site.jianshu_username %}
                             <li>
                                 <a target="_blank" href="https://www.jianshu.com/u/{{ site.jianshu_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">简</i>
+                                        <i class="fa fa-stack-1x fa-inverse">简</i>
                                     </span>
                                 </a>
                             </li>
@@ -151,7 +161,7 @@ layout: default
                                 <a target="_blank" href="https://blog.csdn.net/{{ site.csdn_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">C</i>
+                                        <i class="fa fa-stack-1x fa-inverse">C</i>
                                     </span>
                                 </a>
                             </li>
@@ -171,7 +181,7 @@ layout: default
                                 <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        <i class="fa fa-stack-1x fa-inverse">知</i>
                                     </span>
                                 </a>
                             </li>

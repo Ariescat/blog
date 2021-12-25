@@ -1427,7 +1427,7 @@ spring中内置了一些BeanPostProcessor接口实现类，如下所示：
 
 <script>
     // pjax无刷新ajax加载
-    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 5000});
     // NProgress
     $(document).on('pjax:start', function () {
         NProgress.start();

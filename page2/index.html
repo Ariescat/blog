@@ -1614,7 +1614,7 @@ Koloboke提供了一套完整的集合原始类型的实现，可以避免开销
 
 <script>
     // pjax无刷新ajax加载
-    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 5000});
     // NProgress
     $(document).on('pjax:start', function () {
         NProgress.start();

@@ -1416,7 +1416,7 @@ Ps：先行发生是一个逻辑上的概念，并非真实的执行的先后顺
 
 <script>
     // pjax无刷新ajax加载
-    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 5000});
     // NProgress
     $(document).on('pjax:start', function () {
         NProgress.start();

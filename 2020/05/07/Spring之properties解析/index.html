@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个在互联网苟且偷生的工具人 @Ariescat">
+    <meta name="keywords"  content="一只白羊座的傻猫, Blog, Java, Ariescat">
+    <meta name="theme-color" content="#000000">
+    
+    <title>Spring之properties解析 - 一只白羊座的傻猫 | Ariescat Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <!-- Safari Webpage Icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ariescat.top//2020/05/07/Spring%E4%B9%8Bproperties%E8%A7%A3%E6%9E%90/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+    <!-- MyConfig -->
+    <script src="/js/myconfig.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!-- pjax -->
+    <script src="/js/jquery.pjax.js"></script>
+
+    <!-- lazyload -->
+    <script src="/js/jquery.lazyload.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+        <!-- 引入Valine评论插件 https://valine.js.org/ -->
+        <script src='/js/valine.min.js'></script>
+    
+
+    <!-- artitalk -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk@3.2.1"></script>
+
+    <!-- NProgress https://github.com/rstacruz/nprogress -->
+    <link rel="stylesheet" href="/css/nprogress.css">
+    <script src="/js/nprogress.js"></script>
+
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Simple Jekyll Search -->
+    <script src="/js/simple-jekyll-search.min.js"></script>
+
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+</head>
+
+
+<style>
+    /* header遮罩 */
+    .header-shade {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+    <!-- 鼠标特效 -->
+    <!--<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>-->
+
+    <div id="pageContent">
+        <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ariescat Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a href="/tags/">Tags</a>-->
+<!--                    </li>-->
+					<li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+					<li>
+                        <a href="/about/">About</a>
+                    </li>
+                    <li class="search-icon">
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <!-- 
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                     -->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function () {
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        },
+        open: function () {
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function (e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        } else {
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function (e) {
+        if (e.target == $toggle) return;
+        if (e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+        <div id="content"><!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/cover/155349.jpg" width="0" height="0"> -->
+
+
+
+<!-- Code highlight -->
+<link rel="stylesheet" href="/css/darcula.css">
+<style>
+	.highlight {
+		border-style: none;
+		background: none;
+	}
+	.highlight pre {
+		line-height: 1.5;
+	}
+	.highlight pre code {
+		font-size: 14px;
+	}
+	.hljs {
+		border-radius: 4px;
+	}
+</style>
+<script>
+	async("/js/highlight.pack.js", function () {
+		hljs.initHighlighting();
+	})
+</script>
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/cover/155349.jpg')
+    }
+</style>
+<header class="intro-header" >
+	<div class="header-shade">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="post-heading">
+						<div class="tags">
+							
+							<a class="tag" href="/archives/?tag=Java" title="Java">Java</a>
+							
+							<a class="tag" href="/archives/?tag=Spring" title="Spring">Spring</a>
+							
+							<a class="tag" href="/archives/?tag=SpringBoot" title="SpringBoot">SpringBoot</a>
+							
+						</div>
+						<h1>Spring之properties解析</h1>
+						
+						
+						<h2 class="subheading">"来瞅瞅Spring怎么解析properties的吧"</h2>
+						
+
+						
+						<span class="meta">Posted by Ariescat on May 7, 2020</span>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+			<!-- Post Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				post-container">
+
+				<h3 id="spring-properties使用的几种方式">Spring Properties使用的几种方式</h3>
+
+<ol>
+  <li>
+    <p>在Java中使用这个 <strong>@Value(“${ }”)注解</strong> 读取</p>
+  </li>
+  <li>
+    <p>在配置文件中使用 <strong>${ }</strong> 读取</p>
+  </li>
+</ol>
+
+<h3 id="解析器注册">解析器注册</h3>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">context:property-placeholder</code>标签</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;context:property-placeholder</span> <span class="na">location=</span><span class="s">"classpath:*.properties"</span><span class="nt">/&gt;</span>
+</code></pre></div>    </div>
+
+    <p>源码解析：</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ContextNamespaceHandler</span> <span class="kd">extends</span> <span class="nc">NamespaceHandlerSupport</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">registerBeanDefinitionParser</span><span class="o">(</span><span class="s">"property-placeholder"</span><span class="o">,</span> <span class="k">new</span> <span class="nc">PropertyPlaceholderBeanDefinitionParser</span><span class="o">());</span>
+		<span class="o">...</span><span class="na">省略代码</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+    <p>这个<code class="language-plaintext highlighter-rouge">Parser</code>实质上注册了一个org.springframework.context.support.PropertySourcesPlaceholderConfigurer（实现了<code class="language-plaintext highlighter-rouge">BeanFactoryPostProcessor</code>的处理器）。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// PropertySourcesPlaceholderConfigurer.java</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">postProcessBeanFactory</span><span class="o">(</span><span class="nc">ConfigurableListableBeanFactory</span> <span class="n">beanFactory</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">BeansException</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">propertySources</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">this</span><span class="o">.</span><span class="na">propertySources</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MutablePropertySources</span><span class="o">();</span>
+			<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">environment</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+				<span class="k">this</span><span class="o">.</span><span class="na">propertySources</span><span class="o">.</span><span class="na">addLast</span><span class="o">(</span>
+					<span class="c1">// 注意看这里this.environment里包含了propertySources</span>
+					<span class="c1">// spring boot的配置都在这里</span>
+					<span class="k">new</span> <span class="nc">PropertySource</span><span class="o">&lt;</span><span class="nc">Environment</span><span class="o">&gt;(</span><span class="no">ENVIRONMENT_PROPERTIES_PROPERTY_SOURCE_NAME</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">environment</span><span class="o">)</span> <span class="o">{</span>
+						<span class="nd">@Override</span>
+						<span class="nd">@Nullable</span>
+						<span class="kd">public</span> <span class="nc">String</span> <span class="nf">getProperty</span><span class="o">(</span><span class="nc">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+							<span class="c1">// this.source就是this.environment</span>
+							<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">source</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+						<span class="o">}</span>
+					<span class="o">}</span>
+				<span class="o">);</span>
+			<span class="o">}</span>
+			<span class="k">try</span> <span class="o">{</span>
+				<span class="c1">// 这一步的mergeProperties()也很重要</span>
+				<span class="c1">// xml里的location配置会在这里获取</span>
+				<span class="nc">PropertySource</span><span class="o">&lt;?&gt;</span> <span class="n">localPropertySource</span> <span class="o">=</span>
+						<span class="k">new</span> <span class="nf">PropertiesPropertySource</span><span class="o">(</span><span class="no">LOCAL_PROPERTIES_PROPERTY_SOURCE_NAME</span><span class="o">,</span> <span class="n">mergeProperties</span><span class="o">());</span>
+				<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">localOverride</span><span class="o">)</span> <span class="o">{</span>
+					<span class="k">this</span><span class="o">.</span><span class="na">propertySources</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="n">localPropertySource</span><span class="o">);</span>
+				<span class="o">}</span>
+				<span class="k">else</span> <span class="o">{</span>
+					<span class="k">this</span><span class="o">.</span><span class="na">propertySources</span><span class="o">.</span><span class="na">addLast</span><span class="o">(</span><span class="n">localPropertySource</span><span class="o">);</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+			<span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+				<span class="k">throw</span> <span class="k">new</span> <span class="nf">BeanInitializationException</span><span class="o">(</span><span class="s">"Could not load properties"</span><span class="o">,</span> <span class="n">ex</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+   
+		<span class="n">processProperties</span><span class="o">(</span><span class="n">beanFactory</span><span class="o">,</span> <span class="k">new</span> <span class="nc">PropertySourcesPropertyResolver</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">propertySources</span><span class="o">));</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">appliedPropertySources</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">propertySources</span><span class="o">;</span>
+	<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>PropertyPlaceholderConfigurer类</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">"org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"locations"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;list&gt;</span>
+            <span class="nt">&lt;value&gt;</span>classpath:resource1.properties<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;value&gt;</span>classpath:config/resource2.properties<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;value&gt;</span>classpath*:resource3.properties<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;/list&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/bean&gt;</span>
+</code></pre></div>    </div>
+
+    <p>原理和 <strong>@1</strong> 差不多</p>
+  </li>
+  <li>
+    <p>SpringBoot自动装配</p>
+
+    <p><code class="language-plaintext highlighter-rouge">@EnableAutoConfiguration</code>自动装配中spring.factories文件里包含<code class="language-plaintext highlighter-rouge">PropertyPlaceholderAutoConfiguration</code>类，</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Bean</span>
+<span class="nd">@ConditionalOnMissingBean</span><span class="o">(</span><span class="n">search</span> <span class="o">=</span> <span class="nc">SearchStrategy</span><span class="o">.</span><span class="na">CURRENT</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">PropertySourcesPlaceholderConfigurer</span> <span class="nf">propertySourcesPlaceholderConfigurer</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">PropertySourcesPlaceholderConfigurer</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+    <p>把<code class="language-plaintext highlighter-rouge">PropertySourcesPlaceholderConfigurer</code>这个实现了<code class="language-plaintext highlighter-rouge">BeanFactoryPostProcessor</code>的处理器注册进去。</p>
+
+    <p>这个类就是 <strong>@1</strong> 里面的类</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">@PropertySource</code></p>
+
+    <p>上面<code class="language-plaintext highlighter-rouge">@EnableAutoConfiguration</code>的自动装配只是加载了默认的 ./ (config/) application.properties（.yml，.xml）配置文件，可见@PropertySource灵活一点</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PropertySource</span><span class="o">(</span><span class="n">value</span><span class="o">={</span><span class="s">"classpath:mail.properties"</span><span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReadProperties</span> <span class="o">{</span>
+<span class="err">　　</span><span class="nd">@Value</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"${mail.username}"</span><span class="o">)</span>
+ <span class="err">　</span> <span class="kd">private</span> <span class="nc">String</span> <span class="no">USER_NAME</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <p>区别<code class="language-plaintext highlighter-rouge">@ImportResource</code>，这个是可以引入带有<code class="language-plaintext highlighter-rouge">&lt;bean&gt;</code>标签的<code class="language-plaintext highlighter-rouge">xml</code>文件的（也就是普通的spring配置文件），曾经一度把这个和<code class="language-plaintext highlighter-rouge">properties</code>配置搞混。</p>
+
+    <p>源码解析：</p>
+
+    <p><code class="language-plaintext highlighter-rouge">org.springframework.context.annotation.ConfigurationClassParser#doProcessConfigurationClass</code></p>
+  </li>
+  <li>
+    <p>spring boot特有的<code class="language-plaintext highlighter-rouge">@ConfigurationProperties</code></p>
+
+    <p>源码解析：</p>
+
+    <p><code class="language-plaintext highlighter-rouge">ConfigurationPropertiesBindingPostProcessor#postProcessBeforeInitialization</code></p>
+
+    <p>这里面有空再研究吧，看着有点头大</p>
+  </li>
+</ol>
+
+<h3 id="value-源码解析">@Value 源码解析</h3>
+
+<p><code class="language-plaintext highlighter-rouge">org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor#postProcessProperties</code></p>
+
+<p>此处是Spring统一处理注入依赖的地方，接下来会调用到<code class="language-plaintext highlighter-rouge">org.springframework.beans.factory.support.DefaultListableBeanFactory#doResolveDependency</code>：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// 这里的AutowireCandidateResolver是QualifierAnnotationAutowireCandidateResolver，</span>
+    <span class="c1">// 其实就是获取@Value上的注解值</span>
+    <span class="nc">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">getAutowireCandidateResolver</span><span class="o">().</span><span class="na">getSuggestedValue</span><span class="o">(</span><span class="n">descriptor</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="k">instanceof</span> <span class="nc">String</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">strVal</span> <span class="o">=</span> <span class="n">resolveEmbeddedValue</span><span class="o">((</span><span class="nc">String</span><span class="o">)</span> <span class="n">value</span><span class="o">);</span>
+            <span class="nc">BeanDefinition</span> <span class="n">bd</span> <span class="o">=</span> <span class="o">(</span><span class="n">beanName</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">containsBean</span><span class="o">(</span><span class="n">beanName</span><span class="o">)</span> <span class="o">?</span>
+                    <span class="n">getMergedBeanDefinition</span><span class="o">(</span><span class="n">beanName</span><span class="o">)</span> <span class="o">:</span> <span class="kc">null</span><span class="o">);</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">evaluateBeanDefinitionString</span><span class="o">(</span><span class="n">strVal</span><span class="o">,</span> <span class="n">bd</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">TypeConverter</span> <span class="n">converter</span> <span class="o">=</span> <span class="o">(</span><span class="n">typeConverter</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span> <span class="n">typeConverter</span> <span class="o">:</span> <span class="n">getTypeConverter</span><span class="o">());</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">converter</span><span class="o">.</span><span class="na">convertIfNecessary</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">type</span><span class="o">,</span> <span class="n">descriptor</span><span class="o">.</span><span class="na">getTypeDescriptor</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">UnsupportedOperationException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// A custom TypeConverter which does not support TypeDescriptor resolution...</span>
+            <span class="k">return</span> <span class="o">(</span><span class="n">descriptor</span><span class="o">.</span><span class="na">getField</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span>
+                    <span class="n">converter</span><span class="o">.</span><span class="na">convertIfNecessary</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">type</span><span class="o">,</span> <span class="n">descriptor</span><span class="o">.</span><span class="na">getField</span><span class="o">())</span> <span class="o">:</span>
+                    <span class="n">converter</span><span class="o">.</span><span class="na">convertIfNecessary</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">type</span><span class="o">,</span> <span class="n">descriptor</span><span class="o">.</span><span class="na">getMethodParameter</span><span class="o">()));</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>QualifierAnnotationAutowireCandidateResolver就是我们要找的处理类，它负责处理@Qualifier和@Value两个注解的取值操作。取值结果一般为“${xxx}”，然后执行<code class="language-plaintext highlighter-rouge">resolveEmbeddedValue((String) value)</code>，走进：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// PropertySourcesPlaceholderConfigurer.java</span>
+	<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">processProperties</span><span class="o">(</span><span class="nc">ConfigurableListableBeanFactory</span> <span class="n">beanFactoryToProcess</span><span class="o">,</span>
+			<span class="kd">final</span> <span class="nc">ConfigurablePropertyResolver</span> <span class="n">propertyResolver</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">BeansException</span> <span class="o">{</span>
+
+		<span class="n">propertyResolver</span><span class="o">.</span><span class="na">setPlaceholderPrefix</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">placeholderPrefix</span><span class="o">);</span>
+		<span class="n">propertyResolver</span><span class="o">.</span><span class="na">setPlaceholderSuffix</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">placeholderSuffix</span><span class="o">);</span>
+		<span class="n">propertyResolver</span><span class="o">.</span><span class="na">setValueSeparator</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">valueSeparator</span><span class="o">);</span>
+
+		<span class="nc">StringValueResolver</span> <span class="n">valueResolver</span> <span class="o">=</span> <span class="n">strVal</span> <span class="o">-&gt;</span> <span class="o">{</span>
+			<span class="c1">// 走进这里！！propertyResolver就是上面postProcessBeanFactory()里面创建出来的</span>
+			<span class="c1">// 通过这一步就可以获取到properties文件的值</span>
+			<span class="nc">String</span> <span class="n">resolved</span> <span class="o">=</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">ignoreUnresolvablePlaceholders</span> <span class="o">?</span>
+					<span class="n">propertyResolver</span><span class="o">.</span><span class="na">resolvePlaceholders</span><span class="o">(</span><span class="n">strVal</span><span class="o">)</span> <span class="o">:</span>
+					<span class="n">propertyResolver</span><span class="o">.</span><span class="na">resolveRequiredPlaceholders</span><span class="o">(</span><span class="n">strVal</span><span class="o">));</span>
+			<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">trimValues</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">resolved</span> <span class="o">=</span> <span class="n">resolved</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
+			<span class="o">}</span>
+			<span class="k">return</span> <span class="o">(</span><span class="n">resolved</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">nullValue</span><span class="o">)</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="n">resolved</span><span class="o">);</span>
+		<span class="o">};</span>
+
+		<span class="n">doProcessProperties</span><span class="o">(</span><span class="n">beanFactoryToProcess</span><span class="o">,</span> <span class="n">valueResolver</span><span class="o">);</span>
+	<span class="o">}</span>
+</code></pre></div></div>
+
+<p>参考：</p>
+
+<ol>
+  <li><a href="https://www.cnblogs.com/zxf330301/p/6184139.html">spring- properties 读取的五种方式</a></li>
+  <li><a href="https://www.jianshu.com/p/933669270a9f">SpringBoot 中 @Value 源码解析</a></li>
+</ol>
+
+
+				<hr style="visibility: hidden;">
+
+				<ul class="pager">
+					
+					<li class="previous">
+						<a href="/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/" data-toggle="tooltip" data-placement="top" title="关于Gson的几个坑">
+						Previous<br>
+						<span>关于Gson的几个坑</span>
+						</a>
+					</li>
+					
+					
+					<li class="next">
+						<a href="/2020/06/30/%E5%8D%95%E4%BE%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/" data-toggle="tooltip" data-placement="top" title="单例与线程安全">
+						Next<br>
+						<span>单例与线程安全</span>
+						</a>
+					</li>
+					
+				</ul>
+
+
+				
+
+
+
+
+<!-- 引入Valine评论插件 https://valine.js.org/ -->
+<div id="vcomments" style="margin-top: 30px;"></div>
+<script>
+    let pathname = window.location.pathname;
+    let valine = new Valine({
+        el: '#vcomments',
+        appId: '8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz',
+        appKey: 'QXoMCzb8TFMV0DBzDNXkcvxa',
+        placeholder: '你是我一生只会遇见一次的惊喜 | ᴥ•́ )✧',
+        path: pathname,
+        avatar: 'mp',
+        recordIP: 'true',
+        enableQQ: 'true',
+        emojiCDN: __Ariescat_Config__.Valine.emojiCDN,
+        emojiMaps: __Ariescat_Config__.Valine.emojiMaps
+    });
+    $(document).on('ready pjax:beforeReplace', function (event) {
+        valine.setPath(pathname);
+    });
+</script>
+<style>
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/img/comment_bg.png") 100% 100% no-repeat;
+    }
+    #vcomments p {
+        margin: 8px 0;
+    }
+    .v[data-class=v] .vcards .vcard .vquote {
+        padding-left: .5em;
+    }
+    .v[data-class=v] .vcards .vcard .vimg {
+        margin: 0 .7525em 0 0;
+    }
+
+    .v[data-class=v] .vwrap,
+    .v[data-class=v] .vbtn {
+        border-color: #ccc;
+    }
+    /*.v[data-class=v] .vcards > .vcard:last-child .vh*/
+    /*.v[data-class=v] .vcards > .vcard > .vh {*/
+    /*    border-bottom: 1px solid #e4e4e4;*/
+    /*}*/
+    .v[data-class="v"] .vcards .vcard .vquote {
+        border-left: none;
+    }
+
+    /*设置评论头像旋转*/
+    .v .vcards .vcard .vimg:hover {
+        -webkit-animation: vimg-transform .8s linear;
+                animation: vimg-transform .8s linear;
+    }
+    @-webkit-keyframes vimg-transform {
+        0%      {-webkit-transform:rotate(0deg);}
+        50%     {-webkit-transform:rotate(180deg);}
+        100%    {-webkit-transform:rotate(360deg);}
+    }
+    @keyframes vimg-transform {
+        0%      {transform:rotate(0deg);}
+        50%     {transform:rotate(180deg);}
+        100%    {transform:rotate(360deg);}
+    }
+</style>
+
+
+
+
+
+
+
+
+			</div>
+
+			<!-- Side Catalog Container -->
+			
+			<div class="
+				col-lg-2 col-lg-offset-0
+				visible-lg-block
+				sidebar-container
+				catalog-container">
+				<div class="side-catalog">
+					<hr class="hidden-sm hidden-xs">
+					<h5>
+						<a class="catalog-toggle" href="#">CATALOG</a>
+					</h5>
+					<ul class="catalog-body"></ul>
+				</div>
+			</div>
+			
+
+			<!-- Sidebar Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				sidebar-container">
+
+				<!-- Featured Tags -->
+				
+				<section>
+					<hr class="hidden-sm hidden-xs">
+					<h5><a href="/archives/">FEATURED TAGS</a></h5>
+					<div class="tags">
+						
+							
+								<a href="/archives/?tag=Blog" title="Blog" rel="5">
+									Blog
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=生活" title="生活" rel="8">
+									生活
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Java" title="Java" rel="16">
+									Java
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Guava" title="Guava" rel="1">
+									Guava
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Groovy" title="Groovy" rel="2">
+									Groovy
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=前端" title="前端" rel="1">
+									前端
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=IO" title="IO" rel="2">
+									IO
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Spring" title="Spring" rel="4">
+									Spring
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=AOP" title="AOP" rel="1">
+									AOP
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Json" title="Json" rel="1">
+									Json
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=SpringBoot" title="SpringBoot" rel="1">
+									SpringBoot
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=设计模式" title="设计模式" rel="1">
+									设计模式
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=操作系统" title="操作系统" rel="1">
+									操作系统
+								</a>
+							
+						
+					</div>
+				</section>
+				
+
+				<!-- Links -->
+				
+				<hr>
+				<h5>LINKS</h5>
+				<ul class="list-inline">
+					
+					<li><a href="https://www.jianshu.com/">简书</a></li>
+					
+					<li><a href="https://www.zhihu.com/">知乎</a></li>
+					
+					<li><a href="https://juejin.im/">掘金</a></li>
+					
+				</ul>
+				
+			</div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("/js/anchor.min.js",function(){
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // anchors.options = {
+        //   visible: 'always',
+        //   placement: 'right',
+        //   icon: '#'
+        // };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+</div>
+
+        <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Ariescat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://awesome.ariescat.top/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.jianshu.com/u/39035eb3096b">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://blog.csdn.net/PingXiaoGai">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">C</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Ariescat Blog 2019-2021
+                    <br>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备20047845号</a>
+                    <br>
+                    Powered by <a href="https://ariescat.top/">Ariescat</a> |
+                    <a href="https://github.com/Ariescat/blog" target="_blank"
+                       aria-label="Star Ariescat/blog on GitHub">
+                        <img src="https://img.shields.io/github/stars/Ariescat/blog?style=social"
+                             alt="Star" style="cursor: pointer">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                // size: {start: 1, end: 1, unit: 'em'},
+                // color: {start: '#bbbbee', end: '#0085a1'},
+                color: {start: '#bbbbee', end: '#2f93b4'},
+            };
+            $('#tag_cloud a').tagcloud();
+        });
+        async('/js/archive.js', function () {
+            // 重新加载archive.js，计算归档和页签
+        });
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async("/js/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPNE1L0HRN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HPNE1L0HRN');
+</script>
+
+
+
+
+<!-- Baidu 统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?15a0182bcc909fead8c8f48acb3222d4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        // 兼容pjax，先清理，不然pjax的返回，前进会造成重复追加
+        $(selector).empty();
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!--Baidu 收录 自动推送代码-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+<!-- fancybox支持 -->
+<script>
+    $(document).ready(function () {
+        $('#pageContent #content img').each(function (index, value) {
+            if (value.classList.contains('not-fancybox')) {
+                return;
+            }
+            let $a = document.createElement('a')
+            $a.setAttribute('data-fancybox', 'gallery')
+            /* 兼容img lazyload */
+            $a.setAttribute('href', $(this).attr('data-original') || value.src)
+            $a.setAttribute('data-caption', value.alt)
+            $(this).wrap($a)
+        });
+    });
+</script>
+
+<!-- img lazyload -->
+<script>
+    $(function () {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
+</script>
+
+
+<!-- search -->
+<script>
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        // 兼容pjax 刷新时清空上一次的值
+        $searchInput.val('')
+        $('#search-results').empty()
+        $searchPage.removeClass('search-active')
+        $body.removeClass('no-scroll')
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+    </div>
+
+    <!--春节挂件-->
+<style>
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+    }
+    #chunjie {
+        display: none;
+    }
+    .deng-box {
+        position: fixed;
+        top: -40px;
+        left: 7.5%;
+        z-index: 999;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        left: 10%;
+        z-index: 999;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    /*@font-face {
+        font-family: "华文行楷";
+        src: url('/fonts/华文行楷.ttf');
+    }*/
+    .deng-t {
+        /*font-family: 华文行楷;*/
+        font-size: 24px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 44px;
+        text-align: center;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+
+<div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">喜迎</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">春节</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if ($(window).width() <= 630 || (new Date().getMonth()) > 1) {
+        $('#chunjie').css('display', 'none');
+    } else {
+        $('#chunjie').css('display', 'block');
+    }
+</script>
+    <!--春节挂件-->
+<style>
+    /*春节主题 挂件吊线*/
+    .caishendeng {
+        display: none;
+    }
+    .caishenxianleft {
+        position: fixed;
+        top: 0;
+        left: 16% !important;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenxian {
+        position: fixed;
+        top: 0;
+        right: 20%;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenpic {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        top: 12px;
+        right: -22px;
+        z-index: 9;
+        /* transform-origin: 50% -100px; */
+        animation: swing 3.5s infinite ease-in-out;
+        /* -webkit-transform-origin: 50% -100px; */
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .fudao {
+        width: 38px;
+        height: 38px;
+        top: 18px !important;
+        left: -19px !important;
+    }
+</style>
+
+<div class="caishendeng">
+    <div class="caishenxian">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+<div class="caishendeng">
+    <div class="caishenxianleft">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+
+<script>
+    if ($(window).width() > 630 || (new Date().getMonth()) > 1) {
+        $('.caishendeng').css('display', 'none');
+    } else {
+        $('.caishendeng').css('display', 'block');
+    }
+</script>
+    <!-- Search -->
+<div class="search-page">
+    <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+    </div>
+    <div class="search-main container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!--<form>-->
+                <input type="text" id="search-input" placeholder="$ grep...">
+                <!--</form>-->
+                <div id="search-results" class="mini-post-list"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason,
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+</script>
+
+    <div id="aplayerContent">
+        
+<!-- aplayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+<div class="visible-lg">
+    <div id="aplayer"></div>
+</div>
+<script type="text/javascript">
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        lrcType: __Ariescat_Config__.APlayer.lrcType,
+        audio: __Ariescat_Config__.APlayer.audioSrc
+    });
+</script>
+
+    </div>
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+<!-- 鼠标点击特效 -->
+<!--<script src="/js/snow-effect.js"></script>-->
+
+<!--看板娘-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    // 可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。
+    L2Dwidget.init({
+        "model": {
+            "jsonPath": __Ariescat_Config__.L2Dwidget.jsonPath,
+            "scale": 1
+        },
+        "display": {
+            "position": "left",
+            "width": 100,
+            "height": 200,
+            "hOffset": 30,
+            "vOffset": -15
+        },
+        "mobile": {
+            "show": false,
+            "scale": 1
+        },
+        "react": {
+            "opacityDefault": 1.0,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+<script>
+    // pjax无刷新ajax加载
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    // NProgress
+    $(document).on('pjax:start', function () {
+        NProgress.start();
+        NProgress.inc();
+    });
+    $(document).on('pjax:end', function () {
+        NProgress.done();
+    });
+</script>
+
+<!-- 樱花特效 -->
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    if ($(window).width() > 768) {
+        let month = new Date().getMonth();
+        //三四月飘就好
+        if (month === 2 || month === 3) {
+            document.write('<script type="text/javascript" async src="/js/sakura.js"><\/script>');
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个在互联网苟且偷生的工具人 @Ariescat">
+    <meta name="keywords"  content="一只白羊座的傻猫, Blog, Java, Ariescat">
+    <meta name="theme-color" content="#000000">
+    
+    <title>三七互娱 十周年 - 一只白羊座的傻猫 | Ariescat Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <!-- Safari Webpage Icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ariescat.top//2019/01/26/%E4%B8%89%E4%B8%83-%E5%8D%81%E5%91%A8%E5%B9%B4%E5%BA%86/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+    <!-- MyConfig -->
+    <script src="/js/myconfig.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!-- pjax -->
+    <script src="/js/jquery.pjax.js"></script>
+
+    <!-- lazyload -->
+    <script src="/js/jquery.lazyload.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+        <!-- 引入Valine评论插件 https://valine.js.org/ -->
+        <script src='/js/valine.min.js'></script>
+    
+
+    <!-- artitalk -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk@3.2.1"></script>
+
+    <!-- NProgress https://github.com/rstacruz/nprogress -->
+    <link rel="stylesheet" href="/css/nprogress.css">
+    <script src="/js/nprogress.js"></script>
+
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Simple Jekyll Search -->
+    <script src="/js/simple-jekyll-search.min.js"></script>
+
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+</head>
+
+
+<style>
+    /* header遮罩 */
+    .header-shade {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+    <!-- 鼠标特效 -->
+    <!--<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>-->
+
+    <div id="pageContent">
+        <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ariescat Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a href="/tags/">Tags</a>-->
+<!--                    </li>-->
+					<li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+					<li>
+                        <a href="/about/">About</a>
+                    </li>
+                    <li class="search-icon">
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <!-- 
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                     -->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function () {
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        },
+        open: function () {
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function (e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        } else {
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function (e) {
+        if (e.target == $toggle) return;
+        if (e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+        <div id="content"><!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/cover/129067.png" width="0" height="0"> -->
+
+
+
+<!-- Code highlight -->
+<link rel="stylesheet" href="/css/darcula.css">
+<style>
+	.highlight {
+		border-style: none;
+		background: none;
+	}
+	.highlight pre {
+		line-height: 1.5;
+	}
+	.highlight pre code {
+		font-size: 14px;
+	}
+	.hljs {
+		border-radius: 4px;
+	}
+</style>
+<script>
+	async("/js/highlight.pack.js", function () {
+		hljs.initHighlighting();
+	})
+</script>
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/cover/129067.png')
+    }
+</style>
+<header class="intro-header" >
+	<div class="header-shade">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="post-heading">
+						<div class="tags">
+							
+							<a class="tag" href="/archives/?tag=生活" title="生活">生活</a>
+							
+						</div>
+						<h1>三七互娱 十周年</h1>
+						
+						
+						<h2 class="subheading">"我是一颗洋葱 来地球追梦"</h2>
+						
+
+						
+						<span class="meta">Posted by Ariescat on January 26, 2019</span>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+			<!-- Post Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				post-container">
+
+				<blockquote>
+  <p>回顾过去，展望未来</p>
+</blockquote>
+
+<div id="aplayer_37"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        const ap_37 = new APlayer({
+            container: document.getElementById('aplayer_37'),
+            listFolded: false,
+            listMaxHeight: 90,
+            lrcType: 3,
+            audio: [
+                {
+                    name: '我们的十年（翻自 After School）',
+                    artist: '万颜',
+                    url: 'http://music.163.com/song/media/outer/url?id=1341947473.mp3',
+                    cover: 'http://p1.music.126.net/XIfGLs32uFUB3W-NXZTjmw==/109951163816077738.jpg?param=300x300',
+                    lrc: 'data:application/octet-stream;base64,WzAwOjAwLjAwMF0g5L2c6K+NIDog5YuH5pWi5YWE5byfClswMDowMC4wMjBdIOS9nOabsiA6IOWLh+aVouWFhOW8nwpbMDA6MDAuNDBd5oiR5Lus55qE5Y2B5bm0ClswMDowNS4zMF3kvZzmm7LvvJrli4fmlaLlhYTlvJ8KWzAwOjA3LjUyXeS9nOivje+8muS4h+minApbMDA6MTAuMTNd5ZCO5pyf77yaQktuaWdodOmqkeWjqwpbMDA6MTIuNTNd5ryU5ZSx77ya5LiH6aKcClswMDoxNi4zOV0KWzAwOjE5LjExXeWHjOaZqOS4ieeCueWQjgpbMDA6MjAuNDVd5ryr5q2l5Zyo6KGX5aS0ClswMDoyMS43Ml3kuIDot6/kuIrnqb/ov4cKWzAwOjIyLjg3Xemck+iZueWSjOmrmOalvApbMDA6MjQuMTRd5Lmf6K645LiL5LiA5Liq6KGX5Y+jClswMDoyNS4zMF3lsLHog73lkozmoqbmg7PmjqXlpLQKWzAwOjI2LjQ4XeS5n+iuuOi1sOWujOi/meS4gOeUnwpbMDA6MjcuNjZd5oiR5Lmf5om+5LiN5Yiw5Ye65Y+jClswMDoyOC45Nl3kurrnlJ/mmK/kuIDlnLrljY7kuL3nmoTlhpLpmakKWzAwOjMxLjQ2XeaIkeaKteaKl+edgOedoeaEjwpbMDA6MzIuNTld5ZCs5pyI5YWJ5ouo5Yqo55C05bymClswMDozNC4wMF3nuqLnga/liY3nmoTmlpHpqaznur8KWzAwOjM1LjI1XeWbnuW/huiuqeaAnee7quaWreS6hueJhwpbMDA6MzYuNDhd5Yid5p2l5LmN5Yiw6YKj5LiA5bm0ClswMDozNy42MV3lsLHlg4/mmK/po47nrZ3mlq3kuobnur8KWzAwOjM4Ljc5XeWbnuWIsOWNgeW5tOWJjSDkuIPmpbznmoTmiL/pl7QKWzAwOjQwLjk5XeaIkeWRiuWIq+i/h+WOu+i1sOWQkeacgOWIneeahOi1t+eCuQpbMDA6NDMuNTRd5om/5Y+X552A5YGP6KeBIOaAu+aYr+S4jeWkquS9k+mdogpbMDA6NDUuNjhd5Y205aeL57uI55u45L+h6IO955So54ix5aW96LWa5aSn6ZKxClswMDo0OC40Nl3pgqPml7blgJnnmoTmiJHov5jmmK/mh7Xmh7Xmh4Lmh4IKWzAwOjUwLjU0XeW4puedgOS4gOeCueWLh+awlCDlr7nmnKrmnaXnmoTmg7bmgZAKWzAwOjUzLjIwXeaXoOaVsOS4quWknOaZmiDliqrlipsg5Luw5pyb552A5pif56m6ClswMDo1NS41MF3lrrPmgJXlpLHotKUg5Lmf5a6z5oCV5biM5pyb6JC956m6ClswMDo1OC4wNl3ml7blhYnkuI3kvJrovpzotJ8KWzAwOjU5LjIyXeavj+S4quS6uueahOS7mOWHugpbMDE6MDAuNDVd5oiR55So5Y2B5bm06Z2S5pil5YaZ57uZ5pyq5p2l5LiA5bCB5oOF5LmmClswMTowMi44Nl3lu7rlt6Xot6/nmoTmoYzpnaIKWzAxOjA0LjAwXeayoeacieiHquWKqOWvu+i3rwpbMDE6MDUuMjNd5bm45aW95pyJ5L2g5Zyo5oiR6Lqr6L65ClswMTowNi40MV3kuIDnm7Tnu5nmiJHpvJPoiJ4KWzAxOjA3LjU4XeaIkei/mOiusOW+l+mCo+S6m+S8meS8tOeahOWQjeWtlwpbMDE6MDkuOTNd6K6w5b6X5YWJ6I2j5qac56ys5LiA5qyh6I635b6X5ZCN5qyhClswMToxMi4zOF3orrDlvpflubbogqnkvZzmiJjkuIDotbfmnJ3nnYDlhYnoipLooYzpqbYKWzAxOjE0Ljc3XeiusOW+l+WwkeW5tOabvue7j+aXoOeVj+eahOmjnumpsApbMDE6MTcuMjBd5pe26Ze05Y+I56m/5qKtClswMToxOC4zOV3miJHmjKXliKvov4fljrvlsoHmnIgKWzAxOjE5LjUxXeemu+W8gOaXp+eahOihl+mBkwpbMDE6MjAuNzVd6LWw5ZCR5YWo5paw5LiW55WMClswMToyMS45OF3mm77nu4/lkLXlkLXpl7npl7nlkIzot6/nmoTkuroKWzAxOjI0LjEyXei/mOayoeivtOi/h+WGjeingeWwsQpbMDE6MjUuMjZd6LWw5ZCR5ZCE6Ieq55qE6ZeoClswMToyNi40OF3mmpfmgYvov4fnmoTlsJHlpbMKWzAxOjI3Ljc2XeaYr+WQpuW3sue7j+W9k+S6huWmiApbMDE6MjkuMDJd5LiA6LW35byA6L+H6buR55qE5YWE5byfClswMTozMC4yOV3ov5jmrKDmiJHkuIDlo7DniLjniLgKWzAxOjMxLjUwXei/meWNgeW5tCDlj5jljJblpKrlv6vlg4/mmK/lj5Hkuobnlq8KWzAxOjMzLjY2XeiAjOaIkei/mOWcqOWdmuaMgQpbMDE6MzQuODdd5Z2a5oyB5YGa552A5oiR55qE5qKmClswMTozNi4wOF3miJHmmK/kuIDpopfmtIvokbEKWzAxOjM3LjQ5XeadpeWcsOeQg+i/veaipgpbMDE6MzguNjZd5Zyo5peg5q2i5aKD55qE5a6H5a6ZClswMTozOS45M13po57ot4Pkuobov7flrqsKWzAxOjQxLjA4XeWNl+WMl+aIluilv+S4nApbMDE6NDIuMjld5pil5aSP5ZKM56eL5YasClswMTo0My41OF3ljYHlubTnmoTlpYvmlpcKWzAxOjQ0Ljc5XeWdmuaMgeaIkeeahOWIneihtwpbMDE6NDUuOTZd5oiR5piv5LiA6aKX5rSL6JGxClswMTo0Ny4wM13mnaXlnLDnkIPov73moqYKWzAxOjQ4LjI0XeS4jeWBmuWYtOeCrueahOS7o+iogApbMDE6NDkuNTVd5aeL57uI5Zyo6KGM5YqoClswMTo1MC44M13mlIDnmbvnnYDlsbHls7AKWzAxOjUyLjAzXeS7sOacm+edgOWkqeepugpbMDE6NTMuMTZd5Y2B5bm055qE6Z2S5pilClswMTo1NC4zN13miJHku6zkvp3ml6flnKjov5kKWzAxOjU1LjU5XeWNgeW5tOS5i+WQjgpbMDE6NTYuNTZd5oiR5bey5LiN5YaN5oe15oeCClswMTo1Ny44MV3kuI3lho3kuKTmiYvnqbrnqboKWzAxOjU5LjEzXeS5n+S4jeWGjeWGsuWKqApbMDI6MDAuNDRd6KeB6L+H5LqG5p6B5YWJClswMjowMS40MF3op4Hov4fmiJDlip/nmoTmqKHmoLcKWzAyOjAyLjYxXeS4gOi1t+Wli+aWl+i/h+eahOS6ugpbMDI6MDMuNzJd5Y205pep5bey5LiN55+l5Y675ZCRClswMjowNS4yNF3nmb7lkIjot6/ljYHkuZ3lj7fnmoTojLbmsLTpl7QKWzAyOjA3LjQwXeWbnuW/huWJqeS4i+S6huWimeWjgeS4iueahOiAgeeFp+eJhwpbMDI6MDkuODhd5aW55Yaz5a6a56a76IGM55qE6YKj5LiA5aSpClswMjoxMi4yMl3mlYXkuovkuabooqvpo47nv7vliLDkuobkuIvkuIDkuKrljYHlubQKWzAyOjE0Ljc3XeS6lOalvOeahOiuvuiuoQpbMDI6MTUuODFd54ix5LiK5LiJ5qW855qE5a6e5Lmg55SfClswMjoxNy4xNV3ku5bmlYXmhI/ov5/liLAKWzAyOjE4LjIxXeaVheaEj+WPq+WlueW+iOWkp+WjsApbMDI6MTkuNTdd5Zyj6K+e5Lqk5o2i56S854mpClswMjoyMC41NV3mnInkurrmir3liLDlubTkvJrnkIPpnosKWzAyOjIxLjk2XeS9oOWBt+WBt+WGmeS4i+W/g+aEvwpbMDI6MjIuODhd56WI56W36aG555uu6aG65Yip5a6M57uTClswMjoyNC4yNl3lubTovbvnmoTnqIvluo8KWzAyOjI1LjI5XeaChOaChOWPmOaIkOS6huWkp+WPlApbMDI6MjYuNTJd5LuW5LiN5pyN5rCUClswMjoyNy42Nl3kuI3lkJHmoLzlrZDooavorqTovpMKWzAyOjI5LjAwXeWdkOW+l+WkquS5hQpbMDI6MzAuMTJd5aW56ISW5a2Q5oC75piv5YO15L2PClswMjozMS4zMl3kuI3lpoLngrnkuKrlpbbojLYKWzAyOjMyLjUxXeW9k+e7meiHquW3seeahOekvOeJqQpbMDI6MzMuOTJd5pyb552A6L+H5Y67ClswMjozNC45Ml3njrDlnKjmnKrmnaXkuIDot6/otbDmnaUKWzAyOjM2LjM0XeaIkeeUqOWNgeW5tOWdmuaMgQpbMDI6MzcuNDZd5Li6546p5b+D5omT6YCg6Iie5Y+wClswMjozOC43NF3miJHlrabkvJrni6zlpIQKWzAyOjM5LjY4XeWtpuS8muWcqOayvOazveWcsOS4rei1t+iIngpbMDI6NDEuMDJd5a2m5Lya5Zyo5Zuw5aKD5LmL5Lit5LiA55u05oy6552AClswMjo0Mi4yNl3nh4Png6fnmoTohIrmn7EKWzAyOjQzLjUyXeW5s+WHoeeahOaVheS6i+avj+WkqemDveWcqOS4iua8lApbMDI6NDUuODld5Zug5Li65qKm5oOz55qE5a2Y5Zyo5oiR5Lus5omN5LiN5bmz5YehClswMjo0OC4yNV3kuIDotbfmrYzllLHov4fnkIbmg7MKWzAyOjQ5LjQ0XeS4gOi1t+epv+i/h+S6huiNkuWOnwpbMDI6NTAuNDZd5LiA6LW35pyd552A5ZCM5Liq5pa55ZCRClswMjo1MS45MV3pgJrlvoDkuIvkuIDkuKrljYHlubQKWzAzOjEyLjI5XeaIkeaYr+S4gOmil+a0i+iRsQpbMDM6MTMuNDBd5p2l5Zyw55CD6L+95qKmClswMzoxNC42MF3lnKjml6DmraLlooPnmoTlroflrpkKWzAzOjE1Ljg1Xemjnui3g+S6hui/t+WuqwpbMDM6MTcuMDld5Y2X5YyX5oiW6KW/5LicClswMzoxOC4yMV3mmKXlpI/lkoznp4vlhqwKWzAzOjE5LjQ2XeWNgeW5tOeahOWli+aWlwpbMDM6MjAuNjZd5Z2a5oyB5oiR55qE5Yid6KG3ClswMzoyMS44M13miJHmmK/kuIDpopfmtIvokbEKWzAzOjIyLjkzXeadpeWcsOeQg+i/veaipgpbMDM6MjQuMjRd5YOP5aWU6LeR55qE6YeO5YW9ClswMzoyNS40OV3ov73pgJDnnYDnlr7po44KWzAzOjI2LjY1XeeZu+S4iuS6huWxseWzsApbMDM6MjcuODVd6Kem5pG45Yiw5aSp56m6ClswMzoyOS4wNV3lg4/pgYfop4HlvanombkKWzAzOjMwLjI2XeS8muiuqeS9oOW/g+WKqAo=',
+                    theme: '#ebd0c2'
+                }
+            ]
+        });
+    });
+</script>
+
+<p><img src="/img/post/img-ten-year.jpg" alt="" /></p>
+
+<div style="text-align: center">
+    <p>
+        凌晨三点后<br />
+        漫步在街头<br />
+        一路上穿过<br />
+        霓虹和高楼<br />
+        也许下一个街口<br />
+        就能和梦想接头<br />
+        也许走完这一生<br />
+        我也找不到出口<br />
+
+        <br />
+
+        人生是一场华丽的冒险<br />
+        我抵抗着睡意<br />
+        听月光拨动琴弦<br />
+        红灯前的斑马线<br />
+        回忆让思绪断了片<br />
+        初来乍到那一年<br />
+        就像是风筝断了线<br />
+
+        <br />
+
+        回到十年前 七楼的房间<br />
+        我告别过去走向最初的起点<br />
+        承受着偏见 总是不太体面<br />
+        却始终相信能用爱好赚大钱<br />
+        那时候的我还是懵懵懂懂<br />
+        带着一点勇气 对未来的惶恐<br />
+        无数个夜晚 努力 仰望着星空<br />
+        害怕失败 也害怕希望落空<br />
+
+        <br />
+
+        时光不会辜负<br />
+        每个人的付出<br />
+        我用十年青春写给未来一封情书<br />
+        建工路的桌面<br />
+        没有自动寻路<br />
+        幸好有你在我身边<br />
+        一直给我鼓舞<br />
+        我还记得那些伙伴的名字<br />
+        记得光荣榜第一次获得名次<br />
+        记得并肩作战一起朝着光芒行驶<br />
+        记得少年曾经无畏的飞驰<br />
+
+        <br />
+
+        时间又穿梭<br />
+        我挥别过去岁月<br />
+        离开旧的街道<br />
+        走向全新世界<br />
+        曾经吵吵闹闹同路的人<br />
+        还没说过再见就<br />
+        走向各自的门<br />
+        暗恋过的少女<br />
+        是否已经当了妈<br />
+        一起开过黑的兄弟<br />
+        还欠我一声爸爸<br />
+        这十年 变化太快像是发了疯<br />
+        而我还在坚持<br />
+        坚持做着我的梦<br />
+
+        <br />
+
+        我是一颗洋葱<br />
+        来地球追梦<br />
+        在无止境的宇宙<br />
+        飞跃了迷宫<br />
+        南北或西东<br />
+        春夏和秋冬<br />
+        十年的奋斗<br />
+        坚持我的初衷<br />
+
+        <br />
+
+        我是一颗洋葱<br />
+        来地球追梦<br />
+        不做嘴炮的代言<br />
+        始终在行动<br />
+        攀登着山峰<br />
+        仰望着天空<br />
+        十年的青春<br />
+        我们依旧在这<br />
+
+        <br />
+
+        十年之后<br />
+        我已不再懵懂<br />
+        不再两手空空<br />
+        也不再冲动<br />
+        见过了极光<br />
+        见过成功的模样<br />
+        一起奋斗过的人<br />
+        却早已不知去向<br />
+        百合路十九号的茶水间<br />
+        回忆剩下了墙壁上的老照片<br />
+        她决定离职的那一天<br />
+        故事书被风翻到了下一个十年<br />
+        五楼的设计<br />
+        爱上三楼的实习生<br />
+        他故意迟到<br />
+        故意叫她很大声<br />
+        圣诞交换礼物<br />
+        有人抽到年会球鞋<br />
+        你偷偷写下心愿<br />
+        祈祷项目顺利完结<br />
+        年轻的程序<br />
+        悄悄变成了大叔<br />
+        他不服气<br />
+        不向格子衫认输<br />
+        坐得太久<br />
+        她脖子总是僵住<br />
+        不如点个奶茶<br />
+        当给自己的礼物<br />
+
+        <br />
+
+        望着过去<br />
+        现在未来一路走来<br />
+        我用十年坚持<br />
+        为玩心打造舞台<br />
+        我学会独处<br />
+        学会在沼泽地中起舞<br />
+        学会在困境之中一直挺着<br />
+        燃烧的脊柱<br />
+        平凡的故事每天都在上演<br />
+        因为梦想的存在我们才不平凡<br />
+        一起歌唱过理想<br />
+        一起穿过了荒原<br />
+        一起朝着同个方向<br />
+        通往下一个十年<br />
+
+        <br />
+
+        我是一颗洋葱<br />
+        来地球追梦<br />
+        在无止境的宇宙<br />
+        飞跃了迷宫<br />
+        南北或西东<br />
+        春夏和秋冬<br />
+        十年的奋斗<br />
+        坚持我的初衷<br />
+
+        <br />
+
+        我是一颗洋葱<br />
+        来地球追梦<br />
+        像奔跑的野兽<br />
+        追逐着疾风<br />
+        登上了山峰<br />
+        触摸到天空<br />
+        像遇见彩虹<br />
+        会让你心动<br />
+
+        <br />
+
+        —— The End ——
+
+        <br />
+    </p>
+</div>
+<p><br /></p>
+
+<h5 id="链接">链接：</h5>
+
+<p><a href="http://game.people.com.cn/n1/2019/0128/c40130-30593979.html">三七互娱2019年度盛典：承前启后 再铸辉煌</a></p>
+
+
+				<hr style="visibility: hidden;">
+
+				<ul class="pager">
+					
+					<li class="previous">
+						<a href="/2019/01/24/%E5%8A%A8%E6%80%81-%E6%95%8F%E6%8D%B7%E7%9A%84Groovy/" data-toggle="tooltip" data-placement="top" title="动态，敏捷的Groovy">
+						Previous<br>
+						<span>动态，敏捷的Groovy</span>
+						</a>
+					</li>
+					
+					
+					<li class="next">
+						<a href="/2019/01/28/Java%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%99%A8SecurityManager/" data-toggle="tooltip" data-placement="top" title="Java安全管理器SecurityManager">
+						Next<br>
+						<span>Java安全管理器SecurityManager</span>
+						</a>
+					</li>
+					
+				</ul>
+
+
+				
+
+
+
+
+<!-- 引入Valine评论插件 https://valine.js.org/ -->
+<div id="vcomments" style="margin-top: 30px;"></div>
+<script>
+    let pathname = window.location.pathname;
+    let valine = new Valine({
+        el: '#vcomments',
+        appId: '8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz',
+        appKey: 'QXoMCzb8TFMV0DBzDNXkcvxa',
+        placeholder: '你是我一生只会遇见一次的惊喜 | ᴥ•́ )✧',
+        path: pathname,
+        avatar: 'mp',
+        recordIP: 'true',
+        enableQQ: 'true',
+        emojiCDN: __Ariescat_Config__.Valine.emojiCDN,
+        emojiMaps: __Ariescat_Config__.Valine.emojiMaps
+    });
+    $(document).on('ready pjax:beforeReplace', function (event) {
+        valine.setPath(pathname);
+    });
+</script>
+<style>
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/img/comment_bg.png") 100% 100% no-repeat;
+    }
+    #vcomments p {
+        margin: 8px 0;
+    }
+    .v[data-class=v] .vcards .vcard .vquote {
+        padding-left: .5em;
+    }
+    .v[data-class=v] .vcards .vcard .vimg {
+        margin: 0 .7525em 0 0;
+    }
+
+    .v[data-class=v] .vwrap,
+    .v[data-class=v] .vbtn {
+        border-color: #ccc;
+    }
+    /*.v[data-class=v] .vcards > .vcard:last-child .vh*/
+    /*.v[data-class=v] .vcards > .vcard > .vh {*/
+    /*    border-bottom: 1px solid #e4e4e4;*/
+    /*}*/
+    .v[data-class="v"] .vcards .vcard .vquote {
+        border-left: none;
+    }
+
+    /*设置评论头像旋转*/
+    .v .vcards .vcard .vimg:hover {
+        -webkit-animation: vimg-transform .8s linear;
+                animation: vimg-transform .8s linear;
+    }
+    @-webkit-keyframes vimg-transform {
+        0%      {-webkit-transform:rotate(0deg);}
+        50%     {-webkit-transform:rotate(180deg);}
+        100%    {-webkit-transform:rotate(360deg);}
+    }
+    @keyframes vimg-transform {
+        0%      {transform:rotate(0deg);}
+        50%     {transform:rotate(180deg);}
+        100%    {transform:rotate(360deg);}
+    }
+</style>
+
+
+
+
+
+
+
+
+			</div>
+
+			<!-- Side Catalog Container -->
+			
+
+			<!-- Sidebar Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				sidebar-container">
+
+				<!-- Featured Tags -->
+				
+				<section>
+					<hr class="hidden-sm hidden-xs">
+					<h5><a href="/archives/">FEATURED TAGS</a></h5>
+					<div class="tags">
+						
+							
+								<a href="/archives/?tag=Blog" title="Blog" rel="5">
+									Blog
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=生活" title="生活" rel="8">
+									生活
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Java" title="Java" rel="16">
+									Java
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Guava" title="Guava" rel="1">
+									Guava
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Groovy" title="Groovy" rel="2">
+									Groovy
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=前端" title="前端" rel="1">
+									前端
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=IO" title="IO" rel="2">
+									IO
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Spring" title="Spring" rel="4">
+									Spring
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=AOP" title="AOP" rel="1">
+									AOP
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Json" title="Json" rel="1">
+									Json
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=SpringBoot" title="SpringBoot" rel="1">
+									SpringBoot
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=设计模式" title="设计模式" rel="1">
+									设计模式
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=操作系统" title="操作系统" rel="1">
+									操作系统
+								</a>
+							
+						
+					</div>
+				</section>
+				
+
+				<!-- Links -->
+				
+				<hr>
+				<h5>LINKS</h5>
+				<ul class="list-inline">
+					
+					<li><a href="https://www.jianshu.com/">简书</a></li>
+					
+					<li><a href="https://www.zhihu.com/">知乎</a></li>
+					
+					<li><a href="https://juejin.im/">掘金</a></li>
+					
+				</ul>
+				
+			</div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("/js/anchor.min.js",function(){
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // anchors.options = {
+        //   visible: 'always',
+        //   placement: 'right',
+        //   icon: '#'
+        // };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+</div>
+
+        <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Ariescat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://awesome.ariescat.top/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.jianshu.com/u/39035eb3096b">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://blog.csdn.net/PingXiaoGai">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">C</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Ariescat Blog 2019-2021
+                    <br>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备20047845号</a>
+                    <br>
+                    Powered by <a href="https://ariescat.top/">Ariescat</a> |
+                    <a href="https://github.com/Ariescat/blog" target="_blank"
+                       aria-label="Star Ariescat/blog on GitHub">
+                        <img src="https://img.shields.io/github/stars/Ariescat/blog?style=social"
+                             alt="Star" style="cursor: pointer">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                // size: {start: 1, end: 1, unit: 'em'},
+                // color: {start: '#bbbbee', end: '#0085a1'},
+                color: {start: '#bbbbee', end: '#2f93b4'},
+            };
+            $('#tag_cloud a').tagcloud();
+        });
+        async('/js/archive.js', function () {
+            // 重新加载archive.js，计算归档和页签
+        });
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async("/js/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPNE1L0HRN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HPNE1L0HRN');
+</script>
+
+
+
+
+<!-- Baidu 统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?15a0182bcc909fead8c8f48acb3222d4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+
+
+<!--Baidu 收录 自动推送代码-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+<!-- fancybox支持 -->
+<script>
+    $(document).ready(function () {
+        $('#pageContent #content img').each(function (index, value) {
+            if (value.classList.contains('not-fancybox')) {
+                return;
+            }
+            let $a = document.createElement('a')
+            $a.setAttribute('data-fancybox', 'gallery')
+            /* 兼容img lazyload */
+            $a.setAttribute('href', $(this).attr('data-original') || value.src)
+            $a.setAttribute('data-caption', value.alt)
+            $(this).wrap($a)
+        });
+    });
+</script>
+
+<!-- img lazyload -->
+<script>
+    $(function () {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
+</script>
+
+
+<!-- search -->
+<script>
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        // 兼容pjax 刷新时清空上一次的值
+        $searchInput.val('')
+        $('#search-results').empty()
+        $searchPage.removeClass('search-active')
+        $body.removeClass('no-scroll')
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+    </div>
+
+    <!--春节挂件-->
+<style>
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+    }
+    #chunjie {
+        display: none;
+    }
+    .deng-box {
+        position: fixed;
+        top: -40px;
+        left: 7.5%;
+        z-index: 999;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        left: 10%;
+        z-index: 999;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    /*@font-face {
+        font-family: "华文行楷";
+        src: url('/fonts/华文行楷.ttf');
+    }*/
+    .deng-t {
+        /*font-family: 华文行楷;*/
+        font-size: 24px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 44px;
+        text-align: center;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+
+<div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">喜迎</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">春节</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if ($(window).width() <= 630 || (new Date().getMonth()) > 1) {
+        $('#chunjie').css('display', 'none');
+    } else {
+        $('#chunjie').css('display', 'block');
+    }
+</script>
+    <!--春节挂件-->
+<style>
+    /*春节主题 挂件吊线*/
+    .caishendeng {
+        display: none;
+    }
+    .caishenxianleft {
+        position: fixed;
+        top: 0;
+        left: 16% !important;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenxian {
+        position: fixed;
+        top: 0;
+        right: 20%;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenpic {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        top: 12px;
+        right: -22px;
+        z-index: 9;
+        /* transform-origin: 50% -100px; */
+        animation: swing 3.5s infinite ease-in-out;
+        /* -webkit-transform-origin: 50% -100px; */
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .fudao {
+        width: 38px;
+        height: 38px;
+        top: 18px !important;
+        left: -19px !important;
+    }
+</style>
+
+<div class="caishendeng">
+    <div class="caishenxian">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+<div class="caishendeng">
+    <div class="caishenxianleft">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+
+<script>
+    if ($(window).width() > 630 || (new Date().getMonth()) > 1) {
+        $('.caishendeng').css('display', 'none');
+    } else {
+        $('.caishendeng').css('display', 'block');
+    }
+</script>
+    <!-- Search -->
+<div class="search-page">
+    <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+    </div>
+    <div class="search-main container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!--<form>-->
+                <input type="text" id="search-input" placeholder="$ grep...">
+                <!--</form>-->
+                <div id="search-results" class="mini-post-list"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason,
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+</script>
+
+    <div id="aplayerContent">
+        
+<!-- aplayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+<div class="visible-lg">
+    <div id="aplayer"></div>
+</div>
+<script type="text/javascript">
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        lrcType: __Ariescat_Config__.APlayer.lrcType,
+        audio: __Ariescat_Config__.APlayer.audioSrc
+    });
+</script>
+
+    </div>
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+<!-- 鼠标点击特效 -->
+<!--<script src="/js/snow-effect.js"></script>-->
+
+<!--看板娘-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    // 可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。
+    L2Dwidget.init({
+        "model": {
+            "jsonPath": __Ariescat_Config__.L2Dwidget.jsonPath,
+            "scale": 1
+        },
+        "display": {
+            "position": "left",
+            "width": 100,
+            "height": 200,
+            "hOffset": 30,
+            "vOffset": -15
+        },
+        "mobile": {
+            "show": false,
+            "scale": 1
+        },
+        "react": {
+            "opacityDefault": 1.0,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+<script>
+    // pjax无刷新ajax加载
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    // NProgress
+    $(document).on('pjax:start', function () {
+        NProgress.start();
+        NProgress.inc();
+    });
+    $(document).on('pjax:end', function () {
+        NProgress.done();
+    });
+</script>
+
+<!-- 樱花特效 -->
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    if ($(window).width() > 768) {
+        let month = new Date().getMonth();
+        //三四月飘就好
+        if (month === 2 || month === 3) {
+            document.write('<script type="text/javascript" async src="/js/sakura.js"><\/script>');
+        }
+    }
+</script>
+</html>

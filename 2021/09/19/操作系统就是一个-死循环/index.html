@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个在互联网苟且偷生的工具人 @Ariescat">
+    <meta name="keywords"  content="一只白羊座的傻猫, Blog, Java, Ariescat">
+    <meta name="theme-color" content="#000000">
+    
+    <title>(转)操作系统就是一个“死循环”！ - 一只白羊座的傻猫 | Ariescat Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <!-- Safari Webpage Icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ariescat.top//2021/09/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA-%E6%AD%BB%E5%BE%AA%E7%8E%AF/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+    <!-- MyConfig -->
+    <script src="/js/myconfig.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!-- pjax -->
+    <script src="/js/jquery.pjax.js"></script>
+
+    <!-- lazyload -->
+    <script src="/js/jquery.lazyload.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+        <!-- 引入Valine评论插件 https://valine.js.org/ -->
+        <script src='/js/valine.min.js'></script>
+    
+
+    <!-- artitalk -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk@3.2.1"></script>
+
+    <!-- NProgress https://github.com/rstacruz/nprogress -->
+    <link rel="stylesheet" href="/css/nprogress.css">
+    <script src="/js/nprogress.js"></script>
+
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Simple Jekyll Search -->
+    <script src="/js/simple-jekyll-search.min.js"></script>
+
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+</head>
+
+
+<style>
+    /* header遮罩 */
+    .header-shade {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+    <!-- 鼠标特效 -->
+    <!--<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>-->
+
+    <div id="pageContent">
+        <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ariescat Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a href="/tags/">Tags</a>-->
+<!--                    </li>-->
+					<li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+					<li>
+                        <a href="/about/">About</a>
+                    </li>
+                    <li class="search-icon">
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <!-- 
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                     -->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function () {
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        },
+        open: function () {
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function (e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        } else {
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function (e) {
+        if (e.target == $toggle) return;
+        if (e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+        <div id="content"><!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/cover/150238.jpg" width="0" height="0"> -->
+
+
+<meta name="keywords" content="操作系统">
+
+
+<!-- Code highlight -->
+<link rel="stylesheet" href="/css/darcula.css">
+<style>
+	.highlight {
+		border-style: none;
+		background: none;
+	}
+	.highlight pre {
+		line-height: 1.5;
+	}
+	.highlight pre code {
+		font-size: 14px;
+	}
+	.hljs {
+		border-radius: 4px;
+	}
+</style>
+<script>
+	async("/js/highlight.pack.js", function () {
+		hljs.initHighlighting();
+	})
+</script>
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/cover/150238.jpg')
+    }
+</style>
+<header class="intro-header" >
+	<div class="header-shade">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="post-heading">
+						<div class="tags">
+							
+							<a class="tag" href="/archives/?tag=操作系统" title="操作系统">操作系统</a>
+							
+						</div>
+						<h1>(转)操作系统就是一个“死循环”！</h1>
+						
+						
+						<h2 class="subheading"></h2>
+						
+
+						
+						<span class="meta">Posted by Ariescat on September 19, 2021</span>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+			<!-- Post Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				post-container">
+
+				<blockquote>
+  <p><em>以下文章来源于<a href="https://mp.weixin.qq.com/s/FEDeJqyxO7rJVnlKCNWwGw">码农翻身</a></em></p>
+</blockquote>
+
+<p>操作系统就是一个“死循环”？</p>
+
+<p>在回答之前，我们先从进程调度的角度来看看。</p>
+
+<p>进程调度想必大家都有所了解，又都不太了解。</p>
+
+<p>有所了解是因为这个概念被提到太多次，不太了解是因为总觉得不直观，浮于概念层。</p>
+
+<p>今天我们从三个视角来看看进程调度究竟是怎么回事，启车了请扶好。</p>
+
+<p><em>小贴士：本文讲述的是 linux-0.11 版本的进程调度机制，学习其骨干和框架，不要钻入细节。</em></p>
+
+<h3 id="1-滴答视角">1. 滴答视角</h3>
+
+<h4 id="滴答">滴答</h4>
+
+<p>计算机中有一个设备，叫定时器，准确说叫可编程定时/计数器。</p>
+
+<p>这个定时器每隔一段时间就会向 CPU 发起一个中断信号。</p>
+
+<p><img src="/img/post/21091901.gif" alt="图片" /></p>
+
+<p>在 linux-0.11 中，这个间隔时间被设置为 10 ms，也就是 100 Hz。</p>
+
+<p>shedule.c</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define HZ 100
+</span></code></pre></div></div>
+
+<p>发起的中断叫时钟中断，其中断向量号被设置为了 0x20。</p>
+
+<h4 id="时钟中断">时钟中断</h4>
+
+<p>一切的源头，就源于这个每 10ms 产生的一次时钟中断。</p>
+
+<p>当然如果没有操作系统的存在，这个 10ms 一次的时钟中断，就打了水漂，CPU 会收到这个时钟中断信号，但不会做出任何反应。</p>
+
+<p>但很不幸，linux 提前设置好了中断向量表。</p>
+
+<p>schedule.c</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">set_intr_gate</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">timer_interrupt</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>这样，当时钟中断，也就是 0x20 号中断来临时，CPU 会查找中断向量表中 0x20 处的函数地址，这个函数地址即中断处理函数，并跳转过去执行。</p>
+
+<p>这个中断处理函数就是 timer_interrupt，是用汇编语言写的。</p>
+
+<p>system_call.s</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">_timer_interrupt:</span>
+    <span class="p">...</span>
+    <span class="c1">// 增加系统滴答数</span>
+    <span class="n">incl</span> <span class="n">_jiffies</span>
+    <span class="p">...</span>
+    <span class="c1">// 调用函数 do_timer</span>
+    <span class="n">call</span> <span class="n">_do_timer</span>
+    <span class="p">...</span>
+</code></pre></div></div>
+
+<p>这个函数做了两件事，一个是将系统滴答数这个变量 jiffies 加一，一个是调用了另一个函数 do_timer。</p>
+
+<p>sched.c</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">do_timer</span><span class="p">(</span><span class="kt">long</span> <span class="n">cpl</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="c1">// 当前线程还有剩余时间片，直接返回</span>
+    <span class="k">if</span> <span class="p">((</span><span class="o">--</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">counter</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="c1">// 若没有剩余时间片，调度</span>
+    <span class="n">schedule</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>do_timer 最重要的部分就是上面这段代码，非常简单。</p>
+
+<p>首先将当前进程的时间片 -1，然后判断：</p>
+
+<p>如果时间片仍然大于零，则什么都不做直接返回。</p>
+
+<p>如果时间片已经为零，则调用 schedule()，用脚去想也知道，这就是进行进程调度的主干。</p>
+
+<h4 id="进程的调度">进程的调度</h4>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">schedule</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">next</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">task_struct</span> <span class="o">**</span> <span class="n">p</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="n">next</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">NR_TASKS</span><span class="p">;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">task</span><span class="p">[</span><span class="n">NR_TASKS</span><span class="p">];</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!*--</span><span class="n">p</span><span class="p">)</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">((</span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">==</span> <span class="n">TASK_RUNNING</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">counter</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">)</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">counter</span><span class="p">,</span> <span class="n">next</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">LAST_TASK</span> <span class="p">;</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">FIRST_TASK</span> <span class="p">;</span> <span class="o">--</span><span class="n">p</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+                <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">counter</span> <span class="o">=</span> <span class="p">((</span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">counter</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+                        <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">priority</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">switch_to</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>别看一大坨，我做个不严谨的简化，你就懂了。</p>
+
+<pre><code class="language-C">void schedule(void) {
+    int next = get_max_counter_from_runnable();
+    refresh_all_thread_counter();
+    switch_to(next);
+}
+</code></pre>
+
+<p>很简答，这个函数就做了三件事：</p>
+
+<ol>
+  <li>
+    <p>拿到剩余时间片（counter的值）最大且在 runnable 状态（state = 0）的进程号 next。
+ <img src="/img/post/21091902.gif" alt="图片" /></p>
+  </li>
+  <li>
+    <p>如果所有 runnable 进程时间片都为 0，则将所有进程（注意不仅仅是 runnable 的进程）的 counter 重新赋值（counter = counter/2 + priority），然后再次执行步骤 1。</p>
+  </li>
+  <li>
+    <p>最后拿到了一个进程号 next，调用了 switch_to(next) 这个方法，就切换到了这个进程去执行了。</p>
+  </li>
+</ol>
+
+<h4 id="切换进程">切换进程</h4>
+
+<p>看 switch_to 方法，是用内联汇编语句写的。</p>
+
+<p>sched.h</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define switch_to(n) {\
+struct {long a,b;} __tmp; \
+__asm__("cmpl %%ecx,_current\n\t" \
+    "je 1f\n\t" \
+    "movw %%dx,%1\n\t" \
+    "xchgl %%ecx,_current\n\t" \
+    "ljmp %0\n\t" \
+    "cmpl %%ecx,_last_task_used_math\n\t" \
+    "jne 1f\n\t" \
+    "clts\n" \
+    "1:" \
+    ::"m" (*&amp;__tmp.a),"m" (*&amp;__tmp.b), \
+    "d" (_TSS(n)),"c" ((long) task[n])); \
+}
+</span></code></pre></div></div>
+
+<p>这段话就是进程切换的<strong>最最最最</strong>底层的代码了，看不懂没关系，其实主要就干了两件事。</p>
+
+<ol>
+  <li>
+    <p>通过 ljmp 跳转指令跳转到新进程的偏移地址处。</p>
+  </li>
+  <li>
+    <p>将当前各个寄存器的值保存在当前进程的 TSS 中，并将新进程的 TSS 信息加载到各个寄存器。（这部分是执行 ljmp 指令的副作用，并且是由硬件实现的）</p>
+  </li>
+</ol>
+
+<p>简单说，保存当前进程上下文，恢复下一个进程的上下文，跳过去！啥是上下文，就是他喵的一堆寄存器的值而已。</p>
+
+<p><img src="/img/post/21091903.webp" alt="图片" /></p>
+
+<p>上图来源于《Linux内核完全注释V5.0》</p>
+
+<p>至此，我们梳理完了一个进程切换的整条链路，先来回顾一下。</p>
+
+<p><strong><em>1.</em></strong> 罪魁祸首的，就是那个每 10ms 触发一次的定时器滴答。</p>
+
+<p><strong><em>2.</em></strong> 而这个滴答将会给 CPU 产生一个时钟中断信号。</p>
+
+<p><strong><em>3.</em></strong> 而这个中断信号会使 CPU 查找中断向量表，找到操作系统写好的一个时钟中断处理函数 do_timer。</p>
+
+<p><strong><em>4.</em></strong> do_timer 会首先将当前进程的 counter 变量 -1，如果 counter 此时仍然大于 0，则就此结束。</p>
+
+<p><strong><em>5.</em></strong> 但如果 counter = 0 了，就开始进行进程的调度。</p>
+
+<p><strong><em>6.</em></strong> 进程调度就是找到所有处于 RUNNABLE 状态的进程，并找到一个 counter 值最大的进程，把它丢进 switch_to 函数的入参里。</p>
+
+<p><strong><em>7.</em></strong> switch_to 这个终极函数，会保存当前进程上下文，恢复要跳转到的这个进程的上下文，同时使得 CPU 跳转到这个进程的偏移地址处。</p>
+
+<p><strong><em>8.</em></strong> 接着，这个进程就舒舒服服地运行了起来，等待着下一次滴答的来临。</p>
+
+<p>行行行，给你画个图，瞧把你懒的。。</p>
+
+<p><img src="/img/post/21091904.webp" alt="图片" /></p>
+
+<p>这就是滴答视角。</p>
+
+<h3 id="2-数据结构视角">2. 数据结构视角</h3>
+
+<p>上面我们从一次滴答开始，掀起了一阵波浪，走完了一个滴答的整个流程。</p>
+
+<p>下面我们换个静态视角，看看数据结构。</p>
+
+<p>一切承载进程相关的数据，其罪魁祸首来自于这个数据结构。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">task_struct</span> <span class="o">*</span> <span class="n">task</span><span class="p">[</span><span class="mi">64</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div></div>
+
+<p>没错，一个容量只有 64 大小的数组，数组中的元素是 task_struct 结构。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">task_struct</span> <span class="p">{</span>
+    <span class="kt">long</span> <span class="n">state</span><span class="p">;</span> 
+    <span class="kt">long</span> <span class="n">counter</span><span class="p">;</span>
+    <span class="kt">long</span> <span class="n">priority</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">tss_struct</span> <span class="n">tss</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>这里只取了我们需要关心的关键字段。</p>
+
+<p><strong>state</strong> 就是进程的状态，取值 linux 中有明确定义。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define TASK_RUNNING  0
+#define TASK_INTERRUPTIBLE  1
+#define TASK_UNINTERRUPTIBLE  2
+#define TASK_ZOMBIE  3
+#define TASK_STOPPED  4
+</span></code></pre></div></div>
+
+<p>比如 state 取值不是 RUNNING 状态的，它就不会被进程调度。这在上面滴答视角的讲述中讲得很明白。</p>
+
+<p><strong>counter</strong> 和 <strong>priority</strong> 就是记录进程时间片的，counter 记录了剩余时间片，priority 表示优先级的意思，其实也就是为进程初始时间片分配一个值而已。这部分同样在上面的滴答视角的代码中，讲的很明白。</p>
+
+<p>最后一个重要的结构就是 <strong>tss</strong>，它是个结构体，记录了进程上下文信息。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">tss_struct</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="kt">long</span>    <span class="n">eip</span><span class="p">;</span>
+    <span class="kt">long</span>    <span class="n">eflags</span><span class="p">;</span>
+    <span class="kt">long</span>    <span class="n">eax</span><span class="p">,</span><span class="n">ecx</span><span class="p">,</span><span class="n">edx</span><span class="p">,</span><span class="n">ebx</span><span class="p">;</span>
+    <span class="kt">long</span>    <span class="n">esp</span><span class="p">;</span>
+    <span class="kt">long</span>    <span class="n">ebp</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>在讲滴答视角时我们也说了，我们老是说上下文上下文，究竟什么是上下文，其实就是这个结构体里的值，就是一堆寄存器的值而已。</p>
+
+<p>同样在滴答视角的讲解中也提到了，进程切换的最核心一步，就是一个 ljmp 指令，该指令的副作用会将当前各个寄存器的值保存在当前进程的 TSS 中，并将新进程的 TSS 信息加载到各个寄存器，这就是上下文切换的本质。</p>
+
+<p>所以我们看到，数据结构视角中所提到的数据，在滴答视角下都被用到了。</p>
+
+<h3 id="3-操作系统启动流程视角">3. 操作系统启动流程视角</h3>
+
+<p>当你按下了开机键，引导程序把内核从硬盘加载到内存，经过一番折腾后，开始执行系统初始化程序 <code class="language-plaintext highlighter-rouge">init/main.c</code>。</p>
+
+<p>这部分的细节如果你很好奇，可以阅读我的自制操作系统系列文章的开头几篇。</p>
+
+<p>好了，我们就从这 main.c 开启我们的旅程，当然，我们只关注进程相关的部分。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="c1">// 第一步：进程调度初始化</span>
+    <span class="n">sched_init</span><span class="p">();</span>
+    <span class="p">...</span>
+    <span class="c1">// 第二步：创建一个新进程并做些事</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">fork</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">init</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="c1">// 第三步：死循环，操作系统正式启动完毕</span>
+    <span class="k">for</span><span class="p">(;;)</span> <span class="n">pause</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>第一步</strong>是 sched_init 进程调度初始化，初始化些啥呢？很简单，我挑主要的讲。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sched_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 初始化第一个进程的 tss</span>
+    <span class="n">set_tss_desc</span><span class="p">(...);</span>
+    <span class="c1">// 将进程数组清零</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">64</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">task</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+    <span class="c1">// 设置时钟中断(滴答)</span>
+    <span class="n">set_intr_gate</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span><span class="o">&amp;</span><span class="n">timer_interrupt</span><span class="p">);</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>其实就是为进程管理需要的数据结构做一些初始化工作，并设置好时钟中断，以便可以走滴答视角那个流程。</p>
+
+<p><strong>第二步</strong>与进程调度关系不大，与操作系统原理的关系很大，主要是最终执行到 shell 程序等待用户输入，暂时不讲。</p>
+
+<p><strong>第三步</strong>，for(;;) pause()，反映了操作系统的本质，<strong>即操作系统就是一个中断驱动的死循环代码</strong>。</p>
+
+<p>这段代码就是个死循环，将操作系统怠速在这里。而通过各种中断，比如本讲所说的时钟中断完成进程调度，再比如键盘中断完成用户输入，并还可能通过 shell 进程解释命令而执行一个新的程序。</p>
+
+<p>当没有任何进程需要运行时，也即 CPU 空闲时，操作系统会调度到这段代码来运行，承载这段代码的进程我们通常叫它 0 号进程，这部分的原理可以看码农的荒岛求生的一篇文章<a href="http://mp.weixin.qq.com/s?__biz=MzU2NTYyOTQ4OQ==&amp;mid=2247485379&amp;idx=1&amp;sn=77ccd2258f0280dfb536ad3d389cd43a&amp;chksm=fcb9809dcbce098b6f89dc59e71cf7fb6af6e5152e40f2f84f7c33ba9ea62e5bc8390ffd0553&amp;scene=21#wechat_redirect">《CPU 空闲时在干嘛？》</a>，讲的很明白，且形象。</p>
+
+<p>这就是操作系统启动流程的视角，我们可以看到，其实就是做各种各样的准备工作，然后启动一个 shell 进程，并进入死循环的等待状态，这期间不断由时钟中断触发进程调度机制。</p>
+
+<h3 id="后记">后记</h3>
+
+<p>以上，分别从滴答视角、数据结构视角、操作系统启动流程视角，来讲解来进程调度的细节。</p>
+
+<p>所谓滴答视角，可以理解为常说的进程调度视角。所谓数据结构视角，可以理解为常说的进程管理视角。</p>
+
+<p>但我更喜欢我起的这两个名字，尤其是滴答视角，好可爱有木有！</p>
+
+<p>不过本文是以 linux 最早的版本 linux-0.11 为例，在后来的操作系统演进过程中，进程调度的细节也在不断添枝加叶，比如选出下一个要调度的进程不再是简单地比较时间片大小，比如进程实际发生切换的时机改到了系统调用返回前，再比如对页表切换的变化等等。</p>
+
+<p>但整个骨架和流程都是一样的，也即你再去研究更为复杂的现代操作系统进程调度原理时，只要按照这三个视角去分析，总是可以把握主干。</p>
+
+
+				<hr style="visibility: hidden;">
+
+				<ul class="pager">
+					
+					<li class="previous">
+						<a href="/2021/02/02/%E5%8F%88%E4%B8%80%E5%B9%B4%E5%B9%B4%E4%BC%9A-%E5%95%A5%E4%B9%9F%E4%B8%8D%E6%98%AF/" data-toggle="tooltip" data-placement="top" title="又一年年会，啥也不是">
+						Previous<br>
+						<span>又一年年会，啥也不是</span>
+						</a>
+					</li>
+					
+					
+					<li class="next">
+						<a href="/2021/09/30/%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E7%9A%84%E4%BA%8C%E4%B8%89%E4%BA%8B/" data-toggle="tooltip" data-placement="top" title="网站托管的二三事">
+						Next<br>
+						<span>网站托管的二三事</span>
+						</a>
+					</li>
+					
+				</ul>
+
+
+				
+
+
+
+
+<!-- 引入Valine评论插件 https://valine.js.org/ -->
+<div id="vcomments" style="margin-top: 30px;"></div>
+<script>
+    let pathname = window.location.pathname;
+    let valine = new Valine({
+        el: '#vcomments',
+        appId: '8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz',
+        appKey: 'QXoMCzb8TFMV0DBzDNXkcvxa',
+        placeholder: '你是我一生只会遇见一次的惊喜 | ᴥ•́ )✧',
+        path: pathname,
+        avatar: 'mp',
+        recordIP: 'true',
+        enableQQ: 'true',
+        emojiCDN: __Ariescat_Config__.Valine.emojiCDN,
+        emojiMaps: __Ariescat_Config__.Valine.emojiMaps
+    });
+    $(document).on('ready pjax:beforeReplace', function (event) {
+        valine.setPath(pathname);
+    });
+</script>
+<style>
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/img/comment_bg.png") 100% 100% no-repeat;
+    }
+    #vcomments p {
+        margin: 8px 0;
+    }
+    .v[data-class=v] .vcards .vcard .vquote {
+        padding-left: .5em;
+    }
+    .v[data-class=v] .vcards .vcard .vimg {
+        margin: 0 .7525em 0 0;
+    }
+
+    .v[data-class=v] .vwrap,
+    .v[data-class=v] .vbtn {
+        border-color: #ccc;
+    }
+    /*.v[data-class=v] .vcards > .vcard:last-child .vh*/
+    /*.v[data-class=v] .vcards > .vcard > .vh {*/
+    /*    border-bottom: 1px solid #e4e4e4;*/
+    /*}*/
+    .v[data-class="v"] .vcards .vcard .vquote {
+        border-left: none;
+    }
+
+    /*设置评论头像旋转*/
+    .v .vcards .vcard .vimg:hover {
+        -webkit-animation: vimg-transform .8s linear;
+                animation: vimg-transform .8s linear;
+    }
+    @-webkit-keyframes vimg-transform {
+        0%      {-webkit-transform:rotate(0deg);}
+        50%     {-webkit-transform:rotate(180deg);}
+        100%    {-webkit-transform:rotate(360deg);}
+    }
+    @keyframes vimg-transform {
+        0%      {transform:rotate(0deg);}
+        50%     {transform:rotate(180deg);}
+        100%    {transform:rotate(360deg);}
+    }
+</style>
+
+
+
+
+
+
+
+
+			</div>
+
+			<!-- Side Catalog Container -->
+			
+
+			<!-- Sidebar Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				sidebar-container">
+
+				<!-- Featured Tags -->
+				
+				<section>
+					<hr class="hidden-sm hidden-xs">
+					<h5><a href="/archives/">FEATURED TAGS</a></h5>
+					<div class="tags">
+						
+							
+								<a href="/archives/?tag=Blog" title="Blog" rel="5">
+									Blog
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=生活" title="生活" rel="8">
+									生活
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Java" title="Java" rel="16">
+									Java
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Guava" title="Guava" rel="1">
+									Guava
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Groovy" title="Groovy" rel="2">
+									Groovy
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=前端" title="前端" rel="1">
+									前端
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=IO" title="IO" rel="2">
+									IO
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Spring" title="Spring" rel="4">
+									Spring
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=AOP" title="AOP" rel="1">
+									AOP
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Json" title="Json" rel="1">
+									Json
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=SpringBoot" title="SpringBoot" rel="1">
+									SpringBoot
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=设计模式" title="设计模式" rel="1">
+									设计模式
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=操作系统" title="操作系统" rel="1">
+									操作系统
+								</a>
+							
+						
+					</div>
+				</section>
+				
+
+				<!-- Links -->
+				
+				<hr>
+				<h5>LINKS</h5>
+				<ul class="list-inline">
+					
+					<li><a href="https://www.jianshu.com/">简书</a></li>
+					
+					<li><a href="https://www.zhihu.com/">知乎</a></li>
+					
+					<li><a href="https://juejin.im/">掘金</a></li>
+					
+				</ul>
+				
+			</div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("/js/anchor.min.js",function(){
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // anchors.options = {
+        //   visible: 'always',
+        //   placement: 'right',
+        //   icon: '#'
+        // };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+</div>
+
+        <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Ariescat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://awesome.ariescat.top/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.jianshu.com/u/39035eb3096b">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://blog.csdn.net/PingXiaoGai">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">C</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Ariescat Blog 2019-2021
+                    <br>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备20047845号</a>
+                    <br>
+                    Powered by <a href="https://ariescat.top/">Ariescat</a> |
+                    <a href="https://github.com/Ariescat/blog" target="_blank"
+                       aria-label="Star Ariescat/blog on GitHub">
+                        <img src="https://img.shields.io/github/stars/Ariescat/blog?style=social"
+                             alt="Star" style="cursor: pointer">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                // size: {start: 1, end: 1, unit: 'em'},
+                // color: {start: '#bbbbee', end: '#0085a1'},
+                color: {start: '#bbbbee', end: '#2f93b4'},
+            };
+            $('#tag_cloud a').tagcloud();
+        });
+        async('/js/archive.js', function () {
+            // 重新加载archive.js，计算归档和页签
+        });
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async("/js/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPNE1L0HRN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HPNE1L0HRN');
+</script>
+
+
+
+
+<!-- Baidu 统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?15a0182bcc909fead8c8f48acb3222d4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+
+
+<!--Baidu 收录 自动推送代码-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+<!-- fancybox支持 -->
+<script>
+    $(document).ready(function () {
+        $('#pageContent #content img').each(function (index, value) {
+            if (value.classList.contains('not-fancybox')) {
+                return;
+            }
+            let $a = document.createElement('a')
+            $a.setAttribute('data-fancybox', 'gallery')
+            /* 兼容img lazyload */
+            $a.setAttribute('href', $(this).attr('data-original') || value.src)
+            $a.setAttribute('data-caption', value.alt)
+            $(this).wrap($a)
+        });
+    });
+</script>
+
+<!-- img lazyload -->
+<script>
+    $(function () {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
+</script>
+
+
+<!-- search -->
+<script>
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        // 兼容pjax 刷新时清空上一次的值
+        $searchInput.val('')
+        $('#search-results').empty()
+        $searchPage.removeClass('search-active')
+        $body.removeClass('no-scroll')
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+    </div>
+
+    <!--春节挂件-->
+<style>
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+    }
+    #chunjie {
+        display: none;
+    }
+    .deng-box {
+        position: fixed;
+        top: -40px;
+        left: 7.5%;
+        z-index: 999;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        left: 10%;
+        z-index: 999;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    /*@font-face {
+        font-family: "华文行楷";
+        src: url('/fonts/华文行楷.ttf');
+    }*/
+    .deng-t {
+        /*font-family: 华文行楷;*/
+        font-size: 24px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 44px;
+        text-align: center;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+
+<div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">喜迎</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">春节</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if ($(window).width() <= 630 || (new Date().getMonth()) > 1) {
+        $('#chunjie').css('display', 'none');
+    } else {
+        $('#chunjie').css('display', 'block');
+    }
+</script>
+    <!--春节挂件-->
+<style>
+    /*春节主题 挂件吊线*/
+    .caishendeng {
+        display: none;
+    }
+    .caishenxianleft {
+        position: fixed;
+        top: 0;
+        left: 16% !important;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenxian {
+        position: fixed;
+        top: 0;
+        right: 20%;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenpic {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        top: 12px;
+        right: -22px;
+        z-index: 9;
+        /* transform-origin: 50% -100px; */
+        animation: swing 3.5s infinite ease-in-out;
+        /* -webkit-transform-origin: 50% -100px; */
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .fudao {
+        width: 38px;
+        height: 38px;
+        top: 18px !important;
+        left: -19px !important;
+    }
+</style>
+
+<div class="caishendeng">
+    <div class="caishenxian">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+<div class="caishendeng">
+    <div class="caishenxianleft">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+
+<script>
+    if ($(window).width() > 630 || (new Date().getMonth()) > 1) {
+        $('.caishendeng').css('display', 'none');
+    } else {
+        $('.caishendeng').css('display', 'block');
+    }
+</script>
+    <!-- Search -->
+<div class="search-page">
+    <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+    </div>
+    <div class="search-main container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!--<form>-->
+                <input type="text" id="search-input" placeholder="$ grep...">
+                <!--</form>-->
+                <div id="search-results" class="mini-post-list"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason,
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+</script>
+
+    <div id="aplayerContent">
+        
+<!-- aplayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+<div class="visible-lg">
+    <div id="aplayer"></div>
+</div>
+<script type="text/javascript">
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        lrcType: __Ariescat_Config__.APlayer.lrcType,
+        audio: __Ariescat_Config__.APlayer.audioSrc
+    });
+</script>
+
+    </div>
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+<!-- 鼠标点击特效 -->
+<!--<script src="/js/snow-effect.js"></script>-->
+
+<!--看板娘-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    // 可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。
+    L2Dwidget.init({
+        "model": {
+            "jsonPath": __Ariescat_Config__.L2Dwidget.jsonPath,
+            "scale": 1
+        },
+        "display": {
+            "position": "left",
+            "width": 100,
+            "height": 200,
+            "hOffset": 30,
+            "vOffset": -15
+        },
+        "mobile": {
+            "show": false,
+            "scale": 1
+        },
+        "react": {
+            "opacityDefault": 1.0,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+<script>
+    // pjax无刷新ajax加载
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    // NProgress
+    $(document).on('pjax:start', function () {
+        NProgress.start();
+        NProgress.inc();
+    });
+    $(document).on('pjax:end', function () {
+        NProgress.done();
+    });
+</script>
+
+<!-- 樱花特效 -->
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    if ($(window).width() > 768) {
+        let month = new Date().getMonth();
+        //三四月飘就好
+        if (month === 2 || month === 3) {
+            document.write('<script type="text/javascript" async src="/js/sakura.js"><\/script>');
+        }
+    }
+</script>
+</html>

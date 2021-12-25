@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个在互联网苟且偷生的工具人 @Ariescat">
+    <meta name="keywords"  content="一只白羊座的傻猫, Blog, Java, Ariescat">
+    <meta name="theme-color" content="#000000">
+    
+    <title>WebSocket、Socket、TCP、HTTP区别 - 一只白羊座的傻猫 | Ariescat Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <!-- Safari Webpage Icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ariescat.top//2019/03/07/WebSocket-Socket-TCP-HTTP%E5%8C%BA%E5%88%AB/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+    <!-- MyConfig -->
+    <script src="/js/myconfig.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!-- pjax -->
+    <script src="/js/jquery.pjax.js"></script>
+
+    <!-- lazyload -->
+    <script src="/js/jquery.lazyload.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+        <!-- 引入Valine评论插件 https://valine.js.org/ -->
+        <script src='/js/valine.min.js'></script>
+    
+
+    <!-- artitalk -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk@3.2.1"></script>
+
+    <!-- NProgress https://github.com/rstacruz/nprogress -->
+    <link rel="stylesheet" href="/css/nprogress.css">
+    <script src="/js/nprogress.js"></script>
+
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Simple Jekyll Search -->
+    <script src="/js/simple-jekyll-search.min.js"></script>
+
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+</head>
+
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+    <!-- 鼠标特效 -->
+    <!--<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>-->
+
+    <div id="pageContent">
+        <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ariescat Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a href="/tags/">Tags</a>-->
+<!--                    </li>-->
+					<li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+					<li>
+                        <a href="/about/">About</a>
+                    </li>
+                    <li class="search-icon">
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <!-- 
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                     -->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function () {
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        },
+        open: function () {
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function (e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        } else {
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function (e) {
+        if (e.target == $toggle) return;
+        if (e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+        <div id="content"><!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/pixabay/dockland-4431309_1280.jpg" width="0" height="0"> -->
+
+
+
+<!-- Code highlight -->
+<link rel="stylesheet" href="/css/darcula.css">
+<style>
+	.highlight {
+		border-style: none;
+		background: none;
+	}
+	.highlight pre {
+		line-height: 1.5;
+	}
+	.highlight pre code {
+		font-size: 14px;
+	}
+	.hljs {
+		border-radius: 4px;
+	}
+</style>
+<script>
+	async("/js/highlight.pack.js", function () {
+		hljs.initHighlighting();
+	})
+</script>
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/pixabay/dockland-4431309_1280.jpg')
+    }
+</style>
+<header class="intro-header" >
+	<div class="header-shade">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="post-heading">
+						<div class="tags">
+							
+							<a class="tag" href="/archives/?tag=IO" title="IO">IO</a>
+							
+						</div>
+						<h1>WebSocket、Socket、TCP、HTTP区别</h1>
+						
+						
+						<h2 class="subheading"></h2>
+						
+
+						
+						<span class="meta">Posted by Ariescat on March 7, 2019</span>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+			<!-- Post Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				post-container">
+
+				<h3 id="1-概述">1. 概述</h3>
+<p>WebSocket 是为了满足基于 Web 的日益增长的实时通信需求而产生的。在传统的 Web 中，要实现实时通信，通用的方式是采用 HTTP 协议不断发送请求。但这种方式即浪费带宽（HTTP HEAD 是比较大的），又消耗服务器 CPU 占用（没有信息也要接受请求）。（下图来自 <a href="http://www.websocket.org/quantum.html">WebSocket.org</a>）</p>
+
+<p><img src="http://blog.zengrong.net/uploads/2014/12/latency-comparison.gif" alt="" /></p>
+
+<p>而是用 WebSocket 技术，则会大幅降低上面提到的消耗：（下图来自 <a href="http://www.websocket.org/quantum.html">websocket.org</a>）</p>
+
+<p><img src="http://blog.zengrong.net/uploads/2014/12/poll-ws-compare.gif" alt="" /></p>
+
+<p>关于更详细的描述，尹立的这篇文章讲得非常好：<a href="http://blog.csdn.net/yl02520/article/details/7298309">WebSocket（2）–为什么引入WebSocket协议</a>。</p>
+
+<p>那么，WebSocket 到底与 HTTP 协议到底是一个什么样的关系呢？它和 Socket 又有什么联系？这就要讲到 OSI 模型和 TCP/IP 协议族。</p>
+
+<h3 id="2-osi-模型与-tcpip">2. OSI 模型与 TCP/IP</h3>
+<p>以下是 维基百科 中关于OSI 模型的说明：</p>
+
+<blockquote>
+  <p>开放式系统互联通信参考模型（英语：Open System Interconnection Reference Model，ISO/IEC 7498-1），简称为OSI模型（OSI model），一种概念模型，由国际标准化组织（ISO）提出，一个试图使各种计算机在世界范围内互连为网络的标准框架。</p>
+</blockquote>
+
+<p>而 TCP/IP 协议可以看做是对 OSI 模型的一种简化（以下内容来自 维基百科）：</p>
+
+<blockquote>
+  <p>它将软件通信过程抽象化为四个抽象层，采取协议堆叠的方式，分别实作出不同通信协议。协议套组下的各种协议，依其功能不同，被分别归属到这四个阶层之中7，常被视为是简化的七层OSI模型。</p>
+</blockquote>
+
+<p>这里有一张图详细介绍了 TCP/IP 协议族中的各个协议在 OSI模型 中的分布，一图胜千言（下图来自 科来）：</p>
+
+<p><img src="http://blog.zengrong.net/uploads/2014/12/TCP-IP.gif" alt="" /></p>
+
+<p>在这里，我们只需要知道，HTTP、WebSocket 等协议都是处于 OSI 模型的最高层： 应用层 。而 IP 协议工作在网络层（第3层），TCP 协议工作在传输层（第4层）。</p>
+
+<p>至于 OSI 模型的各个层次都有什么系统和它们对应，这里有篇很好的文章可以满足大家的求知欲：<a href="http://blog.csdn.net/yaopeng_2005/article/details/7064869">OSI七层模型详解</a>。</p>
+
+<h3 id="3-websockethttp-与-tcp">3. WebSocket、HTTP 与 TCP</h3>
+<p>从上面的图中可以看出，HTTP、WebSocket 等应用层协议，都是基于 TCP 协议来传输数据的。我们可以把这些高级协议理解成对 TCP 的封装。</p>
+
+<p>既然大家都使用 TCP 协议，那么大家的连接和断开，都要遵循 TCP 协议中的三次握手和四次握手 ，只是在连接之后发送的内容不同，或者是断开的时间不同。</p>
+
+<p>对于 WebSocket 来说，它必须依赖 HTTP 协议进行一次握手 ，握手成功后，数据就直接从 TCP 通道传输，与 HTTP 无关了。</p>
+
+<h3 id="4-socket-与-webscoket">4. Socket 与 WebScoket</h3>
+<p>Socket 其实并不是一个协议。它工作在 OSI 模型会话层（第5层），是为了方便大家直接使用更底层协议（一般是 TCP 或 UDP ）而存在的一个抽象层。</p>
+
+<p>最早的一套 Socket API 是 Berkeley sockets ，采用 C 语言实现。它是 Socket 的事实标准，POSIX sockets 是基于它构建的，多种编程语言都遵循这套 API，在 JAVA、Python 中都能看到这套 API 的影子。</p>
+
+<p>下面摘录一段更容易理解的文字（来自 http和socket之长连接和短连接区别）：</p>
+
+<blockquote>
+  <p>Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。在设计模式中，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。</p>
+</blockquote>
+
+<p><img src="http://blog.zengrong.net/uploads/2014/12/socket.gif" alt="" /></p>
+
+<p><img src="http://blog.zengrong.net/uploads/2014/12/socket-traffic.gif" alt="" /></p>
+
+<blockquote>
+  <p>主机 A 的应用程序要能和主机 B 的应用程序通信，必须通过 Socket 建立连接，而建立 Socket 连接必须需要底层 TCP/IP 协议来建立 TCP 连接。建立 TCP 连接需要底层 IP 协议来寻址网络中的主机。我们知道网络层使用的 IP 协议可以帮助我们根据 IP 地址来找到目标主机，但是一台主机上可能运行着多个应用程序，如何才能与指定的应用程序通信就要通过 TCP 或 UPD 的地址也就是端口号来指定。这样就可以通过一个 Socket 实例唯一代表一个主机上的一个应用程序的通信链路了。</p>
+</blockquote>
+
+<p>而 WebSocket 则不同，它是一个完整的 应用层协议，包含一套标准的 API 。</p>
+
+<p>所以，从使用上来说，WebSocket 更易用，而 Socket 更灵活。</p>
+
+<h3 id="5-html5-与-websocket">5. HTML5 与 WebSocket</h3>
+<p>WebSocket API 是 HTML5 标准的一部分， 但这并不代表 WebSocket 一定要用在 HTML 中，或者只能在基于浏览器的应用程序中使用。</p>
+
+<p>实际上，许多语言、框架和服务器都提供了 WebSocket 支持，例如：</p>
+
+<ul>
+  <li>基于 C 的 libwebsocket.org</li>
+  <li>基于 Node.js 的 Socket.io</li>
+  <li>基于 Python 的 ws4py</li>
+  <li>基于 C++ 的 WebSocket++</li>
+  <li>Apache 对 WebSocket 的支持： Apache Module mod_proxy_wstunnel</li>
+  <li>Nginx 对 WebSockets 的支持： NGINX as a WebSockets Proxy 、 NGINX Announces Support for WebSocket Protocol 、WebSocket proxying</li>
+  <li>lighttpd 对 WebSocket 的支持：mod_websocket</li>
+</ul>
+
+<p>附在线测试地址：websocketclient</p>
+
+
+				<hr style="visibility: hidden;">
+
+				<ul class="pager">
+					
+					<li class="previous">
+						<a href="/2019/03/02/%E7%B1%B3%E4%BB%93%E9%A3%9F%E5%A0%82(%E5%85%B4%E7%9B%9B%E8%B7%AF%E5%BA%97)-%E5%AF%BF%E5%96%9C%E7%83%A7/" data-toggle="tooltip" data-placement="top" title="米仓食堂(兴盛路店)-寿喜烧">
+						Previous<br>
+						<span>米仓食堂(兴盛路店)-寿喜烧</span>
+						</a>
+					</li>
+					
+					
+					<li class="next">
+						<a href="/2019/03/18/Java%E5%86%85%E5%AD%98%E5%8F%AF%E8%A7%81%E6%80%A7%E9%97%AE%E9%A2%98/" data-toggle="tooltip" data-placement="top" title="Java内存可见性问题">
+						Next<br>
+						<span>Java内存可见性问题</span>
+						</a>
+					</li>
+					
+				</ul>
+
+
+				
+
+
+
+
+<!-- 引入Valine评论插件 https://valine.js.org/ -->
+<div id="vcomments" style="margin-top: 30px;"></div>
+<script>
+    let pathname = window.location.pathname;
+    let valine = new Valine({
+        el: '#vcomments',
+        appId: '8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz',
+        appKey: 'QXoMCzb8TFMV0DBzDNXkcvxa',
+        placeholder: '你是我一生只会遇见一次的惊喜 | ᴥ•́ )✧',
+        path: pathname,
+        avatar: 'mp',
+        recordIP: 'true',
+        enableQQ: 'true',
+        emojiCDN: __Ariescat_Config__.Valine.emojiCDN,
+        emojiMaps: __Ariescat_Config__.Valine.emojiMaps
+    });
+    $(document).on('ready pjax:beforeReplace', function (event) {
+        valine.setPath(pathname);
+    });
+</script>
+<style>
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/img/comment_bg.png") 100% 100% no-repeat;
+    }
+    #vcomments p {
+        margin: 8px 0;
+    }
+    .v[data-class=v] .vcards .vcard .vquote {
+        padding-left: .5em;
+    }
+    .v[data-class=v] .vcards .vcard .vimg {
+        margin: 0 .7525em 0 0;
+    }
+
+    .v[data-class=v] .vwrap,
+    .v[data-class=v] .vbtn {
+        border-color: #ccc;
+    }
+    /*.v[data-class=v] .vcards > .vcard:last-child .vh*/
+    /*.v[data-class=v] .vcards > .vcard > .vh {*/
+    /*    border-bottom: 1px solid #e4e4e4;*/
+    /*}*/
+    .v[data-class="v"] .vcards .vcard .vquote {
+        border-left: none;
+    }
+
+    /*设置评论头像旋转*/
+    .v .vcards .vcard .vimg:hover {
+        -webkit-animation: vimg-transform .8s linear;
+                animation: vimg-transform .8s linear;
+    }
+    @-webkit-keyframes vimg-transform {
+        0%      {-webkit-transform:rotate(0deg);}
+        50%     {-webkit-transform:rotate(180deg);}
+        100%    {-webkit-transform:rotate(360deg);}
+    }
+    @keyframes vimg-transform {
+        0%      {transform:rotate(0deg);}
+        50%     {transform:rotate(180deg);}
+        100%    {transform:rotate(360deg);}
+    }
+</style>
+
+
+
+
+
+
+
+
+			</div>
+
+			<!-- Side Catalog Container -->
+			
+			<div class="
+				col-lg-2 col-lg-offset-0
+				visible-lg-block
+				sidebar-container
+				catalog-container">
+				<div class="side-catalog">
+					<hr class="hidden-sm hidden-xs">
+					<h5>
+						<a class="catalog-toggle" href="#">CATALOG</a>
+					</h5>
+					<ul class="catalog-body"></ul>
+				</div>
+			</div>
+			
+
+			<!-- Sidebar Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				sidebar-container">
+
+				<!-- Featured Tags -->
+				
+				<section>
+					<hr class="hidden-sm hidden-xs">
+					<h5><a href="/archives/">FEATURED TAGS</a></h5>
+					<div class="tags">
+						
+							
+								<a href="/archives/?tag=Blog" title="Blog" rel="5">
+									Blog
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=生活" title="生活" rel="8">
+									生活
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Java" title="Java" rel="16">
+									Java
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Guava" title="Guava" rel="1">
+									Guava
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Groovy" title="Groovy" rel="2">
+									Groovy
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=前端" title="前端" rel="1">
+									前端
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=IO" title="IO" rel="2">
+									IO
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Spring" title="Spring" rel="4">
+									Spring
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=AOP" title="AOP" rel="1">
+									AOP
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Json" title="Json" rel="1">
+									Json
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=SpringBoot" title="SpringBoot" rel="1">
+									SpringBoot
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=设计模式" title="设计模式" rel="1">
+									设计模式
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=操作系统" title="操作系统" rel="1">
+									操作系统
+								</a>
+							
+						
+					</div>
+				</section>
+				
+
+				<!-- Links -->
+				
+				<hr>
+				<h5>LINKS</h5>
+				<ul class="list-inline">
+					
+					<li><a href="https://www.jianshu.com/">简书</a></li>
+					
+					<li><a href="https://www.zhihu.com/">知乎</a></li>
+					
+					<li><a href="https://juejin.im/">掘金</a></li>
+					
+				</ul>
+				
+			</div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("/js/anchor.min.js",function(){
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // anchors.options = {
+        //   visible: 'always',
+        //   placement: 'right',
+        //   icon: '#'
+        // };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+</div>
+
+        <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Ariescat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://awesome.ariescat.top/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.jianshu.com/u/39035eb3096b">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://blog.csdn.net/PingXiaoGai">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">C</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Ariescat Blog 2019-2021
+                    <br>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备20047845号</a>
+                    <br>
+                    Powered by <a href="https://ariescat.top/">Ariescat</a> |
+                    <a href="https://github.com/Ariescat/blog" target="_blank"
+                       aria-label="Star Ariescat/blog on GitHub">
+                        <img src="https://img.shields.io/github/stars/Ariescat/blog?style=social"
+                             alt="Star" style="cursor: pointer">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                // size: {start: 1, end: 1, unit: 'em'},
+                // color: {start: '#bbbbee', end: '#0085a1'},
+                color: {start: '#bbbbee', end: '#2f93b4'},
+            };
+            $('#tag_cloud a').tagcloud();
+        });
+        async('/js/archive.js', function () {
+            // 重新加载archive.js，计算归档和页签
+        });
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async("/js/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPNE1L0HRN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HPNE1L0HRN');
+</script>
+
+
+
+
+<!-- Baidu 统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?15a0182bcc909fead8c8f48acb3222d4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        // 兼容pjax，先清理，不然pjax的返回，前进会造成重复追加
+        $(selector).empty();
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!--Baidu 收录 自动推送代码-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+<!-- fancybox支持 -->
+<script>
+    $(document).ready(function () {
+        $('#pageContent #content img').each(function (index, value) {
+            if (value.classList.contains('not-fancybox')) {
+                return;
+            }
+            let $a = document.createElement('a')
+            $a.setAttribute('data-fancybox', 'gallery')
+            /* 兼容img lazyload */
+            $a.setAttribute('href', $(this).attr('data-original') || value.src)
+            $a.setAttribute('data-caption', value.alt)
+            $(this).wrap($a)
+        });
+    });
+</script>
+
+<!-- img lazyload -->
+<script>
+    $(function () {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
+</script>
+
+
+<!-- search -->
+<script>
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        // 兼容pjax 刷新时清空上一次的值
+        $searchInput.val('')
+        $('#search-results').empty()
+        $searchPage.removeClass('search-active')
+        $body.removeClass('no-scroll')
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+    </div>
+
+    <!--春节挂件-->
+<style>
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+    }
+    #chunjie {
+        display: none;
+    }
+    .deng-box {
+        position: fixed;
+        top: -40px;
+        left: 7.5%;
+        z-index: 999;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        left: 10%;
+        z-index: 999;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    /*@font-face {
+        font-family: "华文行楷";
+        src: url('/fonts/华文行楷.ttf');
+    }*/
+    .deng-t {
+        /*font-family: 华文行楷;*/
+        font-size: 24px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 44px;
+        text-align: center;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+
+<div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">喜迎</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">春节</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if ($(window).width() <= 630 || (new Date().getMonth()) > 1) {
+        $('#chunjie').css('display', 'none');
+    } else {
+        $('#chunjie').css('display', 'block');
+    }
+</script>
+    <!--春节挂件-->
+<style>
+    /*春节主题 挂件吊线*/
+    .caishendeng {
+        display: none;
+    }
+    .caishenxianleft {
+        position: fixed;
+        top: 0;
+        left: 16% !important;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenxian {
+        position: fixed;
+        top: 0;
+        right: 20%;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenpic {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        top: 12px;
+        right: -22px;
+        z-index: 9;
+        /* transform-origin: 50% -100px; */
+        animation: swing 3.5s infinite ease-in-out;
+        /* -webkit-transform-origin: 50% -100px; */
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .fudao {
+        width: 38px;
+        height: 38px;
+        top: 18px !important;
+        left: -19px !important;
+    }
+</style>
+
+<div class="caishendeng">
+    <div class="caishenxian">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+<div class="caishendeng">
+    <div class="caishenxianleft">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+
+<script>
+    if ($(window).width() > 630 || (new Date().getMonth()) > 1) {
+        $('.caishendeng').css('display', 'none');
+    } else {
+        $('.caishendeng').css('display', 'block');
+    }
+</script>
+    <!-- Search -->
+<div class="search-page">
+    <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+    </div>
+    <div class="search-main container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!--<form>-->
+                <input type="text" id="search-input" placeholder="$ grep...">
+                <!--</form>-->
+                <div id="search-results" class="mini-post-list"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason,
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+</script>
+
+    <div id="aplayerContent">
+        
+<!-- aplayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+<div class="visible-lg">
+    <div id="aplayer"></div>
+</div>
+<script type="text/javascript">
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        lrcType: __Ariescat_Config__.APlayer.lrcType,
+        audio: __Ariescat_Config__.APlayer.audioSrc
+    });
+</script>
+
+    </div>
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+<!-- 鼠标点击特效 -->
+<!--<script src="/js/snow-effect.js"></script>-->
+
+<!--看板娘-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    // 可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。
+    L2Dwidget.init({
+        "model": {
+            "jsonPath": __Ariescat_Config__.L2Dwidget.jsonPath,
+            "scale": 1
+        },
+        "display": {
+            "position": "left",
+            "width": 100,
+            "height": 200,
+            "hOffset": 30,
+            "vOffset": -15
+        },
+        "mobile": {
+            "show": false,
+            "scale": 1
+        },
+        "react": {
+            "opacityDefault": 1.0,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+<script>
+    // pjax无刷新ajax加载
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    // NProgress
+    $(document).on('pjax:start', function () {
+        NProgress.start();
+        NProgress.inc();
+    });
+    $(document).on('pjax:end', function () {
+        NProgress.done();
+    });
+</script>
+
+<!-- 樱花特效 -->
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    if ($(window).width() > 768) {
+        let month = new Date().getMonth();
+        //三四月飘就好
+        if (month === 2 || month === 3) {
+            document.write('<script type="text/javascript" async src="/js/sakura.js"><\/script>');
+        }
+    }
+</script>
+</html>

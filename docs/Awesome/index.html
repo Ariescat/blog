@@ -1,0 +1,5661 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个在互联网苟且偷生的工具人 @Ariescat">
+    <meta name="keywords"  content="一只白羊座的傻猫, Blog, Java, Ariescat">
+    <meta name="theme-color" content="#000000">
+    
+    <title>Awesome - 一只白羊座的傻猫 | Ariescat Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <!-- Safari Webpage Icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ariescat.top//docs/Awesome/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+    <!-- MyConfig -->
+    <script src="/js/myconfig.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!-- pjax -->
+    <script src="/js/jquery.pjax.js"></script>
+
+    <!-- lazyload -->
+    <script src="/js/jquery.lazyload.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+        <!-- 引入Valine评论插件 https://valine.js.org/ -->
+        <script src='/js/valine.min.js'></script>
+    
+
+    <!-- artitalk -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk@3.2.1"></script>
+
+    <!-- NProgress https://github.com/rstacruz/nprogress -->
+    <link rel="stylesheet" href="/css/nprogress.css">
+    <script src="/js/nprogress.js"></script>
+
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Simple Jekyll Search -->
+    <script src="/js/simple-jekyll-search.min.js"></script>
+
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+</head>
+
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+    <!-- 鼠标特效 -->
+    <!--<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>-->
+
+    <div id="pageContent">
+        <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ariescat Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a href="/tags/">Tags</a>-->
+<!--                    </li>-->
+					<li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+					<li>
+                        <a href="/about/">About</a>
+                    </li>
+                    <li class="search-icon">
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <!-- 
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                     -->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function () {
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        },
+        open: function () {
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function (e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        } else {
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function (e) {
+        if (e.target == $toggle) return;
+        if (e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+        <div id="content"><!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/cover/167391.jpg" width="0" height="0"> -->
+
+
+
+<!-- Code highlight -->
+<link rel="stylesheet" href="/css/darcula.css">
+<style>
+	.highlight {
+		border-style: none;
+		background: none;
+	}
+	.highlight pre {
+		line-height: 1.5;
+	}
+	.highlight pre code {
+		font-size: 14px;
+	}
+	.hljs {
+		border-radius: 4px;
+	}
+</style>
+<script>
+	async("/js/highlight.pack.js", function () {
+		hljs.initHighlighting();
+	})
+</script>
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/cover/167391.jpg')
+    }
+</style>
+<header class="intro-header" >
+	<div class="header-shade">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="post-heading">
+						<div class="tags">
+							
+						</div>
+						<h1>Awesome</h1>
+						
+						
+						<h2 class="subheading">"技术体系探索总结（不断收集整理中...）"</h2>
+						
+
+						
+						<span class="meta">Posted by Ariescat from January 25, 2019 - ?</span>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+			<!-- Post Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				post-container">
+
+				<p><br /></p>
+
+<p>已弃用！！ 最新版本已迁移至：<a href="https://awesome.ariescat.top/">Introduce · Awesome (ariescat.top)</a></p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h1 id="技术总结">《技术总结》</h1>
+
+<blockquote>
+  <p><strong>思想是灵魂,实现是形式</strong></p>
+</blockquote>
+
+<h3 id="java基础">Java基础</h3>
+
+<h4 id="string">String</h4>
+
+<ul>
+  <li>
+    <p>正则表达式</p>
+  </li>
+  <li>
+    <p><a href="https://www.hollischuang.com/archives/3916">Java中的String有没有长度限制？</a></p>
+
+    <ul>
+      <li>数组呢？</li>
+    </ul>
+  </li>
+  <li>
+    <p>StringJoiner（Java 8中提供的可变字符串类）</p>
+  </li>
+  <li>
+    <p>char</p>
+
+    <p>JAVA的char内部编码为<code class="language-plaintext highlighter-rouge">UTF-16</code>，而与<code class="language-plaintext highlighter-rouge">Charset.defaultCharset()</code>无关</p>
+  </li>
+  <li>
+    <p>String s = new String(“a”) 到底产生几个对象？</p>
+
+    <p>对于通过new产生一个字符串（”a”）时，会先去常量池中查找是否已经有了”a”对象，如果没有则在常量池中创建一个此字符串对象，然后堆中再创建一个常量池中此”a”对象的拷贝对象。</p>
+
+    <p>也就是说准确答案是产生了一个或两个对象，如果常量池中原来没有”a”，就是两个。反之就是一个。</p>
+
+    <p>是的！如果面试官问到，回答一个或两个即可，但是…毕竟…毕竟</p>
+
+    <p>毕竟我和在座的各位都是人才，Java知识底蕴不能如此短浅，这题还没谢幕我们还能对面试官多哔哔几句：字符串常量池在不同版本的jvm中可能位置不同，那么这又是一个老梗了。（在JDK6.0及之前版本，字符串常量池是放在Perm Gen区(也就是方法区)中；在JDK7.0版本，字符串常量池被移到了堆中了）</p>
+
+    <p>扩展：</p>
+
+    <ol>
+      <li>
+        <p>intern方法</p>
+
+        <ul>
+          <li>
+            <p><a href="https://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html">深入解析String#intern</a></p>
+
+            <p>关键点是 jdk7 中常量池不在 Perm 区域了，这块做了调整。常量池中不需要再存储一份对象了，可以直接存储堆中的引用</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>此外，Java中的常量池有<strong>字符串常量池</strong>、<strong>class常量池</strong>和<strong>运行时常量池</strong>。<a href="http://tangxman.github.io/2015/07/27/the-difference-of-java-string-pool/">原文</a></p>
+      </li>
+      <li>
+        <p>常量池会被回收吗？</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="基本类型">基本类型</h4>
+
+<ul>
+  <li>
+    <p>强转</p>
+
+    <p><code class="language-plaintext highlighter-rouge">long</code>转<code class="language-plaintext highlighter-rouge">int</code>注意：最高位为1强转会为负数！</p>
+
+    <p>如：正数2147483648（long类型）强转int会变成负数，<code class="language-plaintext highlighter-rouge">（int）0x80000000 =&gt; -2147483648(Integer.MIN_VALUE)</code></p>
+  </li>
+  <li>
+    <p>无符号类型</p>
+
+    <ul>
+      <li>java中无符号类型的解决方案</li>
+      <li>Java8包装类 新增 无符号运算方法</li>
+      <li>byte转换int时与0xff进行与运算的原因</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="枚举">枚举</h4>
+
+<ul>
+  <li>
+    <p><a href="https://www.cnblogs.com/treeshu/p/11013511.html">枚举详解之EnumSet、EnumMap用法</a></p>
+
+    <p><code class="language-plaintext highlighter-rouge">RegularEnumSet</code>里面有这样一行代码：</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">elements</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1L</span> <span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="n">universe</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+</code></pre></div>    </div>
+
+    <p>无符号右移一个<strong>负数</strong>！是一个<strong>负移位量</strong>！</p>
+
+    <p>换个例子看一下：<code class="language-plaintext highlighter-rouge">-1 &gt;&gt;&gt; -5</code> 其实等同 <code class="language-plaintext highlighter-rouge">-1 &gt;&gt;&gt; 27</code>；<code class="language-plaintext highlighter-rouge">-1L &gt;&gt;&gt; -5</code> 等同 <code class="language-plaintext highlighter-rouge">-1L &gt;&gt;&gt; 59</code></p>
+
+    <p>如果移位量超过位数：<code class="language-plaintext highlighter-rouge">-1 &gt;&gt;&gt; 32</code> 其实等同 <code class="language-plaintext highlighter-rouge">-1 &gt;&gt;&gt; 0</code>；<code class="language-plaintext highlighter-rouge">-1 &gt;&gt;&gt; 33</code> 等同 <code class="language-plaintext highlighter-rouge">-1 &gt;&gt;&gt; 1</code></p>
+  </li>
+</ul>
+
+<h4 id="数组">数组</h4>
+
+<ul>
+  <li>
+    <p>二维数组按行和按列遍历效率？</p>
+
+    <ol>
+      <li>CPU高速缓存</li>
+      <li>内存分页调度</li>
+    </ol>
+
+    <p>参考：<a href="https://blog.csdn.net/lbwo001/article/details/78817439?utm_source=blogxgwz0">二维数组按行和按列遍历效率_醒来明月的博客-CSDN博客_二维数组访问效率</a></p>
+  </li>
+</ul>
+
+<h4 id="日期与时间">日期与时间</h4>
+
+<p>Date和Calendar，LocalDateTime（Java8），ZonedDateTime（时区），Instant</p>
+
+<p>LocalDate/LocalTime 类：</p>
+
+<p>Java 8新增了<code class="language-plaintext highlighter-rouge">LocalDate</code>和<code class="language-plaintext highlighter-rouge">LocalTime</code>接口，为什么要搞一套全新的处理日期和时间的API？因为旧的<code class="language-plaintext highlighter-rouge">java.util.Date</code>实在是太难用了。</p>
+
+<p><code class="language-plaintext highlighter-rouge">java.util.Date</code>月份从<code class="language-plaintext highlighter-rouge">0</code>开始，一月是<code class="language-plaintext highlighter-rouge">0</code>，十二月是<code class="language-plaintext highlighter-rouge">11</code>，变态吧！<code class="language-plaintext highlighter-rouge">java.time.LocalDate</code>月份和星期都改成了<code class="language-plaintext highlighter-rouge">enum</code>，就不可能再用错了。</p>
+
+<p><code class="language-plaintext highlighter-rouge">java.util.Date</code>和<code class="language-plaintext highlighter-rouge">SimpleDateFormatter</code>都不是线程安全的，而<code class="language-plaintext highlighter-rouge">LocalDate</code>和<code class="language-plaintext highlighter-rouge">LocalTime</code>和最基本的<code class="language-plaintext highlighter-rouge">String</code>一样，是不变类型，不但线程安全，而且不能修改。</p>
+
+<p>Instant：</p>
+
+<p><code class="language-plaintext highlighter-rouge">Instant</code>获取的是<strong>UTC</strong>的时间，而<code class="language-plaintext highlighter-rouge">Date</code>是根据当前服务器所处的环境的默认时区来获取的当前时间。</p>
+
+<h4 id="泛型">泛型</h4>
+
+<p>擦拭，extends通配符，super通配符</p>
+
+<p>问题：</p>
+
+<p>为什么泛型编译期擦除了，getGenericSuperclass或反射等还能获取得到？</p>
+
+<p><a href="https://www.cnblogs.com/linghu-java/p/11865108.html">Java泛型类型擦除与运行时类型获取 - linghu_java - 博客园 (cnblogs.com)</a></p>
+
+<h4 id="位运算">位运算</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">^</code>“异或运算”的特殊作用：</p>
+
+    <p>（1）使特定位翻转找一个数，对应X要翻转的各位，该数的对应位为1，其余位为零，此数与X对应位异或即可。</p>
+
+    <p>例：X=10101110，使X低4位翻转，用X ^ 0000 1111 = 1010 0001即可得到。</p>
+
+    <p>（2）与0相异或，保留原值 ，X ^ 0000 0000 = 1010 1110。</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">~</code>取反:</p>
+
+    <p>注意最高位也会取反</p>
+  </li>
+</ul>
+
+<h4 id="集合">集合</h4>
+
+<blockquote>
+  <p>Java集合比如说HashMap和ConcurrentHashMap我觉得，最好在平时能去耐心读一下源码，搜一搜相关的博客，最好能知道每个参数为什么设置成这么大？有什么好处？为什么？</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>HashMap</p>
+
+    <ul>
+      <li><a href="https://blog.csdn.net/u013453787/article/details/84702992">详细梳理JAVA7和JAVA8 HashMap的hash实现</a></li>
+    </ul>
+
+    <blockquote>
+      <p>最近它有两个主要的更新——一个在Java 7u40版本中对于空map的共享的底层存储，以及在Java 8中将底层hash bucket链接成为<strong>哈希树</strong>（改进更差情况下的性能）。</p>
+    </blockquote>
+
+    <ul>
+      <li>jdk1.7中的线程安全问题 <strong>(resize死循环)</strong>
+        <ul>
+          <li><a href="https://www.2cto.com/kf/201403/286536.html">ConcurrentModificationException</a></li>
+          <li><a href="https://coolshell.cn/articles/9606.html">疫苗：JAVA HASHMAP的死循环</a></li>
+        </ul>
+      </li>
+      <li>jdk8中是如何解决jdk7中的HashMap死循环的</li>
+      <li>IdentityHashMap：和HashMap最大的不同，就是使用==而不是equals比较key</li>
+    </ul>
+  </li>
+  <li>
+    <p>jdk8 ConcurrentHashMap</p>
+
+    <ul>
+      <li>
+        <p>死循环：</p>
+
+        <p><a href="https://blog.csdn.net/zhanglong_4444/article/details/93638844">ConcurrentHashMap BUG 死锁</a></p>
+      </li>
+      <li>
+        <p>死锁（该问题由fly提出并收录）：</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">ConcurrentHashMap</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ConcurrentHashMap</span><span class="o">&lt;&gt;();</span>
+<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+<span class="nc">Thread</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+    <span class="nc">LockSupport</span><span class="o">.</span><span class="na">parkNanos</span><span class="o">(</span><span class="nc">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">.</span><span class="na">toNanos</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+    <span class="n">map</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">key</span><span class="o">;</span>
+    <span class="o">});</span>
+<span class="o">});</span>
+<span class="nc">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+    <span class="nc">LockSupport</span><span class="o">.</span><span class="na">parkNanos</span><span class="o">(</span><span class="nc">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">.</span><span class="na">toNanos</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+    <span class="n">map</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"3"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">key</span><span class="o">;</span>
+    <span class="o">});</span>
+<span class="o">});</span>
+<span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">t1</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+<span class="n">t2</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"finish"</span><span class="o">);</span>
+</code></pre></div>        </div>
+
+        <p>ConcurrentHashMap 1194行会死锁</p>
+
+        <p><img src="/img/awesome/map1.png" alt="deadlock" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>红黑树</strong> TreeMap、TreeSet</p>
+  </li>
+  <li>
+    <p>Queue 接口的几个方法</p>
+
+    <p>add/offer, remove/poll, element/peek</p>
+  </li>
+  <li>
+    <p>其他</p>
+
+    <ul>
+      <li>
+        <p>WeakHashMap</p>
+      </li>
+      <li>
+        <p>CopyOnWriteArrayList （附：Redis写快照的时候，用到了Linux底层的Copy-On-Write技术）</p>
+      </li>
+      <li>
+        <p><strong>跳表</strong> <a href="https://blog.csdn.net/sunxianghuang/article/details/52221913">ConcurrentSkipListMap</a></p>
+      </li>
+      <li>
+        <p>DelayQueue</p>
+
+        <p>ScheduledThreadPoolExecutor其任务队列默认是DelayedWorkQueue的变种</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>著名BUG</p>
+
+    <ul>
+      <li>
+        <p>c.toArray might (incorrectly) not return Object[] (see 6260652) <a href="https://blog.csdn.net/qq_33589510/article/details/104767849">原文</a></p>
+
+        <p><code class="language-plaintext highlighter-rouge">java.util.ArrayList</code> 元素类型为<code class="language-plaintext highlighter-rouge">Object[] elementData</code>，<code class="language-plaintext highlighter-rouge">toArray()</code>方法实质返回<code class="language-plaintext highlighter-rouge">Object[]</code></p>
+
+        <p><code class="language-plaintext highlighter-rouge">java.util.Arrays.ArrayList</code> 元素类型为<code class="language-plaintext highlighter-rouge">E[] a</code>，<code class="language-plaintext highlighter-rouge">toArray()</code>方法实质返回<code class="language-plaintext highlighter-rouge">E[]</code></p>
+
+        <p>因此，虽然<code class="language-plaintext highlighter-rouge">List</code>的<code class="language-plaintext highlighter-rouge">toArray</code>接口表面都返回Object[]，但他们的实质返回值还是有差的。所以我们不能将其他类型的对象，放进<code class="language-plaintext highlighter-rouge">java.util.Arrays.ArrayList#toArray()</code>返回的数组中。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span>
+<span class="c1">// class java.util.Arrays$ArrayList</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">getClass</span><span class="o">());</span>
+    
+<span class="nc">Object</span><span class="o">[]</span> <span class="n">objArray</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+<span class="c1">// class [Ljava.lang.String;</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">objArray</span><span class="o">.</span><span class="na">getClass</span><span class="o">());</span>
+    
+<span class="c1">// cause ArrayStoreException</span>
+<span class="n">objArray</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">();</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>第三方原始类型集合库<strong>Koloboke</strong>，避免大量的装箱拆箱，同类型的还有HPPC，Eclipse Collections等</p>
+
+    <blockquote>
+      <p>Koloboke的目标是替换标准的Java集合和流的API，提供更高效的实现。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="异常">异常</h4>
+
+<ul>
+  <li>Error和Exception的区别</li>
+</ul>
+
+<h4 id="io">IO</h4>
+
+<ul>
+  <li>
+    <p>IO流</p>
+
+    <ol>
+      <li>
+        <p>对文件进行操作：FileInputStream（字节输入流），FileOutputStream（字节输出流），FileReader（字符输入流），FileWriter（字符输出流）</p>
+
+        <p>2020年3月17日追加：</p>
+
+        <ol>
+          <li><code class="language-plaintext highlighter-rouge">FileReader</code>，可以理解成他把<code class="language-plaintext highlighter-rouge">FileInputStream</code>和<code class="language-plaintext highlighter-rouge">Decoder</code>封装了起来，本质上还是用FileInputStream读了一层字节流byte[] (这里的read是一个<code class="language-plaintext highlighter-rouge">native</code>方法)，然后通过Decoder把他转成了char[]。</li>
+          <li><code class="language-plaintext highlighter-rouge">BufferedReader</code>，他默认开辟了一份<code class="language-plaintext highlighter-rouge">defaultCharBufferSize = 8192</code>长度的cb[]数组（缓冲区），读之前会把这个数组<code class="language-plaintext highlighter-rouge">fill()</code>满，之后都是操作这个数组，操作完了就再次更新数组，提高数据访问的效率。</li>
+        </ol>
+
+        <p>测试代码：<code class="language-plaintext highlighter-rouge">study-metis: com.ariescat.metis.base.io.iostream.Test</code></p>
+      </li>
+      <li>
+        <p>对管道进行操作：PipedInputStream（字节输入流），PipedOutStream（字节输出流），PipedReader（字符输入流），PipedWriter（字符输出流）</p>
+
+        <p>PipedInputStream的一个实例要和PipedOutputStream的一个实例共同使用，共同完成管道的读取写入操作，主要用于<strong>线程操作</strong>。</p>
+
+        <p>有空看看这里的实现 <a href="https://www.cnblogs.com/skywang12345/p/io_04.html">简介,源码分析和示例</a></p>
+
+        <p>在一个线程里使用PipedInputStream和PipedOutputStream会造成死锁：这意味着，如果你用同一个线程既读又写（read()和write()方法是阻塞的方法），那么就会造成这个线程的死锁。</p>
+      </li>
+      <li>
+        <p>字节/字符数组：ByteArrayInputStream，ByteArrayOutputStream，CharArrayReader，CharArrayWriter</p>
+
+        <p>在内存中开辟了一个字节或字符数组。</p>
+      </li>
+      <li>
+        <p>Buffered缓冲流：BufferedInputStream，BufferedOutputStream，BufferedReader，BufferedWriter</p>
+
+        <p>带缓冲区的处理流，缓冲区的作用的主要目的是：避免每次和硬盘打交道，提高数据访问的效率。</p>
+      </li>
+      <li>
+        <p>转化流：</p>
+
+        <p>InputStreamReader：在读入数据的时候将字节转换成字符。</p>
+
+        <p>OutputStreamWriter：在写出数据的时候将字符转换成字节。</p>
+      </li>
+      <li>
+        <p>数据流：DataInputStream，DataOutputStream</p>
+
+        <p>因为平时若是我们输出一个8个字节的long类型或4个字节的float类型，那怎么办呢？可以一个字节一个字节输出，也可以把转换成字符串输出，但是这样转换费时间，若是直接输出该多好啊，因此这个数据流就解决了我们输出数据类型的困难。数据流可以直接输出float类型或long类型，提高了数据读写的效率。</p>
+      </li>
+      <li>
+        <p>打印流：printStream，printWriter</p>
+
+        <p>一般是打印到控制台，可以进行控制打印的地方和格式，其中的  print方法不会抛出异常，可以通过checkError方法来查看异常。</p>
+      </li>
+      <li>
+        <p>对象流：ObjectInputStream，ObjectOutputStream</p>
+
+        <p>把封装的对象直接输出，而不是一个个在转换成字符串再输出。</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">RandomAccessFile</code> 随机访问文件</p>
+
+        <p>java.io包中是一个特殊的类, 既可以读文件，也可以写文件。</p>
+
+        <p><strong>有空也要看看这里的实现</strong>，log4j2的Appender里就有这个：<code class="language-plaintext highlighter-rouge">RandomAccessFileAppender</code>、<code class="language-plaintext highlighter-rouge">RollingRandomAccessFileAppender</code></p>
+
+        <p>RandomAccessFile的绝大多数功能，但不是全部，已经被JDK 1.4的nio的内存映射文件<strong>(memory-mapped files)</strong>给取代了，你该考虑一下是不是用”内存映射文件”来代替RandomAccessFile了。</p>
+      </li>
+      <li>
+        <p>ZipInputStream、ZipOutputStream</p>
+
+        <p>读取zip文档 getNextEntry、putNextEntry 得到或创建ZipEntry对象。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Path/Files</p>
+
+    <ul>
+      <li><a href="https://www.sohu.com/a/132459571_654433">IO操作你还在用File吗，该拥抱Path和Files了</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>JDK NIO</p>
+
+    <ul>
+      <li>Channel，Buffer，Selector</li>
+      <li><a href="https://www.cnblogs.com/doit8791/p/7461479.html">高性能IO之Reactor模式</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>为什么要用 <code class="language-plaintext highlighter-rouge">close()</code> 关掉流？</p>
+
+    <p>有些资源 <code class="language-plaintext highlighter-rouge">GC</code> 回收不掉？</p>
+  </li>
+</ul>
+
+<h4 id="java-util包">Java Util包</h4>
+
+<ul>
+  <li>
+    <p>BitSet</p>
+
+    <p>JDK中的BitSet集合对是<strong>布隆过滤器</strong>中经常使用的数据结构<strong>Bitmap</strong>的相对简单的实现。BitSet采用了<strong>Bitmap的算法思想</strong>。</p>
+  </li>
+  <li>
+    <p>ServiceLoader</p>
+
+    <p>Java中SPI全称为（Service Provider Interface，服务提供者接口）</p>
+
+    <p>该类通过在资源目录META-INF/services中放置<strong>提供者配置文件</strong>来标识<strong>服务提供者</strong>。</p>
+
+    <p>应用场景：</p>
+
+    <ol>
+      <li>
+        <p>JDBC驱动加载</p>
+
+        <p><code class="language-plaintext highlighter-rouge">java.sql.DriverManager#loadInitialDrivers</code>这里调用了<code class="language-plaintext highlighter-rouge">ServiceLoader.load(Driver.class);</code></p>
+
+        <p>因此只要pom引入了<code class="language-plaintext highlighter-rouge">mysql-connector-java</code>这个包，就会加载<code class="language-plaintext highlighter-rouge">jar</code>包下<code class="language-plaintext highlighter-rouge">META-INF/services/java.sql.Driver</code>文件中的<code class="language-plaintext highlighter-rouge">com.mysql.jdbc.Driver</code>类，而<code class="language-plaintext highlighter-rouge">com.mysql.jdbc.Driver</code>在静态代码块里往<code class="language-plaintext highlighter-rouge">DriverManager</code>注册了自己的驱动。所以以后就不用写下面的a段代码啦。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//a.导入驱动，加载具体的驱动类</span>
+<span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span>
+<span class="c1">//b.与数据库建立连接</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="no">URL</span><span class="o">,</span> <span class="no">USERNAME</span><span class="o">,</span> <span class="no">PASSWORD</span><span class="o">);</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>netty/Java的NIO采用SelectorProvider创建：<code class="language-plaintext highlighter-rouge">io.netty.channel.nio.NioEventLoop#provider</code></p>
+
+        <p>而<code class="language-plaintext highlighter-rouge">java.nio.channels.spi.SelectorProvider#provider</code>采用了SPI</p>
+      </li>
+      <li>
+        <p>Dubbo的扩展点加载</p>
+
+        <p>Dubbo的SPI扩展是自己实现的，在启动加载的时候会依次从以下目录中读取配置文件：</p>
+
+        <p>META-INF/dubbo/internal/、META-INF/dubbo/、META-INF/services/</p>
+
+        <p>——《高可用可伸缩微服务架构：基于Dubbo、Spring Cloud和Service Mesh》3.2.3节 Dubbo Extension机制</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Observable</p>
+
+    <p>操作Vector型变量obs的四个方法都加有同步关键字，Vector类型为线程安全的，而上述四个方法为什么还要加同步关键字呢？</p>
+  </li>
+  <li>
+    <p>Arrays</p>
+
+    <ul>
+      <li>
+        <p>几个类：</p>
+
+        <p>TimSort，ComparableTimSort，DualPivotQuicksort</p>
+      </li>
+      <li>
+        <p>几个方法：</p>
+
+        <p>binarySort 折半插入排序</p>
+
+        <p>mergeSort</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="java-lang包">Java lang包</h4>
+
+<ul>
+  <li>
+    <p>Math</p>
+
+    <ol>
+      <li>
+        <p>log</p>
+
+        <p>在java中求log2N，首先要弄明白一个初中学到的公式<code class="language-plaintext highlighter-rouge">log2N=logeN/loge2</code>，logeN代表以e为底的N的对数，loge2代表以e为底的2的对数</p>
+
+        <p>在java.lang.math类中的log(double a)代表以e为底的a的对数，因此log2N在Java中的表示为<code class="language-plaintext highlighter-rouge">log((double)N)/log((double)2)</code></p>
+      </li>
+      <li>
+        <p>pow</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="javax">Javax</h4>
+
+<ul>
+  <li>
+    <p>Java 注解处理器 (Annotation Processor)</p>
+
+    <p>javax.annotation.processing.AbstractProcessor 编译时执行</p>
+  </li>
+</ul>
+
+<h4 id="swingawt">Swing/Awt</h4>
+
+<ul>
+  <li>
+    <p>EventQueue 与 AWTEvent</p>
+
+    <blockquote>
+      <p>from https://github.com/jzyong/game-server.git</p>
+
+      <p>game-tool/src/main/java/com/jzy/game/tool/db/DBTool.java</p>
+
+      <p><code class="language-plaintext highlighter-rouge">java.awt.EventQueue.invokeLater</code></p>
+    </blockquote>
+
+    <p><code class="language-plaintext highlighter-rouge">EventQueue</code>里有一条<code class="language-plaintext highlighter-rouge">dispatchThread</code>线程，在<code class="language-plaintext highlighter-rouge">postEventPrivate</code>里检测为null则进行初始化，然后一直调用<code class="language-plaintext highlighter-rouge">pumpEvents</code>取出优先级最高的<code class="language-plaintext highlighter-rouge">AWTEvent</code>进行分发：</p>
+
+    <p><code class="language-plaintext highlighter-rouge">eq.dispatchEvent(event);</code></p>
+
+    <p>如<code class="language-plaintext highlighter-rouge">java.awt.Component#dispatchEventImpl</code>里会触发各种监听</p>
+  </li>
+  <li>
+    <p><a href="https://segmentfault.com/a/1190000007736473">Polygon</a>，区域超区校验</p>
+  </li>
+</ul>
+
+<h3 id="java多线程">Java多线程</h3>
+
+<h4 id="概述">概述</h4>
+
+<p>JUC包，毫无疑问的，得去学，哪怕平时编程根本不去用，但是得会，至少得知道有这个东西，至少得知道aba，cas，aqs，unsafe，volatile，sync，常见的各种lock，死锁，线程池参数和如何合理的去设置，必须明白自旋，阻塞，死锁和它如何去定位，oom如何定位问题，cpu过高如何定位等基本的操作。你可以没有生产调试经验，但不代表你可以不会top，jps，jstack，jmap这些可能会问的东西。</p>
+
+<h4 id="线程创建">线程创建</h4>
+
+<p>链接：<a href="https://blog.csdn.net/yonlist/article/details/84736424">Java并发的四种风味</a></p>
+
+<h4 id="线程状态">线程状态</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">java.lang.Thread.State</code>，里面的注释内容讲解得很清楚了</p>
+
+    <p>链接：</p>
+
+    <ol>
+      <li><a href="https://blog.csdn.net/pange1991/article/details/53860651">Java线程的6种状态及切换(透彻讲解)</a></li>
+      <li><a href="https://www.cnblogs.com/GooPolaris/p/8079490.html">Java中一个线程只有六个状态。至于阻塞、可运行、挂起状态都是人们为了便于理解，自己加上去的</a></li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="中断线程">中断线程</h4>
+
+<p>？何时抛出 <code class="language-plaintext highlighter-rouge">{@see java.lang.InterruptedException}</code></p>
+
+<h4 id="守护线程">守护线程</h4>
+
+<p>守护线程是指为其他线程服务的线程。在JVM中，所有非守护线程都执行完毕后，无论有没有守护线程，虚拟机都会自动退出。</p>
+
+<p>因此，JVM退出时，不必关心守护线程是否已结束。</p>
+
+<h4 id="线程同步与安全">线程同步与安全</h4>
+
+<ul>
+  <li>
+    <p>几个问题</p>
+
+    <ul>
+      <li>
+        <p>Bounded-Buffer问题：</p>
+
+        <p>生产者消费者问题（Producer-consumer problem），也称有限缓冲问题（Bounded-buffer problem），是一个多线程同步问题的经典案例。<a href="https://www.jianshu.com/p/696c24f3f7b8">原文</a></p>
+      </li>
+      <li>
+        <p>并发中的伪共享问题（false sharing）：</p>
+
+        <p>CPU缓存是以缓存行（cache line）为单位存储的。缓存行通常是 64 字节，并且它有效地引用主内存中的一块地址。并发的修改在一个缓存行中的多个独立变量，看起来是并发执行的，但实际在CPU处理的时候，是串行执行的，并发的性能大打折扣。</p>
+
+        <p>Java中通过填充缓存行，sun.misc.Contended注解来解决伪共享问题。LMAX Disruptor <code class="language-plaintext highlighter-rouge">Sequence</code>采用了填充缓存行。</p>
+
+        <p>并不是所有的场景都需要解决伪共享问题，因为CPU缓存是有限的，填充会牺牲掉一部分缓存。</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>锁：</p>
+
+<h6 id="synchronized">synchronized</h6>
+
+<ul>
+  <li>
+    <p>Java对象头</p>
+
+    <p>在JVM中<strong>，对象在内存中的布局分为三块区域：对象头、实例数据和对齐填充。</strong></p>
+
+    <ol>
+      <li><strong>对象头：Java对象头一般占有2个机器码（在32位虚拟机中，1个机器码等于4字节，也就是32bit，在64位虚拟机中，1个机器码是8个字节，也就是64bit），但是 如果对象是数组类型，则需要3个机器码，因为JVM虚拟机可以通过Java对象的元数据信息确定Java对象的大小，但是无法从数组的元数据来确认数组的大小，所以用一块来记录数组长度。</strong></li>
+      <li>实例数据：存放类的属性数据信息，包括父类的属性信息；</li>
+      <li>对齐填充：由于虚拟机要求 对象起始地址必须是8字节的整数倍。填充数据不是必须存在的，仅仅是为了字节对齐；</li>
+    </ol>
+  </li>
+  <li>
+    <p>锁优化</p>
+
+    <p>偏向锁、轻量级锁、重量级锁</p>
+  </li>
+  <li>
+    <p>其他锁优化</p>
+
+    <p>锁消除、锁粗化</p>
+  </li>
+  <li>
+    <p>Monitor对象</p>
+
+    <p>Monitor其实是一种同步工具，也可以说是一种同步机制，它通常被描述为一个对象。</p>
+
+    <p>主要特点：</p>
+
+    <ul>
+      <li>对象的所有方法都被“互斥”的执行</li>
+      <li>通常提供singal机制</li>
+    </ul>
+
+    <p>“ Java对象是天生的Monitor。”</p>
+  </li>
+  <li>
+    <p>总结：</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>锁</th>
+          <th>优点</th>
+          <th>缺点</th>
+          <th>适用场景</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>偏向锁</td>
+          <td>加锁和解锁不需要额外的消耗，和执行非同步方法比仅存在纳秒级的差距。</td>
+          <td>如果线程间存在锁竞争，会带来额外的锁撤销的消耗。</td>
+          <td>适用于只有一个线程访问同步块场景。</td>
+        </tr>
+        <tr>
+          <td>轻量级锁</td>
+          <td>竞争的线程不会阻塞，提高了程序的响应速度。</td>
+          <td>如果始终得不到锁竞争的线程使用自旋会消耗CPU。</td>
+          <td>追求响应时间。同步块执行速度非常快。</td>
+        </tr>
+        <tr>
+          <td>重量级锁</td>
+          <td>线程竞争不使用自旋，不会消耗CPU。</td>
+          <td>线程阻塞，响应时间缓慢。</td>
+          <td>追求吞吐量。同步块执行速度较长。</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>参考：</p>
+
+    <p><a href="https://blog.csdn.net/qq_38462278/article/details/81976428">彻底搞懂synchronized(从偏向锁到重量级锁)</a></p>
+  </li>
+</ul>
+
+<h6 id="volatile">volatile</h6>
+
+<blockquote>
+  <p><strong>Java内存模型</strong>中：</p>
+
+  <ol>
+    <li><code class="language-plaintext highlighter-rouge">volatile</code>变量在写操作之后会插入一个store屏障，在读操作之前会插入一个load屏障。</li>
+    <li>一个类的<code class="language-plaintext highlighter-rouge">final</code>字段会在初始化后插入一个store屏障，来确保<code class="language-plaintext highlighter-rouge">final</code>字段在<strong>构造函数初始化完成</strong>并可被使用时可见。</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>
+    <p>几个概念</p>
+
+    <ol>
+      <li>
+        <p>可见性</p>
+      </li>
+      <li>
+        <p>重排序（编译器重排，处理器重排），happen-before原则</p>
+
+        <p><a href="https://www.jianshu.com/p/9464bf340234">深入理解happens-before规则</a></p>
+      </li>
+      <li>
+        <p>Java内存模型定义了8种操作来完成主内存和工作内存的变量访问</p>
+
+        <p>lock，unlock，read，load，use，assign，stroe，write</p>
+      </li>
+      <li>
+        <p>MESI协议，Store Buffere（存储缓存），Invalidate Queue（失效队列）</p>
+
+        <p>搜索关键词（CPU和volatile ）</p>
+      </li>
+      <li>
+        <p><strong>内存屏障</strong>是什么？如何工作的？如何实现？在哪个层面上实现？</p>
+
+        <p>x86架构：</p>
+
+        <p><strong>Store Barrier</strong>，Store屏障，是x86的”sfence”指令，相当于StoreStore Barriers，强制所有在sfence指令之前的store指令，都在该sfence指令执行之前被执行，发送缓存失效信号，并把<strong>store buffer</strong>中的数据刷出到CPU的L1 Cache中；所有在sfence指令之后的store指令，都在该sfence指令执行之后被执行。即，禁止对sfence指令前后store指令的重排序跨越sfence指令，使<strong>所有Store Barrier之前发生的内存更新都是可见的</strong>。</p>
+
+        <p><strong>Load Barrier</strong>，Load屏障，是x86上的”ifence”指令，相当于LoadLoad Barriers，强制所有在lfence指令之后的load指令，都在该lfence指令执行之后被执行，并且一直等到load buffer被该CPU读完才能执行之后的load指令（发现缓存失效后发起的刷入）。即，禁止对lfence指令前后load指令的重排序跨越lfence指令，配合Store Barrier，使<strong>所有Store Barrier之前发生的内存更新，对Load Barrier之后的load操作都是可见的</strong>。</p>
+
+        <p><strong>Full Barrier</strong>，Full屏障，是x86上的”mfence“指令，相当于StoreLoad Barriers，强制所有在mfence指令之前的store/load指令，都在该mfence指令执行之前被执行；所有在mfence指令之后的store/load指令，都在该mfence指令执行之后被执行。即，禁止对mfence指令前后store/load指令的重排序跨越mfence指令，使<strong>所有Full Barrier之前发生的操作，对所有Full Barrier之后的操作都是可见的。</strong></p>
+
+        <p>参考：</p>
+
+        <ol>
+          <li>http://ifeve.com/memory-barriers-or-fences/</li>
+          <li>https://www.jianshu.com/p/64240319ed60/ 该博客讲得不错，认真品味每一个字</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>特点：</p>
+
+    <ol>
+      <li>通过使用<strong>Lock前缀</strong>的指令禁止<strong>变量在线程工作内存中缓存</strong>来保证volatile变量的<strong>内存可见性</strong></li>
+      <li>通过<strong>插入内存屏障</strong>禁止<strong>会影响变量内存可见性</strong>的<strong>指令重排序</strong></li>
+      <li>对任意单个volatile变量的读/写具有原子性，但类似于volatile++这种复合操作不具有原子性</li>
+    </ol>
+  </li>
+  <li>
+    <p>参考文章：</p>
+
+    <ol>
+      <li>
+        <p><a href="https://monkeysayhi.github.io/2016/11/29/volatile关键字的作用、原理/">volatile关键字的作用、原理</a></p>
+
+        <p>注意DCL（Double Check Lock，双重检查锁）和被部分初始化的对象</p>
+      </li>
+      <li>
+        <p><a href="https://www.hollischuang.com/archives/3928">既生synchronized，何生volatile？！</a></p>
+
+        <p>非原子操作！！！</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h6 id="乐观锁">乐观锁</h6>
+
+<ul>
+  <li>
+    <p>Atomic</p>
+  </li>
+  <li>
+    <p>了解一下<strong>LongAdder</strong> 与 <strong>Striped64</strong></p>
+
+    <p>LongAdder 区别于 AtomicLong ，在高并发中有更好的性能体现</p>
+  </li>
+  <li>
+    <p><a href="http://www.cnblogs.com/qjjazry/p/6581568.html">Java并发问题–乐观锁与悲观锁以及乐观锁的一种实现方式-CAS</a></p>
+  </li>
+</ul>
+
+<h6 id="reentrantlockreadwritelockstampedlock">ReentrantLock，ReadWriteLock，StampedLock</h6>
+
+<p>应用场景的选择</p>
+
+<p><a href="https://blog.csdn.net/qq_35190492/article/details/104943579">阿里面试官：说一下公平锁和非公平锁的区别？_敖丙-CSDN博客</a></p>
+
+<h6 id="aqsabstractqueuedsynchronizer">AQS（AbstractQueuedSynchronizer）</h6>
+
+<p>它维护了一个<strong>volatile</strong> int <strong>state</strong>（代表共享资源）和一个FIFO线程等待队列（多线程争用资源被阻塞时会进入此队列）。这里volatile是核心关键词</p>
+
+<ul>
+  <li>AQS框架借助于两个类：
+    <ol>
+      <li>Unsafe（提供CAS操作）</li>
+      <li><a href="https://www.jianshu.com/p/e3afe8ab8364">LockSupport</a>（提供park/unpark操作）</li>
+    </ol>
+  </li>
+  <li>与Object类的wait/notify机制相比，park/unpark有两个优点：
+    <ol>
+      <li>以thread为操作对象更符合阻塞线程的直观定义</li>
+      <li>操作更精准，可以准确地唤醒某一个线程（notify随机唤醒一个线程，notifyAll唤醒所有等待的线程），增加了灵活性。</li>
+    </ol>
+  </li>
+  <li>应用：
+    <ol>
+      <li>CountDownLatch、CyclicBarrier和Semaphore</li>
+      <li>AbstractFuture (一旦调用get就会阻塞)</li>
+    </ol>
+  </li>
+  <li>JDK Unsafe类（可以了解一下）
+    <ul>
+      <li>objectFieldOffset</li>
+      <li>compareAndSwap…</li>
+    </ul>
+  </li>
+  <li>参考链接
+    <ul>
+      <li>https://blog.51cto.com/14220760/2390586?source=dra</li>
+      <li>https://www.jianshu.com/p/da9d051dcc3d</li>
+    </ul>
+  </li>
+</ul>
+
+<h6 id="并发容器">并发容器</h6>
+
+<ul>
+  <li>
+    <p>LinkedBlockingQueue，ConcurrentLinkedQueue等，要看看源码如何实现（offer，take方法）！</p>
+  </li>
+  <li>
+    <p>CopyOnWriteArrayList</p>
+  </li>
+  <li>
+    <p>ConcurrentHashMap (JDK8)，ConcurrentHashMapV8 (netty提供)</p>
+
+    <blockquote>
+      <p>java8中的ConcurrentHashMap实现已经抛弃了java7中分段锁的设计，而采用更为轻量级的CAS来协调并发，效率更佳。</p>
+    </blockquote>
+
+    <ul>
+      <li>computeIfAbsent</li>
+    </ul>
+  </li>
+  <li>
+    <p>SkipList（跳表）</p>
+  </li>
+  <li>
+    <p>ConcurrentSkipListMap（使用跳表实现Map）</p>
+
+    <blockquote>
+      <p>和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，而跳表内所有的元素都是排序的。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h6 id="安全点safepoint">安全点（Safepoint）</h6>
+
+<p>GC停顿点，撤销偏向锁（在一个安全点停止拥有锁的线程，具体看流程）</p>
+
+<h6 id="其他">其他</h6>
+
+<ol>
+  <li>
+    <p>ThreadLocal</p>
+
+    <p>ThreadLocal有一个<strong>value内存泄露</strong>的隐患</p>
+  </li>
+  <li>
+    <p>WeakReference 和 <strong>ReferenceQueue</strong></p>
+
+    <p>这里重点看ReferenceQueue，引用相关请看下面的<strong>对象引用</strong>小节</p>
+  </li>
+  <li>
+    <p>Callable和<strong>Future</strong>（since1.5）</p>
+
+    <p>在并发编程中，我们经常用到非阻塞的模型，在之前的多线程的三种实现中，不管是继承thread类还是实现runnable接口，都无法保证获取到之前的执行结果。通过实现Callback接口，并用Future可以来接收多线程的执行结果。</p>
+
+    <p>Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。</p>
+
+    <ul>
+      <li>Guava——AbstractFuture</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>ForkJoin</strong></p>
+  </li>
+  <li>
+    <p>CompletableFuture</p>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p>弄懂几个方法：</p>
+
+    <p><img src="/img/awesome/thread1.png" alt="thread" /></p>
+
+    <ol>
+      <li>
+        <p>synchronized、LockSupport.park（如ReentrantLock）区别</p>
+      </li>
+      <li>
+        <p>wait 和 notify</p>
+
+        <p>当使用调用wait时，虽然当前的线程还在schronized同步块中， 但是也会让出锁，要不然，notify永远拿不到锁，永远得不到执行。</p>
+
+        <p>同样当使用完notify后，是不会立即释放锁的，必须使你当前线程走完schronized的代码，也就是说只有当前线程走完schronized代码块之后，wait才会被执行。</p>
+      </li>
+      <li>
+        <p>Condition</p>
+
+        <p><code class="language-plaintext highlighter-rouge">ReentrantLock</code>和<code class="language-plaintext highlighter-rouge">Condition</code>提供的await()、signal()、signalAll()</p>
+      </li>
+      <li>
+        <p>Thread.sleep、Object.wait、Condition.await区别，他们会释放锁吗？</p>
+
+        <p><a href="https://blog.csdn.net/pengweismile/article/details/108836666">白话讲懂wait notify 和park unpark的使用示例和区别_pengweismile的专栏-CSDN博客</a></p>
+
+        <p><a href="http://www.imooc.com/article/294581">面试 LockSupport.park()会释放锁资源吗？</a></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>QA？</p>
+
+    <ol>
+      <li>什么是上下文切换？</li>
+      <li>并发与并行的区别？</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="线程池">线程池</h4>
+
+<p>介绍：<a href="http://novoland.github.io/并发/2014/07/26/Executor 之 线程池及定时器.html">Executor 之 线程池及定时器 (novoland.github.io)</a></p>
+
+<p>另外：</p>
+
+<p>《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险</p>
+
+<p>Executors 返回线程池对象的弊端如下：</p>
+
+<ol>
+  <li>FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE ，可能堆积大量的请求，从而导致OOM。</li>
+  <li>CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。</li>
+</ol>
+
+<h6 id="三种队列">三种队列</h6>
+
+<table>
+  <thead>
+    <tr>
+      <th>队列</th>
+      <th>简单解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SynchrousQueue</td>
+      <td>不会保存提交任务，超出直接corePoolSize个任务，直接创建新的线程来执行任务，直到(corePoolSize＋新建线程) &gt; maximumPoolSize。</td>
+    </tr>
+    <tr>
+      <td>LinkedBlockingQueue</td>
+      <td>基于链表的先进先出，无界队列。超出直接corePoolSize个任务，则加入到该队列中，直到资源耗尽，<strong>所以maximumPoolSize不起作用</strong>。</td>
+    </tr>
+    <tr>
+      <td>ArrayBlockingQueue</td>
+      <td>基于数组的先进先出，创建时必须指定大小，超出直接corePoolSize个任务，则加入到该队列中，只能加该queue设置的大小，其余的任务则创建线程，直到(corePoolSize＋新建线程) &gt; maximumPoolSize。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>上表收录自：<a href="https://blog.csdn.net/nihaomabmt/article/details/81667481">线程池的三种缓存队列</a></p>
+
+<p>解释看起来文邹邹的，要不直接上代码：execute：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">ctl</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">workerCountOf</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">&lt;</span> <span class="n">corePoolSize</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">addWorker</span><span class="o">(</span><span class="n">command</span><span class="o">,</span> <span class="kc">true</span><span class="o">))</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ctl</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">isRunning</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">workQueue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">command</span><span class="o">))</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">recheck</span> <span class="o">=</span> <span class="n">ctl</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(!</span> <span class="n">isRunning</span><span class="o">(</span><span class="n">recheck</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">remove</span><span class="o">(</span><span class="n">command</span><span class="o">))</span>
+        <span class="n">reject</span><span class="o">(</span><span class="n">command</span><span class="o">);</span>
+    <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">workerCountOf</span><span class="o">(</span><span class="n">recheck</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="n">addWorker</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="o">(!</span><span class="n">addWorker</span><span class="o">(</span><span class="n">command</span><span class="o">,</span> <span class="kc">false</span><span class="o">))</span>
+  <span class="n">reject</span><span class="o">(</span><span class="n">command</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>注意几点</p>
+
+<ol>
+  <li>
+    <p>？<code class="language-plaintext highlighter-rouge">SynchronousQueue</code>误区：很多人把其认为其没有容量，不存储元素，这是错的。</p>
+
+    <p>好好了解这个结构，并看看其核心算法<code class="language-plaintext highlighter-rouge">transfer</code>。后来实在看不懂…，先记住这句话吧：生产者线程对其的插入操作put必须等待消费者的移除操作take，反过来也一样。你不能调用peek()方法来看队列中是否有数据元素，因为数据元素只有当你试着取走的时候才可能存在，不取走而只想偷窥一下是不行的，当然遍历这个队列的操作也是不允许的。</p>
+
+    <p>链接：</p>
+
+    <ol>
+      <li>https://www.jianshu.com/p/d5e2e3513ba3</li>
+      <li>https://www.cnblogs.com/duanxz/p/3252267.html</li>
+    </ol>
+  </li>
+</ol>
+
+<h6 id="四种拒绝策略">四种拒绝策略</h6>
+
+<ol>
+  <li>AbortPolicy // 默认，队列满了丢任务抛出异常</li>
+  <li>DiscardPolicy // 队列满了丢任务不异常</li>
+  <li>DiscardOldestPolicy // 将最早进入队列的任务删，之后再尝试加入队列</li>
+  <li>CallerRunsPolicy // 如果添加到线程池失败，那么主线程会自己去执行该任务</li>
+</ol>
+
+<h6 id="threadpoolexecutor和scheduledthreadpoolexecutor原理">ThreadPoolExecutor和ScheduledThreadPoolExecutor原理</h6>
+
+<ul>
+  <li><a href="https://blog.csdn.net/luanmousheng/article/details/77816412">ScheduledThreadPoolExecutor原理</a></li>
+</ul>
+
+<h6 id="线程池运行状态">线程池运行状态</h6>
+
+<p>这里有空要详细看看</p>
+
+<p><img src="https://img-blog.csdnimg.cn/20191216171812869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIwNzA1Ng==,size_16,color_FFFFFF,t_70" alt="thread-state" /></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">shutdown()</code>, <code class="language-plaintext highlighter-rouge">shutdownNow()</code>和<code class="language-plaintext highlighter-rouge">awaitTermination()</code></p>
+
+    <p>注意，一旦线程池有任务开始跑，就算任务都跑完了，也会等待<code class="language-plaintext highlighter-rouge">keepAliveTime</code>时候后才会停止。一般测试小demo的时候发现程序一直得不到结束，原因基本是这个。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">InterruptedException</span> <span class="o">{</span>
+    <span class="nc">ExecutorService</span> <span class="n">executor</span> <span class="o">=</span> <span class="nc">Executors</span><span class="o">.</span><span class="na">newCachedThreadPool</span><span class="o">();</span>
+    <span class="n">executor</span><span class="o">.</span><span class="na">execute</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"executor"</span><span class="o">));</span>
+    <span class="c1">// TimeUnit.SECONDS.sleep(5L);</span>
+    <span class="c1">// executor.shutdown();</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"finish"</span><span class="o">);</span> <span class="c1">// 两个打印都输出后，程序还要等待 60s 才会结束！！</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+    <p>源码分析：</p>
+
+    <p><code class="language-plaintext highlighter-rouge">java.util.concurrent.ThreadPoolExecutor#runWorker</code>这里会一直调用<code class="language-plaintext highlighter-rouge">task = getTask()</code>，<code class="language-plaintext highlighter-rouge">getTask</code>里会调用<code class="language-plaintext highlighter-rouge">workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS)</code>，因此没任务后它也会阻塞<code class="language-plaintext highlighter-rouge">keepAliveTime</code>时间。</p>
+
+    <p>分析一下<code class="language-plaintext highlighter-rouge">shutdown()</code>，它里面调用了<code class="language-plaintext highlighter-rouge">interruptIdleWorkers()</code>，它会打断上述的<code class="language-plaintext highlighter-rouge">wait keepAliveTime</code>的状态，抛出中断异常，而<code class="language-plaintext highlighter-rouge">getTask()</code>会捕获这个异常，从而<strong>打破阻塞状态</strong>。</p>
+  </li>
+</ul>
+
+<h4 id="协程">协程</h4>
+
+<p>协程，英文Coroutines，是一种比线程更加轻量级的存在。正如一个进程可以拥有多个线程一样，一个线程也可以拥有多个协程。最重要的是，<strong>协程不是被操作系统内核所管理，而完全是由程序所控制</strong>（也就是在用户态执行）。</p>
+
+<p>Java语言并没有对协程的原生支持，但是某些开源框架模拟出了协程的功能，有兴趣的小伙伴可以看一看Kilim框架的源码</p>
+
+<h3 id="java秃头区">Java秃头区</h3>
+
+<h4 id="语法糖">语法糖</h4>
+
+<p>有认真了解过Java的语法糖吗？</p>
+
+<ul>
+  <li><a href="https://www.cnblogs.com/duanxz/p/3916028.html">Java中的10颗语法糖</a></li>
+</ul>
+
+<h4 id="设计模式">设计模式</h4>
+
+<p>《设计模式之美》值得一看</p>
+
+<h4 id="class与反射">Class与反射</h4>
+
+<ul>
+  <li>
+    <p>Class</p>
+
+    <ul>
+      <li>
+        <p>关键字 instanceof <strong>VS</strong> Class.isInstance（参数）</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">son</span> <span class="k">instanceof</span> <span class="nc">Parent</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Parent</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">isInstance</span><span class="o">(</span><span class="n">son</span><span class="o">));</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Class的 getSuperclass与getGenericSuperclass</p>
+
+        <p><strong>getGenericSuperclass会包含该超类的泛型。</strong></p>
+      </li>
+      <li>
+        <p>判断当前类是什么类</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">boolean</span> <span class="nf">isLocalClass</span><span class="o">();</span> <span class="c1">//判断是不是局部类，也就是方法里面的类，其实现：isLocalOrAnonymousClass() &amp;&amp; !isAnonymousClass();</span>
+<span class="kt">boolean</span> <span class="nf">isLocalOrAnonymousClass</span><span class="o">();</span>
+<span class="kt">boolean</span> <span class="nf">isMemberClass</span><span class="o">();</span> <span class="c1">//判断是不是成员内部类，也就是一个类里面定义的类</span>
+<span class="kt">boolean</span> <span class="nf">isAnonymousClass</span><span class="o">();</span> <span class="c1">//判断当前类是不是匿名类，一般为实例化的接口或实例化的抽象类</span>
+<span class="kt">boolean</span> <span class="nf">isAnnotation</span><span class="o">();</span><span class="c1">// 判断Class对象是否是注解类型</span>
+<span class="kt">boolean</span> <span class="nf">isPrimitive</span><span class="o">();</span> <span class="c1">// 判断Class是否为原始类型（int，double等）</span>
+<span class="kt">boolean</span> <span class="nf">isSynthetic</span><span class="o">();</span> <span class="c1">// 判断是否由Java编译器生成（除了像默认构造函数这一类的）的方法或者类，Method也有这个方法</span>
+</code></pre></div>        </div>
+
+        <p>参考：</p>
+
+        <p><a href="https://www.cnblogs.com/bethunebtj/p/7761596.html">Java 中冷门的 synthetic 关键字原理解读 - 老白讲互联网 - 博客园 (cnblogs.com)</a></p>
+      </li>
+      <li>
+        <p>返回字符串(String)的方法</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="nf">getCanonicalName</span><span class="o">()</span> <span class="c1">//返回 Java Language Specification 中所定义的底层类的规范化名称。 </span>
+<span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="c1">//以 String 的形式返回此 Class 对象所表示的实体（类、接口、数组类、基本类型或 void）名称（全限定名：包名.类名）。</span>
+<span class="nc">String</span> <span class="nf">getSimpleName</span><span class="o">()</span> <span class="c1">//返回源代码中给出的底层类的简称。 </span>
+<span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="c1">//将对象转换为字符串。</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Class.forName和ClassLoader的区别</p>
+
+    <p>都可用来对类进行加载。</p>
+
+    <p>不同：</p>
+
+    <p>1）Class.forName()除了将类的.class文件加载到jvm中之外，<strong>还会对类进行解释，执行类中的static块，还会执行给静态变量赋值的静态方法</strong></p>
+
+    <p>2）classLoader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容,只有在newInstance才会去执行static块。</p>
+  </li>
+  <li>
+    <p><strong>Method</strong>.invoke()的实现原理</p>
+
+    <ol>
+      <li>
+        <p><a href="https://mp.weixin.qq.com/s/5H6UHcP6kvR2X5hTj_SBjA">假笨说-从一起GC血案谈到反射原理</a></p>
+
+        <p>获取Method：</p>
+
+        <ul>
+          <li>reflectionData，这个属性主要是SoftReference的</li>
+          <li>我们每次通过调用<code class="language-plaintext highlighter-rouge">getDeclaredMethod</code>方法返回的Method对象其实都是一个<strong>新的对象</strong>，所以不宜多调哦，如果调用频繁最好缓存起来。不过这个新的方法对象都有个root属性指向<code class="language-plaintext highlighter-rouge">reflectionData</code>里缓存的某个方法，同时其<code class="language-plaintext highlighter-rouge">methodAccessor</code>也是用的缓存里的那个Method的<code class="language-plaintext highlighter-rouge">methodAccessor</code>。</li>
+        </ul>
+
+        <p>Method调用：</p>
+
+        <ul>
+          <li>其实<code class="language-plaintext highlighter-rouge">Method.invoke</code>方法就是调用<code class="language-plaintext highlighter-rouge">methodAccessor</code>的<code class="language-plaintext highlighter-rouge">invoke</code>方法</li>
+        </ul>
+
+        <p>MethodAccessor的实现：</p>
+
+        <ul>
+          <li>所有的方法反射都是先走<code class="language-plaintext highlighter-rouge">NativeMethodAccessorImpl</code>，默认调了<strong>15</strong>次之后，才生成一个<code class="language-plaintext highlighter-rouge">GeneratedMethodAccessorXXX</code>类</li>
+          <li>而<code class="language-plaintext highlighter-rouge">GeneratedMethodAccessorXXX</code>的类加载器会<code class="language-plaintext highlighter-rouge">new</code> 一个<code class="language-plaintext highlighter-rouge">DelegatingClassLoader(var4)</code>，之所以搞一个新的类加载器，是为了性能考虑，在某些情况下可以卸载这些生成的类，因为<strong>类的卸载是只有在类加载器可以被回收的情况下才会被回收的</strong></li>
+        </ul>
+
+        <p>并发导致垃圾类创建：</p>
+
+        <ul>
+          <li>假如有1000个线程都进入到创建<code class="language-plaintext highlighter-rouge">GeneratedMethodAccessorXXX</code>的逻辑里，那意味着多创建了999个无用的类，这些类会一直占着内存，<strong>直到能回收Perm的GC发生才会回收</strong></li>
+        </ul>
+
+        <p>其他JVM相关文章:</p>
+
+        <ul>
+          <li>该文章最后有其他JVM相关文章，感觉是干货</li>
+        </ul>
+      </li>
+      <li>
+        <p><a href="https://www.jianshu.com/p/20b7ab284c0a">反射代理类加载器的潜在内存使用问题</a>！！</p>
+
+        <p>大量的类加载器<code class="language-plaintext highlighter-rouge">sun/reflect/DelegatingClassLoader</code>，用来加载<code class="language-plaintext highlighter-rouge">sun/reflect/GeneratedMethodAccessor</code>类，可能导致潜在的占用大量本机内存空间问题，应用服务器进程占用的内存会显著增大。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>使用Class.getResource和ClassLoader.getResource方法获取文件路径</p>
+
+    <p>对于<strong>class.getResource(path)</strong>方法，其中的参数path有两种形式，一种是以“/”开头的，另一种是不以”/”开头</p>
+
+    <p><strong>Class.getClassLoader().getResource(String path)</strong>，该方法中的参数path不能以“/“开头，path表示的是从classpath下获取资源的</p>
+  </li>
+</ul>
+
+<h4 id="代理">代理</h4>
+
+<ol>
+  <li>
+    <p>按照代理的创建时期，代理类可以分为两种。</p>
+
+    <blockquote>
+      <p>静态代理：由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
+动态代理：在程序运行时，运用反射机制动态创建而成。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Cglib动态代理</p>
+
+    <blockquote>
+      <p>JDK的动态代理机制只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理，cglib是针对类来实现代理的，他的原理是对指定的目标类生成一个子类，并覆盖其中方法实现增强，但因为采用的是继承，所以不能对final修饰的类进行代理。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>代码实现：<a href="https://my.oschina.net/xiaolyuh/blog/3108376">Cglib 与 JDK动态代理</a></p>
+  </li>
+  <li>
+    <p>一些疑惑？</p>
+
+    <ul>
+      <li>
+        <p>为什么cglib为什么生成两个fastclass，<code class="language-plaintext highlighter-rouge">methodProxy.invokeSuper(“代理对象”, args)</code>和<code class="language-plaintext highlighter-rouge">methodProxy.invoke(“原对象”, args)</code>虽然底层分别调用两个不同的fastclass，但结果是一样的。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 自定义Cglib代理拦截</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LQZMethodInterceptor</span> <span class="kd">implements</span> <span class="nc">MethodInterceptor</span> <span class="o">{</span>
+     
+    <span class="cm">/**
+     * @param o           cglib生成的代理对象
+     * @param method      被代理对象方法
+     * @param objects     方法入参
+     * @param methodProxy 代理方法
+     */</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">intercept</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">objects</span><span class="o">,</span> <span class="nc">MethodProxy</span> <span class="n">methodProxy</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"intercept"</span><span class="o">);</span>
+        <span class="c1">// invokeSuper，o为cglib生成的代理对象</span>
+        <span class="k">return</span> <span class="n">methodProxy</span><span class="o">.</span><span class="na">invokeSuper</span><span class="o">(</span><span class="n">o</span><span class="o">,</span> <span class="n">objects</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>        </div>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// org.springframework.aop.framework.CglibAopProxy.CglibMethodInvocation#invokeJoinpoint</span>
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="nc">Object</span> <span class="nf">invokeJoinpoint</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">protectedMethod</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">invokeJoinpoint</span><span class="o">();</span>
+		<span class="o">}</span>
+		<span class="k">else</span> <span class="o">{</span>
+			<span class="c1">// invoke，target为原对象</span>
+			<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">methodProxy</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">target</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">arguments</span><span class="o">);</span>
+		<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>        </div>
+
+        <p>可扩展看看<code class="language-plaintext highlighter-rouge">Spring</code>的<code class="language-plaintext highlighter-rouge">JdkDynamicAopProxy</code>，其实本质上Spring对代理的处理都差不多</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="创建和销毁对象">创建和销毁对象</h4>
+
+<h5 id="单例-与-序列化">单例 与 序列化</h5>
+
+<p>一般来说，一个类实现了 Serializable接口，我们就可以把它往内存地写再从内存里读出而”组装”成一个跟原来一模一样的对象。不过当序列化遇到单例时，这里边就有了个问题：从内存读出而组装的对象破坏了单例的规则。单例是要求一个JVM中只有一个类对象的，而现在通过反序列化，一个新的对象克隆了出来。</p>
+
+<p>解决方案：加上readResolve()方法</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">Object</span> <span class="nf">readResolve</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">ObjectStreamException</span> <span class="o">{</span>
+       <span class="c1">// instead of the object we're on,</span>
+       <span class="c1">// return the class variable INSTANCE</span>
+      <span class="k">return</span> <span class="no">INSTANCE</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h5 id="对象实例化顺序">对象实例化顺序</h5>
+
+<p>1，父类的静态成员变量和静态代码块加载<br />
+2，子类的静态成员变量和静态代码块加载<br />
+3，父类成员变量和方法块加载<br />
+4，父类的构造函数加载<br />
+5，子类成员变量和方法块加载<br />
+6，子类的构造函数加载</p>
+
+<p>参考：</p>
+
+<ul>
+  <li><a href="https://www.cnblogs.com/yanghe123/p/10936025.html">Java 类的实例化顺序</a></li>
+  <li><a href="https://blog.csdn.net/qq_36382679/article/details/105811529">java类实例化顺序+经典的面试题</a></li>
+</ul>
+
+<p>测试：com.ariescat.metis.base.jdk.TestSameField</p>
+
+<h5 id="java中父类与子类有相同属性调谁">java中父类与子类有相同属性调谁？</h5>
+
+<p><strong>继承</strong>中：<br />
+属性：不可被重写，只会被隐藏<br />
+方法：会被重写，不会隐藏</p>
+
+<p><strong>多态</strong>中，成员变量：<br />
+无论编译和运行，都参考左边(<strong>引用型变量所属的类</strong>)。</p>
+
+<p>也就是说</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Fu</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Zi</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">age</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>打印的还是父类的值。</p>
+
+<p>参考：</p>
+
+<ul>
+  <li>
+    <p><a href="https://blog.csdn.net/qq_40093255/article/details/108400976">java中父类与子类有相同属性调谁？取决于左边</a></p>
+  </li>
+  <li>
+    <p><a href="https://blog.csdn.net/u012786993/article/details/82923064/">父类和子类同时存在相同属性BeanUtils的copyProperties复制</a></p>
+  </li>
+</ul>
+
+<h4 id="对象引用">对象引用</h4>
+
+<ul>
+  <li>
+    <p><a href="https://www.jianshu.com/p/964fbc30151a">WeakReference</a></p>
+
+    <p>看ThreadLocal源码的时候，其中嵌套类ThreadLocalMap中的Entry继承了WeakReference，为了能搞清楚ThreadLocal，只能先了解下了WeakReference：</p>
+
+    <blockquote>
+      <p>WeakReference如字面意思，弱引用， 当<strong>一个对象</strong>仅仅被 WeakReference（弱引用）指向, 而没有任何其他strong reference（强引用）指向的时候, 如果这时GC运行, 那么<strong>这个对象</strong>就会被回收，不论当前的内存空间是否足够，这个对象都会被回收。</p>
+
+      <p>注意：回收的是WeakReference引用的对象！若存在ReferenceQueue队列，WeakReference本身会入队，但此时get()==null</p>
+    </blockquote>
+
+    <ul>
+      <li>
+        <p><a href="https://blog.csdn.net/u012420654/article/details/51793909">WeakHashMap</a></p>
+      </li>
+      <li>
+        <p>SoftReference 若清楚了上面的原理，<a href="https://www.jianshu.com/p/8c634f10ed1a">SoftReference</a>只是<strong>生命周期</strong>变成<strong>内存将要被耗尽的时候</strong>。</p>
+
+        <blockquote>
+          <ul>
+            <li>from <a href="https://blog.csdn.net/S7188290/article/details/86436479">关于SoftReference被回收的时机</a></li>
+          </ul>
+
+          <p>下面，我们来总结一下:
+1.当发生GC时，虚拟机可能会回收SoftReference对象所指向的软引用，是否被回收取决于该软引用是否是新创建或近期使用过。
+2.在虚拟机抛出OutOfMemoryError之前，所有软引用对象都会被回收。
+3.只要一个软引用对象由一个强引用指向，那么即使是OutOfMemoryError时，也不会被回收。</p>
+
+          <ul>
+            <li>from <a href="https://blog.csdn.net/qiang_zi_/article/details/100700784">JVM - 优化案例（SoftRefLRUPolicyMSPerMB）</a></li>
+          </ul>
+
+          <p>那么SoftReference对象到底在GC的时候要不要回收是通过什么公式来判断的呢？</p>
+
+          <p>是如下的一个公式：</p>
+
+          <p>clock - timestamp &lt;= freespace * SoftRefLRUPolicyMSPerMB</p>
+
+          <p>这个公式的意思就是说，“clock - timestamp”代表了一个软引用对象他有多久没被访问过了，freespace代表JVM中的空闲内存空间，SoftRefLRUPolicyMSPerMB代表每一MB空闲内存空间可以允许SoftReference对象存活多久。</p>
+        </blockquote>
+      </li>
+      <li>
+        <p>guava cache：</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">CacheBuilder</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">softValues</span><span class="o">().</span><span class="na">build</span><span class="o">()</span>
+</code></pre></div>        </div>
+
+        <p>当然 softValues()可以替换成weakKeys() / weakValues() …</p>
+
+        <p>实现原理可具体看 com.google.common.cache.LocalCache.Strength</p>
+      </li>
+      <li>
+        <p>LRU缓存实现(Java)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>原子变量</p>
+
+    <ul>
+      <li>
+        <p>XXXAtomic 原子类</p>
+      </li>
+      <li>
+        <p>AtomicXXXFieldUpdater 原子更新器</p>
+
+        <p>在Java5中，JDK就开始提供原子类了，当然也包括原子的更新器——即后缀为FieldUpdater的类</p>
+
+        <p>已经有了原子类，为啥还额外提供一套原子更新器呢？</p>
+
+        <blockquote>
+          <p>简单的说有两个原因，以int变量为例，基于AtomicIntegerFieldUpdater实现的原子计数器，比单纯的直接用AtomicInteger包装int变量的花销要小，因为前者只需要一个全局的静态变量AtomicIntegerFieldUpdater即可包装volatile修饰的非静态共享变量，然后配合CAS就能实现原子更新，而这样做，使得后续同一个类的每个对象中只需要共享这个静态的原子更新器即可为对象计数器实现原子更新，而<strong>原子类</strong>是为同一个类的<strong>每个对象</strong>中都创建了一个<strong>计数器</strong> + <strong>AtomicInteger对象</strong>，这种开销显然就比较大了。</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="对象序列化">对象序列化</h4>
+
+<p>ObjectInputStream、ObjectOutputStream</p>
+
+<h4 id="对象拷贝">对象拷贝</h4>
+
+<ul>
+  <li>
+    <p><a href="https://www.cnblogs.com/kancy/p/12089126.html">BeanUtils对象属性copy的性能对比以及源码分析</a></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left">拷贝方式</th>
+          <th style="text-align: left">对象数量: 1</th>
+          <th style="text-align: left">对象数量: 1000</th>
+          <th style="text-align: left">对象数量: 100000</th>
+          <th style="text-align: left">对象数量: 1000000</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Hard Code</code></td>
+          <td style="text-align: left">0 ms</td>
+          <td style="text-align: left">1 ms</td>
+          <td style="text-align: left">18 ms</td>
+          <td style="text-align: left">43 ms</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cglib.BeanCopier</code></td>
+          <td style="text-align: left">111 ms</td>
+          <td style="text-align: left">117 ms</td>
+          <td style="text-align: left">107 ms</td>
+          <td style="text-align: left">110 ms</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code class="language-plaintext highlighter-rouge">spring.BeanUtils</code></td>
+          <td style="text-align: left">116 ms</td>
+          <td style="text-align: left">137 ms</td>
+          <td style="text-align: left">246 ms</td>
+          <td style="text-align: left">895 ms</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code class="language-plaintext highlighter-rouge">apache.PropertyUtils</code></td>
+          <td style="text-align: left">167 ms</td>
+          <td style="text-align: left">212 ms</td>
+          <td style="text-align: left">601 ms</td>
+          <td style="text-align: left">7869 ms</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code class="language-plaintext highlighter-rouge">apache.BeanUtils</code></td>
+          <td style="text-align: left">167 ms</td>
+          <td style="text-align: left">275 ms</td>
+          <td style="text-align: left">1732 ms</td>
+          <td style="text-align: left">12380 ms</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="热更新">热更新</h4>
+
+<ul>
+  <li>
+    <p>自定义类加载器</p>
+
+    <ul>
+      <li><a href="https://www.jianshu.com/p/731bc8293365">探秘 Java 热部署</a></li>
+      <li><a href="https://blog.csdn.net/puhaiyang/article/details/78165465">CSDN·自定义classloader实现JAVA热替换</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>java.lang.instrument</p>
+
+    <p>类重新定义，这是Instrumentation提供的基础功能之一，这个类很早就出了，redefineClasses这个方法可以更新方法级别的代码，但是不会触发一个类的初始化方法。</p>
+
+    <ul>
+      <li><a href="https://www.cnblogs.com/wgslucky/p/9127681.html">游戏服务器之Java热更新</a></li>
+      <li><a href="https://zheng12tian.iteye.com/blog/1495037">动态加载class文件</a></li>
+      <li><a href="https://www.imooc.com/article/42736">JVM源码分析之javaagent原理完全解读</a></li>
+      <li><a href="https://www.jianshu.com/p/0bbd79661080">探秘 Java 热部署二（Java agent premain）</a></li>
+      <li><a href="https://www.jianshu.com/p/6096bfe19e41">探秘 Java 热部署三（Java agent agentmain）</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>第三方工具</p>
+
+    <ul>
+      <li><a href="https://www.cnblogs.com/orange911/p/10583245.html"><strong>Arthas</strong>的使用</a></li>
+      <li><a href="https://github.com/HotswapProjects/HotswapAgent">Github · <strong>HotswapAgent</strong></a></li>
+    </ul>
+  </li>
+  <li>
+    <p>脚本语言</p>
+
+    <ul>
+      <li>
+        <p>groovy</p>
+
+        <p>使用groovy类加载器重载java代码 重载的java文件可以直接使用源文件，无需编译为class</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="jmx">JMX</h4>
+
+<p>JMX是Java Management Extensions，它是一个Java平台的管理和监控接口。</p>
+
+<p>了解不深==</p>
+
+<h4 id="启动">启动</h4>
+
+<ul>
+  <li>
+    <p>jsvc</p>
+
+    <blockquote>
+      <p>在linux上以服务的方式启动java程序，需要提前安装jsvc。linux是利用daemon(jsvc)构建java守护进程。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="java猝死区">Java猝死区</h3>
+
+<h4 id="jvm">JVM</h4>
+
+<blockquote>
+  <p>JVM很难，网上错误的观点很多</p>
+
+  <p>垃圾回收算法，垃圾收集器，jvm内存模型，每个区域用途，各种oom的种类，jvm调优经验，没有你也要做过，自己去设置启动参数，知道常见参数的含义，类加载过程，双亲委派，什么时候young gc，full gc，各种情况进入老年代的方式，你知道的越多越好，因为吹起来就越自信，举个例子，逃逸分析是什么？markword里面有什么？</p>
+</blockquote>
+
+<h5 id="内存管理">内存管理</h5>
+
+<ul>
+  <li>
+    <p>堆是线程共享的内存区域？</p>
+
+    <p>不完全正确。因为HotSpot中，TLAB是堆内存的一部分，他在<strong>读取上</strong>确实是<strong>线程共享</strong>的，但是在<strong>内存分配上</strong>，是<strong>线程独享</strong>的。<a href="https://mp.weixin.qq.com/s/Jj5Z1DZKpAgrj9wpYUZ_JQ">链接</a></p>
+  </li>
+</ul>
+
+<h5 id="内存模型线程线程安全">内存模型，线程，线程安全</h5>
+
+<ul>
+  <li>内存模型
+    <ul>
+      <li><a href="https://juejin.im/post/5a98c6a16fb9a028cd448965?utm_source=gold_browser_extension">《深入理解 Java 内存模型》读书笔记 - 掘金</a></li>
+      <li><a href="http://blog.csdn.net/javazejian/article/details/72772461">全面理解Java内存模型(JMM)及volatile关键字 - CSDN博客</a></li>
+    </ul>
+  </li>
+  <li><a href="https://blog.csdn.net/super_x_man/article/details/81741073">Monitor对象</a></li>
+  <li><strong>happen-before</strong>原则</li>
+</ul>
+
+<h5 id="类加载-classloader">类加载 ClassLoader</h5>
+
+<p>Bootstrap ClassLoader、 Extention ClassLoader、AppClassLoader</p>
+
+<p>Classloader将数据加载到内存中经过的步骤：</p>
+
+<ol>
+  <li>加载：加载类的二进制数据</li>
+  <li>链接
+验证 确保加载的类的正确性。<br />
+准备 类中的静态变量分配内存，并且其初始化为默认值。<br />
+解析 把类中的符号引用变为直接引用。</li>
+  <li>初始化
+为类中的类中的静态变量赋值（正确的初始值）</li>
+</ol>
+
+<p>参考：<a href="https://www.cnblogs.com/nedhome/p/9053132.html">ClassLoader那事儿</a></p>
+
+<p>问题：</p>
+
+<ol>
+  <li>
+    <p>Q：同一个Class的<strong>static字段</strong>，被不同的ClassLoader加载，会有产生几份？</p>
+
+    <p>A：会是两份，也就是JVM里有两份内存（某次面试时问到的，但自己没试过）</p>
+  </li>
+</ol>
+
+<h5 id="字节码">字节码</h5>
+
+<ul>
+  <li>
+    <p>局部变量表中的Slot</p>
+
+    <p>为什么JVM局部变量表的一个slot至少要能容纳一个int类型的变量？</p>
+
+    <p>为什么Java虚拟机JVM要把byte和short的运算都转为int ？</p>
+  </li>
+  <li>
+    <p>Class类的文件结构</p>
+
+    <p>方法表，属性表…</p>
+  </li>
+</ul>
+
+<h5 id="编译与优化">编译与优化</h5>
+
+<ul>
+  <li>
+    <p>HotSpot虚拟机 JIT</p>
+
+    <ul>
+      <li>
+        <p>解释执行</p>
+
+        <p>逐条将字节码翻译成机器码并执行</p>
+      </li>
+      <li>
+        <p>即时编译（Just-in-time ，JIT）</p>
+
+        <p>将一个方法中包含的所有字节码编译成机器码后再执行。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>逃逸分析</p>
+
+    <ul>
+      <li><a href="https://my.oschina.net/u/4215320/blog/3108015">JVM优化之逃逸分析与分配消除</a></li>
+      <li><a href="https://my.oschina.net/javaroad/blog/3062052">面试问我 Java 逃逸分析，瞬间被秒杀了。。</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="systemexit">System#exit</h4>
+
+<ol>
+  <li>注册的关闭勾子会在以下几种时机被调用到</li>
+</ol>
+
+<ul>
+  <li>程序正常退出
+    <ul>
+      <li>最后一个非守护线程执行完毕退出时</li>
+      <li>System.exit方法被调用时</li>
+    </ul>
+  </li>
+  <li>程序响应外部事件
+    <ul>
+      <li>程序响应用户输入事件，例如在控制台按ctrl+c(^+c)</li>
+      <li>程序响应系统事件，如用户注销、系统关机等</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>这种方法永远不会正常返回。</p>
+
+    <p>意味着该方法不会返回；一旦一个线程进入那里，就不会再回来了。</p>
+  </li>
+</ol>
+
+<p>链接：</p>
+
+<ul>
+  <li>
+    <p><a href="https://blog.csdn.net/qq271859852/article/details/106596524">Java System#exit 无法退出程序的问题探索</a></p>
+  </li>
+  <li>
+    <p><a href="https://bbs.csdn.net/topics/392009252">java System.exit(0) 结束不了其他线程?</a></p>
+
+    <p>最后一楼说了：将A线程变为while(true) 一直执行，就会发现A线程也会中止。两个线程各自执行，之前都循环十次，A线程可能在B线程调用System.exit(0)之前就执行完了</p>
+  </li>
+</ul>
+
+<h4 id="gc性能优化日志解读">GC性能优化，日志解读</h4>
+
+<ul>
+  <li>
+    <p>GC算法</p>
+
+    <p><a href="https://blog.csdn.net/renfufei/article/details/54885190">GC 算法(实现篇) - GC参考手册</a></p>
+  </li>
+  <li>
+    <p>可能导致FullGC的原因有以下几种。</p>
+
+    <blockquote>
+      <ol>
+        <li>老年代空间不足。</li>
+        <li>永生代或者元数据空间不足。</li>
+        <li>程序执行了System.gc() //建议jvm执行fullgc，并不一定会执行。</li>
+        <li>CMS GC时出现promotion failed和concurrent mode failure</li>
+        <li>YoungGC时晋升老年代的内存平均值大于老年代剩余空间（执行minor gc的时候进行的一系列检查）</li>
+        <li>有连续的大对象需要分配</li>
+        <li>执行了jmap -histo:live pid命令 //这个会立即触发fullgc</li>
+      </ol>
+    </blockquote>
+
+    <p>出现Full GC一般是不正常</p>
+  </li>
+  <li>
+    <p>垃圾回收器有哪些？</p>
+
+    <ul>
+      <li>
+        <p>他们什么阶段会<strong>stop the world</strong>？</p>
+
+        <p>看《深入理解Java虚拟机》3.5节 经典垃圾收集器，这里每种收集器的执行图讲解了哪个阶段会STW</p>
+      </li>
+      <li>
+        <p>JVM默认启用的收集器是哪些？</p>
+
+        <p>看《深入理解Java虚拟机》3.7.4节 垃圾收集器参数总结，这个讲解了client和server模式下的默认值，以及开启其他收集器的参数</p>
+      </li>
+      <li>
+        <p><a href="https://blog.csdn.net/zqz_zqz/article/details/70568819">CMS垃圾回收器详解</a></p>
+
+        <ul>
+          <li>
+            <p>CMS之promotion failed &amp; concurrent mode failure</p>
+
+            <blockquote>
+              <p>疑问?</p>
+
+              <p>然后CMS的并发周期就会被一次Full GC代替，退回到Serial Old收集器进行回收，这是一次长Stop The World</p>
+            </blockquote>
+
+            <p><a href="https://www.jianshu.com/p/843782af87b1">关于CMS垃圾回收失败是不是进行FULL GC问题的记录</a></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>CMS收集器和G1收集器 他们的优缺点对比</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>GC日志</p>
+
+    <ul>
+      <li>Full GC日志解读</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://blog.csdn.net/renfufei/column/info/14851">GC性能优化</a></p>
+  </li>
+</ul>
+
+<h4 id="性能调优工具">性能调优工具</h4>
+
+<ul>
+  <li>
+    <p>jps、jmap、jstack、jstat</p>
+
+    <p>jstat -gcutil</p>
+  </li>
+  <li>
+    <p>VisualVM</p>
+
+    <ul>
+      <li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/">使用 VisualVM 进行性能分析及调优</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://segmentfault.com/a/1190000014618329?utm_source=tag-newest">Arthas使用指南</a><br />
+Arthas 是基于 Greys 进行二次开发的全新在线诊断工具</p>
+  </li>
+</ul>
+
+<h4 id="qa疑问">QA（疑问）</h4>
+
+<ul>
+  <li>
+    <p>计算机内存模型 与 Java内存模型</p>
+  </li>
+  <li>
+    <p>GC</p>
+
+    <ul>
+      <li>static 会被GC回收吗？static的在内存中的存放位置？</li>
+      <li>永久代不够会触发Full GC吗</li>
+    </ul>
+  </li>
+  <li>
+    <p>锁</p>
+
+    <ul>
+      <li>
+        <p>synchronized或其他锁的产生的阻塞，其和wait的区别？</p>
+      </li>
+      <li>
+        <p>当一个线程的时间片耗尽之后，其synchronized的代码会发生原子性问题吗？</p>
+
+        <p>线程1在执行<code class="language-plaintext highlighter-rouge">monitorenter</code>指令的时候，会对Monitor进行加锁，加锁后其他线程无法获得锁，除非线程1主动解锁。即使在执行过程中，由于某种原因，比如CPU时间片用完，线程1放弃了CPU，但是，他并没有进行解锁。而由于<code class="language-plaintext highlighter-rouge">synchronized</code>的锁是可重入的，下一个时间片还是只能被他自己获取到，还是会继续执行代码。直到所有代码执行完。这就保证了原子性。</p>
+      </li>
+      <li>
+        <p>JDK1.6后对锁进行的优化，轻量级锁，偏向锁，锁消除，适应性自旋锁，锁粗化 (自旋锁在1.4就有，只不过默认的是关闭的，jdk1.6是默认开启的)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://www.hollischuang.com/archives/3912">国内Java面试总是问StringBuffer，StringBuilder区别是啥？档次为什么这么低？</a></p>
+  </li>
+  <li>
+    <p>反射缺点？</p>
+
+    <p>1.由于是本地方法调用，让JVM无法优化(还有JIT？)</p>
+
+    <p>2.反射方法调用还有验证过程和参数问题，参数需要装箱拆箱、需要组装成Object[]形式、异常的包装等等问题</p>
+  </li>
+</ul>
+
+<h3 id="java新特性">Java新特性</h3>
+
+<h4 id="java-7">Java 7</h4>
+
+<ul>
+  <li>
+    <p><a href="https://blog.csdn.net/xtayfjpk/article/details/42043977">JDK7动态方法调用</a></p>
+
+    <ul>
+      <li>
+        <p>java.lang.invoke包</p>
+
+        <p>主要包含了<code class="language-plaintext highlighter-rouge">CallSite、MethodHandle、MethodType</code>等类</p>
+
+        <blockquote>
+          <p>反射获取的信息比MethodHandle要多。
+反射是模拟java代码层面的调用，MethodHandle是模拟字节码层面的调用。</p>
+        </blockquote>
+
+        <blockquote>
+          <p><code class="language-plaintext highlighter-rouge">MethodHandle</code>和反射相比好处是：</p>
+
+          <ul>
+            <li>调用 invoke() 已经被JVM优化，类似直接调用一样。</li>
+            <li>性能好得多，类似标准的方法调用。</li>
+            <li>当我们创建MethodHandle 对象时，实现方法检测，而不是调用invoke() 时。</li>
+          </ul>
+        </blockquote>
+      </li>
+      <li>
+        <p>新增了invokedynamic指令</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>ForkJoin</p>
+  </li>
+</ul>
+
+<h4 id="java-8">Java 8</h4>
+
+<ul>
+  <li>
+    <p>时间类：<code class="language-plaintext highlighter-rouge">Instant</code>和<code class="language-plaintext highlighter-rouge">LocalDate</code>，<code class="language-plaintext highlighter-rouge">LocalTime</code>，<code class="language-plaintext highlighter-rouge">LocalDateTime</code></p>
+
+    <p>如果是JDK8的应用，可以使用Instant代替Date，LocalDateTime代替Calendar，DateTimeFormatter代替Simpledateformatter，官方给出的解释：<em>simple beautiful strong immutable thread-safe</em>。</p>
+
+    <p>附：测试代码请看 <code class="language-plaintext highlighter-rouge">metis: com.ariescat.metis.base.time.LocalDateTimeTest</code></p>
+  </li>
+  <li>
+    <p>stream</p>
+
+    <ul>
+      <li>parallelStream</li>
+    </ul>
+  </li>
+  <li>
+    <p>函数式编程</p>
+
+    <ul>
+      <li>
+        <p><a href="https://blog.csdn.net/yunqiinsight/article/details/99826098">Java 函数优雅之道</a></p>
+      </li>
+      <li>
+        <p>Optional类</p>
+      </li>
+      <li>
+        <p>Supplier接口和Consumer接口 （JDK8以下可用guava替代）</p>
+
+        <p>Alyx的FileLoader优化用到了Supplier</p>
+      </li>
+      <li>
+        <p>CompletableFuture 强大的函数式<strong>异步编程</strong>辅助类</p>
+
+        <p>可以比较一下 Google Guava，其也提供了通用的扩展 Future：<a href="http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/ListenableFuture.html">ListenableFuture</a>、<a href="http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/SettableFuture.html">SettableFuture</a> 以及辅助类 <a href="http://google.github.io/guava/releases/19.0/api/docs/com/google/common/util/concurrent/Futures.html">Futures</a> 等，方便异步编程。</p>
+
+        <ol>
+          <li>windforce AbstractChatChannel</li>
+          <li><a href="https://colobu.com/2016/02/29/Java-CompletableFuture/">Java CompletableFuture 详解 · 鸟窝 (colobu.com)</a></li>
+          <li>[<a href="https://colobu.com/2018/03/12/20-Examples-of-Using-Java's-CompletableFuture/">译]20个使用 Java CompletableFuture的例子 · 鸟窝 (colobu.com)</a></li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>语法糖</p>
+
+    <ul>
+      <li>
+        <p><strong>Lambda</strong></p>
+
+        <ol>
+          <li>
+            <p>实现原理</p>
+          </li>
+          <li>
+            <p>非捕获式(non-<em>capturing</em> lambda)和捕获式(<em>capturing</em> lambda)</p>
+          </li>
+          <li>
+            <p>Java中的lambda每次执行都会创建一个新对象吗？</p>
+
+            <p>测试代码：<code class="language-plaintext highlighter-rouge">study-metis: com.ariescat.metis.base.jdk8.lambda.LambdaTest2</code>，<a href="https://cloud.tencent.com/developer/article/1572212">参考链接</a></p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p><strong>::（双冒号）的实现原理</strong></p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">al</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"a"</span><span class="o">,</span> <span class="s">"b"</span><span class="o">,</span> <span class="s">"c"</span><span class="o">,</span> <span class="s">"d"</span><span class="o">);</span>
+<span class="n">al</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nl">AcceptMethod:</span><span class="o">:</span><span class="n">printValur</span><span class="o">);</span>
+    
+<span class="c1">//下面的方法和上面等价的</span>
+<span class="nc">Consumer</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">methodParam</span> <span class="o">=</span> <span class="nl">AcceptMethod:</span><span class="o">:</span><span class="n">printValur</span><span class="o">;</span> <span class="c1">//方法参数</span>
+<span class="n">al</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">methodParam</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">x</span><span class="o">));</span><span class="c1">//方法执行accept</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>JVM</p>
+
+    <ul>
+      <li>元空间（Metaspace）</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="java-9">Java 9</h4>
+
+<ul>
+  <li>Reactive Streams</li>
+  <li>Flow API</li>
+</ul>
+
+<h4 id="java-11">Java 11</h4>
+
+<ul>
+  <li>直接运行源代码</li>
+</ul>
+
+<h4 id="qa疑问-1">QA（疑问）</h4>
+
+<ul>
+  <li><a href="https://blog.csdn.net/xu_jl1997/article/details/89433916">JDK 1.8 下的 java.lang.Class 对象和 static 成员变量在堆还是方法区？</a></li>
+</ul>
+
+<h3 id="web">Web</h3>
+
+<h4 id="分布式-session-一致性">分布式 session 一致性</h4>
+
+<ol>
+  <li>session复制，对web服务器(例如Tomcat)进行搭建集群</li>
+  <li>session绑定，使用nginx <code class="language-plaintext highlighter-rouge">ip-hash策略</code>，无论客户端发送多少次请求都被同一个服务器处理</li>
+  <li>基于redis存储，spring为我们封装好了spring-session，直接引入依赖即可</li>
+</ol>
+
+<h3 id="必会框架">必会框架</h3>
+
+<h4 id="工具库">工具库</h4>
+
+<h5 id="apache-commons">Apache commons</h5>
+
+<ul>
+  <li>Commons IO
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">FileAlterationMonitor</code>和<code class="language-plaintext highlighter-rouge">FileAlterationObserver</code>（Alyx曾发现这里每隔10秒会涨10M内存，待研究）</li>
+    </ul>
+  </li>
+  <li>Commons Lang3等</li>
+</ul>
+
+<h5 id="google-guava">Google Guava</h5>
+
+<p>Google Guava 是 Google 公司内部 Java 开发工具库的开源版本。Google 内部的很多 Java 项目都在使用它。它提供了一些 JDK 没有提供的功能，以及对 JDK 已有功能的增强功能。</p>
+
+<ul>
+  <li>主要包括了：
+    <ol>
+      <li>集合（Collections）</li>
+      <li>缓存（Caching）</li>
+      <li><strong>原生类型支持</strong>（Primitives Support）</li>
+      <li><strong>并发库</strong>（Concurrency Libraries）</li>
+      <li>通用注解（Common Annotation）</li>
+      <li>字符串处理（Strings Processing）</li>
+      <li>数学计算（Math）</li>
+      <li>I/O事件</li>
+      <li><strong>总线（EventBus）</strong></li>
+    </ol>
+  </li>
+  <li>一些有用的小工具：
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">BloomFilter</code>布隆过滤器的实现</li>
+    </ol>
+  </li>
+  <li>源码分析：<a href="https://ifeve.com/google-guava/">https://ifeve.com/google-guava</a></li>
+</ul>
+
+<h5 id="json">Json</h5>
+
+<ul>
+  <li><a href="https://ariescat.top/2020/03/12/%E5%85%B3%E4%BA%8EGson%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91/">关于Gson的几个坑</a></li>
+</ul>
+
+<h5 id="懒人工具">懒人工具</h5>
+
+<ul>
+  <li><a href="http://blog.csdn.net/likeaboy_fire/article/details/44024987">Java代码生成利器之rapid-generate应用</a></li>
+</ul>
+
+<h4 id="缓存">缓存</h4>
+
+<ul>
+  <li>
+    <p>Guava的缓存</p>
+
+    <p>Guava Cache说简单点就是一个支持<strong>LRU</strong>的ConcurrentHashMap</p>
+
+    <ol>
+      <li><a href="https://www.jianshu.com/p/699869cb5421">简析guava cache线程安全设计哲学 - 简书 (jianshu.com)</a></li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>Caffeine</strong> 来自未来的缓存</p>
+
+    <p>Caffeine是基于JAVA 1.8 Version的高性能缓存库。Caffeine提供的内存缓存使用参考Google guava的API。Caffeine是基于Google Guava Cache设计经验上改进的成果。</p>
+  </li>
+</ul>
+
+<h4 id="时间库">时间库</h4>
+
+<ul>
+  <li><strong>joda</strong> 对时间的操作</li>
+  <li>Quartz 定时任务</li>
+</ul>
+
+<h4 id="日志">日志</h4>
+
+<ul>
+  <li>区分<code class="language-plaintext highlighter-rouge">commons-logging</code>，<code class="language-plaintext highlighter-rouge">slf4j</code>，<code class="language-plaintext highlighter-rouge">log4j</code>，<code class="language-plaintext highlighter-rouge">logback</code>
+    <ol>
+      <li>了解<code class="language-plaintext highlighter-rouge">jcl-over-slf4j</code>，<code class="language-plaintext highlighter-rouge">jul-to-slf4j</code>这些jar的作用</li>
+      <li>了解<code class="language-plaintext highlighter-rouge">log4j</code>和<code class="language-plaintext highlighter-rouge">log4j2</code>的区别，<strong><code class="language-plaintext highlighter-rouge">lmax disruptor</code></strong>应用场景</li>
+    </ol>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Flume</code></strong> 日志采集系统，一般用于日志聚合</li>
+</ul>
+
+<h4 id="asm神器">ASM神器</h4>
+
+<p>spring-core自带有asm，org.ow2.asm也是一个轻量级的jar</p>
+
+<p>还有byte buddy库，javassist库</p>
+
+<h4 id="spring">Spring</h4>
+
+<blockquote>
+  <p>最好能抽空看看源码，最起码bean的生命周期，如何解决循环依赖，父子容器，还有boot的启动流程，事务实现原理，动态代理原理等，你知道越多越好。</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><a href="https://blog.csdn.net/linuu/column/info/lovespring">Spring源码浅析</a></p>
+  </li>
+  <li>
+    <p>Spring AOP</p>
+
+    <ul>
+      <li>
+        <p>AOP原理，ProxyFactory</p>
+      </li>
+      <li>
+        <p>AOP中Pointcut，Advice 和 Advisor 三个概念 还有Advised</p>
+
+        <blockquote>
+          <p>Advised-&gt;在Spring中创建了AOP代理之后，就能够使用org.springframework.aop.framework.Advised接口对它们进行管理。 任何AOP代理都能够被转型为这个接口，不论它实现了哪些其它接口</p>
+
+          <p>Advisor-&gt;类似使用Aspect的@Aspect注解的类</p>
+
+          <p>Advice-&gt;@Before、@After、@AfterReturning、@AfterThrowing、@Around</p>
+
+          <p>Pointcut-&gt;@Pointcut</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Spring tx</p>
+
+    <p><code class="language-plaintext highlighter-rouge">&lt;tx:annotation-driven/&gt;</code>的理解</p>
+  </li>
+  <li>
+    <p><a href="https://www.cnblogs.com/rollenholt/p/4202631.html">Spring Cache 介绍</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.jianshu.com/p/c029de45d23b">Spring Webflux</a> （reactive web框架，与前端Flux架构名字相同）</p>
+
+    <p>命令式编程 VS <strong>响应式编程</strong></p>
+  </li>
+  <li>
+    <p>Spring Data</p>
+
+    <ul>
+      <li><a href="https://www.cnblogs.com/rulian/p/6557471.html">Spring Data JPA 简单查询–接口方法 - 如莲家园 - 博客园</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>与其他构架的整合</p>
+
+    <ul>
+      <li><a href="http://m.blog.itpub.net/31452580/viewspace-2148363/">企业大型互联网分布式架构{Java分布式架构 dubbo+springmvc+mybatis+ehcach+redis }-IT未来-ITPUB博客</a></li>
+      <li><a href="http://blog.csdn.net/anxpp/article/details/51415366">手把手教你从最基本的Java工程搭建SpringMVC+SpringDataJPA+Hibernate(含源码下载) - anxpp的博客 - CSDN博客</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="springboot">SpringBoot</h4>
+
+<h4 id="springcloud">SpringCloud</h4>
+
+<h4 id="web-1">Web</h4>
+
+<ul>
+  <li>
+    <p>JAX-RS</p>
+
+    <p>全称：Java API for RESTful Web Services，是一套用java实现REST服务的规范，提供了一些标注将一个资源类，一个POJOJava类，封装为Web资源。</p>
+
+    <p>包括：</p>
+
+    <ul>
+      <li>@Path，标注资源类或方法的相对路径</li>
+      <li>@GET，@PUT，@POST，@DELETE，标注方法是用的HTTP请求的类型</li>
+      <li>@Produces，标注返回的MIME媒体类型</li>
+      <li>@Consumes，标注可接受请求的<a href="http://liugang594.iteye.com/wiki/MIME">MIME</a>媒体类型</li>
+      <li>@PathParam，@QueryParam，@HeaderParam，@CookieParam，@MatrixParam，@FormParam，分别标注方法的参数来自于HTTP请求的不同位置，例如@PathParam来自于URL的路径，@QueryParam来自于URL的查询参数，@HeaderParam来自于HTTP请求的头信息，@CookieParam来自于HTTP请求的Cookie</li>
+    </ul>
+
+    <p><code class="language-plaintext highlighter-rouge">Eureka</code>的<code class="language-plaintext highlighter-rouge">ApplicationResource</code>有用到</p>
+  </li>
+</ul>
+
+<h4 id="orm库">ORM库</h4>
+
+<ul>
+  <li>
+    <p>hibernate</p>
+
+    <p>查询：HQL查询，QBC查询，SQL查询</p>
+
+    <p>级联查询：一对一，一对多（多对一），多对多；懒加载，1+n问题</p>
+
+    <p>其他：</p>
+
+    <ol>
+      <li>
+        <p>session.get(): 非懒加载方法</p>
+
+        <p>session.load(): 默认就是是懒加载</p>
+      </li>
+      <li>
+        <p>抓取策略（fetch）和 懒加载（lazy）</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="netty">Netty</h4>
+
+<ul>
+  <li>
+    <p><a href="https://www.jianshu.com/p/1a6d1a25e6cc">概述</a></p>
+  </li>
+  <li>
+    <p>Netty的线程模型</p>
+
+    <p>通过<strong>Reactor模型</strong>基于<strong>多路复用器</strong>接收并处理用户请求，内部实现了两个线程池，boss线程池和work线程池，其中boss线程池的线程负责处理请求的accept事件，当接收到accept事件的请求时，把对应的socket封装到一个NioSocketChannel中，并交给work线程池，其中work线程池负责请求的read和write事件</p>
+  </li>
+  <li>
+    <p>NioEventLoop设计原理</p>
+  </li>
+  <li>
+    <p>定时任务的原理</p>
+  </li>
+  <li>
+    <p><strong>netty对象池使用与回收</strong></p>
+  </li>
+  <li>
+    <p>时间轮算法</p>
+
+    <p><a href="http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/%E5%AE%9A%E6%97%B6%E5%99%A8%EF%BC%88Timer%EF%BC%89%E7%9A%84%E5%AE%9E%E7%8E%B0.html">HashedWheelTimer</a></p>
+
+    <blockquote>
+      <p>hashWheel定时器和Quartz的区别：<br />
+1）Quartz将定时任务分为任务和触发器，而hashWheel只有任务的概念</p>
+
+      <p>2）Quartz通过一个TreeSet对所有的触发器进行管理，而hashWheel通过一个hash轮来对所有的任务进行管理</p>
+
+      <p>3）Quartz能够非常方便的删除定时任务，而netty的hashWheel暂时没有删除任务的接口（除非自己实现一个hashWheel定时器）</p>
+
+      <p>4）Quartz有一个专门的调度线程对任务进行管理，任务执行有另外专门的线程池，而hashWheel用一个线程实现对任务的管理和任务的执行。</p>
+
+      <p>5）Quartz能够通过序列化，将定时任务保存在数据库，而hashWheel不能</p>
+
+      <p>总的来说，Quartz的功能相对强大，而hashWheel相对要轻量级一点。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>附：</p>
+
+    <p>个人认为netty对用户来说是异步，但是实际底层IO是IO多路复用模型，本质上还是一种同步非阻塞（是的，个人认为IO多路复用模型还是<strong>同步</strong>非阻塞，并且<a href="https://weread.qq.com/web/reader/1e732510718f63a11e7dee2k98f3284021498f137082c2e"><strong>真正的IO操作</strong>都将<strong>阻塞</strong>应用线程</a>），他只是多了一个Selector（需要底层操作系统支持），如此一个线程就可以控制大量的通信（相比传统IO，不管他是不是非阻塞）。</p>
+
+    <p>另看 <a href="#io">IO#IO概念</a>，这里也收录了一些理解</p>
+  </li>
+</ul>
+
+<h4 id="disruptor">Disruptor</h4>
+
+<ul>
+  <li>
+    <p>背景</p>
+
+    <ol>
+      <li>
+        <p><a href="http://wiki.jikexueyuan.com/project/disruptor-getting-started/lock-weak.html">锁的缺点 - Disruptor 入门</a></p>
+      </li>
+      <li>
+        <p>并发中的伪共享问题</p>
+      </li>
+      <li>
+        <p>代码的并发执行大约是两件事：互斥和变化的可见性。</p>
+
+        <p>互斥是关于管理某些资源的竞争更新。</p>
+
+        <p>变化的可见性是关于控制何时使这些更改对其他线程可见。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>设计上的优势</p>
+
+    <ol>
+      <li>内部数据存储使用环形缓冲（Ring Buffer），这样分配支持了<strong>CPU缓存位置预测</strong>，<strong>GC的压力更小</strong></li>
+      <li><strong>尽量使用无锁设计，合理使用CAS</strong></li>
+      <li>优化数据结构（填充缓存行），<strong>解决伪共享问题</strong></li>
+      <li>合理位运算（如2次方幂求模），<strong>合理使用Unsafe</strong></li>
+    </ol>
+  </li>
+  <li>
+    <p>策略</p>
+
+    <p><code class="language-plaintext highlighter-rouge">WaitStrategy</code>可以选择<code class="language-plaintext highlighter-rouge">YieldingWaitStrategy</code>（无锁）</p>
+  </li>
+  <li>
+    <p>参考博客</p>
+
+    <ol>
+      <li><a href="https://www.jianshu.com/u/4c940e688e05">解读Disruptor系列</a>，这个系列挺好的，他每篇文章后面都有份参考资料，也可以认真看看</li>
+    </ol>
+  </li>
+  <li>
+    <p>扩展</p>
+
+    <ol>
+      <li>AtomicXXX.lazySet 这个方法的作用（Sequence#set相当于AtomicLong#lazySet）</li>
+      <li>Unsafe类的作用？为什么要用这个类？除了JDK，在Netty、Spring、Kafka、Storm等非常多的流行开源项目中都使用了Unsafe</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="中间件">中间件</h4>
+
+<h5 id="activemq">ActiveMQ</h5>
+
+<h5 id="elasticsearch">Elasticsearch</h5>
+
+<ul>
+  <li><a href="http://blog.csdn.net/cnweike/article/details/33736429">Elasticsearch基础教程 - CSDN博客</a></li>
+  <li><a href="https://www.cnblogs.com/wade-xu/p/4547381.html">玩转单元测试之DBUnit - WadeXu - 博客园</a></li>
+  <li><a href="https://es.yemengying.com/5/5.1/5.1.2.html">基于注解的配置 - Spring-Data-Elasticsearch</a></li>
+</ul>
+
+<h4 id="原子类型集合库">原子类型集合库</h4>
+
+<p>避免开销很大的装箱/拆箱操作，节省了原始类型装箱消耗的内存</p>
+
+<ul>
+  <li>
+    <p><strong>Koloboke</strong></p>
+
+    <p><a href="https://blog.csdn.net/qinyongye/article/details/81282961">生成高性能的 JAVA 基本类型 map/set</a></p>
+  </li>
+  <li>
+    <p>Eclipse Collections</p>
+  </li>
+</ul>
+
+<h4 id="akka">Akka</h4>
+
+<ul>
+  <li><strong>Actor模型</strong></li>
+  <li><a href="https://yq.aliyun.com/articles/616951?spm=a2c4e.11153940.blogcont616952.14.28751adcybgYqt">akka设计模式系列-基础模式</a></li>
+</ul>
+
+<h4 id="rxjava">RxJava</h4>
+
+<p><a href="/2019/01/29/事件驱动编程RxJava/">➮详细</a></p>
+
+<p>” a library for composing asynchronous and event-based programs using observable sequences for the Java VM “  （一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）</p>
+
+<h3 id="新型编程思想">新型编程思想</h3>
+
+<h4 id="reative响应式编程">Reative（响应式）编程</h4>
+
+<p>Reactive响应式(反应式)编程 是一种新的编程风格，其特点是异步或并发、事件驱动、推送PUSH机制以及观察者模式的衍生。</p>
+
+<p>JVM应用：RxJava、Akka、Actors模型、Vert.x、Webflux</p>
+
+<h4 id="领域驱动设计">领域驱动设计</h4>
+
+<blockquote>
+  <p>他是综合软件系统分析和设计的面向对象<strong>建模方法</strong>，如今已经发展为一种针对大型复杂系统的领域建模与分析方法。</p>
+
+  <p>将要解决的<strong>业务概念和业务规则</strong>转换为<strong>软件系统中的类型及类型的属性与行为</strong>，<strong>通过合理运用面向对象的封装、继承、多态等设计要素</strong>，降低或隐藏整个系统的业务复杂性，并使得系统具有更好的扩展性，应对纷繁多变的现实业务问题。</p>
+
+  <p>——抄录于《高可用可伸缩微服务架构：基于Dubbo、Spring Cloud和Service Mesh》2.1节</p>
+</blockquote>
+
+<ul>
+  <li><a href="https://tech.meituan.com/2017/12/22/ddd-in-practice.html">领域驱动设计在互联网业务开发中的实践</a></li>
+  <li><a href="https://github.com/1987539447/draw-lottery">美团DDD实践 示例项目</a></li>
+</ul>
+
+<h3 id="分布式基石">分布式基石</h3>
+
+<ul>
+  <li>
+    <p>理论基石CAP原理</p>
+
+    <p><strong>C</strong> - <strong>C</strong>onsistent ，一致性</p>
+
+    <p><strong>A</strong> - <strong>A</strong>vailability ，可用性</p>
+
+    <p><strong>P</strong> - <strong>P</strong>artition tolerance ，分区容忍性</p>
+
+    <p>一句话概括 CAP 原理就是——<strong>网络分区发生时，一致性和可用性两难全</strong></p>
+  </li>
+  <li>
+    <p>一致性Hash</p>
+  </li>
+  <li>
+    <p>RPC</p>
+
+    <p>RPC涉及：通讯，序列化，超时，重发（重复），消息顺序，负载 等等。（个人理解）</p>
+
+    <ul>
+      <li>协议：thrift 等等</li>
+      <li>JavaRMI
+        <ul>
+          <li><a href="https://blog.csdn.net/sinat_34596644/article/details/52599688">深究Java中的RMI底层原理</a></li>
+        </ul>
+      </li>
+      <li>HSF
+阿里巴巴集团内部使用的分布式服务框架 High Speed Framework</li>
+    </ul>
+  </li>
+  <li>
+    <p>分布式锁</p>
+
+    <p>分布式锁一般有三种实现方式：1. 数据库乐观锁；2. 基于Redis的分布式锁；3. 基于ZooKeeper的分布式锁</p>
+  </li>
+  <li>
+    <p>分布式事务</p>
+
+    <ul>
+      <li><a href="https://blog.csdn.net/followmyinclinations/article/details/52870418">分布式事务与一致性算法Paxos &amp; raft &amp; zab</a></li>
+      <li>atomikos:<a href="http://www.tianshouzhi.com/api/tutorials/distributed_transaction/386">4.0 atomikos JTA/XA全局事务</a></li>
+      <li>xaresource</li>
+      <li><a href="https://javatar.iteye.com/blog/981787">分布式事务</a></li>
+      <li><a href="https://yq.aliyun.com/articles/39047">分布式事务系列（2.1）分布式事务的概念</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="zookeeper">Zookeeper</h4>
+
+<ul>
+  <li><a href="https://www.cnblogs.com/felixzh/p/5869212.html">Zookeeper的功能以及工作原理</a></li>
+  <li><a href="https://blog.csdn.net/gaoshan12345678910/article/details/67638657">Leader选举-选举过程介绍比较清晰</a></li>
+  <li><a href="https://blog.csdn.net/junchenbb0430/article/details/77583955">ZAB协议理解</a></li>
+</ul>
+
+<h3 id="高可用技术">高可用技术</h3>
+
+<ul>
+  <li>
+    <p>服务器端如何处理超大量合法请求？</p>
+
+    <p>服务器架构层面，做负载均衡，将请求分发给其它服务器处理。</p>
+
+    <p>软件服务架构层面，做请求队列，将1w个请求放入队列，业务处理完的请求再返回。</p>
+
+    <p>代码层面，优化业务处理，把单机请求做到支持1w并发。</p>
+  </li>
+</ul>
+
+<h3 id="前沿技术">前沿技术</h3>
+
+<h4 id="docker">Docker</h4>
+
+<h4 id="微服务化">微服务化</h4>
+
+<h5 id="servicemesh服务网格">ServiceMesh(服务网格)</h5>
+
+<h5 id="中台">中台</h5>
+
+<h5 id="大数据">大数据</h5>
+
+<p>人工智能、区块链等</p>
+
+<h3 id="编程工具">编程工具</h3>
+
+<ul>
+  <li>构建工具
+    <ul>
+      <li>Maven</li>
+      <li>Gradle
+        <ul>
+          <li><a href="https://www.cnblogs.com/Bonker/p/5619458.html">十分钟理解Gradle - Bonker - 博客园</a></li>
+          <li>慕课实战：Gradle3.0自动化项目构建技术精讲+实战</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>版本管理工具
+    <ul>
+      <li>Git</li>
+    </ul>
+  </li>
+  <li>Jenkins</li>
+</ul>
+
+<h3 id="cc">C/C++</h3>
+
+<blockquote>
+  <p>在学习skynet源码的时候，需要看C和lua，因此这里记一下C相关的用法</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><a href="https://blog.csdn.net/qq_41822235/article/details/81142107">动态申请二维数组</a></p>
+
+    <ul>
+      <li>
+        <p>利用一个<strong>二级指针</strong>来实现</p>
+
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//5行2列的数组</span>
+<span class="kt">int</span> <span class="o">**</span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">//输出数组每个元素地址</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>利用<strong>数组指针</strong>来实现</p>
+
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//申请一个5行2列的整型数组</span>
+<span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">//输出数组每个元素地址</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>利用<strong>一维数组</strong>来模拟二维数组</p>
+
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">//输出数组每个元素地址</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">j</span><span class="p">]);</span>
+</code></pre></div>        </div>
+
+        <blockquote>
+          <p><code class="language-plaintext highlighter-rouge">malloc</code>返回的其实是<code class="language-plaintext highlighter-rouge">void *</code>，所以其需要强转，<code class="language-plaintext highlighter-rouge">void *</code>的用处还有<code class="language-plaintext highlighter-rouge">memcpy</code>，<code class="language-plaintext highlighter-rouge">memset</code>等</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>内存对齐 是什么？</p>
+  </li>
+</ul>
+
+<h3 id="脚本语言">脚本语言</h3>
+
+<ul>
+  <li>
+    <p>动态语言与动态类型语言</p>
+
+    <p>动态语言：(Dynamic programming Language -动态语言或动态编程语言)，动态语言是指程序在运行时可以改变其结构，新的函数可以被引进，已有的函数可以被删除等在结构上的变化。</p>
+
+    <p>动态类型语言：动态类型语言是指在运行期间才去做数据类型检查的语言，说的是数据类型，动态语言说的是运行是改变结构，说的是代码结构。</p>
+  </li>
+</ul>
+
+<h4 id="groovy">Groovy</h4>
+
+<ul>
+  <li><a href="https://www.cnblogs.com/amosli/p/3970810.html">30分钟groovy快速入门并掌握</a></li>
+  <li><a href="https://www.jianshu.com/p/e8dec95c4326">Groovy 语言快速入门</a></li>
+  <li>Groovy 与 <strong>Java</strong>
+    <ul>
+      <li><a href="https://www.ibm.com/developerworks/cn/java/j-pg05245/">实战 Groovy，在 Java 应用程序中加一些 Groovy 进来</a></li>
+      <li><a href="https://palexu.github.io/posts/spring-dynamic-load-groovy-bean?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io">利用SPRING管理热加载的GROOVY对象</a></li>
+      <li><a href="https://blog.csdn.net/qq362228416/article/details/8811136">spring + groovy 很强大</a></li>
+      <li><a href="https://jinnianshilongnian.iteye.com/blog/1999284">Spring动态部署Bean/Controller/Groovy Controller</a></li>
+    </ul>
+  </li>
+  <li>Groovy as DSL 与 <strong>Gradle</strong>
+    <ul>
+      <li><a href="http://hao.jobbole.com/gradle/">Gradle：新一代自动化构建工具</a></li>
+      <li><a href="https://www.baidu.com/s?ie=utf8&amp;oe=utf8&amp;wd=Groovy DSL&amp;tn=98010089_dg&amp;ch=4">Groovy DSL 百度搜索</a></li>
+      <li><a href="https://www.baidu.com/s?ie=utf8&amp;oe=utf8&amp;wd=gradle dsl&amp;tn=98010089_dg&amp;ch=5">gradle dsl</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="数据结构">数据结构</h3>
+
+<ul>
+  <li>
+    <p>链表，栈，队列</p>
+  </li>
+  <li>
+    <p>数组，矩阵</p>
+  </li>
+  <li>
+    <p>图</p>
+  </li>
+  <li>
+    <p>堆：一个可以被看做一棵树的数组</p>
+  </li>
+  <li>
+    <p>二叉树</p>
+
+    <ul>
+      <li>
+        <p><strong>遍历</strong></p>
+
+        <p>递归遍历，<strong>非递归遍历</strong></p>
+      </li>
+      <li>
+        <p>完全二叉树</p>
+      </li>
+      <li>
+        <p>满二叉树</p>
+      </li>
+      <li>
+        <p>平衡二叉树</p>
+
+        <ul>
+          <li>AVL树</li>
+          <li>红黑树
+            <ul>
+              <li><a href="http://blog.csdn.net/yang_yulei/article/details/26066409">查找（一）史上最简单清晰的红黑树讲解 - CSDN博客</a></li>
+              <li><a href="http://blog.csdn.net/yang_yulei/article/details/26104921">查找（二）简单清晰的B树、Trie树详解 - CSDN博客</a></li>
+            </ul>
+          </li>
+          <li>Treap</li>
+          <li>BST</li>
+        </ul>
+      </li>
+      <li>
+        <p>B树、B-树、B+树、B*树 区别？</p>
+
+        <ol>
+          <li>B-tree树即B树，是一种多路搜索树</li>
+          <li>B树的两个明显特点
+            <ul>
+              <li>树内的每个节点都存储数据</li>
+              <li>叶子节点之间无指针相邻</li>
+            </ul>
+          </li>
+          <li>B+树的两个明显特点
+            <ul>
+              <li>数据只出现在叶子节点</li>
+              <li>所有叶子节点增加了一个链指针</li>
+            </ul>
+          </li>
+          <li>B*树是B+树的变体，在B+树的非根和非叶子结点再增加指向兄弟的指针</li>
+          <li>B+树相比B树的优势
+            <ol>
+              <li>单一节点存储更多的元素，使得查询的IO次数更少；</li>
+              <li>所有查询都要查找到叶子节点，查询性能稳定；</li>
+              <li>所有叶子节点形成有序链表，便于范围查询。</li>
+            </ol>
+          </li>
+          <li>要了解一下他们的查找，<strong>插入</strong>，删除</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>跳跃表</p>
+  </li>
+  <li>
+    <p>布隆过滤器，位图，hyperloglog</p>
+  </li>
+  <li>
+    <p>倒排索引</p>
+  </li>
+</ul>
+
+<h3 id="算法">算法</h3>
+
+<ul>
+  <li>
+    <p>常见算法</p>
+
+    <ul>
+      <li>
+        <p>排序</p>
+
+        <ul>
+          <li>八大排序算法比较：</li>
+        </ul>
+
+        <p><img src="/img/awesome/sort1.png" alt="常见算法·图1" /></p>
+
+        <ul>
+          <li>
+            <p>希尔排序</p>
+
+            <p>时间复杂度？</p>
+          </li>
+          <li>
+            <p>堆排序</p>
+
+            <p>如何建堆 和调整堆？</p>
+          </li>
+          <li>
+            <p>快排</p>
+
+            <p>快排最好最坏的情况？优化方案？</p>
+          </li>
+          <li>
+            <p>归并排序</p>
+          </li>
+          <li>
+            <p>其他</p>
+
+            <ol>
+              <li>
+                <p>Java中<code class="language-plaintext highlighter-rouge">Colletions.sort</code>和<code class="language-plaintext highlighter-rouge">Arrays.sort</code>分别用了什么排序算法呢</p>
+              </li>
+              <li>
+                <p><a href="https://www.cnblogs.com/deng-tao/category/951445.html">算法与数据结构</a></p>
+
+                <p>这里给出了双路快排，三路快排，自底向上的归并排序算法等解析</p>
+
+                <p>附：关于他双路快排的实现：</p>
+
+                <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">((</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">))</span> <span class="n">i</span><span class="o">++</span><span class="p">;</span>    <span class="c1">// 使用索引i从左往右遍历直到 arr[i] &lt; v</span>
+<span class="k">while</span> <span class="p">((</span><span class="n">j</span> <span class="o">&gt;</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">v</span><span class="p">))</span> <span class="n">j</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 使用索引j从右往左遍历直到 arr[j] &gt; v</span>
+</code></pre></div>                </div>
+
+                <p>个人认为还可以优化，把相等的情况考虑进去，如下：</p>
+
+                <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">((</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">v</span><span class="p">))</span> <span class="n">i</span><span class="o">++</span><span class="p">;</span>    <span class="c1">// 使用索引i从左往右遍历直到 arr[i] &lt; v</span>
+<span class="k">while</span> <span class="p">((</span><span class="n">j</span> <span class="o">&gt;</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">))</span> <span class="n">j</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 使用索引j从右往左遍历直到 arr[j] &gt; v</span>
+</code></pre></div>                </div>
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>查找算法</p>
+
+        <p>二分查找，索引，倒排索引</p>
+      </li>
+      <li>
+        <p>KPM 算法</p>
+
+        <ul>
+          <li>
+            <p><a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html">阮一峰 字符串匹配的KMP算法</a></p>
+
+            <p>​	补充：这篇博客的数组并不是next数组，而是”部分匹配值”数组，就是”前缀”和”后缀”的最长的共有元素的长度</p>
+          </li>
+          <li>
+            <p><a href="https://blog.csdn.net/dark_cy/article/details/88698736">CSDN KMP算法—终于全部弄懂了</a></p>
+
+            <p>​	该博客分析了<code class="language-plaintext highlighter-rouge">k = next[k]</code>的问题</p>
+          </li>
+          <li>
+            <p><a href="http://blog.csdn.net/u012361418/article/details/46125439">kpm算法 - u012361418的博客 - CSDN博客</a></p>
+          </li>
+          <li>
+            <p><a href="https://segmentfault.com/a/1190000007066358#articleHeader4">KMP算法及优化 - 疯狂的爱因斯坦 - SegmentFault</a></p>
+
+            <p>​	该博客讲解了KPM的优化问题</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>递归</p>
+
+        <p>斐波那契数列，其时间复杂度和空间复杂度</p>
+      </li>
+      <li>
+        <p>树</p>
+
+        <ul>
+          <li>最小生成树算法：Kruskal算法，Prim算法</li>
+        </ul>
+      </li>
+      <li>
+        <p>最短路径算法：<strong>Dijkstra算法</strong>，Bellman-Ford算法，Floyd算法和SPFA算法</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>五大常用算法：贪婪算法，动态规划算法，分治算法，回溯算法以及分支限界算法</p>
+
+    <ul>
+      <li>
+        <p><a href="https://blog.csdn.net/mc695192383/article/details/70146579">常见动态规划问题总结</a></p>
+
+        <p><a href="https://blog.csdn.net/u012102306/article/details/53184446">最长公共子序列与最长公共子串(DP)</a></p>
+
+        <ol>
+          <li>
+            <p><strong>最长递增子序列</strong></p>
+
+            <p><strong>解法1：最长公共子序列法</strong></p>
+
+            <p><strong>解法2：动态规划法（时间复杂度O(N^2))</strong></p>
+
+            <p>​	dp[i]表示以标识为i的元素为递增序列结尾元素的最长递增子序列的长度</p>
+
+            <p><strong>解法3：O(NlgN）算法</strong></p>
+
+            <p>​	b[i]只是存储的对应长度为i的LIS的最小末尾</p>
+          </li>
+          <li>
+            <p><strong>最长公共子序列</strong></p>
+
+            <p>用dp[i][j]来表示A串中的前i个字符与B串中的前j个字符的最长公共子序列长度</p>
+          </li>
+          <li>
+            <p><strong>最长公共子串</strong></p>
+
+            <p>这个问题与上面的问题类似，区别点在于这里是子串，是连续的，令dp[i][j]表示A串中的以第i - 1个字符与B串中的以第j - 1个字符结尾的最长公共子串的长度</p>
+          </li>
+          <li>
+            <p><strong>最小编辑代价问题</strong></p>
+
+            <p>首先令dp[i][j]表示将A串中的前i个字符转换成B串中的前j个字符所需要的代价</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p><a href="https://www.cnblogs.com/little-kwy/archive/2017/09/30/7613642.html">分治法的经典问题——大整数相乘</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>启发式算法</p>
+
+    <ul>
+      <li>遗传算法（GA）</li>
+    </ul>
+  </li>
+  <li>
+    <p>算法复杂度</p>
+
+    <ul>
+      <li>
+        <p>多项式时间</p>
+
+        <p>一种是O(1),O(log(n)),O(n^a)等，我们把它叫做多项式级的复杂度，因为它的规模n出现在底数的位置；另一种是O(a^n)和O(n!)型复杂度，它是非多项式级的。后者的复杂度无论如何都远远大于前者，其复杂度计算机往往不能承受。<a href="https://www.zhihu.com/question/24653072">原文</a></p>
+
+        <p>这里引出几个问题：</p>
+
+        <ol>
+          <li>NP问题：就是可以（多知项式时间内）短时间内验证一个答案正确性的问题。</li>
+          <li>NP完全问题：第一个条件，可以这么说，就是道你如果能解决A问题，则通过A问题可以解决B问题，那么回A问题比B问题复杂，当所有的问题都可以通过A问题的解决而解决的话，那么A问题就可以称为NP完全问题，第二个条件，就是答A问题属于NP问题。</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>算法思想</p>
+
+    <ul>
+      <li>双指针，贪心，动态规划</li>
+      <li>递推
+        <ul>
+          <li><a href="http://www.cnblogs.com/huangxincheng/archive/2011/12/29/2305525.html">算法洗脑系列（8篇）——第一篇 递推思想 - 一线码农 - 博客园</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>练习平台</p>
+
+    <ul>
+      <li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E5%89%91%E6%8C%87%20Offer%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md">剑指Offer</a></li>
+      <li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md">LeetCode</a></li>
+      <li><a href="https://www.nowcoder.com/contestRoom?from=cyc_github">牛客笔试面试题库</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="字符编解码">字符编解码</h3>
+
+<ul>
+  <li>
+    <p>字符集</p>
+
+    <ol>
+      <li>
+        <p>ASCII</p>
+      </li>
+      <li>
+        <p>Unicode</p>
+
+        <p>目前Unicode字符分为17组编排，0x0000至0x10FFFF,每组称为平面（Plane）,每个面拥有65536个码位，共1114112个。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>字符编码</p>
+
+    <p>UTF-32、UTF-16和 UTF-8 是 Unicode 标准的编码字符集的字符编码方案</p>
+
+    <ul>
+      <li>
+        <p>附：</p>
+
+        <ol>
+          <li>
+            <p>Java的<code class="language-plaintext highlighter-rouge">char</code>内部编码为<code class="language-plaintext highlighter-rouge">UTF-16</code>，而与<code class="language-plaintext highlighter-rouge">Charset.defaultCharset()</code>无关。</p>
+
+            <p>看 <a href="https://blog.csdn.net/wdeng2011/article/details/80155795">Unicode 编码理解</a> 可知<code class="language-plaintext highlighter-rouge">UTF-16</code>编码完全可以满足Unicode 的17组编排（平面），因为有平面0的0xD800-0xDFFF代理区。</p>
+
+            <p><a href="https://www.cnblogs.com/nevermorewang/p/7808092.html">关于java中char占几个字节，汉字占几个字节</a>，这里指出Java中的<code class="language-plaintext highlighter-rouge">char</code>是占用两个字节，只不过有些字符需要两个char来表示，同时这篇博客也给了一个官方Oracle链接里面明确的说明了<em>值在16位范围之外且在0x10000到0x10FFFF范围内的字符称为补充字符，并定义为<strong>一对char值</strong></em>。</p>
+
+            <p>测试代码：</p>
+
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+       
+    <span class="kt">char</span><span class="o">[]</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[]{</span><span class="sc">'一'</span><span class="o">};</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">toHexString</span><span class="o">(</span><span class="n">c</span><span class="o">[</span><span class="mi">0</span><span class="o">]));</span>
+    <span class="nc">String</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+    <span class="c1">// String#length事实上调用了char[].length</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+       
+    <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"一"</span><span class="o">;</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+       
+    <span class="c1">// Unicode编码 汉字扩展B '𠀀' 字</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[]{</span><span class="err">'\</span><span class="n">uD840</span><span class="err">'</span><span class="o">,</span> <span class="err">'\</span><span class="n">uDC00</span><span class="err">'</span><span class="o">};</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+       
+    <span class="n">str</span> <span class="o">=</span> <span class="s">"\uD840\uDC00"</span><span class="o">;</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+       
+    <span class="c1">// 输出：由输出可见这个字用了两个char来存</span>
+    <span class="c1">// 一 1</span>
+    <span class="c1">// 一 1</span>
+    <span class="c1">// 𠀀 2</span>
+    <span class="c1">// 𠀀 2</span>
+<span class="o">}</span>
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p><a href="https://www.cnblogs.com/csguo/p/7401874.html">UniCode编码表</a></p>
+          </li>
+          <li>
+            <p><a href="https://blog.csdn.net/gywtzh0889/article/details/71083459/">汉字unicode编码范围</a></p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>参考博客：</p>
+
+        <ol>
+          <li>
+            <p>吴秦（Tyler）<a href="https://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html">字符集和字符编码（Charset &amp; Encoding）</a></p>
+          </li>
+          <li>
+            <p>廖雪峰 <a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017075323632896">字符串和编码</a></p>
+
+            <p>该文有简单有效的解释了：</p>
+
+            <p>在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。
+用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件：</p>
+
+            <p><img src="/img/awesome/Unicode1.png" alt="字符编码·图1" /></p>
+
+            <p>浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器：</p>
+
+            <p><img src="/img/awesome/Unicode2.png" alt="字符编码·图2" /></p>
+
+            <p>所以你看到很多网页的源码上会有类似<code class="language-plaintext highlighter-rouge">&lt;meta charset="UTF-8" /&gt;</code>的信息，表示该网页正是用的UTF-8编码。</p>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Base64编码：</p>
+
+    <p>Base64编码本质上是一种将二进制数据转成文本数据的方案。对于非二进制数据，是先将其转换成二进制形式，然后每连续6比特（2的6次方=64）计算其十进制值，根据该值在上面的索引表中找到对应的字符，最终得到一个文本字符串。</p>
+  </li>
+  <li>
+    <p>常见问题处理之Emoji</p>
+
+    <p>所谓Emoji就是一种在Unicode位于\u1F601–\u1F64F区段的字符。这个显然超过了目前常用的UTF-8字符集的编码范围\u0000–\uFFFF。Emoji表情随着IOS的普及和微信的支持越来越常见。</p>
+
+    <p><img src="https://img-blog.csdnimg.cn/20181119221259676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3podXNvbmd6aXll,size_16,color_FFFFFF,t_70" alt="字符编码·图3" /></p>
+
+    <p>那么Emoji字符表情会对我们平时的开发运维带来什么影响呢？最常见的问题就在于将他存入MySQL数据库的时候。一般来说MySQL数据库的默认字符集都会配置成UTF-8，mysql支持的 utf8 编码最大字符长度为 <strong>3 字节</strong>，而utf8mb4在5.5以后才被支持，也很少会有DBA主动将系统默认字符集改成utf8mb4。那么问题就来了，当我们把一个需要4字节UTF-8编码才能表示的字符存入数据库的时候就会报错：ERROR 1366: Incorrect string value: ‘\xF0\x9D\x8C\x86’ for column 。 如果认真阅读了上面的解释，那么这个报错也就不难看懂了。我们试图将一串Bytes插入到一列中，而这串Bytes的第一个字节是\xF0意味着这是一个四字节的UTF-8编码。但是当MySQL表和列字符集配置为UTF-8的时候是无法存储这样的字符的，所以报了错。</p>
+
+    <p>那么遇到这种情况我们如何解决呢？有两种方式：升级MySQL到5.6或更高版本，并且将表字符集切换至utf8mb4。第二种方法就是在把内容存入到数据库之前做一次过滤，将Emoji字符替换成一段特殊的文字编码，然后再存入数据库中。之后从数据库获取或者前端展示时再将这段特殊文字编码转换成Emoji显示。第二种方法我们假设用-<em>-1F601-</em>-来替代4字节的Emoji，那么具体实现python代码可以参见<a href="http://stackoverflow.com/questions/3220031/how-to-filter-or-replace-unicode-characters-that-would-take-more-than-3-bytes">Stackoverflow上的回答</a></p>
+  </li>
+  <li>
+    <p>补码</p>
+
+    <p>补码(为什么按位取反再加一)：告诉你一个其实很简单的问题 <a href="https://blog.csdn.net/wenxinwukui234/article/details/42119265">原文</a></p>
+
+    <p>其核心思想就是：<strong>一个正数对应的负数（也就是俩相反数），这两个数的二进制编码加起来必须等于0才对</strong></p>
+  </li>
+</ul>
+
+<h3 id="网络">网络</h3>
+
+<ul>
+  <li>
+    <p><a href="https://www.jianshu.com/p/c793a279f698">OSI七层模型与TCP/IP四层（参考）模型</a></p>
+  </li>
+  <li>
+    <p>协议</p>
+
+    <ul>
+      <li>
+        <p>底层网络协议</p>
+
+        <p>​	ARP，ICMP（网际控制信息协议），路由选择，DHCP，NAT</p>
+      </li>
+      <li>
+        <p>TCP/IP</p>
+
+        <ul>
+          <li>
+            <p><a href="https://juejin.im/post/5b29d2c4e51d4558b80b1d8c">跟着动画来学习TCP三次握手和四次挥手</a></p>
+
+            <ol>
+              <li>三次挥手是确保双方都能收和发的最少确认次数</li>
+              <li>四次挥手中间的两步并不总是会合成一步走，因为服务端处于“半关闭状态”，可能还有剩下的消息没发完，客户端此时能收不能发</li>
+              <li>四次挥手的time_wait状态，2MSL(MSL为报文最大生存时间，一般2分钟，可更改)，作用是重传最后一个ack报文</li>
+            </ol>
+
+            <p><a href="https://blog.csdn.net/qzcsu/article/details/72861891">TCP的三次握手与四次挥手（详解+动图）</a></p>
+          </li>
+          <li>
+            <p>拥塞算法：<strong>慢开始 、 拥塞避免 、快重传 和 快恢复</strong></p>
+
+            <p>两者的区别：<strong>流量控制</strong>是为了预防拥塞。如：在马路上行车，交警跟红绿灯是流量控制，当发生拥塞时，如何进行疏散，是拥塞控制。流量控制指点对点通信量的控制。而<strong>拥塞控制</strong>是全局性的，涉及到所有的主机和降低网络性能的因素。</p>
+          </li>
+          <li>
+            <p>TCP和UDP的区别</p>
+
+            <p>TCP/IP协议是一个<strong>协议簇</strong>。里面包括很多协议的。UDP只是其中的一个。之所以命名为TCP/IP协议，因为TCP,IP协议是两个很重要的协议，就用他两命名了。<a href="https://www.cnblogs.com/bizhu/archive/2012/05/12/2497493.html">原文</a></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>http/https</p>
+
+        <ul>
+          <li><a href="https://blog.csdn.net/yi_master/article/details/82863949">彻底掌握网络通信</a> (httpclien，asynchttpclient，HttpURLConnection，OkHttp3)</li>
+          <li>一次经典的错误：https://github.com/Ariescat/lqz-test/blob/master/base-test/src/main/http/http.log</li>
+        </ul>
+      </li>
+      <li>
+        <p>websocket</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>非对称加密</p>
+
+    <p>在非对称加密中使用的主要算法有：RSA、Elgamal、Rabin、D-H（Diffie-Hellman）、ECC（椭圆曲线加密算法）等</p>
+
+    <ul>
+      <li>
+        <p>https</p>
+
+        <p>https客户端无法判断自己收到的服务器的公钥是否是正确的，是否在服务器发送给客户端的过程中被第三方篡改了，所以还需要证明公开密钥正确性的数字证书。</p>
+
+        <p>https可以解决中间人劫持？</p>
+      </li>
+      <li>
+        <p>ssl/tls</p>
+
+        <p>了解他们的握手过程</p>
+      </li>
+      <li>
+        <p>ssh</p>
+      </li>
+      <li>
+        <p>数字签名，数字证书</p>
+
+        <p>浏览器一般怎样校验证书呢？</p>
+      </li>
+      <li>
+        <p>了解几个本质：（<a href="https://www.sohu.com/a/294450321_100134138">原文</a>）</p>
+
+        <ol>
+          <li>解决内容可能被窃听的问题——非对称加密</li>
+          <li>解决报文可能遭篡改问题——数字签名</li>
+          <li>解决通信方身份可能被伪装的问题——认证</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>网络攻击</p>
+
+    <ul>
+      <li>DDoS攻击</li>
+    </ul>
+  </li>
+  <li>
+    <p>ping 的实现：</p>
+
+    <ol>
+      <li>首先查本地arp cache信息，看是否有对方的mac地址和IP地址映射条目记录</li>
+      <li>如果没有，则发起一个arp请求广播包，等待对方告知具体的mac地址</li>
+      <li>收到arp响应包之后，获得某个IP对应的具体mac地址，有了物理地址之后才可以开始通信了,同时对ip-mac地址做一个本地cache</li>
+      <li>发出icmp echo request包，收到icmp echo reply包</li>
+    </ol>
+  </li>
+  <li>
+    <p>反向代理为何叫反向代理？<a href="https://www.zhihu.com/question/24723688/answer/128105528">原文</a></p>
+  </li>
+</ul>
+
+<h3 id="io-1">IO</h3>
+
+<ul>
+  <li>
+    <p>IO操作</p>
+
+    <ul>
+      <li>
+        <p><a href="https://www.cnblogs.com/aspirant/p/6877350.html">IO复用,AIO,BIO,NIO,同步，异步，阻塞和非阻塞 区别</a></p>
+      </li>
+      <li>
+        <p><a href="https://ariescat.top/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/">网络IO中的同步、异步、阻塞和非阻塞</a></p>
+      </li>
+      <li>
+        <p><a href="https://juejin.im/post/5cff70c0f265da1ba56b14fd">迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的最清楚的好文章</a></p>
+      </li>
+      <li>
+        <p>《Netty Zookeeper Redis 高并发实战》<a href="https://weread.qq.com/web/reader/1e732510718f63a11e7dee2k6f4322302126f4922f45dec">2.2节</a></p>
+      </li>
+      <li>
+        <blockquote>
+          <p><strong>同步、异步：</strong></p>
+
+          <ul>
+            <li>概念：消息的通知机制</li>
+            <li>解释：涉及到IO通知机制；所谓同步，就是发起调用后，被调用者处理消息，必须等处理完才直接返回结果，<strong>没处理完之前是不返回的，调用者主动等待结果</strong>；所谓异步，就是发起调用后，被调用者直接返回，但是并没有返回结果，等处理完消息后，通过状态、通知或者回调函数来通知调用者，调用者被动接收结果。</li>
+          </ul>
+
+          <p><strong>阻塞、非阻塞：</strong></p>
+
+          <ul>
+            <li>概念：<strong>程序等待调用结果时的状态</strong></li>
+            <li>解释：涉及到CPU线程调度；所谓阻塞，就是调用结果返回之前，该执行线程会被挂起，不释放CPU执行权，线程不能做其它事情，只能等待，只有等到调用结果返回了，才能接着往下执行；所谓非阻塞，就是在没有获取调用结果时，不是一直等待，线程可以往下执行，如果是同步的，通过轮询的方式检查有没有调用结果返回，如果是异步的，会通知回调。</li>
+          </ul>
+        </blockquote>
+      </li>
+      <li><strong>Reactor模式</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="零拷贝">零拷贝</h4>
+
+<ul>
+  <li>
+    <p>传统的文件传输，DMA技术</p>
+
+    <p>DMA 是一种<strong>允许外围设备（硬件子系统）直接访问系统主内存的机制</strong>。也就是说，基于 DMA 访问方式，系统主内存于硬盘或网卡之间的数据传输可以绕开 CPU 的调度。</p>
+
+    <p>参考：<a href="https://www.jianshu.com/p/3a26e8c9f402">DMA 技术是什么，在哪里用？看完绝对有收获 - 简书 (jianshu.com)</a></p>
+  </li>
+  <li>
+    <p>Linux支持的(常见)零拷贝</p>
+
+    <p>mmap内存映射，sendfile（linux 2.1支持），Sendfile With DMA Scatter/Gather Copy（可以看作是sendfile的增强版，批量sendfile），splice（linux 2.6.17 支持）。</p>
+
+    <p>Linux零拷贝机制对比：无论是传统IO方式，还是引入零拷贝之后，2次DMA copy 是都少不了的。因为两次DMA都是依赖硬件完成的。</p>
+  </li>
+  <li>
+    <p>PageCache，磁盘高速缓存</p>
+
+    <p>主要是两个优点：缓存最近被访问的数据，预读功能</p>
+
+    <p>但是，在传输大文件（GB 级别的文件）的时候，PageCache 会不起作用，那就白白浪费 DRM 多做的一次数据拷贝，造成性能的降低，即使使用了 PageCache 的零拷贝也会损失性能</p>
+  </li>
+  <li>
+    <p>直接I/O</p>
+  </li>
+  <li>
+    <p>大文件传输</p>
+
+    <p>「异步 I/O + 直接 I/O」来替代零拷贝技术</p>
+  </li>
+  <li>
+    <p>Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：</p>
+
+    <p>HeapByteBuffer，DirectByteBuffer，MappedByteBuffer</p>
+  </li>
+  <li>
+    <p>Netty中的零拷贝</p>
+
+    <p>Netty中的Zero-copy与上面我们所提到到OS层面上的Zero-copy不太一样, Netty的Zero-copy完全是在用户态(Java层面)的，它的Zero-copy的更多的是偏向于优化数据操作这样的概念。</p>
+
+    <ul>
+      <li>Netty提供了CompositeByteBuf类，它可以将多个ByteBuf合并为一个逻辑上的ByteBuf，避免了各个ByteBuf之间的拷贝。</li>
+      <li>通过wrap操作，我们可以将byte[]数组、ByteBuf、 ByteBuffer 等包装成一个 Netty ByteBuf对象，进而避免了拷贝操作。</li>
+      <li>ByteBuf支持slice 操作，因此可以将ByteBuf分解为多个共享同一个存储区域的ByteBuf，避免了内存的拷贝。</li>
+      <li>通过FileRegion包装的FileChannel.tranferTo实现文件传输，可以直接将文件缓冲区的数据发送到目标Channel，避免了传统通过循环write方式导致的内存拷贝问题。</li>
+    </ul>
+
+    <p><strong>前三个都是 广义零拷贝，都是减少不必要数据copy；偏向于应用层数据优化的操作。</strong></p>
+  </li>
+  <li>
+    <p>参考：</p>
+
+    <ul>
+      <li>
+        <p><a href="https://www.jianshu.com/p/2fd2f03b4cc3">Java中的零拷贝</a></p>
+
+        <p>这篇文章耐心看完，他讲的是真透彻，他从概念上区分了广义和狭义零拷贝，讲解了系统底层层面上的，JDK NIO层面上的，Kafka、Netty层面上的。</p>
+      </li>
+      <li>
+        <p><a href="https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&amp;mid=2453146714&amp;idx=2&amp;sn=fa45883a655b280c949d0e1c33f4d844&amp;scene=21#wechat_redirect">零拷贝 敖丙</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>IO 操作的真正耗时</p>
+
+    <p>我们开始以为 write 操作是要等到对方收到消息才会返回，但实际上不是这样的。write操作只负责将数据写到本地操作系统内核的发送缓冲然后就返回了。剩下的事交给操作系统内核异步将数据送到目标机器。但是如果发送缓冲满了，那么就需要等待缓冲空出空闲空间来，这个就是写操作 IO 操作的真正耗时。</p>
+
+    <p>我们开始以为 read 操作是从目标机器拉取数据，但实际上不是这样的。read 操作只负责将数据从本地操作系统内核的接收缓冲中取出来就了事了。但是如果缓冲是空的，那么就需要等待数据到来，这个就是读操作 IO 操作的真正耗时。</p>
+
+    <p>这里可以配合《Netty、Redis、Zookeeper高并发实战》2.2节四种主要的IO模型来看一下。</p>
+  </li>
+</ul>
+
+<h3 id="mysql">MySQL</h3>
+
+<h4 id="数据类型">数据类型</h4>
+
+<ul>
+  <li>MySQL中的int(M)，int(M)里的M表示最大显示宽度，当加上zerofill才会表现出效果来。</li>
+  <li>unsigned</li>
+  <li>编码
+    <ul>
+      <li>utf8_general_ci、utf8_unicode_ci和utf8_bin的区别</li>
+      <li><a href="https://blog.csdn.net/u012410733/article/details/61619656">彻底解决mysql中文乱码 - CSDN博客</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="sql语句">SQL语句</h4>
+
+<ul>
+  <li>
+    <p>select</p>
+
+    <blockquote>
+      <p>select: 即最常用的查询，是不加任何锁的</p>
+
+      <p>select … lock in share mode: 会加共享锁(Shared Locks)</p>
+
+      <p>select … for update: 会加排它锁</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>联接子句 union，join</p>
+  </li>
+</ul>
+
+<h4 id="锁">锁</h4>
+
+<ul>
+  <li>
+    <p>前言</p>
+
+    <p>表锁，页面锁，行锁，共享锁，排它锁，意向锁，记录锁，间隙锁，临键锁……这些都是什么鬼？？？</p>
+  </li>
+  <li>
+    <p>机制</p>
+
+    <ul>
+      <li>
+        <p>共享锁（读锁，S锁）</p>
+
+        <p>又称读锁，若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，<strong>其他事务只能再对A加S锁，而不能加X锁</strong>，直到T释放A上的S锁。</p>
+
+        <p>这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</p>
+      </li>
+      <li>
+        <p>排他锁（写锁，X锁）
+又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，<strong>其他事务不能再对A加任何锁</strong>，直到T释放A上的锁。</p>
+
+        <p>这保证了其他事务在T释放A上的锁之前不能再读取和修改A。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>粒度</p>
+
+    <p>MySQL 不同的存储引擎支持不同的锁机制</p>
+
+    <p>表锁：开销小，加锁快；不会出现死锁</p>
+
+    <p>行锁：开销大，加锁慢；会出现死锁</p>
+
+    <p>页面锁：开销和加锁时间界于表锁和行锁之间；会出现死锁</p>
+
+    <p>默认情况下，表锁和行锁都是自动获得的，不需要额外的命令。</p>
+  </li>
+  <li>
+    <p>InnoDB行级锁和表级锁</p>
+
+    <p>InnoDB存储引擎既支持行级锁（row-level locking），也支持表级锁，但默认情况下是采用行级锁。</p>
+
+    <p>为了允许<strong>行锁和表锁共存</strong>，实现多粒度锁机制，InnoDB 还有两种内部使用的意向锁（Intention Locks），这两种意向锁都是<strong>表锁</strong>：</p>
+
+    <ul>
+      <li>意向共享锁（IS）：事务打算给数据行加行共享锁，事务在给一个数据行加共享锁前必须先取得该表的 IS 锁。</li>
+      <li>意向排他锁（IX）：事务打算给数据行加行排他锁，事务在给一个数据行加排他锁前必须先取得该表的 IX 锁。</li>
+    </ul>
+  </li>
+  <li>
+    <p>InnoDB加锁方法</p>
+
+    <ul>
+      <li>
+        <p><strong>意向锁是 InnoDB 自动加的</strong>， 不需用户干预。</p>
+      </li>
+      <li>
+        <p>对于 UPDATE、 DELETE 和 INSERT 语句， InnoDB会自动给涉及数据集加排他锁（X)；</p>
+      </li>
+      <li>
+        <p>对于普通 SELECT 语句，InnoDB 不会加任何锁；
+事务可以通过以下语句<strong>显式</strong>给记录集加共享锁或排他锁：</p>
+        <ul>
+          <li>共享锁（S）：SELECT * FROM table_name WHERE … LOCK IN SHARE MODE。 其他 session 仍然可以查询记录，并也可以对该记录加 share mode 的共享锁。但是如果当前事务需要对该记录进行更新操作，则很有可能造成死锁。</li>
+          <li>排他锁（X)：SELECT * FROM table_name WHERE … FOR UPDATE。其他 session 可以查询该记录，但是不能对该记录加共享锁或排他锁，而是等待获得锁</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>锁只有在执行commit或者rollback的时候才会释放，并且所有的锁都是在<strong>同一时刻</strong>被释放。</p>
+  </li>
+  <li>
+    <p>InnoDB 行锁实现方式</p>
+
+    <p>InnoDB 行锁是通过给索引上的索引项加锁来实现的，这一点 MySQL 与 Oracle 不同，后者是通过在数据块中对相应数据行加锁来实现的。InnoDB 这种行锁实现特点意味着：只有通过索引条件检索数据，InnoDB 才使用行级锁，<strong>否则，InnoDB 将使用表锁！</strong></p>
+  </li>
+  <li>
+    <p>InnoDB的间隙锁</p>
+
+    <p>当我们用<strong>范围条件</strong>而不是相等条件检索数据，并请求共享或排他锁时，InnoDB会给符合条件的已有数据记录的索引项加锁；对于键值在条件范围内但并不存在的记录，叫做“间隙（GAP)”，InnoDB也会对这个“间隙”加锁，这种锁机制就是所谓的间隙锁（Next-Key锁）。</p>
+
+    <blockquote>
+      <p>MySQL默认事务隔离级别是可重复读，这个隔离级别为了避免幻读现象，引入了这个间隙锁，对索引项之间的间隙上锁。</p>
+
+      <p>SELECT * FROM t_url_mapping WHERE id&gt;3 LOCK IN SHARE MODE;（SELECT 语句默认不上锁，需显示加锁，该语句加的就是间隙锁）</p>
+    </blockquote>
+
+    <p>个人理解：</p>
+
+    <p>记录锁（Record Locks）：封锁记录，记录锁也叫<strong>行锁</strong>；例如：</p>
+
+    <p>SELECT * FROM <code class="language-plaintext highlighter-rouge">test</code> WHERE <code class="language-plaintext highlighter-rouge">id</code>=1 FOR UPDATE;</p>
+
+    <p>间隙锁（Gap Lock）：锁在<strong>索引</strong>之间或者第一个索引前面或者最后一个索引后面。是一种概念，InnoDB的算法实现是Next-key lock，也属于间隙锁，但他相当于记录锁+间隙锁。</p>
+
+    <p>临键锁（Next-key lock）：使用索引进行<strong>范围查询</strong>，<strong>左开右闭</strong>区间，<strong>目的是为了解决幻读的问题</strong>。</p>
+  </li>
+  <li>
+    <p>注意死锁</p>
+
+    <p>产生：两个或多个事务在同一资源上相互占用，并请求锁定对方占用的资源，从而导致恶性循环。如：</p>
+
+    <p>当前事务获得S锁，但是如果当前事务需要对该记录进行更新操作，则很有可能造成死锁。</p>
+
+    <p>更新操作必须等待先执行的事务commit后才能执行，如果同时并发太大的时候很容易造成死锁。（搜索<code class="language-plaintext highlighter-rouge">mysql in share mode 死锁</code>）</p>
+
+    <p><strong>检测死锁</strong>：数据库系统实现了各种死锁检测和死锁超时的机制。InnoDB存储引擎能检测到死锁的循环依赖并立即返回一个错误。</p>
+
+    <p><strong>死锁恢复：</strong>死锁发生以后，只有部分或完全回滚其中一个事务，才能打破死锁，InnoDB目前处理死锁的方法是，将持有最少行级排他锁的事务进行回滚。所以事务型应用程序在设计时必须考虑如何处理死锁，多数情况下只需要重新执行因死锁回滚的事务即可。</p>
+  </li>
+  <li>
+    <p>参考链接：<a href="https://zhuanlan.zhihu.com/p/29150809/">MySQL锁总结</a></p>
+  </li>
+</ul>
+
+<h4 id="事务">事务</h4>
+
+<ul>
+  <li>
+    <p>事务特性，ACID的含义</p>
+
+    <ol>
+      <li>
+        <p>原子性</p>
+
+        <p>a. 事务是一个原子操作单元</p>
+
+        <p>b. 要么都做，要么都不做，没有第三种情况</p>
+
+        <p>c. 原子性仅能够保证单个事务的一致性!</p>
+      </li>
+      <li>
+        <p>一致性</p>
+
+        <p>a. 事务操作前和操作后都必须满足业务规则约束</p>
+
+        <p>b. 比如资源数量一致：A向B转账，转账前和转账后AB两个账户的总金额必须是一致的</p>
+
+        <p>c. <strong>一致性是最基本的属性</strong>，其它的三个属性都为了保证一致性而存在的。为了保证<strong>并发情况下</strong>的一致性，引入了<strong>隔离性</strong>，即保证每一个事务能够看到的数据总是一致的，就好象其它并发事务并不存在一样。</p>
+      </li>
+      <li>
+        <p>隔离性</p>
+
+        <p>a. 多个并发事务同时对数据进行读写的能力</p>
+
+        <p>b. 隔离性可以防止事务并发执行时由于交叉执行导致数据不一致的问题</p>
+      </li>
+      <li>
+        <p>持久性</p>
+
+        <p>a. 对数据的修改是永久的</p>
+
+        <p>b. 即使出现系统故障也不会丢失</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>并发问题：</p>
+
+    <ol>
+      <li>
+        <p>脏读</p>
+
+        <p>一个事务正在对一条记录做修改，在这个事务提交之前，别的事务读取到了这个事务修改之后的数据，也就是说，一个事务读取到了其他事务还没有提交的数据，就叫做脏读。</p>
+      </li>
+      <li>
+        <p>不可重复读（第一类不可重复读）</p>
+
+        <p>一个事务读某条数据读两遍，读到的是不一样的数据，也就是说，一个事务在进行中读取到了其他事务对旧数据的修改结果。（比如说 我开一个事务 修改某条数据 先查后改 执行修改动作的时候发现这条数据已经被别的事务删掉了）</p>
+      </li>
+      <li>
+        <p>幻读（第二类不可重复读）</p>
+
+        <p>一个事务中，读取到了其他事务新增的数据，仿佛出现了幻象。（幻读与不可重复读类似，不可重复读是读到了其他事务update/delete的结果，幻读是读到了其他事务insert的结果）</p>
+      </li>
+    </ol>
+
+    <p>隔离级别：</p>
+
+    <ol>
+      <li>
+        <p>读未提交（read-uncommitted）</p>
+
+        <p>在一个事务中，可以读取到其他事务未提交的数据变化，这种读取其他会话还没提交的事务，叫做脏读现象，在生产环境中切勿使用。</p>
+      </li>
+      <li>
+        <p>读已提交（read-committed）</p>
+
+        <p>Sql Server,Oracle默认</p>
+
+        <p>在一个事务中，可以读取到其他事务已经提交的数据变化，这种读取也就叫做不可重复读，因为两次同样的查询可能会得到不一样的结果。</p>
+      </li>
+      <li>
+        <p>可重复读（repetable-read）</p>
+
+        <p>MySQL默认</p>
+
+        <p>在一个事务中，直到事务结束前，都可以反复读取到事务刚开始时看到的数据，并一直不会发生变化，避免了脏读、不可重复读现象，但是<strong>在SQL标准中</strong>它还是无法解决幻读问题。</p>
+      </li>
+      <li>
+        <p>可串行化（serializable）</p>
+
+        <p>这是最高的隔离级别，它强制事务串行执行，避免了前面说的幻读现象，简单来说，它会在读取的每一行数据上都加锁，所以可能会导致大量的超时和锁争用问题。</p>
+      </li>
+    </ol>
+
+    <p>几个概念：</p>
+
+    <ol>
+      <li>
+        <p>锁：Shared Locks(共享锁/S锁)、Exclusive Locks(排它锁/X锁)、Record Locks(行锁)、Gap Locks(间隙锁)、Next-Key Locks(间隙锁)</p>
+
+        <blockquote>
+          <p>Record Locks是加在索引行(对！是索引行！不是数据行！)，Gap Locks和Next-Key Locks都属于索引锁</p>
+        </blockquote>
+      </li>
+      <li>
+        <p>快照读（普通读）：snapshot read，通过MVCC机制读取历史数据的方式</p>
+
+        <blockquote>
+          <p>select * from table ….</p>
+        </blockquote>
+      </li>
+      <li>
+        <p>当前读：current read ，读取数据库最新版本数据的方式</p>
+
+        <blockquote>
+          <p>insert、update、delete、select for update、select lock in share mode</p>
+        </blockquote>
+      </li>
+      <li>
+        <p>意向锁：表级别锁</p>
+      </li>
+    </ol>
+
+    <p><strong>隔离性</strong>底层实现原理：</p>
+
+    <ul>
+      <li>
+        <p>MVCC(多版本并发控制)和锁</p>
+      </li>
+      <li>
+        <p>读已提交和可重复读区别主要在于<strong>MVCC版本的生成时机</strong></p>
+
+        <p>RC是是<strong>每次</strong><code class="language-plaintext highlighter-rouge">select</code>时，RR是<strong>第一次</strong><code class="language-plaintext highlighter-rouge">select</code>时生成版本</p>
+      </li>
+      <li>
+        <p>可串行化级别下，会自动将所有普通<code class="language-plaintext highlighter-rouge">select</code>转化为<code class="language-plaintext highlighter-rouge">select ... lock in share mode</code>执行，即针对同一数据的所有读写都变成互斥的了，可靠性大大提高，并发性大大降低。</p>
+      </li>
+    </ul>
+
+    <p>注意：</p>
+
+    <ol>
+      <li>
+        <p>间隙锁锁住的是索引的间隙，可以理解为范围，如（2，5]，(5，7]</p>
+      </li>
+      <li>
+        <p>我们通过<code class="language-plaintext highlighter-rouge">update</code>、<code class="language-plaintext highlighter-rouge">delete</code>等语句加上的锁都是行级别的锁。只有<code class="language-plaintext highlighter-rouge">LOCK TABLE … READ</code>和<code class="language-plaintext highlighter-rouge">LOCK TABLE … WRITE</code>才能申请表级别的锁。</p>
+      </li>
+      <li>
+        <p>RR级别下隐藏着一个操作，就是在事务A提交前，事务B已经进行过一次查询，否则，事务B会读取最新的数据。<a href="https://blog.csdn.net/thekenofdis/article/details/80736401">原文</a></p>
+      </li>
+      <li>
+        <p>为什么很多文章都产生误传，说是可重复读可以解决幻读问题！原因出自官网的一句话(地址是:<code class="language-plaintext highlighter-rouge">https://dev.mysql.com/doc/refman/5.7/en/innodb-locking.html#innodb-record-locks</code>)，原文内容如下</p>
+
+        <blockquote>
+          <p>By default, InnoDB operates in REPEATABLE READ transaction isolation level. In this case, InnoDB uses next-key locks for searches and index scans, which prevents phantom rows (see Section 14.7.4, “Phantom Rows”).</p>
+        </blockquote>
+
+        <p>按照原本这句话的意思，应该是</p>
+
+        <p><strong>InnoDB默认用了REPEATABLE READ。在这种情况下，使用next-key locks解决幻读问题！</strong></p>
+
+        <p>结果估计，某个国内翻译人员翻着翻着变成了</p>
+
+        <p><strong>InnoDB默认用了REPEATABLE READ。在这种情况下，可以解决幻读问题！</strong></p>
+
+        <p>然后大家继续你抄我，我抄你，结果你懂的！</p>
+
+        <p>显然，漏了”使用了next-key locks！”这个条件后，意思完全改变，我们在该隔离级别下执行语句</p>
+
+        <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="o">*</span>  <span class="k">from</span> <span class="n">tx_tb</span> <span class="k">where</span> <span class="n">pId</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div>        </div>
+
+        <p>是快照读，是不加任何锁的，根本不能解决幻读问题，除非你用</p>
+
+        <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="o">*</span>  <span class="k">from</span> <span class="n">tx_tb</span> <span class="k">where</span> <span class="n">pId</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="k">lock</span> <span class="k">in</span> <span class="k">share</span> <span class="k">mode</span><span class="p">;</span>
+</code></pre></div>        </div>
+
+        <p>这样，你就用上了next-key locks，解决了幻读问题！</p>
+      </li>
+      <li>
+        <p>其实幻读很多时候是我们完全可以接受的</p>
+      </li>
+    </ol>
+
+    <p>总结：</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>隔离级别</th>
+          <th>读数据一致性</th>
+          <th>脏读</th>
+          <th>不可重复读</th>
+          <th>幻读</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>读未提交</td>
+          <td>最低级别，只保证不读取物理上损坏的数据</td>
+          <td>有</td>
+          <td>有</td>
+          <td>有</td>
+        </tr>
+        <tr>
+          <td>读已提交</td>
+          <td>语句级</td>
+          <td>无</td>
+          <td>有</td>
+          <td>有</td>
+        </tr>
+        <tr>
+          <td>可重复读</td>
+          <td>事务级</td>
+          <td>无</td>
+          <td>无</td>
+          <td>可能有</td>
+        </tr>
+        <tr>
+          <td>可串行化</td>
+          <td>最高级别，事务级</td>
+          <td>无</td>
+          <td>无</td>
+          <td>无</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>参考链接：</p>
+
+    <ol>
+      <li><a href="https://blog.csdn.net/suifeng629/article/details/99412343">深入理解mysql的事务隔离级别和底层实现原理</a></li>
+      <li><a href="https://www.cnblogs.com/rjzheng/p/9902911.html">Mysql中select的正确姿势</a>，<a href="https://www.cnblogs.com/rjzheng/p/9955395.html">新说Mysql事务隔离级别</a>，他的“<a href="https://www.cnblogs.com/rjzheng/category/1281020.html">数据库系列</a>”都挺不错的</li>
+    </ol>
+  </li>
+  <li>
+    <p>事务传播（其实这个是<code class="language-plaintext highlighter-rouge">Spring</code>的概念，Spring它对JDBC的隔离级别作出了补充和扩展，其提供了7种事务传播行为）</p>
+
+    <ol>
+      <li><strong>PROPAGATION_REQUIRED：默认事务类型，如果没有，就新建一个事务；如果有，就加入当前事务。适合绝大多数情况。</strong></li>
+      <li>PROPAGATION_REQUIRES_NEW：如果没有，就新建一个事务；如果有，就将当前事务挂起。</li>
+      <li>PROPAGATION_NESTED：如果没有，就新建一个事务；如果有，就在当前事务中嵌套其他事务。</li>
+      <li>PROPAGATION_SUPPORTS：如果没有，就以非事务方式执行；如果有，就使用当前事务。</li>
+      <li>PROPAGATION_NOT_SUPPORTED：如果没有，就以非事务方式执行；如果有，就将当前事务挂起。即无论如何不支持事务。</li>
+      <li>PROPAGATION_NEVER：如果没有，就以非事务方式执行；如果有，就抛出异常。</li>
+      <li>PROPAGATION_MANDATORY：如果没有，就抛出异常；如果有，就使用当前事务。</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="索引">索引</h4>
+
+<ul>
+  <li>
+    <p>使用场景</p>
+
+    <p>索引是在存储引擎层实现的，而不是在服务器层实现的，所以不同存储引擎具有不同的索引类型和实现。</p>
+
+    <ol>
+      <li>对于非常小的表、大部分情况下简单的全表扫描比建立索引更高效。</li>
+      <li>对于中到大型的表，索引就非常有效。</li>
+      <li>但是对于特大型的表，建立和维护索引的代价将会随之增长。这种情况下，需要用到一种技术可以直接区分出需要查询的一组数据，而不是一条记录一条记录地匹配，例如可以使用分区技术。</li>
+    </ol>
+
+    <p>是否使用索引来检索数据是由 MySQL 通过判断不同执行计划的代价来决定的，可以通过 explain 检查 SQL 的执行计划，比如上面第一种情况，它就不会使用索引</p>
+  </li>
+  <li>
+    <p>B-Tree</p>
+
+    <p><img src="https://pic4.zhimg.com/80/v2-56b33bdb51f338d70a7082a3bc6628bf_720w.jpg" alt="img" /></p>
+
+    <p>查找算法：首先在根节点进行二分查找，如果找到则返回对应节点的 data，否则在相应区间的指针指向的节点递归进行查找。</p>
+  </li>
+  <li>
+    <p>B+Tree</p>
+
+    <p><img src="https://pic3.zhimg.com/80/v2-24a5d6423c1faf8d07c12881ca26b6d6_720w.jpg" alt="img" /></p>
+
+    <p>相比B-Tree：</p>
+
+    <ul>
+      <li>内节点不存储 data，只存储 key；</li>
+      <li>叶子节点不存储指针。</li>
+    </ul>
+
+    <p>一般在数据库系统或文件系统中使用的 B+Tree 结构都在经典 B+Tree 基础上进行了优化，在叶子节点增加了顺序访问指针，做这个优化的目的是为了提高区间访问的性能。</p>
+
+    <p><img src="https://pic1.zhimg.com/80/v2-7caf83645d4ec6aaba2fefbd91c19038_720w.jpg" alt="img" /></p>
+
+    <p><strong>利用计算机预读特性</strong></p>
+
+    <p>操作系统一般将内存和磁盘分割成固态大小的块，每一块称为一页，内存与磁盘以页为单位交换数据。<strong>数据库系统将索引的一个节点的大小设置为页的大小</strong>，使得一次 I/O 就能完全载入一个节点，并且可以利用预读特性，相邻的节点也能够被预先载入。</p>
+  </li>
+  <li>
+    <p>B+Tree 索引</p>
+
+    <p>InnoDB 的 B+Tree 索引分为<strong>主索引</strong>和<strong>辅助索引</strong>。</p>
+
+    <p>主索引的叶子节点 data 域记录着完整的数据记录，这种索引方式被称为<strong>聚簇索引</strong>。因为无法把数据行存放在两个不同的地方，所以<strong>一个表只能有一个聚簇索引</strong>。</p>
+
+    <p>辅助索引的叶子节点的 data 域记录着主键的值，因此在使用辅助索引进行查找时，需要先查找到主键值，然后再到主索引中进行查找。</p>
+  </li>
+  <li>
+    <p>MySQL索引类型</p>
+
+    <p>唯一索引，主键（聚簇）索引，非聚簇索引，全文索引</p>
+
+    <p>其实按照定义，除了聚集索引以外的索引都是非聚集索引，只是人们想细分一下非聚集索引，分成普通索引，唯一索引，全文索引。</p>
+
+    <p>全文索引有自己的语法格式，使用 match 和 against 关键字，比如</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">fulltext_test</span> 
+    <span class="k">where</span> <span class="k">match</span><span class="p">(</span><span class="n">content</span><span class="p">,</span><span class="n">tag</span><span class="p">)</span> <span class="n">against</span><span class="p">(</span><span class="s1">'xxx xxx'</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>缺点</p>
+
+    <ul>
+      <li>创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加</li>
+      <li>索引需要占用物理空间，除了数据表占用数据空间之外，每一个索引还要占一定的物理空间，如果建立聚簇索引，那么需要的空间就会更大</li>
+      <li>当对表中的数据进行增加、删除和修改的时候，索引也需要维护，降低数据维护的速度</li>
+    </ul>
+  </li>
+  <li>
+    <p>索引失效</p>
+
+    <ul>
+      <li>如果条件中有or，即使其中有条件带索引也不会使用 (这就是问什么尽量少使用or的原因)</li>
+      <li>对于多列索引，不是使用的第一部分，则不会使用索引</li>
+      <li>like查询是以%开头</li>
+      <li>如果列类型是字符串，那一定要在条件中使用引号引起来，否则不会使用索引</li>
+      <li>如果MySQL估计使用全表扫秒比使用索引快，则不适用索引。</li>
+    </ul>
+  </li>
+  <li>
+    <p>在什么情况下适合建立索引</p>
+
+    <p>order by、group by、distinct</p>
+
+    <p>union</p>
+
+    <p>where、join</p>
+  </li>
+  <li>
+    <p>联合索引</p>
+
+    <p>最左前缀匹配原则</p>
+
+    <blockquote>
+      <p>mysql会一直向右匹配直到遇到范围查询(&gt;、&lt;、between、like)就停止匹配，比如a = 1 and b = 2 and c &gt; 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>MYSQL如何挑选索引？</p>
+  </li>
+  <li>
+    <p>参考链接</p>
+
+    <p><a href="https://zhuanlan.zhihu.com/p/29118331">MySQL索引总结</a></p>
+  </li>
+</ul>
+
+<h4 id="存储引擎">存储引擎</h4>
+
+<ul>
+  <li>MyISAM，InnoDB</li>
+</ul>
+
+<h4 id="日志-1">日志</h4>
+
+<ul>
+  <li>
+    <p>日志类型</p>
+
+    <ul>
+      <li>逻辑日志：存储了逻辑SQL修改语句</li>
+      <li>物理日志：存储了数据被修改的值</li>
+    </ul>
+  </li>
+  <li>
+    <p>binlog</p>
+
+    <p>MySQL 的逻辑日志，也叫二进制日志、归档日志，用于记录用户对数据库操作的SQL语句（除了查询语句）信息，以<strong>二进制的形式</strong>保存在磁盘中。</p>
+
+    <p>日志格式：STATMENT、ROW 和 MIXED</p>
+
+    <p>STATMENT：基于SQL语句的复制，每一条会修改数据的sql语句会记录到binlog中，是binlog的默认格式。</p>
+
+    <p>ROW：基于行的复制，不记录每一条SQL语句的上下文信息，仅保存哪条记录被修改。</p>
+
+    <p>MIXED模式是基于 STATMENT 和 ROW 两种模式的混合复制，一般的复制使用STATEMENT模式保存 binlog，对于 STATEMENT 模式无法复制的操作使用ROW模式保存 binlog，MySQL 会根据执行的 SQL 语句选择日志保存方式。</p>
+  </li>
+  <li>
+    <p>redo/undo log</p>
+
+    <p>redo log 是 MySQL 的物理日志，也叫重做日志，记录存储引擎 InnoDB 的事务日志。</p>
+
+    <p>MySQL 每执行一条 SQL 更新语句，不是每次数据更改都立刻写到磁盘，而是先将记录写到 redo log 里面，并更新内存（这时内存与磁盘的数据不一致，将这种有差异的数据称为脏页），一段时间后，再一次性将多个操作记录写到到磁盘上，这样可以减少磁盘 io 成本，提高操作速度。<strong>先写日志，再写磁盘</strong>，这就是 MySQL 里经常说到的 WAL 技术，即 Write-Ahead Logging，又叫预写日志。MySQL 通过 WAL 技术保证事务的持久性。</p>
+
+    <p><strong>Crash Safe</strong>（宕机重启）：</p>
+
+    <p>有了 redo log，当数据库发生宕机重启后，可通过 redo log 将未落盘的数据（check point之后的数据）恢复，保证已经提交的事务记录不会丢失，这种能力称为crash-safe。
+两阶段提交：</p>
+
+    <p>有了 redo log，为什么还需要 binlog 呢？先来看看 binlog 和redo log 的区别：</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>redo log</th>
+          <th>binlog</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>文件大小</td>
+          <td>redo log 的大小是固定的。</td>
+          <td>binlog 可通过配置参数max_binlog_size 设置每个 binlog 文件的大小。</td>
+        </tr>
+        <tr>
+          <td>实现方式</td>
+          <td>redo log 是 InnoDB 引擎层实现的，并不是所有引擎都有。</td>
+          <td>binlog是 Server 层实现的，所有引擎都可以使用 binlog 日志。</td>
+        </tr>
+        <tr>
+          <td>记录方式</td>
+          <td>redo log 采用循环写的方式记录，当写到结尾时，会回到开头循环写日志。日志上的记录修改落盘后，日志会被覆盖掉，无法用于数据回滚/数据恢复等操作。</td>
+          <td>binlog 通过追加的方式记录，当文件大小大于给定值后，日志会发生滚动，之后的日志记录到新的文件上，不会覆盖以前的记录。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>由 binlog 和 redo log 的区别可知：binlog 日志只用于归档，只依靠 binlog 是没有 crash-safe 能力的。但只有 redo log 也不行，因为 redo log 是InnoDB 特有的，且日志上的记录落盘后会被覆盖掉。因此需要 binlog 和 redo log 二者同时记录，才能保证当数据库发生宕机重启时，数据不会丢失。</p>
+  </li>
+  <li>
+    <p>参考链接</p>
+
+    <p><a href="https://www.cnblogs.com/ivy-zheng/p/11094528.html">MySQL的日志系统</a></p>
+
+    <p><a href="https://blog.csdn.net/shaochenshuo/article/details/73239949">Crash Safe和Binlog的关系</a></p>
+  </li>
+</ul>
+
+<h4 id="备份与恢复">备份与恢复</h4>
+
+<ul>
+  <li>冷备份，热备份
+    <ul>
+      <li>cp，mysqldump，lvm2快照，xtrabackup</li>
+    </ul>
+  </li>
+  <li><a href="https://www.cnblogs.com/-mrl/p/9959365.html">mysql误删数据快速恢复</a></li>
+</ul>
+
+<h4 id="高级">高级</h4>
+
+<ul>
+  <li>
+    <p>explain</p>
+
+    <p>explain显示了mysql如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。</p>
+  </li>
+  <li>
+    <p>如何快速的删除一张大（TB级别）表？</p>
+
+    <ol>
+      <li>区分drop，truncate，delete</li>
+      <li>利用linux中<strong>硬链接</strong></li>
+    </ol>
+  </li>
+  <li>
+    <p>慢日志</p>
+
+    <p>可以设置一个时间，那么所有执行时间超过这个时间的SQL都会被记录下来。这样就可以通过慢日志快速的找到网站中SQL的瓶颈来进行优化。</p>
+  </li>
+</ul>
+
+<h4 id="分布式">分布式</h4>
+
+<ul>
+  <li><strong>主从</strong>复制，分库分表</li>
+</ul>
+
+<h3 id="redis--nosql">Redis / NoSQL</h3>
+
+<blockquote>
+  <ol>
+    <li>Redis是一种基于键值对(Key-Value)的NoSQL数据库，Redis的 <strong>Value</strong> 的基础数据结构有string、list、hash、set、zset；</li>
+    <li>有 <strong>Bitmaps</strong>，<strong>HyperLogLog</strong> 等多种高级数据结构和算法</li>
+    <li>Redis还提供了键过期，发布订阅，事务，Lua脚本，哨兵，Cluster等功能。</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>
+    <p>主要应用：</p>
+
+    <p>分布式锁、延时队列、位图、HyperLogLog、布隆过滤器、简单限流（zset）、漏斗限流、GeoHash（地理位置）</p>
+  </li>
+  <li>
+    <p>需要了解的一些原理：</p>
+
+    <ol>
+      <li>
+        <p>Redis的线程模型：单线程，IO多路复用</p>
+      </li>
+      <li>
+        <p>客户端与服务器的通信协议</p>
+      </li>
+      <li>
+        <p>持久化：</p>
+
+        <p>使用操作系统的多进程 COW(Copy On Write) 机制来实现快照持久化</p>
+
+        <p>bgsave 做全量持久化到 RDB 二进制文件中，aof 做增量持久化，存储的是文本协议数据</p>
+      </li>
+      <li>
+        <p>管道，事务</p>
+
+        <p>注意redis事务<strong>不保证原子性</strong>，<strong>不支持回滚</strong>。他总结来说：<strong>就是一次性、顺序性、排他性的执行一个队列中的一系列命令</strong>。其他客户端提交的命令请求不会插入到事务执行命令序列中。</p>
+
+        <p>思考一下，为什么这样设计？</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">encoding</code> 记录了对象所保存的值的编码</p>
+
+        <p>下图展示了 redisObject 、Redis 所有数据类型、以及 Redis 所有编码方式（底层实现）三者之间的关系：</p>
+
+        <p><img src="/img/awesome/redis1.png" alt="redis1" /></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>拓展</p>
+
+    <p>Stream数据结构，Info指令，分布式锁Redlock算法，RedLock，过期清除策略</p>
+
+    <ol>
+      <li>
+        <p>选择hash还是string 存储数据？</p>
+      </li>
+      <li>
+        <p>redis分布式锁</p>
+
+        <ol>
+          <li>单实例中实现分布式锁：setnx（注意删除时最好使用Lua脚本删除，逻辑是先获取key，如果存在并且值是自己设置的就删除此key，否则就跳过）</li>
+          <li>多节点redis实现的分布式锁：RedLock</li>
+        </ol>
+      </li>
+      <li>
+        <p>Redis 内存不够时的淘汰策略</p>
+
+        <p>LRU 算法和 LFU 算法，redis 对 LRU 的改进</p>
+      </li>
+      <li>
+        <p>缓存穿透解决方案？</p>
+
+        <p>布隆过滤器</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Java的Redis客户端：Jedis，Redisson</p>
+
+    <ol>
+      <li>
+        <p>Redisson 不仅封装了 redis ，还封装了对更多数据结构的支持，以及锁等功能，相比于Jedis 更加大。</p>
+
+        <p>Redisson的加锁/释放锁都是用Lua脚本，相比于setnx就能实现，为何多此一举？仔细看Lua脚本就会发现考虑得非常全面，其中包括锁的<strong>重入性</strong>。</p>
+      </li>
+      <li>
+        <p>但Jedis相比于Redisson 更原生一些，更灵活。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>集群</p>
+
+    <p>Sentinel，Codis，Cluster</p>
+  </li>
+  <li>
+    <p>源码</p>
+
+    <ul>
+      <li><a href="https://github.com/huangz1990/redis-3.0-annotated">带有详细注释的 Redis 3.0 代码</a></li>
+      <li>jemalloc，Redis 默认使用 jemalloc(facebook) 库来管理内存</li>
+    </ul>
+  </li>
+  <li>
+    <p>一些面试题：</p>
+
+    <ol>
+      <li>
+        <p><a href="https://blog.csdn.net/qq_35190492/article/details/102889333">《吊打面试官》系列-缓存雪崩、击穿、穿透</a></p>
+
+        <p>防止缓存穿透：增加校验，缓存，<strong>布隆过滤器（Bloom Filter）</strong>，hyperloglog</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>书籍</p>
+
+    <ul>
+      <li>《redis设计与实现(第二版)》</li>
+      <li>《Redis 深度历险:核心原理与应用实践》</li>
+    </ul>
+  </li>
+  <li>
+    <p>Orther NoSQL</p>
+
+    <ul>
+      <li>Memcache
+        <ul>
+          <li>Redis之与Memcached的比较</li>
+        </ul>
+      </li>
+      <li>MongoDB
+        <ol>
+          <li><a href="https://www.cnblogs.com/rjzheng/p/12316685.html">为什么Mongodb索引用B树，而Mysql用B+树?</a></li>
+        </ol>
+      </li>
+      <li>Elasticsearch</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="操作系统">操作系统</h3>
+
+<ul>
+  <li>进程管理
+    <ul>
+      <li><a href="https://blog.csdn.net/weixin_43517199/article/details/89508381">进程和线程</a></li>
+      <li>进程间通信：<a href="https://www.cnblogs.com/zengyiwen/p/5755170.html">管道</a>，消息队列，共享内存</li>
+      <li>死锁</li>
+    </ul>
+  </li>
+  <li>内存管理
+    <ul>
+      <li>分页管理</li>
+    </ul>
+  </li>
+  <li>
+    <p>设备管理</p>
+  </li>
+  <li>Windows
+    <ul>
+      <li>hiberfil.sys和pagefile.sys占用系统空间，其分别是休眠空间和虚拟内存。</li>
+    </ul>
+  </li>
+  <li>其他
+    <ul>
+      <li>虚拟内存和swap分区</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="github干货">Github干货</h3>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/521xueweihan/HelloGitHub">521xueweihan / HelloGitHub</a>  分享 GitHub 上有趣、入门级的开源项目</p>
+  </li>
+  <li>
+    <p>awesome</p>
+
+    <ul>
+      <li>
+        <p><a href="https://github.com/hadyang/interview">hadyang / interview</a></p>
+
+        <p>Java 笔试、面试 知识整理</p>
+      </li>
+      <li>
+        <p><a href="https://github.com/Snailclimb/JavaGuide">Snailclimb / JavaGuide</a></p>
+
+        <p>【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。</p>
+      </li>
+      <li>
+        <p><a href="https://github.com/jobbole/awesome-java-cn">jobbole / awesome-java-cn</a></p>
+
+        <p>Java资源大全中文版，包括开发库、开发工具、网站、博客、微信、微博等，由伯乐在线持续更新。</p>
+
+        <p>同时他还有 <a href="https://github.com/jobbole/awesome-python-cn">jobbole / awesome-python-cn</a>，<a href="https://github.com/jobbole/awesome-cpp-cn">jobbole / awesome-cpp-cn</a></p>
+      </li>
+      <li>
+        <p><a href="https://github.com/AobingJava/JavaFamily">AobingJava / JavaFamily</a></p>
+
+        <p>【互联网一线大厂面试+学习指南】进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，作者风格幽默，看起来津津有味，把学习当做一种乐趣，何乐而不为，后端同学必看</p>
+
+        <p>附其CSDN博客（《吊打面试官》系列）：<a href="https://me.csdn.net/qq_35190492">https://me.csdn.net/qq_35190492</a></p>
+      </li>
+      <li>
+        <p><a href="https://github.com/xingshaocheng/architect-awesome">xingshaocheng / architect-awesome</a></p>
+
+        <p>后端架构师技术图谱</p>
+      </li>
+      <li>
+        <p><a href="https://github.com/crossoverJie/JCSprout">crossoverJie / JCSprout</a></p>
+
+        <p>Java Core Sprout : basic, concurrent, algorithm</p>
+      </li>
+      <li>
+        <p><a href="https://github.com/javagrowing/JGrowing">javagrowing / JGrowing</a></p>
+
+        <p>Java成长路线，但学到不仅仅是Java。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Java高并发</p>
+
+    <ul>
+      <li><a href="https://github.com/liyifeng1994/seckill">seckill</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Android</p>
+
+    <ul>
+      <li><a href="https://github.com/henrymorgen/android-advanced-decode">henrymorgen / android-advanced-decode</a>  《Android进阶解密》源码</li>
+    </ul>
+  </li>
+  <li>
+    <p>游戏相关</p>
+
+    <ul>
+      <li>
+        <p><a href="https://github.com/hstcscolor/awesome-gameserver-cn">hstcscolor / awesome-gameserver-cn</a>  中文游戏服务器资源大全</p>
+      </li>
+      <li>
+        <p>ARPG</p>
+
+        <ul>
+          <li>
+            <p>永恒之塔开源服务器架构 <a href="https://github.com/Aion-server/Aion-unique">https://github.com/Aion-server/Aion-unique</a></p>
+          </li>
+          <li>
+            <p>天堂2 l2jserver2</p>
+
+            <p><a href="https://github.com/oonym/l2InterludeServer">https://github.com/oonym/l2InterludeServer</a></p>
+
+            <p><a href="https://github.com/Rogiel/l2jserver2">https://github.com/Rogiel/l2jserver2</a></p>
+          </li>
+          <li>
+            <p>魔兽世界server TrinityCore <a href="https://github.com/TrinityCore/TrinityCore">https://github.com/TrinityCore/TrinityCore</a></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>tinyHeart <a href="https://github.com/luckykun/tinyHeart">https://github.com/luckykun/tinyHeart</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>常见框架源码</p>
+
+    <ul>
+      <li>tomcat</li>
+      <li>dubbo</li>
+      <li>spring</li>
+      <li>zookeeper</li>
+    </ul>
+  </li>
+  <li>
+    <p>源码解读</p>
+
+    <ul>
+      <li><a href="https://github.com/huangz1990/redis-3.0-annotated">huangz1990 / redis-3.0-annotated</a>  带有详细注释的 Redis 3.0 代码</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="知识体系">知识体系</h3>
+
+<ul>
+  <li><a href="https://blog.csdn.net/aa1215018028/article/details/80951389">Github优秀java项目集合（中文版） - 涉及java所有的知识体系</a></li>
+  <li><a href="http://hao.jobbole.com/">伯乐在线</a></li>
+  <li><a href="http://www.hollischuang.com/archives/1001">《成神之路系列文章》</a></li>
+  <li><a href="https://mp.weixin.qq.com/s?__biz=Mzg3MjA4MTExMw==&amp;mid=2247486161&amp;idx=1&amp;sn=b7bd2bffc50f5f64368d6e40c973619a&amp;chksm=cef5f967f9827071badcdcf1ae8c162ad2176e44978ce3d8d138a94ae843e9232c1fb6d4ec36&amp;scene=21#wechat_redirect">超强总结！Github上那些Java面试、学习相关仓库</a></li>
+</ul>
+
+<h3 id="面经汇总">面经汇总</h3>
+
+<ul>
+  <li>Java面经汇总
+    <ul>
+      <li>ImportNew
+        <ol>
+          <li><a href="http://www.importnew.com/12773.html">Java线程面试题 Top 50 - ImportNew</a></li>
+        </ol>
+      </li>
+      <li>掘金
+        <ol>
+          <li><a href="https://juejin.im/post/5a94a8ca6fb9a0635c049e67?utm_source=gold_browser_extension#heading-1">Java面试通关要点汇总集 - 掘金</a></li>
+          <li><a href="https://juejin.im/post/5a9690fc5188257a865da3ee?utm_source=gold_browser_extension">Java面试通关要点汇总集(基础篇之基本功，非原作者) - 掘金</a></li>
+          <li><a href="https://juejin.im/post/58a6ad5461ff4b78fca442eb">JavaEE面试题收集 - 掘金</a></li>
+          <li><a href="https://juejin.im/post/5a9f5ce86fb9a028de443ed9?utm_source=gold_browser_extension">一个两年Java的面试总结 - 掘金</a></li>
+        </ol>
+      </li>
+      <li>2020年收录：
+        <ul>
+          <li><a href="https://blog.csdn.net/qq_34337272/article/details/104423823">强烈推荐！15 个 Github 顶级 Java 教程类开源项目推荐！</a></li>
+          <li><a href="https://blog.csdn.net/ThinkWon/article/details/104390612">Java基础知识面试题（2020最新版）</a></li>
+          <li><a href="https://blog.csdn.net/qq_35190492/article/details/105186878">【阿里P6面经】二本，curd两年，疯狂复习，拿下阿里offer</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>大厂面经
+    <ul>
+      <li><a href="http://www.importnew.com/22637.html">面试心得与总结—BAT、网易、蘑菇街 - ImportNew</a></li>
+    </ul>
+  </li>
+  <li>经历分享
+    <ul>
+      <li><a href="http://blog.csdn.net/huachao1001/article/details/52247268">2017年秋季校招面经 - CSDN博客</a></li>
+      <li><a href="http://www.cnblogs.com/lonelycatcher/archive/2012/03/10/2388889.html">我的求职经历——遍览国内一流IT企业(转） - lonelycatcher - 博客园</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="博客">博客</h3>
+
+<ul>
+  <li>职场
+    <ul>
+      <li><a href="https://www.gameres.com/840718.html">如何入职心仪的游戏公司？ 游戏策划从入门到入行</a></li>
+    </ul>
+  </li>
+  <li>年度报告
+    <ul>
+      <li><a href="http://www.199it.com/archives/530127.html">阿里研究院：2016年校园快递行业发展报告</a></li>
+      <li><a href="https://summary.segmentfault.com/2016/#/">SegmentFault 年度内容盘点 - 2016</a></li>
+    </ul>
+  </li>
+  <li>其他
+    <ul>
+      <li><a href="http://blog.csdn.net/u013970991/article/details/52609083">究竟怎样写代码才算是好代码 - CSDN博客</a></li>
+      <li><a href="https://blog.csdn.net/u012410733/article/details/51869105">成为Java顶尖程序员 ，看这11本书就够了 - CSDN博客</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="常用社区">常用社区</h3>
+
+<ul>
+  <li><a href="http://www.imooc.com/article">慕课网手记</a></li>
+</ul>
+
+<h3 id="必备软件">必备软件</h3>
+
+<ul>
+  <li>everything</li>
+  <li>wox（window快速搜索文件启动程序软件）</li>
+  <li>系统镜像
+    <ul>
+      <li><a href="https://msdn.itellyou.cn/">https://msdn.itellyou.cn/</a></li>
+    </ul>
+  </li>
+  <li>HTTP接口测试工具
+    <ul>
+      <li>Postman</li>
+    </ul>
+  </li>
+  <li>PanDownload</li>
+</ul>
+
+<h3 id="linux常用服务搭建">Linux常用服务搭建</h3>
+
+<p>（Shadowsocks，Ngrok，Nginx…）</p>
+
+<ul>
+  <li>CentOS7
+    <ul>
+      <li><a href="https://jingyan.baidu.com/article/59703552c2fd838fc1074046.html">Linux如何查看端口状态_百度经验</a></li>
+      <li><a href="http://www.linuxidc.com/Linux/2011-09/42108.htm">Linux Yum 命令使用举例_Linux教程_Linux公社-Linux系统门户网站</a></li>
+      <li><a href="https://www.cnblogs.com/moxiaoan/p/5683743.html">CentOS7使用firewalld打开关闭防火墙与端口 - 莫小安 - 博客园</a></li>
+    </ul>
+  </li>
+  <li>MySql
+    <ul>
+      <li><a href="https://www.cnblogs.com/suxiaoman/p/7693066.html">CentOS下的Mysql的安装和使用 - suxiaoman - 博客园</a></li>
+    </ul>
+  </li>
+  <li>Jetty
+    <ul>
+      <li><a href="https://www.cnblogs.com/wzalex/p/6912500.html">Centos6.8 Jetty 安装配置 - 那个汪 - 博客园</a></li>
+    </ul>
+  </li>
+  <li>Shadowsocks
+    <ul>
+      <li><a href="http://www.bkjia.com/Linuxjc/1202867.html">记一次搭建SS服务器，完整的过程。，搭建ss_Linux教程 · 帮客之家</a></li>
+      <li><a href="http://blog.csdn.net/u013309540/article/details/74330305">Centos 7下搭建SS - CSDN博客</a></li>
+      <li><a href="https://shadowsocks.org/en/download/clients.html">Shadowsocks - Clients</a></li>
+      <li><a href="https://www.wn789.com/4678.html">锐速ServerSpeeder无限带宽破解版一键安装包(2017.6.23更新 )-蜗牛789</a></li>
+    </ul>
+  </li>
+  <li>Nginx
+    <ul>
+      <li><a href="http://blog.csdn.net/zhongguozhichuang/article/details/52816887">Nginx的一些基本功能 - CSDN博客</a></li>
+    </ul>
+  </li>
+  <li>Ngrok
+    <ul>
+      <li><a href="https://www.aliang.org/golang/go1-8-1.html">CentOS7.3编译安装go1.8.1 - Aliang Log</a></li>
+      <li><a href="http://blog.csdn.net/y534560449/article/details/53513046">CentOS下部署Ngrok服务器 - YE_NICKNAME - CSDN博客</a></li>
+      <li><a href="https://segmentfault.com/a/1190000010338848">Centos下自己架设ngrok服务器（内网测试神器） - 个人文章 - SegmentFault</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="前端">前端</h3>
+
+<ul>
+  <li>HTML/CSS/JS</li>
+  <li>ECMAScript</li>
+  <li>Bootstrap 教程 - 菜鸟教程</li>
+  <li><a href="https://cn.vuejs.org/">Vue</a>
+    <ul>
+      <li>双向数据绑定与单向数据绑定</li>
+      <li><a href="https://vuex.vuejs.org/zh/">Vuex</a>，<a href="http://weex.apache.org/cn/">Weex</a></li>
+    </ul>
+  </li>
+  <li>React
+    <ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2015/03/react.html">React 入门实例教程</a></li>
+    </ul>
+  </li>
+  <li>Flux 架构
+    <ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2016/01/flux.html">Flux 架构入门教程</a></li>
+    </ul>
+  </li>
+  <li>状态管理
+    <ul>
+      <li><a href="https://www.cnblogs.com/axel10/archive/2018/03/15/8571757.html">聊一聊主流前端框架的状态管理</a></li>
+      <li><a href="https://juejin.im/post/59fd94475188254115703461">前端状态管理请三思</a></li>
+    </ul>
+  </li>
+  <li>其他
+    <ul>
+      <li><a href="https://juejin.im/post/5c617c576fb9a049e93d33a4">给2019前端的5个建议</a></li>
+      <li><a href="https://juejin.im/post/5c6d3e026fb9a04a0d576f98">浏览器原理系列10篇正式完结</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="android">Android</h3>
+
+<ul>
+  <li><a href="https://services.gradle.org/distributions">Gradle Distributions</a></li>
+  <li>图表
+    <ul>
+      <li>hellocharts</li>
+    </ul>
+  </li>
+  <li>学习网站
+    <ul>
+      <li><a href="https://developer.android.com/guide">开发者指南 · Android 开发者 · Android Developers</a>
+        <ul>
+          <li><a href="https://developer.android.com/guide/navigation/navigation-ui#add_a_navigation_drawer">使用 NavigationUI 更新界面组件</a>
+            <ul>
+              <li>抽屉式导航栏</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="https://www.androiddevtools.cn/">AndroidDevTools - Android开发工具 Android SDK下载 Android Studio下载 Gradle下载 SDK Tools下载</a></li>
+      <li><a href="https://github.com/sucese/android-open-source-project-analysis">android-open-source-project-analysis</a></li>
+    </ul>
+  </li>
+  <li>Material Design
+    <ul>
+      <li>NavigationView FlaotingActionBar SnackBar</li>
+      <li>Design Support Library</li>
+      <li>RecyclerView</li>
+      <li>SwipeRefreshLayout</li>
+      <li>控件点击水波纹</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="unity3d">Unity3d</h3>
+
+<ul>
+  <li>愤怒的小鸟 <a href="https://www.bilibili.com/video/av35565116/">https://www.bilibili.com/video/av35565116/</a></li>
+</ul>
+
+<h3 id="游戏技术">游戏技术</h3>
+
+<ul>
+  <li><strong>AI</strong>（状态机 行为树）</li>
+  <li>游戏框架
+    <ul>
+      <li>skynet</li>
+      <li>Pinus</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="游戏相关">游戏相关</h3>
+
+<ul>
+  <li><a href="https://daxue.qq.com/game">游戏学院 - 腾讯大学</a></li>
+  <li>安全
+    <ul>
+      <li><a href="https://gslab.qq.com/portal.php?mod=view&amp;aid=94">游戏安全实验室</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.gameres.com/">GameRes游资网-游戏开发者门户</a></li>
+</ul>
+
+<h3 id="相关书籍">相关书籍</h3>
+
+<ul>
+  <li>Java
+    <ul>
+      <li>《深入理解Java虚拟机（第3版）（周志明）》</li>
+      <li>《Java并发编程实战》</li>
+      <li>《Effective Java》</li>
+    </ul>
+  </li>
+  <li>Redis
+    <ul>
+      <li>《Redis 深度历险：核心原理与应用实践 （钱文品）》</li>
+      <li>《Redis设计与实现》</li>
+    </ul>
+  </li>
+  <li>Spring
+    <ul>
+      <li>《Spring 源码深度解析 第二版》《Spring实战》</li>
+      <li>《Spring Boot编程思想（核心篇）》<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3621582485,3050859261&amp;fm=58&amp;bpow=800&amp;bpoh=940" alt="书籍·图1" /></li>
+      <li>《Spring Boot实战》</li>
+      <li>《Spring 微服务实战》</li>
+    </ul>
+  </li>
+  <li>Netty
+    <ul>
+      <li>《Netty权威指南》</li>
+    </ul>
+  </li>
+  <li>Tomcat
+    <ul>
+      <li>《Tomcat架构解析 （刘光瑞）》</li>
+    </ul>
+  </li>
+  <li>《漫画算法：小灰的算法之旅》</li>
+  <li>《架构探险分布式服务框架 （李业兵）》</li>
+  <li>《高性能MySQL》</li>
+</ul>
+
+
+				<hr style="visibility: hidden;">
+
+				<ul class="pager">
+					
+					
+					<li class="next">
+						<a href="/docs/Reading/" data-toggle="tooltip" data-placement="top" title="Reading">
+						Next<br>
+						<span>Reading</span>
+						</a>
+					</li>
+					
+				</ul>
+
+
+				
+
+
+
+
+<!-- 引入Valine评论插件 https://valine.js.org/ -->
+<div id="vcomments" style="margin-top: 30px;"></div>
+<script>
+    let pathname = window.location.pathname;
+    let valine = new Valine({
+        el: '#vcomments',
+        appId: '8sgcuqXs6ecrgY74WuVkQXCJ-gzGzoHsz',
+        appKey: 'QXoMCzb8TFMV0DBzDNXkcvxa',
+        placeholder: '你是我一生只会遇见一次的惊喜 | ᴥ•́ )✧',
+        path: pathname,
+        avatar: 'mp',
+        recordIP: 'true',
+        enableQQ: 'true',
+        emojiCDN: __Ariescat_Config__.Valine.emojiCDN,
+        emojiMaps: __Ariescat_Config__.Valine.emojiMaps
+    });
+    $(document).on('ready pjax:beforeReplace', function (event) {
+        valine.setPath(pathname);
+    });
+</script>
+<style>
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/img/comment_bg.png") 100% 100% no-repeat;
+    }
+    #vcomments p {
+        margin: 8px 0;
+    }
+    .v[data-class=v] .vcards .vcard .vquote {
+        padding-left: .5em;
+    }
+    .v[data-class=v] .vcards .vcard .vimg {
+        margin: 0 .7525em 0 0;
+    }
+
+    .v[data-class=v] .vwrap,
+    .v[data-class=v] .vbtn {
+        border-color: #ccc;
+    }
+    /*.v[data-class=v] .vcards > .vcard:last-child .vh*/
+    /*.v[data-class=v] .vcards > .vcard > .vh {*/
+    /*    border-bottom: 1px solid #e4e4e4;*/
+    /*}*/
+    .v[data-class="v"] .vcards .vcard .vquote {
+        border-left: none;
+    }
+
+    /*设置评论头像旋转*/
+    .v .vcards .vcard .vimg:hover {
+        -webkit-animation: vimg-transform .8s linear;
+                animation: vimg-transform .8s linear;
+    }
+    @-webkit-keyframes vimg-transform {
+        0%      {-webkit-transform:rotate(0deg);}
+        50%     {-webkit-transform:rotate(180deg);}
+        100%    {-webkit-transform:rotate(360deg);}
+    }
+    @keyframes vimg-transform {
+        0%      {transform:rotate(0deg);}
+        50%     {transform:rotate(180deg);}
+        100%    {transform:rotate(360deg);}
+    }
+</style>
+
+
+
+
+
+
+
+
+			</div>
+
+			<!-- Side Catalog Container -->
+			
+			<div class="
+				col-lg-2 col-lg-offset-0
+				visible-lg-block
+				sidebar-container
+				catalog-container">
+				<div class="side-catalog">
+					<hr class="hidden-sm hidden-xs">
+					<h5>
+						<a class="catalog-toggle" href="#">CATALOG</a>
+					</h5>
+					<ul class="catalog-body"></ul>
+				</div>
+			</div>
+			
+
+			<!-- Sidebar Container -->
+			<div class="
+				col-lg-8 col-lg-offset-2
+				col-md-10 col-md-offset-1
+				sidebar-container">
+
+				<!-- Featured Tags -->
+				
+				<section>
+					<hr class="hidden-sm hidden-xs">
+					<h5><a href="/archives/">FEATURED TAGS</a></h5>
+					<div class="tags">
+						
+							
+								<a href="/archives/?tag=Blog" title="Blog" rel="5">
+									Blog
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=生活" title="生活" rel="8">
+									生活
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Java" title="Java" rel="16">
+									Java
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Guava" title="Guava" rel="1">
+									Guava
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Groovy" title="Groovy" rel="2">
+									Groovy
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=前端" title="前端" rel="1">
+									前端
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=IO" title="IO" rel="2">
+									IO
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Spring" title="Spring" rel="4">
+									Spring
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=AOP" title="AOP" rel="1">
+									AOP
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=Json" title="Json" rel="1">
+									Json
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=SpringBoot" title="SpringBoot" rel="1">
+									SpringBoot
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=设计模式" title="设计模式" rel="1">
+									设计模式
+								</a>
+							
+						
+							
+								<a href="/archives/?tag=操作系统" title="操作系统" rel="1">
+									操作系统
+								</a>
+							
+						
+					</div>
+				</section>
+				
+
+				<!-- Links -->
+				
+				<hr>
+				<h5>LINKS</h5>
+				<ul class="list-inline">
+					
+					<li><a href="https://www.jianshu.com/">简书</a></li>
+					
+					<li><a href="https://www.zhihu.com/">知乎</a></li>
+					
+					<li><a href="https://juejin.im/">掘金</a></li>
+					
+				</ul>
+				
+			</div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("/js/anchor.min.js",function(){
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // anchors.options = {
+        //   visible: 'always',
+        //   placement: 'right',
+        //   icon: '#'
+        // };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+</div>
+
+        <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Ariescat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://awesome.ariescat.top/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.jianshu.com/u/39035eb3096b">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://blog.csdn.net/PingXiaoGai">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">C</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Ariescat Blog 2019-2021
+                    <br>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备20047845号</a>
+                    <br>
+                    Powered by <a href="https://ariescat.top/">Ariescat</a> |
+                    <a href="https://github.com/Ariescat/blog" target="_blank"
+                       aria-label="Star Ariescat/blog on GitHub">
+                        <img src="https://img.shields.io/github/stars/Ariescat/blog?style=social"
+                             alt="Star" style="cursor: pointer">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                // size: {start: 1, end: 1, unit: 'em'},
+                // color: {start: '#bbbbee', end: '#0085a1'},
+                color: {start: '#bbbbee', end: '#2f93b4'},
+            };
+            $('#tag_cloud a').tagcloud();
+        });
+        async('/js/archive.js', function () {
+            // 重新加载archive.js，计算归档和页签
+        });
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async("/js/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPNE1L0HRN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HPNE1L0HRN');
+</script>
+
+
+
+
+<!-- Baidu 统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?15a0182bcc909fead8c8f48acb3222d4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        // 兼容pjax，先清理，不然pjax的返回，前进会造成重复追加
+        $(selector).empty();
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!--Baidu 收录 自动推送代码-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+<!-- fancybox支持 -->
+<script>
+    $(document).ready(function () {
+        $('#pageContent #content img').each(function (index, value) {
+            if (value.classList.contains('not-fancybox')) {
+                return;
+            }
+            let $a = document.createElement('a')
+            $a.setAttribute('data-fancybox', 'gallery')
+            /* 兼容img lazyload */
+            $a.setAttribute('href', $(this).attr('data-original') || value.src)
+            $a.setAttribute('data-caption', value.alt)
+            $(this).wrap($a)
+        });
+    });
+</script>
+
+<!-- img lazyload -->
+<script>
+    $(function () {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
+</script>
+
+
+<!-- search -->
+<script>
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        // 兼容pjax 刷新时清空上一次的值
+        $searchInput.val('')
+        $('#search-results').empty()
+        $searchPage.removeClass('search-active')
+        $body.removeClass('no-scroll')
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+    </div>
+
+    <!--春节挂件-->
+<style>
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+    }
+    #chunjie {
+        display: none;
+    }
+    .deng-box {
+        position: fixed;
+        top: -40px;
+        left: 7.5%;
+        z-index: 999;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        left: 10%;
+        z-index: 999;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    /*@font-face {
+        font-family: "华文行楷";
+        src: url('/fonts/华文行楷.ttf');
+    }*/
+    .deng-t {
+        /*font-family: 华文行楷;*/
+        font-size: 24px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 44px;
+        text-align: center;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+
+<div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">喜迎</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">春节</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if ($(window).width() <= 630 || (new Date().getMonth()) > 1) {
+        $('#chunjie').css('display', 'none');
+    } else {
+        $('#chunjie').css('display', 'block');
+    }
+</script>
+    <!--春节挂件-->
+<style>
+    /*春节主题 挂件吊线*/
+    .caishendeng {
+        display: none;
+    }
+    .caishenxianleft {
+        position: fixed;
+        top: 0;
+        left: 16% !important;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenxian {
+        position: fixed;
+        top: 0;
+        right: 20%;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenpic {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        top: 12px;
+        right: -22px;
+        z-index: 9;
+        /* transform-origin: 50% -100px; */
+        animation: swing 3.5s infinite ease-in-out;
+        /* -webkit-transform-origin: 50% -100px; */
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .fudao {
+        width: 38px;
+        height: 38px;
+        top: 18px !important;
+        left: -19px !important;
+    }
+</style>
+
+<div class="caishendeng">
+    <div class="caishenxian">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+<div class="caishendeng">
+    <div class="caishenxianleft">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+
+<script>
+    if ($(window).width() > 630 || (new Date().getMonth()) > 1) {
+        $('.caishendeng').css('display', 'none');
+    } else {
+        $('.caishendeng').css('display', 'block');
+    }
+</script>
+    <!-- Search -->
+<div class="search-page">
+    <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+    </div>
+    <div class="search-main container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!--<form>-->
+                <input type="text" id="search-input" placeholder="$ grep...">
+                <!--</form>-->
+                <div id="search-results" class="mini-post-list"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason,
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+</script>
+
+    <div id="aplayerContent">
+        
+<!-- aplayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+<div class="visible-lg">
+    <div id="aplayer"></div>
+</div>
+<script type="text/javascript">
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        lrcType: __Ariescat_Config__.APlayer.lrcType,
+        audio: __Ariescat_Config__.APlayer.audioSrc
+    });
+</script>
+
+    </div>
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+<!-- 鼠标点击特效 -->
+<!--<script src="/js/snow-effect.js"></script>-->
+
+<!--看板娘-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    // 可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。
+    L2Dwidget.init({
+        "model": {
+            "jsonPath": __Ariescat_Config__.L2Dwidget.jsonPath,
+            "scale": 1
+        },
+        "display": {
+            "position": "left",
+            "width": 100,
+            "height": 200,
+            "hOffset": 30,
+            "vOffset": -15
+        },
+        "mobile": {
+            "show": false,
+            "scale": 1
+        },
+        "react": {
+            "opacityDefault": 1.0,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+<script>
+    // pjax无刷新ajax加载
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    // NProgress
+    $(document).on('pjax:start', function () {
+        NProgress.start();
+        NProgress.inc();
+    });
+    $(document).on('pjax:end', function () {
+        NProgress.done();
+    });
+</script>
+
+<!-- 樱花特效 -->
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    if ($(window).width() > 768) {
+        let month = new Date().getMonth();
+        //三四月飘就好
+        if (month === 2 || month === 3) {
+            document.write('<script type="text/javascript" async src="/js/sakura.js"><\/script>');
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个在互联网苟且偷生的工具人 @Ariescat">
+    <meta name="keywords"  content="一只白羊座的傻猫, Blog, Java, Ariescat">
+    <meta name="theme-color" content="#000000">
+    
+    <title>一只白羊座的傻猫 | Ariescat Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <!-- Safari Webpage Icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ariescat.top//page3/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+    <!-- MyConfig -->
+    <script src="/js/myconfig.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!-- pjax -->
+    <script src="/js/jquery.pjax.js"></script>
+
+    <!-- lazyload -->
+    <script src="/js/jquery.lazyload.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+        <!-- 引入Valine评论插件 https://valine.js.org/ -->
+        <script src='/js/valine.min.js'></script>
+    
+
+    <!-- artitalk -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk@3.2.1"></script>
+
+    <!-- NProgress https://github.com/rstacruz/nprogress -->
+    <link rel="stylesheet" href="/css/nprogress.css">
+    <script src="/js/nprogress.js"></script>
+
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Simple Jekyll Search -->
+    <script src="/js/simple-jekyll-search.min.js"></script>
+
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+</head>
+
+
+<style>
+    /* header遮罩 */
+    .header-shade {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+    <!-- 鼠标特效 -->
+    <!--<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>-->
+
+    <div id="pageContent">
+        <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ariescat Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a href="/tags/">Tags</a>-->
+<!--                    </li>-->
+					<li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+					<li>
+                        <a href="/about/">About</a>
+                    </li>
+                    <li class="search-icon">
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <!-- 
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/bibi/">BiBi</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/friends/">Friends</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                     -->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function () {
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        },
+        open: function () {
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function (e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        } else {
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function (e) {
+        if (e.target == $toggle) return;
+        if (e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+        <div id="content"><!-- Page Header -->
+<header class="intro-header"
+        style="background-image: url('/img/cover/166801.jpg')">
+    <div class="header-shade">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                    <div class="site-heading">
+                        <h1>Ariescat Blog</h1>
+                        <!--<hr class="small">-->
+                        <span class="subheading">不管这一天有多难过，记得认真洗脸冲澡</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+        <!-- USE SIDEBAR -->
+            <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			<style>
+    .post-list-thumb {
+        opacity: 0;
+    }
+    .post-list-show {
+        animation: post-list-show .5s;
+        -webkit-animation: post-list-show .5s;
+        opacity: 1
+    }
+    @media (max-width: 860px) {
+        .post-list-thumb {
+            opacity: 1;
+        }
+        .post-list-show {
+            animation: none;
+            -webkit-animation: none;
+        }
+    }
+    @keyframes post-list-show {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(50px);
+            transform: translateY(50px)
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            transform: translateY(0)
+        }
+    }
+</style>
+
+<div class="tops-title visible-md visible-lg">
+    <hr>
+    <h5><span class="fa fa-heart"></span> HOT</h5>
+</div>
+<div class="tops-content visible-md visible-lg">
+    <ul>
+        
+        
+        
+        
+        
+        
+        
+        
+        <a href="/2021/01/30/%E7%BB%99%E5%B0%8F%E7%A0%B4%E7%AB%99%E5%AE%89%E6%8E%92%E4%B8%8A%E7%9A%84%E5%B0%8F%E6%88%8F%E6%B3%95/" title="给小破站安排上的小戏法" rel="friend">
+            <li class="tops-item">
+                <div class="tops-item-img">
+                    <img data-original="/img/cover/146418.jpg" class="lazy not-fancybox">
+                </div>
+                <div class="tops-item-title">
+                    <h3><strong>给小破站安排上的小戏法</strong></h3>
+                    <p>&quot;荒废了半年的Blog我又折腾了起来&quot;</p>
+                </div>
+            </li>
+        </a>
+        
+        
+        
+        <a href="/2021/01/25/Pjax%E5%8A%A0%E6%8C%81APlayer-%E9%9F%B3%E4%B9%90%E6%97%A0%E9%97%B4%E6%96%AD/" title="Pjax加持APlayer，音乐无间断" rel="friend">
+            <li class="tops-item">
+                <div class="tops-item-img">
+                    <img data-original="/img/cover/158773.png" class="lazy not-fancybox">
+                </div>
+                <div class="tops-item-title">
+                    <h3><strong>Pjax加持APlayer，音乐无间断</strong></h3>
+                    <p>&quot;一开始我真的只是单纯的想加个音乐播放器...&quot;</p>
+                </div>
+            </li>
+        </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</div>
+
+<div class="tops-title">
+    <hr class="hidden-sm hidden-xs">
+    <h5><span class="fa fa-envira"></span> DISCOVERY</h5>
+</div>
+
+<div class="post-preview post-list-thumb post-list-show">
+    <a href="/2019/02/15/List-subList%E5%92%8CSpring-split%E7%9A%84%E4%BD%BF%E7%94%A8%E9%99%B7%E9%98%B1/">
+        <h2 class="post-title">
+            List#subList和Spring#split的使用陷阱
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "使用不当会引起内存泄漏！！"
+        </h3>
+        
+        <div class="post-content-preview">
+            前言
+如果Java应用程序出现了内存泄露，千万别着急着把应用杀掉，而是要保存现场。如果是互联网应用，可以把流量切到其他服务器。保存现场的目的就是为了把 运行中JVM的heap dump下来。
+
+正文
+裁剪List的时候这样子使用的话就会有一个引发内存泄漏的陷阱：
+    myList = myList.subList(fromIndex, toIndex);
+
+特别是在循环调用的时候。
+
+来...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on February 15, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/02/14/%E7%BD%91%E7%BB%9CIO%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5-%E5%BC%82%E6%AD%A5-%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E/">
+        <h2 class="post-title">
+            网络IO中的同步、异步、阻塞和非阻塞
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "在学习网络编程过程中，经常会把这几个概念搞混淆"
+        </h3>
+        
+        <div class="post-content-preview">
+            同步I/O与异步I/O区别
+我们先来看一下操作I/O时涉及的对象和步骤（这里我们以read为例）：　　
+
+这里会涉及到两个系统对象，一个是调用这个I/O的应用进程（或线程），另一个就是系统内核。当一个read操作发生时，它会经历两个阶段：1）等待数据就绪 （可读）；2）将数据从内核拷贝到应用进程中 。这两个阶段很重要，因为各种I/O模型的区别就是在这两个阶段上各有不同的情况。
+
+下边我们来看...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on February 14, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/02/12/%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E4%B8%8E%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/">
+        <h2 class="post-title">
+            双向数据绑定与单向数据绑定
+        </h2>
+        
+        <div class="post-content-preview">
+            前言
+
+春节后第一篇。
+
+正文
+
+在react中是单向数据绑定，而在vue和augular中的特色是双向数据绑定。为什么会选择两种不同的机制呢？我猜测是两种不同的机制有不同的适应场景，查了一些资料后，总结一下。
+
+一、各自优势
+
+双向数据绑定给人的最大的优越感就是方便。当数据data发生变化时，页面自动发生更新。但是有一个缺点也是因为自动更新而导致的，因为这样你就不知道data什么时候变了，...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on February 12, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/01/30/Netty%E4%B9%8B%E5%BF%83%E8%B7%B3%E4%B8%8E%E9%87%8D%E8%BF%9E/">
+        <h2 class="post-title">
+            Netty之心跳与重连
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "设计一个心跳机制"
+        </h3>
+        
+        <div class="post-content-preview">
+            最近因为项目组在优化跨服重连的问题，就简单地研究了下Netty的心跳和重连，先来简单看一下这个过程：
+
+
+  1）客户端连接服务端
+
+
+
+  2）在客户端的的ChannelPipeline中加入一个比较特殊的IdleStateHandler，设置一下客户端的写空闲时间，例如5s
+
+
+
+  3）当客户端的所有ChannelHandler中4s内没有write事件，则会触发userEventTr...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on January 30, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/01/29/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E7%BC%96%E7%A8%8BRxJava/">
+        <h2 class="post-title">
+            事件驱动编程RxJava
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "简化我们日常的事件驱动编程"
+        </h3>
+        
+        <div class="post-content-preview">
+            RxJava的基本入门可以了解 给 Android 开发者的 RxJava 详解 这篇博文。
+
+它通过Observable这个统一的接口，对其相关的事件，在空间维度和事件维度进行重新组织，来简化我们日常的事件驱动编程。
+
+引用RxJava 沉思录的一段话：
+
+  在基于Callback的编程范式中，我们的Callback是没有维度的。它只能够响应孤立的事件，即来一个事件，我处理一个事件。假设...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on January 29, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/01/28/Java%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%99%A8SecurityManager/">
+        <h2 class="post-title">
+            Java安全管理器SecurityManager
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "程序实施安全策略的类"
+        </h3>
+        
+        <div class="post-content-preview">
+            前言
+大家在阅读源码（特别是类库）的时候，是不是会发现这样的代码，然后在想这个是做什么的：
+SecurityManager sm = System.getSecurityManager();
+if (sm != null) {
+    security.checkRead(path);
+}
+
+Java安全
+总的来说，java安全应该包括两个方面的内容：一是Java平台（即是Java运行环境）...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on January 28, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/01/26/%E4%B8%89%E4%B8%83-%E5%8D%81%E5%91%A8%E5%B9%B4%E5%BA%86/">
+        <h2 class="post-title">
+            三七互娱 十周年
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "我是一颗洋葱 来地球追梦"
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  回顾过去，展望未来
+
+
+
+
+
+
+
+
+    
+        凌晨三点后
+        漫步在街头
+        一路上穿过
+        霓虹和高楼
+        也许下一个街口
+        就能和梦想接头
+        也许走完这一生
+        我也找不到出口
+
+        
+
+        人生是一场华丽的冒险
+        我抵抗着睡意
+      ...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on January 26, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/01/24/%E5%8A%A8%E6%80%81-%E6%95%8F%E6%8D%B7%E7%9A%84Groovy/">
+        <h2 class="post-title">
+            动态，敏捷的Groovy
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "了解下Groovy的强大吧！"
+        </h3>
+        
+        <div class="post-content-preview">
+            前言
+因为项目中需要用到Groovy语言，所以对它一直有做了解，本文主要总结一下Groovy在Java与Spring中的用法。希望本文对准备学习使用或者对 Groovy 感兴趣的同学有所帮助，如有不对之处还望指出哈，对这门语言的理解还是比较肤浅的。
+
+简介
+Groovy 是 Apache 旗下的一门基于 JVM 平台的动态/敏捷编程语言，在语言的设计上它吸纳了 Python、Ruby 和 S...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on January 24, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/01/23/Guava%E4%BD%BF%E5%BC%80%E5%8F%91%E6%9B%B4%E7%AE%80%E5%8D%95%E4%B9%8BRangeMap/">
+        <h2 class="post-title">
+            Guava使开发更简单之RangeMap
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "在范围内取值，RangeMap简直不要太方便~~"
+        </h3>
+        
+        <div class="post-content-preview">
+            简介
+RangeMap是一种集合类型(collection type),它将不相交、且不为空的Range(key)映射给一个值(Value)。RangeMap跟一般的Map一样,存储键值对,按照键来取值。不同于Map的是键的类型必须是Range,也既是一个区间。
+
+和RangeSet一样,实现RangeMap也是一个接口,实现它的也只有两个类,分别为ImmutableRangeMap和Tre...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on January 23, 2019
+    </p>
+    <hr>
+</div>
+
+<div class="post-preview post-list-thumb">
+    <a href="/2019/01/19/Hello-2019/">
+        <h2 class="post-title">
+            Hello 2019
+        </h2>
+        
+        <h3 class="post-subtitle">
+            "Hello World, Hello Blog"
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  “🙉🙉🙉 ”
+
+
+前言
+
+Ariescat 的 Blog 就这么开通了。
+
+本来打算在年前完成 Blog 的搭建，不曾料想踩了很多坑。。。
+
+跳过废话，直接看技术实现 
+
+2019 年，Ariescat Blog 总算是搭建好了。
+
+最开始写博客是在CSDN这个平台上，CSDN确实不错，支持markdown在线编辑。
+
+在一次偶然间，发现了 GitHub Pages 这种神奇的存在，觉...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by
+        Ariescat
+        on January 19, 2019
+    </p>
+    <hr>
+</div>
+
+
+<div class="pager-num">
+    <span>
+        <strong>&nbsp;当前页 3&nbsp;&nbsp;/&nbsp;&nbsp;总页数 3</strong>
+    </span>
+</div>
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    <li class="previous">
+        <a href="/page2">&larr; Newer Posts</a>
+    </li>
+    
+    
+</ul>
+
+
+<script>
+    function post_list_show_animation() {
+        if ($(".post-preview").hasClass("post-list-thumb")) {
+            var options = {
+                root: null,
+                threshold: [0.25]
+            }
+            var io = new IntersectionObserver(callback, options);
+            var articles = document.querySelectorAll('.post-list-thumb');
+
+            function callback(entries) {
+                entries.forEach((article) => {
+                    if (!window.IntersectionObserver) {
+                        article.target.style.willChange = 'auto';
+                        if( article.target.classList.contains("post-list-show") === false){
+                            article.target.classList.add("post-list-show");
+                        }
+                    } else {
+                        if (article.target.classList.contains("post-list-show")) {
+                            article.target.style.willChange = 'auto';
+                            io.unobserve(article.target)
+                        } else {
+                            if (article.isIntersecting) {
+                                article.target.classList.add("post-list-show");
+                                article.target.style.willChange = 'auto';
+                                io.unobserve(article.target)
+                            }
+                        }
+                    }
+                })
+            }
+            articles.forEach((article) => {
+                io.observe(article)
+            })
+        }
+    }
+    post_list_show_animation();
+</script>
+
+    		</div>
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/archives/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            
+                                <a href="/archives/?tag=Blog" title="Blog" rel="5">
+                                    Blog
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=生活" title="生活" rel="8">
+                                    生活
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=Java" title="Java" rel="16">
+                                    Java
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=Guava" title="Guava" rel="1">
+                                    Guava
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=Groovy" title="Groovy" rel="2">
+                                    Groovy
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=前端" title="前端" rel="1">
+                                    前端
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=IO" title="IO" rel="2">
+                                    IO
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=Spring" title="Spring" rel="4">
+                                    Spring
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=AOP" title="AOP" rel="1">
+                                    AOP
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=Json" title="Json" rel="1">
+                                    Json
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=SpringBoot" title="SpringBoot" rel="1">
+                                    SpringBoot
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=设计模式" title="设计模式" rel="1">
+                                    设计模式
+                                </a>
+                            
+                        
+                            
+                                <a href="/archives/?tag=操作系统" title="操作系统" rel="1">
+                                    操作系统
+                                </a>
+                            
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+                        
+                            <a href="/about">
+                                <img src="/img/avatar.jpg"/>
+                            </a>
+                        
+                        
+                            <p>不管这一天有多难过，记得认真洗脸冲澡...</p>
+                        
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                            <li>
+                                <a target="_blank" href="https://github.com/Ariescat">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a target="_blank" href="https://awesome.ariescat.top/">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            <!-- add jianshu add target = "_blank" to <a> by BY -->
+                            
+                            <li>
+                                <a target="_blank" href="https://www.jianshu.com/u/39035eb3096b">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-stack-1x fa-inverse">简</i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+							
+                            <li>
+                                <a target="_blank" href="https://blog.csdn.net/PingXiaoGai">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-stack-1x fa-inverse">C</i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            
+                            
+                            
+                        </ul>
+                        
+                            <p>✉️ 1275563227@qq.com</p>
+                        
+                    </div>
+                </section>
+
+                <!-- Links -->
+                
+                <hr>
+                <h5>LINKS</h5>
+                <ul class="list-inline">
+                    
+                    <li><a href="https://www.jianshu.com/">简书</a></li>
+                    
+                    <li><a href="https://www.zhihu.com/">知乎</a></li>
+                    
+                    <li><a href="https://juejin.im/">掘金</a></li>
+                    
+                </ul>
+                
+    		</div>
+        
+	</div>
+</div>
+</div>
+
+        <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Ariescat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://awesome.ariescat.top/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.jianshu.com/u/39035eb3096b">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://blog.csdn.net/PingXiaoGai">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x fa-inverse">C</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Ariescat Blog 2019-2021
+                    <br>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备20047845号</a>
+                    <br>
+                    Powered by <a href="https://ariescat.top/">Ariescat</a> |
+                    <a href="https://github.com/Ariescat/blog" target="_blank"
+                       aria-label="Star Ariescat/blog on GitHub">
+                        <img src="https://img.shields.io/github/stars/Ariescat/blog?style=social"
+                             alt="Star" style="cursor: pointer">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                // size: {start: 1, end: 1, unit: 'em'},
+                // color: {start: '#bbbbee', end: '#0085a1'},
+                color: {start: '#bbbbee', end: '#2f93b4'},
+            };
+            $('#tag_cloud a').tagcloud();
+        });
+        async('/js/archive.js', function () {
+            // 重新加载archive.js，计算归档和页签
+        });
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async("/js/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPNE1L0HRN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HPNE1L0HRN');
+</script>
+
+
+
+
+<!-- Baidu 统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?15a0182bcc909fead8c8f48acb3222d4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+
+
+<!--Baidu 收录 自动推送代码-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+<!-- fancybox支持 -->
+<script>
+    $(document).ready(function () {
+        $('#pageContent #content img').each(function (index, value) {
+            if (value.classList.contains('not-fancybox')) {
+                return;
+            }
+            let $a = document.createElement('a')
+            $a.setAttribute('data-fancybox', 'gallery')
+            /* 兼容img lazyload */
+            $a.setAttribute('href', $(this).attr('data-original') || value.src)
+            $a.setAttribute('data-caption', value.alt)
+            $(this).wrap($a)
+        });
+    });
+</script>
+
+<!-- img lazyload -->
+<script>
+    $(function () {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
+</script>
+
+
+<!-- search -->
+<script>
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        // 兼容pjax 刷新时清空上一次的值
+        $searchInput.val('')
+        $('#search-results').empty()
+        $searchPage.removeClass('search-active')
+        $body.removeClass('no-scroll')
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+    </div>
+
+    <!--春节挂件-->
+<style>
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+    }
+    #chunjie {
+        display: none;
+    }
+    .deng-box {
+        position: fixed;
+        top: -40px;
+        left: 7.5%;
+        z-index: 999;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        left: 10%;
+        z-index: 999;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    /*@font-face {
+        font-family: "华文行楷";
+        src: url('/fonts/华文行楷.ttf');
+    }*/
+    .deng-t {
+        /*font-family: 华文行楷;*/
+        font-size: 24px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 44px;
+        text-align: center;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+
+<div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">喜迎</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">春节</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if ($(window).width() <= 630 || (new Date().getMonth()) > 1) {
+        $('#chunjie').css('display', 'none');
+    } else {
+        $('#chunjie').css('display', 'block');
+    }
+</script>
+    <!--春节挂件-->
+<style>
+    /*春节主题 挂件吊线*/
+    .caishendeng {
+        display: none;
+    }
+    .caishenxianleft {
+        position: fixed;
+        top: 0;
+        left: 16% !important;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenxian {
+        position: fixed;
+        top: 0;
+        right: 20%;
+        width: 2px;
+        height: 20px;
+        z-index: 9;
+        background: #dc8f03;
+        transform-origin: 50% -100px;
+        animation: swing 3.5s infinite ease-in-out;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .caishenpic {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        top: 12px;
+        right: -22px;
+        z-index: 9;
+        /* transform-origin: 50% -100px; */
+        animation: swing 3.5s infinite ease-in-out;
+        /* -webkit-transform-origin: 50% -100px; */
+        -webkit-animation: swing 3.5s infinite ease-in-out;
+    }
+    .fudao {
+        width: 38px;
+        height: 38px;
+        top: 18px !important;
+        left: -19px !important;
+    }
+</style>
+
+<div class="caishendeng">
+    <div class="caishenxian">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+<div class="caishendeng">
+    <div class="caishenxianleft">
+        <img class="caishenpic fudao" src="/img/fu.png">
+    </div>
+</div>
+
+<script>
+    if ($(window).width() > 630 || (new Date().getMonth()) > 1) {
+        $('.caishendeng').css('display', 'none');
+    } else {
+        $('.caishendeng').css('display', 'block');
+    }
+</script>
+    <!-- Search -->
+<div class="search-page">
+    <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+    </div>
+    <div class="search-main container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!--<form>-->
+                <input type="text" id="search-input" placeholder="$ grep...">
+                <!--</form>-->
+                <div id="search-results" class="mini-post-list"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason,
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+</script>
+
+    <div id="aplayerContent">
+        
+<!-- aplayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+<div class="visible-lg">
+    <div id="aplayer"></div>
+</div>
+<script type="text/javascript">
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        lrcType: __Ariescat_Config__.APlayer.lrcType,
+        audio: __Ariescat_Config__.APlayer.audioSrc
+    });
+</script>
+
+    </div>
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+<!-- 鼠标点击特效 -->
+<!--<script src="/js/snow-effect.js"></script>-->
+
+<!--看板娘-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    // 可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。
+    L2Dwidget.init({
+        "model": {
+            "jsonPath": __Ariescat_Config__.L2Dwidget.jsonPath,
+            "scale": 1
+        },
+        "display": {
+            "position": "left",
+            "width": 100,
+            "height": 200,
+            "hOffset": 30,
+            "vOffset": -15
+        },
+        "mobile": {
+            "show": false,
+            "scale": 1
+        },
+        "react": {
+            "opacityDefault": 1.0,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+<script>
+    // pjax无刷新ajax加载
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent', timeout: 1500});
+    // NProgress
+    $(document).on('pjax:start', function () {
+        NProgress.start();
+        NProgress.inc();
+    });
+    $(document).on('pjax:end', function () {
+        NProgress.done();
+    });
+</script>
+
+<!-- 樱花特效 -->
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    if ($(window).width() > 768) {
+        let month = new Date().getMonth();
+        //三四月飘就好
+        if (month === 2 || month === 3) {
+            document.write('<script type="text/javascript" async src="/js/sakura.js"><\/script>');
+        }
+    }
+</script>
+</html>

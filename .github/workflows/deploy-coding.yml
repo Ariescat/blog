@@ -38,9 +38,9 @@ jobs:
       - name: Setup Ruby, JRuby and TruffleRuby
         # You may pin to the exact commit or the version.
         # uses: ruby/setup-ruby@57d46d78b7d959dc4a248024a29bb17d4e357e5c
-        uses: ruby/setup-ruby@v1.81.0
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.4.22
+          ruby-version: 3.0.0
 
       - name: Run bundle install
         run: bundle install
